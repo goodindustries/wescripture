@@ -350,21 +350,10 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     color: #76572f;
 }
 .scripture span.w {
-    cursor: pointer;
-    text-decoration: underline;
-    text-decoration-color: rgba(156,122,77, calc(var(--ws,0.5) * 0.45 + 0.38));
-    text-decoration-thickness: calc(var(--ws,0.5) * 1.4px + 1.1px);
-    text-underline-offset: 3px;
     border-radius: 2px;
     transition: background .1s;
 }
-.scripture span.w:hover { background: rgba(156,122,77,0.13); }
-.scripture span.w.cw-active { background: rgba(156,122,77,0.22); }
-.scripture span.w[data-st="god"],
-.scripture span.w[data-st="heaven"],
-.scripture span.w[data-st="earth"] {
-    text-decoration-thickness: max(1.8px, calc(var(--ws,0.5) * 1.4px + 1.2px));
-}
+.scripture span.w.cw-active { background: rgba(156,122,77,0.18); }
 .verse.verse-focus {
     background: rgba(156,122,77,0.06);
     box-shadow: inset 3px 0 0 var(--accent);
@@ -486,14 +475,11 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 
 /* ── Channel panel ── */
 #channel {
-    position: fixed; top: var(--nav-h); right: 0; bottom: 0;
-    width: 360px; background: #FEFCF8; border-left: 1px solid var(--divider);
-    display: flex; flex-direction: column; z-index: 180;
-    transform: translateX(100%); transition: transform .22s;
-    box-shadow: -4px 0 20px rgba(0,0,0,0.06);
-    min-height: 0;
+    width: 380px; min-width: 380px;
+    background: #FEFCF8; border-left: 1px solid var(--divider);
+    display: flex; flex-direction: column; min-height: 0;
+    overflow: hidden; flex-shrink: 0;
 }
-#channel.open { transform: translateX(0); }
 #ch-header {
     padding: 12px 14px 10px; border-bottom: 1px solid var(--divider);
     display: flex; align-items: flex-start; gap: 8px; flex-shrink: 0;
@@ -605,14 +591,16 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 .ch-full-text.open { display: block; }
 .ch-empty { padding: 24px 14px; font-size: 12px; color: var(--muted); }
 
+@media (min-width: 601px) { #ch-close { display: none; } }
 @media (max-width: 600px) {
-    #channel { width: 100%; top: auto; height: 55vh; border-left: none;
-        border-top: 1px solid var(--divider);
-        transform: translateY(100%); transition: transform .22s; }
-    #channel.open { transform: translateY(0); }
-    #ch-list {
-        padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 10px);
+    #channel {
+        position: fixed; left: 0; right: 0; bottom: 0;
+        width: 100%; min-width: 0; height: 55vh;
+        border-left: none; border-top: 1px solid var(--divider);
+        z-index: 180; transform: translateY(100%); transition: transform .22s;
     }
+    #channel.open { transform: translateY(0); }
+    #ch-list { padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 10px); }
 }
 
 /* ── Verse discovery card styles ── */
@@ -839,7 +827,7 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     <div id="ch-header">
         <div style="flex:1">
             <div id="ch-word"></div>
-            <div id="ch-hint">space → next · click any word to explore</div>
+            <div id="ch-hint">Tap a verse to study it</div>
             <div id="ch-study" hidden></div>
         </div>
         <button id="ch-close" onclick="closeChannel()">
@@ -2050,15 +2038,19 @@ function openVerseDiscovery(ref) {
     var donaNotes  = donaEntry.notes  || [];
     var donaQuotes = donaEntry.quotes || [];
 
-    if (!entries.length && !donaNotes.length && !donaWords.length && !donaQuotes.length) return;
-
-    document.getElementById('ch-word').textContent = 'Verse commentary';
-    document.getElementById('ch-hint').textContent = ref;
+    document.getElementById('ch-word').textContent = ref;
     var html = '';
 
-    // ── People · Places · Things in this verse ──
+    // ── Verse text header ──
     var verseEl = document.getElementById('v' + vnum);
-    var verseText = verseEl ? (verseEl.querySelector('.verse-text') || verseEl).textContent : '';
+    var verseText = verseEl ? (verseEl.querySelector('.verse-text') || verseEl).textContent.trim() : '';
+    if (verseText) {
+        html += '<div style="padding:14px 14px 12px;border-bottom:1px solid var(--divider);'
+            + 'font-family:\'EB Garamond\',Georgia,serif;font-size:15px;line-height:1.65;'
+            + 'color:var(--text);font-style:italic">' + escapeHtml(verseText) + '</div>';
+    }
+
+    // ── People · Places · Things in this verse ──
     if (verseText) {
         var ents = scanVerseEntities(verseText);
         if (ents.persons.length || ents.places.length || ents.things.length) {
@@ -2069,7 +2061,8 @@ function openVerseDiscovery(ref) {
         }
     }
 
-    // ── Key words ──
+    // ── Key words: Donaldson (injection) → Strong's (scholarly source) ──
+    var strongsEntries = (strongsIndexCache[chapterId] || {})[vnum] || [];
     if (donaWords.length) {
         html += '<div class="disc-section">Key Words</div>';
         donaWords.forEach(function(w) {
@@ -2080,6 +2073,25 @@ function openVerseDiscovery(ref) {
                 + '<div class="word-meaning">' + makeExpandable(w.plain || w.meaning || '', 'note-preview', 'note-overflow', 'note-more') + '</div>'
                 + '</div></div>';
         });
+    } else if (strongsEntries.length) {
+        html += '<div class="disc-section">Key Words · Strong\'s Concordance</div>';
+        strongsEntries.forEach(function(entry) {
+            var script = entry.lm || entry.xl || '';
+            var sn     = entry.sn || '';
+            var def    = strongsCleanDef(entry.gl, entry.kj);
+            var root   = strongsRoot(entry.dv || '');
+            if (!script && !def) return;
+            html += '<div class="word-card">'
+                + '<div class="word-original" style="font-size:20px">' + escapeHtml(script) + '</div>'
+                + '<div class="word-detail">'
+                + (sn ? '<div class="word-english" style="font-size:11px;color:var(--muted);font-weight:400">Strong\'s ' + escapeHtml(sn) + '</div>' : '')
+                + '<div class="word-meaning">' + escapeHtml(def) + (root ? ' <span style="color:var(--muted);font-size:11px">from ' + escapeHtml(root) + '</span>' : '') + '</div>'
+                + '</div></div>';
+        });
+    }
+
+    if (!entries.length && !donaNotes.length && !donaWords.length && !donaQuotes.length && !strongsEntries.length) {
+        html += '<div class="ch-empty" style="padding:20px 14px;font-size:13px;color:var(--muted)">No commentary found for this verse.</div>';
     }
 
     // ── Donaldson notes (use spoon.notes when available) ──
@@ -2485,6 +2497,10 @@ function injectNotes(id, block) {
             .then(function(r) { return r.ok ? r.json() : null; })
             .then(function(data) { if (data) donaldsonNotes[id] = data; })
             .catch(function() {});
+    }
+    // Pre-warm Strong's index so verse-click study panel has it ready
+    if (id !== 'title_page' && !strongsIndexCache[id]) {
+        loadStrongsIndex(id);
     }
 }
 
@@ -3443,10 +3459,20 @@ document.getElementById('content').addEventListener('click', function(e) {
 
     var verse = e.target.closest('div.verse');
     if (!verse) return;
-    focusVerse(verse, true);
-    // Also open discovery panel if verse has commentary
+    focusVerse(verse, false);
+    // Open study panel on every verse click
     var disc = verse.querySelector('.verse-disc[data-ref]');
-    if (disc) openVerseDiscovery(disc.dataset.ref);
+    if (disc) {
+        openVerseDiscovery(disc.dataset.ref);
+    } else {
+        var vblock = verse.closest('.chapter-block');
+        var vcid = vblock && vblock.dataset.chapterId;
+        var vnum2 = verse.id.replace('v', '');
+        if (vcid && vnum2) {
+            var vm = vcid.match(/^(.+)_(\d+)$/);
+            if (vm) openVerseDiscovery(slugToBookName(vm[1]) + ' ' + vm[2] + ':' + vnum2);
+        }
+    }
 });
 
 document.getElementById('content').addEventListener('click', function(e) {
