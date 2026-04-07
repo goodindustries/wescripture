@@ -875,6 +875,7 @@ var sourceLinks    = {};   // doc_id → {para_idx → [{book,ch,v,score,ref}]}
 var verseDiscovery = {};   // "Book Ch:V" → [{tradition_pair, source_label, source_text, ...}]
 var donaldsonNotes = {};   // chapterId → { "verseNum": [para, ...] }
 var chapterGraphCache = {}; // chapterId → parsed graph data
+var strongsPlain = {};     // sn → plain text (loaded once from strongs_plain.json)
 var entityIndex = {};      // lowercased name variant → person_id (longest-first sorted)
 var entityList  = [];      // full people.json array
 var entityById  = {};      // person_id → entity object
@@ -1077,6 +1078,9 @@ Promise.all([
         var sourceData = results[1] || [];
         sourceLinks    = results[2] || {};
         verseDiscovery = results[3] || {};
+        // Load strongs_plain in background — non-blocking, enriches word cards when ready
+        fetch('./strongs_plain.json').then(function(r) { return r.ok ? r.json() : {}; })
+            .then(function(d) { strongsPlain = d || {}; }).catch(function() {});
         entityIndex    = results[4] || {};
         entityList     = results[5] || [];
         entityList.forEach(function(p) { entityById[p.id] = p; });
@@ -2112,18 +2116,19 @@ function openVerseDiscovery(ref) {
                 + '</div></div>';
         });
     } else if (strongsEntries.length) {
-        html += '<div class="panel-section">Key Words · Strong\'s Concordance</div>';
+        html += '<div class="panel-section">Key Words</div>';
         strongsEntries.forEach(function(entry) {
             var script = entry.lm || entry.xl || '';
             var sn     = entry.sn || '';
-            var def    = strongsCleanDef(entry.gl, entry.kj);
-            var root   = strongsRoot(entry.dv || '');
+            var plain  = sn && strongsPlain[sn];
+            var def    = plain || strongsCleanDef(entry.gl, entry.kj);
+            var root   = plain ? '' : strongsRoot(entry.dv || '');
             if (!script && !def) return;
             html += '<div class="word-card">'
                 + '<div class="word-original">' + escapeHtml(script) + '</div>'
                 + '<div class="word-detail">'
-                + (sn ? '<div class="word-english">Strong\'s ' + escapeHtml(sn) + '</div>' : '')
-                + '<div class="word-meaning">' + escapeHtml(def) + (root ? ' <span style="color:var(--muted);font-size:12px">from ' + escapeHtml(root) + '</span>' : '') + '</div>'
+                + (entry.xl ? '<div class="word-english">' + escapeHtml(entry.xl) + '</div>' : (sn ? '<div class="word-english">Strong\'s ' + escapeHtml(sn) + '</div>' : ''))
+                + '<div class="word-meaning">' + makeExpandable(def + (root ? ' <span style="color:var(--muted);font-size:12px">from ' + escapeHtml(root) + '</span>' : ''), 'note-preview', 'note-overflow', 'note-more') + '</div>'
                 + '</div></div>';
         });
     }
