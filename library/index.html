@@ -145,7 +145,7 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 }
 
 /* ── Reader ── */
-#reader { flex: 1; overflow-y: auto; overflow-x: hidden; background: var(--bg); }
+#reader { flex: 1; min-width: 0; overflow-y: auto; overflow-x: hidden; background: var(--bg); }
 #content { max-width: var(--reader-max); margin: 0 auto; padding: 40px 32px 120px; }
 .chapter-block { margin-bottom: 3em; }
 #sentinel { height: 60px; }
@@ -475,10 +475,10 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 
 /* ── Channel panel ── */
 #channel {
-    width: 380px; min-width: 380px;
+    flex: 1; min-width: 0;
     background: #FEFCF8; border-left: 1px solid var(--divider);
     display: flex; flex-direction: column; min-height: 0;
-    overflow: hidden; flex-shrink: 0;
+    overflow: hidden;
 }
 #ch-header {
     padding: 12px 14px 10px; border-bottom: 1px solid var(--divider);
