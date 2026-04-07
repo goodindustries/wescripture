@@ -3499,10 +3499,6 @@ function focusVerse(verse, toggleExpand) {
 }
 
 document.getElementById('content').addEventListener('click', function(e) {
-    // Word click handled separately below — don't toggle verse for word clicks
-    // Exception: entity-marked span.w clicks are handled by the ent-link listener
-    var wSpan = e.target.closest('span.w');
-    if (wSpan && !wSpan.dataset.entity && !wSpan.dataset.place && !wSpan.dataset.thing) return;
     if (e.target.closest('a.ref-link, a.backlink-ref')) return;
 
     // Verse discovery dot
@@ -3579,67 +3575,6 @@ document.addEventListener('click', function(e) {
     else if (link.dataset.topic) openTopicProfile(link.dataset.topic);
 });
 
-document.addEventListener('click', function(e) {
-    // On mobile, touch events may land on a containing element rather than the
-    // inner span.w, so fall back to hit-testing at the click coordinates.
-    // If elementFromPoint still returns a container (e.g. span.verse-text), find
-    // the nearest child span.w by comparing bounding rects to the click position.
-    function nearestWordSpan(container, cx, cy) {
-        var words = container.querySelectorAll('span.w');
-        if (!words.length) return null;
-        var best = null, bestDist = Infinity;
-        for (var i = 0; i < words.length; i++) {
-            var r = words[i].getBoundingClientRect();
-            var midX = r.left + r.width / 2;
-            var midY = r.top + r.height / 2;
-            var dist = Math.abs(cx - midX) + Math.abs(cy - midY);
-            if (dist < bestDist) { bestDist = dist; best = words[i]; }
-        }
-        return best;
-    }
-    var elAtPoint = (e.clientX != null) ? document.elementFromPoint(e.clientX, e.clientY) : null;
-    var span = e.target.closest('span.w')
-        || (elAtPoint && (elAtPoint.closest('span.w') || nearestWordSpan(elAtPoint, e.clientX, e.clientY)))
-        || (e.target.closest('.verse-text, .scripture') && nearestWordSpan(e.target.closest('.verse-text, .scripture'), e.clientX, e.clientY));
-    if (!span) return;
-    e.stopPropagation();
-
-    // Entity-annotated word spans: open entity profile, skip word study
-    if (span.dataset.entity) { openEntityProfile(span.dataset.entity); return; }
-    if (span.dataset.place)  { openPlaceProfile(span.dataset.place);   return; }
-    if (span.dataset.thing)  { openThingProfile(span.dataset.thing);   return; }
-
-    var stem  = span.dataset.st;
-    var vnum  = span.dataset.v;
-    var wordText = (span.textContent || '').trim();
-    var block = span.closest('.chapter-block');
-    if (!block) return;
-    var slug  = block.dataset.chapterId;
-    var sourceDocId = block.dataset.sourceDocId;
-    var contextNode = span.closest('.verse, .source-para');
-    activeContextText = contextNode ? (contextNode.textContent || '') : '';
-
-    // Mark active span
-    if (channelActiveSpan) channelActiveSpan.classList.remove('cw-active');
-    channelActiveSpan = span;
-    span.classList.add('cw-active');
-
-    var loader = sourceDocId ? loadSourceWordIndex(sourceDocId) : loadChapterWordIndex(slug);
-    var strongsLoader = sourceDocId ? Promise.resolve({}) : loadStrongsIndex(slug);
-    Promise.all([loader, strongsLoader]).then(function(results) {
-        var idx = results[0] || {};
-        var strongsIdx = results[1] || {};
-        var studyEntries = pickStrongsEntries(wordText, stem, strongsIdx[vnum] || []);
-        renderWordStudy(wordText, studyEntries);
-        var verseData = idx[vnum] || {};
-        var entry     = verseData[stem];
-        if (!entry || !entry.matches || !entry.matches.length) {
-            openChannelEmpty(wordText);
-            return;
-        }
-        openChannel(wordText, entry.matches);
-    });
-});
 
 function openChannelEmpty(word) {
     channelWord    = word;
