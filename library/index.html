@@ -481,11 +481,11 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     overflow: hidden;
 }
 #ch-header {
-    padding: 12px 14px 10px; border-bottom: 1px solid var(--divider);
-    display: flex; align-items: flex-start; gap: 8px; flex-shrink: 0;
+    padding: 6px 10px 6px 14px; border-bottom: 1px solid var(--divider);
+    display: flex; align-items: center; gap: 8px; flex-shrink: 0; min-height: 0;
 }
 #ch-word {
-    flex: 1; font-size: 18px; font-weight: 700; color: var(--accent);
+    flex: 1; font-size: 15px; font-weight: 700; color: var(--accent);
     font-family: 'EB Garamond', Georgia, serif; letter-spacing: -0.02em;
     line-height: 1.2;
 }
@@ -523,13 +523,12 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     line-height: 1.55;
     color: #52493f;
 }
-#ch-hint { font-size: 10px; color: var(--muted); margin-top: 4px; }
 #ch-close {
     background: none; border: none; cursor: pointer; padding: 4px;
     border-radius: 5px; color: var(--muted); flex-shrink: 0; display: flex;
 }
 #ch-close:hover { background: rgba(0,0,0,0.07); color: var(--text); }
-#ch-list {
+#panel-body {
     flex: 1;
     min-height: 0;
     overflow-y: auto;
@@ -591,7 +590,7 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 .ch-full-text.open { display: block; }
 .ch-empty { padding: 24px 14px; font-size: 12px; color: var(--muted); }
 
-@media (min-width: 601px) { #ch-close { display: none; } }
+@media (min-width: 601px) { #ch-close { display: none; } #ch-header { display: none; } }
 @media (max-width: 600px) {
     #channel {
         position: fixed; left: 0; right: 0; bottom: 0;
@@ -600,51 +599,62 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
         z-index: 180; transform: translateY(100%); transition: transform .22s;
     }
     #channel.open { transform: translateY(0); }
-    #ch-list { padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 10px); }
+    #panel-body { padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 10px); }
 }
 
 /* ── Verse discovery card styles ── */
-.disc-section {
+.panel-empty {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    height: 100%; padding: 40px; text-align: center; color: var(--muted);
+}
+.panel-empty-icon { font-size: 28px; margin-bottom: 16px; opacity: 0.35; }
+.panel-empty-text { font-size: 13px; line-height: 1.7; max-width: 240px; }
+
+.panel-header { padding: 20px 28px 16px; border-bottom: 1px solid var(--divider); flex-shrink: 0; }
+.panel-verse-ref { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.panel-verse-text { font-family: 'EB Garamond', Georgia, serif; font-size: 15px; line-height: 1.65; color: var(--text); font-style: italic; }
+
+.disc-section, .panel-section {
     font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
-    color: var(--muted); padding: 10px 14px 8px;
+    color: var(--muted); padding: 14px 28px 10px;
     border-bottom: 1px solid var(--divider);
     background: rgba(0,0,0,0.018);
 }
-.word-card { padding: 12px 14px; border-bottom: 1px solid var(--divider); display: flex; gap: 12px; align-items: flex-start; }
-.word-original { font-size: 22px; font-family: 'EB Garamond', Georgia, serif; font-weight: 400; line-height: 1; color: var(--text); flex-shrink: 0; min-width: 44px; }
+.word-card { padding: 16px 28px; border-bottom: 1px solid var(--divider); display: flex; gap: 16px; align-items: flex-start; }
+.word-original { font-size: 28px; font-family: 'EB Garamond', Georgia, serif; font-weight: 400; line-height: 1; color: var(--text); flex-shrink: 0; min-width: 52px; }
 .word-detail {}
-.word-english  { font-size: 10px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 4px; }
-.word-meaning  { font-size: 13px; color: var(--text); line-height: 1.6; }
-.note-card { padding: 14px 14px; border-bottom: 1px solid var(--divider); }
+.word-english  { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 5px; }
+.word-meaning  { font-size: 14px; color: var(--text); line-height: 1.6; }
+.note-card { padding: 20px 28px; border-bottom: 1px solid var(--divider); }
 .note-body {
     font-family: 'EB Garamond', Georgia, serif;
-    font-size: 14px; line-height: 1.75; color: var(--text);
-    padding-left: 12px; border-left: 2px solid rgba(156,122,77,0.35);
+    font-size: 16px; line-height: 1.8; color: var(--text);
+    padding-left: 16px; border-left: 2px solid rgba(156,122,77,0.35);
 }
 .note-preview { display: block; }
 .note-overflow { display: none; }
 .note-card.expanded .note-overflow { display: inline; }
 .note-more {
     display: inline-block; font-size: 12px; font-weight: 600; color: var(--accent);
-    cursor: pointer; background: none; border: none; padding: 5px 0 0; margin-top: 3px;
+    cursor: pointer; background: none; border: none; padding: 6px 0 0; margin-top: 4px;
 }
 .note-card.expanded .note-more { display: none; }
-.quote-card    { padding: 14px 14px; border-bottom: 1px solid var(--divider); }
-.quote-speaker { font-size: 12px; font-weight: 700; color: var(--text); margin-bottom: 2px; line-height: 1.4; }
-.quote-source  { font-size: 11px; font-weight: 500; color: var(--muted); margin-bottom: 10px; letter-spacing: .02em; }
+.quote-card    { padding: 20px 28px; border-bottom: 1px solid var(--divider); }
+.quote-speaker { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 3px; line-height: 1.4; }
+.quote-source  { font-size: 11px; font-weight: 500; color: var(--muted); margin-bottom: 12px; letter-spacing: .02em; }
 .quote-type-gc  { color: #4a7090; }
 .quote-type-jd  { color: #6a4a8c; }
 .quote-text {
     font-family: 'EB Garamond', Georgia, serif;
-    font-size: 14px; line-height: 1.75; color: var(--text); font-style: italic;
-    padding-left: 12px; border-left: 2px solid rgba(156,122,77,0.25);
+    font-size: 16px; line-height: 1.8; color: var(--text); font-style: italic;
+    padding-left: 16px; border-left: 2px solid rgba(156,122,77,0.25);
 }
 .quote-preview { display: block; }
 .quote-overflow { display: none; }
 .quote-card.expanded .quote-overflow { display: inline; }
 .quote-more {
     display: inline-block; font-size: 12px; font-weight: 600; color: var(--accent);
-    cursor: pointer; background: none; border: none; padding: 5px 0 0; margin-top: 3px;
+    cursor: pointer; background: none; border: none; padding: 6px 0 0; margin-top: 4px;
 }
 .quote-card.expanded .quote-more { display: none; }
 .ent-link { color: var(--accent); border-bottom: 1px dotted currentColor; cursor: pointer; }
@@ -688,26 +698,26 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 .ep-talk-row:hover { background: rgba(0,0,0,0.04); }
 .ep-talk-label { font-size: 13px; font-weight: 500; color: var(--text); }
 .ep-talk-meta { font-size: 11px; color: var(--muted); margin-top: 2px; }
-.hist-card { padding: 14px 14px; border-bottom: 1px solid var(--divider); }
+.hist-card { padding: 20px 28px; border-bottom: 1px solid var(--divider); }
 .hist-badge {
-    display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .05em;
+    display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .05em;
     text-transform: uppercase; color: var(--accent); background: rgba(156,122,77,0.1);
-    border-radius: 4px; padding: 2px 7px; margin-bottom: 7px;
+    border-radius: 4px; padding: 3px 8px; margin-bottom: 9px;
 }
 .hist-badge.gc  { color: #4a7090; background: rgba(74,112,144,0.1); }
-.hist-author { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
-.hist-work   { font-size: 11px; color: var(--muted); margin-bottom: 10px; }
+.hist-author { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+.hist-work   { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
 .hist-quote  {
     font-family: 'EB Garamond', Georgia, serif;
-    font-size: 14px; line-height: 1.75; color: var(--text); font-style: italic;
-    padding-left: 12px; border-left: 2px solid rgba(156,122,77,0.3);
+    font-size: 16px; line-height: 1.8; color: var(--text); font-style: italic;
+    padding-left: 16px; border-left: 2px solid rgba(156,122,77,0.3);
 }
-.scrip-card { padding: 12px 14px; border-bottom: 1px solid var(--divider); }
-.scrip-ref  { font-size: 11px; font-weight: 700; color: var(--green,#4a6741); margin-bottom: 5px; }
+.scrip-card { padding: 16px 28px; border-bottom: 1px solid var(--divider); }
+.scrip-ref  { font-size: 12px; font-weight: 700; color: var(--green,#4a6741); margin-bottom: 7px; }
 .scrip-text {
     font-family: 'EB Garamond', Georgia, serif;
-    font-size: 14px; line-height: 1.7; color: var(--text); font-style: italic;
-    padding-left: 12px; border-left: 2px solid rgba(74,103,65,0.3);
+    font-size: 16px; line-height: 1.75; color: var(--text); font-style: italic;
+    padding-left: 16px; border-left: 2px solid rgba(74,103,65,0.3);
 }
 
 /* ── Graph panel ── */
@@ -804,18 +814,19 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     </div>
     <div id="channel">
         <div id="ch-header">
-            <div style="flex:1">
-                <div id="ch-word"></div>
-                <div id="ch-hint">Tap a verse to study it</div>
-                <div id="ch-study" hidden></div>
-            </div>
+            <div id="ch-word" style="display:none"></div>
             <button id="ch-close" onclick="closeChannel()">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                     <line x1="2" y1="2" x2="12" y2="12"/><line x1="12" y1="2" x2="2" y2="12"/>
                 </svg>
             </button>
         </div>
-        <div id="ch-list"></div>
+        <div id="panel-body">
+            <div class="panel-empty">
+                <div class="panel-empty-icon">✦</div>
+                <div class="panel-empty-text">Tap a verse to study it.</div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -863,6 +874,7 @@ var sourceMeta = {};
 var sourceLinks    = {};   // doc_id → {para_idx → [{book,ch,v,score,ref}]}
 var verseDiscovery = {};   // "Book Ch:V" → [{tradition_pair, source_label, source_text, ...}]
 var donaldsonNotes = {};   // chapterId → { "verseNum": [para, ...] }
+var chapterGraphCache = {}; // chapterId → parsed graph data
 var entityIndex = {};      // lowercased name variant → person_id (longest-first sorted)
 var entityList  = [];      // full people.json array
 var entityById  = {};      // person_id → entity object
@@ -1788,7 +1800,7 @@ function buildProfileHeader(entity, typeLabel, placeholderIcon) {
 function openProfilePanel(entity, typeLabel, placeholderIcon, extraHtml) {
     var html = buildProfileHeader(entity, typeLabel, placeholderIcon);
     html += extraHtml || '';
-    var chList = document.getElementById('ch-list');
+    var chList = document.getElementById('panel-body');
     chList.innerHTML = html;
     document.getElementById('ch-word').textContent = entity.name;
     document.getElementById('channel').classList.add('open');
@@ -2019,6 +2031,34 @@ function discParseCard(entry) {
     return { author: author, work: '', badgeClass: '', badge: badge };
 }
 
+function chapterGraphEchoes(chapterId, vnum) {
+    // Return [{ref, text, score}] of standard_works edges with w≥0.75 for this verse
+    var graph = chapterGraphCache[chapterId];
+    if (!graph) return [];
+    var nodeMap = {}, verseMap = {};
+    (graph.nodes || []).forEach(function(n) {
+        nodeMap[n.id] = n;
+        if (n.t === 'v') verseMap[n.id] = n;
+    });
+    var results = [];
+    var chPrefix = chapterId.replace(/_(\d+)$/, function(_, n) {
+        return ' ' + parseInt(n, 10) + ':';
+    }).replace(/_/g, ' ');
+    (graph.edges || []).forEach(function(edge) {
+        if ((edge.w || 0) < 0.75) return;
+        var vn = verseMap[edge.s], pn = nodeMap[edge.t];
+        if (!vn || !pn || pn.src !== 'standard_works') return;
+        if (String(vn.n) !== String(vnum)) return;
+        var ref = (pn.lb || '').trim();
+        if (!ref || ref.startsWith(chPrefix)) return;
+        if (!results.some(function(x){ return x.ref === ref; })) {
+            results.push({ ref: ref, text: (pn.x || '').replace(/  +/g,' ').trim(), score: edge.w || 0 });
+        }
+    });
+    results.sort(function(a, b){ return b.score - a.score; });
+    return results;
+}
+
 function openVerseDiscovery(ref) {
     // Parse chapterId and verse number from ref ("John 1:3" → chapter "john_1", verse "3")
     var vnum = ref.split(':')[1] || '';
@@ -2043,17 +2083,16 @@ function openVerseDiscovery(ref) {
     // ── Verse text header ──
     var verseEl = document.getElementById('v' + vnum);
     var verseText = verseEl ? (verseEl.querySelector('.verse-text') || verseEl).textContent.trim() : '';
-    if (verseText) {
-        html += '<div style="padding:14px 14px 12px;border-bottom:1px solid var(--divider);'
-            + 'font-family:\'EB Garamond\',Georgia,serif;font-size:15px;line-height:1.65;'
-            + 'color:var(--text);font-style:italic">' + escapeHtml(verseText) + '</div>';
-    }
+    html += '<div class="panel-header">'
+        + '<div class="panel-verse-ref">' + escapeHtml(ref) + '</div>'
+        + (verseText ? '<div class="panel-verse-text">' + escapeHtml(verseText) + '</div>' : '')
+        + '</div>';
 
     // ── People · Places · Things in this verse ──
     if (verseText) {
         var ents = scanVerseEntities(verseText);
         if (ents.persons.length || ents.places.length || ents.things.length) {
-            html += '<div class="disc-section">People · Places · Things</div>';
+            html += '<div class="panel-section">People · Places · Things</div>';
             html += renderChips(ents.persons, 'person');
             html += renderChips(ents.places, 'place');
             html += renderChips(ents.things, 'thing');
@@ -2063,7 +2102,7 @@ function openVerseDiscovery(ref) {
     // ── Key words: Donaldson (injection) → Strong's (scholarly source) ──
     var strongsEntries = (strongsIndexCache[chapterId] || {})[vnum] || [];
     if (donaWords.length) {
-        html += '<div class="disc-section">Key Words</div>';
+        html += '<div class="panel-section">Key Words</div>';
         donaWords.forEach(function(w) {
             html += '<div class="word-card">'
                 + '<div class="word-original">' + escapeHtml(w.greek || '') + '</div>'
@@ -2073,7 +2112,7 @@ function openVerseDiscovery(ref) {
                 + '</div></div>';
         });
     } else if (strongsEntries.length) {
-        html += '<div class="disc-section">Key Words · Strong\'s Concordance</div>';
+        html += '<div class="panel-section">Key Words · Strong\'s Concordance</div>';
         strongsEntries.forEach(function(entry) {
             var script = entry.lm || entry.xl || '';
             var sn     = entry.sn || '';
@@ -2081,22 +2120,22 @@ function openVerseDiscovery(ref) {
             var root   = strongsRoot(entry.dv || '');
             if (!script && !def) return;
             html += '<div class="word-card">'
-                + '<div class="word-original" style="font-size:20px">' + escapeHtml(script) + '</div>'
+                + '<div class="word-original">' + escapeHtml(script) + '</div>'
                 + '<div class="word-detail">'
-                + (sn ? '<div class="word-english" style="font-size:11px;color:var(--muted);font-weight:400">Strong\'s ' + escapeHtml(sn) + '</div>' : '')
-                + '<div class="word-meaning">' + escapeHtml(def) + (root ? ' <span style="color:var(--muted);font-size:11px">from ' + escapeHtml(root) + '</span>' : '') + '</div>'
+                + (sn ? '<div class="word-english">Strong\'s ' + escapeHtml(sn) + '</div>' : '')
+                + '<div class="word-meaning">' + escapeHtml(def) + (root ? ' <span style="color:var(--muted);font-size:12px">from ' + escapeHtml(root) + '</span>' : '') + '</div>'
                 + '</div></div>';
         });
     }
 
     if (!entries.length && !donaNotes.length && !donaWords.length && !donaQuotes.length && !strongsEntries.length) {
-        html += '<div class="ch-empty" style="padding:20px 14px;font-size:13px;color:var(--muted)">No commentary found for this verse.</div>';
+        html += '<div style="padding:28px;color:var(--muted);font-size:13px">No commentary found for this verse.</div>';
     }
 
     // ── Donaldson notes (use spoon.notes when available) ──
     var spoonNotes = (donaEntry.spoon && donaEntry.spoon.notes) || [];
     if (donaNotes.length) {
-        html += '<div class="disc-section">Lee Donaldson · Commentary</div>';
+        html += '<div class="panel-section">Lee Donaldson · Commentary</div>';
         donaNotes.forEach(function(para, i) {
             var text = (spoonNotes[i]) || para;
             html += '<div class="note-card">'
@@ -2108,7 +2147,7 @@ function openVerseDiscovery(ref) {
 
     // ── Attributed quotes ──
     if (donaQuotes.length) {
-        html += '<div class="disc-section">From the Sources</div>';
+        html += '<div class="panel-section">From the Sources</div>';
         donaQuotes.forEach(function(q) {
             var typeClass = 'quote-type-' + (q.type || 'other');
             var byline  = q.speaker || q.attr || '';
@@ -2124,7 +2163,7 @@ function openVerseDiscovery(ref) {
 
     // ── Cross-tradition voices ──
     if (entries.length) {
-        html += '<div class="disc-section">Voices from History</div>';
+        html += '<div class="panel-section">Voices from History</div>';
         entries.forEach(function(e, i) {
             var hasLink = !!(e.source_doc_id && e.source_para != null && sourceMeta[e.source_doc_id]);
             var qt = (e.source_text || '').replace(/  +/g, ' ').replace(/\n\s*/g, ' ').trim();
@@ -2139,11 +2178,24 @@ function openVerseDiscovery(ref) {
         });
     }
 
-    var chList = document.getElementById('ch-list');
-    chList.innerHTML = html;
+    // ── Scripture echoes from chapter graph ──
+    var scriptureEdges = chapterGraphEchoes(chapterId, vnum);
+    if (scriptureEdges.length) {
+        html += '<div class="panel-section">Scripture Echoes</div>';
+        scriptureEdges.forEach(function(s) {
+            html += '<div class="scrip-card">'
+                + '<div class="scrip-ref">' + escapeHtml(s.ref) + '</div>'
+                + '<div class="scrip-text">' + escapeHtml(s.text) + '</div>'
+                + '</div>';
+        });
+    }
+
+    var panelBody = document.getElementById('panel-body');
+    panelBody.innerHTML = html;
+    panelBody.scrollTop = 0;
     document.getElementById('channel').classList.add('open');
     channelOpen = true;
-    chList.querySelectorAll('.hist-card.has-link').forEach(function(row) {
+    panelBody.querySelectorAll('.hist-card.has-link').forEach(function(row) {
         row.addEventListener('click', function() {
             var e = entries[parseInt(row.dataset.idx, 10)];
             var meta = sourceMeta[e.source_doc_id];
@@ -2198,7 +2250,7 @@ function openSourceParaDiscovery(block, paraNode) {
         });
     }
 
-    var chList = document.getElementById('ch-list');
+    var chList = document.getElementById('panel-body');
     chList.innerHTML = html;
     document.getElementById('channel').classList.add('open');
     channelOpen = true;
@@ -2500,6 +2552,13 @@ function injectNotes(id, block) {
     // Pre-warm Strong's index so verse-click study panel has it ready
     if (id !== 'title_page' && !strongsIndexCache[id]) {
         loadStrongsIndex(id);
+    }
+    // Pre-warm chapter graph for scripture echoes
+    if (id !== 'title_page' && !chapterGraphCache[id]) {
+        fetch('./chapters/' + id + '_graph.json')
+            .then(function(r) { return r.ok ? r.json() : null; })
+            .then(function(data) { if (data) chapterGraphCache[id] = data; })
+            .catch(function() {});
     }
 }
 
@@ -3398,6 +3457,7 @@ function strongsRoot(dv) {
 
 function renderWordStudy(wordText, entries) {
     var host = document.getElementById('ch-study');
+    if (!host) return;
     if (!entries || !entries.length) {
         host.hidden = true;
         host.innerHTML = '';
@@ -3586,7 +3646,7 @@ function openChannelEmpty(word) {
     channelMorsels = [];
     channelIdx     = 0;
     document.getElementById('ch-word').textContent = word;
-    document.getElementById('ch-list').innerHTML =
+    document.getElementById('panel-body').innerHTML =
         '<div class="ch-empty">No connections found for this word.</div>';
     document.getElementById('channel').classList.add('open');
     channelOpen = true;
@@ -3625,7 +3685,7 @@ function renderChannelList() {
              + '<div class="ch-full-text"></div>'
              + '</div>';
     });
-    var list = document.getElementById('ch-list');
+    var list = document.getElementById('panel-body');
     list.innerHTML = html;
 
     // Scroll current into view
