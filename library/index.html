@@ -1516,8 +1516,11 @@ document.getElementById('toc-grid').addEventListener('click', function(e) {
         var docMeta = sourceMeta[tile.dataset.doc];
         if (!docMeta) return;
         loadSourceDocument(tile.dataset.doc, docMeta.href);
+        tocOpen = false; document.getElementById('toc').classList.add('hidden');
     } else if (action === 'chapter') {
         jumpTo(tile.dataset.id);
+        // Close TOC after selection
+        tocOpen = false; document.getElementById('toc').classList.add('hidden');
     }
 });
 
@@ -2700,21 +2703,49 @@ var mutObs = new MutationObserver(mutations => {
 mutObs.observe(document.getElementById('content'), { childList: true });
 
 function updateLocationLabel(id) {
+    var crumbsEl = document.getElementById('breadcrumbs');
+    var backBtn  = document.getElementById('back-btn');
+    if (backBtn) backBtn.classList.toggle('show', visitStack.length > 0);
+
     if (sourceMeta[id]) {
-        document.getElementById('location-label').textContent =
-            sourceMeta[id].collection + ' · ' + sourceMeta[id].label;
+        crumbsEl.innerHTML =
+            '<span class="bc-crumb">' + escapeHtml(sourceMeta[id].collection) + '</span>'
+            + '<span class="bc-sep">›</span>'
+            + '<span class="bc-crumb bc-last">' + escapeHtml(sourceMeta[id].label) + '</span>';
         return;
     }
-    var item = tocData.find(t => t.id === id);
-    if (!item) return;
-    // Find parent book
-    var idx = tocData.indexOf(item);
-    var book = '';
-    for (var i = idx - 1; i >= 0; i--) {
-        if (tocData[i].type === 'book') { book = tocData[i].label; break; }
+    var meta = chapterMeta[id];
+    if (!meta) return;
+    var vol = meta.volume.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+    var bk  = meta.book.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+    crumbsEl.innerHTML =
+        '<span class="bc-crumb" onclick="openTocAtVolume(\'' + vol + '\')">' + escapeHtml(meta.volume) + '</span>'
+        + '<span class="bc-sep">›</span>'
+        + '<span class="bc-crumb" onclick="openTocAtBook(\'' + bk + '\')">' + escapeHtml(meta.book) + '</span>'
+        + '<span class="bc-sep">›</span>'
+        + '<span class="bc-crumb bc-last">' + escapeHtml(meta.label) + '</span>';
+}
+
+function openTocAtVolume(volumeLabel) {
+    var vol = tocTree.volumes.find(function(v) { return v.label === volumeLabel; });
+    if (!vol) return;
+    tocPath = { level: 'volume', volume: vol, book: null, sourceCollection: null };
+    renderTocView();
+    tocOpen = true; document.getElementById('toc').classList.remove('hidden');
+}
+
+function openTocAtBook(bookLabel) {
+    for (var vi = 0; vi < tocTree.volumes.length; vi++) {
+        var vol = tocTree.volumes[vi];
+        for (var bi = 0; bi < vol.books.length; bi++) {
+            if (vol.books[bi].label === bookLabel) {
+                tocPath = { level: 'book', volume: vol, book: vol.books[bi], sourceCollection: null };
+                renderTocView();
+                tocOpen = true; document.getElementById('toc').classList.remove('hidden');
+                return;
+            }
+        }
     }
-    document.getElementById('location-label').textContent =
-        book ? `${book} · ${item.label}` : item.label;
 }
 
 function updateActiveToc(id) {
