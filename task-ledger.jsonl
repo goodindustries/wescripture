@@ -93,3 +93,4 @@
 {"event": "task_completed", "task_id": "T-0004", "agent": "WorkerB", "ts": "2026-04-08T01:25:53+00:00", "commit": "75495bec", "notes": "completed by task_worker"}
 {"event": "task_completed", "task_id": "T-0003", "agent": "WorkerA", "ts": "2026-04-08T01:29:36+00:00", "commit": "0be7d138", "notes": "completed by task_worker"}
 {"event": "task_claimed", "task_id": "T-0005", "agent": "WorkerB", "ts": "2026-04-08T01:36:01+00:00"}
+{"event": "task_claimed", "task_id": "T-0006", "agent": "WorkerA", "ts": "2026-04-08T01:39:47+00:00"}
