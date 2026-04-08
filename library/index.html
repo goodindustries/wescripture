@@ -2336,7 +2336,7 @@ function markLinkedSourceParas(block, docId) {
 }
 
 function openSourceParaDiscovery(block, paraNode) {
-    // Remove previous active state
+    // Mark active paragraph
     Array.from(block.querySelectorAll('.source-para-active')).forEach(function(n) {
         n.classList.remove('source-para-active');
     });
@@ -2346,34 +2346,47 @@ function openSourceParaDiscovery(block, paraNode) {
     var paraIdx = paraNode.dataset.paraIdx || '';
     var refs    = (sourceLinks[docId] && sourceLinks[docId][paraIdx]) || [];
 
-    // Set channel header
-    document.getElementById('ch-word').textContent = 'Verses echoing this passage';
+    // Para text from DOM; author/work from sourceMeta
+    var paraText = paraNode.textContent.trim().slice(0, 600);
+    var docMeta  = sourceMeta[docId] || {};
+    var author   = docMeta.author || discParseCard({ source_label: docMeta.label || '' }).author || '';
+    var work     = docMeta.label  || '';
 
-    // Build channel list content
     var html = '';
-    if (!refs.length) {
-        html = '<div class="ch-empty">No linked verses indexed for this paragraph.</div>';
-    } else {
-        refs.slice(0, 15).forEach(function(r) {
-            var pct  = Math.round(r.score * 100);
-            var dots = scoreDots(r.score);
-            html += '<div class="disc-verse-row" data-book="' + escapeAttr(r.book) +
-                    '" data-ch="' + r.ch + '" data-v="' + r.v + '">' +
-                    '<div class="ch-morsel-src">' +
-                    '<span class="disc-verse-ref">' + escapeHtml(r.ref) + '</span>' +
-                    '<span class="ch-score-dots">' + dots + '</span>' +
-                    '</div>' +
+
+    // ── Paragraph header (mirrors verse panel header) ──
+    html += '<div class="panel-header">'
+        + (author ? '<div class="panel-verse-ref">' + escapeHtml(author) + '</div>' : '')
+        + (work   ? '<div class="panel-verse-text">' + escapeHtml(work) + '</div>' : '')
+        + '</div>';
+
+    // ── The paragraph itself ──
+    html += '<div style="padding:16px 28px 12px; border-bottom:1px solid var(--divider);">'
+        + '<div style="font-family:\'EB Garamond\',Georgia,serif;font-size:16px;line-height:1.8;font-style:italic;color:var(--text);padding-left:16px;border-left:2px solid rgba(156,122,77,0.3);">'
+        + makeExpandable(paraText, 'quote-preview', 'quote-overflow', 'quote-more')
+        + '</div></div>';
+
+    // ── Scripture Connections ──
+    if (refs.length) {
+        html += '<div class="panel-section">Scripture Connections</div>';
+        refs.slice(0, 20).forEach(function(r) {
+            html += '<div class="scrip-card disc-verse-row" data-book="' + escapeAttr(r.book) +
+                    '" data-ch="' + r.ch + '" data-v="' + r.v + '" style="cursor:pointer">' +
+                    '<div class="scrip-ref">' + escapeHtml(r.ref) + '</div>' +
                     '</div>';
         });
+    } else {
+        html += '<div style="padding:20px 28px;color:var(--muted);font-size:13px">No scripture connections indexed for this paragraph.</div>';
     }
 
-    var chList = document.getElementById('panel-body');
-    chList.innerHTML = html;
+    var panelBody = document.getElementById('panel-body');
+    panelBody.innerHTML = html;
+    panelBody.scrollTop = 0;
     document.getElementById('channel').classList.add('open');
     channelOpen = true;
 
-    // Click on a verse row → navigate to that verse
-    chList.querySelectorAll('.disc-verse-row').forEach(function(row) {
+    // Click verse row → navigate
+    panelBody.querySelectorAll('.disc-verse-row').forEach(function(row) {
         row.addEventListener('click', function() {
             var book = row.dataset.book;
             var ch   = parseInt(row.dataset.ch, 10);
