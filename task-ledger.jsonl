@@ -85,3 +85,6 @@
 {"ts": "2026-04-07T20:19:33+00:00", "event": "task_queued", "task_id": "T-0052", "title": "Expand Millennial Star coverage beyond 1859 — currently 162 issues; verify full archive availability and ingest remaining issues"}
 {"event": "task_claimed", "task_id": "T-0002", "agent": "TaskWorker", "ts": "2026-04-08T01:19:27+00:00"}
 {"event": "task_claimed", "task_id": "T-0003", "agent": "WorkerA", "ts": "2026-04-08T01:19:48+00:00"}
+{"event": "task_reopened", "task_id": "T-0003", "ts": "2026-04-08T01:20:20+00:00", "notes": "released from manual test claim"}
+{"event": "task_claimed", "task_id": "T-0003", "agent": "WorkerA", "ts": "2026-04-08T01:20:42+00:00"}
+{"event": "task_claimed", "task_id": "T-0004", "agent": "WorkerB", "ts": "2026-04-08T01:20:42+00:00"}
