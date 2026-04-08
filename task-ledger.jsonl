@@ -88,3 +88,5 @@
 {"event": "task_reopened", "task_id": "T-0003", "ts": "2026-04-08T01:20:20+00:00", "notes": "released from manual test claim"}
 {"event": "task_claimed", "task_id": "T-0003", "agent": "WorkerA", "ts": "2026-04-08T01:20:42+00:00"}
 {"event": "task_claimed", "task_id": "T-0004", "agent": "WorkerB", "ts": "2026-04-08T01:20:42+00:00"}
+{"event": "task_reopened", "task_id": "T-0003", "ts": "2026-04-08T01:21:21+00:00", "notes": "re-released: parse bug fixed"}
+{"event": "task_claimed", "task_id": "T-0003", "agent": "WorkerA", "ts": "2026-04-08T01:21:33+00:00"}
