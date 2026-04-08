@@ -80,14 +80,19 @@ def ledger(args: list, capture=False) -> subprocess.CompletedProcess:
     )
 
 
-def claim_next(agent: str) -> dict | None:
+def claim_next(agent):
     result = ledger(["next", "--agent", agent], capture=True)
     if result.returncode != 0 or not result.stdout.strip():
         return None
-    try:
-        return json.loads(result.stdout.strip())
-    except json.JSONDecodeError:
-        return None
+    # stdout may include "[ledger] pushed to origin" before the JSON line
+    for line in result.stdout.splitlines():
+        line = line.strip()
+        if line.startswith('{'):
+            try:
+                return json.loads(line)
+            except json.JSONDecodeError:
+                pass
+    return None
 
 
 def build_prompt(task: dict) -> str:
@@ -119,7 +124,7 @@ def build_prompt(task: dict) -> str:
     return prompt
 
 
-def git_commit_for_task(task_id: str, title: str) -> str | None:
+def git_commit_for_task(task_id, title):
     """Return the hash of any new commit made since the task was claimed, or None."""
     try:
         result = subprocess.run(
