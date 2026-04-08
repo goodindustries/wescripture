@@ -130,3 +130,4 @@
 {"event": "task_completed", "task_id": "T-0051", "agent": "WorkerA", "ts": "2026-04-08T03:41:26+00:00", "notes": "completed by task_worker (non-zero exit)"}
 {"event": "task_claimed", "task_id": "T-0052", "agent": "WorkerB", "ts": "2026-04-08T03:41:30+00:00"}
 {"event": "task_completed", "task_id": "T-0052", "agent": "WorkerB", "ts": "2026-04-08T03:41:44+00:00", "notes": "completed by task_worker (non-zero exit)"}
+{"event": "task_claimed", "task_id": "T-0053", "agent": "WorkerA", "ts": "2026-04-08T04:58:46+00:00"}
