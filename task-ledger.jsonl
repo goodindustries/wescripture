@@ -138,3 +138,4 @@
 {"event": "task_claimed", "task_id": "T-0054", "agent": "TestAgent", "ts": "2026-04-08T17:13:44+00:00"}
 {"event": "task_reopened", "task_id": "T-0054", "ts": "2026-04-08T17:13:58+00:00", "notes": "released test claim"}
 {"event": "task_completed", "task_id": "T-0056", "agent": "Claude", "ts": "2026-04-08T17:14:05+00:00", "commit": "92d5aa69", "notes": "Done: scripture_people.json loaded non-blocking at startup; variants merged into entityIndex; figures added to entityById. Moses, Abraham, Nephi etc. now linkified in verse text."}
+{"event": "task_claimed", "task_id": "T-0054", "agent": "WorkerB", "ts": "2026-04-08T17:15:48+00:00"}
