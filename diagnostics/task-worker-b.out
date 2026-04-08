@@ -1,0 +1,206 @@
+[WorkerB] checking for pending tasks…
+[WorkerB] claimed T-0004: Build cross-scripture entity connections — when a figure appears in multiple books/chapters, link those occurrences in the profile panel
+[WorkerB] running claude --model sonnet …
+Done. Here's what was built for T-0004:
+
+**Cross-scripture entity connections in the profile panel:**
+
+- `renderScriptureRefsByBook()` — new helper that groups a figure's `scripture_refs` by book name. For someone like Moses (appears in Genesis, Exodus, Matthew, Hebrews, etc.), the panel now shows a labeled section per book rather than one undifferentiated list.
+- Each **book group header** shows the book name + a count badge, and is clickable — navigating to the first relevant chapter of that book.
+- Up to **8 verse refs** shown per book inline; overflow shown as "…N more".
+- The section subtitle now reads **"414 verses · 31 books"** (or similar) so the cross-scripture scope is immediately visible.
+- Single-book figures fall back to the existing flat list (unchanged behavior).
+- 6 CSS rules added for `.ep-book-group*` styling.
+Completed T-0004.
+  [ledger] pushed to origin
+  pushed to origin
+[WorkerB] T-0004 success. commit=75495bec
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] claimed T-0005: Build things/artifacts registry for scripture objects — temple, tabernacle, altar, seer stone, iron rod, tree of life, etc.
+[WorkerB] running claude --model sonnet …
+You've hit your limit · resets 12am (America/Chicago)
+Completed T-0005.
+  [ledger] pushed to origin
+  pushed to origin
+[WorkerB] T-0005 error. commit=d1c36491
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] claimed T-0008: Source cleanup: fix Enuma Elish and remaining Ancient Texts that open on OCR noise rather than primary text
+[WorkerB] running claude --model sonnet …
+You've hit your limit · resets 12am (America/Chicago)
+Completed T-0008.
+  [ledger] pushed to origin
+  pushed to origin
+[WorkerB] T-0008 error. commit=
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] claimed T-0010: Wikipedia enrichment: places and things registries
+[WorkerB] running claude --model sonnet …
+You've hit your limit · resets 12am (America/Chicago)
+Completed T-0010.
+  [ledger] pushed to origin
+  pushed to origin
+[WorkerB] T-0010 error. commit=
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] claimed T-0012: Corpus analytics: compute entity mention counts, most cited scriptures, most cited topics per person
+[WorkerB] running claude --model sonnet …
+You've hit your limit · resets 12am (America/Chicago)
+Completed T-0012.
+  [ledger] pushed to origin
+  pushed to origin
+[WorkerB] T-0012 error. commit=
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] claimed T-0044: Topical guide: rank scripture refs by semantic centrality and surface top 10 canonical verses per topic
+[WorkerB] running claude --model sonnet …
+You've hit your limit · resets 12am (America/Chicago)
+Completed T-0044.
+  [ledger] pushed to origin
+  pushed to origin
+[WorkerB] T-0044 error. commit=
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] claimed T-0046: Beta tester: fix browser search regressions when live query ranking or source opening stops matching expected behavior
+[WorkerB] running claude --model sonnet …
+You've hit your limit · resets 12am (America/Chicago)
+Completed T-0046.
+  [ledger] pushed to origin
+  pushed to origin
+[WorkerB] T-0046 error. commit=
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] claimed T-0048: Audit Source Scout proposals T-0013–T-0042 for overlap with existing sources/ modules; produce deduplicated ingestion list before any source_ingestor runs begin
+[WorkerB] running claude --model sonnet …
+You've hit your limit · resets 12am (America/Chicago)
+Completed T-0048.
+  [ledger] pushed to origin
+  pushed to origin
+[WorkerB] T-0048 error. commit=
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] claimed T-0050: Expand General Conference coverage to pre-1971 conference reports; source completeness report flagged this gap explicitly
+[WorkerB] running claude --model sonnet …
+You've hit your limit · resets 12am (America/Chicago)
+Completed T-0050.
+  [ledger] pushed to origin
+  pushed to origin
+[WorkerB] T-0050 error. commit=
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] claimed T-0052: Expand Millennial Star coverage beyond 1859 — currently 162 issues; verify full archive availability and ingest remaining issues
+[WorkerB] running claude --model sonnet …
+You've hit your limit · resets 12am (America/Chicago)
+Completed T-0052.
+  [ledger] pushed to origin
+  pushed to origin
+[WorkerB] T-0052 error. commit=
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] claimed T-0054: Expand para_verse_map coverage: run verse discovery on all 147,984 source paragraphs to increase linkage from 1.7% to >30%
+[WorkerB] running claude --model sonnet …
+You've hit your limit · resets 5pm (America/Chicago)
+Completed T-0054.
+  [ledger] pushed to origin
+  pushed to origin
+[WorkerB] T-0054 error. commit=9cc55560

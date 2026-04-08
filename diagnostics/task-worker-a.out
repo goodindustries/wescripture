@@ -1,0 +1,218 @@
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] claimed T-0003: Annotate scripture verse HTML with entity spans so verse text shows person/place/thing chips in the discovery panel
+[WorkerA] running claude --model sonnet …
+Done. T-0003 complete:
+
+**What was done:**
+- Created `lds_pipeline/annotate_entity_spans.py` — a build-time pipeline script that pre-annotates chapter HTML files with entity data attributes
+- Ran it against all 1,534 non-notes chapters
+- **Results:** 1,410 chapters changed, 16,673 entity spans added across 40,493 verses
+
+**How it works:**
+1. **Step 1:** For each `span.w` in a verse, exact-matches the text content (lowercased) against scripture person/place/thing variants → adds `data-entity`, `data-place`, or `data-thing` attribute directly on the existing span
+2. **Step 2:** Walks plain text nodes not inside any `.w` or `.ent-link` span, finds multi-word entity name matches (greedy longest-first, word boundaries), and wraps them in `<span class="ent-link">`
+
+This mirrors the runtime `annotateChapterEntities()` JS function exactly, so the discovery panel chips will now populate from pre-annotated HTML. The JS will skip already-annotated spans (it checks `if (span.dataset.entity || ...) return;`).
+Completed T-0003.
+  [ledger] pushed to origin
+  pushed to origin
+[WorkerA] T-0003 success. commit=0be7d138
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] claimed T-0006: Deepen intra-canonical semantic links — Book of Mormon verses that echo Old Testament patterns should connect more directly than external sources
+[WorkerA] running claude --model sonnet …
+You've hit your limit · resets 12am (America/Chicago)
+Completed T-0006.
+  [ledger] pushed to origin
+  pushed to origin
+[WorkerA] T-0006 error. commit=
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] claimed T-0007: Add non-Bible word-study fallbacks for Book of Mormon, D&C, Pearl of Great Price so word clicks always find a relevant scripture cross-reference
+[WorkerA] running claude --model sonnet …
+You've hit your limit · resets 12am (America/Chicago)
+Completed T-0007.
+  [ledger] pushed to origin
+  pushed to origin
+[WorkerA] T-0007 error. commit=
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] claimed T-0009: Wikipedia enrichment: all scripture figures and priority LDS people
+[WorkerA] running claude --model sonnet …
+You've hit your limit · resets 12am (America/Chicago)
+Completed T-0009.
+  [ledger] pushed to origin
+  pushed to origin
+[WorkerA] T-0009 error. commit=
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] claimed T-0011: Cross-link graph: map person↔person, person↔place, person↔event relationships
+[WorkerA] running claude --model sonnet …
+You've hit your limit · resets 12am (America/Chicago)
+Completed T-0011.
+  [ledger] pushed to origin
+  pushed to origin
+[WorkerA] T-0011 error. commit=
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] claimed T-0043: Topical guide: add Wikipedia concept descriptions to all 49 topics (Faith, Repentance, Atonement, etc.)
+[WorkerA] running claude --model sonnet …
+You've hit your limit · resets 12am (America/Chicago)
+Completed T-0043.
+  [ledger] pushed to origin
+  pushed to origin
+[WorkerA] T-0043 error. commit=
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] claimed T-0045: Topical guide: link topics to key events and figures (Faith of Abraham, faith of Nephi, etc.)
+[WorkerA] running claude --model sonnet …
+You've hit your limit · resets 12am (America/Chicago)
+Completed T-0045.
+  [ledger] pushed to origin
+  pushed to origin
+[WorkerA] T-0045 error. commit=
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] claimed T-0047: Add born/died data to all 100 scripture figures — currently 0/100 have birth data despite Wikipedia enrichment running
+[WorkerA] running claude --model sonnet …
+You've hit your limit · resets 12am (America/Chicago)
+Completed T-0047.
+  [ledger] pushed to origin
+  pushed to origin
+[WorkerA] T-0047 error. commit=
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] claimed T-0049: Resolve git staging area: 500+ files staged for deletion — decide which belong in .gitignore (library/, lds_pipeline/cache/, assets/, diagnostics/) vs. which should be permanently removed; commit to clean state
+[WorkerA] running claude --model sonnet …
+You've hit your limit · resets 12am (America/Chicago)
+Completed T-0049.
+  [ledger] pushed to origin
+  pushed to origin
+[WorkerA] T-0049 error. commit=
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] claimed T-0051: Expand Joseph Smith Papers beyond seed corpus (currently 9 docs); JSP is a major primary source — identify available volumes and ingest
+[WorkerA] running claude --model sonnet …
+You've hit your limit · resets 12am (America/Chicago)
+Completed T-0051.
+  [ledger] pushed to origin
+  pushed to origin
+[WorkerA] T-0051 error. commit=
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] claimed T-0053: Expand scripture figures registry from 100 to full canon coverage (~400-600 figures)
+[WorkerA] running claude --model sonnet …
+You've hit your limit · resets 12am (America/Chicago)
+Completed T-0053.
+  [ledger] pushed to origin
+  pushed to origin
+[WorkerA] T-0053 error. commit=
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] claimed T-0055: Expand scripture figures seed list from 100 to 400+ figures: OT kings, BoM secondary figures, NT minor characters
+[WorkerA] running claude --model sonnet …
+You've hit your limit · resets 5pm (America/Chicago)
+Completed T-0055.
+  [ledger] pushed to origin
+  pushed to origin
+[WorkerA] T-0055 error. commit=93dac69f

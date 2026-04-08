@@ -13,7 +13,7 @@ import re
 from pathlib import Path
 from collections import defaultdict
 
-BASE_DIR = Path("/Users/reify/Classified/goodcapital_landing")
+BASE_DIR = Path("/Users/reify/Classified/wescripture")
 DONALDSON_DIR = BASE_DIR / "library" / "donaldson"
 ENTITIES_DIR = BASE_DIR / "library" / "entities"
 PEOPLE_INDEX_PATH = ENTITIES_DIR / "people_index.json"
@@ -33,8 +33,14 @@ THINGS_SEED = [
     {
         "id": "thing:urim_and_thummim",
         "name": "Urim and Thummim",
-        "variants": ["interpreters", "seer stone", "Nephite interpreters"],
+        "variants": ["interpreters", "Nephite interpreters", "Jaredite interpreters"],
         "wikipedia_title": "Urim and Thummim (Latter Day Saints)",
+    },
+    {
+        "id": "thing:seer_stone",
+        "name": "Seer stone",
+        "variants": ["seeing stone", "peep stone", "chocolate-colored stone"],
+        "wikipedia_title": "Seer stone (Latter Day Saints)",
     },
     {
         "id": "thing:gold_plates",
@@ -186,6 +192,63 @@ THINGS_SEED = [
         "name": "Incense",
         "variants": ["incense offering", "altar of incense", "sweet incense"],
         "wikipedia_title": None,
+    },
+    # LEHI'S VISION / BOOK OF MORMON SYMBOLS
+    {
+        "id": "thing:iron_rod",
+        "name": "Iron rod",
+        "variants": ["rod of iron", "word of God"],
+        "wikipedia_title": "Iron rod (scriptures)",
+    },
+    {
+        "id": "thing:tree_of_life",
+        "name": "Tree of life",
+        "variants": ["tree whose fruit was desirable", "fruit of the tree"],
+        "wikipedia_title": "Tree of life (Latter Day Saints)",
+    },
+    {
+        "id": "thing:great_and_spacious_building",
+        "name": "Great and spacious building",
+        "variants": ["large and spacious building", "spacious building"],
+        "wikipedia_title": None,
+    },
+    {
+        "id": "thing:river_of_water",
+        "name": "River of water",
+        "variants": ["filthy river", "depths of hell", "river of filthy water"],
+        "wikipedia_title": None,
+    },
+    # RESTORATION SITES
+    {
+        "id": "thing:sacred_grove",
+        "name": "Sacred Grove",
+        "variants": ["First Vision grove", "grove of trees"],
+        "wikipedia_title": "Sacred Grove (Latter Day Saints)",
+    },
+    # TEMPLE ORDINANCE OBJECTS
+    {
+        "id": "thing:holy_of_holies",
+        "name": "Holy of Holies",
+        "variants": ["most holy place", "inner sanctuary", "oracle"],
+        "wikipedia_title": "Holy of Holies",
+    },
+    {
+        "id": "thing:ephod",
+        "name": "Ephod",
+        "variants": ["priestly ephod", "linen ephod"],
+        "wikipedia_title": "Ephod",
+    },
+    {
+        "id": "thing:laver",
+        "name": "Laver",
+        "variants": ["brazen sea", "molten sea", "basin of water"],
+        "wikipedia_title": "Molten Sea",
+    },
+    {
+        "id": "thing:showbread",
+        "name": "Showbread",
+        "variants": ["shewbread", "bread of the presence", "table of showbread"],
+        "wikipedia_title": "Showbread",
     },
 ]
 

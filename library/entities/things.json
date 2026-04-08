@@ -4,8 +4,8 @@
     "name": "Urim and Thummim",
     "variants": [
       "interpreters",
-      "seer stone",
-      "Nephite interpreters"
+      "Nephite interpreters",
+      "Jaredite interpreters"
     ],
     "wikipedia_title": "Urim and Thummim (Latter Day Saints)",
     "excerpts": [
@@ -13,12 +13,6 @@
         "text": "Some interpreters say that because of the \"present necessity\" (Meaning persecutions or problems in the Church), Paul is recommending that people remain single at this time.",
         "source": "donaldson",
         "ref": "1 Corinthians 7:26",
-        "speaker": null
-      },
-      {
-        "text": "4:1.) Just a few months after the Church was organized, Hiram Page, one of the earliest members, was receiving revelations through a seer stone.",
-        "source": "donaldson",
-        "ref": "1 John 4:1",
         "speaker": null
       },
       {
@@ -131,6 +125,12 @@
         "source": "donaldson",
         "ref": "Abraham 3:1",
         "speaker": null
+      },
+      {
+        "text": "Yohai said: Abraham had a precious stone hung round his neck which brought immediate healing to any sick person who looked on it, and when Abraham our father departed from this world, the Holy One, blessed be He, suspended it from the orb of the sun\" (TB Baba Bathra 16b).3 Although the stone in question is said to have been used for healing purposes, it is interesting that it immediately follows…",
+        "source": "donaldson",
+        "ref": "Abraham 3:1",
+        "speaker": null
       }
     ],
     "related_people": [
@@ -170,7 +170,6 @@
     "related_places": [],
     "related_scriptures": [
       "1 Corinthians 7:26",
-      "1 John 4:1",
       "1 Nephi 16:10",
       "1 Nephi 16:39",
       "1 Nephi 2:11",
@@ -270,11 +269,64 @@
       "Ruth 4:22",
       "Zechariah 8:17"
     ],
-    "doc_ids": [],
-    "desc": "Instruments used for receiving revelation or translating languages in LDS belief",
-    "wikipedia_summary": "In the Latter Day Saint movement, the term Urim and Thummim refers to a category of instruments used for receiving revelation or translating languages. According to Latter Day Saint theology, the two stones found in the breastplate of Aaron in the Old Testament, the white stone referenced in the Book of Revelation in the New Testament, the two stones bound by silver bows into a set of spectacles (interpreters) that movement founder Joseph Smith said he found buried in the hill Cumorah with the golden plates, and the seer stone found while digging a well used to translate the Book of Mormon are",
-    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Joseph_Smith_receiving_golden_plates.jpg/330px-Joseph_Smith_receiving_golden_plates.jpg",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Urim_and_Thummim_(Latter_Day_Saints)"
+    "doc_ids": []
+  },
+  {
+    "id": "thing:seer_stone",
+    "name": "Seer stone",
+    "variants": [
+      "seeing stone",
+      "peep stone",
+      "chocolate-colored stone"
+    ],
+    "wikipedia_title": "Seer stone (Latter Day Saints)",
+    "excerpts": [
+      {
+        "text": "4:1.) Just a few months after the Church was organized, Hiram Page, one of the earliest members, was receiving revelations through a seer stone.",
+        "source": "donaldson",
+        "ref": "1 John 4:1",
+        "speaker": null
+      },
+      {
+        "text": "Is Gazelem the seer stone or the servant?",
+        "source": "gc",
+        "ref": null,
+        "speaker": null,
+        "attr": "Joseph Fielding Mc Conkie and Robert L. Millet, Doctrinal Commentary on the Book of Mormon, 4 vols., 3:, p.278"
+      },
+      {
+        "text": "The Prophet also had a seer stone which was separate and distinct from the Urim and Thummim, and which (speaking loosely) has been called by some a Urim and Thummim.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:bruce_r_mc_conkie",
+        "attr": "Bruce R. Mc Conkie, Mormon Doctrine, p. 818"
+      },
+      {
+        "text": "222-226.) “President Joseph Fielding Smith, with reference to the seer stone and the Urim and Thummim, has written: ‘We have been taught since the days of the Prophet that the Urim and Thummim were returned with the plates to the angel.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:bruce_r_mc_conkie",
+        "attr": "Bruce R. Mc Conkie, Mormon Doctrine, p. 818"
+      },
+      {
+        "text": "8:8)…President Joseph Fielding Smith, with reference to the seer stone and the Urim and Thummim, has written: ‘ We have been taught since the days of the Prophet that the Urim and Thummim were returned with the plates to the angel.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:bruce_r_mc_conkie",
+        "attr": "Bruce R. Mc Conkie, Mormon Doctrine, p. 818"
+      }
+    ],
+    "related_people": [
+      "person:bruce_r_mc_conkie"
+    ],
+    "related_places": [],
+    "related_scriptures": [
+      "1 John 4:1",
+      "Alma 37:23",
+      "Ether 3:24",
+      "Mosiah 8:13"
+    ],
+    "doc_ids": []
   },
   {
     "id": "thing:gold_plates",
@@ -677,10 +729,7 @@
       "Words Of Mormon 1:5",
       "Words Of Mormon 1:7"
     ],
-    "doc_ids": [],
-    "desc": "Metallic plates from which Joseph Smith allegedly translated the Book of Mormon",
-    "wikipedia_summary": "According to Latter Day Saint belief, the golden plates are the source from which Joseph Smith translated the Book of Mormon, a sacred text of the faith. Some accounts from people who reported handling the plates describe the plates as weighing from 30 to 60 pounds, gold in color, and composed of thin metallic pages engraved with hieroglyphics on both sides and bound with three D-shaped rings.",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Golden_plates"
+    "doc_ids": []
   },
   {
     "id": "thing:brass_plates",
@@ -1427,11 +1476,7 @@
       "Omni 1:15",
       "Words Of Mormon 1:13"
     ],
-    "doc_ids": [],
-    "desc": "Person in the Book of Mormon",
-    "wikipedia_summary": "Laban is a figure in the First Book of Nephi, near the start of the Book of Mormon, a scripture of the Latter Day Saint movement. Although he only makes a brief appearance in the Book of Mormon, his brass plates play an important role when they are taken by Laman and Nephi and are used by the Nephites.",
-    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Laban%2C_in_Nephi_and_Laban%2C_by_HH_Haag.png/330px-Laban%2C_in_Nephi_and_Laban%2C_by_HH_Haag.png",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Laban_(Book_of_Mormon)"
+    "doc_ids": []
   },
   {
     "id": "thing:breastplate",
@@ -1989,11 +2034,7 @@
       "Revelation 8:2",
       "Romans 15:12"
     ],
-    "doc_ids": [],
-    "desc": "Latter Day Saint ordinance (ritual)",
-    "wikipedia_summary": "Sealing is an ordinance (ritual) performed in Latter Day Saint temples by a person holding the sealing authority. The purpose of this ordinance is to seal familial relationships, making possible the existence of family relationships throughout eternity. Sealings are typically performed as marriages or as sealing of children to parents. They were performed prior to the death of Joseph Smith, and subsequently performed in the largest of the faiths that came from the movement, The Church of Jesus Christ of Latter-day Saints. LDS Church teachings place great importance on the specific authority re",
-    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Phil_and_Marlene.jpg",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Sealing_(Mormonism)"
+    "doc_ids": []
   },
   {
     "id": "thing:priesthood_keys",
@@ -2399,10 +2440,7 @@
       "Romans 9:4",
       "Zechariah 14:21"
     ],
-    "doc_ids": [],
-    "desc": "Authority in the Latter Day Saint movement",
-    "wikipedia_summary": "In the Latter Day Saint movement, priesthood is the power and authority of God given to humans, including the authority to perform ordinances and to act as a leader in the church. A group of priesthood holders is referred to as a quorum.",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Priesthood_(Latter_Day_Saints)"
+    "doc_ids": []
   },
   {
     "id": "thing:ark_of_the_covenant",
@@ -2766,11 +2804,7 @@
       "Romans 3:25",
       "Ruth 4:22"
     ],
-    "doc_ids": [],
-    "desc": "Chest containing the Ten Commandments",
-    "wikipedia_summary": "The Ark of the Covenant, also known as the Ark of the Testimony or the Ark of God, was a religious storage chest and relic held to be the most sacred object by the Israelites.",
-    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Tissot_Moses_and_Joshua_in_the_Tabernacle.jpg/330px-Tissot_Moses_and_Joshua_in_the_Tabernacle.jpg",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Ark_of_the_Covenant"
+    "doc_ids": []
   },
   {
     "id": "thing:tabernacle",
@@ -3231,11 +3265,7 @@
       "Titus 1:9",
       "Zechariah 4:3"
     ],
-    "doc_ids": [],
-    "desc": "Temporary dwelling used by Israelites in the biblical Book of Exodus",
-    "wikipedia_summary": "According to the Hebrew Bible, the tabernacle, also known as the Tent of the Congregation, was the portable earthly dwelling of God used by the Israelites from the Exodus until the conquest of Canaan. Moses was instructed at Mount Sinai to construct and transport the tabernacle with the Israelites on their journey through the wilderness and their subsequent conquest of the Promised Land. Based on 1 Kings 6:1, biblical literalists hold that after either 480 or 440 years, Solomon's Temple in Jerusalem superseded it as God's dwelling-place.",
-    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Stiftshuette_Modell_Timnapark.jpg/330px-Stiftshuette_Modell_Timnapark.jpg",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Tabernacle"
+    "doc_ids": []
   },
   {
     "id": "thing:temple",
@@ -4876,11 +4906,7 @@
       "Zephaniah 3:19",
       "Zephaniah 3:20"
     ],
-    "doc_ids": [],
-    "desc": "Former places of Israelite and Jewish worship",
-    "wikipedia_summary": "The Temple in Jerusalem, or alternatively the Holy Temple, refers to the two religious structures that served as the central places of worship for Israelites and Jews on the Temple Mount in the Old City of Jerusalem. According to the Hebrew Bible, the First Temple was built in the 10th century BCE, during the reign of Solomon over the United Kingdom of Israel. It stood until c. 587 BCE, when it was destroyed during the Babylonian siege of Jerusalem. The exact location of this temple on the temple mount is debatable.",
-    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Jerusalem_Modell_BW_2.JPG/330px-Jerusalem_Modell_BW_2.JPG",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Temple_in_Jerusalem"
+    "doc_ids": []
   },
   {
     "id": "thing:manna",
@@ -5128,11 +5154,7 @@
       "Revelation 2:7",
       "Revelation 6:5"
     ],
-    "doc_ids": [],
-    "desc": "Edible substance described in the Bible",
-    "wikipedia_summary": "Manna, sometimes or archaically spelled mana, is described in the Bible and the Quran as an edible substance that God bestowed upon the Israelites while they were wandering the desert during the 40-year period that followed the Exodus and preceded the conquest of Canaan.",
-    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Tissot_The_Gathering_of_the_Manna_%28color%29.jpg/330px-Tissot_The_Gathering_of_the_Manna_%28color%29.jpg",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Manna"
+    "doc_ids": []
   },
   {
     "id": "thing:rod_of_aaron",
@@ -5309,11 +5331,7 @@
       "Numbers 21:8",
       "Numbers 21:9"
     ],
-    "doc_ids": [],
-    "desc": "Staves carried by Moses's brother, Aaron, in the Torah",
-    "wikipedia_summary": "Aaron's rod refers to any of the walking sticks carried by Moses's brother, Aaron, in the Torah. The Bible tells how, along with Moses's rod, Aaron's rod was endowed with miraculous power during the Plagues of Egypt that preceded the Exodus. Later, his rod miraculously sprouted blossoms and almonds to symbolize God's choice of Aaron and his tribe for holy service.",
-    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Aarons_rod_budding_%285753119%29.jpg/330px-Aarons_rod_budding_%285753119%29.jpg",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Aaron's_rod"
+    "doc_ids": []
   },
   {
     "id": "thing:burning_bush",
@@ -5491,11 +5509,7 @@
       "Matthew 3:11",
       "Moses 1:26"
     ],
-    "doc_ids": [],
-    "desc": "Supernatural phenomenon described by Exodus 3:1–4:17",
-    "wikipedia_summary": "The burning bush refers to an event recorded in the Jewish Torah. It happened in the mid-15th century BCE or the 13th century BCE. It is described in the third chapter of the Book of Exodus as having occurred on Mount Horeb. According to the biblical account, the bush was on fire but was not consumed by the flames, hence the name. In the biblical and Quranic narrative, the burning bush is the location at which Moses was appointed by God to lead the Israelites out of Egypt and into Canaan.",
-    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Bourdon%2C_S%C3%A9bastien_-_Burning_bush.jpg/330px-Bourdon%2C_S%C3%A9bastien_-_Burning_bush.jpg",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Burning_bush"
+    "doc_ids": []
   },
   {
     "id": "thing:pillar_of_fire",
@@ -5690,7 +5704,7 @@
       "rod of Moses",
       "Moses' rod"
     ],
-    "wikipedia_title": "Staff of Moses",
+    "wikipedia_title": null,
     "excerpts": [
       {
         "text": "It is like the rod of Moses on which the serpent-bitten Israelites had only to look to be healed.",
@@ -5732,11 +5746,7 @@
       "Exodus 17:15",
       "Exodus 7:9"
     ],
-    "doc_ids": [],
-    "desc": "Walking stick used by Moses",
-    "wikipedia_summary": "The Staff of Moses, also known as the Rod of Moses or Staff of God, is mentioned in the Bible and Quran as a walking stick used by Moses. According to the Book of Exodus, the staff was used to produce water from a rock, was transformed into a snake and back, and was used at the parting of the Red Sea. Whether the staff of Moses was the same as the staff used by his brother Aaron has been debated by rabbinical scholars.",
-    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/VictoryOLord.JPG/330px-VictoryOLord.JPG",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Staff_of_Moses"
+    "doc_ids": []
   },
   {
     "id": "thing:stone_tablets",
@@ -6316,11 +6326,7 @@
       "Words Of Mormon 1:18",
       "Zechariah 14:21"
     ],
-    "doc_ids": [],
-    "desc": "Biblical principles relating to ethics and worship",
-    "wikipedia_summary": "The Ten Commandments, or the Decalogue, are religious and ethical directives, structured as a covenant document, that, according to the Hebrew Bible, were given by God to Moses. The text of the Ten Commandments appears in three markedly distinct versions in the Hebrew Bible: at Exodus 20:1–17, Deuteronomy 5:6–21, and the \"Ritual Decalogue\" of Exodus 34:11–26.",
-    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/0001_FL9694984.jpg/330px-0001_FL9694984.jpg",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Ten_Commandments"
+    "doc_ids": []
   },
   {
     "id": "thing:altar",
@@ -6786,11 +6792,7 @@
       "Revelation 8:5",
       "Zephaniah 3:20"
     ],
-    "doc_ids": [],
-    "desc": "Structure upon which offerings such as sacrifices are made for religious purposes",
-    "wikipedia_summary": "An altar is a table or platform for the presentation of religious offerings, for sacrifices, or for other ritualistic purposes. Altars are found at shrines, temples, churches, and other places of worship. They are used particularly in Christianity, Buddhism, Hinduism, and modern paganism. Many historical-medieval faiths also made use of them, including the Roman, Greek, and Norse religions.",
-    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/RD_alter.jpg/330px-RD_alter.jpg",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Altar"
+    "doc_ids": []
   },
   {
     "id": "thing:menorah",
@@ -6979,11 +6981,7 @@
       "Zechariah 3:10",
       "Zechariah 4:3"
     ],
-    "doc_ids": [],
-    "desc": "Ancient Hebrew lampstand",
-    "wikipedia_summary": "The Temple menorah is a seven-branched candelabrum that is described in the Hebrew Bible and later ancient sources as having been used in the Tabernacle and the Temple in Jerusalem.",
-    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Menorah_0307.jpg/330px-Menorah_0307.jpg",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Temple_menorah"
+    "doc_ids": []
   },
   {
     "id": "thing:veil_of_the_temple",
@@ -7354,7 +7352,7 @@
       "holy anointing oil",
       "oil of consecration"
     ],
-    "wikipedia_title": "Anointing oil",
+    "wikipedia_title": null,
     "excerpts": [
       {
         "text": "The root *QDS is used with reference to God (Exodus 15:11; Leviticus 20:3); God's temples (Exodus 38:24; 40:9; 2 Chronicles 29:5; Ezekiel 42:14); persons directly associated with temples, such as the priests (Leviticus 21:6) and the people of Israel (Jeremiah 2:3; Psalm 114:2); temple furniture (Exodus 30:29; 2 Chronicles 35:3); altars (Exodus 29:37; Deuteronomy 9:24); anointing oil (Exodus…",
@@ -7485,10 +7483,7 @@
       "Matthew 2:11",
       "Numbers 17:13"
     ],
-    "doc_ids": [],
-    "desc": "Oil used to sanctify, to set the anointed person or object apart",
-    "wikipedia_summary": "\nIn the ancient Israelite religion, the holy anointing oil formed an integral part of the ordination of the priesthood and the High Priest as well as in the consecration of the articles of the Tabernacle and subsequent temples in Jerusalem. The primary purpose of anointing with the holy anointing oil was to sanctify, to set the anointed person or object apart as qodesh, or \"holy\".",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Holy_anointing_oil"
+    "doc_ids": []
   },
   {
     "id": "thing:crown_of_thorns",
@@ -7716,11 +7711,7 @@
       "Proverbs 26:13",
       "Revelation 16:20"
     ],
-    "doc_ids": [],
-    "desc": "Christian relic",
-    "wikipedia_summary": "\nAccording to the New Testament, a woven crown of thorns was placed on the head of Jesus during the events leading up to his crucifixion. It was one of the instruments of the Passion, employed by Jesus' captors both to cause him pain and to mock his claim of authority. It is mentioned in the gospels of Matthew, Mark and John, and is often alluded to by the early Church Fathers, such as Clement of Alexandria, Origen and others, along with being referenced in the apocryphal Gospel of Peter.",
-    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Christ_Carrying_the_Cross_1580.jpg/330px-Christ_Carrying_the_Cross_1580.jpg",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Crown_of_thorns"
+    "doc_ids": []
   },
   {
     "id": "thing:baptism",
@@ -8625,11 +8616,7 @@
       "Zechariah 14:21",
       "Zechariah 9:12"
     ],
-    "doc_ids": [],
-    "desc": "Christian rite of initiation into the Church",
-    "wikipedia_summary": "Baptism is a Christian rite of initiation almost invariably with the use of water. It may be performed by sprinkling or pouring water on the head, or immersing in water, traditionally three times for each person of the Trinity. It is also called christening, although this is typically reserved for the baptism of infants. Baptism is regarded as a sacrament in most churches and an ordinance in others, with the synoptic gospels recounting that John the Baptist baptized Jesus.",
-    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Baptism_in_the_Jordan_River_140308-N-HB951-058.jpg/330px-Baptism_in_the_Jordan_River_140308-N-HB951-058.jpg",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Baptism"
+    "doc_ids": []
   },
   {
     "id": "thing:sacrament",
@@ -8993,11 +8980,7 @@
       "Romans 6:3",
       "Ruth 2:1"
     ],
-    "doc_ids": [],
-    "desc": "Ordinance",
-    "wikipedia_summary": "In the Church of Jesus Christ of Latter-day Saints, the Holy Sacrament of the Lord's Supper, most often simply referred to as the sacrament, is the ordinance in which participants eat bread and drink water in remembrance of the body and blood of Jesus Christ. Normally, the sacrament is provided every Sunday as part of the sacrament meeting, the primary weekly worship service, in each LDS Church congregation.",
-    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Bread_sacrament_tray_%2835790368395%29.jpg/330px-Bread_sacrament_tray_%2835790368395%29.jpg",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Sacrament_(LDS_Church)"
+    "doc_ids": []
   },
   {
     "id": "thing:incense",
@@ -9007,7 +8990,7 @@
       "altar of incense",
       "sweet incense"
     ],
-    "wikipedia_title": "Incense",
+    "wikipedia_title": null,
     "excerpts": [
       {
         "text": "Jeroboam stood by the altar to burn incense --It was at one of the annual festivals.",
@@ -9220,10 +9203,1996 @@
       "Revelation 19:3",
       "Revelation 1:20"
     ],
-    "doc_ids": [],
-    "desc": "Material that releases fragrant smoke when burnt",
-    "wikipedia_summary": "Incense is an aromatic biotic material that releases fragrant smoke when burnt. The term is used for either the material or the aroma. Incense is used for aesthetic reasons, religious worship, aromatherapy, meditation, and ceremonial reasons. It may also be used as a simple deodorant or insect repellent.",
-    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Incenselonghua.jpg/330px-Incenselonghua.jpg",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Incense"
+    "doc_ids": []
+  },
+  {
+    "id": "thing:iron_rod",
+    "name": "Iron rod",
+    "variants": [
+      "rod of iron",
+      "word of God"
+    ],
+    "wikipedia_title": "Iron rod (scriptures)",
+    "excerpts": [
+      {
+        "text": "The test of one's effectiveness as a representative of Jesus Christ is not how many he baptizes but how well he spreads the word of God so that all who will hear and obey may do so.",
+        "source": "gc",
+        "ref": null,
+        "speaker": null,
+        "attr": "Life and Teachings of Jesus and His Apostles, p. 282"
+      },
+      {
+        "text": "Several Bible prophets declared that there would be a \"falling away\" (2 Thessalonians 2:3) from the true gospel, a time when there would be a \"famine\" (Amos 8:11) regarding the word of God and \"divisions\" (1 Corinthians 11:18) caused as \"grievous wolves\" (Acts 20:29) would enter and disrupt the flock or the people of the Church.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:john_b_dickson",
+        "attr": "John B. Dickson, in Conference Report, Apr. 2000, 103; or Ensign, May 2000, 82"
+      },
+      {
+        "text": "Although faith is called the first principle of the Gospel of Christ, though it be in fact the foundation of all religion, yet even faith is preceded by sincerity of disposition and humility of soul, whereby the word of God may make an impression upon the heart (Rom.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:james_e_talmage",
+        "attr": "James E. Talmage, Jesus the Christ: A Study of the Messiah and His Mission According to Holy Scriptures Both Ancient and Modern, p.322"
+      },
+      {
+        "text": "He recorded, \"And his name is called The Word of God\" (Rev.",
+        "source": "gc",
+        "ref": null,
+        "speaker": null,
+        "attr": "Joseph Fielding Mc Conkie and Donald W. Parry, A Guide to Scriptural Symbols, p.170"
+      },
+      {
+        "text": "John it was also who saw the resurrected Christ in glory and was taught: \"His name is called The Word of God\" (Rev.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:bruce_r_mc_conkie",
+        "attr": "Bruce R. Mc Conkie, The Promised Messiah: The First Coming of Christ, p.200"
+      },
+      {
+        "text": "As we continue in his word, as we move forward in unsensational but steadfast fashion, as we come to live by every word of God, as we seek after and acquire the gifts and fruit of the Spirit, we come to know him who is the Truth: we come to know the Lord.",
+        "source": "donaldson",
+        "ref": "1 John 2:4",
+        "speaker": null
+      },
+      {
+        "text": "If ye called them gods, unto whom the word of God came, and the Scriptures cannot be broken.” This clearly proves to all Bible believers that in this world, in our imperfect state, being the children of God, we are destined, if we keep his commandments, to grow in intelligence until we finally become like God our Father.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:orson_pratt",
+        "attr": "Orson Pratt, Journal of Discourses, 26 vols. [London: Latter-day Saints' Book Depot, 1854-1886], 18: 292"
+      },
+      {
+        "text": "Next, Nephi beholds the rod of iron which his father had seen, \"which led to the fountain of living waters, or to the tree of life\" (1 Nephi 11:25).",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      },
+      {
+        "text": "In conjunction with the symbol of the living waters discussed above, Nephi also saw the rod of iron which his father had seen, which \"led to .",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      },
+      {
+        "text": "the tree of life,\" and which Nephi was given to know represented \"the word of God\" (1 Nephi 11:25).",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      },
+      {
+        "text": "In his vision, Nephi then received a prophetic interpretation of the symbol of the rod of iron, which included an account of Christ's mortal ministry (1 Nephi 11:28), his choosing of the twelve apostles (1 Nephi 11:29), and his healing of the sick (1 Nephi 11:31), culminating with the Savior's being \"lifted up upon the cross and slain for the sins of the world\" (1 Nephi 11:33).",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      },
+      {
+        "text": "As stated above, Nephi was informed that the rod of iron was \"the word of God\" (1 Nephi 11:25).",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      },
+      {
+        "text": "It is significant in this context that one of the name-titles for Jesus Christ is \"the Word of God\" (John 1:1, 14).",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      },
+      {
+        "text": "This fits with the interpretation given Nephi of \"the rod of iron,\" or \"word of God,\" as representing the ministry and death of Christ, for Christ was the Word of God incarnate.",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      },
+      {
+        "text": "Christ, as the Word of God, came to earth not to do his own will, but the will of his father (John 6:38), up to and including enduring the agony of the atonement and crucifixion (Matthew 26:39).",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      },
+      {
+        "text": "But on the other hand, if the gentiles on this land reject the word of God and conspire to overthrow liberty and the Constitution, then their doom is fixed, and they \"… shall be cut off from among my people who are of the covenant.\" (1 Nephi 14:6; 3 Nephi 21:11, 14, 21; D&C 84:114-115, 117.)",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:ezra_taft_benson",
+        "attr": "Ezra Taft Benson, in Conference Report, Oct. 1961, 70; or Improvement Era, Dec. 1961, 952-53"
+      },
+      {
+        "text": "After Lehi had described his vision of the tree of life, the rod of iron, and the large and spacious building, and after he had spoken to his sons concerning the destiny of the house of Israel, Laman and Lemuel indicated to Nephi that they could not understand Lehi's words concerning \"the natural branches of the olive tree, and also concerning the Gentiles.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:robert_l_millet",
+        "attr": "Robert L. Millet, The Power of the Word: Saving Doctrines from the Book of Mormon, p.283"
+      },
+      {
+        "text": "The word of God is direct and powerful.",
+        "source": "donaldson",
+        "ref": "1 Nephi 16:2",
+        "speaker": null
+      },
+      {
+        "text": "The rod of iron is the \"word of God\" (1 Nephi 15:23-24), as found in revealed scripture.",
+        "source": "donaldson",
+        "ref": "1 Nephi 16:28",
+        "speaker": null
+      },
+      {
+        "text": "Holding fast to the rod of iron is holding fast to him.",
+        "source": "donaldson",
+        "ref": "1 Nephi 16:28",
+        "speaker": null
+      }
+    ],
+    "related_people": [
+      "person:adam_clarke",
+      "person:aileen_h_clyde",
+      "person:anthon_h_lund_cr",
+      "person:b_h_roberts",
+      "person:barbara_b_smith",
+      "person:book_of_mormon_symposium_series",
+      "person:boyd_k_packer",
+      "person:brigham_young",
+      "person:bruce_c_hafen",
+      "person:bruce_r_mc_conkie",
+      "person:bryan_richards",
+      "person:c_f_keil_and_f_delitzsch",
+      "person:charles_a_callis",
+      "person:charles_didier",
+      "person:chauncey_c_riddle",
+      "person:clate_w_mask_jr",
+      "person:col_r_m_bryce_thomas",
+      "person:commentary_on_the_old_testament",
+      "person:d_kelly_ogden",
+      "person:dallin_h_oaks",
+      "person:daniel_h_ludlow",
+      "person:david_e_sorensen",
+      "person:david_w_patten",
+      "person:dawn_hall_anderson",
+      "person:dieter_f_uchtdorf",
+      "person:discourses_of_brigham_young",
+      "person:donald_w_parry",
+      "person:elaine_l_jack",
+      "person:ezra_taft_benson",
+      "person:f_enzio_busche",
+      "person:farms_review_of_books",
+      "person:francisco_j_vi_as",
+      "person:franklin_d_richards",
+      "person:george_q_cannon",
+      "person:george_reynolds_and_janne_m_sjodahl",
+      "person:gerald_hansen",
+      "person:gordon_b_hinckley",
+      "person:harold_b_lee",
+      "person:henry_b_eyring",
+      "person:hoyt_w_brewster",
+      "person:hugh_b_brown",
+      "person:hugh_nibley",
+      "person:james_e_faust",
+      "person:james_e_talmage",
+      "person:jay_e_jensen",
+      "person:jeffrey_r_holland",
+      "person:joe_cannon",
+      "person:joe_temple",
+      "person:john_b_dickson",
+      "person:john_bytheway",
+      "person:john_taylor",
+      "person:jonn_d_claybaugh",
+      "person:joseph_b_wirthlin",
+      "person:joseph_f_smith",
+      "person:joseph_fielding_smith",
+      "person:joseph_smith",
+      "person:l_tom_perry",
+      "person:m_russell_ballard",
+      "person:marion_g_romney",
+      "person:matthew_henry_s_commentary",
+      "person:mc_conkie",
+      "person:merrill_j_bateman",
+      "person:n_eldon_tanner",
+      "person:neal_a_maxwell",
+      "person:ogden_and_skinner",
+      "person:orson_f_whitney",
+      "person:orson_pratt",
+      "person:raymond_brown",
+      "person:richard_d_rust",
+      "person:richard_g_scott",
+      "person:robert_c_oaks",
+      "person:robert_d_hales",
+      "person:robert_l_backman",
+      "person:robert_l_millet",
+      "person:russell_m_nelson",
+      "person:spencer_j_condie",
+      "person:teachings",
+      "person:the_teachings_of_ezra_taft_benson",
+      "person:thomas_s_monson",
+      "person:victor_l_ludlow"
+    ],
+    "related_places": [],
+    "related_scriptures": [
+      "1 Corinthians 11:18",
+      "1 Corinthians 12:9",
+      "1 Corinthians 1:17",
+      "1 John 1:1",
+      "1 John 2:4",
+      "1 John 3:2",
+      "1 Nephi 10:22",
+      "1 Nephi 14:6",
+      "1 Nephi 15:7",
+      "1 Nephi 16:2",
+      "1 Nephi 16:28",
+      "1 Nephi 19:23",
+      "1 Nephi 20:22",
+      "1 Nephi 3:31",
+      "1 Nephi 3:7",
+      "1 Nephi 5:10",
+      "1 Nephi 7:22",
+      "1 Nephi 8:11",
+      "1 Nephi 8:19",
+      "1 Nephi 8:21",
+      "1 Nephi 8:24",
+      "1 Nephi 8:26",
+      "1 Nephi 8:28",
+      "1 Nephi 8:30",
+      "1 Nephi 8:33",
+      "1 Peter 1:11",
+      "1 Peter 1:24",
+      "1 Peter 5:14",
+      "1 Samuel 18:8",
+      "1 Thessalonians 1:5",
+      "1 Thessalonians 5:22",
+      "2 Chronicles 32:8",
+      "2 Corinthians 2:17",
+      "2 Corinthians 4:2",
+      "2 Nephi 11:4",
+      "2 Nephi 11:8",
+      "2 Nephi 25:18",
+      "2 Nephi 25:26",
+      "2 Nephi 27:35",
+      "2 Nephi 27:6",
+      "2 Nephi 28:11",
+      "2 Nephi 28:7",
+      "2 Nephi 2:30",
+      "2 Nephi 30:5",
+      "2 Nephi 31:3",
+      "2 Nephi 33:14",
+      "2 Nephi 3:6",
+      "2 Nephi 4:15",
+      "2 Nephi 4:19",
+      "2 Nephi 5:14",
+      "2 Nephi 9:40",
+      "2 Nephi 9:44",
+      "2 Thessalonians 2:3",
+      "3 Nephi 14:15",
+      "3 Nephi 15:23",
+      "3 Nephi 21:11",
+      "3 Nephi 21:29",
+      "3 Nephi 28:34",
+      "4 Nephi 1:46",
+      "Acts 11:27",
+      "Acts 13:44",
+      "Acts 18:6",
+      "Acts 21:8",
+      "Acts 27:22",
+      "Acts 4:20",
+      "Acts 6:10",
+      "Acts 6:15",
+      "Acts 6:4",
+      "Acts 8:15",
+      "Acts 8:31",
+      "Alma 11:1",
+      "Alma 13:21",
+      "Alma 15:16",
+      "Alma 16:21",
+      "Alma 17:1",
+      "Alma 17:12",
+      "Alma 17:3",
+      "Alma 17:6",
+      "Alma 17:8",
+      "Alma 18:39",
+      "Alma 1:15",
+      "Alma 1:26",
+      "Alma 1:3",
+      "Alma 20:26",
+      "Alma 21:5",
+      "Alma 22:13",
+      "Alma 26:13",
+      "Alma 29:17",
+      "Alma 2:2",
+      "Alma 30:18",
+      "Alma 30:32",
+      "Alma 30:44",
+      "Alma 30:60",
+      "Alma 31:18",
+      "Alma 31:5",
+      "Alma 32:27",
+      "Alma 32:28",
+      "Alma 32:37",
+      "Alma 32:39",
+      "Alma 32:40",
+      "Alma 32:41",
+      "Alma 37:33",
+      "Alma 38:9",
+      "Alma 41:5",
+      "Alma 42:30",
+      "Alma 42:5",
+      "Alma 43:54",
+      "Alma 44:24",
+      "Alma 45:24",
+      "Alma 48:25",
+      "Alma 4:19",
+      "Alma 51:37",
+      "Alma 5:1",
+      "Alma 5:11",
+      "Alma 5:58",
+      "Alma 60:32",
+      "Alma 61:21",
+      "Alma 63:17",
+      "Alma 6:5",
+      "Alma 8:15",
+      "Amos 8:11",
+      "Colossians 1:23",
+      "Colossians 1:25",
+      "Colossians 4:11",
+      "Colossians 4:16",
+      "Daniel 12:13",
+      "Enos 1:16",
+      "Ephesians 6:13",
+      "Ephesians 6:16",
+      "Ether 12:38",
+      "Ether 12:41",
+      "Ether 5:4",
+      "Ether 6:17",
+      "Ether 8:24",
+      "Exodus 29:19",
+      "Exodus 2:3",
+      "Ezekiel 34:11",
+      "Ezra 10:9",
+      "Galatians 1:8",
+      "Galatians 6:18",
+      "Genesis 38:30",
+      "Genesis 49:26",
+      "Genesis 50:24",
+      "Hebrews 12:12",
+      "Hebrews 12:6",
+      "Hebrews 1:8",
+      "Hebrews 2:18",
+      "Hebrews 3:8",
+      "Hebrews 4:12",
+      "Hebrews 6:20",
+      "Hebrews 6:4",
+      "Hebrews 6:6",
+      "Helaman 10:16",
+      "Helaman 10:4",
+      "Helaman 16:19",
+      "Helaman 3:21",
+      "Helaman 3:29",
+      "Helaman 3:30",
+      "Helaman 4:11",
+      "Helaman 5:4",
+      "Helaman 5:52",
+      "Helaman 6:41",
+      "Helaman 7:17",
+      "Isaiah 1:31",
+      "Isaiah 26:19",
+      "Isaiah 29:10",
+      "Isaiah 29:24",
+      "Isaiah 29:4",
+      "Isaiah 30:21",
+      "Jacob 1:15",
+      "Jacob 1:19",
+      "Jacob 2:35",
+      "Jacob 3:1",
+      "Jacob 3:2",
+      "Jacob 3:9",
+      "Jacob 4:13",
+      "Jacob 4:18",
+      "Jacob 5:59",
+      "Jacob 6:7",
+      "Jacob 7:15",
+      "James 1:25",
+      "James 2:22",
+      "James 4:4",
+      "Jarom 1:10",
+      "Jeremiah 31:12",
+      "Job 1:22",
+      "Job 27:6",
+      "Job 42:17",
+      "Joel 2:32",
+      "John 10:22",
+      "John 10:32",
+      "John 10:33",
+      "John 10:35",
+      "John 10:36",
+      "John 14:16",
+      "John 14:23",
+      "John 1:1",
+      "John 1:33",
+      "John 21:15",
+      "John 21:16",
+      "John 6:9",
+      "Jonah 2:2",
+      "Jonah 4:11",
+      "Joshua 1:8",
+      "Joshua 1:9",
+      "Joshua 5:15",
+      "Judges 3:15",
+      "Judges 3:16",
+      "Judges 3:26",
+      "Luke 10:30",
+      "Luke 10:34",
+      "Luke 16:31",
+      "Luke 19:9",
+      "Luke 1:40",
+      "Luke 1:80",
+      "Luke 2:46",
+      "Luke 8:10",
+      "Luke 8:5",
+      "Mark 12:17",
+      "Mark 4:3",
+      "Mark 7:22",
+      "Matthew 10:9",
+      "Matthew 12:6",
+      "Matthew 13:23",
+      "Matthew 13:46",
+      "Matthew 13:8",
+      "Matthew 21:24",
+      "Matthew 22:30",
+      "Matthew 28:20",
+      "Matthew 2:2",
+      "Matthew 3:17",
+      "Matthew 4:4",
+      "Matthew 6:9",
+      "Mormon 7:5",
+      "Mormon 8:33",
+      "Moroni 10:34",
+      "Moroni 10:4",
+      "Moroni 6:4",
+      "Moroni 6:5",
+      "Moroni 6:9",
+      "Moroni 9:4",
+      "Moroni 9:6",
+      "Moses 1:1",
+      "Moses 1:12",
+      "Moses 1:26",
+      "Moses 1:39",
+      "Moses 4:3",
+      "Moses 4:31",
+      "Mosiah 10:22",
+      "Mosiah 12:7",
+      "Mosiah 1:7",
+      "Mosiah 24:16",
+      "Mosiah 25:22",
+      "Mosiah 26:20",
+      "Mosiah 26:3",
+      "Mosiah 6:3",
+      "Numbers 12:2",
+      "Philippians 1:13",
+      "Proverbs 13:24",
+      "Psalms 119:105",
+      "Psalms 19:8",
+      "Psalms 1:5",
+      "Psalms 28:2",
+      "Psalms 2:9",
+      "Psalms 82:6",
+      "Psalms 8:5",
+      "Psalms 94:11",
+      "Revelation 12:5",
+      "Revelation 1:2",
+      "Revelation 1:6",
+      "Revelation 22:21",
+      "Revelation 2:12",
+      "Revelation 2:26",
+      "Revelation 2:28",
+      "Revelation 6:9",
+      "Romans 10:14",
+      "Romans 10:17",
+      "Romans 1:16",
+      "Romans 3:28",
+      "Romans 9:21",
+      "Ruth 1:1",
+      "Ruth 1:4",
+      "Words Of Mormon 1:11",
+      "Zechariah 1:6",
+      "Zechariah 4:6"
+    ],
+    "doc_ids": []
+  },
+  {
+    "id": "thing:tree_of_life",
+    "name": "Tree of life",
+    "variants": [
+      "tree whose fruit was desirable",
+      "fruit of the tree"
+    ],
+    "wikipedia_title": "Tree of life (Latter Day Saints)",
+    "excerpts": [
+      {
+        "text": "The continuity of the tree of life icon in Israelite temple society is evident when one considers the nature of the tabernacle menorah or seven-branched lampstand.",
+        "source": "gc",
+        "ref": null,
+        "speaker": null,
+        "attr": "Donald W. Parry in Donald W. Parry, ed., Temples of the Ancient World: Ritual and Symbolism, p.128-129"
+      },
+      {
+        "text": "Olive Tree represented the Tree of Life to many of the ancient Hebrews as well as the House of Israel.",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:12",
+        "speaker": null
+      },
+      {
+        "text": "The tree came to express the cosmos fully in itself, by embodying, in apparently static form, its 'force,' its life and its quality of periodic regeneration.9 In Judaism, we find that the menorah-pure and whole, perfect and unbroken-became the representation of the tree of life.10 In comparing the description of the menorah with that of the paschal lamb in Exodus 12:5-43, we find that the lamb is…",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      },
+      {
+        "text": "The earthly temple or tree of life may be seen as a copy or counterpart of a heavenly model.",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      },
+      {
+        "text": "In 1 Nephi 11:1-25, we find that Nephi desired to see the vision that his father Lehi had previously received of the tree of life.",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      },
+      {
+        "text": "Such is the interpretation of the tree of life given by the angel to Nephi.3 The interpretation having been given, the angel next quizzes Nephi as to whether he understands the meaning of the tree of life (1 Nephi 11:21).4 Nephi replies, \"Yea, it is the love of God, which sheddeth itself abroad in the hearts of the children of men\" (1 Nephi 11:22).5 The Baptism of Jesus Christ.",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      },
+      {
+        "text": "Next, Nephi beholds the rod of iron which his father had seen, \"which led to the fountain of living waters, or to the tree of life\" (1 Nephi 11:25).",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      },
+      {
+        "text": "The living waters flow from the base of the tree of life.",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      },
+      {
+        "text": "A basic interpretation of the living waters would be that they are the divine drink that goes along with the divine food (i.e., the fruit of the tree of life) to be given to those who reach the end of the strait and narrow path.",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      },
+      {
+        "text": "the tree of life,\" and which Nephi was given to know represented \"the word of God\" (1 Nephi 11:25).",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      },
+      {
+        "text": "He who does not believe in Christ and does not perceive that he is the first principle, the tree of life and is unable to show to God his tabernacle adorned with the loveliest fruit, how will he be able to rejoice?2 Clement of Alexandria added his testimony by saying that \"the Word blossomed and bore fruit, being 'made flesh' and gave it to those 'who had tasted of His graciousness.'\"3 The…",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      },
+      {
+        "text": "Christ is the tree of life.4 In latter-day scripture, we read in Alma 32:28-42 that as Alma taught about faith, he compared \"the word unto a seed.\" He continued that if the individual has the desire and will plant the \"true seed\" in his heart, \"it shall be a tree [a tree of life] springing up unto everlasting life\" (Alma 32:41).",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      },
+      {
+        "text": "He, like the branches of the tree of life which encompass the entire earth, protects and gives life to every living thing.",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      },
+      {
+        "text": "For the cosmic tree reflects not only the endless regeneration of the cosmos but also its undying centre.6 The Tree of Life Equated with the Temple Typology 1.",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      },
+      {
+        "text": "The tree of life is associated with the temple.",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      },
+      {
+        "text": "Traditionally, the tree of life in nearly every culture was either in the temple or took the place of the temple when the temple was absent.",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      },
+      {
+        "text": "Lehi described the fruit of the tree as \"desirable to make one happy,\" as sweet, and as \"white to exceed all the whiteness that I had ever seen\" (1 Nephi 8:10-11).",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      },
+      {
+        "text": "Just as the fruit, leaves, and sap of the tree of life have a curative value, so also has Christ healing powers.",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      },
+      {
+        "text": "In The Symposium of the Ten Virgins, Methodius states: But these things seduce the unwary who fail to realize that the tree of life which once grew in Paradise has now been made to bloom again for everyone in the Church, and it bears the fair and comely fruit of faith.",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      },
+      {
+        "text": "For the tree of life is the firstborn of all.",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      }
+    ],
+    "related_people": [
+      "person:aileen_h_clyde",
+      "person:boyd_k_packer",
+      "person:brandt_gardner",
+      "person:bruce_c_hafen",
+      "person:bruce_r_mc_conkie",
+      "person:c_wilfred_griggs",
+      "person:catherine_thomas_in_kent_p_jackson",
+      "person:d_todd_christofferson",
+      "person:dallin_h_oaks",
+      "person:delbert_l_stapley",
+      "person:donald_w_parry",
+      "person:ezra_taft_benson",
+      "person:harold_b_lee",
+      "person:howard_w_hunter",
+      "person:hugh_nibley",
+      "person:jacob_milgrom",
+      "person:jeanette_w_miller",
+      "person:jeffrey_r_holland",
+      "person:joe_cannon",
+      "person:john_l_fowles",
+      "person:john_taylor",
+      "person:jonn_d_claybaugh",
+      "person:joseph_fielding_mc_conkie",
+      "person:l_tom_perry",
+      "person:lance_b_wickman",
+      "person:lee_donaldson",
+      "person:louis_ginzberg",
+      "person:marion_g_romney",
+      "person:merrill_j_bateman",
+      "person:nahum_sarna",
+      "person:neal_a_maxwell",
+      "person:raymond_brown",
+      "person:richard_dilworth_rust",
+      "person:richard_g_scott",
+      "person:robert_l_millet",
+      "person:robert_norman",
+      "person:russell_m_nelson",
+      "person:spencer_j_condie",
+      "person:victor_l_ludlow"
+    ],
+    "related_places": [],
+    "related_scriptures": [
+      "1 Kings 7:49",
+      "1 Nephi 10:12",
+      "1 Nephi 10:22",
+      "1 Nephi 11:25",
+      "1 Nephi 11:36",
+      "1 Nephi 11:8",
+      "1 Nephi 12:1",
+      "1 Nephi 14:21",
+      "1 Nephi 14:30",
+      "1 Nephi 15:35",
+      "1 Nephi 15:7",
+      "1 Nephi 17:7",
+      "1 Nephi 2:2",
+      "1 Nephi 7:22",
+      "1 Nephi 8:10",
+      "1 Nephi 8:11",
+      "1 Nephi 8:12",
+      "1 Nephi 8:19",
+      "1 Nephi 8:21",
+      "1 Nephi 8:24",
+      "1 Nephi 8:28",
+      "1 Nephi 8:4",
+      "1 Nephi 8:6",
+      "1 Nephi 9:1",
+      "1 Nephi 9:6",
+      "1 Peter 2:24",
+      "2 Chronicles 34:13",
+      "2 Kings 22:20",
+      "2 Kings 2:11",
+      "2 Nephi 11:8",
+      "2 Nephi 1:15",
+      "2 Nephi 28:27",
+      "2 Nephi 2:15",
+      "2 Nephi 2:22",
+      "2 Nephi 4:35",
+      "3 Nephi 16:20",
+      "Acts 5:30",
+      "Alma 12:21",
+      "Alma 12:26",
+      "Alma 12:31",
+      "Alma 22:23",
+      "Alma 27:1",
+      "Alma 27:2",
+      "Alma 30:60",
+      "Alma 32:28",
+      "Alma 32:40",
+      "Alma 32:41",
+      "Alma 32:42",
+      "Alma 33:10",
+      "Alma 34:26",
+      "Alma 34:3",
+      "Alma 37:31",
+      "Alma 42:3",
+      "Alma 43:54",
+      "Alma 5:34",
+      "Alma 5:35",
+      "Alma 5:57",
+      "Alma 5:62",
+      "Enos 1:9",
+      "Esther 10:3",
+      "Ether 12:12",
+      "Exodus 18:27",
+      "Exodus 25:18",
+      "Exodus 25:31",
+      "Exodus 25:37",
+      "Exodus 34:13",
+      "Ezekiel 37:16",
+      "Ezekiel 46:24",
+      "Ezekiel 47:12",
+      "Ezekiel 47:7",
+      "Genesis 11:9",
+      "Genesis 1:26",
+      "Genesis 28:18",
+      "Genesis 2:9",
+      "Genesis 3:16",
+      "Genesis 3:24",
+      "Genesis 3:3",
+      "Helaman 4:24",
+      "Hosea 3:3",
+      "Isaiah 1:29",
+      "Isaiah 1:31",
+      "Isaiah 27:6",
+      "Jacob 4:18",
+      "Jacob 5:2",
+      "Jacob 5:3",
+      "James 1:13",
+      "James 4:4",
+      "Jeremiah 15:16",
+      "Jeremiah 23:5",
+      "Job 31:33",
+      "John 14:31",
+      "John 15:16",
+      "John 18:1",
+      "John 3:16",
+      "Luke 19:9",
+      "Luke 22:39",
+      "Luke 24:53",
+      "Luke 9:62",
+      "Matthew 12:36",
+      "Matthew 21:21",
+      "Moroni 7:47",
+      "Moses 3:9",
+      "Moses 4:17",
+      "Moses 4:27",
+      "Moses 4:31",
+      "Moses 4:6",
+      "Mosiah 12:3",
+      "Mosiah 18:10",
+      "Mosiah 1:7",
+      "Numbers 11:7",
+      "Numbers 18:26",
+      "Proverbs 13:24",
+      "Proverbs 15:1",
+      "Proverbs 15:4",
+      "Proverbs 1:20",
+      "Proverbs 3:13",
+      "Psalms 1:3",
+      "Revelation 14:20",
+      "Revelation 1:3",
+      "Revelation 21:9",
+      "Revelation 22:14",
+      "Revelation 22:19",
+      "Revelation 22:2",
+      "Revelation 22:21",
+      "Revelation 2:7",
+      "Romans 1:16",
+      "Ruth 1:7",
+      "Zechariah 4:3"
+    ],
+    "doc_ids": []
+  },
+  {
+    "id": "thing:great_and_spacious_building",
+    "name": "Great and spacious building",
+    "variants": [
+      "large and spacious building",
+      "spacious building"
+    ],
+    "wikipedia_title": null,
+    "excerpts": [
+      {
+        "text": "in a large and spacious building\" (1 Nephi 11:35).",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      },
+      {
+        "text": "Because they were gathered together in a \"large and spacious building,\" it may be that this multitude was an interpretation of the great and spacious building symbol of Lehi's dream.7 The angel of the Lord then gives Nephi two interpretations of the great and spacious building, one specific and one general.",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      },
+      {
+        "text": "The specific interpretation of the great and spacious building is \"the house of Israel [who] hath gathered together to fight against the twelve apostles of the Lamb\" (1 Nephi 11:35).",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      },
+      {
+        "text": "The general interpretation of the great and spacious building, on the other hand, is given when Nephi identifies it as \"the pride of the world\" (1 Nephi 11:36).8 In the first session of the April 1989 General Conference, President Ezra Taft Benson stated: It was through pride that Christ was crucified.",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      },
+      {
+        "text": "Next, Nephi sees the great and spacious building fall, \"and the fall thereof was exceedingly great\" (1 Nephi 11:36).",
+        "source": "donaldson",
+        "ref": "1 Nephi 10:22",
+        "speaker": null
+      },
+      {
+        "text": "Interpretation of the great and spacious building (v.",
+        "source": "donaldson",
+        "ref": "1 Nephi 11:35",
+        "speaker": null
+      },
+      {
+        "text": "Nephi testified: 'It came to pass that I saw and bear record, that the great and spacious building was the pride of the world; and it fell, and the fall thereof was exceedingly great.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:neal_a_maxwell",
+        "attr": "Neal A. Maxwell, Meek and Lowly, p. 54"
+      },
+      {
+        "text": "The depths of the filthy water represent the depths of hell, the mists of darkness represent the temptations of the devil, the large and spacious building represents the vain imaginations and pride of the world, and the great and terrible gulf represents the word of the justice of the Eternal God.",
+        "source": "donaldson",
+        "ref": "1 Nephi 12:16",
+        "speaker": null
+      },
+      {
+        "text": "It came because the Nephites had fallen prey to the temptations of the devil, they had become proud members of that great and spacious building, and they were about to fall headlong into the depths of hell.",
+        "source": "donaldson",
+        "ref": "1 Nephi 12:16",
+        "speaker": null
+      },
+      {
+        "text": "Some days it is as if we have been locked in a cubicle of a great and spacious building where the only thing on the TV is a never-ending soap opera entitled Vain Imaginations.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:jeffrey_r_holland",
+        "attr": "Jeffrey R. Holland, in Conference Report, Apr. 2002, 72; or Ensign, May 2002, 63"
+      },
+      {
+        "text": "After Lehi had described his vision of the tree of life, the rod of iron, and the large and spacious building, and after he had spoken to his sons concerning the destiny of the house of Israel, Laman and Lemuel indicated to Nephi that they could not understand Lehi's words concerning \"the natural branches of the olive tree, and also concerning the Gentiles.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:robert_l_millet",
+        "attr": "Robert L. Millet, The Power of the Word: Saving Doctrines from the Book of Mormon, p.283"
+      },
+      {
+        "text": "Let us bear the pointing fingers which, ironically, belong to those finally who, being bored, find the “great and spacious building” to be a stale and cramped third-class hotel (see 1 Nephi 8:31–33).",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:neal_a_maxwell",
+        "attr": "Neal A. Maxwell, in Conference Report, Oct. 2003, 108; or Ensign, Nov. 2003, 102"
+      },
+      {
+        "text": "\"A great and spacious building; and it stood as it were in the air, high above the earth.\" By now most of us have seen photographs of those wonderful ancient Arab houses …, \"ten-and twelve-story skyscrapers that … represent genuine survivals of ancient Babylonian architecture,\" with their windows beginning, for the sake of defense, twenty to fifty feet from the ground.",
+        "source": "donaldson",
+        "ref": "1 Nephi 7:22",
+        "speaker": null
+      },
+      {
+        "text": "While thus engaged, I beheld a spacious building standing opposite the valley which we were in, and it appeared to reach to the very heavens.",
+        "source": "donaldson",
+        "ref": "1 Nephi 7:22",
+        "speaker": null
+      },
+      {
+        "text": "After feasting in this manner a short time, I asked my guide what was the meaning of the spacious building which I saw.",
+        "source": "donaldson",
+        "ref": "1 Nephi 7:22",
+        "speaker": null
+      },
+      {
+        "text": "They succumbed to the mocking of finely dressed people who inhabited a great and spacious building across the river.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:merrill_j_bateman",
+        "attr": "Merrill J. Bateman, Heroes from the Book of Mormon, p. 19"
+      },
+      {
+        "text": "\"The fourth group in Lehi's vision felt their way towards the great and spacious building.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:merrill_j_bateman",
+        "attr": "Merrill J. Bateman, Heroes from the Book of Mormon, p. 19"
+      },
+      {
+        "text": "\"Lehi's vision contains many symbols, including the strait and narrow path, the rod of iron, the mist of darkness, the large and spacious building, the river of water, and the tree of life.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:merrill_j_bateman",
+        "attr": "Merrill J. Bateman, Heroes from the Book of Mormon, p. 19"
+      },
+      {
+        "text": "They made their way toward the great and spacious building and \"were drowned in the depths of the fountain; and many were lost .",
+        "source": "gc",
+        "ref": null,
+        "speaker": null,
+        "attr": "Douglas E. Brinley and Daniel K. Judd, Eternal Families"
+      },
+      {
+        "text": "\"Even though a person may have a testimony and want to do what is right, it is difficult not to be drawn to that great and spacious building.",
+        "source": "donaldson",
+        "ref": "1 Nephi 8:26",
+        "speaker": null
+      }
+    ],
+    "related_people": [
+      "person:dallin_h_oaks",
+      "person:jeffrey_r_holland",
+      "person:joe_cannon",
+      "person:merrill_j_bateman",
+      "person:neal_a_maxwell",
+      "person:richard_dilworth_rust",
+      "person:robert_l_millet",
+      "person:robert_s_wood",
+      "person:spencer_j_condie"
+    ],
+    "related_places": [],
+    "related_scriptures": [
+      "1 Nephi 10:22",
+      "1 Nephi 11:35",
+      "1 Nephi 11:36",
+      "1 Nephi 12:16",
+      "1 Nephi 12:18",
+      "1 Nephi 15:24",
+      "1 Nephi 15:7",
+      "1 Nephi 7:22",
+      "1 Nephi 8:21",
+      "1 Nephi 8:26",
+      "1 Nephi 8:27",
+      "1 Nephi 8:28",
+      "1 Nephi 8:31",
+      "1 Nephi 9:1",
+      "1 Thessalonians 5:20",
+      "Alma 43:54",
+      "Genesis 6:5",
+      "Helaman 16:25",
+      "Isaiah 55:9",
+      "James 4:4",
+      "Jude 1:18",
+      "Moroni 7:45",
+      "Mosiah 27:31",
+      "Revelation 17:14",
+      "Romans 1:16"
+    ],
+    "doc_ids": []
+  },
+  {
+    "id": "thing:river_of_water",
+    "name": "River of water",
+    "variants": [
+      "filthy river",
+      "depths of hell",
+      "river of filthy water"
+    ],
+    "wikipedia_title": null,
+    "excerpts": [
+      {
+        "text": "John was shown the close relationship between the celestial tree of life and the fountain of living waters, 'he shewed me a pure river of water of life, clear as crystal, proceeding out of the throne of God and of the Lamb.",
+        "source": "donaldson",
+        "ref": "1 Nephi 11:25",
+        "speaker": null
+      },
+      {
+        "text": "The river was filthy and is representative of the depths of hell.",
+        "source": "donaldson",
+        "ref": "1 Nephi 11:25",
+        "speaker": null
+      },
+      {
+        "text": "The depths of the filthy water represent the depths of hell, the mists of darkness represent the temptations of the devil, the large and spacious building represents the vain imaginations and pride of the world, and the great and terrible gulf represents the word of the justice of the Eternal God.",
+        "source": "donaldson",
+        "ref": "1 Nephi 12:16",
+        "speaker": null
+      },
+      {
+        "text": "It came because the Nephites had fallen prey to the temptations of the devil, they had become proud members of that great and spacious building, and they were about to fall headlong into the depths of hell.",
+        "source": "donaldson",
+        "ref": "1 Nephi 12:16",
+        "speaker": null
+      },
+      {
+        "text": "river of water A river of water is one that is filled with water.",
+        "source": "donaldson",
+        "ref": "1 Nephi 2:6",
+        "speaker": null
+      },
+      {
+        "text": "A spring and a river of water.",
+        "source": "donaldson",
+        "ref": "1 Nephi 7:22",
+        "speaker": null
+      },
+      {
+        "text": "This is the authentic \"scenery of a desert oasis, with its rivers springing miraculously from nowhere and emptying themselves again perhaps in the desert sands.\" The expression \"river of water\" is used only for small, local streams, and here Lehi is so near the source of the little stream that he can recognize people standing there.",
+        "source": "donaldson",
+        "ref": "1 Nephi 7:22",
+        "speaker": null
+      },
+      {
+        "text": "A river of water] Lehi next discovered a river of water that \"ran along, and ...",
+        "source": "gc",
+        "ref": null,
+        "speaker": null,
+        "attr": "Joseph Fielding Mc Conkie and Robert L. Millet, Doctrinal Commentary on the Book of Mormon, 4 vols., 1:, p.56"
+      },
+      {
+        "text": "\"Lehi's vision contains many symbols, including the strait and narrow path, the rod of iron, the mist of darkness, the large and spacious building, the river of water, and the tree of life.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:merrill_j_bateman",
+        "attr": "Merrill J. Bateman, Heroes from the Book of Mormon, p. 19"
+      },
+      {
+        "text": "The river of filthy water represents \"the depths of hell\" (1 Nephi 12:16;15:29).",
+        "source": "donaldson",
+        "ref": "1 Nephi 8:32",
+        "speaker": null
+      },
+      {
+        "text": "The king and others felt perfectly secure, feeling that with food and provisions, and a river of water running through the city, not anything could come in to disturb them, and yet on that wall were written the words which, when interpreted, read, \"You have been weighed in the balance and found wanting, and your kingdom will be divided among the Medes and the Persians.\" At that very hour \"my…",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:george_albert_smith",
+        "attr": "George Albert Smith, CR, Oct. 1948, p. 183"
+      },
+      {
+        "text": "There are numerous trees on both sides of the river of water: \"And by the river upon its banks grow every kind of tree for food.",
+        "source": "donaldson",
+        "ref": "Ezekiel 46:24",
+        "speaker": null
+      },
+      {
+        "text": "The influence of Ezekiel on John culminates in Revelation 22:1-3: \"And he shewed me a pure river of water of life, clear as crystal, proceeding out of the throne of God and of the Lamb.",
+        "source": "donaldson",
+        "ref": "Ezekiel 46:24",
+        "speaker": null
+      },
+      {
+        "text": "The passages are Joel 3:18; Ezekiel 47:1; Zechariah 14:8 (\"living waters shall go out from Jerusalem\"); and Revelation 22:1 (\"a pure river of water of life, clear as crystal, proceeding out of the throne of God and of the Lamb\").",
+        "source": "gc",
+        "ref": null,
+        "speaker": null,
+        "attr": "John M. Lundquist in Monte S. Nyman, ed., Isaiah and the Prophets: Inspired Voices from the Old Testament, p.52"
+      },
+      {
+        "text": "Remember, the first Psalm was the man who delights in the law of the Lord and meditates on it day and night, becomes like a tree planted by a river of water.",
+        "source": "donaldson",
+        "ref": "Isaiah 61:3",
+        "speaker": null
+      },
+      {
+        "text": "The river of water which flowed from the dragon's mouth may reflect Pharaoh's charge to drown the male children of the Israelites in the Nile (Ex.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:robert_mounce",
+        "attr": "Robert Mounce, \"The Book of Revelation,\" The New Intrnl. Commentary, p. 245"
+      },
+      {
+        "text": "9: 1-2, 11; 11: 7; 17: 8; 20: 1-3.) The bottomless pit is the depths of hell.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:bruce_r_mc_conkie",
+        "attr": "Bruce R. Mc Conkie, Mormon Doctrine, 2nd ed., pp. 101-102"
+      },
+      {
+        "text": "The city itself will be \"pure gold, like unto clear glass.\" Within the city is a \"pure river of water of life\" and \"the tree of life.\" The inhabitants of the city will dwell in the presence of God, \"and they shall see his face, .",
+        "source": "gc",
+        "ref": null,
+        "speaker": null,
+        "attr": "Donald W. Parry and Jay A. Parry, Understanding the Book of Revelation [Salt Lake City: Deseret Book Co., 1998], 289-290"
+      }
+    ],
+    "related_people": [
+      "person:bruce_r_mc_conkie",
+      "person:george_albert_smith",
+      "person:merrill_j_bateman",
+      "person:robert_mounce"
+    ],
+    "related_places": [],
+    "related_scriptures": [
+      "1 Nephi 11:25",
+      "1 Nephi 12:16",
+      "1 Nephi 2:6",
+      "1 Nephi 7:22",
+      "1 Nephi 8:13",
+      "1 Nephi 8:21",
+      "1 Nephi 8:32",
+      "Daniel 5:31",
+      "Ezekiel 46:24",
+      "Ezekiel 47:1",
+      "Isaiah 61:3",
+      "Revelation 12:14",
+      "Revelation 20:1",
+      "Revelation 21:9"
+    ],
+    "doc_ids": []
+  },
+  {
+    "id": "thing:sacred_grove",
+    "name": "Sacred Grove",
+    "variants": [
+      "First Vision grove",
+      "grove of trees"
+    ],
+    "wikipedia_title": "Sacred Grove (Latter Day Saints)",
+    "excerpts": [
+      {
+        "text": "He heard the angel of the Lord call and answered, \"Here am I.\" (Genesis 22:11.) On the morning of a beautiful spring day in a sacred grove at Palmyra, the boy Joseph Smith beheld a heavenly vision and the appearance of the Father and the Son.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:thomas_s_monson",
+        "attr": "Thomas S. Monson, in Conference Report, Oct. 1968, 81; or Improvement Era, Dec. 1968, 83"
+      },
+      {
+        "text": "One must receive a witness that Joseph Smith did, in fact, receive a visitation from God the Father and His Son Jesus Christ in the Sacred Grove and that through him, the Church of Jesus Christ was restored to the earth.",
+        "source": "donaldson",
+        "ref": "Abraham 5:21",
+        "speaker": null
+      },
+      {
+        "text": "It appears that his bodily functions were suspended, similar to the experience of Moses on Mount Sinai, Joseph Smith in the Sacred Grove, and so forth.",
+        "source": "donaldson",
+        "ref": "Acts 10:9",
+        "speaker": null
+      },
+      {
+        "text": "Joseph Smith did not come out of the Sacred Grove knowing all that was necessary for his salvation.",
+        "source": "gc",
+        "ref": null,
+        "speaker": null,
+        "attr": "Joseph Fielding Mc Conkie and Robert L. Millet, Doctrinal Commentary on the Book of Mormon, 4 vols., 3:, p.234"
+      },
+      {
+        "text": "George Widengren suggests there is a \"connection between water and tree, between temple basin and sacred grove, which clearly reflects the Water of Life and Tree of Life in paradise [or Garden of Eden].\" In Genesis 2:9 we learn that from the ground of the Garden of Eden \"made the Lord God to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of…",
+        "source": "donaldson",
+        "ref": "Ezekiel 46:24",
+        "speaker": null
+      },
+      {
+        "text": "According to Hugh Nibley, \"at every hierocentric shrine stood a mountain or artificial mound and a lake or spring from which four streams flowed out to bring the lifegiving waters to the four regions of the earth.\" Geo Widengren connects the water, tree, temple basin, and a sacred grove.",
+        "source": "gc",
+        "ref": null,
+        "speaker": null,
+        "attr": "John M. Lundquist in Donald W. Parry, ed., Temples of the Ancient World: Ritual and Symbolism, p.88-89"
+      },
+      {
+        "text": "I suspect that when Joseph Smith went into the grove of trees, this is the same thing that happened to him.",
+        "source": "donaldson",
+        "ref": "Genesis 14:24",
+        "speaker": null
+      },
+      {
+        "text": "He heard the angel of the Lord call and answered, \"Here am I.\" (Genesis 22:11.) On the morning of a beautiful spring day in a sacred grove at Palmyra, the boy Joseph Smith beheld a heavenly vision and the appearance of the Father and the Son.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:thomas_s_monson",
+        "attr": "Thomas S. Monson, in Conference Report, Oct. 1968, 81; or Improvement Era, Dec. 1968, 83"
+      },
+      {
+        "text": "Such was the nature of the revelation Joseph Smith had that led him to the Sacred Grove.",
+        "source": "gc",
+        "ref": null,
+        "speaker": null,
+        "attr": "Joseph Fielding Mc Conkie and Robert L. Millet, Doctrinal Commentary on the Book of Mormon, 4 vols., 3:, p.399"
+      },
+      {
+        "text": "In a symbolic sense, all who would desire to number themselves among the children of God find it necessary to leave the refinements of the world and find refuge in the simplicity of that which God created-be it a mountain top or a sacred grove.",
+        "source": "gc",
+        "ref": null,
+        "speaker": null,
+        "attr": "Joseph Fielding Mc Conkie and Robert L. Millet, Doctrinal Commentary on the Book of Mormon, 4 vols., 2:, p.115"
+      }
+    ],
+    "related_people": [
+      "person:thomas_s_monson"
+    ],
+    "related_places": [],
+    "related_scriptures": [
+      "1 Samuel 3:4",
+      "Abraham 5:21",
+      "Acts 10:9",
+      "Alma 32:26",
+      "Ezekiel 46:24",
+      "Ezekiel 47:1",
+      "Genesis 14:24",
+      "Genesis 22:11",
+      "Helaman 13:3",
+      "Omni 1:13"
+    ],
+    "doc_ids": []
+  },
+  {
+    "id": "thing:holy_of_holies",
+    "name": "Holy of Holies",
+    "variants": [
+      "most holy place",
+      "inner sanctuary",
+      "oracle"
+    ],
+    "wikipedia_title": "Holy of Holies",
+    "excerpts": [
+      {
+        "text": "\"One aspect of the Advocate's office was foreshadowed by the entrance of the High Priest into the Holy of Holies on the Day of Atonement (Heb 9:11f.,24; 7:25).",
+        "source": "donaldson",
+        "ref": "1 John 2:1",
+        "speaker": null
+      },
+      {
+        "text": "An oracle of Ahijah the Shilonite contains a simile which gives the impression of having originated in a symbolic action (1 Kgs.",
+        "source": "donaldson",
+        "ref": "1 Kings 14:10",
+        "speaker": null
+      },
+      {
+        "text": "The dimensions of the Holy of Holies, the Holy Place, and the Porch, were in the Temple exactly double those of the corresponding parts in the Tabernacle.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:james_talmage",
+        "attr": "James Talmage, House of the Lord, 6"
+      },
+      {
+        "text": "3:14); as decorating the base whereon the molten sea rested (1 Kings 7:23-29); and as placed in the holy of holies of that magnificent temple (1 Kings 6:23-30; 8:6-7; 2 Chron.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:bruce_r_mc_conkie",
+        "attr": "Bruce R. Mc Conkie, Mormon Doctrine, 2d ed., p.125"
+      },
+      {
+        "text": "The side chambers of the temple, the importance of which should not be overlooked in that they represent more than twice as much floor space as the temple proper, flank only the hekal (\"main room,\" \"nave,\" etc.) and its subdivision, the debir (\"holy of holies,\" \"inner sanctuary,\" etc.).",
+        "source": "donaldson",
+        "ref": "1 Kings 7:21",
+        "speaker": null
+      },
+      {
+        "text": "In so doing, Nephi utilizes one of his own cardinal principles of scriptural interpretation, that of likening the scriptures and making application of one oracle to separate but related events.",
+        "source": "gc",
+        "ref": null,
+        "speaker": null,
+        "attr": "Joseph Fielding Mc Conkie and Robert L. Millet, Doctrinal Commentary on the Book of Mormon, 4 vols., 1:, p.301"
+      },
+      {
+        "text": "Perhaps such speculations are built on too flimsy a foundation of facts; at all events we should suppress the temptation to suggest that the oracle and the petitions may have been the work of a prophet or his amanuensis fleeing Jerusalem\" (cited in Berrett, 198, p.",
+        "source": "donaldson",
+        "ref": "1 Nephi 3:27",
+        "speaker": null
+      },
+      {
+        "text": "Psalms 110 is an enigmatic text, but it seems to describe the birth of an angel priest in the holy of holies of the temple, which represented heaven.",
+        "source": "donaldson",
+        "ref": "1 Nephi 8:11",
+        "speaker": null
+      },
+      {
+        "text": "The Septuagint version is preferable; which, by a slight variation of the text, reads, \"the ephod\"; that is, the priestly cape, which the high priest put on when consulting the oracle.",
+        "source": "gc",
+        "ref": null,
+        "speaker": null,
+        "attr": "Jamieson, Fausset, Brown, Commentary Critical and Explanatory on the Whole Bible"
+      },
+      {
+        "text": "Its upper surface or lid, the mercy-seat, was surrounded with a rim of gold; and on each of the two sides were two gold rings, in which were placed two gold-covered poles by which the ark could be carried #Nu 7:9 10:21 4:5,19,20 #1Ki 8:3,6 Over the ark, at the two extremities, were two cherubim, with their faces turned toward each other #Nu 7:89 #Le 16:2 Their outspread wings over the top of the…",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:online_bible",
+        "attr": "Online Bible"
+      },
+      {
+        "text": "\"beaten small\" #Ex 30:34-36 That which was not thus prepared was called \"strange incense\" #Ex 30:9 It was offered along with every meat-offering; and besides was daily offered on the golden altar in the holy place, and on the great day of atonement was burnt by the high priest in the holy of holies #Ex 30:7,8 It was the symbol of prayer #Ps 141:1,2 Re 5:8 8:3,4",
+        "source": "donaldson",
+        "ref": "2 Chronicles 29:11",
+        "speaker": null
+      },
+      {
+        "text": "Finally, on the Day of Atonement the blood was sprinkled within the Most Holy Place itself.",
+        "source": "donaldson",
+        "ref": "2 Chronicles 29:23",
+        "speaker": null
+      },
+      {
+        "text": "According to the importance of the sin-offering, the blood was so applied either to the four horns of the altar of burnt-offering, or else it was brought into the Holy Place itself, and sprinkled first seven times towards the veil of the Most Holy Place (Lev 4:6,17), and then on the four",
+        "source": "donaldson",
+        "ref": "2 Chronicles 29:23",
+        "speaker": null
+      },
+      {
+        "text": "The ark of the covenant had been placed in the holy of holies when Solomon's temple was completed (1 Kgs.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:daniel_h_ludlow",
+        "attr": "Daniel H. Ludlow, A Companion to Your Study of the Old Testament, p.251"
+      },
+      {
+        "text": "Now in the pattern of temple symbolism, the six days of creation corresponded to the six stages by which Moses erected the tabernacle: thus Day One corresponded to the holy of holies, the second day to the veil of the tabernacle, the third day to the table for the shewbread and so forth.",
+        "source": "donaldson",
+        "ref": "2 Chronicles 33:25",
+        "speaker": null
+      },
+      {
+        "text": "Whatever we read about Day One will have been a secret of the holy of holies, accessible only to the high priests.",
+        "source": "donaldson",
+        "ref": "2 Chronicles 33:25",
+        "speaker": null
+      },
+      {
+        "text": "The Book of Jubilees, however, another text found among the Dead Sea Scrolls and preserved by the ancient church in Ethiopia, gives a fuller account of Day One, and thus of the holy of holies.",
+        "source": "donaldson",
+        "ref": "2 Chronicles 33:25",
+        "speaker": null
+      },
+      {
+        "text": "It comes as no surprise, though, that the angels were located in the holy of holies, which is where Isaiah saw the heavenly host.",
+        "source": "donaldson",
+        "ref": "2 Chronicles 33:25",
+        "speaker": null
+      },
+      {
+        "text": "Deuteronomy does, however, warn against the secret things, presumably the knowledge of the holy of holies.",
+        "source": "donaldson",
+        "ref": "2 Chronicles 33:25",
+        "speaker": null
+      },
+      {
+        "text": "The affairs of the holy of holies were the exclusive preserve of the high priests.",
+        "source": "donaldson",
+        "ref": "2 Chronicles 33:25",
+        "speaker": null
+      }
+    ],
+    "related_people": [
+      "person:bruce_r_mc_conkie",
+      "person:bryan_richards",
+      "person:daniel_h_ludlow",
+      "person:doctrinal_new_testament_commentary",
+      "person:donald_w_parry",
+      "person:g_b_caird",
+      "person:hoyt_w_brewster",
+      "person:jacob_milgrom",
+      "person:james_talmage",
+      "person:john_w_welch",
+      "person:joseph_fielding_mc_conkie",
+      "person:monte_s_nyman",
+      "person:nahum_sarna",
+      "person:ogden_and_skinner",
+      "person:online_bible",
+      "person:richard_d_draper",
+      "person:robert_jamieson",
+      "person:victor_l_ludlow"
+    ],
+    "related_places": [],
+    "related_scriptures": [
+      "1 John 2:1",
+      "1 Kings 14:10",
+      "1 Kings 6:1",
+      "1 Kings 6:30",
+      "1 Kings 7:21",
+      "1 Nephi 22:15",
+      "1 Nephi 3:27",
+      "1 Nephi 8:11",
+      "1 Samuel 14:18",
+      "1 Samuel 3:3",
+      "2 Chronicles 29:11",
+      "2 Chronicles 29:23",
+      "2 Chronicles 33:10",
+      "2 Chronicles 33:25",
+      "2 Kings 21:26",
+      "2 Kings 22:20",
+      "2 Nephi 14:5",
+      "2 Nephi 15:30",
+      "3 Nephi 14:24",
+      "3 Nephi 16:15",
+      "3 Nephi 20:16",
+      "Acts 21:1",
+      "Acts 27:9",
+      "Alma 37:4",
+      "Daniel 6:10",
+      "Ephesians 2:14",
+      "Exodus 18:27",
+      "Exodus 19:12",
+      "Exodus 19:25",
+      "Exodus 20:1",
+      "Exodus 24:18",
+      "Exodus 25:18",
+      "Exodus 25:3",
+      "Exodus 25:37",
+      "Exodus 25:8",
+      "Exodus 26:1",
+      "Exodus 26:31",
+      "Exodus 40:38",
+      "Exodus 6:6",
+      "Ezekiel 39:29",
+      "Ezekiel 41:4",
+      "Ezekiel 47:1",
+      "Ezra 2:63",
+      "Genesis 23:20",
+      "Genesis 24:15",
+      "Genesis 27:28",
+      "Genesis 29:15",
+      "Genesis 36:1",
+      "Genesis 49:18",
+      "Habakkuk 1:1",
+      "Hebrews 10:19",
+      "Hebrews 3:1",
+      "Hebrews 5:7",
+      "Hebrews 6:13",
+      "Hebrews 6:19",
+      "Hebrews 6:4",
+      "Hebrews 7:27",
+      "Hebrews 8:13",
+      "Hebrews 9:12",
+      "Hebrews 9:2",
+      "Hebrews 9:3",
+      "Hebrews 9:5",
+      "Hebrews 9:7",
+      "Hebrews 9:8",
+      "Helaman 12:26",
+      "Isaiah 37:36",
+      "Isaiah 4:5",
+      "Isaiah 5:30",
+      "Isaiah 6:1",
+      "Jacob 2:2",
+      "Jacob 4:17",
+      "Jacob 4:18",
+      "Jeremiah 22:30",
+      "John 16:33",
+      "John 20:12",
+      "John 6:13",
+      "Joshua 15:15",
+      "Joshua 18:1",
+      "Joshua 3:3",
+      "Judges 3:26",
+      "Leviticus 16:1",
+      "Leviticus 16:4",
+      "Luke 1:9",
+      "Luke 23:45",
+      "Mark 15:38",
+      "Mark 1:10",
+      "Matthew 24:3",
+      "Matthew 27:51",
+      "Matthew 28:2",
+      "Matthew 2:11",
+      "Mosiah 23:13",
+      "Mosiah 3:15",
+      "Mosiah 4:7",
+      "Nehemiah 7:65",
+      "Numbers 1:1",
+      "Numbers 22:2",
+      "Numbers 22:20",
+      "Numbers 23:25",
+      "Numbers 23:7",
+      "Numbers 24:15",
+      "Numbers 24:20",
+      "Numbers 24:21",
+      "Numbers 24:23",
+      "Numbers 24:7",
+      "Numbers 26:1",
+      "Numbers 26:65",
+      "Psalms 24:6",
+      "Psalms 28:2",
+      "Revelation 11:1",
+      "Revelation 11:19",
+      "Revelation 15:5",
+      "Revelation 16:16",
+      "Revelation 1:10",
+      "Revelation 1:20",
+      "Revelation 21:22",
+      "Revelation 3:22",
+      "Revelation 4:6",
+      "Revelation 6:1"
+    ],
+    "doc_ids": []
+  },
+  {
+    "id": "thing:ephod",
+    "name": "Ephod",
+    "variants": [
+      "priestly ephod",
+      "linen ephod"
+    ],
+    "wikipedia_title": "Ephod",
+    "excerpts": [
+      {
+        "text": "The Septuagint version is preferable; which, by a slight variation of the text, reads, \"the ephod\"; that is, the priestly cape, which the high priest put on when consulting the oracle.",
+        "source": "gc",
+        "ref": null,
+        "speaker": null,
+        "attr": "Jamieson, Fausset, Brown, Commentary Critical and Explanatory on the Whole Bible"
+      },
+      {
+        "text": "The priest, invested with the ephod, prayed with raised and extended hands.",
+        "source": "gc",
+        "ref": null,
+        "speaker": null,
+        "attr": "Jamieson, Fausset, Brown, Commentary Critical and Explanatory on the Whole Bible"
+      },
+      {
+        "text": "At Nob, the priests had the hallowed bread, or shewbread (BD, \"Shewbread\"), an ephod (part of the high priest's garments), and Goliath's sword, which was apparently preserved there as a memento of David's earlier triumph in the name of the Lord.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:ellis_t_rasmussen",
+        "attr": "Ellis T. Rasmussen, A Latter-day Saint Commentary on the Old Testament, 247"
+      },
+      {
+        "text": "At Nob, the priests had the hallowed bread, or shewbread (BD, \"Shewbread\"), an ephod (part of the high priest's garments), and Goliath's sword, which was apparently preserved there as a memento of David's earlier triumph in the name of the Lord.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:ellis_t_rasmussen",
+        "attr": "Ellis T. Rasmussen, A Latter-day Saint Commentary on the Old Testament [Salt Lake City: Deseret, 1993], 247"
+      },
+      {
+        "text": "Hence God was consulted before the troops went into battle: In the period of the early monarchy, \"Yahweh was consulted (Judges 20:23, 28; 1 Samuel 14:37; 23:2, 4) by means of the ephod and sacred lots (1 Samuel 23:9-10; 30:7-8)\" through a priestly function, while in the years around the time of Lehi, God's will in this regard was \"conveyed through the prophet (Deuteronomy 18:15-19).\" God himself…",
+        "source": "gc",
+        "ref": null,
+        "speaker": null,
+        "attr": "John W. Welch in Stephen D. Ricks and William J. Hamblin, eds., Warfare in the Book of Mormon, p.72"
+      },
+      {
+        "text": "David also acted as a priest, and could obtain knowledge or revelation from God also, for when Saul was rejected, and sought David's life, David called for the ephod, used by the priests: see Exodus 28.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:john_taylor",
+        "attr": "John Taylor, The Government of God, p.62-63"
+      },
+      {
+        "text": "\"And David said to Abiathar the priest, bring hither the ephod.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:john_taylor",
+        "attr": "John Taylor, The Government of God, p.62-63"
+      },
+      {
+        "text": "King David built an altar and offered sacrifices (1 Chronicles 21:26; 2 Samuel 24:25), wore a linen ephod (1 Chronicles 15:27; 2 Samuel 6:14), and participated with Samuel in the ordinations of the Levite porters (1 Chronicles 9:22).",
+        "source": "gc",
+        "ref": null,
+        "speaker": null,
+        "attr": "Donald W. Parry in Stephen D. Ricks and John W. Welch, eds., The Allegory of the Olive Tree: The Olive, the Bible, and Jacob 5, p.267"
+      },
+      {
+        "text": "â€¢(2 Kings 1:8) \"a girdle of leather about his loins\" â€¢(Matthew 3:4) \"a leathern girdle about his loins\" â€¢(Mark 1:6) \"a girdle of skin about his loins\" It will not escape the reader's attention that the Old Testament passage refers to the prophet Elijah, who played a central role in the restoration of Latter-day Saint temple worship.16 The other two New Testament passages refer to John the…",
+        "source": "donaldson",
+        "ref": "3 Nephi 3:26",
+        "speaker": null
+      },
+      {
+        "text": "Some scholars believe that in some instances this item of apparel was \"a kind of leather apron.\"19 The Ephod in Ancient Israel The Israelite priests were commanded by the Lord to wear divinely revealed items of ritual attire when they ministered before him in the tabernacle and temples.20 Among the items to be worn was a curious piece of clothing called the ephod, a Hebrew word left untranslated…",
+        "source": "donaldson",
+        "ref": "3 Nephi 3:26",
+        "speaker": null
+      },
+      {
+        "text": "Over the centuries divergent interpretations have been given to this piece of apparel, but I wish to draw the reader's attention to the footnoting system of the LDS edition of the King James Bible, which very distinctly identifies the ephod as \"a special apron.\"21 This view finds support in a growing number of scholarly writings22 and, indeed, some Bible translations have even incorporated the…",
+        "source": "donaldson",
+        "ref": "3 Nephi 3:26",
+        "speaker": null
+      },
+      {
+        "text": "According to these commentators this priestly apron covered only the lower front part of the body,24 \"extending from the loins to the thighs,\"25 and was secured by the priest at his waist by tying together the ends of an attached white linen belt behind his back.26 The main body of this apron was also made of fine white linen27, and the high priest's apron was embroidered in some manner with…",
+        "source": "donaldson",
+        "ref": "3 Nephi 3:26",
+        "speaker": null
+      },
+      {
+        "text": "Haran has noted that the method of embroidery used on this apron was considered the most sacred kind (hîšeb), a method which involved the use of figures or designs, although it is not known exactly what type of designs were used.29 In accordance with our description, figure 1 illustrates what some scholars consider to be the prototypical form of ancient Israel's ephod.",
+        "source": "donaldson",
+        "ref": "3 Nephi 3:26",
+        "speaker": null
+      },
+      {
+        "text": "It is possible that because of its distinctive character, and the prominence given to it in the biblical text, the ephod was the most important piece of ritual clothing worn by the temple priests.30 But the priests were not the only ones in Israel to wear a ritual apron.",
+        "source": "donaldson",
+        "ref": "3 Nephi 3:26",
+        "speaker": null
+      },
+      {
+        "text": "Foote, \"The Ephod,\" Journal of Biblical Literature 21 (1902): 12-13.",
+        "source": "donaldson",
+        "ref": "3 Nephi 3:26",
+        "speaker": null
+      },
+      {
+        "text": "Whalen, ed., The New Catholic Encyclopedia (New York: Mc Graw-Hill, 1967), 5:461-62, calls the ephod \"a small apron.\" See also Donald Senior, ed., The Catholic Study Bible: New American Bible (New York: Oxford University Press, 1990), 92 n.",
+        "source": "donaldson",
+        "ref": "3 Nephi 3:26",
+        "speaker": null
+      },
+      {
+        "text": "Myers, ed., The Eerdmans Bible Dictionary (Grand Rapids: Eerdmans, 1987), 342; Meyers, \"Ephod,\" in The Anchor Bible Dictionary, 2:550; J.",
+        "source": "donaldson",
+        "ref": "3 Nephi 3:26",
+        "speaker": null
+      },
+      {
+        "text": "The Ephod (6-12) ii.",
+        "source": "donaldson",
+        "ref": "Exodus 24:18",
+        "speaker": null
+      },
+      {
+        "text": "He was shown precise details concerning the priestly robe, ephod, diadem, and other vestments of the priesthood.",
+        "source": "gc",
+        "ref": null,
+        "speaker": null,
+        "attr": "Donald W. Parry in John M. Lundquist and Stephen D. Ricks, eds., By Study and Also by Faith: Essays in Honor of Hugh W. Nibley on the Occasion of His Eightieth Birthday, 27 March 1990, 2 vols., 1:, p.494"
+      },
+      {
+        "text": "It consisted of the following items: Ephod.",
+        "source": "donaldson",
+        "ref": "Exodus 27:21",
+        "speaker": null
+      }
+    ],
+    "related_people": [
+      "person:doctrine_and_covenants_commentary",
+      "person:ellis_t_rasmussen",
+      "person:hugh_w_nibley",
+      "person:john_taylor",
+      "person:keith_h_meservy",
+      "person:nahum_sarna",
+      "person:victor_l_ludlow"
+    ],
+    "related_places": [],
+    "related_scriptures": [
+      "1 Samuel 14:18",
+      "1 Samuel 14:19",
+      "1 Samuel 21:1",
+      "1 Samuel 21:9",
+      "1 Samuel 23:11",
+      "1 Samuel 23:9",
+      "1 Samuel 24:10",
+      "3 Nephi 3:26",
+      "Exodus 24:18",
+      "Exodus 25:9",
+      "Exodus 27:21",
+      "Exodus 28:1",
+      "Exodus 28:14",
+      "Exodus 28:30",
+      "Exodus 28:42",
+      "Exodus 28:6",
+      "Exodus 29:1",
+      "Exodus 29:4",
+      "Ezra 2:63",
+      "Judges 20:28",
+      "Judges 8:27",
+      "Nehemiah 7:65"
+    ],
+    "doc_ids": []
+  },
+  {
+    "id": "thing:laver",
+    "name": "Laver",
+    "variants": [
+      "brazen sea",
+      "molten sea",
+      "basin of water"
+    ],
+    "wikipedia_title": "Molten Sea",
+    "excerpts": [
+      {
+        "text": "3:14); as decorating the base whereon the molten sea rested (1 Kings 7:23-29); and as placed in the holy of holies of that magnificent temple (1 Kings 6:23-30; 8:6-7; 2 Chron.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:bruce_r_mc_conkie",
+        "attr": "Bruce R. Mc Conkie, Mormon Doctrine, 2d ed., p.125"
+      },
+      {
+        "text": "\"In Solomon's Temple a large molten sea of brass was placed on the backs of 12 brazen oxen, these oxen being symbolical of the 12 tribes of Israel.",
+        "source": "donaldson",
+        "ref": "1 Kings 7:23",
+        "speaker": null
+      },
+      {
+        "text": "18:8.) This brazen sea was used for performing baptisms for the living.",
+        "source": "donaldson",
+        "ref": "1 Kings 7:23",
+        "speaker": null
+      },
+      {
+        "text": "In describing the molten sea the Old Testament record says, 'The sea was for the priests to wash in.' (2 Chron.",
+        "source": "donaldson",
+        "ref": "1 Kings 7:23",
+        "speaker": null
+      },
+      {
+        "text": "There were seven lamps burning symbolizing the 'seven spirits of God,' and there was a 'sea of glass like unto crystal.' In the Temple of Solomon there was an immense basin called 'a molten sea' (1 Kings 7:23).",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:smith_and_sjodahl",
+        "attr": "Smith and Sjodahl, DCC, p. 472"
+      },
+      {
+        "text": "The twelve oxen which later supported the laver in the temple of Solomon, represented the twelve tribes of Israel; the water symbolized the baptism required for entry into the House of Israel.",
+        "source": "donaldson",
+        "ref": "Exodus 24:18",
+        "speaker": null
+      },
+      {
+        "text": "The Altar represents Christ, The laver, waters of Light, Christ.",
+        "source": "donaldson",
+        "ref": "Exodus 24:18",
+        "speaker": null
+      },
+      {
+        "text": "When you came Into the tabernacle, ,the first thing that you saw was the burning altar, of incense.) Then there was the laver, then there was a kind of veil here and you went into what is referred to as the Holy Place.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:robert_norman",
+        "attr": "Robert Norman, YC Stake Education Symposium 2/84"
+      },
+      {
+        "text": "A laver of brass— kiyor sometimes signifies a caldron, 1 Samuel 2:14; but it seems to signify any large",
+        "source": "donaldson",
+        "ref": "Exodus 30:18",
+        "speaker": null
+      },
+      {
+        "text": "Paul calls the laver of regeneration and the renewing of the Holy Ghost, (Titus 3:5) as the influences of the Spirit must be repeated for the purification of the soul, as frequently as any moral defilement has been contracted.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:adam_clarke",
+        "attr": "Adam Clarke, Bible Commentary - Volume 1"
+      },
+      {
+        "text": "2) No court of women 3) No Laver 4) No Table of Showbread.",
+        "source": "donaldson",
+        "ref": "Ezekiel 43:27",
+        "speaker": null
+      },
+      {
+        "text": "The first was an outer courtyard which contained the altar of sacrifice and the large laver for washing ordinances.",
+        "source": "donaldson",
+        "ref": "Hebrews 8:13",
+        "speaker": null
+      },
+      {
+        "text": "In 2 Kings 16:17 we read, \"King Ahaz cut off the borders of the bases, and removed the laver from off them; and took down the sea from off the brazen oxen that were under it and put it upon a \"pavement\" of stones.\" In Ahaz’s case, his act was the conclusive token of his surrender to abject apostasy.",
+        "source": "donaldson",
+        "ref": "John 19:13",
+        "speaker": null
+      },
+      {
+        "text": "Then the priest took dust from the temple floor and mixed it in a vessel of water taken from the laver in the temple together with wormwood and bitter herbs; cf.",
+        "source": "donaldson",
+        "ref": "Revelation 10:8",
+        "speaker": null
+      }
+    ],
+    "related_people": [
+      "person:adam_clarke",
+      "person:bruce_r_mc_conkie",
+      "person:robert_norman",
+      "person:smith_and_sjodahl"
+    ],
+    "related_places": [],
+    "related_scriptures": [
+      "1 Kings 6:30",
+      "1 Kings 7:23",
+      "Exodus 24:18",
+      "Exodus 30:18",
+      "Exodus 30:20",
+      "Ezekiel 43:27",
+      "Hebrews 8:13",
+      "John 19:13",
+      "Revelation 10:8"
+    ],
+    "doc_ids": []
+  },
+  {
+    "id": "thing:showbread",
+    "name": "Showbread",
+    "variants": [
+      "shewbread",
+      "bread of the presence",
+      "table of showbread"
+    ],
+    "wikipedia_title": "Showbread",
+    "excerpts": [
+      {
+        "text": "At Nob, the priests had the hallowed bread, or shewbread (BD, \"Shewbread\"), an ephod (part of the high priest's garments), and Goliath's sword, which was apparently preserved there as a memento of David's earlier triumph in the name of the Lord.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:ellis_t_rasmussen",
+        "attr": "Ellis T. Rasmussen, A Latter-day Saint Commentary on the Old Testament, 247"
+      },
+      {
+        "text": "The root *QDS is used with reference to God (Exodus 15:11; Leviticus 20:3); God's temples (Exodus 38:24; 40:9; 2 Chronicles 29:5; Ezekiel 42:14); persons directly associated with temples, such as the priests (Leviticus 21:6) and the people of Israel (Jeremiah 2:3; Psalm 114:2); temple furniture (Exodus 30:29; 2 Chronicles 35:3); altars (Exodus 29:37; Deuteronomy 9:24); anointing oil (Exodus…",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:donald_w_parry",
+        "attr": "Donald W. Parry, ed., Temples of the Ancient World: Ritual and Symbolism, p.xiii"
+      },
+      {
+        "text": "The shewbread was changed every sabbath day, and the old loaves were to be eaten by the priests.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:daniel_h_ludlow",
+        "attr": "Daniel H. Ludlow, A Companion to Your Study of the Old Testament, p.219"
+      },
+      {
+        "text": "Jesus then taught the principle that charity overrides the ritual law by quoting the incident of David and the shewbread.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:daniel_h_ludlow",
+        "attr": "Daniel H. Ludlow, A Companion to Your Study of the Old Testament, p.219"
+      },
+      {
+        "text": "At Nob, the priests had the hallowed bread, or shewbread (BD, \"Shewbread\"), an ephod (part of the high priest's garments), and Goliath's sword, which was apparently preserved there as a memento of David's earlier triumph in the name of the Lord.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:ellis_t_rasmussen",
+        "attr": "Ellis T. Rasmussen, A Latter-day Saint Commentary on the Old Testament [Salt Lake City: Deseret, 1993], 247"
+      },
+      {
+        "text": "Now in the pattern of temple symbolism, the six days of creation corresponded to the six stages by which Moses erected the tabernacle: thus Day One corresponded to the holy of holies, the second day to the veil of the tabernacle, the third day to the table for the shewbread and so forth.",
+        "source": "donaldson",
+        "ref": "2 Chronicles 33:25",
+        "speaker": null
+      },
+      {
+        "text": "The root *QDS is used with reference to God (Exodus 15:11; Leviticus 20:3); God's temples (Exodus 38:24; 40:9; 2 Chronicles 29:5; Ezekiel 42:14); persons directly associated with temples, such as the priests (Leviticus 21:6) and the people of Israel (Jeremiah 2:3; Psalm 114:2); temple furniture (Exodus 30:29; 2 Chronicles 35:3); altars (Exodus 29:37; Deuteronomy 9:24); anointing oil (Exodus…",
+        "source": "donaldson",
+        "ref": "Exodus 15:11",
+        "speaker": null
+      },
+      {
+        "text": "In addition to the temple, other aspects of the sacred connected with the Hebrew *QDS include God, his name, and his divine actions (see Exodus 15:11; Leviticus 20:3); holy places outside of the temple, including the city of Jerusalem (see Isaiah 48:2) and the land of Israel (see Zechariah 2:12); things directly associated with sacred places, such as the temple furniture (see Exodus 30:29; 2…",
+        "source": "gc",
+        "ref": null,
+        "speaker": null,
+        "attr": "Jay A. Parry and Donald W. Parry in Donald W. Parry, ed., Temples of the Ancient World: Ritual and Symbolism, p.529"
+      },
+      {
+        "text": "They anointed everything: the shewbread table, the light stand, the altar of incense, the Ark of the Covenant, and the mercy seat.",
+        "source": "donaldson",
+        "ref": "Exodus 18:27",
+        "speaker": null
+      },
+      {
+        "text": "Look at the table of shewbread.",
+        "source": "donaldson",
+        "ref": "Exodus 18:27",
+        "speaker": null
+      },
+      {
+        "text": "The table of shewbread the lamp stand, Christ.",
+        "source": "donaldson",
+        "ref": "Exodus 24:18",
+        "speaker": null
+      },
+      {
+        "text": "There they saw and conversed with the \"God of Israel\" and ate in his presence, even as the priests were only allowed to eat the shewbread while in the Holy Place (see Ex.",
+        "source": "donaldson",
+        "ref": "Exodus 25:8",
+        "speaker": null
+      },
+      {
+        "text": "The second article of furniture described by the Lord was the table of shewbread.",
+        "source": "donaldson",
+        "ref": "Exodus 25:23",
+        "speaker": null
+      },
+      {
+        "text": "The Lord called it \"shewbread\" (vs.",
+        "source": "donaldson",
+        "ref": "Exodus 25:23",
+        "speaker": null
+      },
+      {
+        "text": "30), which translates literally the Hebrew word meaning \"the bread of faces,\" or \"the bread of the presence,\" signifying that this bread was placed before the face of the Lord or in his presence (Wilson, Old Testament Word Studies, s.v.",
+        "source": "donaldson",
+        "ref": "Exodus 25:23",
+        "speaker": null
+      },
+      {
+        "text": "\"shewbread,\" p.",
+        "source": "donaldson",
+        "ref": "Exodus 25:23",
+        "speaker": null
+      },
+      {
+        "text": "\"shewbread,\" p.",
+        "source": "donaldson",
+        "ref": "Exodus 25:23",
+        "speaker": null
+      },
+      {
+        "text": "Covers thereof— kesothaiv, supposed to be a large cup or tankard, in which pure wine was kept on the table along with the shewbread for libations, which were poured out before the Lord every Sabbath, when the old bread was removed, and the new bread laid on the table.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:adam_clarke",
+        "attr": "Adam Clarke, Bible Commentary - Volume 1"
+      },
+      {
+        "text": "Shewbread.-The name means \"bread of the presence,\" signifying that it was placed in the presence of Jehovah.",
+        "source": "donaldson",
+        "ref": "Exodus 25:30",
+        "speaker": null
+      },
+      {
+        "text": "2) No court of women 3) No Laver 4) No Table of Showbread.",
+        "source": "donaldson",
+        "ref": "Ezekiel 43:27",
+        "speaker": null
+      }
+    ],
+    "related_people": [
+      "person:adam_clarke",
+      "person:bruce_r_mc_conkie",
+      "person:daniel_h_ludlow",
+      "person:donald_w_parry",
+      "person:ellis_t_rasmussen",
+      "person:james_e_talmage",
+      "person:robert_j_matthews"
+    ],
+    "related_places": [],
+    "related_scriptures": [
+      "1 Samuel 21:1",
+      "1 Samuel 21:5",
+      "1 Samuel 21:6",
+      "1 Samuel 21:9",
+      "2 Chronicles 33:25",
+      "Exodus 15:11",
+      "Exodus 18:27",
+      "Exodus 24:18",
+      "Exodus 25:23",
+      "Exodus 25:29",
+      "Exodus 25:30",
+      "Exodus 25:8",
+      "Ezekiel 43:27",
+      "Hebrews 8:13",
+      "Hebrews 9:2",
+      "John 5:47",
+      "John 6:35",
+      "Leviticus 20:7",
+      "Luke 6:2",
+      "Mark 2:28",
+      "Matthew 12:1",
+      "Matthew 12:4",
+      "Matthew 12:5",
+      "Matthew 12:6",
+      "Matthew 17:24"
+    ],
+    "doc_ids": []
   }
 ]
