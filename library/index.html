@@ -1123,6 +1123,17 @@ Promise.all([
         entityIndex    = results[4] || {};
         entityList     = results[5] || [];
         entityList.forEach(function(p) { entityById[p.id] = p; });
+        // Merge scripture figures into entity index so verse names are linkified
+        fetch('./entities/scripture_people.json').then(function(r) { return r.ok ? r.json() : []; })
+            .then(function(figures) {
+                figures.forEach(function(fig) {
+                    entityById[fig.id] = fig;
+                    (fig.variants || [fig.name]).forEach(function(v) {
+                        var vl = v.toLowerCase();
+                        if (!entityIndex[vl]) entityIndex[vl] = fig.id;
+                    });
+                });
+            }).catch(function() {});
         placeIndex = results[6] || {};
         (results[7] || []).forEach(function(p) { placeById[p.id] = p; });
         thingIndex = results[8] || {};
