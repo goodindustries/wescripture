@@ -122,3 +122,4 @@
 {"event": "task_completed", "task_id": "T-0047", "agent": "WorkerA", "ts": "2026-04-08T02:41:23+00:00", "notes": "completed by task_worker (non-zero exit)"}
 {"event": "task_claimed", "task_id": "T-0048", "agent": "WorkerB", "ts": "2026-04-08T02:41:35+00:00"}
 {"event": "task_completed", "task_id": "T-0048", "agent": "WorkerB", "ts": "2026-04-08T02:41:43+00:00", "notes": "completed by task_worker (non-zero exit)"}
+{"event": "task_claimed", "task_id": "T-0049", "agent": "WorkerA", "ts": "2026-04-08T03:21:43+00:00"}
