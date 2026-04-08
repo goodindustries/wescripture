@@ -38,9 +38,21 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     color: var(--muted); display: flex; align-items: center; }
 #toc-btn:hover { background: rgba(0,0,0,0.06); color: var(--text); }
 #topbar .logo { font-weight: 600; font-size: 14px; letter-spacing: -0.04em;
-    color: var(--accent); text-decoration: none; margin-right: auto; }
-#location-label { font-size: 12px; color: var(--muted); max-width: 200px;
-    overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    color: var(--accent); text-decoration: none; }
+#back-btn { background: none; border: none; cursor: pointer; padding: 6px; border-radius: 6px;
+    color: var(--muted); display: none; align-items: center; flex-shrink: 0; }
+#back-btn.show { display: flex; }
+#back-btn:hover { background: rgba(0,0,0,0.06); color: var(--text); }
+#breadcrumbs { flex: 1; min-width: 0; display: flex; align-items: center;
+    gap: 4px; overflow: hidden; }
+.bc-crumb { font-size: 12px; color: var(--muted); white-space: nowrap;
+    cursor: pointer; border-radius: 4px; padding: 2px 4px; flex-shrink: 1;
+    overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.bc-crumb:hover { color: var(--text); background: rgba(0,0,0,0.05); }
+.bc-crumb.bc-last { color: var(--text); font-weight: 500; cursor: default; }
+.bc-crumb.bc-last:hover { background: none; }
+.bc-sep { font-size: 11px; color: var(--divider); flex-shrink: 0; user-select: none; }
+#location-label { display: none; }
 /* ── Search button ── */
 #search-btn { background: none; border: none; cursor: pointer; padding: 6px; border-radius: 6px;
     color: var(--muted); display: flex; align-items: center; }
@@ -214,7 +226,6 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     :root { --toc-w: 300px; }
     #toc { position: fixed; top: var(--nav-h); left: 0; bottom: 0; z-index: 150; }
     #search-panel { z-index: 162; }
-    #location-label { display: none; }
     #content { padding: 24px 18px 80px; }
     #toc-grid { grid-template-columns: 1fr; }
     #toc-grid.chapter-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
@@ -694,6 +705,12 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 .ep-scripture-list { padding: 8px 16px 12px; border-bottom: 1px solid var(--divider); }
 .ep-scripture-ref { display: inline-block; font-size: 12px; color: var(--accent); cursor: pointer; margin: 2px 8px 2px 0; }
 .ep-scripture-ref:hover { text-decoration: underline; }
+.ep-book-groups { border-bottom: 1px solid var(--divider); }
+.ep-book-group + .ep-book-group { border-top: 1px solid var(--divider); }
+.ep-book-group-hdr { display: flex; justify-content: space-between; align-items: center; padding: 6px 16px 3px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); cursor: pointer; }
+.ep-book-group-hdr:hover { color: var(--accent); }
+.ep-book-group-count { font-size: 11px; font-weight: 400; color: var(--muted); background: rgba(0,0,0,0.06); border-radius: 10px; padding: 1px 7px; }
+.ep-book-group .ep-scripture-list { border-bottom: none; padding-top: 2px; padding-bottom: 8px; }
 .ep-talk-row { padding: 8px 16px; border-bottom: 1px solid var(--divider); cursor: pointer; }
 .ep-talk-row:hover { background: rgba(0,0,0,0.04); }
 .ep-talk-label { font-size: 13px; font-weight: 500; color: var(--text); }
@@ -765,7 +782,12 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
             <line x1="3" y1="5" x2="15" y2="5"/><line x1="3" y1="9" x2="15" y2="9"/><line x1="3" y1="13" x2="11" y2="13"/>
         </svg>
     </button>
-    <a id="site-home" href="../index.html" class="logo">The Good Project</a>
+    <button id="back-btn" onclick="quickBack()" title="Go back">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="10 3 5 8 10 13"></polyline>
+        </svg>
+    </button>
+    <div id="breadcrumbs"></div>
     <span id="location-label"></span>
     <button id="search-btn" onclick="openSearch()" title="Search scriptures">
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -1754,6 +1776,68 @@ function scanVerseEntities(verseText) {
     };
 }
 
+function renderScriptureRefsByBook(refs) {
+    if (!refs || !refs.length) return '';
+    var total = refs.length;
+
+    // Group by book name (extracted from "Book Ch:V" labels)
+    var books = [];
+    var bookMap = {};
+    refs.forEach(function(ref) {
+        var label = ref.label || ref;
+        var m = label.match(/^(.+?)\s+(\d+):\d+$/);
+        var bookName = m ? m[1] : label;
+        var firstCh  = m ? m[2] : '1';
+        if (!bookMap[bookName]) {
+            bookMap[bookName] = { refs: [], firstCh: firstCh };
+            books.push(bookName);
+        }
+        bookMap[bookName].refs.push(label);
+    });
+
+    var bookCount = books.length;
+    var sectionLabel = total + ' verse' + (total !== 1 ? 's' : '')
+        + ' \u00b7 ' + bookCount + ' book' + (bookCount !== 1 ? 's' : '');
+    var html = '<div class="ep-section">Scripture Appearances (' + sectionLabel + ')</div>';
+
+    if (bookCount === 1) {
+        // Single book — flat list capped at 40
+        html += '<div class="ep-scripture-list">';
+        refs.slice(0, 40).forEach(function(ref) {
+            var label = ref.label || ref;
+            html += '<span class="ep-scripture-ref" data-verse-ref="' + escapeHtml(label) + '">'
+                + escapeHtml(label) + '</span>';
+        });
+        if (total > 40) html += '<span class="ep-scripture-ref" style="color:var(--muted);cursor:default">\u2026' + (total - 40) + ' more</span>';
+        html += '</div>';
+    } else {
+        // Multiple books — grouped display; show up to 8 refs per book
+        html += '<div class="ep-book-groups">';
+        books.forEach(function(bookName) {
+            var entry = bookMap[bookName];
+            var bookSlug = bookName.toLowerCase().replace(/ /g, '_');
+            var chId = bookSlug + '_' + entry.firstCh;
+            html += '<div class="ep-book-group">'
+                + '<div class="ep-book-group-hdr" data-book-ch="' + escapeHtml(chId) + '">'
+                + escapeHtml(bookName)
+                + '<span class="ep-book-group-count">' + entry.refs.length + '</span>'
+                + '</div>'
+                + '<div class="ep-scripture-list ep-book-group-refs">';
+            entry.refs.slice(0, 8).forEach(function(label) {
+                html += '<span class="ep-scripture-ref" data-verse-ref="' + escapeHtml(label) + '">'
+                    + escapeHtml(label) + '</span>';
+            });
+            if (entry.refs.length > 8) {
+                html += '<span class="ep-scripture-ref" style="color:var(--muted);cursor:default">\u2026' + (entry.refs.length - 8) + ' more</span>';
+            }
+            html += '</div></div>';
+        });
+        html += '</div>';
+    }
+
+    return html;
+}
+
 function renderChips(ids, type) {
     if (!ids || !ids.length) return '';
     var labels = {person: 'People', place: 'Places', thing: 'Things', topic: 'Topics'};
@@ -1843,6 +1927,15 @@ function openProfilePanel(entity, typeLabel, placeholderIcon, extraHtml) {
         });
     });
 
+    // Wire up book-group header clicks (navigate to that book's first chapter)
+    chList.querySelectorAll('.ep-book-group-hdr[data-book-ch]').forEach(function(hdr) {
+        hdr.addEventListener('click', function(e) {
+            // Only fire if the click wasn't on a child .ep-scripture-ref
+            if (e.target.classList.contains('ep-scripture-ref')) return;
+            loadChapter(hdr.dataset.bookCh, true);
+        });
+    });
+
     // Wire up talk row clicks
     chList.querySelectorAll('.ep-talk-row[data-doc]').forEach(function(row) {
         row.addEventListener('click', function() {
@@ -1863,13 +1956,7 @@ function openEntityProfile(entityId) {
         extraHtml += '<div class="ep-desc">' + escapeHtml(entity.desc) + '</div>';
     }
     if (entity.group && entity.scripture_refs && entity.scripture_refs.length) {
-        extraHtml += '<div class="ep-section">Scripture Appearances (' + entity.scripture_refs.length + ')</div>'
-            + '<div class="ep-scripture-list">';
-        entity.scripture_refs.slice(0, 40).forEach(function(ref) {
-            extraHtml += '<span class="ep-scripture-ref" data-verse-ref="' + escapeHtml(ref.label) + '">'
-                + escapeHtml(ref.label) + '</span>';
-        });
-        extraHtml += '</div>';
+        extraHtml += renderScriptureRefsByBook(entity.scripture_refs);
     }
 
     extraHtml += renderChips(entity.related_places || [], 'place')
