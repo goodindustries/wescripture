@@ -25,7 +25,7 @@ Backends:
     dispatch — Local pipelines only (task_dispatch.py); no cloud LLM
     hybrid   — Try dispatch first; if no rule matches, run Claude
 
-After a successful completion, task_followup.py (Ollama, default gemma4) queues
+After a successful completion, task_followup.py (Ollama, default gemma4:e2b) queues
 one grounded follow-on task unless --no-followup.
 """
 
@@ -204,7 +204,11 @@ def main():
         help="dispatch = local pipelines; hybrid = dispatch then Claude",
     )
     parser.add_argument("--no-followup", action="store_true", help="Skip Ollama follow-on task queue")
-    parser.add_argument("--followup-model", default="gemma4:latest", help="Ollama model for task_followup.py")
+    parser.add_argument(
+        "--followup-model",
+        default="gemma4:e2b",
+        help="Ollama model for task_followup.py (e2b = lighter; e4b/latest if you have headroom)",
+    )
     args = parser.parse_args()
 
     # ── Claim next task ───────────────────────────────────────────────────────

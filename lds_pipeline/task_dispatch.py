@@ -125,7 +125,7 @@ def try_dispatch(task: dict) -> DispatchOutcome:
                 "--only",
                 "scripture_people",
                 "--workers",
-                "2",
+                "1",
                 "--limit",
                 limit,
             ]
@@ -142,7 +142,7 @@ def try_dispatch(task: dict) -> DispatchOutcome:
                 "--only",
                 "topics",
                 "--workers",
-                "2",
+                "1",
                 "--limit",
                 limit,
             ]
@@ -159,7 +159,7 @@ def try_dispatch(task: dict) -> DispatchOutcome:
                 "--only",
                 "people",
                 "--workers",
-                "2",
+                "1",
                 "--limit",
                 limit,
             ]
@@ -177,7 +177,7 @@ def try_dispatch(task: dict) -> DispatchOutcome:
                 "--only",
                 key,
                 "--workers",
-                "2",
+                "1",
                 "--limit",
                 limit,
             ]

@@ -3,7 +3,7 @@
 task_followup.py
 ================
 After a task completes, propose ONE follow-on task from git + ledger context
-using a local Ollama model (default gemma4). Appends task_queued and optionally
+using a local Ollama model (default gemma4:e2b). Appends task_queued and optionally
 pushes the ledger.
 
     python3 lds_pipeline/task_followup.py --task-id T-0123 --commit abc1234 --push
@@ -24,7 +24,7 @@ from task_ledger import _append, _load_events, _project, _push_ledger, utc_now
 
 REPO = Path(__file__).resolve().parent.parent
 OLLAMA_URL = "http://127.0.0.1:11434/api/generate"
-DEFAULT_MODEL = "gemma4:latest"
+DEFAULT_MODEL = "gemma4:e2b"
 TIMEOUT_S = 120
 
 SYSTEM = """You are the task planner for a scripture library codebase (wescripture).

@@ -86,7 +86,7 @@ without re-explaining the mission each time.
 **Autonomous loop:** **`lds_pipeline/autonomous_runner.py`** pulls `main`, runs
 `task_scout` when pending count is below `--min-pending`, then **`task_worker.py --backend hybrid`**
 (dispatch first, Claude if no rule). After each **successful** completion,
-**`task_followup.py`** (Ollama, default `gemma4:latest`) appends **one** grounded
+**`task_followup.py`** (Ollama, default `gemma4:e2b` — lighter than `e4b` / `latest`) appends **one** grounded
 follow-on task from the git diff and pushes the ledger. Use `--no-followup` or
 `--no-scout` when you need to disable either behavior.
 

@@ -175,7 +175,7 @@ def collect_registry_tasks() -> list[tuple[str, str]]:
                 (
                     f"Christ — scripture_people: connections batch {bi}/{total_b} (~{len(batch)} figs)",
                     "python3 lds_pipeline/generate_christ_connections.py --only scripture_people "
-                    f"--workers 2 --limit {len(batch)}",
+                    f"--workers 1 --limit {len(batch)}",
                 )
             )
 
@@ -190,7 +190,7 @@ def collect_registry_tasks() -> list[tuple[str, str]]:
                 (
                     f"Christ — topics: connections batch {bi}/{total_b} (~{len(batch)} topics)",
                     "python3 lds_pipeline/generate_christ_connections.py --only topics "
-                    f"--workers 2 --limit {len(batch)}",
+                    f"--workers 1 --limit {len(batch)}",
                 )
             )
 
@@ -204,7 +204,7 @@ def collect_registry_tasks() -> list[tuple[str, str]]:
                 (
                     f"Christ — people.json: connections batch {bi}/{total_b} (~{len(batch)} entries)",
                     "python3 lds_pipeline/generate_christ_connections.py --only people "
-                    f"--workers 2 --limit {len(batch)}",
+                    f"--workers 1 --limit {len(batch)}",
                 )
             )
 
@@ -220,7 +220,7 @@ def collect_registry_tasks() -> list[tuple[str, str]]:
                 (
                     f"Christ — {only_key}: fill christ_connection ({len(miss)} entries)",
                     "python3 lds_pipeline/generate_christ_connections.py "
-                    f"--only {only_key} --workers 2 --limit {lim}",
+                    f"--only {only_key} --workers 1 --limit {lim}",
                 )
             )
 

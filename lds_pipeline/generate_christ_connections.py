@@ -30,8 +30,8 @@ from pathlib import Path
 REPO       = Path(__file__).resolve().parent.parent
 ENTITIES   = REPO / "library" / "entities"
 OLLAMA_URL = "http://localhost:11434/api/generate"
-# gemma4:* is more reliable locally than small Qwen tags under load (fewer HTTP timeouts).
-DEFAULT_MODEL = "gemma4:latest"
+# gemma4:e2b is smaller than :e4b / :latest — default for laptops; override with gemma4:e4b if you have VRAM.
+DEFAULT_MODEL = "gemma4:e2b"
 OLLAMA_TIMEOUT_S = 240
 
 SYSTEM = (
