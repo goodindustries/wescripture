@@ -98,7 +98,7 @@ Selected verse: `box-shadow: inset 3px 0 0 var(--accent), 0 0 0 1px rgba(156,122
 1. Verse text header (verse ref + full text)
 2. People · Places · Things chips (entity scan of verse text)
 3. Commentary cards from the corpus (talks, books)
-4. Word study entry point
+4. Key Words — English headword as printed in the verse + plain-English gloss (no interlinear Greek/Hebrew display in the panel)
 
 **Entity chip / annotated word click** → opens entity profile panel before word study
 

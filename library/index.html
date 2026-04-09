@@ -2287,10 +2287,10 @@ function openVerseDiscovery(ref) {
         html += '<div class="panel-section">Key Words</div>';
         html += '<div class="word-cards-wrap' + (donaWords.length <= 2 ? ' expanded' : '') + '">';
         donaWords.forEach(function(w) {
+            var kwBody = stripOriginalLanguageNotes(w.plain || w.meaning || '');
             html += '<div class="word-card">'
                 + '<div class="word-english">' + escapeHtml(w.word || '') + '</div>'
-                + (w.greek ? '<div class="word-original">' + escapeHtml(w.greek) + '</div>' : '')
-                + '<div class="word-meaning">' + makeExpandable(w.plain || w.meaning || '', 'note-preview', 'note-overflow', 'note-more') + '</div>'
+                + '<div class="word-meaning">' + makeExpandable(kwBody, 'note-preview', 'note-overflow', 'note-more') + '</div>'
                 + '</div>';
         });
         if (donaWords.length > 2) {
@@ -2303,18 +2303,16 @@ function openVerseDiscovery(ref) {
         html += '<div class="panel-section">Key Words</div>';
         html += '<div class="word-cards-wrap' + (sFiltered.length <= 2 ? ' expanded' : '') + '">';
         sFiltered.forEach(function(entry) {
-            var script = entry.lm || '';
             var sn     = entry.sn || '';
             var plain  = sn && strongsPlain[sn];
             var def    = plain || strongsCleanDef(entry.gl, entry.kj);
             var root   = plain ? '' : strongsRoot(entry.dv || '');
             var gloss  = (entry.gl || '').match(/^([^(,]+)/);
             var engLabel = gloss ? gloss[1].trim() : (entry.xl || '');
-            var origLine = [entry.xl, script].filter(Boolean).join(' · ');
+            var defShow = stripOriginalLanguageNotes(def + (root ? ' (from ' + root + ')' : ''));
             html += '<div class="word-card">'
                 + '<div class="word-english">' + escapeHtml(engLabel || sn) + '</div>'
-                + (origLine ? '<div class="word-original">' + escapeHtml(origLine) + '</div>' : '')
-                + '<div class="word-meaning">' + makeExpandable(def + (root ? ' <span style="color:var(--muted);font-size:12px">from ' + escapeHtml(root) + '</span>' : ''), 'note-preview', 'note-overflow', 'note-more') + '</div>'
+                + '<div class="word-meaning">' + makeExpandable(defShow, 'note-preview', 'note-overflow', 'note-more') + '</div>'
                 + '</div>';
         });
         if (sFiltered.length > 2) {
@@ -3253,6 +3251,15 @@ function highlightTerms(text, words) {
 
 function escapeHtml(str) {
     return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+/** Strip interlinear [Greek: …] / [Hebrew: …] glosses from Donaldson plain text — reader wants English only. */
+function stripOriginalLanguageNotes(s) {
+    if (!s) return '';
+    return String(s)
+        .replace(/\s*\[(Greek|Hebrew|Aramaic|Latin):[^\]]*\]/gi, '')
+        .replace(/\s{2,}/g, ' ')
+        .trim();
 }
 
 function escapeAttr(str) {

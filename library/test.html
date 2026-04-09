@@ -74,11 +74,9 @@ h1 { font-family: 'EB Garamond', Georgia, serif; font-size: 28px; font-weight: 4
     background: rgba(0,0,0,0.018);
 }
 
-/* ── Greek/Hebrew words — stacked, not grid ── */
-.word-card { padding: 16px 28px; border-bottom: 1px solid var(--divider); display: flex; gap: 16px; align-items: flex-start; }
-.word-original { font-size: 28px; font-family: 'EB Garamond', Georgia, serif; font-weight: 400; line-height: 1; color: var(--text); flex-shrink: 0; min-width: 52px; }
-.word-detail {}
-.word-english  { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 5px; }
+/* ── Key words: English headword from the verse + plain-English gloss (no Greek line) ── */
+.word-card { padding: 16px 28px; border-bottom: 1px solid var(--divider); }
+.word-english  { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
 .word-meaning  { font-size: 14px; color: var(--text); line-height: 1.6; }
 
 /* ── Commentary notes ── */
@@ -410,16 +408,15 @@ function selectVerse(num, text) {
         html += '<div style="padding:28px;color:var(--muted);font-size:13px">No commentary found for this verse.</div>';
     }
 
-    // ── Greek/Hebrew word studies ──
+    // ── Key words (English headword from verse + plain explanation) ──
     if (words.length) {
         html += '<div class="panel-section">Key Words</div>';
         words.forEach(function(w) {
+            var plain = stripOLN(w.plain || w.meaning || '');
             html += '<div class="word-card">'
-                + '<div class="word-original">' + esc(w.greek) + '</div>'
-                + '<div class="word-detail">'
-                + '<div class="word-english">' + esc(w.word) + '</div>'
-                + '<div class="word-meaning">' + makeExpandable(w.plain || w.meaning, 'note-preview', 'note-overflow', 'note-more') + '</div>'
-                + '</div></div>';
+                + '<div class="word-english">' + esc(w.word || '') + '</div>'
+                + '<div class="word-meaning">' + makeExpandable(plain, 'note-preview', 'note-overflow', 'note-more') + '</div>'
+                + '</div>';
         });
     }
 
@@ -489,6 +486,10 @@ function selectVerse(num, text) {
 
 function esc(s) {
     return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function stripOLN(s) {
+    if (!s) return '';
+    return String(s).replace(/\s*\[(Greek|Hebrew|Aramaic|Latin):[^\]]*\]/gi, '').replace(/\s{2,}/g, ' ').trim();
 }
 </script>
 </body>
