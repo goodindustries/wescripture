@@ -30,7 +30,9 @@ from pathlib import Path
 REPO       = Path(__file__).resolve().parent.parent
 ENTITIES   = REPO / "library" / "entities"
 OLLAMA_URL = "http://localhost:11434/api/generate"
-DEFAULT_MODEL = "qwen3:1.7b"
+# gemma4:* is more reliable locally than small Qwen tags under load (fewer HTTP timeouts).
+DEFAULT_MODEL = "gemma4:latest"
+OLLAMA_TIMEOUT_S = 240
 
 SYSTEM = (
     "You write precise theological notes for a scripture study library. "
@@ -79,9 +81,12 @@ How does this topic or doctrine point to or connect with Jesus Christ?\
 
 
 def ollama_generate(model: str, prompt: str, retries: int = 3) -> str:
+    full_prompt = f"{SYSTEM}\n\n{prompt}"
+    if model.startswith("qwen"):
+        full_prompt = f"/no_think\n\n{full_prompt}"
     payload = json.dumps({
         "model":  model,
-        "prompt": f"/no_think\n\n{SYSTEM}\n\n{prompt}",
+        "prompt": full_prompt,
         "stream": False,
         "options": {"temperature": 0.3, "num_predict": 250},
         "think": False,
@@ -95,7 +100,7 @@ def ollama_generate(model: str, prompt: str, retries: int = 3) -> str:
                 headers={"Content-Type": "application/json"},
                 method="POST",
             )
-            with urllib.request.urlopen(req, timeout=90) as resp:
+            with urllib.request.urlopen(req, timeout=OLLAMA_TIMEOUT_S) as resp:
                 result = json.loads(resp.read())
                 text = result.get("response", "").strip()
                 text = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL).strip()
