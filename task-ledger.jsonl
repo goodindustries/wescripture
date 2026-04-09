@@ -188,3 +188,5 @@
 {"event": "task_claimed", "task_id": "T-0060", "agent": "WorkerA", "ts": "2026-04-09T02:15:12+00:00"}
 {"event": "task_claimed", "task_id": "T-0061", "agent": "WorkerB", "ts": "2026-04-09T02:15:18+00:00"}
 {"event": "task_completed", "task_id": "T-0061", "agent": "WorkerB", "ts": "2026-04-09T02:21:02+00:00", "commit": "adbe0928", "notes": "completed by task_worker"}
+{"event": "task_queued", "task_id": "T-0065", "title": "Normalize Donaldson commentary text", "description": "Process all 1319 Donaldson JSON files: strip verse/chapter range preamble headers, normalize whitespace/carriage returns, number paragraphs within each note (p1, p2...). Output should support semantic IDs like donaldson:{chapter}:{verse}:p{n}.", "agent": "Claude", "ts": "2026-04-09T02:30:05+00:00"}
+{"event": "task_claimed", "task_id": "T-0062", "agent": "WorkerB", "ts": "2026-04-09T02:31:12+00:00"}
