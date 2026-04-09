@@ -202,3 +202,7 @@
 {"event": "task_completed", "task_id": "T-0065", "agent": "ClaudeCode", "commit": "ee6ae699", "notes": "1259 Donaldson files normalized: whitespace cleaned, preamble headers removed (193 notes), notes converted to {p, text} objects", "ts": "2026-04-09T03:21:08+00:00"}
 {"event": "task_reopened", "task_id": "T-0059", "ts": "2026-04-09T23:18:53+00:00", "notes": "Reopened: Claude unavailable — use dispatch/Ollama workers."}
 {"event": "task_reopened", "task_id": "T-0062", "ts": "2026-04-09T23:18:57+00:00", "notes": "Reopened: Claude unavailable — use dispatch/Ollama workers."}
+{"event": "task_claimed", "task_id": "T-0059", "agent": "Worker003", "ts": "2026-04-09T23:57:15+00:00"}
+{"event": "task_claimed", "task_id": "T-0059", "agent": "Worker002", "ts": "2026-04-09T23:57:15+00:00"}
+{"event": "task_claimed", "task_id": "T-0062", "agent": "Worker001", "ts": "2026-04-09T23:57:15+00:00"}
+{"event": "task_claimed", "task_id": "T-0059", "agent": "Worker000", "ts": "2026-04-09T23:57:15+00:00"}
