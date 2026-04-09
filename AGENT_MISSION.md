@@ -74,4 +74,12 @@ The queue never runs dry because every agent feeds it. Every new task must be
 grounded in direct observation and must serve the mission: deepen reading, improve
 connections, clean the corpus, or make traversal faster and more trustworthy.
 
+**Corpus task supply:** The reader-facing scope is every chapter and verse in
+`library/toc.json`, so the backlog is intentionally large. **`lds_pipeline/task_scout.py`**
+scans the tree and appends `task_queued` rows for concrete gaps (entity span
+annotation, missing `_notes.html`, missing Donaldson JSON by book). Run it on a
+schedule or after merges so workers always have scoped chapter work; use
+`--dry-run` first, then `--max N --push` to publish the ledger. Agents should
+still append follow-on tasks from what they observe while executing.
+
 Full design system reference: `AGENT_GUIDELINES.md`

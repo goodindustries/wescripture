@@ -370,6 +370,8 @@ def cmd_append(args) -> None:
 
     _append(entry)
     print(f"Appended {entry['task_id']}: {entry['event']}")
+    if getattr(args, "push", False):
+        _push_ledger()
 
 
 def cmd_tail(args) -> None:
@@ -448,6 +450,8 @@ def main() -> None:
     p.add_argument("--status",  default="")
     p.add_argument("--commit",  default="")
     p.add_argument("--notes",   default="")
+    p.add_argument("--push", action="store_true",
+                   help="git commit + push task-ledger.jsonl after this append (for federation)")
     p.set_defaults(func=cmd_append)
 
     # tail
