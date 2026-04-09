@@ -82,6 +82,29 @@ The library gathers:
 
 ---
 
+## The Reading Experience (north star)
+
+This is what “done” feels like in the product:
+
+1. **Clean** — Every paragraph is editorially sound: accurate text, clear structure,
+   visible provenance. Silence, truncation, and broken markup are debt, not style.
+
+2. **Clickable** — Every verse and every substantive paragraph is a surface you can
+   activate. A click always opens something useful — never a dead end.
+
+3. **Semantically connected** — From that click, the library surfaces the *strongest*
+   semantic links to *other* parts of the corpus (across books, languages, and source
+   types), ranked and labeled so the reader sees *what* matched and *why* it matters.
+
+4. **Explained in plain English** — Hard words, names, places, and doctrines unpack
+   into readable explanations and profiles. The goal is understanding, not obscurity.
+
+5. **Deep and wide** — From any anchor you can go *deeper* into the same idea (word
+   studies, types, commentary, Christ-connections) and *wider* across the whole library
+   of God’s word — always able to return to where you started.
+
+---
+
 ## The Standard
 
 Every quote stays attached to the talk or book it came from.
