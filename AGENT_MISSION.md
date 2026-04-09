@@ -93,4 +93,12 @@ follow-on task from the git diff and pushes the ledger. Use `--no-followup` or
 Humans and chat agents should still append high-judgment tasks; scout + followup
 are the baseline so the queue does not depend on repeated manual prompting.
 
+**Start agents (one process):** from repo root, `./lds_pipeline/launch_agents.sh` (same
+args as `autonomous_runner.py`). For parallel workers, see
+`lds_pipeline/run_parallel_task_workers.sh` and `TASK_WORKER_BACKEND`.
+
+**Verse done-ness dashboard:** `python3 lds_pipeline/build_verse_coverage.py` writes
+`library/verse_coverage.json` (Donaldson + entity markup + verse discovery per verse).
+Open `library/verse_coverage.html` locally or after deploy to see the table and heatmaps.
+
 Full design system reference: `AGENT_GUIDELINES.md`

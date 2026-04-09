@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Verse coverage — WeScripture</title>
+<link href="style/main.css" rel="stylesheet"/>
+<style>
+  body { max-width: 1100px; margin: 0 auto; padding: 1rem 1.25rem 3rem; }
+  h1 { font-size: 1.35rem; margin: 0 0 0.5rem; }
+  .meta { color: var(--muted, #666); font-size: 0.9rem; margin-bottom: 1rem; }
+  .summary { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.75rem; margin: 1rem 0; }
+  .card { border: 1px solid var(--border, #ddd); border-radius: 6px; padding: 0.6rem 0.75rem; background: var(--panel, #fafafa); }
+  .card strong { display: block; font-size: 1.4rem; }
+  .legend { font-size: 0.85rem; margin: 0.5rem 0 1rem; }
+  .legend span { display: inline-block; margin-right: 1rem; }
+  .sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; vertical-align: middle; margin-right: 4px; }
+  .sw-full { background: #1a7f37; }
+  .sw-partial { background: #c9a227; }
+  .sw-none { background: #e0e0e0; }
+  label { font-size: 0.85rem; margin-right: 0.5rem; }
+  input[type="search"] { width: min(100%, 320px); padding: 0.35rem 0.5rem; margin-bottom: 0.75rem; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+  th, td { text-align: left; padding: 0.35rem 0.5rem; border-bottom: 1px solid var(--border, #eee); }
+  th { position: sticky; top: 0; background: var(--bg, #fff); cursor: pointer; user-select: none; }
+  th:hover { background: var(--panel, #f5f5f5); }
+  tr:hover td { background: var(--panel, #fafafa); }
+  .bar-wrap { display: flex; flex-wrap: wrap; gap: 2px; align-items: flex-end; min-height: 28px; }
+  .cell { width: 6px; height: 14px; border-radius: 1px; flex-shrink: 0; }
+  .cell-7 { background: #1a7f37; }
+  .cell-6, .cell-5, .cell-3 { background: #2a9d4a; }
+  .cell-4, .cell-2, .cell-1 { background: #c9a227; }
+  .cell-0 { background: #e8e8e8; }
+  .detail { margin-top: 1rem; padding: 0.75rem; border: 1px solid var(--border, #ddd); border-radius: 6px; display: none; }
+  .detail.open { display: block; }
+  .back { margin-bottom: 1rem; }
+  .back a { color: var(--link, #1565c0); }
+</style>
+</head>
+<body>
+<p class="back"><a href="index.html">← Library</a></p>
+<h1>Verse-by-verse done-ness</h1>
+<p class="meta">Each verse scores <strong>D</strong> (Donaldson JSON), <strong>E</strong> (entity / place links in HTML), <strong>V</strong> (verse discovery row). Full = all three.</p>
+<div id="loading">Loading <code>verse_coverage.json</code>…</div>
+<div id="app" style="display:none">
+  <p class="meta" id="generated"></p>
+  <div class="summary" id="summary"></div>
+  <p class="legend">
+    <span><i class="sw sw-full"></i> full (7)</span>
+    <span><i class="sw sw-partial"></i> partial</span>
+    <span><i class="sw sw-none"></i> missing bits</span>
+  </p>
+  <label for="q">Filter chapters</label>
+  <input type="search" id="q" placeholder="e.g. john_1 or psalms" autocomplete="off"/>
+  <table>
+    <thead>
+      <tr>
+        <th data-k="id">Chapter</th>
+        <th data-k="n">Verses</th>
+        <th data-k="complete">Complete</th>
+        <th data-k="pct">%</th>
+        <th>Heatmap</th>
+      </tr>
+    </thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <div class="detail" id="detail">
+    <strong id="detail-title"></strong>
+    <p class="meta" id="detail-meta"></p>
+    <div class="bar-wrap" id="detail-bar"></div>
+  </div>
+</div>
+<p id="err" style="display:none;color:#b00020;"></p>
+<script>
+(function () {
+  const BIT = { D: 1, E: 2, V: 4, FULL: 7 };
+  const loading = document.getElementById('loading');
+  const err = document.getElementById('err');
+  const app = document.getElementById('app');
+  let data = null;
+  let sortKey = 'pct';
+  let sortDir = -1;
+
+  function cellClass(b) {
+    if (b === BIT.FULL) return 'cell-7';
+    if (b === 0) return 'cell-0';
+    if (b & BIT.D && b & BIT.E && b & BIT.V) return 'cell-7';
+    return 'cell-' + b;
+  }
+
+  function pctRow(c) {
+    const n = c.n;
+    if (!n) return 0;
+    return Math.round(1000 * c.complete / n) / 10;
+  }
+
+  function render() {
+    if (!data) return;
+    const s = data.summary;
+    document.getElementById('generated').textContent =
+      'Generated: ' + (s.generated || data.generated || '?');
+    const sum = document.getElementById('summary');
+    sum.innerHTML = [
+      { k: 'Verses', v: s.verses },
+      { k: 'Full (D+E+V)', v: s.verses_full },
+      { k: 'Full %', v: (s.full_pct != null ? s.full_pct + '%' : '—') },
+      { k: 'Chapters', v: s.chapters_scanned },
+      { k: 'Donaldson hits', v: s.bit_hits && s.bit_hits.donaldson },
+      { k: 'Entity hits', v: s.bit_hits && s.bit_hits.entity_links },
+      { k: 'Discovery hits', v: s.bit_hits && s.bit_hits.verse_discovery },
+    ].map(function (x) {
+      return '<div class="card"><span>' + x.k + '</span><strong>' + (x.v != null ? x.v : '—') + '</strong></div>';
+    }).join('');
+
+    const ch = data.chapters;
+    const rows = Object.keys(ch).map(function (id) {
+      const c = ch[id];
+      const pct = pctRow(c);
+      return { id: id, n: c.n, complete: c.complete, pct: pct, bits: c.bits };
+    });
+    rows.sort(function (a, b) {
+      const av = a[sortKey];
+      const bv = b[sortKey];
+      if (sortKey === 'id') return sortDir * String(av).localeCompare(String(bv));
+      return sortDir * ((av < bv) ? -1 : (av > bv) ? 1 : 0);
+    });
+
+    const q = (document.getElementById('q').value || '').trim().toLowerCase();
+    const tbody = document.getElementById('rows');
+    tbody.innerHTML = '';
+    rows.forEach(function (r) {
+      if (q && r.id.toLowerCase().indexOf(q) === -1) return;
+      const tr = document.createElement('tr');
+      tr.style.cursor = 'pointer';
+      const heat = (r.bits || []).map(function (b, i) {
+        return '<span class="cell ' + cellClass(b) + '" title="v' + (i + 1) + ' = ' + b + '"></span>';
+      }).join('');
+      tr.innerHTML =
+        '<td>' + r.id + '</td>' +
+        '<td>' + r.n + '</td>' +
+        '<td>' + r.complete + '</td>' +
+        '<td>' + r.pct + '</td>' +
+        '<td><div class="bar-wrap">' + heat + '</div></td>';
+      tr.addEventListener('click', function () {
+        openDetail(r);
+      });
+      tbody.appendChild(tr);
+    });
+  }
+
+  function openDetail(r) {
+    const d = document.getElementById('detail');
+    d.classList.add('open');
+    document.getElementById('detail-title').textContent = r.id;
+    document.getElementById('detail-meta').textContent =
+      r.complete + ' / ' + r.n + ' verses fully covered (' + r.pct + '%). Bitmask: 1=D, 2=E, 4=V.';
+    const bar = document.getElementById('detail-bar');
+    bar.innerHTML = (r.bits || []).map(function (b, i) {
+      return '<span class="cell ' + cellClass(b) + '" title="v' + (i + 1) + ' → ' + b + '"></span>';
+    }).join('');
+    d.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  document.querySelectorAll('th[data-k]').forEach(function (th) {
+    th.addEventListener('click', function () {
+      const k = th.getAttribute('data-k');
+      if (sortKey === k) sortDir = -sortDir;
+      else {
+        sortKey = k;
+        sortDir = k === 'id' ? 1 : -1;
+      }
+      render();
+    });
+  });
+  document.getElementById('q').addEventListener('input', function () { render(); });
+
+  fetch('verse_coverage.json', { cache: 'no-store' })
+    .then(function (r) {
+      if (!r.ok) throw new Error(r.status + ' ' + r.statusText);
+      return r.json();
+    })
+    .then(function (j) {
+      data = j;
+      loading.style.display = 'none';
+      app.style.display = 'block';
+      render();
+    })
+    .catch(function (e) {
+      loading.style.display = 'none';
+      err.style.display = 'block';
+      err.textContent = 'Could not load verse_coverage.json. Run: python3 lds_pipeline/build_verse_coverage.py';
+    });
+})();
+</script>
+</body>
+</html>
