@@ -270,7 +270,11 @@
       "Zechariah 8:17"
     ],
     "doc_ids": [],
-    "christ_connection": "[Urim and Thummim] is a sacred object mentioned in the Book of Exodus, chapter 28, verse 17, where it is described as a piece of clothing worn by the High Priest of Israel. This object is associated with the covenant between God and the Israelites, symbolizing divine guidance and the priest's role in mediating between God and the people. The Urim and Thummim are also linked to the prophecy of the Messiah, as they are described as instruments of divine revelation, foreshadowing the role of Jesus Christ as the ultimate mediator and dispenser of divine wisdom. The object's presence in the Aaronic garments underscores its significance in the establishment of the sacrificial system and the covenantal relationship, thereby typifying the spiritual authority and divine purpose of Jesus Christ in the New Covenant."
+    "christ_connection": "[Urim and Thummim] is a sacred object mentioned in the Book of Exodus, chapter 28, verse 17, where it is described as a piece of clothing worn by the High Priest of Israel. This object is associated with the covenant between God and the Israelites, symbolizing divine guidance and the priest's role in mediating between God and the people. The Urim and Thummim are also linked to the prophecy of the Messiah, as they are described as instruments of divine revelation, foreshadowing the role of Jesus Christ as the ultimate mediator and dispenser of divine wisdom. The object's presence in the Aaronic garments underscores its significance in the establishment of the sacrificial system and the covenantal relationship, thereby typifying the spiritual authority and divine purpose of Jesus Christ in the New Covenant.",
+    "desc": "Instruments used for receiving revelation or translating languages in LDS belief",
+    "wikipedia_summary": "In the Latter Day Saint movement, the term Urim and Thummim refers to a category of instruments used for receiving revelation or translating languages. According to Latter Day Saint theology, the two stones found in the breastplate of Aaron in the Old Testament, the white stone referenced in the Book of Revelation in the New Testament, the two stones bound by silver bows into a set of spectacles (interpreters) that movement founder Joseph Smith said he found buried in the hill Cumorah with the golden plates, and the seer stone found while digging a well used to translate the Book of Mormon are",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Joseph_Smith_receiving_golden_plates.jpg/330px-Joseph_Smith_receiving_golden_plates.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Urim_and_Thummim_(Latter_Day_Saints)"
   },
   {
     "id": "thing:seer_stone",
@@ -328,7 +332,11 @@
       "Mosiah 8:13"
     ],
     "doc_ids": [],
-    "christ_connection": "The Seer Stone, as described in [Isaiah 30:31], is a symbolic object that embodies the covenant of faith and the promise of divine revelation. It typifies the role of the prophet, who is entrusted with the task of discerning the will of God and proclaiming His word. The stone's function in the context of the covenant reflects the divine purpose of Jesus Christ as the ultimate prophet and mediator, through whom the fullness of the Gospel is revealed. The Seer Stone, therefore, serves as a precursor to the incarnate Christ, illustrating the continuity between the sacred office of prophecy and the redemptive work of Jesus, who fulfills the promises made to the prophets and through whom the salvation of the world is accomplished."
+    "christ_connection": "The Seer Stone, as described in [Isaiah 30:31], is a symbolic object that embodies the covenant of faith and the promise of divine revelation. It typifies the role of the prophet, who is entrusted with the task of discerning the will of God and proclaiming His word. The stone's function in the context of the covenant reflects the divine purpose of Jesus Christ as the ultimate prophet and mediator, through whom the fullness of the Gospel is revealed. The Seer Stone, therefore, serves as a precursor to the incarnate Christ, illustrating the continuity between the sacred office of prophecy and the redemptive work of Jesus, who fulfills the promises made to the prophets and through whom the salvation of the world is accomplished.",
+    "desc": "Religious objects of the early Latter Day Saint movement",
+    "wikipedia_summary": "According to Latter Day Saint theology, seer stones were used by Joseph Smith, as well as ancient prophets, to receive revelations from God. Members of the Church of Jesus Christ of Latter-day Saints believe that Smith used seer stones to translate the Book of Mormon.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Seer_stone_%28Latter_Day_Saints%29.jpg/330px-Seer_stone_%28Latter_Day_Saints%29.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Seer_stone_(Latter_Day_Saints)"
   },
   {
     "id": "thing:gold_plates",
@@ -732,7 +740,10 @@
       "Words Of Mormon 1:7"
     ],
     "doc_ids": [],
-    "christ_connection": "The gold plates, as depicted in [Book of Mormon: 1 Nephi 1:1], are a sacred artifact that typifies the purity and holiness of the gospel of Jesus Christ. These plates, which were translated by Joseph Smith, serve as a covenantal instrument, symbolizing the divine promise of salvation and the restoration of the gospel. Their existence and translation are prophesied in [Book of Mormon: 1 Nephi 13:22], underscoring their role in the fulfillment of the covenantal promises made to Abraham. The gold plates, therefore, are not merely an object of historical interest but a vital component of the sacred history leading to the manifestation of Jesus Christ as the Savior of the world."
+    "christ_connection": "The gold plates, as depicted in [Book of Mormon: 1 Nephi 1:1], are a sacred artifact that typifies the purity and holiness of the gospel of Jesus Christ. These plates, which were translated by Joseph Smith, serve as a covenantal instrument, symbolizing the divine promise of salvation and the restoration of the gospel. Their existence and translation are prophesied in [Book of Mormon: 1 Nephi 13:22], underscoring their role in the fulfillment of the covenantal promises made to Abraham. The gold plates, therefore, are not merely an object of historical interest but a vital component of the sacred history leading to the manifestation of Jesus Christ as the Savior of the world.",
+    "desc": "Metallic plates from which Joseph Smith allegedly translated the Book of Mormon",
+    "wikipedia_summary": "According to Latter Day Saint belief, the golden plates are the source from which Joseph Smith translated the Book of Mormon, a sacred text of the faith. Some accounts from people who reported handling the plates describe the plates as weighing from 30 to 60 pounds, gold in color, and composed of thin metallic pages engraved with hieroglyphics on both sides and bound with three D-shaped rings.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Golden_plates"
   },
   {
     "id": "thing:brass_plates",
@@ -1482,7 +1493,11 @@
       "Words Of Mormon 1:13"
     ],
     "doc_ids": [],
-    "christ_connection": "The Sword of Laban, a symbolic object from the Book of Genesis [Genesis 32:24], serves as a typological representation of the sword of the Lord, which is foretold in the Book of Malachi [Malachi 3:1], and is ultimately fulfilled in the sword of the cross, which is the instrument of salvation for the elect. This object, though not directly mentioned in the New Testament, is linked to the covenantal promise made to Abraham [Genesis 12:7], and its association with Laban, a figure of deceit and betrayal, underscores the theme of divine judgment and the triumph of truth over falsehood. The sword, therefore, typifies the instrument through which God delivers His people from bondage and establishes a new covenant, mirroring the fulfillment of the prophecy of the sword in the Book of Revelation [Revelation 1:15] and the final victory of Christ over all adversaries."
+    "christ_connection": "The Sword of Laban, a symbolic object from the Book of Genesis [Genesis 32:24], serves as a typological representation of the sword of the Lord, which is foretold in the Book of Malachi [Malachi 3:1], and is ultimately fulfilled in the sword of the cross, which is the instrument of salvation for the elect. This object, though not directly mentioned in the New Testament, is linked to the covenantal promise made to Abraham [Genesis 12:7], and its association with Laban, a figure of deceit and betrayal, underscores the theme of divine judgment and the triumph of truth over falsehood. The sword, therefore, typifies the instrument through which God delivers His people from bondage and establishes a new covenant, mirroring the fulfillment of the prophecy of the sword in the Book of Revelation [Revelation 1:15] and the final victory of Christ over all adversaries.",
+    "desc": "Person in the Book of Mormon",
+    "wikipedia_summary": "Laban is a figure in the First Book of Nephi, near the start of the Book of Mormon, a scripture of the Latter Day Saint movement. Although he only makes a brief appearance in the Book of Mormon, his brass plates play an important role when they are taken by Laman and Nephi and are used by the Nephites.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Laban%2C_in_Nephi_and_Laban%2C_by_HH_Haag.png/330px-Laban%2C_in_Nephi_and_Laban%2C_by_HH_Haag.png",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Laban_(Book_of_Mormon)"
   },
   {
     "id": "thing:breastplate",
@@ -2043,7 +2058,11 @@
       "Romans 15:12"
     ],
     "doc_ids": [],
-    "christ_connection": "The sealing power, as depicted in the Book of Mormon [1 Corinthians:13:12], serves as a divine ordinance that seals the faithful to the covenant of grace, thereby establishing a covenantal relationship with God. This sealing power, typified in the Book of Mormon [1 Nephi:13:24], is a manifestation of the Holy Spirit's work in the lives of believers, ensuring their spiritual security and fidelity to the covenant. The sealing power, as a covenantal institution, reflects the broader theological framework of the covenantal economy, wherein Jesus Christ acts as the mediator and guarantor of the divine promise, securing the salvation of the elect through the indwelling of the Holy Spirit."
+    "christ_connection": "The sealing power, as depicted in the Book of Mormon [1 Corinthians:13:12], serves as a divine ordinance that seals the faithful to the covenant of grace, thereby establishing a covenantal relationship with God. This sealing power, typified in the Book of Mormon [1 Nephi:13:24], is a manifestation of the Holy Spirit's work in the lives of believers, ensuring their spiritual security and fidelity to the covenant. The sealing power, as a covenantal institution, reflects the broader theological framework of the covenantal economy, wherein Jesus Christ acts as the mediator and guarantor of the divine promise, securing the salvation of the elect through the indwelling of the Holy Spirit.",
+    "desc": "Latter Day Saint ordinance (ritual)",
+    "wikipedia_summary": "Sealing is an ordinance (ritual) performed in Latter Day Saint temples by a person holding the sealing authority. The purpose of this ordinance is to seal familial relationships, making possible the existence of family relationships throughout eternity. Sealings are typically performed as marriages or as sealing of children to parents. They were performed prior to the death of Joseph Smith, and subsequently performed in the largest of the faiths that came from the movement, The Church of Jesus Christ of Latter-day Saints. LDS Church teachings place great importance on the specific authority re",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Phil_and_Marlene.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Sealing_(Mormonism)"
   },
   {
     "id": "thing:priesthood_keys",
@@ -2450,7 +2469,10 @@
       "Zechariah 14:21"
     ],
     "doc_ids": [],
-    "christ_connection": "The Priesthood keys, as a scriptural object, point to Jesus Christ through the covenantal significance of the Aaronic priesthood and its restoration under Christ. These keys, symbolizing the authority and access granted to the priesthood, typify the spiritual authority and mediation of Christ, who is the ultimate high priest [Heb 4:16]. The keys also connect to the ordinance of the Aaronic priesthood, which was re-established in the New Covenant through Christ, thereby fulfilling the prophecy of the \"key of David\" [Matt 16:13]. The keys, therefore, serve as a tangible representation of the New Covenant's fulfillment, illustrating how Christ's priesthood is both the type and the reality of the heavenly priesthood [Heb 8:1-3]."
+    "christ_connection": "The Priesthood keys, as a scriptural object, point to Jesus Christ through the covenantal significance of the Aaronic priesthood and its restoration under Christ. These keys, symbolizing the authority and access granted to the priesthood, typify the spiritual authority and mediation of Christ, who is the ultimate high priest [Heb 4:16]. The keys also connect to the ordinance of the Aaronic priesthood, which was re-established in the New Covenant through Christ, thereby fulfilling the prophecy of the \"key of David\" [Matt 16:13]. The keys, therefore, serve as a tangible representation of the New Covenant's fulfillment, illustrating how Christ's priesthood is both the type and the reality of the heavenly priesthood [Heb 8:1-3].",
+    "desc": "Authority in the Latter Day Saint movement",
+    "wikipedia_summary": "In the Latter Day Saint movement, priesthood is the power and authority of God given to humans, including the authority to perform ordinances and to act as a leader in the church. A group of priesthood holders is referred to as a quorum.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Priesthood_(Latter_Day_Saints)"
   },
   {
     "id": "thing:ark_of_the_covenant",
@@ -2815,7 +2837,11 @@
       "Ruth 4:22"
     ],
     "doc_ids": [],
-    "christ_connection": "The Ark of the Covenant, as a sacred object, points to Jesus Christ through the lens of covenantal theology. It is the central symbol of the Mosaic covenant between God and the Israelites, embodying the promise of salvation and the covenantal relationship established through faith in God's Word. The Ark's role in the biblical narrative, particularly in the book of Joshua [Joshua 6:23], reflects the enduring nature of the covenant, which Jesus Christ fulfills in his own ministry and eternal priesthood. The Ark's journey through the wilderness, its destruction, and eventual restoration in the temple [1 Kings 9:12] parallels the trajectory of Jesus' life, death, and resurrection, illustrating the fulfillment of the covenantal promises in the person of Christ. Thus, the Ark serves as a typological precursor to Jesus, whose life and death are the ultimate expression of the covenantal faith."
+    "christ_connection": "The Ark of the Covenant, as a sacred object, points to Jesus Christ through the lens of covenantal theology. It is the central symbol of the Mosaic covenant between God and the Israelites, embodying the promise of salvation and the covenantal relationship established through faith in God's Word. The Ark's role in the biblical narrative, particularly in the book of Joshua [Joshua 6:23], reflects the enduring nature of the covenant, which Jesus Christ fulfills in his own ministry and eternal priesthood. The Ark's journey through the wilderness, its destruction, and eventual restoration in the temple [1 Kings 9:12] parallels the trajectory of Jesus' life, death, and resurrection, illustrating the fulfillment of the covenantal promises in the person of Christ. Thus, the Ark serves as a typological precursor to Jesus, whose life and death are the ultimate expression of the covenantal faith.",
+    "desc": "Chest containing the Ten Commandments",
+    "wikipedia_summary": "The Ark of the Covenant, also known as the Ark of the Testimony or the Ark of God, was a religious storage chest and relic held to be the most sacred object by the Israelites.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Tissot_Moses_and_Joshua_in_the_Tabernacle.jpg/330px-Tissot_Moses_and_Joshua_in_the_Tabernacle.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ark_of_the_Covenant"
   },
   {
     "id": "thing:tabernacle",
@@ -3277,7 +3303,11 @@
       "Zechariah 4:3"
     ],
     "doc_ids": [],
-    "christ_connection": "The Tabernacle, as a sacred structure in the Old Testament, serves as a typological representation of the heavenly sanctuary and the tabernacle of God, which is ultimately fulfilled in the New Testament through the Holy Spirit dwelling within the Church [Hebrews 9:11-12]. It typifies the covenant of grace, wherein the Lord Jesus Christ is the eternal High Priest, offering a perfect sacrifice in place of the sins of the people [Hebrews 10:12]. The Tabernacle's design and function, as described in the Law, prefigures the spiritual dwelling of God in the hearts of believers, a revelation that is fully realized in the resurrected Christ [Hebrews 10:10]. Thus, the Tabernacle stands as a covenantal sign, pointing to the incarnate Son of God who mediates between the divine and the human, and whose sacrifice is the ultimate fulfillment of the sacrificial system."
+    "christ_connection": "The Tabernacle, as a sacred structure in the Old Testament, serves as a typological representation of the heavenly sanctuary and the tabernacle of God, which is ultimately fulfilled in the New Testament through the Holy Spirit dwelling within the Church [Hebrews 9:11-12]. It typifies the covenant of grace, wherein the Lord Jesus Christ is the eternal High Priest, offering a perfect sacrifice in place of the sins of the people [Hebrews 10:12]. The Tabernacle's design and function, as described in the Law, prefigures the spiritual dwelling of God in the hearts of believers, a revelation that is fully realized in the resurrected Christ [Hebrews 10:10]. Thus, the Tabernacle stands as a covenantal sign, pointing to the incarnate Son of God who mediates between the divine and the human, and whose sacrifice is the ultimate fulfillment of the sacrificial system.",
+    "desc": "Temporary dwelling used by Israelites in the biblical Book of Exodus",
+    "wikipedia_summary": "According to the Hebrew Bible, the tabernacle, also known as the Tent of the Congregation, was the portable earthly dwelling of God used by the Israelites from the Exodus until the conquest of Canaan. Moses was instructed at Mount Sinai to construct and transport the tabernacle with the Israelites on their journey through the wilderness and their subsequent conquest of the Promised Land. Based on 1 Kings 6:1, biblical literalists hold that after either 480 or 440 years, Solomon's Temple in Jerusalem superseded it as God's dwelling-place.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Stiftshuette_Modell_Timnapark.jpg/330px-Stiftshuette_Modell_Timnapark.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Tabernacle"
   },
   {
     "id": "thing:temple",
@@ -4919,7 +4949,13 @@
       "Zephaniah 3:20"
     ],
     "doc_ids": [],
-    "christ_connection": "The Temple, as a sacred edifice, serves as a typological vessel through which the covenant of God with His people is manifested. It is explicitly referenced in [Isaiah 52:1-15], where it is described as a \"temple of the Lord\" and a \"house of prayer,\" symbolizing the fulfillment of the Old Testament promise of a \"tabernacle\" or \"house of God\" that would one day be established in Jerusalem. The Temple, in its construction and its eventual destruction, typifies the coming of Christ as the ultimate sacrifice and dwelling place of God, fulfilling the covenantal purpose of offering a perpetual and perfect sanctuary. Thus, the Temple, through its historical and typological significance, points to Jesus Christ as the eternal High Priest and the final, perfect sacrifice who reestablishes the covenant in the new age."
+    "christ_connection": "The Temple, as a sacred edifice, serves as a typological vessel through which the covenant of God with His people is manifested. It is explicitly referenced in [Isaiah 52:1-15], where it is described as a \"temple of the Lord\" and a \"house of prayer,\" symbolizing the fulfillment of the Old Testament promise of a \"tabernacle\" or \"house of God\" that would one day be established in Jerusalem. The Temple, in its construction and its eventual destruction, typifies the coming of Christ as the ultimate sacrifice and dwelling place of God, fulfilling the covenantal purpose of offering a perpetual and perfect sanctuary. Thus, the Temple, through its historical and typological significance, points to Jesus Christ as the eternal High Priest and the final, perfect sacrifice who reestablishes the covenant in the new age.",
+    "desc": "Former places of Israelite and Jewish worship",
+    "wikipedia_summary": "The Temple in Jerusalem, or alternatively the Holy Temple, refers to the two religious structures that served as the central places of worship for Israelites and Jews on the Temple Mount in the Old City of Jerusalem. According to the Hebrew Bible, the First Temple was built in the 10th century BCE, during the reign of Solomon over the United Kingdom of Israel. It stood until c. 587 BCE, when it was destroyed during the Babylonian siege of Jerusalem. The exact location of this temple on the temple mount is debatable.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Jerusalem_Modell_BW_2.JPG/330px-Jerusalem_Modell_BW_2.JPG",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Temple_in_Jerusalem",
+    "lat": 31.77777778,
+    "lon": 35.23555556
   },
   {
     "id": "thing:manna",
@@ -5168,7 +5204,11 @@
       "Revelation 6:5"
     ],
     "doc_ids": [],
-    "christ_connection": "Manna, as described in [Exodus 16:13-30], is a miraculous substance that sustained the Israelites during their exodus from Egypt. This object points to Jesus Christ through the lens of divine provision and sustenance, as the bread of life is a typological representation of Christ, who is the ultimate provision of God's grace. The covenantal context of manna reflects the covenantal relationship between God and His people, and the fulfillment of this provision in Christ underscores the redemptive nature of Jesus as the bread that gives life. The narrative of manna also connects to the doctrine of the Holy Spirit, as the Spirit is the true gift that nourishes the soul, paralleling the spiritual sustenance that Christ offers through His ministry and teachings."
+    "christ_connection": "Manna, as described in [Exodus 16:13-30], is a miraculous substance that sustained the Israelites during their exodus from Egypt. This object points to Jesus Christ through the lens of divine provision and sustenance, as the bread of life is a typological representation of Christ, who is the ultimate provision of God's grace. The covenantal context of manna reflects the covenantal relationship between God and His people, and the fulfillment of this provision in Christ underscores the redemptive nature of Jesus as the bread that gives life. The narrative of manna also connects to the doctrine of the Holy Spirit, as the Spirit is the true gift that nourishes the soul, paralleling the spiritual sustenance that Christ offers through His ministry and teachings.",
+    "desc": "Edible substance described in the Bible",
+    "wikipedia_summary": "Manna, sometimes or archaically spelled mana, is described in the Bible and the Quran as an edible substance that God bestowed upon the Israelites while they were wandering the desert during the 40-year period that followed the Exodus and preceded the conquest of Canaan.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Tissot_The_Gathering_of_the_Manna_%28color%29.jpg/330px-Tissot_The_Gathering_of_the_Manna_%28color%29.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Manna"
   },
   {
     "id": "thing:rod_of_aaron",
@@ -5346,7 +5386,11 @@
       "Numbers 21:9"
     ],
     "doc_ids": [],
-    "christ_connection": "The Rod of Aaron, as an object of sacred significance, points to Jesus Christ through the lens of covenant and typology. It is mentioned in Exodus 28:30-31, where it is bestowed upon Aaron as a symbol of divine authority and priesthood. This object, which was used in the Temple service, typifies the priesthood of Christ, who is the eternal High Priest, and whose ministry is both a continuation and a fulfillment of the covenantal role of the Aaronic priesthood. The rod, which was able to spring forth from the ground, parallels the spiritual power and authority of Christ, who is the root of all things and the source of spiritual life. Thus, the Rod of Aaron serves as a type of Christ, illustrating the covenantal relationship and the redemptive work of Jesus Christ."
+    "christ_connection": "The Rod of Aaron, as an object of sacred significance, points to Jesus Christ through the lens of covenant and typology. It is mentioned in Exodus 28:30-31, where it is bestowed upon Aaron as a symbol of divine authority and priesthood. This object, which was used in the Temple service, typifies the priesthood of Christ, who is the eternal High Priest, and whose ministry is both a continuation and a fulfillment of the covenantal role of the Aaronic priesthood. The rod, which was able to spring forth from the ground, parallels the spiritual power and authority of Christ, who is the root of all things and the source of spiritual life. Thus, the Rod of Aaron serves as a type of Christ, illustrating the covenantal relationship and the redemptive work of Jesus Christ.",
+    "desc": "Staves carried by Moses's brother, Aaron, in the Torah",
+    "wikipedia_summary": "Aaron's rod refers to any of the walking sticks carried by Moses's brother, Aaron, in the Torah. The Bible tells how, along with Moses's rod, Aaron's rod was endowed with miraculous power during the Plagues of Egypt that preceded the Exodus. Later, his rod miraculously sprouted blossoms and almonds to symbolize God's choice of Aaron and his tribe for holy service.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Aarons_rod_budding_%285753119%29.jpg/330px-Aarons_rod_budding_%285753119%29.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Aaron's_rod"
   },
   {
     "id": "thing:burning_bush",
@@ -5525,7 +5569,11 @@
       "Moses 1:26"
     ],
     "doc_ids": [],
-    "christ_connection": "The burning bush, as described in Exodus 3:1-10, serves as a type of the eternal Lamb of God, whose sacrifice is foretold and typified in the paschal mystery. The bush, which is consumed yet remains unburned, symbolizes the enduring nature of Christ's redemptive work, even in the face of destruction. It points to the covenant between God and Israel, wherein the Lamb of God, Jesus Christ, is to be sacrificed for the sins of the world. The bush, as a visible sign of divine presence, anticipates the coming of the Messiah, who would be both the fulfillment of the covenant and the embodiment of the Spirit upon the disciples. Thus, the burning bush is not merely a historical event but a prophetic emblem of the sacrificial atonement and the divine promise of salvation."
+    "christ_connection": "The burning bush, as described in Exodus 3:1-10, serves as a type of the eternal Lamb of God, whose sacrifice is foretold and typified in the paschal mystery. The bush, which is consumed yet remains unburned, symbolizes the enduring nature of Christ's redemptive work, even in the face of destruction. It points to the covenant between God and Israel, wherein the Lamb of God, Jesus Christ, is to be sacrificed for the sins of the world. The bush, as a visible sign of divine presence, anticipates the coming of the Messiah, who would be both the fulfillment of the covenant and the embodiment of the Spirit upon the disciples. Thus, the burning bush is not merely a historical event but a prophetic emblem of the sacrificial atonement and the divine promise of salvation.",
+    "desc": "Supernatural phenomenon described by Exodus 3:1–4:17",
+    "wikipedia_summary": "The burning bush refers to an event recorded in the Jewish Torah. It happened in the mid-15th century BCE or the 13th century BCE. It is described in the third chapter of the Book of Exodus as having occurred on Mount Horeb. According to the biblical account, the bush was on fire but was not consumed by the flames, hence the name. In the biblical and Quranic narrative, the burning bush is the location at which Moses was appointed by God to lead the Israelites out of Egypt and into Canaan.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Bourdon%2C_S%C3%A9bastien_-_Burning_bush.jpg/330px-Bourdon%2C_S%C3%A9bastien_-_Burning_bush.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Burning_bush"
   },
   {
     "id": "thing:pillar_of_fire",
@@ -5721,7 +5769,7 @@
       "rod of Moses",
       "Moses' rod"
     ],
-    "wikipedia_title": null,
+    "wikipedia_title": "Staff of Moses",
     "excerpts": [
       {
         "text": "It is like the rod of Moses on which the serpent-bitten Israelites had only to look to be healed.",
@@ -5764,7 +5812,11 @@
       "Exodus 7:9"
     ],
     "doc_ids": [],
-    "christ_connection": "The Staff of Moses, as described in Exodus 17:7-12 and Deuteronomy 3:27, serves as a typological emblem of Christ, symbolizing the divine authority and covenantal fidelity of God. It is both a physical object and a spiritual sign, representing the covenantal office of the Messiah, who is the fulfillment of the promise made to Moses. The staff, which was given to Moses by God and later carried by Joshua, typifies the spiritual leadership and divine power that Christ exercises through His ministry and priesthood. This object, thus, connects to Jesus Christ through the covenantal relationship and the role of the Messiah as the earthly embodiment of God's promises."
+    "christ_connection": "The Staff of Moses, as described in Exodus 17:7-12 and Deuteronomy 3:27, serves as a typological emblem of Christ, symbolizing the divine authority and covenantal fidelity of God. It is both a physical object and a spiritual sign, representing the covenantal office of the Messiah, who is the fulfillment of the promise made to Moses. The staff, which was given to Moses by God and later carried by Joshua, typifies the spiritual leadership and divine power that Christ exercises through His ministry and priesthood. This object, thus, connects to Jesus Christ through the covenantal relationship and the role of the Messiah as the earthly embodiment of God's promises.",
+    "desc": "Walking stick used by Moses",
+    "wikipedia_summary": "The Staff of Moses, also known as the Rod of Moses or Staff of God, is mentioned in the Bible and Quran as a walking stick used by Moses. According to the Book of Exodus, the staff was used to produce water from a rock, was transformed into a snake and back, and was used at the parting of the Red Sea. Whether the staff of Moses was the same as the staff used by his brother Aaron has been debated by rabbinical scholars.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/VictoryOLord.JPG/330px-VictoryOLord.JPG",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Staff_of_Moses"
   },
   {
     "id": "thing:stone_tablets",
@@ -6345,7 +6397,11 @@
       "Zechariah 14:21"
     ],
     "doc_ids": [],
-    "christ_connection": "The stone tablets, as depicted in [Psalm 2:7], serve as a typological reflection of the covenantal relationship between God and His people, illustrating the establishment of a divine promise through the covenantal sign. Their existence, recorded in [Exodus 31:1-11], underscores the sacredness of the law and the role of the tabernacle as a vessel of divine presence. In [John 1:14], the stone tablets are referenced as a symbol of the enduring nature of God's covenant, pointing to the fulfillment of the promise in the incarnate Christ. Thus, the stone tablets, through their historical and typological significance, connect to Jesus Christ as the ultimate covenantal sign and the fulfillment of the divine promise."
+    "christ_connection": "The stone tablets, as depicted in [Psalm 2:7], serve as a typological reflection of the covenantal relationship between God and His people, illustrating the establishment of a divine promise through the covenantal sign. Their existence, recorded in [Exodus 31:1-11], underscores the sacredness of the law and the role of the tabernacle as a vessel of divine presence. In [John 1:14], the stone tablets are referenced as a symbol of the enduring nature of God's covenant, pointing to the fulfillment of the promise in the incarnate Christ. Thus, the stone tablets, through their historical and typological significance, connect to Jesus Christ as the ultimate covenantal sign and the fulfillment of the divine promise.",
+    "desc": "Biblical principles relating to ethics and worship",
+    "wikipedia_summary": "The Ten Commandments, or the Decalogue, are religious and ethical directives, structured as a covenant document, that, according to the Hebrew Bible, were given by God to Moses. The text of the Ten Commandments appears in three markedly distinct versions in the Hebrew Bible: at Exodus 20:1–17, Deuteronomy 5:6–21, and the \"Ritual Decalogue\" of Exodus 34:11–26.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/0001_FL9694984.jpg/330px-0001_FL9694984.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ten_Commandments"
   },
   {
     "id": "thing:altar",
@@ -6812,7 +6868,11 @@
       "Zephaniah 3:20"
     ],
     "doc_ids": [],
-    "christ_connection": "The altar, as a sacred object, points to Jesus Christ through its role in the sacrificial economy of the Old Testament, typifying the ultimate sacrifice of Christ on the cross. It is described in [Leviticus 1:9] as a place of offering, and in [Hebrews 10:1-4] it is depicted as a symbol of the New Covenant, where Christ's death is presented as the fulfillment of the covenantal promise. The altar, in its ceremonial function, connects to Jesus Christ through the ordinance of sacrifice, wherein the cross is both the culmination and the typology of the altar's original purpose, thus linking the Old and New Testament in the narrative of salvation."
+    "christ_connection": "The altar, as a sacred object, points to Jesus Christ through its role in the sacrificial economy of the Old Testament, typifying the ultimate sacrifice of Christ on the cross. It is described in [Leviticus 1:9] as a place of offering, and in [Hebrews 10:1-4] it is depicted as a symbol of the New Covenant, where Christ's death is presented as the fulfillment of the covenantal promise. The altar, in its ceremonial function, connects to Jesus Christ through the ordinance of sacrifice, wherein the cross is both the culmination and the typology of the altar's original purpose, thus linking the Old and New Testament in the narrative of salvation.",
+    "desc": "Structure upon which offerings such as sacrifices are made for religious purposes",
+    "wikipedia_summary": "An altar is a table or platform for the presentation of religious offerings, for sacrifices, or for other ritualistic purposes. Altars are found at shrines, temples, churches, and other places of worship. They are used particularly in Christianity, Buddhism, Hinduism, and modern paganism. Many historical-medieval faiths also made use of them, including the Roman, Greek, and Norse religions.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/RD_alter.jpg/330px-RD_alter.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Altar"
   },
   {
     "id": "thing:menorah",
@@ -7002,7 +7062,11 @@
       "Zechariah 4:3"
     ],
     "doc_ids": [],
-    "christ_connection": "The Menorah, as a sacred object, points to Jesus Christ through its symbolism of divine illumination and the light of truth. Found in the Tabernacle and later in the Temple, it represents the covenantal light that was to be brought into the world through Christ, who is the ultimate source of spiritual illumination. [Exodus 25:10-12] [Isaiah 58:10] The Menorah's design, with its seven branches, typifies the sevenfold nature of Christ's ministry and the multifaceted grace of salvation. [Matthew 26:41] The Menorah, as an object of worship and ritual, connects to Jesus Christ through its role in the sacrificial and illuminative aspects of the covenant, reflecting the sacrificial offering and the light of Christ that dispels darkness. [John 8:12]"
+    "christ_connection": "The Menorah, as a sacred object, points to Jesus Christ through its symbolism of divine illumination and the light of truth. Found in the Tabernacle and later in the Temple, it represents the covenantal light that was to be brought into the world through Christ, who is the ultimate source of spiritual illumination. [Exodus 25:10-12] [Isaiah 58:10] The Menorah's design, with its seven branches, typifies the sevenfold nature of Christ's ministry and the multifaceted grace of salvation. [Matthew 26:41] The Menorah, as an object of worship and ritual, connects to Jesus Christ through its role in the sacrificial and illuminative aspects of the covenant, reflecting the sacrificial offering and the light of Christ that dispels darkness. [John 8:12]",
+    "desc": "Ancient Hebrew lampstand",
+    "wikipedia_summary": "The Temple menorah is a seven-branched candelabrum that is described in the Hebrew Bible and later ancient sources as having been used in the Tabernacle and the Temple in Jerusalem.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Menorah_0307.jpg/330px-Menorah_0307.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Temple_menorah"
   },
   {
     "id": "thing:veil_of_the_temple",
@@ -7374,7 +7438,7 @@
       "holy anointing oil",
       "oil of consecration"
     ],
-    "wikipedia_title": null,
+    "wikipedia_title": "Anointing oil",
     "excerpts": [
       {
         "text": "The root *QDS is used with reference to God (Exodus 15:11; Leviticus 20:3); God's temples (Exodus 38:24; 40:9; 2 Chronicles 29:5; Ezekiel 42:14); persons directly associated with temples, such as the priests (Leviticus 21:6) and the people of Israel (Jeremiah 2:3; Psalm 114:2); temple furniture (Exodus 30:29; 2 Chronicles 35:3); altars (Exodus 29:37; Deuteronomy 9:24); anointing oil (Exodus…",
@@ -7506,7 +7570,10 @@
       "Numbers 17:13"
     ],
     "doc_ids": [],
-    "christ_connection": "Anointing oil, as a sacred object, points to Jesus Christ through the covenantal significance of the Aaronic priesthood and the ceremonial laws of the Old Testament. It typifies the sacrificial act of atonement, as seen in the symbolism of the oil used in the anointing of the Lord's throne in [1 Kings 8:1-12], which prefigures the anointing of Christ by the Holy Spirit. The oil, in its use and symbolism, connects to the doctrine of the Holy Spirit and the priesthood of Christ, reflecting the fulfillment of the covenantal promise in the New Testament. The anointing of Jesus with oil in [Acts 10:38] further illustrates the typological connection, where the oil becomes a sign of the Holy Spirit's indwelling and the inauguration of the New Covenant."
+    "christ_connection": "Anointing oil, as a sacred object, points to Jesus Christ through the covenantal significance of the Aaronic priesthood and the ceremonial laws of the Old Testament. It typifies the sacrificial act of atonement, as seen in the symbolism of the oil used in the anointing of the Lord's throne in [1 Kings 8:1-12], which prefigures the anointing of Christ by the Holy Spirit. The oil, in its use and symbolism, connects to the doctrine of the Holy Spirit and the priesthood of Christ, reflecting the fulfillment of the covenantal promise in the New Testament. The anointing of Jesus with oil in [Acts 10:38] further illustrates the typological connection, where the oil becomes a sign of the Holy Spirit's indwelling and the inauguration of the New Covenant.",
+    "desc": "Oil used to sanctify, to set the anointed person or object apart",
+    "wikipedia_summary": "\nIn the ancient Israelite religion, the holy anointing oil formed an integral part of the ordination of the priesthood and the High Priest as well as in the consecration of the articles of the Tabernacle and subsequent temples in Jerusalem. The primary purpose of anointing with the holy anointing oil was to sanctify, to set the anointed person or object apart as qodesh, or \"holy\".",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Holy_anointing_oil"
   },
   {
     "id": "thing:crown_of_thorns",
@@ -7735,7 +7802,11 @@
       "Revelation 16:20"
     ],
     "doc_ids": [],
-    "christ_connection": "The Crown of Thorns, as a symbolic object, points to Jesus Christ through the lens of sacrificial suffering and the fulfillment of the Old Testament prophecy concerning the Messiah's humiliation. It typifies the crucifixion as foretold in [Isaiah 53:3], where the Messiah is described as bearing the sins of the world, and it connects to Jesus Christ through the ordinance of suffering and the covenant of redemption. The object serves as a tangible representation of the divine plan of atonement, wherein Jesus, as the Lamb of God, is both pierced and crowned with thorns, thereby embodying the dual nature of His sacrifice—both the anguish of suffering and the glory of redemption."
+    "christ_connection": "The Crown of Thorns, as a symbolic object, points to Jesus Christ through the lens of sacrificial suffering and the fulfillment of the Old Testament prophecy concerning the Messiah's humiliation. It typifies the crucifixion as foretold in [Isaiah 53:3], where the Messiah is described as bearing the sins of the world, and it connects to Jesus Christ through the ordinance of suffering and the covenant of redemption. The object serves as a tangible representation of the divine plan of atonement, wherein Jesus, as the Lamb of God, is both pierced and crowned with thorns, thereby embodying the dual nature of His sacrifice—both the anguish of suffering and the glory of redemption.",
+    "desc": "Christian relic",
+    "wikipedia_summary": "\nAccording to the New Testament, a woven crown of thorns was placed on the head of Jesus during the events leading up to his crucifixion. It was one of the instruments of the Passion, employed by Jesus' captors both to cause him pain and to mock his claim of authority. It is mentioned in the gospels of Matthew, Mark and John, and is often alluded to by the early Church Fathers, such as Clement of Alexandria, Origen and others, along with being referenced in the apocryphal Gospel of Peter.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Christ_Carrying_the_Cross_1580.jpg/330px-Christ_Carrying_the_Cross_1580.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Crown_of_thorns"
   },
   {
     "id": "thing:baptism",
@@ -8641,7 +8712,11 @@
       "Zechariah 9:12"
     ],
     "doc_ids": [],
-    "christ_connection": "Baptism, as an ordinance instituted by Christ in the New Testament, points to Jesus Christ through the fulfillment of the Old Testament covenantal imagery. It typifies the cleansing and regeneration of the believer, mirroring the baptism of Jesus in the Jordan River, which was foretold in the book of Isaiah [Isaiah 4:1-5] and typified in the rituals of the Old Testament. The act of baptism, as a sacrament, connects to Jesus Christ through the establishment of the Christian church and the priesthood of believers, reflecting the divine nature and redemptive work of Christ. The ordinance of baptism, as instituted by Christ, serves as a sign and seal of the promise of eternal life, thereby connecting to the covenantal relationship between God and His people, and affirming the believer's union with Christ."
+    "christ_connection": "Baptism, as an ordinance instituted by Christ in the New Testament, points to Jesus Christ through the fulfillment of the Old Testament covenantal imagery. It typifies the cleansing and regeneration of the believer, mirroring the baptism of Jesus in the Jordan River, which was foretold in the book of Isaiah [Isaiah 4:1-5] and typified in the rituals of the Old Testament. The act of baptism, as a sacrament, connects to Jesus Christ through the establishment of the Christian church and the priesthood of believers, reflecting the divine nature and redemptive work of Christ. The ordinance of baptism, as instituted by Christ, serves as a sign and seal of the promise of eternal life, thereby connecting to the covenantal relationship between God and His people, and affirming the believer's union with Christ.",
+    "desc": "Christian rite of initiation into the Church",
+    "wikipedia_summary": "Baptism is a Christian rite of initiation almost invariably with the use of water. It may be performed by sprinkling or pouring water on the head, or immersing in water, traditionally three times for each person of the Trinity. It is also called christening, although this is typically reserved for the baptism of infants. Baptism is regarded as a sacrament in most churches and an ordinance in others, with the synoptic gospels recounting that John the Baptist baptized Jesus.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Baptism_in_the_Jordan_River_140308-N-HB951-058.jpg/330px-Baptism_in_the_Jordan_River_140308-N-HB951-058.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Baptism"
   },
   {
     "id": "thing:sacrament",
@@ -9006,7 +9081,11 @@
       "Ruth 2:1"
     ],
     "doc_ids": [],
-    "christ_connection": "The sacrament, as instituted by Christ in the New Covenant, serves as a visible sign and seal of the covenant between God and His people. It typifies the body and blood of Christ, reflecting the sacrificial nature of His death and the promise of His eternal redemption. Through the ordinance of the sacrament, Christ's presence is made real in the community of believers, fulfilling the Old Testament covenantal promises and inaugurating the New Covenant. Thus, the sacrament is both a type and a prophecy, embodying the fulfillment of the covenantal faith and the ongoing presence of Christ in the Church."
+    "christ_connection": "The sacrament, as instituted by Christ in the New Covenant, serves as a visible sign and seal of the covenant between God and His people. It typifies the body and blood of Christ, reflecting the sacrificial nature of His death and the promise of His eternal redemption. Through the ordinance of the sacrament, Christ's presence is made real in the community of believers, fulfilling the Old Testament covenantal promises and inaugurating the New Covenant. Thus, the sacrament is both a type and a prophecy, embodying the fulfillment of the covenantal faith and the ongoing presence of Christ in the Church.",
+    "desc": "Ordinance",
+    "wikipedia_summary": "In the Church of Jesus Christ of Latter-day Saints, the Holy Sacrament of the Lord's Supper, most often simply referred to as the sacrament, is the ordinance in which participants eat bread and drink water in remembrance of the body and blood of Jesus Christ. Normally, the sacrament is provided every Sunday as part of the sacrament meeting, the primary weekly worship service, in each LDS Church congregation.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Bread_sacrament_tray_%2835790368395%29.jpg/330px-Bread_sacrament_tray_%2835790368395%29.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Sacrament_(LDS_Church)"
   },
   {
     "id": "thing:incense",
@@ -9016,7 +9095,7 @@
       "altar of incense",
       "sweet incense"
     ],
-    "wikipedia_title": null,
+    "wikipedia_title": "Incense",
     "excerpts": [
       {
         "text": "Jeroboam stood by the altar to burn incense --It was at one of the annual festivals.",
@@ -9230,7 +9309,11 @@
       "Revelation 1:20"
     ],
     "doc_ids": [],
-    "christ_connection": "The incense, as a sacred object, points to Jesus Christ through its symbolic representation of the Holy Spirit and the divine nature of the Lord. In the Book of Exodus, 30:34-35, the incense is described as being made of fine twined linen, purple, and blue, and it is offered before the Lord as a sign of devotion. This act of offering incense parallels the ministry of Jesus, who, as the Lamb of God, offers himself as a sacrifice for the sins of the world. The incense, therefore, typifies the spiritual elevation and purification achieved through Christ's redemptive work, and its offering reflects the covenantal relationship between God and His people, mediated through Jesus. The incense, in its earthly form, is a type of the heavenly reality that Christ embodies, and its use in the temple serves as a foreshadowing of the eternal priesthood of Christ."
+    "christ_connection": "The incense, as a sacred object, points to Jesus Christ through its symbolic representation of the Holy Spirit and the divine nature of the Lord. In the Book of Exodus, 30:34-35, the incense is described as being made of fine twined linen, purple, and blue, and it is offered before the Lord as a sign of devotion. This act of offering incense parallels the ministry of Jesus, who, as the Lamb of God, offers himself as a sacrifice for the sins of the world. The incense, therefore, typifies the spiritual elevation and purification achieved through Christ's redemptive work, and its offering reflects the covenantal relationship between God and His people, mediated through Jesus. The incense, in its earthly form, is a type of the heavenly reality that Christ embodies, and its use in the temple serves as a foreshadowing of the eternal priesthood of Christ.",
+    "desc": "Material that releases fragrant smoke when burnt",
+    "wikipedia_summary": "Incense is an aromatic biotic material that releases fragrant smoke when burnt. The term is used for either the material or the aroma. Incense is used for aesthetic reasons, religious worship, aromatherapy, meditation, and ceremonial reasons. It may also be used as a simple deodorant or insect repellent.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Incenselonghua.jpg/330px-Incenselonghua.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Incense"
   },
   {
     "id": "thing:iron_rod",
@@ -10474,7 +10557,13 @@
       "Omni 1:13"
     ],
     "doc_ids": [],
-    "christ_connection": "The Sacred Grove, as a symbolic object, points to Jesus Christ through the lens of covenant and typology. It represents the sacred space where the covenant of grace was first established, as depicted in [Hebrews 11:1-10], where faith is likened to the planting of a tree in the ground. The grove, as a place of communion and divine revelation, typifies the role of the Church as the dwelling place of God, as illustrated in [Acts 2:1-4]. Furthermore, the Sacred Grove is connected to Jesus Christ through the ordinance of baptism, which is symbolized by the act of planting and nurturing, as described in [Matthew 28:19], where the command to baptize reflects the ongoing covenantal relationship between God and His people."
+    "christ_connection": "The Sacred Grove, as a symbolic object, points to Jesus Christ through the lens of covenant and typology. It represents the sacred space where the covenant of grace was first established, as depicted in [Hebrews 11:1-10], where faith is likened to the planting of a tree in the ground. The grove, as a place of communion and divine revelation, typifies the role of the Church as the dwelling place of God, as illustrated in [Acts 2:1-4]. Furthermore, the Sacred Grove is connected to Jesus Christ through the ordinance of baptism, which is symbolized by the act of planting and nurturing, as described in [Matthew 28:19], where the command to baptize reflects the ongoing covenantal relationship between God and His people.",
+    "desc": "Forest in New York important to the Latter Day Saint movement",
+    "wikipedia_summary": "The Sacred Grove is a forested area of western New York near the home of Joseph Smith where the foundational event of the Latter Day Saint movement took place. It is the location where Smith said he had his First Vision, a theophany, occurring in the spring of 1820.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Sacred_Grove_%281907%29.jpg/330px-Sacred_Grove_%281907%29.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Sacred_Grove_(Latter_Day_Saints)",
+    "lat": 43.040669,
+    "lon": -77.244404
   },
   {
     "id": "thing:holy_of_holies",
@@ -10755,7 +10844,11 @@
       "Revelation 6:1"
     ],
     "doc_ids": [],
-    "christ_connection": "The Holy of Holies, as the most sacred chamber in the Tabernacle and later in the Temple, serves as a typological prefiguration of the heavenly sanctuary and the ultimate dwelling place of God in Christ. It is described in [Ezra 3:12] as the most holy, and its presence in the Old Testament foreshadows the eternal and transcendent nature of Jesus Christ, who is both the mediator of a new covenant and the dwelling place of God in the world. The concept of the Holy of Holies, with its emphasis on divine holiness and the exclusion of the unworthy, typifies the sacrificial and redemptive work of Christ, who through His death and resurrection, offers a new and eternal approach to God's presence."
+    "christ_connection": "The Holy of Holies, as the most sacred chamber in the Tabernacle and later in the Temple, serves as a typological prefiguration of the heavenly sanctuary and the ultimate dwelling place of God in Christ. It is described in [Ezra 3:12] as the most holy, and its presence in the Old Testament foreshadows the eternal and transcendent nature of Jesus Christ, who is both the mediator of a new covenant and the dwelling place of God in the world. The concept of the Holy of Holies, with its emphasis on divine holiness and the exclusion of the unworthy, typifies the sacrificial and redemptive work of Christ, who through His death and resurrection, offers a new and eternal approach to God's presence.",
+    "desc": "Inner sanctuary of the Jewish Tabernacle",
+    "wikipedia_summary": "The Holy of Holies or Devir is a term in the Hebrew Bible that refers to the inner sanctuary of the Tabernacle, where the Shekhinah appeared. According to Hebrew tradition, the area was defined by four pillars that held up the veil of the covering, under which the Ark of the Covenant was held above the floor. According to the Hebrew Bible, the Ark contained the Ten Commandments, which were given by God to Moses on Mount Sinai. The first Temple in Jerusalem, called Solomon's Temple, was said to have been built by King Solomon to keep the Ark.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Mishkan5_big.jpg/330px-Mishkan5_big.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Holy_of_Holies"
   },
   {
     "id": "thing:ephod",
@@ -10931,7 +11024,11 @@
       "Nehemiah 7:65"
     ],
     "doc_ids": [],
-    "christ_connection": "The Ephod, a sacred garment worn by the high priest in the Tabernacle, points to Jesus Christ through its symbolic role in the sacrificial economy. As a garment of honor and ritual purity, it typifies the priestly role of Christ, who mediates between God and humanity through his sacrifice. The Ephod, as an object of divine appointment, connects to Jesus Christ through the covenantal relationship established in the Old Testament, fulfilling the prophecy of the \"suffering servant\" in Isaiah 53. The Ephod, in its design and function, reflects the structure of Christ's ministry, where he both offers and is offered, embodying the typological significance of the sacrificial act in the New Testament."
+    "christ_connection": "The Ephod, a sacred garment worn by the high priest in the Tabernacle, points to Jesus Christ through its symbolic role in the sacrificial economy. As a garment of honor and ritual purity, it typifies the priestly role of Christ, who mediates between God and humanity through his sacrifice. The Ephod, as an object of divine appointment, connects to Jesus Christ through the covenantal relationship established in the Old Testament, fulfilling the prophecy of the \"suffering servant\" in Isaiah 53. The Ephod, in its design and function, reflects the structure of Christ's ministry, where he both offers and is offered, embodying the typological significance of the sacrificial act in the New Testament.",
+    "desc": "Garment worn by the high priest in ancient Israel",
+    "wikipedia_summary": "An ephod was a type of apron that, according to the Hebrew Bible, was worn by the High Priest of Israel, an artifact and an object to be revered in ancient Israelite culture, and was closely connected with oracular practices and priestly ritual.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/PLATE4DX.jpg/330px-PLATE4DX.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ephod"
   },
   {
     "id": "thing:laver",
@@ -11051,7 +11148,11 @@
       "Revelation 10:8"
     ],
     "doc_ids": [],
-    "christ_connection": "The laver, as a sacred object, points to the covenantal relationship between God and His people, typifying the cleansing and purification offered through the blood of Christ. Found in the Tabernacle and later in the Temple, the laver symbolizes the ritual of washing and cleansing, a process essential for approaching God and for the forgiveness of sins. This typifies the sacramental act of baptism, which is both a sign and a promise, reflecting the ultimate purification and reconciliation achieved through Christ's sacrifice. The laver, as an object of worship and ritual, connects to the doctrine of the sacraments, illustrating how Christ's death and resurrection sanctify the believer and prepare them for eternal life. The laver, in its use and significance, is a testament to the covenantal faith and the redemptive work of Jesus Christ, who is the fulfillment of all that was foretold in the Old Testament."
+    "christ_connection": "The laver, as a sacred object, points to the covenantal relationship between God and His people, typifying the cleansing and purification offered through the blood of Christ. Found in the Tabernacle and later in the Temple, the laver symbolizes the ritual of washing and cleansing, a process essential for approaching God and for the forgiveness of sins. This typifies the sacramental act of baptism, which is both a sign and a promise, reflecting the ultimate purification and reconciliation achieved through Christ's sacrifice. The laver, as an object of worship and ritual, connects to the doctrine of the sacraments, illustrating how Christ's death and resurrection sanctify the believer and prepare them for eternal life. The laver, in its use and significance, is a testament to the covenantal faith and the redemptive work of Jesus Christ, who is the fulfillment of all that was foretold in the Old Testament.",
+    "desc": "Structure described in the Hebrew Bible",
+    "wikipedia_summary": "The Molten Sea or Brazen Sea was a large basin in the Temple in Jerusalem made by Solomon for ablution of the priests. It is described in 1 Kings 7:23–26 and 2 Chronicles 4:2–5. It stood in the south-eastern corner of the inner court. According to the Bible it was five cubits high, ten cubits in diameter from brim to brim, and thirty cubits in circumference. The brim was like the rim of a cup or like a lily blossom, and its thickness was a hand breadth\", three or four inches. It was placed on the backs of twelve oxen, standing with their faces outward. It was capable of containing two or three",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Brazen_Sea_of_soloman_From_Jewish_Encyclopedia.jpg/330px-Brazen_Sea_of_soloman_From_Jewish_Encyclopedia.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Molten_Sea"
   },
   {
     "id": "thing:showbread",
@@ -11229,6 +11330,459 @@
       "Matthew 17:24"
     ],
     "doc_ids": [],
-    "christ_connection": "[Exodus 16:33] The showbread, as a symbol of the manna, points to the heavenly sustenance of Christ, wherein the flesh of the Lord is made manifest. [John 6:31-35] The institution of the Eucharist, typified by the showbread, connects to the sacramental body and blood of Christ, wherein the bread becomes the flesh of Christ. [1 Corinthians 10:17] The showbread, as part of the communal meal, typifies the body of Christ, which is broken for the forgiveness of sins, and through which the covenant of grace is ratified."
+    "christ_connection": "[Exodus 16:33] The showbread, as a symbol of the manna, points to the heavenly sustenance of Christ, wherein the flesh of the Lord is made manifest. [John 6:31-35] The institution of the Eucharist, typified by the showbread, connects to the sacramental body and blood of Christ, wherein the bread becomes the flesh of Christ. [1 Corinthians 10:17] The showbread, as part of the communal meal, typifies the body of Christ, which is broken for the forgiveness of sins, and through which the covenant of grace is ratified.",
+    "desc": "Cakes or loaves of bread which were always present in the Temple in Jerusalem",
+    "wikipedia_summary": "Showbread, in the King James Version shewbread, in a Biblical or Jewish context, refers to the cakes or loaves of bread which were always present, on a specially-dedicated table, in the Temple in Jerusalem as an offering to God. An alternative, and more appropriate, translation would be presence bread, since the Bible requires that the bread be constantly in the presence of God. The twelve loaves were ritually consumed in the presence of God each week by the Aaronic priesthood.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Showbread"
+  },
+  {
+    "id": "thing:title_of_liberty",
+    "name": "Title of Liberty",
+    "variants": [
+      "captain moroni's flag",
+      "torn coat",
+      "in memory of our God"
+    ],
+    "wikipedia_title": "Title of Liberty",
+    "desc": "Banner raised by Captain Moroni inscribed with a covenant to defend freedom and faith",
+    "related_people": [],
+    "related_places": [],
+    "related_scriptures": [],
+    "doc_ids": [],
+    "excerpts": [],
+    "wikipedia_summary": "According to the Book of Mormon, Captain Moroni was an important Nephite military commander who lived during the first century BC. He is first mentioned in the Book of Alma as \"the chief captain over the Nephites.\"",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/George_Ottinger%2C_Moroni_Raises_the_Title_of_Liberty%2C_published_1888%2C_cropped.png/330px-George_Ottinger%2C_Moroni_Raises_the_Title_of_Liberty%2C_published_1888%2C_cropped.png",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Captain_Moroni"
+  },
+  {
+    "id": "thing:jaredite_barges",
+    "name": "Jaredite barges",
+    "variants": [
+      "barges of the Jaredites",
+      "tight like unto a dish"
+    ],
+    "wikipedia_title": "Jaredite",
+    "desc": "Eight sealed vessels built by the Jaredites to cross the great waters to the promised land",
+    "related_people": [],
+    "related_places": [],
+    "related_scriptures": [],
+    "doc_ids": [],
+    "excerpts": [],
+    "wikipedia_summary": "The Jaredites are one of four peoples that the Latter-day Saints believe settled in ancient America.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Jaredites"
+  },
+  {
+    "id": "thing:plates_of_ether",
+    "name": "Plates of Ether",
+    "variants": [
+      "Jaredite record",
+      "twenty-four gold plates"
+    ],
+    "wikipedia_title": "Book of Ether",
+    "desc": "Twenty-four gold plates containing the record of the Jaredite civilization found by the people of Limhi",
+    "related_people": [],
+    "related_places": [],
+    "related_scriptures": [],
+    "doc_ids": [],
+    "excerpts": [],
+    "wikipedia_summary": "The Book of Ether is one of the books of the Book of Mormon. It describes the Jaredites, descendants of Jared and his companions, who were led by God to the Americas shortly after the confusion of tongues and the destruction of the Tower of Babel. Ether consists of fifteen chapters.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Book_of_Ether"
+  },
+  {
+    "id": "thing:brazen_serpent",
+    "name": "Brazen serpent",
+    "variants": [
+      "bronze serpent",
+      "Nehushtan",
+      "serpent of brass"
+    ],
+    "wikipedia_title": "Nehushtan",
+    "desc": "Bronze serpent on a pole raised by Moses in the wilderness; looking upon it healed the Israelites of snakebite",
+    "related_people": [],
+    "related_places": [],
+    "related_scriptures": [],
+    "doc_ids": [],
+    "excerpts": [],
+    "wikipedia_summary": "In the biblical Books of Kings, the Nehushtan is the bronze image of a serpent on a pole. The image is described in the Book of Numbers, where Yahweh instructed Moses to erect it so that the Israelites who saw it would be cured and be protected from dying from the bites of the \"fiery serpents\", which Yahweh had sent to punish them for speaking against him and Moses.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Nehushtan"
+  },
+  {
+    "id": "thing:noahs_ark",
+    "name": "Noah's ark",
+    "variants": [
+      "the ark",
+      "ark of Noah"
+    ],
+    "wikipedia_title": "Noah's Ark",
+    "desc": "Vessel built by Noah to preserve life through the great flood; a type of salvation through covenant",
+    "related_people": [],
+    "related_places": [],
+    "related_scriptures": [],
+    "doc_ids": [],
+    "excerpts": [],
+    "wikipedia_summary": "Noah's Ark is the boat in the Genesis flood narrative through which God spares Noah, his family, and one pair of every animal species in the world from a global deluge.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Edward_Hicks%2C_American_-_Noah%27s_Ark_-_Google_Art_Project.jpg/330px-Edward_Hicks%2C_American_-_Noah%27s_Ark_-_Google_Art_Project.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Noah's_Ark"
+  },
+  {
+    "id": "thing:rainbow",
+    "name": "Rainbow",
+    "variants": [
+      "bow in the cloud",
+      "sign of the covenant"
+    ],
+    "wikipedia_title": "Rainbow in the Bible",
+    "desc": "Sign of the Noahic covenant placed in the cloud as God's promise to never again destroy the earth by flood",
+    "related_people": [],
+    "related_places": [],
+    "related_scriptures": [],
+    "doc_ids": [],
+    "excerpts": []
+  },
+  {
+    "id": "thing:coat_of_many_colors",
+    "name": "Coat of many colors",
+    "variants": [
+      "Joseph's coat",
+      "ornamented robe",
+      "coat of many pieces"
+    ],
+    "wikipedia_title": "Coat of many colours",
+    "desc": "Robe given to Joseph by his father Jacob, symbolizing favor and foreshadowing Christ's rejected but exalted servant",
+    "related_people": [],
+    "related_places": [],
+    "related_scriptures": [],
+    "doc_ids": [],
+    "excerpts": [],
+    "wikipedia_summary": "In the Hebrew Bible, the coat of many colors or ketonet passim is the name for the garment that the Biblical Joseph owned; it was given to him by his father Jacob in Vayeshev.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Jacob_blesses_Joseph_and_gives_him_the_coat.JPG/330px-Jacob_blesses_Joseph_and_gives_him_the_coat.JPG",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Coat_of_many_colors"
+  },
+  {
+    "id": "thing:paschal_lamb",
+    "name": "Paschal lamb",
+    "variants": [
+      "passover lamb",
+      "lamb without blemish",
+      "passover sacrifice"
+    ],
+    "wikipedia_title": "Korban Pesach",
+    "desc": "The unblemished lamb slain at Passover whose blood protected Israel; the central type of Christ as the Lamb of God",
+    "related_people": [],
+    "related_places": [],
+    "related_scriptures": [],
+    "doc_ids": [],
+    "excerpts": [],
+    "wikipedia_summary": "The Passover sacrifice, also known as the Paschal lamb or the Passover lamb, is the sacrifice that the Torah mandates the Israelites to ritually slaughter on the evening of Nisan 14, before Passover of Nisan 15, and eat lamb on the first night of the holiday with bitter herbs and matzo. According to the Torah, it was first offered on the night of the Exodus from Egypt. Although practiced by Jews in ancient times, the sacrifice is today not performed by the vast majority of Rabbinic Jews, but part of Beta Israel, Karaite and Samaritan observance.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/%D7%9E%D7%A2%D7%9E%D7%93_%D7%94%D7%9B%D7%A0%D7%94_%D7%9C%D7%A7%D7%A8%D7%90%D7%AA_%D7%A7%D7%A8%D7%91%D7%9F_%D7%A4%D7%A1%D7%97.JPG/330px-%D7%9E%D7%A2%D7%9E%D7%93_%D7%94%D7%9B%D7%A0%D7%94_%D7%9C%D7%A7%D7%A8%D7%90%D7%AA_%D7%A7%D7%A8%D7%91%D7%9F_%D7%A4%D7%A1%D7%97.JPG",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Passover_sacrifice"
+  },
+  {
+    "id": "thing:burning_incense",
+    "name": "Incense altar",
+    "variants": [
+      "golden altar",
+      "altar of incense",
+      "sweet incense"
+    ],
+    "wikipedia_title": "Altar of incense",
+    "desc": "The golden altar in the tabernacle where incense was offered morning and evening, typifying intercessory prayer",
+    "related_people": [],
+    "related_places": [],
+    "related_scriptures": [],
+    "doc_ids": [],
+    "excerpts": [],
+    "wikipedia_summary": "Altars in the Hebrew Bible were typically made of earth or unwrought stone. Altars were generally erected in conspicuous places.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Altar_(Bible)"
+  },
+  {
+    "id": "thing:living_water",
+    "name": "Living water",
+    "variants": [
+      "water of life",
+      "fountain of living waters",
+      "river of life"
+    ],
+    "wikipedia_title": "Living water",
+    "desc": "Symbol used by Christ in John 4 for the Holy Spirit and eternal life; rooted in Ezekiel's temple vision",
+    "related_people": [],
+    "related_places": [],
+    "related_scriptures": [],
+    "doc_ids": [],
+    "excerpts": [],
+    "wikipedia_summary": "Living water is a biblical term which appears in both the Old and New Testaments. In Jeremiah 2:13 and 17:13, the prophet describes God as \"the spring of living water\", who has been forsaken by his chosen people Israel. Later, the prophet Zechariah described Jerusalem as a source of \"living water\", \"half [flowing] east to the Dead Sea and half of it west to the Mediterranean Sea, in summer and in winter\". The Pulpit Commentary notes that the city of Jerusalem \"was, as we know, abundantly supplied with water by many conduits and subterranean channels; but standing, as it does, surrounded by hil",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/The_Angel_shows_Saint_John_the_Fountain_of_Living_Water%2C_from_the_Apocalypse_MET_DP815698.jpg/330px-The_Angel_shows_Saint_John_the_Fountain_of_Living_Water%2C_from_the_Apocalypse_MET_DP815698.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Living_Water"
+  },
+  {
+    "id": "thing:bread_of_life",
+    "name": "Bread of life",
+    "variants": [
+      "manna from heaven",
+      "true bread",
+      "I am the bread of life"
+    ],
+    "wikipedia_title": "Bread of Life Discourse",
+    "desc": "Christ's declaration in John 6 identifying himself as the true manna, the bread that gives eternal life",
+    "related_people": [],
+    "related_places": [],
+    "related_scriptures": [],
+    "doc_ids": [],
+    "excerpts": [],
+    "wikipedia_summary": "The Bread of Life Discourse is a portion of the teaching of Jesus which appears in chapter 6 of John's Gospel and was delivered in the synagogue at Capernaum.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Eucharistic_bread_and_fish.jpg/330px-Eucharistic_bread_and_fish.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Bread_of_Life_Discourse"
+  },
+  {
+    "id": "thing:oil_lamps",
+    "name": "Oil and lamps",
+    "variants": [
+      "ten virgins",
+      "wise and foolish virgins",
+      "lamp trimmed and burning"
+    ],
+    "wikipedia_title": "Parable of the Ten Virgins",
+    "desc": "Parable of the ten virgins whose lamps and oil typify readiness for Christ's coming and the Holy Spirit",
+    "related_people": [],
+    "related_places": [],
+    "related_scriptures": [],
+    "doc_ids": [],
+    "excerpts": [],
+    "wikipedia_summary": "The Parable of the Ten Virgins, also known as the Parable of the Wise and Foolish Virgins or the Parable of the Ten Bridesmaids, is one of the parables of Jesus. According to Matthew 25:1–13, ten virgins await a bridegroom; five have brought enough oil for their lamps for the wait, while the oil of the other five runs out. The five virgins who are prepared for the bridegroom's arrival are rewarded, while the five who went to buy further oil miss the bridegroom's arrival and are disowned.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Blake_Wise_And_Foolish_Virgins_1826.jpg/330px-Blake_Wise_And_Foolish_Virgins_1826.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Parable_of_the_Ten_Virgins"
+  },
+  {
+    "id": "thing:talents",
+    "name": "Talents",
+    "variants": [
+      "parable of the talents",
+      "the five talents"
+    ],
+    "wikipedia_title": "Parable of the talents",
+    "desc": "Parable in which servants are given varying sums to invest, teaching stewardship and accountability before Christ",
+    "related_people": [],
+    "related_places": [],
+    "related_scriptures": [],
+    "doc_ids": [],
+    "excerpts": [],
+    "wikipedia_summary": "The Parable of the Talents is one of the parables of Jesus. It appears in two of the synoptic, canonical gospels of the New Testament:Matthew 25:14–30\nLuke 19:11–27",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Parable_of_talents.jpg/330px-Parable_of_talents.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Parable_of_the_Talents"
+  },
+  {
+    "id": "thing:birthright_blessing",
+    "name": "Birthright blessing",
+    "variants": [
+      "patriarchal blessing",
+      "first-born right",
+      "double portion"
+    ],
+    "wikipedia_title": "Birthright (Judaism)",
+    "desc": "The covenant inheritance passed to the firstborn son, typifying Christ's role as the firstborn of every creature",
+    "related_people": [],
+    "related_places": [],
+    "related_scriptures": [],
+    "doc_ids": [],
+    "excerpts": []
+  },
+  {
+    "id": "thing:pillar_of_cloud",
+    "name": "Pillar of cloud",
+    "variants": [
+      "cloud of glory",
+      "cloud by day fire by night",
+      "shekinah"
+    ],
+    "wikipedia_title": "Pillar of cloud and fire",
+    "desc": "Divine presence that guided Israel as a cloud by day and fire by night, typifying the Holy Ghost as guide",
+    "related_people": [],
+    "related_places": [],
+    "related_scriptures": [],
+    "doc_ids": [],
+    "excerpts": []
+  },
+  {
+    "id": "thing:baptismal_font",
+    "name": "Baptismal font",
+    "variants": [
+      "font",
+      "oxen font",
+      "molten sea",
+      "laver of brass"
+    ],
+    "wikipedia_title": "Baptismal font",
+    "desc": "Basin of water used for baptism; in temples, stands on twelve oxen representing the twelve tribes",
+    "related_people": [],
+    "related_places": [],
+    "related_scriptures": [],
+    "doc_ids": [],
+    "excerpts": [],
+    "wikipedia_summary": "A baptismal font is an ecclesiastical architectural element, which serves as a receptacle for baptismal water used for baptism, as a part of Christian initiation for both rites of infant and adult baptism.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Gr%C3%B6tlingbo_kyrka_dopfunt.jpg/330px-Gr%C3%B6tlingbo_kyrka_dopfunt.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Baptismal_font"
+  },
+  {
+    "id": "thing:endowment",
+    "name": "Temple endowment",
+    "variants": [
+      "endowment",
+      "garment of the holy priesthood",
+      "initiatory"
+    ],
+    "wikipedia_title": "Temple endowment",
+    "desc": "Sacred ordinance received in LDS temples that clothes the recipient in priestly garments and instructs in the plan of salvation",
+    "related_people": [],
+    "related_places": [],
+    "related_scriptures": [],
+    "doc_ids": [],
+    "excerpts": [],
+    "wikipedia_summary": "In the theology of the Latter Day Saint movement, an endowment refers to a gift of \"power from on high\", typically associated with the ordinances performed in Latter Day Saint temples. The purpose and meaning of the endowment varied during the life of movement founder Joseph Smith. The term has referred to many such gifts of heavenly power, including the confirmation ritual, the institution of the High Priesthood in 1831, events and rituals occurring in the Kirtland Temple in the mid-1830s, and an elaborate ritual performed in the Nauvoo Temple in the 1840s.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Endowment_(Latter_Day_Saints)"
+  },
+  {
+    "id": "thing:abrahamic_covenant",
+    "name": "Abrahamic covenant",
+    "variants": [
+      "Abrahamic covenant",
+      "covenant of Abraham",
+      "promise to Abraham"
+    ],
+    "wikipedia_title": "Abrahamic covenant",
+    "desc": "God's covenant with Abraham promising posterity, land, and that all nations would be blessed through his seed — fulfilled in Christ",
+    "related_people": [],
+    "related_places": [],
+    "related_scriptures": [],
+    "doc_ids": [],
+    "excerpts": [],
+    "wikipedia_summary": "According to the Hebrew Bible, the covenant of the pieces or covenant between the parts is an important event in Jewish History. In this central narrative God revealed himself to Abraham and made a covenant with him, in which God announced to Abraham that his descendants would eventually inherit the Land of Israel.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/A_Deep_Sleep_Fell_Upon_Abram_and_a_Horror_Seized_Him_%285752557%29.jpg/330px-A_Deep_Sleep_Fell_Upon_Abram_and_a_Horror_Seized_Him_%285752557%29.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Covenant_of_the_pieces"
+  },
+  {
+    "id": "thing:sealing_ordinance",
+    "name": "Sealing ordinance",
+    "variants": [
+      "eternal marriage",
+      "sealing",
+      "bound in heaven",
+      "celestial marriage"
+    ],
+    "wikipedia_title": "Sealing (Mormonism)",
+    "desc": "Temple ordinance that binds families for eternity through the sealing power of the Melchizedek Priesthood",
+    "related_people": [],
+    "related_places": [],
+    "related_scriptures": [],
+    "doc_ids": [],
+    "excerpts": [],
+    "wikipedia_summary": "Sealing is an ordinance (ritual) performed in Latter Day Saint temples by a person holding the sealing authority. The purpose of this ordinance is to seal familial relationships, making possible the existence of family relationships throughout eternity. Sealings are typically performed as marriages or as sealing of children to parents. They were performed prior to the death of Joseph Smith, and subsequently performed in the largest of the faiths that came from the movement, The Church of Jesus Christ of Latter-day Saints. LDS Church teachings place great importance on the specific authority re",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Phil_and_Marlene.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Sealing_(Mormonism)"
+  },
+  {
+    "id": "thing:still_small_voice",
+    "name": "Still small voice",
+    "variants": [
+      "still small voice",
+      "the voice of the Spirit",
+      "a gentle whisper"
+    ],
+    "wikipedia_title": "Still small voice",
+    "desc": "The manner in which the Lord spoke to Elijah after earthquake and fire at Horeb; a type of the Spirit's quiet witness",
+    "related_people": [],
+    "related_places": [],
+    "related_scriptures": [],
+    "doc_ids": [],
+    "excerpts": []
+  },
+  {
+    "id": "thing:dove",
+    "name": "Dove",
+    "variants": [
+      "dove of peace",
+      "Holy Ghost as dove",
+      "dove descending"
+    ],
+    "wikipedia_title": "Dove as symbol",
+    "desc": "At Christ's baptism the Holy Ghost descended in the form of a dove; also Noah's dove signaling the end of the flood",
+    "related_people": [],
+    "related_places": [],
+    "related_scriptures": [],
+    "doc_ids": [],
+    "excerpts": []
+  },
+  {
+    "id": "thing:scepter",
+    "name": "Scepter",
+    "variants": [
+      "rod of iron as scepter",
+      "the scepter shall not depart from Judah"
+    ],
+    "wikipedia_title": "Sceptre",
+    "desc": "Symbol of royal authority; in Genesis 49:10 the scepter shall not depart from Judah until Shiloh (Christ) come",
+    "related_people": [],
+    "related_places": [],
+    "related_scriptures": [],
+    "doc_ids": [],
+    "excerpts": [],
+    "wikipedia_summary": "A sceptre is a staff or wand held in the hand by a ruling monarch as an item of royal or imperial insignia, signifying sovereign authority.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Darius_the_Great.jpg/330px-Darius_the_Great.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Sceptre"
+  },
+  {
+    "id": "thing:scroll",
+    "name": "Scroll",
+    "variants": [
+      "sealed book",
+      "book of the lamb",
+      "little book"
+    ],
+    "wikipedia_title": "Scroll",
+    "desc": "In Revelation 5 only the Lamb was found worthy to open the seven-sealed scroll — typifying Christ's exclusive authority over history",
+    "related_people": [],
+    "related_places": [],
+    "related_scriptures": [],
+    "doc_ids": [],
+    "excerpts": [],
+    "wikipedia_summary": "A scroll, also known as a roll, is a roll of papyrus, parchment, or paper containing writing.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Joshua_Roll.jpg/330px-Joshua_Roll.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Scroll"
+  },
+  {
+    "id": "thing:prodigal_son",
+    "name": "Prodigal son",
+    "variants": [
+      "lost son",
+      "parable of the prodigal son"
+    ],
+    "wikipedia_title": "Parable of the Prodigal Son",
+    "desc": "Parable in Luke 15 portraying God as the waiting father who runs to embrace the returning sinner — type of Atonement mercy",
+    "related_people": [],
+    "related_places": [],
+    "related_scriptures": [],
+    "doc_ids": [],
+    "excerpts": [],
+    "wikipedia_summary": "The parable of the Prodigal Son is one of the parables of Jesus in the Bible, appearing in Luke 15:11–32. In Luke 15, Jesus tells this story, along with those of a man with 100 sheep and a woman with ten coins, to a group of Pharisees and religious leaders who criticized him for welcoming and eating with tax collectors and others seen as sinners.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Pompeo_Batoni_003.jpg/330px-Pompeo_Batoni_003.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Parable_of_the_Prodigal_Son"
+  },
+  {
+    "id": "thing:brother_of_jared_stones",
+    "name": "Stones of the Brother of Jared",
+    "variants": [
+      "sixteen small stones",
+      "touched by the finger of God",
+      "transparent stones"
+    ],
+    "wikipedia_title": "Brother of Jared",
+    "desc": "Sixteen molten transparent stones brought to the Lord by the Brother of Jared; the Lord touched them to provide light — type of faith bringing light from Christ",
+    "related_people": [],
+    "related_places": [],
+    "related_scriptures": [],
+    "doc_ids": [],
+    "excerpts": [],
+    "wikipedia_summary": "In the Book of Mormon, the Brother of Jared is the most prominent person in the account given in the beginning of the Book of Ether. The Brother of Jared's name is not given in the text of the Book of Mormon, but Joseph Smith stated in 1834 that it was Mahonri Moriancumer.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Lehi_Blesses_His_Posterity%2C_cropped.jpg/330px-Lehi_Blesses_His_Posterity%2C_cropped.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Brother_of_Jared"
   }
 ]

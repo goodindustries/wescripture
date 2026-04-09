@@ -238,6 +238,12 @@ def enrich_entity(entity: dict, dry_run: bool = False) -> bool:
     if wiki_url:
         entity["wikipedia_url"] = wiki_url
 
+    # Capture coordinates (places)
+    coords = summary_data.get("coordinates")
+    if coords and coords.get("lat") is not None:
+        entity.setdefault("lat", coords["lat"])
+        entity.setdefault("lon", coords["lon"])
+
     # Parse infobox for structured fields
     # (quick approach: use extract for born/died since infobox requires a second call)
     born = extract_born({}, extract)
@@ -298,10 +304,11 @@ def mark_task(task_id: str, agent: str, commit: str, notes: str) -> None:
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--people",   action="store_true", help="Enrich people.json")
-    parser.add_argument("--places",   action="store_true", help="Enrich places.json")
-    parser.add_argument("--things",   action="store_true", help="Enrich things.json")
-    parser.add_argument("--all",      action="store_true", help="Enrich all entity files")
+    parser.add_argument("--people",          action="store_true", help="Enrich people.json")
+    parser.add_argument("--places",          action="store_true", help="Enrich places.json")
+    parser.add_argument("--things",          action="store_true", help="Enrich things.json")
+    parser.add_argument("--scripture-people",action="store_true", help="Enrich scripture_people.json")
+    parser.add_argument("--all",             action="store_true", help="Enrich all entity files")
     parser.add_argument("--limit",    type=int, default=None, help="Max entities to enrich per file")
     parser.add_argument("--scripture-only", action="store_true", help="Only scripture figures")
     parser.add_argument("--priority-only",  action="store_true", help="Only priority figures")
@@ -329,17 +336,24 @@ def main():
             return e["id"] in PRIORITY_IDS or bool(e.get("group"))
         return True
 
-    do_people = args.people or args.all
-    do_places = args.places or args.all
-    do_things = args.things or args.all
+    do_people          = args.people or args.all
+    do_places          = args.places or args.all
+    do_things          = args.things or args.all
+    do_scripture_people = getattr(args, 'scripture_people', False) or args.all
 
-    if not (do_people or do_places or do_things):
+    if not (do_people or do_places or do_things or do_scripture_people):
         # Default: priority people + all places + all things
         do_people = do_places = do_things = True
         if not args.priority_only and not args.scripture_only:
             args.priority_only = True
 
     total_enriched = 0
+
+    if do_scripture_people:
+        print(f"Enriching scripture_people ({ENTITIES / 'scripture_people.json'})...")
+        n, s = process_file(ENTITIES / "scripture_people.json", args.limit, args.dry_run)
+        total_enriched += n
+        print(f"  scripture_people: {n} enriched, {s} skipped")
 
     if do_people:
         print(f"Enriching people ({ENTITIES / 'people.json'})...")

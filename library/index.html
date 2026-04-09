@@ -631,11 +631,23 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     border-bottom: 1px solid var(--divider);
     background: rgba(0,0,0,0.018);
 }
-.word-card { padding: 16px 28px; border-bottom: 1px solid var(--divider); display: flex; gap: 16px; align-items: flex-start; }
-.word-original { font-size: 28px; font-family: 'EB Garamond', Georgia, serif; font-weight: 400; line-height: 1; color: var(--text); flex-shrink: 0; min-width: 52px; }
-.word-detail {}
-.word-english  { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 5px; }
+.word-card { padding: 14px 20px; border-bottom: 1px solid var(--divider); }
+.word-english  { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+.word-original { font-size: 13px; font-family: 'EB Garamond', Georgia, serif; color: var(--muted); margin-bottom: 8px; }
 .word-meaning  { font-size: 14px; color: var(--text); line-height: 1.6; }
+/* Key words collapse/expand */
+.word-cards-wrap .word-card:nth-child(n+3) { display: none; }
+.word-cards-wrap.expanded .word-card { display: block; }
+.word-more-btn { display: block; width: 100%; text-align: left; padding: 12px 20px; font-size: 12px; font-weight: 600; color: var(--accent); background: none; border: none; border-bottom: 1px solid var(--divider); cursor: pointer; font-family: inherit; }
+.word-more-btn:hover { background: rgba(0,0,0,0.03); }
+.word-cards-wrap.expanded .word-more-btn { display: none; }
+/* Expand overflow for all card types */
+.word-card.expanded .note-overflow,
+.comm-card.expanded .quote-overflow,
+.hist-card.expanded .quote-overflow { display: inline; }
+.word-card.expanded .note-more,
+.comm-card.expanded .quote-more,
+.hist-card.expanded .quote-more { display: none; }
 .note-card { padding: 20px 28px; border-bottom: 1px solid var(--divider); }
 .note-body {
     font-family: 'EB Garamond', Georgia, serif;
@@ -690,6 +702,8 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 .ep-wiki:hover { text-decoration: underline; }
 .ep-section { font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); padding: 12px 16px 5px; }
 .ep-desc { font-size: 13px; color: var(--fg); line-height: 1.55; padding: 10px 16px 8px; border-bottom: 1px solid var(--divider); }
+.ep-meta-row { font-size: 11px; color: var(--muted); padding: 4px 16px 8px; }
+.ep-wiki-summary { font-size: 13px; color: var(--fg); line-height: 1.6; padding: 8px 16px 10px; border-bottom: 1px solid var(--divider); opacity: 0.85; }
 .ep-excerpt { padding: 10px 16px; border-bottom: 1px solid var(--divider); }
 .ep-excerpt-text { font-family: 'EB Garamond', Georgia, serif; font-size: 14px; line-height: 1.75; font-style: italic; color: var(--text); padding-left: 12px; border-left: 2px solid rgba(156,122,77,0.3); }
 .ep-excerpt-attr { font-size: 11px; color: var(--muted); margin-top: 5px; padding-left: 12px; }
@@ -1925,11 +1939,16 @@ function openProfilePanel(entity, typeLabel, placeholderIcon, extraHtml) {
     document.getElementById('channel').classList.add('open');
     channelOpen = true;
 
-    // Lazy load Wikipedia image
+    // Load image: use stored thumbnail first, fallback to live Wikipedia fetch
     var imgEl = document.getElementById('ep-img');
     var placeholderEl = document.getElementById('ep-placeholder');
-    if (entity.wikipedia_title && imgEl && placeholderEl) {
-        fetchWikiImage(entity.wikipedia_title, imgEl, placeholderEl);
+    if (imgEl && placeholderEl) {
+        var thumb = entity.wikipedia_thumbnail;
+        if (thumb) {
+            imgEl.src = thumb; imgEl.style.display = ''; placeholderEl.style.display = 'none';
+        } else if (entity.wikipedia_title) {
+            fetchWikiImage(entity.wikipedia_title, imgEl, placeholderEl);
+        }
     }
 
     // Wire up chip clicks
@@ -1990,12 +2009,19 @@ function openEntityProfile(entityId) {
 
     var extraHtml = '';
 
-    // Scripture figure: show description, Christ connection, and verse appearances
-    if (entity.group && entity.desc) {
+    // Description + dates
+    if (entity.desc) {
         extraHtml += '<div class="ep-desc">' + escapeHtml(entity.desc) + '</div>';
     }
+    var dates = [entity.born ? 'Born ' + entity.born : '', entity.died ? 'Died ' + entity.died : ''].filter(Boolean).join(' · ');
+    if (dates) {
+        extraHtml += '<div class="ep-meta-row">' + escapeHtml(dates) + '</div>';
+    }
+    if (entity.wikipedia_summary) {
+        extraHtml += '<div class="ep-wiki-summary">' + escapeHtml(entity.wikipedia_summary) + '</div>';
+    }
     extraHtml += christConnectionHtml(entity);
-    if (entity.group && entity.scripture_refs && entity.scripture_refs.length) {
+    if (entity.scripture_refs && entity.scripture_refs.length) {
         extraHtml += renderScriptureRefsByBook(entity.scripture_refs);
     }
 
@@ -2023,7 +2049,16 @@ function openPlaceProfile(placeId) {
     var entity = placeById[placeId];
     if (!entity) return;
 
-    var extraHtml = christConnectionHtml(entity)
+    var extraHtml = '';
+    if (entity.desc) extraHtml += '<div class="ep-desc">' + escapeHtml(entity.desc) + '</div>';
+    if (entity.lat != null) {
+        var mapUrl = 'https://www.openstreetmap.org/?mlat=' + entity.lat + '&mlon=' + entity.lon + '&zoom=10';
+        extraHtml += '<div class="ep-meta-row"><a class="ep-wiki" href="' + escapeHtml(mapUrl) + '" target="_blank" rel="noopener">View on Map ↗</a></div>';
+    }
+    if (entity.wikipedia_summary) {
+        extraHtml += '<div class="ep-wiki-summary">' + escapeHtml(entity.wikipedia_summary) + '</div>';
+    }
+    extraHtml += christConnectionHtml(entity)
         + renderExcerpts(entity.excerpts, 6)
         + renderScriptureRefs(entity.related_scriptures)
         + renderChips(entity.related_people || [], 'person')
@@ -2036,7 +2071,12 @@ function openThingProfile(thingId) {
     var entity = thingById[thingId];
     if (!entity) return;
 
-    var extraHtml = christConnectionHtml(entity)
+    var extraHtml = '';
+    if (entity.desc) extraHtml += '<div class="ep-desc">' + escapeHtml(entity.desc) + '</div>';
+    if (entity.wikipedia_summary) {
+        extraHtml += '<div class="ep-wiki-summary">' + escapeHtml(entity.wikipedia_summary) + '</div>';
+    }
+    extraHtml += christConnectionHtml(entity)
         + renderExcerpts(entity.excerpts, 6)
         + renderScriptureRefs(entity.related_scriptures)
         + renderChips(entity.related_people || [], 'person')
@@ -2128,7 +2168,10 @@ function linkifyAttribution(text) {
 
 var DISC_PREVIEW_LEN = 320;
 function expandCard(btn) {
-    btn.closest('.note-card, .quote-card, .hist-card, .comm-card').classList.add('expanded');
+    btn.closest('.note-card, .quote-card, .hist-card, .comm-card, .word-card').classList.add('expanded');
+}
+function expandWordCards(btn) {
+    btn.closest('.word-cards-wrap').classList.add('expanded');
 }
 function makeExpandable(text, previewClass, overflowClass, moreClass) {
     if (!text) return '';
@@ -2236,30 +2279,43 @@ function openVerseDiscovery(ref) {
     var strongsEntries = (strongsIndexCache[chapterId] || {})[vnum] || [];
     if (donaWords.length) {
         html += '<div class="panel-section">Key Words</div>';
+        html += '<div class="word-cards-wrap' + (donaWords.length <= 2 ? ' expanded' : '') + '">';
         donaWords.forEach(function(w) {
             html += '<div class="word-card">'
-                + '<div class="word-original">' + escapeHtml(w.greek || '') + '</div>'
-                + '<div class="word-detail">'
                 + '<div class="word-english">' + escapeHtml(w.word || '') + '</div>'
+                + (w.greek ? '<div class="word-original">' + escapeHtml(w.greek) + '</div>' : '')
                 + '<div class="word-meaning">' + makeExpandable(w.plain || w.meaning || '', 'note-preview', 'note-overflow', 'note-more') + '</div>'
-                + '</div></div>';
+                + '</div>';
         });
+        if (donaWords.length > 2) {
+            var extra = donaWords.length - 2;
+            html += '<button class="word-more-btn" onclick="expandWordCards(this)">Show ' + extra + ' more word' + (extra > 1 ? 's' : '') + ' \u2192</button>';
+        }
+        html += '</div>';
     } else if (strongsEntries.length) {
+        var sFiltered = strongsEntries.filter(function(e) { return (e.lm || e.xl) && (strongsPlain[e.sn] || strongsCleanDef(e.gl, e.kj)); });
         html += '<div class="panel-section">Key Words</div>';
-        strongsEntries.forEach(function(entry) {
-            var script = entry.lm || entry.xl || '';
+        html += '<div class="word-cards-wrap' + (sFiltered.length <= 2 ? ' expanded' : '') + '">';
+        sFiltered.forEach(function(entry) {
+            var script = entry.lm || '';
             var sn     = entry.sn || '';
             var plain  = sn && strongsPlain[sn];
             var def    = plain || strongsCleanDef(entry.gl, entry.kj);
             var root   = plain ? '' : strongsRoot(entry.dv || '');
-            if (!script && !def) return;
+            var gloss  = (entry.gl || '').match(/^([^(,]+)/);
+            var engLabel = gloss ? gloss[1].trim() : (entry.xl || '');
+            var origLine = [entry.xl, script].filter(Boolean).join(' · ');
             html += '<div class="word-card">'
-                + '<div class="word-original">' + escapeHtml(script) + '</div>'
-                + '<div class="word-detail">'
-                + (entry.xl ? '<div class="word-english">' + escapeHtml(entry.xl) + '</div>' : (sn ? '<div class="word-english">Strong\'s ' + escapeHtml(sn) + '</div>' : ''))
+                + '<div class="word-english">' + escapeHtml(engLabel || sn) + '</div>'
+                + (origLine ? '<div class="word-original">' + escapeHtml(origLine) + '</div>' : '')
                 + '<div class="word-meaning">' + makeExpandable(def + (root ? ' <span style="color:var(--muted);font-size:12px">from ' + escapeHtml(root) + '</span>' : ''), 'note-preview', 'note-overflow', 'note-more') + '</div>'
-                + '</div></div>';
+                + '</div>';
         });
+        if (sFiltered.length > 2) {
+            var extra2 = sFiltered.length - 2;
+            html += '<button class="word-more-btn" onclick="expandWordCards(this)">Show ' + extra2 + ' more word' + (extra2 > 1 ? 's' : '') + ' \u2192</button>';
+        }
+        html += '</div>';
     }
 
     if (!entries.length && !donaNotes.length && !donaWords.length && !donaQuotes.length && !strongsEntries.length) {
@@ -2270,9 +2326,10 @@ function openVerseDiscovery(ref) {
     var spoonNotes = (donaEntry.spoon && donaEntry.spoon.notes) || [];
     var allCommentary = [];
     donaNotes.forEach(function(para, i) {
+        var paraText = (typeof para === 'string') ? para : (para.text || '');
         allCommentary.push({
             author: 'Lee Donaldson', work: 'New Testament Commentary',
-            text: (spoonNotes[i]) || para, badge: 'Commentary', badgeClass: ''
+            text: (spoonNotes[i]) || paraText, badge: 'Commentary', badgeClass: ''
         });
     });
     donaQuotes.forEach(function(q) {
@@ -2309,7 +2366,7 @@ function openVerseDiscovery(ref) {
     // ── Scripture echoes from chapter graph ──
     var scriptureEdges = chapterGraphEchoes(chapterId, vnum);
     if (scriptureEdges.length) {
-        html += '<div class="panel-section">Scripture Echoes</div>';
+        html += '<div class="panel-section">Cross References</div>';
         scriptureEdges.forEach(function(s) {
             html += '<div class="scrip-card">'
                 + '<div class="scrip-ref">' + escapeHtml(s.ref) + '</div>'

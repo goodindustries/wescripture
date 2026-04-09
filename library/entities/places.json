@@ -15184,10 +15184,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Region of Egypt where the Israelites lived during their sojourn and bondage",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "A type of refuge and deliverance; Christ delivers His people from spiritual bondage as Moses led Israel from Goshen"
+    "wikipedia_summary": "The land of Goshen is mentioned in the Hebrew Bible as the area in Egypt that was allotted to the Hebrews by the Pharaoh during the time of Joseph. They dwelt in Goshen up until the time of the Exodus, when they left Egypt. It is believed to have been located in the eastern Nile Delta, lower Egypt; perhaps at or near Avaris, the seat of power of the Hyksos kings.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/4/40/Gosen.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Land_of_Goshen",
+    "christ_connection": "A type of refuge and deliverance; Christ delivers His people from spiritual bondage as Moses led Israel from Goshen",
+    "lat": 30.87222222,
+    "lon": 31.4775
   },
   {
     "id": "place:ur",
@@ -15202,10 +15204,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Ancient Mesopotamian city and birthplace of Abraham, patriarch of covenant Israel",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Abraham was called from Ur to begin the Abrahamic covenant, of which Christ is the fulfillment"
+    "wikipedia_summary": "Ur was a major Sumerian city-state in ancient Mesopotamia, located at the site of modern Tell el-Muqayyar in Dhi Qar Governorate, Iraq. Although Ur was a coastal city near the mouth of the Euphrates on the Persian Gulf, the coastline has shifted and the site is now well inland, on the south bank of the Euphrates, 16 km (10 mi) southwest of the city of Nasiriyah. The city dates from the Ubaid period c. 3800 BC, and is recorded in written history as a city-state from the 26th century BC, its first recorded king being Mesannepada.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Urimki_inscription.jpg/330px-Urimki_inscription.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ur",
+    "christ_connection": "Abraham was called from Ur to begin the Abrahamic covenant, of which Christ is the fulfillment",
+    "lat": 30.9616529,
+    "lon": 46.1051259
   },
   {
     "id": "place:haran",
@@ -15218,10 +15222,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "City in upper Mesopotamia where Abraham's family sojourned and from which he was called to Canaan",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "God's call to Abraham from Haran initiated the covenant lineage through which the Savior would come"
+    "wikipedia_summary": "Harran is a municipality and district of Şanlıurfa Province, Turkey. Its area is 904 km2, and its population is 96,072 (2022). It is approximately 40 kilometres southeast of Urfa and 20 kilometres from the Syrian border crossing at Akçakale.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Harran_2015.jpg/330px-Harran_2015.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Harran",
+    "christ_connection": "God's call to Abraham from Haran initiated the covenant lineage through which the Savior would come",
+    "lat": 36.87083333,
+    "lon": 39.025
   },
   {
     "id": "place:hebron",
@@ -15234,10 +15240,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Ancient city in Judah; burial site of Abraham, Isaac, Jacob, and their wives; David's first capital",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Site of the patriarchal burial cave of Machpelah; city of refuge; later associated with David, ancestor of Christ"
+    "wikipedia_summary": "Hebron is a city in the southern West Bank, Palestine, and the capital of the Hebron Governorate, which is the largest in the West Bank. It is located 30 kilometers (19 mi) south of Jerusalem. The population inside in the city limits is 201,063, while the adjacent metropolitan area within the governorate is home to over 700,000 people. Hebron spans across an area of 74.1 square kilometers (28.6 sq mi). It is the third largest city in the country after Gaza and East Jerusalem. The city is often considered one of the Four Holy Cities in Judaism, as well as in Christianity and Islam.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/BTS_Hebron_Tour_280215_24.jpg/330px-BTS_Hebron_Tour_280215_24.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Hebron",
+    "christ_connection": "Site of the patriarchal burial cave of Machpelah; city of refuge; later associated with David, ancestor of Christ",
+    "lat": 31.52861111,
+    "lon": 35.09694444
   },
   {
     "id": "place:beersheba",
@@ -15250,10 +15258,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Southernmost major city of ancient Israel; site of wells dug by Abraham and Isaac; location of covenant oaths",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Abraham called on the name of the Lord at Beersheba; associated with the covenant promises fulfilled in Christ"
+    "wikipedia_summary": "Beersheba, officially Be'er-Sheva, is the largest city in the Negev desert of southern Israel. Often referred to as the \"Capital of the Negev\", it is the centre of the fourth-most populous metropolitan area in Israel, the eighth-most populous Israeli city with a population of 223,587, and the second-largest city in the area, with a total area of 117,500 dunams.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Beersheba_City_Hall_6.jpg/330px-Beersheba_City_Hall_6.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Beersheba",
+    "christ_connection": "Abraham called on the name of the Lord at Beersheba; associated with the covenant promises fulfilled in Christ",
+    "lat": 31.2522,
+    "lon": 34.7867
   },
   {
     "id": "place:bethel",
@@ -15282,10 +15292,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "City where Joshua renewed the covenant; site of Jacob's well; first altar built by Abraham in Canaan",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Christ spoke to the Samaritan woman at Jacob's well near Shechem, offering living water"
+    "wikipedia_summary": "Shechem, also spelled Sichem and other variants, was an ancient city in the Southern Levant. Described in ancient Egyptian inscriptions from the 19th century BC as a part of Retjenu, it is also recorded as a Canaanite city in the 14th century BCE Amarna letters.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Tell_Balata.jpg/330px-Tell_Balata.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Shechem",
+    "christ_connection": "Christ spoke to the Samaritan woman at Jacob's well near Shechem, offering living water",
+    "lat": 32.213618,
+    "lon": 35.281993
   },
   {
     "id": "place:shiloh",
@@ -15298,9 +15310,9 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "City where the tabernacle and ark rested for several generations during the period of the Judges",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
+    "wikipedia_summary": "Shiloh was an ancient city and sanctuary in ancient Israel now located in the West Bank(i.e. Samaria in the Hebrew Bible). According to the Hebrew Bible, Shiloh was one of the main centers of Israelite worship during the pre-monarchic period, before the First Temple in Jerusalem was built. According to the Hebrew Bible, after the Israelite conquest of Canaan, the Tabernacle was moved to Shiloh, and remained there during the period of the Hebrew Bible judges.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Ancient_Shiloh_IMG_2924.JPG/330px-Ancient_Shiloh_IMG_2924.JPG",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Shiloh_(biblical_city)",
     "christ_connection": "Ancient prophecy from Shiloh points to the coming Messiah (Genesis 49:10); place of Israel's early worship"
   },
   {
@@ -15314,10 +15326,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "First encampment of Israel in Canaan after crossing the Jordan; site of mass circumcision and Passover",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "The rolling away of reproach at Gilgal prefigures Christ's removal of the burden of sin through His atonement"
+    "wikipedia_summary": "Gilgal, also known as Galgala or Galgalatokai of the 12 Stones, is the name of one or more places in the Hebrew Bible. Gilgal is mentioned 39 times, in particular in the Book of Joshua, as the place where the Israelites camped after crossing the Jordan River.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Gilgal_from_Bible.jpg/330px-Gilgal_from_Bible.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Gilgal",
+    "christ_connection": "The rolling away of reproach at Gilgal prefigures Christ's removal of the burden of sin through His atonement",
+    "lat": 32.033,
+    "lon": 35.4757
   },
   {
     "id": "place:dothan",
@@ -15330,10 +15344,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Where Joseph's brothers cast him into a pit and sold him to Ishmaelite traders going to Egypt",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Joseph's betrayal by his brothers at Dothan typifies Christ's betrayal and suffering for the salvation of many"
+    "wikipedia_summary": "Dothan is a location mentioned twice in the Hebrew Bible. It has been identified with Tell Dothan, also known as Tell al-Hafireh, located adjacent to the Palestinian town of Bir al-Basha, and ten kilometers southwest of Jenin in the West Bank, near Dotan Junction of Route 60.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Tel_Dotan3.jpg/330px-Tel_Dotan3.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Tel_Dothan",
+    "christ_connection": "Joseph's betrayal by his brothers at Dothan typifies Christ's betrayal and suffering for the salvation of many",
+    "lat": 32.41352778,
+    "lon": 35.23986111
   },
   {
     "id": "place:peniel",
@@ -15364,10 +15380,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Mountain where Elijah challenged and defeated the prophets of Baal, calling down fire from heaven",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Elijah's call of fire from heaven and his later translation typify Christ's divine power and coming glory"
+    "wikipedia_summary": "Mount Carmel, also known in Arabic as Mount Mar Elias, is a coastal mountain range in northern Israel stretching from the Mediterranean Sea towards the southeast. The range is a UNESCO biosphere reserve. A number of towns are situated there, most notably Haifa, Israel's third largest city, located on the northern and western slopes.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Caiobadner_-_mount_carmel.JPG/330px-Caiobadner_-_mount_carmel.JPG",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Mount_Carmel",
+    "christ_connection": "Elijah's call of fire from heaven and his later translation typify Christ's divine power and coming glory",
+    "lat": 32.73333333,
+    "lon": 35.05
   },
   {
     "id": "place:megiddo",
@@ -15398,10 +15416,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Valley and city in northern Israel; site of major battles; associated with Ahab, Naboth, and Jezebel",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "The valley of Jezreel is linked to prophetic judgments that point toward the final gathering under Christ"
+    "wikipedia_summary": "The Jezreel Valley, or Marj ibn Amir is a large fertile plain and inland valley in the Northern District of Israel. It is bordered to the north by the highlands of the Lower Galilee, to the south by the highlands of Samaria, to the west and northwest by the Mount Carmel range, and to the east by the Jordan Valley, with Mount Gilboa marking its southern extent. The largest settlement in the valley is the city of Afula, which lies near its center.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/PikiWiki_Israel_14301_Gilboa_Mountain.JPG/330px-PikiWiki_Israel_14301_Gilboa_Mountain.JPG",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Jezreel_Valley",
+    "christ_connection": "The valley of Jezreel is linked to prophetic judgments that point toward the final gathering under Christ",
+    "lat": 32.59638889,
+    "lon": 35.24194444
   },
   {
     "id": "place:kadesh_barnea",
@@ -15416,10 +15436,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Oasis on the edge of Canaan where Moses sent the twelve spies and where Israel wandered for years",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Israel's rebellion at Kadesh delayed entrance to the promised land; fidelity to Christ enables entering celestial rest"
+    "wikipedia_summary": "Kadesh or Qadesh or Cades is a place-name that occurs several times in the Hebrew Bible, describing a site or sites located south of, or at the southern border of, Canaan and the Kingdom of Judah. Many modern academics hold that it was a single site, located at the modern Tel el-Qudeirat, while some academics and rabbinical authorities hold that there were two locations named Kadesh. A related term, either synonymous with Kadesh or referring to one of the two sites, is Kadesh Barnea. Various etymologies for Barnea have been proposed, including 'desert of wanderings,' but none have produced wid",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Petra-5.JPG/330px-Petra-5.JPG",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Kadesh_(biblical)",
+    "christ_connection": "Israel's rebellion at Kadesh delayed entrance to the promised land; fidelity to Christ enables entering celestial rest",
+    "lat": 30.6425,
+    "lon": 34.41361111
   },
   {
     "id": "place:ramah",
@@ -15448,10 +15470,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Priestly city in Benjamin; birthplace of the prophet Jeremiah",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Jeremiah, born in Anathoth, prophesied of the new covenant that Christ would establish (Jeremiah 31:31-34)"
+    "wikipedia_summary": "Anathoth is the name of one of the Levitical cities given to \"the children of Aaron\" in the tribe of Benjamin. Residents were called Antothites or Anetothites.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Anathoth_%28Anata%29%2C_p._549_in_Thomson%2C_1859.jpg/330px-Anathoth_%28Anata%29%2C_p._549_in_Thomson%2C_1859.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Anathoth",
+    "christ_connection": "Jeremiah, born in Anathoth, prophesied of the new covenant that Christ would establish (Jeremiah 31:31-34)",
+    "lat": 31.8141,
+    "lon": 35.2647
   },
   {
     "id": "place:tekoa",
@@ -15480,10 +15504,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "River ford east of the Jordan where Jacob wrestled with the divine messenger through the night",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Jacob's night of wrestling and blessing at the Jabbok typifies prevailing in prayer and faith through Christ"
+    "wikipedia_summary": "The Zarqa River is the second largest tributary of the lower Jordan River, after the Yarmouk River. It is the third largest river in the region by annual discharge and its watershed encompasses the most densely populated areas east of the Jordan River. The Zarqa rises in springs near Amman, and flows through a deep and broad valley into the Jordan, at an elevation 1,090 metres (3,580 ft) lower.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Landscape_of_Jordan.JPG/330px-Landscape_of_Jordan.JPG",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Zarqa_River",
+    "christ_connection": "Jacob's night of wrestling and blessing at the Jabbok typifies prevailing in prayer and faith through Christ",
+    "lat": 32.19166667,
+    "lon": 35.80166667
   },
   {
     "id": "place:gath",
@@ -15496,10 +15522,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "One of the five principal Philistine cities; hometown of Goliath the giant",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "David's defeat of Goliath from Gath is a classic type of Christ conquering the great enemy, Satan"
+    "wikipedia_summary": "Gath or Gat was one of the five cities of the Philistine pentapolis during the Iron Age. It was located in northeastern Philistia, close to the border with Judah.\nGath is often mentioned in the Hebrew Bible and its existence is confirmed by Egyptian inscriptions. Already of significance during the Bronze Age, the city is believed to be mentioned in the El-Amarna letters as Gimti/Gintu, ruled by the two Shuwardata and 'Abdi-Ashtarti. Another Gath, known as Ginti-kirmil also appears in the Amarna letters.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Cafit030.jpg/330px-Cafit030.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Gath_(city)",
+    "christ_connection": "David's defeat of Goliath from Gath is a classic type of Christ conquering the great enemy, Satan",
+    "lat": 31.7,
+    "lon": 34.847
   },
   {
     "id": "place:gaza",
@@ -15546,10 +15574,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Ancient seaport where Jonah fled; where Peter raised Dorcas and received the vision of clean and unclean animals",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Peter's vision at Joppa revealed that Christ's gospel is for all peoples, Jew and Gentile alike"
+    "wikipedia_summary": "Jaffa, also called Japho, Joppa or Joppe in English, is an ancient Levantine port city which is part of Tel Aviv-Yafo, Israel, located in its southern part. The city sits atop a naturally elevated outcrop on the Mediterranean coastline.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/ISR-2013-Aerial-Jaffa-Port_of_Jaffa.jpg/330px-ISR-2013-Aerial-Jaffa-Port_of_Jaffa.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Jaffa",
+    "christ_connection": "Peter's vision at Joppa revealed that Christ's gospel is for all peoples, Jew and Gentile alike",
+    "lat": 32.05222222,
+    "lon": 34.75305556
   },
   {
     "id": "place:gibeah",
@@ -15562,9 +15592,9 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Hometown and capital of King Saul in the territory of Benjamin",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
+    "wikipedia_summary": "Gibeah is the name of three places mentioned in the Hebrew Bible, in the tribes of Benjamin, Judah, and Ephraim respectively.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/RoyalPalaceHusseinTellElFulDec032022_03.jpg/330px-RoyalPalaceHusseinTellElFulDec032022_03.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Gibeah",
     "christ_connection": "Saul's failure as Israel's first king from Gibeah contrasts with Christ, the perfect and eternal King of Israel"
   },
   {
@@ -15596,9 +15626,9 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Distant land famed for gold, precious stones, and almug wood; source of Solomon's treasure",
-    "wikipedia_summary": "",
+    "wikipedia_summary": "Ophir is a port or region mentioned in the Bible, famous for its wealth. Its existence is attested to by an inscribed pottery shard found at Tell Qasile in 1946, dating to the eighth century BC, which reads \"gold of Ophir to/for Beth-Horon [...] 30 shekels\". The location of Ophir is unknown, though the find confirms it as a real place which exported gold.",
     "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ophir",
     "christ_connection": "Solomon's wisdom and glory from Ophir's gold typify the greater wisdom and riches of Christ (Colossians 2:3)"
   },
   {
@@ -15612,9 +15642,9 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Distant western port city; destination Jonah sailed toward when fleeing God's call",
-    "wikipedia_summary": "",
+    "wikipedia_summary": "Tarshish occurs in the Hebrew Bible with several uncertain meanings, most frequently as a place far across the sea from Phoenicia and the Land of Israel. Tarshish was said to have exported vast quantities of important metals to Phoenicia and Israel. The same place name occurs in the Akkadian inscriptions of the Neo-Assyrian emperor Esarhaddon and also on the Phoenician inscription of the Nora Stone in Sardinia; its precise location was never commonly known, and was eventually lost in antiquity. Legends grew up around it over time, so its identity has been the subject of scholarly research and ",
     "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Tarshish",
     "christ_connection": "Jonah's three days in the great fish after fleeing to Tarshish prefigures Christ's three days in the tomb"
   },
   {
@@ -15631,10 +15661,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Valley south of Jerusalem associated with child sacrifice and later with burning refuse; source of the word Gehenna",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Christ used Gehenna (Hinnom) as a symbol of the consequences of sin and rejection of God (Matthew 5:29-30)"
+    "wikipedia_summary": "Gehenna or Gehinnom is a Biblical toponym that has acquired various theological connotations, including as a place of divine punishment, in Jewish eschatology.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/11-3000-115_%D7%92%D7%99%D7%90_%D7%91%D7%9F_%D7%94%D7%99%D7%A0%D7%95%D7%9D_5.jpg/330px-11-3000-115_%D7%92%D7%99%D7%90_%D7%91%D7%9F_%D7%94%D7%99%D7%A0%D7%95%D7%9D_5.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Gehenna",
+    "christ_connection": "Christ used Gehenna (Hinnom) as a symbol of the consequences of sin and rejection of God (Matthew 5:29-30)",
+    "lat": 31.76972222,
+    "lon": 35.22666667
   },
   {
     "id": "place:kidron",
@@ -15647,9 +15679,9 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Valley between Jerusalem and the Mount of Olives; David crossed it weeping when fleeing Absalom",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
+    "wikipedia_summary": "The Kidron Valley is a valley originating slightly northeast of the Old City of Jerusalem, which then separates the Temple Mount from the Mount of Olives, and ending at the Dead Sea. Beyond Jerusalem it continues in a general south-easterly direction through the Judean Desert in the West Bank, reaching the Dead Sea near the settlement of Ovnat, and descending 4,000 feet (1,200 m) along its 20-mile (32 km) course.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/KidronValleyFromOldCity.JPG/330px-KidronValleyFromOldCity.JPG",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Kidron_Valley",
     "christ_connection": "Christ crossed the Kidron Valley on the night of His betrayal, going to Gethsemane; David crossing it typified this"
   },
   {
@@ -15665,10 +15697,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "One of the five major Philistine cities on the coastal plain south of Joppa",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Like all Philistine strongholds, Ashkelon represents the worldly powers overcome by the covenant purposes of God in Christ"
+    "wikipedia_summary": "Ashkelon or Ashqelon, is a coastal city in the Southern District of Israel on the Mediterranean coast, 50 kilometres (30 mi) south of Tel Aviv, and 13 kilometres (8 mi) north of the border with the Gaza Strip.\nThe modern city is named after the ancient seaport of Ascalon, which was destroyed in 1270 and whose remains are on the southwestern edge of the modern metropolis. The Israeli city, first known as Migdal, was founded in 1949 approximately 4 km inland from ancient Ascalon at the Palestinian town of al-Majdal. Its inhabitants had been exclusively Muslims and Christians, and the area had be",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/93439_marina_ashkelon_PikiWiki_Israel.jpg/330px-93439_marina_ashkelon_PikiWiki_Israel.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ashkelon",
+    "christ_connection": "Like all Philistine strongholds, Ashkelon represents the worldly powers overcome by the covenant purposes of God in Christ",
+    "lat": 31.66666667,
+    "lon": 34.56666667
   },
   {
     "id": "place:lachish",
@@ -15681,10 +15715,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Major fortified city of Judah; siege of Lachish by Sennacherib preserved in detailed Assyrian records",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "The fall of Lachish fulfilled prophetic warnings; God's deliverance of Jerusalem unlike Lachish prefigured Christ's ultimate salvation"
+    "wikipedia_summary": "Lachish was an ancient Canaanite and later Israelite city in the Shephelah region of Canaan on the south bank of the Lakhish River. The current tell by that name, known as Tel Lachish or Tell el-Duweir, has been identified with Lachish. Today, it is an Israeli national park operated and maintained by the Israel Nature and Parks Authority. It lies near the present-day moshav of Lakhish, which was named in honor of the ancient city.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/LachishFrontGate.jpg/330px-LachishFrontGate.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Tel_Lachish",
+    "christ_connection": "The fall of Lachish fulfilled prophetic warnings; God's deliverance of Jerusalem unlike Lachish prefigured Christ's ultimate salvation",
+    "lat": 31.565,
+    "lon": 34.84888889
   },
   {
     "id": "place:caesarea",
@@ -15699,10 +15735,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Roman administrative capital of Judea on the Mediterranean coast; where Paul was imprisoned and testified before Agrippa",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Paul testified of Christ's resurrection before governors and kings at Caesarea, fulfilling Christ's promise of bearing witness"
+    "wikipedia_summary": "Caesarea, also Caesarea Maritima, Caesarea Palaestinae or Caesarea Stratonis, was an ancient and medieval port city on the coast of the eastern Mediterranean, and later a small fishing village. It was the capital of Roman Judaea, Syria Palaestina and Palaestina Prima, successively, for a period of c. 650 years and a major intellectual hub of the Mediterranean. Today, the site is part of the Caesarea National Park, on the western edge of the Sharon plain in Israel.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Caesarea.JPG/330px-Caesarea.JPG",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Caesarea_Maritima",
+    "christ_connection": "Paul testified of Christ's resurrection before governors and kings at Caesarea, fulfilling Christ's promise of bearing witness",
+    "lat": 32.5,
+    "lon": 34.89166667
   },
   {
     "id": "place:caesarea_philippi",
@@ -15715,10 +15753,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "City at the foot of Mount Hermon where Peter confessed Jesus as the Christ, the Son of the living God",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Peter's great confession of Christ took place here; Jesus declared He would build His church upon this rock of revelation"
+    "wikipedia_summary": "Banias, also spelled Banyas, is a site in the Israeli-occupied Golan Heights, Syria near a natural spring, once associated with the Greek god Pan. It had been inhabited for 2,000 years, until its Syrian population fled and their homes were destroyed by Israel following the 1967 Six-Day War. It is located at the foot of Mount Hermon, north of the Golan Heights, the classical Gaulanitis, in the part occupied by Israel. The spring is the source of the Banias River, one of the main tributaries of the Jordan River. Archaeologists uncovered a shrine dedicated to Pan and related deities, and the rema",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Banias_Spring_Cliff_Pan%27s_Cave.JPG/330px-Banias_Spring_Cliff_Pan%27s_Cave.JPG",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Banias",
+    "christ_connection": "Peter's great confession of Christ took place here; Jesus declared He would build His church upon this rock of revelation",
+    "lat": 33.24861111,
+    "lon": 35.69444444
   },
   {
     "id": "place:philippi",
@@ -15731,10 +15771,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Roman colony in Macedonia; Paul's first European church; where Paul and Silas were imprisoned and delivered by an earthquake",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "The miraculous deliverance from prison at Philippi and the founding of the first European church testify of Christ's power"
+    "wikipedia_summary": "Philippi was a major mainland Greek city northwest of the nearby island, Thasos. Its original name was Crenides. The city was renamed by Philip II of Macedon in 356 BC and abandoned in the 14th century after the Ottoman conquest. The present village of Filippoi is located near the ruins of the ancient city within the modern city of Kavala, in turn a\npart of the administrative region of East Macedonia and Thrace. The archaeological site was classified as a UNESCO World Heritage Site in 2016 because of its exceptional Roman architecture, its urban layout as a smaller reflection of Rome itself, a",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Philippi_city_center.jpg/330px-Philippi_city_center.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Philippi",
+    "christ_connection": "The miraculous deliverance from prison at Philippi and the founding of the first European church testify of Christ's power",
+    "lat": 41.01305556,
+    "lon": 24.28638889
   },
   {
     "id": "place:thessalonica",
@@ -15747,10 +15789,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Major Macedonian city where Paul preached Christ and founded a church, receiving two letters from Paul",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Paul wrote of Christ's Second Coming and resurrection of the dead in his letters to the Thessalonians"
+    "wikipedia_summary": "Thessaloniki is a city in northern Greece. The nation's second-largest, with slightly over one million inhabitants in its metropolitan area, it is the capital of the geographic region of Macedonia, the administrative region of Central Macedonia and the Decentralized Administration of Macedonia and Thrace. It is also known in Greek as i Symprotévousa, literally \"the co-capital\", a reference to its historical status as the \"co-reigning\" city of the Byzantine Empire alongside Constantinople.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Thessaloniki_Heptapyrgion_northeastern_wall_from_the_inner_yard.jpg/330px-Thessaloniki_Heptapyrgion_northeastern_wall_from_the_inner_yard.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Thessaloniki",
+    "christ_connection": "Paul wrote of Christ's Second Coming and resurrection of the dead in his letters to the Thessalonians",
+    "lat": 40.6403,
+    "lon": 22.9356
   },
   {
     "id": "place:berea",
@@ -15765,10 +15809,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Macedonian city where Jews searched the scriptures daily to verify Paul's teachings about Christ",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "The Bereans' diligent scripture study confirmed Christ's messiahship, modeling how to receive testimony of Him"
+    "wikipedia_summary": "Veria, officially transliterated Veroia, historically also spelled Beroea or Berea, is a city in Central Macedonia, in the geographic region of Macedonia, northern Greece, and the capital of the regional unit of Imathia. It is located 511 kilometres north-northwest of the capital Athens and 73 km (45 mi) west-southwest of Thessaloniki.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Panoramic_view_of_Veria_-_2014.JPG/330px-Panoramic_view_of_Veria_-_2014.JPG",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Veria",
+    "christ_connection": "The Bereans' diligent scripture study confirmed Christ's messiahship, modeling how to receive testimony of Him",
+    "lat": 40.51666667,
+    "lon": 22.2
   },
   {
     "id": "place:patmos",
@@ -15781,10 +15827,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Greek island in the Aegean Sea where the Apostle John was exiled and received the book of Revelation",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "John received the Revelation of Jesus Christ on Patmos, including visions of the Savior and His millennial reign"
+    "wikipedia_summary": "Patmos is a Greek island in the Aegean Sea. It is famous as the place where, according to Christian belief, John of Patmos received the vision found in the Book of Revelation of the New Testament, and where the book was written.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Chora-of-Patmos.JPG/330px-Chora-of-Patmos.JPG",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Patmos",
+    "christ_connection": "John received the Revelation of Jesus Christ on Patmos, including visions of the Savior and His millennial reign",
+    "lat": 37.325,
+    "lon": 26.54166667
   },
   {
     "id": "place:malta",
@@ -15799,10 +15847,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Mediterranean island where Paul was shipwrecked and miraculously survived a viper bite, healing many islanders",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Paul's miraculous protection and healings on Malta demonstrated the living power of Christ to all who witnessed them"
+    "wikipedia_summary": "Malta, officially the Republic of Malta, is an island country in Southern Europe located in the Mediterranean Sea, between Sicily and North Africa. It consists of an archipelago 80 km (50 mi) south of Italy, 284 km (176 mi) east of Tunisia, and 333 km (207 mi) north of Libya. The two official languages are Maltese and English but Maltese is recognised as the national language. The country's capital is Valletta, which is the smallest capital city in the European Union (EU) by both area and population.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flag_of_Malta.svg/330px-Flag_of_Malta.svg.png",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Malta",
+    "christ_connection": "Paul's miraculous protection and healings on Malta demonstrated the living power of Christ to all who witnessed them",
+    "lat": 35.9,
+    "lon": 14.51666667
   },
   {
     "id": "place:smyrna",
@@ -15815,10 +15865,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Ancient city on the Aegean coast; one of the seven churches of Asia addressed in Revelation; site of early Christian martyrdom",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Christ promised the faithful in Smyrna a crown of life; the church there exemplified endurance for Christ's name"
+    "wikipedia_summary": "İzmir is the third most populous city in Turkey, after Istanbul and Ankara. It is on the Aegean coast of Anatolia, and is the capital of İzmir Province. As of 2025 end of year estimate, İzmir Province has a total population of 4,504,184 while İzmir city is home to around 3.5 million inhabitants. It extends along the outlying waters of the Gulf of İzmir and inland to the north across the Gediz River Delta; to the east along an alluvial plain created by several small streams; and to slightly more rugged terrain in the south. İzmir's climate is Mediterranean.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Bayrakl%C4%B1_Sahil.jpg/330px-Bayrakl%C4%B1_Sahil.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/%C4%B0zmir",
+    "christ_connection": "Christ promised the faithful in Smyrna a crown of life; the church there exemplified endurance for Christ's name",
+    "lat": 38.42444444,
+    "lon": 27.13222222
   },
   {
     "id": "place:pergamon",
@@ -15833,10 +15885,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "City with a great altar of Zeus; one of the seven churches of Revelation; early center of emperor worship",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Christ warned the church at Pergamon about compromise with idolatry, calling them to hold fast to His name"
+    "wikipedia_summary": "Pergamon or Pergamum, also referred to by its modern Greek form Pergamos (Πέργαμος), was a rich and powerful ancient Greek city in Aeolis. It is located 26 kilometres (16 mi) from the modern coastline of the Aegean Sea on a promontory on the north side of the river Caicus and northwest of the modern city of Bergama, Turkey.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Acropolis_-_Bergama_%28Pergamon%29_-_Turkey_-_10_%285747249729%29.jpg/330px-Acropolis_-_Bergama_%28Pergamon%29_-_Turkey_-_10_%285747249729%29.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Pergamon",
+    "christ_connection": "Christ warned the church at Pergamon about compromise with idolatry, calling them to hold fast to His name",
+    "lat": 39.1325,
+    "lon": 27.18416667
   },
   {
     "id": "place:thyatira",
@@ -15849,10 +15903,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Commercial city; one of the seven churches of Revelation; birthplace of Lydia who was converted by Paul at Philippi",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Christ praised Thyatira's love and service but warned against false teaching; Lydia its daughter opened her heart to Christ"
+    "wikipedia_summary": "Thyateira was the name of an ancient Greek city in Asia Minor, now the modern Turkish city of Akhisar, Manisa Province. The name is probably Lydian. It lies in the far west of Turkey, southwest of Istanbul and east-northeast of Athens. It is about 50 miles (80 km) from the Aegean Sea.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Columns_of_Thiatira.jpg/330px-Columns_of_Thiatira.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Thyatira",
+    "christ_connection": "Christ praised Thyatira's love and service but warned against false teaching; Lydia its daughter opened her heart to Christ",
+    "lat": 38.92009,
+    "lon": 27.836253
   },
   {
     "id": "place:sardis",
@@ -15865,10 +15921,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Ancient Lydian capital; one of the seven churches of Revelation; warned about spiritual deadness",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Christ warned Sardis to awaken and strengthen what remains; the few faithful would walk with Him in white"
+    "wikipedia_summary": "Sardis or Sardes was an ancient city best known as the capital of the Lydian Empire. After the fall of the Lydian Empire, it became the capital of the Persian satrapy of Lydia and later a major center of Hellenistic and Byzantine culture. Now an active archaeological site, it is located in modern day Turkey, in Manisa Province, near the town of Sart. Sardis was also mentioned as the campsite of Brutus and Cassius in William Shakespeare's play, Julius Caesar (1599).",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/The_Bath-Gymnasium_complex_at_Sardis%2C_late_2nd_-_early_3rd_century_AD%2C_Sardis%2C_Turkey_%2817098680002%29.jpg/330px-The_Bath-Gymnasium_complex_at_Sardis%2C_late_2nd_-_early_3rd_century_AD%2C_Sardis%2C_Turkey_%2817098680002%29.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Sardis",
+    "christ_connection": "Christ warned Sardis to awaken and strengthen what remains; the few faithful would walk with Him in white",
+    "lat": 38.48833333,
+    "lon": 28.04027778
   },
   {
     "id": "place:philadelphia_asia",
@@ -15899,10 +15957,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Prosperous city near Colossae; one of the seven churches of Revelation; rebuked for being lukewarm",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Christ stood at the door of lukewarm Laodicea and knocked; He offers true riches, sight, and white garments"
+    "wikipedia_summary": "Laodicea on the Lycus was a rich ancient Greek city in Asia Minor, now Turkey, on the river Lycus (Çürüksu). It was located in the Hellenistic regions of Caria and Lydia, which later became the Roman Province of Phrygia Pacatiana. Its ruins are located near the modern city of Denizli, Turkey.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/TR_Pamukkale_Laodicea_asv2020-02_img11.jpg/330px-TR_Pamukkale_Laodicea_asv2020-02_img11.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Laodicea_on_the_Lycus",
+    "christ_connection": "Christ stood at the door of lukewarm Laodicea and knocked; He offers true riches, sight, and white garments",
+    "lat": 37.83583333,
+    "lon": 29.1075
   },
   {
     "id": "place:colossae",
@@ -15917,10 +15977,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "City in the Lycus Valley of Asia Minor; site of the church receiving Paul's letter exalting Christ above all things",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Paul wrote to Colossae that Christ is the image of the invisible God, firstborn of creation, and head of the church"
+    "wikipedia_summary": "Colossae, sometimes called Colosse, also identified by medieval writers as Chonae, was a city in Phrygia, in southern Asia Minor.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/TR_Colossae_site_asv2020-02_img08.jpg/330px-TR_Colossae_site_asv2020-02_img08.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Colossae",
+    "christ_connection": "Paul wrote to Colossae that Christ is the image of the invisible God, firstborn of creation, and head of the church",
+    "lat": 37.78666667,
+    "lon": 29.26
   },
   {
     "id": "place:troas",
@@ -15933,10 +15995,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Port city in northwest Asia Minor; where Paul received the Macedonian vision and where Eutychus was raised from the dead",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Christ's power to raise the dead was demonstrated at Troas when Paul restored Eutychus to life"
+    "wikipedia_summary": "Alexandria Troas is the site of an ancient Greek city situated on the Aegean Sea near the northern tip of Turkey's western coast, the area known historically as Troad, a little south of Tenedos. It is located southeast of modern Dalyan, a village in the Ezine district of Çanakkale Province. The site sprawls over an estimated 400 hectares ; among the few structures remaining today are a ruined bath, an odeon, a theatre, gymnasium complex and a recently uncovered stadion. The circuit of the old walls can still be traced.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Troas_Therme_2.JPG/330px-Troas_Therme_2.JPG",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Alexandria_Troas",
+    "christ_connection": "Christ's power to raise the dead was demonstrated at Troas when Paul restored Eutychus to life",
+    "lat": 39.75166667,
+    "lon": 26.15861111
   },
   {
     "id": "place:lystra",
@@ -15949,10 +16013,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "City in Lycaonia where Paul healed a man lame from birth; hometown of Timothy",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Paul's healing of a lame man at Lystra paralleled Christ's ministry, pointing to Christ as the source of all healing"
+    "wikipedia_summary": "Lystra was a city in central Anatolia, now part of present-day Turkey. It is mentioned six times in the New Testament. Lystra was visited several times by Paul the Apostle, along with Barnabas or Silas. There Paul met a young disciple, Timothy. Lystra was included by various authors in ancient Lycaonia, Isauria, or Galatia.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Heinrich_Kiepert._Asia_citerior.Lycaonia.jpg/330px-Heinrich_Kiepert._Asia_citerior.Lycaonia.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Lystra",
+    "christ_connection": "Paul's healing of a lame man at Lystra paralleled Christ's ministry, pointing to Christ as the source of all healing",
+    "lat": 37.60194444,
+    "lon": 32.33833333
   },
   {
     "id": "place:iconium",
@@ -15965,10 +16031,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "City in Asia Minor where Paul and Barnabas preached and many believed, but were eventually driven out",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Signs and wonders at Iconium confirmed Paul's testimony of Christ's resurrection and saving power"
+    "wikipedia_summary": "Konya is a major city in central Turkey, on the southwestern edge of the Central Anatolian Plateau, and is the capital of Konya Province. During antiquity and into Seljuk times it was known as Iconium. In 19th-century accounts of the city in English its name is usually spelt Konia or Koniah. In the late medieval period, Konya was the capital of the Seljuk Turks' Sultanate of Rum, from where the sultans ruled over Anatolia.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Konyaaltincarsi.jpg/330px-Konyaaltincarsi.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Konya",
+    "christ_connection": "Signs and wonders at Iconium confirmed Paul's testimony of Christ's resurrection and saving power",
+    "lat": 37.87444444,
+    "lon": 32.49305556
   },
   {
     "id": "place:derbe",
@@ -15981,10 +16049,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Southeastern city of Asia Minor where Paul preached and made many disciples on his missionary journeys",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Paul and Barnabas returned to Derbe strengthening disciples, exemplifying Christ's commission to strengthen the brethren"
+    "wikipedia_summary": "Derbe or Dervi, also called Derveia, was a city of Galatia in Asia Minor, and later of Lycaonia, and still later of Isauria and Cappadocia. It is mentioned in the Acts of the Apostles at 14:6, 14:20, 16:1 and 20:4. Derbe is the only city mentioned in the New Testament where the inhabitants adopted Paul's version of Christianity right away.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/DAVIS%281879%29_p329_SITE_OF_DERBE%2C_KARAJH_DAGH_MOUNTAINS_IN_THE_DISTANCE.jpg/330px-DAVIS%281879%29_p329_SITE_OF_DERBE%2C_KARAJH_DAGH_MOUNTAINS_IN_THE_DISTANCE.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Derbe",
+    "christ_connection": "Paul and Barnabas returned to Derbe strengthening disciples, exemplifying Christ's commission to strengthen the brethren",
+    "lat": 37.349273,
+    "lon": 33.361715
   },
   {
     "id": "place:miletus",
@@ -15997,10 +16067,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Port city in Asia Minor; where Paul gave his farewell address to the Ephesian elders, testifying of Christ",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Paul's farewell at Miletus echoes Christ's farewell discourses; he declared the whole counsel of God"
+    "wikipedia_summary": "Miletus was an influential ancient Greek city on the western coast of Anatolia, near the mouth of the Maeander River in present day Turkey. Renowned in antiquity for its wealth, maritime power, and extensive network of colonies, Miletus was a major center of trade, culture, and innovation from the Bronze Age through the Roman period. The city played a foundational role in the development of early Greek philosophy and science, serving as the home of the Milesian school with thinkers such as Thales, Anaximander, and Anaximenes.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Miletus_-_Ancient_Greek_theatre_02.jpg/330px-Miletus_-_Ancient_Greek_theatre_02.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Miletus",
+    "christ_connection": "Paul's farewell at Miletus echoes Christ's farewell discourses; he declared the whole counsel of God",
+    "lat": 37.53027778,
+    "lon": 27.27833333
   },
   {
     "id": "place:cyrene",
@@ -16013,10 +16085,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "City in North Africa; home of Simon who was compelled to carry the cross of Jesus on the way to Golgotha",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Simon of Cyrene bore Christ's cross, symbolizing discipleship and the call to bear one's own cross for Christ"
+    "wikipedia_summary": "Cyrene, also sometimes anglicized as Kyrene, was an ancient Greek colony and Roman city near present-day Shahhat in northeastern Libya in North Africa. It was part of the Pentapolis, an important group of five cities in the region, and gave the area its classical and early modern name Cyrenaica.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Cyrene8.jpg/330px-Cyrene8.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Cyrene%2C_Libya",
+    "christ_connection": "Simon of Cyrene bore Christ's cross, symbolizing discipleship and the call to bear one's own cross for Christ",
+    "lat": 32.825,
+    "lon": 21.85805556
   },
   {
     "id": "place:alexandria",
@@ -16029,10 +16103,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Major Egyptian city; center of Jewish diaspora; home of Apollos; site of major early Christian scholarship",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Apollos, an eloquent teacher of Christ, came from Alexandria; the city was central to early Christian intellectual life"
+    "wikipedia_summary": "Alexandria is a major city in Egypt. Lying at the western edge of the Nile River Delta, it extends about 40 km (25 mi) along the country's northern coast. It is Egypt's principal seaport, the second largest city after Cairo, and the largest city on the Mediterranean coast. Founded in 331 BC by Alexander the Great, Alexandria is one of the largest and most important cities of antiquity and a leading hub for science, culture, and scholarship.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/San_Stefano_Grand_Plaza.JPG/330px-San_Stefano_Grand_Plaza.JPG",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Alexandria",
+    "christ_connection": "Apollos, an eloquent teacher of Christ, came from Alexandria; the city was central to early Christian intellectual life",
+    "lat": 31.1975,
+    "lon": 29.8925
   },
   {
     "id": "place:tiberias",
@@ -16045,10 +16121,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "City on the western shore of the Sea of Galilee; the sea itself was called the Sea of Tiberias",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "The Sea of Tiberias was the site of Christ's post-resurrection appearance and miraculous draft of fish (John 21)"
+    "wikipedia_summary": "Tiberias is a city on the western shore of the Sea of Galilee in northern Israel. A major Jewish center during Late Antiquity, it has been considered since the 18th century one of Judaism's Four Holy Cities, along with Jerusalem, Hebron, and Safed. In 2024 it had a population of 52,123.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/92250_tiberias_PikiWiki_Israel.jpg/330px-92250_tiberias_PikiWiki_Israel.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Tiberias",
+    "christ_connection": "The Sea of Tiberias was the site of Christ's post-resurrection appearance and miraculous draft of fish (John 21)",
+    "lat": 32.79444444,
+    "lon": 35.53333333
   },
   {
     "id": "place:jershon",
@@ -16091,16 +16169,16 @@
     "id": "place:ammonihah",
     "name": "Ammonihah",
     "variants": [],
-    "wikipedia_title": "",
+    "wikipedia_title": "Ammonihah",
     "excerpts": [],
     "related_people": [],
     "related_things": [],
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Nephite city destroyed by the Lamanites after rejecting Alma and Amulek's testimony; called the Desolation of Nehors",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
+    "wikipedia_summary": "Ammonihah is a city mentioned in the Book of Mormon, described as governed by lawyers and judges. It plays a central role in the text's narrative about pride, corruption, and divine judgment. When the prophet Alma visits Ammonihah as part of a preaching tour, the city becomes the setting of \"one of the most disturbing episodes\" in the book: Ammonihah's elite imprison him, exile men converted by his preaching, and burn women and children associated with his mission.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Martyrdoms_at_Ammonihah%2C_Story_of_the_Book_of_Mormon.png/330px-Martyrdoms_at_Ammonihah%2C_Story_of_the_Book_of_Mormon.png",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ammonihah",
     "christ_connection": "The people of Ammonihah rejected Christ's servants and were destroyed; martyrs there died testifying of Christ"
   },
   {
@@ -16157,48 +16235,48 @@
     "id": "place:nephihah",
     "name": "Nephihah",
     "variants": [],
-    "wikipedia_title": "",
+    "wikipedia_title": "Nephihah",
     "excerpts": [],
     "related_people": [],
     "related_things": [],
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Nephite city of refuge; site of a prison where Alma and Amulek were miraculously delivered",
-    "wikipedia_summary": "",
+    "wikipedia_summary": "This list is intended as a compendium of individuals mentioned in the Book of Mormon.",
     "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/List_of_Book_of_Mormon_people",
     "christ_connection": "The miraculous prison collapse at Nephihah parallels Christ's power to deliver the faithful from all bondage"
   },
   {
     "id": "place:valley_of_lemuel",
     "name": "Valley of Lemuel",
     "variants": [],
-    "wikipedia_title": "",
+    "wikipedia_title": "Valley of Lemuel",
     "excerpts": [],
     "related_people": [],
     "related_things": [],
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Valley by a continually running river where Lehi's family camped after leaving Jerusalem, east of the Red Sea",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
+    "wikipedia_summary": "In the Book of Mormon, Laman and Lemuel are the two eldest sons of Lehi and the older brothers of Sam, Nephi, Jacob, and Joseph. According to the text, they lived around 600 BC. They were notable for their rebellion against Lehi and Nephi, becoming the primary antagonists of the First and Second Books of Nephi. Their descendants became known as the Lamanites and Lemuelites, while the descendants of Nephi and their other brothers became the Nephites. Disputes over the proper order of succession fueled disputes between the two peoples over the course of the Book of Mormon's narrative.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Laman_and_Lemuel%2C_in_Nephi_Telling_His_Brothers_About_His_Vision%2C_by_HW.png/330px-Laman_and_Lemuel%2C_in_Nephi_Telling_His_Brothers_About_His_Vision%2C_by_HW.png",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Laman_and_Lemuel",
     "christ_connection": "Lehi built an altar and gave thanks to God in the Valley of Lemuel; the river symbolized pressing forward to Christ"
   },
   {
     "id": "place:irreantum",
     "name": "Irreantum",
     "variants": [],
-    "wikipedia_title": "",
+    "wikipedia_title": "Irreantum",
     "excerpts": [],
     "related_people": [],
     "related_things": [],
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Name given by Lehi's family to the sea they reached at the end of their Arabian journey, meaning 'many waters'",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
+    "wikipedia_summary": "Irreantum is a literary journal compiled and published by the Association for Mormon Letters (AML) from 1999 to 2013, with online-only publication starting in 2018. It features selections of LDS literature, including fiction, poetry, and essays, as well as criticism of those works. The journal was advertised as \"the only magazine devoted to Mormon literature.\" In its first years of publication, Irreantum was printed quarterly; later, it was printed twice a year. A subscription to the magazine was included in an AML membership. Annual Irreantum writing contests were held, with prizes for short ",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/en/9/9e/Irreantum_Vol_12_No_2_Cover.png",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Irreantum",
     "christ_connection": "Reaching Irreantum and building a ship under Nephi's faith-guided hands typifies Christ's power to carry us across life's seas"
   },
   {
@@ -16259,16 +16337,16 @@
     "variants": [
       "Moron"
     ],
-    "wikipedia_title": "",
+    "wikipedia_title": "Land of Moron",
     "excerpts": [],
     "related_people": [],
     "related_things": [],
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "The principal land and seat of Jaredite government throughout most of their history",
-    "wikipedia_summary": "",
+    "wikipedia_summary": "This list is intended as a compendium of individuals mentioned in the Book of Mormon.",
     "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/List_of_Book_of_Mormon_people",
     "christ_connection": "The Jaredite kings in Moron held the covenant records pointing to Christ; the land's eventual desolation warns against apostasy"
   },
   {
@@ -16298,10 +16376,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Tallest mountain in the region of Israel/Syria; traditionally associated with the location of the Transfiguration",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Many identify Mount Hermon as the mount of Transfiguration where Moses and Elijah appeared and witnesses beheld Christ's glory"
+    "wikipedia_summary": "Mount Hermon is a mountain cluster constituting the southern end of the Anti-Lebanon mountain range. Its summit straddles the border between Syria and Lebanon and, at 2,814 m (9,232 ft) above sea level, is the highest point in Syria and the Israeli-occupied Golan Heights.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Hermonsnow.jpg/330px-Hermonsnow.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Mount_Hermon",
+    "christ_connection": "Many identify Mount Hermon as the mount of Transfiguration where Moses and Elijah appeared and witnesses beheld Christ's glory",
+    "lat": 33.41611111,
+    "lon": 35.8575
   },
   {
     "id": "place:mount_tabor",
@@ -16314,10 +16394,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Prominent isolated hill in the Jezreel Valley; traditional site of the Transfiguration of Jesus Christ",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "The Transfiguration on Mount Tabor revealed Christ's divine glory and the continuity of His gospel with Moses and Elijah"
+    "wikipedia_summary": "Mount Tabor, sometimes spelled Mount Thabor, is a large hill of biblical significance in the Lower Galilee, Israel, at the eastern end of the Jezreel Valley, 18 kilometres west of the Sea of Galilee.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/%D7%94%D7%A8_%D7%AA%D7%91%D7%95%D7%A8_%D7%91%D7%9E%D7%91%D7%98_%D7%9E%D7%93%D7%A8%D7%95%D7%9D_%D7%9E%D7%A2%D7%A8%D7%91.jpg/330px-%D7%94%D7%A8_%D7%AA%D7%91%D7%95%D7%A8_%D7%91%D7%9E%D7%91%D7%98_%D7%9E%D7%93%D7%A8%D7%95%D7%9D_%D7%9E%D7%A2%D7%A8%D7%91.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Mount_Tabor",
+    "christ_connection": "The Transfiguration on Mount Tabor revealed Christ's divine glory and the continuity of His gospel with Moses and Elijah",
+    "lat": 32.68722222,
+    "lon": 35.39027778
   },
   {
     "id": "place:nain",
@@ -16348,10 +16430,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Pool in Jerusalem fed by Hezekiah's tunnel; where Jesus sent a blind man to wash and receive his sight",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Christ sent the blind man to wash in Siloam, restoring his sight; a powerful symbol of Christ as the light of the world"
+    "wikipedia_summary": "The term Pool of Siloam refers to several rock-cut pools located southeast of the walls of the Old City of Jerusalem. The pools were fed by the waters of the Gihon Spring, carried there by the Siloam tunnel.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Pool_of_Siloam_and_Lower_%28Old%29_Pool_in_the_Ordnance_Survey_of_Jerusalem.png/330px-Pool_of_Siloam_and_Lower_%28Old%29_Pool_in_the_Ordnance_Survey_of_Jerusalem.png",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Pool_of_Siloam",
+    "christ_connection": "Christ sent the blind man to wash in Siloam, restoring his sight; a powerful symbol of Christ as the light of the world",
+    "lat": 31.77055556,
+    "lon": 35.235
   },
   {
     "id": "place:bethesda",
@@ -16367,10 +16451,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Pool in Jerusalem with five porches where Jesus healed a man who had been ill for thirty-eight years",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Christ healed the paralytic at Bethesda without requiring the stirred waters, showing He surpasses all prior means of healing"
+    "wikipedia_summary": "The Pool of Bethesda is referred to in John's Gospel in the Christian New Testament, in an account of Jesus healing a paralyzed man at a pool of water in Jerusalem, described as being near the Sheep Gate and surrounded by five covered colonnades or porticoes. It is also referred to as Bethzatha. It is now associated with the site of a pool in the current Muslim Quarter of the city, near the gate now called the Lions' Gate or St. Stephen's Gate and the Church of St. Anne, which was excavated in the late 19th century.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Jerusalem_Bethesda_BW_1.JPG/330px-Jerusalem_Bethesda_BW_1.JPG",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Pool_of_Bethesda",
+    "christ_connection": "Christ healed the paralytic at Bethesda without requiring the stirred waters, showing He surpasses all prior means of healing",
+    "lat": 31.78138889,
+    "lon": 35.23583333
   },
   {
     "id": "place:plain_of_sharon",
@@ -16385,10 +16471,12 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Fertile coastal plain between Joppa and Carmel; associated with beauty and fruitfulness in scripture",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "The rose of Sharon in Song of Solomon is interpreted as a messianic title; the plain's bounty represents Christ's blessings"
+    "wikipedia_summary": "The Sharon plain is the central section of the Israeli coastal plain. The name Sharon is derived from the Akkadian word \"A-Sharanu\" which literally translates to a \"thick forest,\" which the area was until its deforestation in the late 19th century. The plain lies between the Mediterranean Sea to the west and the Samarian Hills, 15 km (9.3 mi) to the east. It stretches from Nahal Taninim, a stream marking the southern end of Mount Carmel in the north, to the Yarkon River in the south, at the northern limit of Tel Aviv, over a total of about 90 km (56 mi). The level of the Sharon plain is connec",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/WV_Sharon_plain.png/330px-WV_Sharon_plain.png",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Sharon_plain",
+    "christ_connection": "The rose of Sharon in Song of Solomon is interpreted as a messianic title; the plain's bounty represents Christ's blessings",
+    "lat": 32.4,
+    "lon": 34.883
   },
   {
     "id": "place:wilderness_of_judea",
@@ -16404,9 +16492,11 @@
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Arid desert region between Jerusalem and the Dead Sea; where John the Baptist preached and Jesus was tempted",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Christ fasted forty days in the Judean wilderness and resisted Satan's temptations, qualifying Him to succor those tempted"
+    "wikipedia_summary": "The Judaean Desert or Judean Desert is a desert in the West Bank and Israel that stretches east of the ridge of the Judaean Mountains and in their rain shadow, so east of Jerusalem, and descends to the Dead Sea.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Judea_2_by_David_Shankbone.jpg/330px-Judea_2_by_David_Shankbone.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Judaean_Desert",
+    "christ_connection": "Christ fasted forty days in the Judean wilderness and resisted Satan's temptations, qualifying Him to succor those tempted",
+    "lat": 31.7,
+    "lon": 35.3
   }
 ]
