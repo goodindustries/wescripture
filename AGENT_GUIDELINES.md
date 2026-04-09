@@ -108,6 +108,14 @@ Selected verse: `box-shadow: inset 3px 0 0 var(--accent), 0 0 0 1px rgba(156,122
 
 Rule: every click must open something useful or do nothing. No dead ends.
 
+**Completed-chapter panel shell (visual spec):** `library/test.html` (deployed:
+[thegoodproject.net/library/test.html](https://thegoodproject.net/library/test.html))
+is the layout prototype for the right column: `#panel` / `#panel-body`, empty state,
+`panel-header` (ref + italic verse), uppercase `panel-section` bands, then stacked
+`word-card`, `note-card`, `quote-card`, `scrip-card`, and `hist-card` patterns.
+The prototype omits **People · Places · Things** chips by design; production
+`index.html` must keep that entity row — it sits under the header, before Key Words.
+
 ---
 
 ## 5. Data Conventions

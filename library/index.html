@@ -621,7 +621,8 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 .panel-empty-icon { font-size: 28px; margin-bottom: 16px; opacity: 0.35; }
 .panel-empty-text { font-size: 13px; line-height: 1.7; max-width: 240px; }
 
-.panel-header { padding: 20px 28px 16px; border-bottom: 1px solid var(--divider); flex-shrink: 0; }
+/* Panel header padding aligned with library/test.html prototype */
+.panel-header { padding: 24px 28px 18px; border-bottom: 1px solid var(--divider); flex-shrink: 0; }
 .panel-verse-ref { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
 .panel-verse-text { font-family: 'EB Garamond', Georgia, serif; font-size: 15px; line-height: 1.65; color: var(--text); font-style: italic; }
 
@@ -631,14 +632,14 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     border-bottom: 1px solid var(--divider);
     background: rgba(0,0,0,0.018);
 }
-.word-card { padding: 14px 20px; border-bottom: 1px solid var(--divider); }
+.word-card { padding: 16px 28px; border-bottom: 1px solid var(--divider); }
 .word-english  { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
 .word-original { font-size: 13px; font-family: 'EB Garamond', Georgia, serif; color: var(--muted); margin-bottom: 8px; }
 .word-meaning  { font-size: 14px; color: var(--text); line-height: 1.6; }
 /* Key words collapse/expand */
 .word-cards-wrap .word-card:nth-child(n+3) { display: none; }
 .word-cards-wrap.expanded .word-card { display: block; }
-.word-more-btn { display: block; width: 100%; text-align: left; padding: 12px 20px; font-size: 12px; font-weight: 600; color: var(--accent); background: none; border: none; border-bottom: 1px solid var(--divider); cursor: pointer; font-family: inherit; }
+.word-more-btn { display: block; width: 100%; text-align: left; padding: 12px 28px; font-size: 12px; font-weight: 600; color: var(--accent); background: none; border: none; border-bottom: 1px solid var(--divider); cursor: pointer; font-family: inherit; }
 .word-more-btn:hover { background: rgba(0,0,0,0.03); }
 .word-cards-wrap.expanded .word-more-btn { display: none; }
 /* Expand overflow for all card types */
