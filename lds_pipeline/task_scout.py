@@ -14,6 +14,10 @@ Run from repo root:
     python3 lds_pipeline/task_scout.py --dry-run
     python3 lds_pipeline/task_scout.py --max 40 --push   # commit+push ledger
 
+Streams (default **all**): chapter gaps (entity, notes, Donaldson) plus **registry**
+(Wikipedia + christ_connection batches for scripture_people, places, things,
+topics, people.json). Titles match `task_dispatch.py` rules for local workers.
+
 Schedule (example): every few hours so workers never run out of scoped work.
 """
 
@@ -30,9 +34,15 @@ from task_ledger import _append, _load_events, _project, _push_ledger, utc_now
 
 REPO = Path(__file__).resolve().parent.parent
 LIB = REPO / "library"
+ENT = LIB / "entities"
 TOC_PATH = LIB / "toc.json"
 CHAP_DIR = LIB / "chapters"
 DON_DIR = LIB / "donaldson"
+
+PEOPLE_WIKI_CHUNK = 40
+CHRIST_SP_CHUNK = 35
+CHRIST_TOPIC_CHUNK = 18
+CHRIST_PEOPLE_CHUNK = 45
 
 
 def load_chapter_ids() -> list[str]:
@@ -107,6 +117,116 @@ def collect_notes_tasks(chapter_ids: list[str]) -> list[tuple[str, str]]:
     return out
 
 
+def _load_entity_array(path: Path) -> list[dict]:
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    return raw if isinstance(raw, list) else list(raw.values())
+
+
+def collect_registry_tasks() -> list[tuple[str, str]]:
+    """Wikipedia + christ_connection backlog; titles align with task_dispatch.py."""
+    out: list[tuple[str, str]] = []
+
+    sp = _load_entity_array(ENT / "scripture_people.json")
+    miss_w = [e for e in sp if not e.get("wikipedia_summary")]
+    if miss_w:
+        out.append(
+            (
+                f"Registry Wikipedia — scripture_people: enrich {len(miss_w)} missing summaries",
+                "python3 lds_pipeline/build_entity_wikipedia.py --scripture-people",
+            )
+        )
+
+    for label, fname in (
+        ("places", "places.json"),
+        ("things", "things.json"),
+        ("topics", "topics.json"),
+    ):
+        arr = _load_entity_array(ENT / fname)
+        miss = [e for e in arr if not e.get("wikipedia_summary")]
+        if miss:
+            out.append(
+                (
+                    f"Registry Wikipedia — {label}: enrich {len(miss)} missing summaries",
+                    f"python3 lds_pipeline/build_entity_wikipedia.py --{label}",
+                )
+            )
+
+    pe = _load_entity_array(ENT / "people.json")
+    miss_p = [e for e in pe if not e.get("wikipedia_summary")]
+    if miss_p:
+        total_b = (len(miss_p) + PEOPLE_WIKI_CHUNK - 1) // PEOPLE_WIKI_CHUNK
+        for i in range(0, len(miss_p), PEOPLE_WIKI_CHUNK):
+            batch = miss_p[i : i + PEOPLE_WIKI_CHUNK]
+            bi = i // PEOPLE_WIKI_CHUNK + 1
+            out.append(
+                (
+                    f"Registry Wikipedia — people.json batch {bi}/{total_b} ({len(batch)} entries)",
+                    f"python3 lds_pipeline/build_entity_wikipedia.py --people --limit {len(batch)}",
+                )
+            )
+
+    miss_c = [e for e in sp if not e.get("christ_connection")]
+    if miss_c:
+        total_b = (len(miss_c) + CHRIST_SP_CHUNK - 1) // CHRIST_SP_CHUNK
+        for i in range(0, len(miss_c), CHRIST_SP_CHUNK):
+            batch = miss_c[i : i + CHRIST_SP_CHUNK]
+            bi = i // CHRIST_SP_CHUNK + 1
+            out.append(
+                (
+                    f"Christ — scripture_people: connections batch {bi}/{total_b} (~{len(batch)} figs)",
+                    "python3 lds_pipeline/generate_christ_connections.py --only scripture_people "
+                    f"--workers 2 --limit {len(batch)}",
+                )
+            )
+
+    tp = _load_entity_array(ENT / "topics.json")
+    miss_t = [e for e in tp if not e.get("christ_connection")]
+    if miss_t:
+        total_b = (len(miss_t) + CHRIST_TOPIC_CHUNK - 1) // CHRIST_TOPIC_CHUNK
+        for i in range(0, len(miss_t), CHRIST_TOPIC_CHUNK):
+            batch = miss_t[i : i + CHRIST_TOPIC_CHUNK]
+            bi = i // CHRIST_TOPIC_CHUNK + 1
+            out.append(
+                (
+                    f"Christ — topics: connections batch {bi}/{total_b} (~{len(batch)} topics)",
+                    "python3 lds_pipeline/generate_christ_connections.py --only topics "
+                    f"--workers 2 --limit {len(batch)}",
+                )
+            )
+
+    miss_pp = [e for e in pe if not e.get("christ_connection")]
+    if miss_pp:
+        total_b = (len(miss_pp) + CHRIST_PEOPLE_CHUNK - 1) // CHRIST_PEOPLE_CHUNK
+        for i in range(0, len(miss_pp), CHRIST_PEOPLE_CHUNK):
+            batch = miss_pp[i : i + CHRIST_PEOPLE_CHUNK]
+            bi = i // CHRIST_PEOPLE_CHUNK + 1
+            out.append(
+                (
+                    f"Christ — people.json: connections batch {bi}/{total_b} (~{len(batch)} entries)",
+                    "python3 lds_pipeline/generate_christ_connections.py --only people "
+                    f"--workers 2 --limit {len(batch)}",
+                )
+            )
+
+    for label, fname, only_key in (
+        ("places", "places.json", "places"),
+        ("things", "things.json", "things"),
+    ):
+        arr = _load_entity_array(ENT / fname)
+        miss = [e for e in arr if not e.get("christ_connection")]
+        if miss:
+            lim = min(60, len(miss))
+            out.append(
+                (
+                    f"Christ — {only_key}: fill christ_connection ({len(miss)} entries)",
+                    "python3 lds_pipeline/generate_christ_connections.py "
+                    f"--only {only_key} --workers 2 --limit {lim}",
+                )
+            )
+
+    return out
+
+
 def collect_donaldson_tasks(chapter_ids: list[str]) -> list[tuple[str, str]]:
     don = {p.stem for p in DON_DIR.glob("*.json")}
     ch_set = set(chapter_ids)
@@ -159,9 +279,16 @@ def round_robin_take(
     return picked
 
 
+def resolve_streams(spec: str) -> set[str]:
+    s = spec.strip().lower()
+    if s == "all":
+        return {"entity", "notes", "donaldson", "registry"}
+    return {x.strip().lower() for x in spec.split(",") if x.strip()}
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description="Queue chapter-scoped tasks from corpus gaps.")
-    ap.add_argument("--max", type=int, default=30, help="Max new tasks to append this run")
+    ap.add_argument("--max", type=int, default=40, help="Max new tasks to append this run")
     ap.add_argument("--dry-run", action="store_true", help="Print only; do not write ledger")
     ap.add_argument(
         "--push",
@@ -170,8 +297,8 @@ def main() -> None:
     )
     ap.add_argument(
         "--streams",
-        default="entity,notes,donaldson",
-        help="Comma list: entity, notes, donaldson (default: all three)",
+        default="all",
+        help="all | comma list: entity, notes, donaldson, registry",
     )
     args = ap.parse_args()
 
@@ -179,7 +306,7 @@ def main() -> None:
         print("ERROR: library/toc.json missing", file=sys.stderr)
         sys.exit(1)
 
-    streams = {s.strip().lower() for s in args.streams.split(",") if s.strip()}
+    streams = resolve_streams(args.streams)
     chapter_ids = load_chapter_ids()
 
     queues: list[list[tuple[str, str]]] = []
@@ -189,6 +316,11 @@ def main() -> None:
         queues.append(collect_notes_tasks(chapter_ids))
     if "donaldson" in streams:
         queues.append(collect_donaldson_tasks(chapter_ids))
+    if "registry" in streams:
+        if ENT.is_dir():
+            queues.append(collect_registry_tasks())
+        else:
+            print("task_scout: skip registry (library/entities missing)", flush=True)
 
     open_titles = open_task_titles()
     candidates = round_robin_take(queues, set(open_titles), args.max)

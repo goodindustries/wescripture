@@ -74,12 +74,23 @@ The queue never runs dry because every agent feeds it. Every new task must be
 grounded in direct observation and must serve the mission: deepen reading, improve
 connections, clean the corpus, or make traversal faster and more trustworthy.
 
-**Corpus task supply:** The reader-facing scope is every chapter and verse in
-`library/toc.json`, so the backlog is intentionally large. **`lds_pipeline/task_scout.py`**
-scans the tree and appends `task_queued` rows for concrete gaps (entity span
-annotation, missing `_notes.html`, missing Donaldson JSON by book). Run it on a
-schedule or after merges so workers always have scoped chapter work; use
-`--dry-run` first, then `--max N --push` to publish the ledger. Agents should
-still append follow-on tasks from what they observe while executing.
+**Corpus task supply (automated):** The backlog is meant to be **TOC-sized** plus
+**entity registries** (Wikipedia, `christ_connection`, etc.). **`lds_pipeline/task_scout.py`**
+(default `--streams all`) appends `task_queued` rows for: chapter entity spans,
+missing `_notes.html`, Donaldson gaps by book, and **batched registry work**
+(scripture people / places / things / topics / `people.json`). Titles match
+**`lds_pipeline/task_dispatch.py`** so **`task_worker.py --backend dispatch`**
+runs local pipelines (including Ollama-backed `generate_christ_connections.py`)
+without re-explaining the mission each time.
+
+**Autonomous loop:** **`lds_pipeline/autonomous_runner.py`** pulls `main`, runs
+`task_scout` when pending count is below `--min-pending`, then **`task_worker.py --backend hybrid`**
+(dispatch first, Claude if no rule). After each **successful** completion,
+**`task_followup.py`** (Ollama, default `gemma4:latest`) appends **one** grounded
+follow-on task from the git diff and pushes the ledger. Use `--no-followup` or
+`--no-scout` when you need to disable either behavior.
+
+Humans and chat agents should still append high-judgment tasks; scout + followup
+are the baseline so the queue does not depend on repeated manual prompting.
 
 Full design system reference: `AGENT_GUIDELINES.md`

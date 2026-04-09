@@ -18,7 +18,15 @@ Parallel agents: each process needs a unique --agent name. From repo root:
     ./lds_pipeline/run_parallel_task_workers.sh 4   # WorkerC–WorkerF, one task each
 
 Environment:
-    ANTHROPIC_API_KEY  — required by claude CLI
+    ANTHROPIC_API_KEY  — required for --backend claude (or hybrid fallback)
+
+Backends:
+    claude   — Claude Code CLI (default)
+    dispatch — Local pipelines only (task_dispatch.py); no cloud LLM
+    hybrid   — Try dispatch first; if no rule matches, run Claude
+
+After a successful completion, task_followup.py (Ollama, default gemma4) queues
+one grounded follow-on task unless --no-followup.
 """
 
 import argparse
@@ -32,6 +40,7 @@ from pathlib import Path
 
 REPO   = Path(__file__).resolve().parent.parent
 LEDGER = REPO / "lds_pipeline" / "task_ledger.py"
+FOLLOWUP = REPO / "lds_pipeline" / "task_followup.py"
 LOG_DIR = REPO / "diagnostics"
 
 DEFAULT_AGENT = "TaskWorker"
@@ -127,24 +136,48 @@ def build_prompt(task: dict) -> str:
     return prompt
 
 
-def git_commit_for_task(task_id, title):
-    """Return the hash of any new commit made since the task was claimed, or None."""
-    try:
-        result = subprocess.run(
-            ["git", "log", "--oneline", "-1"],
-            cwd=str(REPO), capture_output=True, text=True, check=True,
-        )
-        return result.stdout.split()[0] if result.stdout.strip() else None
-    except Exception:
-        return None
-
-
 def push_origin():
     try:
         run(["git", "push", "origin", "main"])
         print("  pushed to origin", flush=True)
     except subprocess.CalledProcessError as e:
         print(f"  push failed (non-fatal): {e}", flush=True)
+
+
+def git_rev_short() -> str:
+    try:
+        r = subprocess.run(
+            ["git", "rev-parse", "--short", "HEAD"],
+            cwd=str(REPO), capture_output=True, text=True, check=True,
+        )
+        return r.stdout.strip()
+    except Exception:
+        return ""
+
+
+def git_commit_work(task_id: str, summary: str) -> str:
+    from task_dispatch import git_has_changes
+
+    if not git_has_changes():
+        return ""
+    msg = f"[task] {task_id}: {summary}"[:120]
+    run(["git", "add", "-A"])
+    run(["git", "commit", "-m", msg])
+    return git_rev_short()
+
+
+def run_followup(task_id: str, commit: str, model: str) -> None:
+    argv = [
+        sys.executable, str(FOLLOWUP),
+        "--task-id", task_id,
+        "--model", model,
+        "--push",
+    ]
+    if commit:
+        argv += ["--commit", commit]
+    r = subprocess.run(argv, cwd=str(REPO), text=True)
+    if r.returncode != 0:
+        print(f"  [followup] exit {r.returncode} (non-fatal)", flush=True)
 
 
 def log_run(task_id: str, agent: str, outcome: str, notes: str = ""):
@@ -163,9 +196,15 @@ def log_run(task_id: str, agent: str, outcome: str, notes: str = ""):
 def main():
     parser = argparse.ArgumentParser(description="Autonomous task worker for wescripture.")
     parser.add_argument("--agent",     default=DEFAULT_AGENT, help="Agent name for ledger")
-    parser.add_argument("--model",     default=DEFAULT_MODEL, help="Claude model alias or full ID")
+    parser.add_argument("--model",     default=DEFAULT_MODEL, help="Claude model (claude/hybrid only)")
     parser.add_argument("--budget",    default=MAX_BUDGET,    help="Max USD spend per task")
     parser.add_argument("--dry-run",   action="store_true",   help="Claim task, print prompt, don't run claude")
+    parser.add_argument(
+        "--backend", choices=("claude", "dispatch", "hybrid"), default="claude",
+        help="dispatch = local pipelines; hybrid = dispatch then Claude",
+    )
+    parser.add_argument("--no-followup", action="store_true", help="Skip Ollama follow-on task queue")
+    parser.add_argument("--followup-model", default="gemma4:latest", help="Ollama model for task_followup.py")
     args = parser.parse_args()
 
     # ── Claim next task ───────────────────────────────────────────────────────
@@ -192,27 +231,58 @@ def main():
         sys.exit(0)
 
     # ── Record commit hash before execution ───────────────────────────────────
-    pre_commit = git_commit_for_task(tid, title)
+    pre_commit = git_rev_short()
 
-    # ── Run claude -p ─────────────────────────────────────────────────────────
-    print(f"[{args.agent}] running claude --model {args.model} …", flush=True)
-    claude_result = subprocess.run(
-        [
-            "claude", "-p",
-            "--model", args.model,
-            "--max-budget-usd", args.budget,
-            "--dangerously-skip-permissions",
-            prompt,
-        ],
-        cwd=str(REPO),
-        text=True,
-    )
+    success = False
+    new_commit = ""
+    notes_suffix = ""
 
-    success = claude_result.returncode == 0
+    if args.backend in ("dispatch", "hybrid"):
+        from task_dispatch import try_dispatch
 
-    # ── Check if a new commit was made ────────────────────────────────────────
-    post_commit = git_commit_for_task(tid, title)
-    new_commit  = post_commit if post_commit != pre_commit else ""
+        d = try_dispatch(task)
+        if d.handled:
+            if d.exit_code != 0:
+                ledger([
+                    "reopen", "--task-id", tid,
+                    "--notes", f"dispatch failed exit={d.exit_code}: {d.summary[:200]}",
+                ])
+                push_origin()
+                log_run(tid, args.agent, "error", d.summary)
+                print(f"[{args.agent}] {tid} dispatch failed.", flush=True)
+                sys.exit(1)
+            new_commit = git_commit_work(tid, d.summary)
+            success = True
+            notes_suffix = "dispatch: " + d.summary[:160]
+        elif args.backend == "dispatch":
+            ledger([
+                "reopen", "--task-id", tid,
+                "--notes", "dispatch: no handler for this title — use hybrid or claude",
+            ])
+            push_origin()
+            print(f"[{args.agent}] {tid} no dispatch rule — reopened.", flush=True)
+            sys.exit(1)
+
+    if args.backend in ("claude", "hybrid") and not success:
+        print(f"[{args.agent}] running claude --model {args.model} …", flush=True)
+        claude_result = subprocess.run(
+            [
+                "claude", "-p",
+                "--model", args.model,
+                "--max-budget-usd", args.budget,
+                "--dangerously-skip-permissions",
+                prompt,
+            ],
+            cwd=str(REPO),
+            text=True,
+        )
+        success = claude_result.returncode == 0
+        post_commit = git_rev_short()
+        new_commit = post_commit if post_commit != pre_commit else ""
+        notes_suffix = "completed by task_worker" + ("" if success else " (non-zero exit)")
+
+    if not notes_suffix:
+        notes_suffix = "completed by task_worker"
 
     # ── Mark complete in ledger ───────────────────────────────────────────────
     complete_args = [
@@ -221,12 +291,15 @@ def main():
     ]
     if new_commit:
         complete_args += ["--commit", new_commit]
-    complete_args += ["--notes", "completed by task_worker" + ("" if success else " (non-zero exit)")]
+    complete_args += ["--notes", notes_suffix[:500]]
 
     ledger(complete_args)
 
-    # ── Push ──────────────────────────────────────────────────────────────────
+    # ── Push repo (code) ─────────────────────────────────────────────────────
     push_origin()
+
+    if not args.no_followup and success:
+        run_followup(tid, new_commit or git_rev_short(), args.followup_model)
 
     outcome = "success" if success else "error"
     log_run(tid, args.agent, outcome, f"commit={new_commit}")

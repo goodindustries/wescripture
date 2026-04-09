@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Start N task_worker.py jobs in parallel, each with a unique ledger agent name.
 #
-# Prereqs: repo root, git pulled, ANTHROPIC_API_KEY, `claude` on PATH.
+# Prereqs: repo root, git pulled. For --backend hybrid|claude: ANTHROPIC_API_KEY + `claude`.
+# Optional: export TASK_WORKER_BACKEND=hybrid  (dispatch + Claude fallback)
 #
 # Usage:
 #   ./lds_pipeline/run_parallel_task_workers.sh        # default 3 workers
@@ -30,7 +31,8 @@ if [ "$N" -gt "${#NAMES[@]}" ]; then
 fi
 
 mkdir -p diagnostics
-echo "Starting $N workers from $ROOT …"
+BACKEND="${TASK_WORKER_BACKEND:-claude}"
+echo "Starting $N workers from $ROOT (backend=$BACKEND) …"
 for ((i = 0; i < N; i++)); do
   AG="${NAMES[$i]}"
   OUT="diagnostics/task-worker-${AG}.out"
@@ -38,7 +40,7 @@ for ((i = 0; i < N; i++)); do
   echo "  $AG  → $OUT"
   (
     echo "=== $(date -u +%Y-%m-%dT%H:%M:%SZ) start $AG ===" >>"$OUT"
-    python3 lds_pipeline/task_worker.py --agent "$AG" >>"$OUT" 2>>"$ERR"
+    python3 lds_pipeline/task_worker.py --backend "$BACKEND" --agent "$AG" >>"$OUT" 2>>"$ERR"
     ec=$?
     echo "=== $(date -u +%Y-%m-%dT%H:%M:%SZ) exit $ec $AG ===" >>"$OUT"
   ) &
