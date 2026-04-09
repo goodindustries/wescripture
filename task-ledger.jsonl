@@ -187,3 +187,4 @@
 {"event": "task_claimed", "task_id": "T-0059", "agent": "WorkerA", "ts": "2026-04-09T02:11:01+00:00"}
 {"event": "task_claimed", "task_id": "T-0060", "agent": "WorkerA", "ts": "2026-04-09T02:15:12+00:00"}
 {"event": "task_claimed", "task_id": "T-0061", "agent": "WorkerB", "ts": "2026-04-09T02:15:18+00:00"}
+{"event": "task_completed", "task_id": "T-0061", "agent": "WorkerB", "ts": "2026-04-09T02:21:02+00:00", "commit": "adbe0928", "notes": "completed by task_worker"}
