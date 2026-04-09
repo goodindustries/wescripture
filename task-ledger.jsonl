@@ -194,3 +194,4 @@
 {"event": "task_claimed", "task_id": "T-0064", "agent": "WorkerA", "ts": "2026-04-09T02:43:50+00:00"}
 {"event": "task_completed", "task_id": "T-0064", "agent": "WorkerB", "ts": "2026-04-09T02:43:54+00:00", "commit": "248feb0f", "notes": "completed by task_worker (non-zero exit)"}
 {"event": "task_completed", "task_id": "T-0064", "agent": "WorkerA", "ts": "2026-04-09T02:43:56+00:00", "commit": "230eeea7", "notes": "completed by task_worker (non-zero exit)"}
+{"event": "task_claimed", "task_id": "T-0065", "agent": "WorkerB", "ts": "2026-04-09T02:53:59+00:00"}
