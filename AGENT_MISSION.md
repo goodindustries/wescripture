@@ -101,4 +101,10 @@ args as `autonomous_runner.py`). For parallel workers, see
 `library/verse_coverage.json` (Donaldson + entity markup + verse discovery per verse).
 Open `library/verse_coverage.html` locally or after deploy to see the table and heatmaps.
 
+**Ops dashboard (auto-refreshing):** `python3 lds_pipeline/build_dashboard_state.py` writes
+`library/dashboard_state.json` (ledger snapshot + coverage summary). Open
+`library/dashboard.html` — it polls every 15s. Re-run the script and push after ledger
+or coverage changes so the live site updates; optional `library/agent_heartbeat.json`
+is merged in if you commit it from runners.
+
 Full design system reference: `AGENT_GUIDELINES.md`

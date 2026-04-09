@@ -1,0 +1,187 @@
+{
+  "generated": "2026-04-09T22:43:58+00:00",
+  "coverage_generated": "2026-04-09T22:35:36+00:00",
+  "coverage": {
+    "chapters_scanned": 1582,
+    "verses": 41995,
+    "verses_full": 1628,
+    "full_pct": 3.88,
+    "bit_hits": {
+      "donaldson": 14924,
+      "entity_links": 11994,
+      "verse_discovery": 17050
+    },
+    "legend": {
+      "bits": "bitmask per verse index: 1=Donaldson content, 2=entity markup, 4=verse_discovery row; 7=all"
+    }
+  },
+  "ledger": {
+    "last_event_ts": "2026-04-09T03:21:08+00:00",
+    "pending": 0,
+    "claimed": 3,
+    "agents_claimed_now": [
+      "Claude",
+      "WorkerA"
+    ],
+    "claimed_tasks": [
+      {
+        "task_id": "T-0059",
+        "agent": "Claude",
+        "title": "People registry: rebuild to 200 figures and fill christ_connection for all new entries",
+        "claim_ts": "2026-04-09T03:13:06+00:00"
+      },
+      {
+        "task_id": "T-0062",
+        "agent": "Claude",
+        "title": "Things registry: expand to 60+ entries and verify christ_connection on all",
+        "claim_ts": "2026-04-09T03:13:06+00:00"
+      },
+      {
+        "task_id": "T-0060",
+        "agent": "WorkerA",
+        "title": "People registry: Wikipedia enrichment for scripture figures — born/died, thumbnail, summary",
+        "claim_ts": "2026-04-09T02:15:12+00:00"
+      }
+    ],
+    "completed_last_24h": 39,
+    "agents_active_7d": [
+      "Claude",
+      "ClaudeCode",
+      "WorkerA",
+      "WorkerB"
+    ]
+  },
+  "recent_events": [
+    {
+      "event": "task_completed",
+      "task_id": "T-0065",
+      "agent": "ClaudeCode",
+      "ts": "2026-04-09T03:21:08+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_claimed",
+      "task_id": "T-0062",
+      "agent": "Claude",
+      "ts": "2026-04-09T03:13:06+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_claimed",
+      "task_id": "T-0059",
+      "agent": "Claude",
+      "ts": "2026-04-09T03:13:06+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_claimed",
+      "task_id": "T-0065",
+      "agent": "Claude",
+      "ts": "2026-04-09T03:13:06+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_completed",
+      "task_id": "T-0065",
+      "agent": "WorkerB",
+      "ts": "2026-04-09T02:54:04+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_claimed",
+      "task_id": "T-0065",
+      "agent": "WorkerB",
+      "ts": "2026-04-09T02:53:59+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_completed",
+      "task_id": "T-0064",
+      "agent": "WorkerA",
+      "ts": "2026-04-09T02:43:56+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_completed",
+      "task_id": "T-0064",
+      "agent": "WorkerB",
+      "ts": "2026-04-09T02:43:54+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_claimed",
+      "task_id": "T-0064",
+      "agent": "WorkerA",
+      "ts": "2026-04-09T02:43:50+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_claimed",
+      "task_id": "T-0064",
+      "agent": "WorkerB",
+      "ts": "2026-04-09T02:43:50+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_claimed",
+      "task_id": "T-0062",
+      "agent": "WorkerB",
+      "ts": "2026-04-09T02:31:12+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_queued",
+      "task_id": "T-0065",
+      "agent": "Claude",
+      "ts": "2026-04-09T02:30:05+00:00",
+      "title": "Normalize Donaldson commentary text"
+    },
+    {
+      "event": "task_completed",
+      "task_id": "T-0061",
+      "agent": "WorkerB",
+      "ts": "2026-04-09T02:21:02+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_claimed",
+      "task_id": "T-0061",
+      "agent": "WorkerB",
+      "ts": "2026-04-09T02:15:18+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_claimed",
+      "task_id": "T-0060",
+      "agent": "WorkerA",
+      "ts": "2026-04-09T02:15:12+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_claimed",
+      "task_id": "T-0059",
+      "agent": "WorkerA",
+      "ts": "2026-04-09T02:11:01+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_completed",
+      "task_id": "T-0063",
+      "agent": "Claude",
+      "ts": "2026-04-09T02:08:17+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_completed",
+      "task_id": "T-0058",
+      "agent": "Claude",
+      "ts": "2026-04-09T02:08:13+00:00",
+      "title": ""
+    }
+  ],
+  "heartbeat": null,
+  "notes": {
+    "claimed": "Tasks checked out in the ledger (usual proxy: one in-flight task per worker).",
+    "heartbeat": "Optional library/agent_heartbeat.json from local runners if you commit it."
+  }
+}

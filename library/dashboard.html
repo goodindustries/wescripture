@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ops dashboard — WeScripture</title>
+<link href="style/main.css" rel="stylesheet"/>
+<style>
+  body { max-width: 960px; margin: 0 auto; padding: 1rem 1.25rem 3rem; font-family: system-ui, sans-serif; }
+  h1 { font-size: 1.35rem; margin: 0 0 0.25rem; }
+  .sub { color: #555; font-size: 0.9rem; margin-bottom: 0.75rem; }
+  .row { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.75rem; margin: 1rem 0; }
+  .card { border: 1px solid #ddd; border-radius: 8px; padding: 0.65rem 0.8rem; background: #fafafa; }
+  .card strong { display: block; font-size: 1.45rem; font-weight: 600; }
+  .card span { font-size: 0.8rem; color: #666; }
+  .pulse { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #1a7f37;
+    margin-right: 6px; animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
+  .status { font-size: 0.85rem; color: #444; margin-bottom: 1rem; }
+  .err { color: #b00020; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.86rem; margin: 0.5rem 0 1.25rem; }
+  th, td { text-align: left; padding: 0.4rem 0.5rem; border-bottom: 1px solid #eee; }
+  th { font-weight: 600; background: #fff; position: sticky; top: 0; }
+  h2 { font-size: 1rem; margin: 1.25rem 0 0.5rem; }
+  .nav { margin-bottom: 1rem; font-size: 0.9rem; }
+  .nav a { color: #1565c0; margin-right: 1rem; }
+  .pill { display: inline-block; background: #e8f4ea; color: #1b5e20; padding: 2px 8px; border-radius: 999px; font-size: 0.75rem; margin: 2px 4px 2px 0; }
+  .note { font-size: 0.8rem; color: #666; margin-top: 0.5rem; max-width: 52em; }
+</style>
+</head>
+<body>
+<p class="nav"><a href="index.html">Library</a><a href="verse_coverage.html">Verse coverage</a></p>
+<h1><span class="pulse" aria-hidden="true"></span>Ops dashboard</h1>
+<p class="sub">Auto-refresh every 15s. Data comes from <code>dashboard_state.json</code> (rebuild with <code>python3 lds_pipeline/build_dashboard_state.py</code> and deploy).</p>
+<p class="status" id="status">Loading…</p>
+
+<div class="row" id="cards"></div>
+
+<h2>Agents / in-flight work</h2>
+<p class="note" id="claim-note"></p>
+<table>
+  <thead><tr><th>Task</th><th>Agent</th><th>Claimed</th></tr></thead>
+  <tbody id="claimed-body"></tbody>
+</table>
+
+<h2>Optional: process heartbeat</h2>
+<p class="note" id="hb-note"></p>
+<pre id="hb-pre" style="font-size:0.8rem;overflow:auto;max-height:140px;background:#f5f5f5;padding:8px;border-radius:6px;"></pre>
+
+<h2>Coverage (verse pipeline)</h2>
+<div class="row" id="cov-cards"></div>
+<p class="note"><a href="verse_coverage.html">Open full chapter heatmaps</a> — Donaldson JSON + entity links + verse discovery per verse.</p>
+
+<h2>Recent ledger activity</h2>
+<table>
+  <thead><tr><th>Time</th><th>Event</th><th>Task</th><th>Agent</th></tr></thead>
+  <tbody id="recent-body"></tbody>
+</table>
+
+<p class="note" id="agents-7d"></p>
+
+<script>
+(function () {
+  const POLL_MS = 15000;
+  let timer = null;
+
+  function esc(s) {
+    if (s == null) return '';
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  function render(d) {
+    const st = document.getElementById('status');
+    const gen = d.generated || '?';
+    const lg = d.ledger && d.ledger.last_event_ts;
+    const cg = d.coverage_generated || '—';
+    st.innerHTML = 'Snapshot <strong>' + esc(gen) + '</strong> · last ledger event <code>' + esc(lg || '—') +
+      '</code> · coverage file from <code>' + esc(cg) + '</code>';
+
+    const L = d.ledger || {};
+    document.getElementById('cards').innerHTML = [
+      { k: 'Claimed tasks', v: L.claimed, hint: 'in-flight' },
+      { k: 'Pending tasks', v: L.pending, hint: 'queue' },
+      { k: 'Completed 24h', v: L.completed_last_24h, hint: 'ledger' },
+      { k: 'Agents on claims', v: (L.agents_claimed_now || []).length, hint: 'unique now' },
+    ].map(function (x) {
+      return '<div class="card"><span>' + esc(x.hint) + '</span><strong>' + esc(x.v) + '</strong><span>' + esc(x.k) + '</span></div>';
+    }).join('');
+
+    document.getElementById('claim-note').textContent =
+      (d.notes && d.notes.claimed) ? d.notes.claimed : '';
+
+    const claimed = L.claimed_tasks || [];
+    document.getElementById('claimed-body').innerHTML = claimed.length
+      ? claimed.map(function (c) {
+          return '<tr><td>' + esc(c.task_id) + ' ' + esc(c.title) + '</td><td>' + esc(c.agent) +
+            '</td><td>' + esc(c.claim_ts) + '</td></tr>';
+        }).join('')
+      : '<tr><td colspan="3"><em>None</em></td></tr>';
+
+    const hb = d.heartbeat;
+    const hbPre = document.getElementById('hb-pre');
+    const hbNote = document.getElementById('hb-note');
+    if (d.notes && d.notes.heartbeat) hbNote.textContent = d.notes.heartbeat;
+    if (!hb) {
+      hbPre.textContent = '(no library/agent_heartbeat.json)';
+    } else {
+      hbPre.textContent = JSON.stringify(hb, null, 2);
+    }
+
+    const cov = d.coverage || {};
+    const pct = cov.full_pct != null ? cov.full_pct + '%' : '—';
+    document.getElementById('cov-cards').innerHTML = [
+      { k: 'Verses scanned', v: cov.verses },
+      { k: 'Fully covered (D+E+V)', v: cov.verses_full },
+      { k: 'Full %', v: pct },
+      { k: 'Chapters', v: cov.chapters_scanned },
+    ].map(function (x) {
+      return '<div class="card"><span>coverage</span><strong>' + esc(x.v != null ? x.v : '—') +
+        '</strong><span>' + esc(x.k) + '</span></div>';
+    }).join('');
+
+    const recent = d.recent_events || [];
+    document.getElementById('recent-body').innerHTML = recent.map(function (r) {
+      return '<tr><td>' + esc(r.ts) + '</td><td>' + esc(r.event) + '</td><td>' + esc(r.task_id) + ' ' +
+        esc(r.title) + '</td><td>' + esc(r.agent) + '</td></tr>';
+    }).join('') || '<tr><td colspan="4"><em>—</em></td></tr>';
+
+    const a7 = L.agents_active_7d || [];
+    const anow = L.agents_claimed_now || [];
+    var parts = [];
+    if (anow.length) parts.push('Claiming work now: ' + anow.join(', ') + '.');
+    if (a7.length) parts.push('Completed a task in the last 7 days: ' + a7.join(', ') + '.');
+    document.getElementById('agents-7d').textContent = parts.join(' ');
+  }
+
+  function load() {
+    fetch('dashboard_state.json', { cache: 'no-store' })
+      .then(function (r) {
+        if (!r.ok) throw new Error(r.status + ' ' + r.statusText);
+        return r.json();
+      })
+      .then(render)
+      .catch(function (e) {
+        document.getElementById('status').innerHTML = '<span class="err">Could not load dashboard_state.json. ' +
+          esc(e.message) + '</span><br>Run: <code>python3 lds_pipeline/build_dashboard_state.py</code>';
+      });
+  }
+
+  load();
+  timer = setInterval(load, POLL_MS);
+})();
+</script>
+</body>
+</html>
