@@ -184,6 +184,45 @@ def try_dispatch(task: dict) -> DispatchOutcome:
         )
         return DispatchOutcome(True, rc, f"generate_christ_connections {key} limit={limit} (exit {rc})")
 
+    # ── Full-queue registry tasks (titles from task_scout / manual queue) ───
+    if title.startswith("People registry: rebuild to 200 figures"):
+        rc1 = _run(
+            [sys.executable, str(REPO / "lds_pipeline" / "build_scripture_figure_registry.py")]
+        )
+        if rc1 != 0:
+            return DispatchOutcome(True, rc1, f"build_scripture_figure_registry exit {rc1}")
+        rc2 = _run(
+            [
+                sys.executable,
+                str(REPO / "lds_pipeline" / "generate_christ_connections.py"),
+                "--only",
+                "scripture_people",
+                "--workers",
+                "1",
+                "--limit",
+                "250",
+            ]
+        )
+        return DispatchOutcome(True, rc2, f"scripture_people build + christ (exit {rc2})")
+
+    if title.startswith("Things registry: expand to 60+"):
+        rc1 = _run([sys.executable, str(REPO / "lds_pipeline" / "expand_things_registry.py")])
+        if rc1 != 0:
+            return DispatchOutcome(True, rc1, f"expand_things_registry exit {rc1}")
+        rc2 = _run(
+            [
+                sys.executable,
+                str(REPO / "lds_pipeline" / "generate_christ_connections.py"),
+                "--only",
+                "things",
+                "--workers",
+                "1",
+                "--limit",
+                "120",
+            ]
+        )
+        return DispatchOutcome(True, rc2, f"things expand + christ (exit {rc2})")
+
     return DispatchOutcome(False, 0, "no matching dispatch rule")
 
 
