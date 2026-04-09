@@ -1,5 +1,16 @@
 {
   "model": "sonnet",
+  "ignorePatterns": [
+    "library/sources/**",
+    "library/strongs_plain.json",
+    "library/strongs_hebrew.json",
+    "library/strongs_greek.json",
+    "library/para_verse_map.json",
+    "diagnostics/**",
+    "assets/tmp_*",
+    "lds_pipeline/cache/**",
+    "node_modules/**"
+  ],
   "env": {
     "MAX_THINKING_TOKENS": "8000",
     "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "50",
