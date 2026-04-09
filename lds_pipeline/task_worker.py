@@ -14,6 +14,9 @@ Usage:
     python3 lds_pipeline/task_worker.py --agent WorkerB --model sonnet
     python3 lds_pipeline/task_worker.py --dry-run   # claim + print prompt, don't execute
 
+Parallel agents: each process needs a unique --agent name. From repo root:
+    ./lds_pipeline/run_parallel_task_workers.sh 4   # WorkerC–WorkerF, one task each
+
 Environment:
     ANTHROPIC_API_KEY  — required by claude CLI
 """

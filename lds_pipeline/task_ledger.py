@@ -323,6 +323,7 @@ def cmd_reopen(args) -> None:
         entry["notes"] = args.notes
     _append(entry)
     print(f"Reopened {tid}.")
+    _push_ledger()
 
 
 def cmd_status(args) -> None:
