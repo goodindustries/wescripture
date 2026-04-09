@@ -100,6 +100,7 @@ agents are named `Worker000`…`Worker015`. Set `TASK_WORKER_BACKEND=hybrid` for
 **Drain the queue:** `./lds_pipeline/run_task_drain.sh [wave-size]` runs wave after wave until
 `pending-count` is zero (does not run scout — refill with `task_scout` or `autonomous_runner` first).
 `python3 lds_pipeline/task_ledger.py pending-count` prints pending tasks only.
+**Terminal progress:** `python3 lds_pipeline/watch_progress.py` refreshes every 5s (pass seconds as first arg; `0` = snapshot once).
 
 **Verse done-ness dashboard:** `python3 lds_pipeline/build_verse_coverage.py` writes
 `library/verse_coverage.json` (Donaldson + entity markup + verse discovery per verse).
