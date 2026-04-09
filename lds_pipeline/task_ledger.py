@@ -392,6 +392,13 @@ def cmd_stats(args) -> None:
     print(f"  {'total':12s} {len(tasks)}")
 
 
+def cmd_pending_count(args) -> None:
+    events = _load_events()
+    tasks = _project(events)
+    n = sum(1 for t in tasks.values() if t.get("status") == "pending")
+    print(n)
+
+
 # ---------------------------------------------------------------------------
 # CLI
 # ---------------------------------------------------------------------------
@@ -441,6 +448,10 @@ def main() -> None:
     # stats
     p = sub.add_parser("stats", help="Show task counts by status")
     p.set_defaults(func=cmd_stats)
+
+    # pending-count
+    p = sub.add_parser("pending-count", help="Print number of pending (unclaimed) tasks")
+    p.set_defaults(func=cmd_pending_count)
 
     # append (legacy + new tasks)
     p = sub.add_parser("append", help="Append a raw event (legacy + new task creation)")
