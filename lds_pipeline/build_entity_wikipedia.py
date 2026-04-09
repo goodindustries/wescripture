@@ -307,6 +307,7 @@ def main():
     parser.add_argument("--people",          action="store_true", help="Enrich people.json")
     parser.add_argument("--places",          action="store_true", help="Enrich places.json")
     parser.add_argument("--things",          action="store_true", help="Enrich things.json")
+    parser.add_argument("--topics",          action="store_true", help="Enrich topics.json")
     parser.add_argument("--scripture-people",action="store_true", help="Enrich scripture_people.json")
     parser.add_argument("--all",             action="store_true", help="Enrich all entity files")
     parser.add_argument("--limit",    type=int, default=None, help="Max entities to enrich per file")
@@ -339,9 +340,10 @@ def main():
     do_people          = args.people or args.all
     do_places          = args.places or args.all
     do_things          = args.things or args.all
+    do_topics          = args.topics or args.all
     do_scripture_people = getattr(args, 'scripture_people', False) or args.all
 
-    if not (do_people or do_places or do_things or do_scripture_people):
+    if not (do_people or do_places or do_things or do_topics or do_scripture_people):
         # Default: priority people + all places + all things
         do_people = do_places = do_things = True
         if not args.priority_only and not args.scripture_only:
@@ -372,6 +374,12 @@ def main():
         n, s = process_file(ENTITIES / "things.json", args.limit, args.dry_run)
         total_enriched += n
         print(f"  things: {n} enriched, {s} skipped")
+
+    if do_topics:
+        print(f"Enriching topics ({ENTITIES / 'topics.json'})...")
+        n, s = process_file(ENTITIES / "topics.json", args.limit, args.dry_run)
+        total_enriched += n
+        print(f"  topics: {n} enriched, {s} skipped")
 
     print(f"\nTotal enriched: {total_enriched}")
 

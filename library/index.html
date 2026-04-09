@@ -2089,7 +2089,12 @@ function openTopicProfile(topicId) {
     var entity = topicById[topicId];
     if (!entity) return;
 
-    var extraHtml = renderExcerpts(entity.excerpts, 8)
+    var extraHtml = '';
+    if (entity.wikipedia_summary) {
+        extraHtml += '<div class="ep-wiki-summary">' + escapeHtml(entity.wikipedia_summary) + '</div>';
+    }
+    extraHtml += christConnectionHtml(entity)
+        + renderExcerpts(entity.excerpts, 8)
         + renderScriptureRefs(entity.related_scriptures)
         + renderChips(entity.related_people || [], 'person')
         + renderChips(entity.related_places || [], 'place')

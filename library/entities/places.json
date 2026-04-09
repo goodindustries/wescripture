@@ -8893,7 +8893,7 @@
     "id": "place:bethany",
     "name": "Bethany",
     "variants": [],
-    "wikipedia_title": "Bethany, West Bank",
+    "wikipedia_title": "Bethany",
     "excerpts": [
       {
         "text": "Finally, from Bethany He rose from their midst and ascended into heaven (see Luke 24:50–51).",
@@ -9068,7 +9068,13 @@
       "Zechariah 9:9"
     ],
     "doc_ids": [],
-    "christ_connection": "[Bethany: 1 Samuel 2:1-10] Bethany, a small village in the territory of Judah, is mentioned in the context of the anointing of King Saul, who was later rejected by God. The place serves as a symbolic location where the divine plan of salvation was initially conceived, reflecting the covenantal nature of God's promises. [1 Samuel 2:1-10] Furthermore, Bethany is referenced in the New Testament as a place where Jesus performed miracles and where the disciples encountered the risen Lord, illustrating the continuity of divine revelation through sacred history. [John 12:1-8]"
+    "christ_connection": "[Bethany: 1 Samuel 2:1-10] Bethany, a small village in the territory of Judah, is mentioned in the context of the anointing of King Saul, who was later rejected by God. The place serves as a symbolic location where the divine plan of salvation was initially conceived, reflecting the covenantal nature of God's promises. [1 Samuel 2:1-10] Furthermore, Bethany is referenced in the New Testament as a place where Jesus performed miracles and where the disciples encountered the risen Lord, illustrating the continuity of divine revelation through sacred history. [John 12:1-8]",
+    "desc": "Municipality type B in Jerusalem, Palestine",
+    "wikipedia_summary": "Bethany, locally called in Arabic al-Eizariya or el-Aizariya, is a Palestinian town in the Jerusalem Governorate of Palestine, bordering East Jerusalem, in the West Bank. The name al-Eizariya refers to the New Testament figure Lazarus of Bethany, who according to the Gospel of John, was raised from the dead by Jesus in the town. The traditional site of the miracle, the Tomb of Lazarus, in the city is a place of pilgrimage.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/%D7%94%D7%A0%D7%95%D7%A3_%D7%9C%D7%9E%D7%AA%D7%97%D7%9D_%D7%90%D7%95%D7%92%D7%95%D7%A1%D7%98%D7%94_%D7%95%D7%99%D7%A7%D7%98%D7%95%D7%A8%D7%99%D7%94.jpg/330px-%D7%94%D7%A0%D7%95%D7%A3_%D7%9C%D7%9E%D7%AA%D7%97%D7%9D_%D7%90%D7%95%D7%92%D7%95%D7%A1%D7%98%D7%94_%D7%95%D7%99%D7%A7%D7%98%D7%95%D7%A8%D7%99%D7%94.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Bethany",
+    "lat": 31.77,
+    "lon": 35.26444444
   },
   {
     "id": "place:bethsaida",
@@ -15269,17 +15275,19 @@
     "id": "place:bethel",
     "name": "Bethel",
     "variants": [],
-    "wikipedia_title": "Bethel (ancient city)",
+    "wikipedia_title": "Bethel",
     "excerpts": [],
     "related_people": [],
     "related_things": [],
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Place where Jacob saw the vision of the ladder reaching to heaven and the Lord stood above it",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Jacob's ladder vision at Bethel foreshadows Christ as the mediator between heaven and earth (John 1:51)"
+    "wikipedia_summary": "Bethel was an ancient Israelite city and sacred space that is frequently mentioned in the Hebrew Bible.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Bethel_MET_DP116361.jpg/330px-Bethel_MET_DP116361.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Bethel",
+    "christ_connection": "Jacob's ladder vision at Bethel foreshadows Christ as the mediator between heaven and earth (John 1:51)",
+    "lat": 31.9226,
+    "lon": 35.245
   },
   {
     "id": "place:shechem",
@@ -15357,17 +15365,19 @@
     "variants": [
       "Penuel"
     ],
-    "wikipedia_title": "Penuel (biblical)",
+    "wikipedia_title": "Penuel",
     "excerpts": [],
     "related_people": [],
     "related_things": [],
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Place where Jacob wrestled with the angel of the Lord all night and received the name Israel",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Many identify the wrestler as the premortal Christ; Jacob prevailed and saw God face to face"
+    "wikipedia_summary": "Penuel is a place described in the Hebrew Bible as being not far from Sukkot on the east of the Jordan River, south of the Zarqa in Jordan.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Lutte_de_Jacob_avec_l%27Ange.jpg/330px-Lutte_de_Jacob_avec_l%27Ange.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Penuel",
+    "christ_connection": "Many identify the wrestler as the premortal Christ; Jacob prevailed and saw God face to face",
+    "lat": 32.18333333,
+    "lon": 35.7
   },
   {
     "id": "place:carmel",
@@ -15393,17 +15403,19 @@
     "variants": [
       "Armageddon"
     ],
-    "wikipedia_title": "Megiddo (ancient city)",
+    "wikipedia_title": "Tel Megiddo",
     "excerpts": [],
     "related_people": [],
     "related_things": [],
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Ancient fortress city controlling the Jezreel Valley; site of many decisive battles in biblical history",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Armageddon (Har Megiddo) is the prophesied gathering place before the Second Coming of Jesus Christ (Revelation 16:16)"
+    "wikipedia_summary": "Tel Megiddo, is the site of the ancient city of Megiddo, the remains of which form a tell or archaeological mound, situated in northern Israel at the western edge of the Jezreel Valley. During the Bronze Age, Megiddo was an important Canaanite city-state, and in the Iron Age, it became a royal city in the Kingdom of Israel. The site is renowned for its historical, geographical, and theological significance, especially under its Greek name Armageddon (Ἁρμαγεδών) which appears once in the Koine Greek New Testament in Revelation 16:16.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/%D7%AA%D7%9C_%D7%9E%D7%92%D7%99%D7%93%D7%95.JPG/330px-%D7%AA%D7%9C_%D7%9E%D7%92%D7%99%D7%93%D7%95.JPG",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Tel_Megiddo",
+    "christ_connection": "Armageddon (Har Megiddo) is the prophesied gathering place before the Second Coming of Jesus Christ (Revelation 16:16)",
+    "lat": 32.58527778,
+    "lon": 35.18444444
   },
   {
     "id": "place:jezreel",
@@ -15447,17 +15459,19 @@
     "id": "place:ramah",
     "name": "Ramah",
     "variants": [],
-    "wikipedia_title": "Ramah (biblical city)",
+    "wikipedia_title": "Ramathaim-Zophim",
     "excerpts": [],
     "related_people": [],
     "related_things": [],
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Hometown of Samuel the prophet; associated with mourning for the children slain by Herod (Jeremiah 31:15)",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Matthew applies Jeremiah's prophecy of Rachel weeping at Ramah to Herod's slaughter of the innocents at Christ's birth"
+    "wikipedia_summary": "Ramathaim-Zophim, also called Ramah and Ramatha in the Douay–Rheims Bible translation, is a city from the Hebrew Bible, the home town and resting place of prophet Samuel. The name of the town means \"the heights of the views.\"",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Ramah_from_the_South_%284879821780%29.jpg/330px-Ramah_from_the_South_%284879821780%29.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ramathaim-Zophim",
+    "christ_connection": "Matthew applies Jeremiah's prophecy of Rachel weeping at Ramah to Herod's slaughter of the innocents at Christ's birth",
+    "lat": 31.833,
+    "lon": 35.181
   },
   {
     "id": "place:anathoth",
@@ -15481,7 +15495,7 @@
     "id": "place:tekoa",
     "name": "Tekoa",
     "variants": [],
-    "wikipedia_title": "Tekoa",
+    "wikipedia_title": "Tekoa, West Bank",
     "excerpts": [],
     "related_people": [],
     "related_things": [],
@@ -15533,32 +15547,34 @@
     "id": "place:gaza",
     "name": "Gaza",
     "variants": [],
-    "wikipedia_title": "Gaza",
+    "wikipedia_title": "Gaza City",
     "excerpts": [],
     "related_people": [],
     "related_things": [],
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Southernmost Philistine city; associated with Samson's captivity and his final act of strength",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Samson's death that slew more enemies than his life typifies Christ's death that overcame death itself"
+    "wikipedia_summary": "Gaza City, often simply called Gaza, is a city in the Gaza Strip, Palestine, and the capital of the Gaza Governorate. Located on the Mediterranean coast, 76.6 kilometres (47.6 mi) southwest of Jerusalem, it was home to Palestine's only port. With a population of 590,481 people as of 2017, Gaza City was the most populous city in Palestine until the Gaza war caused most of the population to be displaced.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Images_of_war_23-25_from_Gaza%2C_by_Jaber_Badwen%2C_IMG_6315.jpg/330px-Images_of_war_23-25_from_Gaza%2C_by_Jaber_Badwen%2C_IMG_6315.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Gaza_City",
+    "christ_connection": "Samson's death that slew more enemies than his life typifies Christ's death that overcame death itself",
+    "lat": 31.5075,
+    "lon": 34.45972222
   },
   {
     "id": "place:endor",
     "name": "Endor",
     "variants": [],
-    "wikipedia_title": "Endor (ancient city)",
+    "wikipedia_title": "En-dor",
     "excerpts": [],
     "related_people": [],
     "related_things": [],
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Village near Jezreel where Saul consulted the witch of Endor before his final battle",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
+    "wikipedia_summary": "Endor was listed in the Book of Joshua as one of the Canaanite cities the Israelites failed to dispossess, neither the city nor its dependencies. It was located between the Hill of Moreh and Mount Tabor in the Jezreel Valley. It is mentioned twice more in the Hebrew Bible, in 1 Samuel and in Psalm 83.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Ancient_Galilee.jpg/330px-Ancient_Galilee.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Endor_(village)",
     "christ_connection": "Saul's forbidden consultation at Endor contrasts with seeking Christ, the true source of divine guidance"
   },
   {
@@ -15603,17 +15619,19 @@
     "variants": [
       "Mizpeh"
     ],
-    "wikipedia_title": "Mizpah (biblical)",
+    "wikipedia_title": "Mizpah in Benjamin",
     "excerpts": [],
     "related_people": [],
     "related_things": [],
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Assembly place of Israel; where Samuel judged Israel; associated with covenant watchfulness",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Mizpah covenants of watchfulness prefigure the covenant relationship between God and His people in Christ"
+    "wikipedia_summary": "Mitzpah was a city of the tribe of Benjamin; it is referred to multiple times in the Hebrew Bible.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Tel_a-Nasba.jpg/330px-Tel_a-Nasba.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Mizpah_in_Benjamin",
+    "christ_connection": "Mizpah covenants of watchfulness prefigure the covenant relationship between God and His people in Christ",
+    "lat": 31.88527778,
+    "lon": 35.21638889
   },
   {
     "id": "place:ophir",
@@ -15934,17 +15952,19 @@
     "variants": [
       "Philadelphia"
     ],
-    "wikipedia_title": "Philadelphia, Lydia",
+    "wikipedia_title": "Philadelphia (Lydia)",
     "excerpts": [],
     "related_people": [],
     "related_things": [],
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "City in Asia Minor; one of the seven churches of Revelation; praised for keeping Christ's word despite little strength",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Christ set before Philadelphia an open door no one could shut and promised to keep them in the hour of trial"
+    "wikipedia_summary": "Alaşehir is a municipality and district of Manisa Province, Turkey. Its area is 971 km2, and its population is 104,717 (2022). It is situated in the valley of the Kuzuçay, at the foot of the Bozdağ Mountain. The town is connected to İzmir by a 105 km (65 mi) railway.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Manisa_location_Ala%C5%9Fehir.svg/330px-Manisa_location_Ala%C5%9Fehir.svg.png",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ala%C5%9Fehir",
+    "christ_connection": "Christ set before Philadelphia an open door no one could shut and promised to keep them in the hour of trial",
+    "lat": 38.35,
+    "lon": 28.51666667
   },
   {
     "id": "place:laodicea",
@@ -16405,17 +16425,19 @@
     "id": "place:nain",
     "name": "Nain",
     "variants": [],
-    "wikipedia_title": "Nain",
+    "wikipedia_title": "Nain, Israel",
     "excerpts": [],
     "related_people": [],
     "related_things": [],
     "related_scriptures": [],
     "doc_ids": [],
     "desc": "Village in Galilee where Jesus raised a widow's son from the dead as his funeral procession left the city gate",
-    "wikipedia_summary": "",
-    "wikipedia_thumbnail": "",
-    "wikipedia_url": "",
-    "christ_connection": "Christ's raising of the widow's son at Nain demonstrated His power over death and compassion for the sorrowing"
+    "wikipedia_summary": "Nein — also Nain or Naim in English — is an Arab village in northern Israel. Located in the Lower Galilee, 14 kilometers (8.7 mi) south of Nazareth, Nein covers a land area of approximately 1,000 dunams and falls under the jurisdiction of Bustan al-Marj Regional Council, whose headquarters it hosts. Its total land area consisted of 3,737 dunums prior to 1962. According to the Israeli Central Bureau of Statistics, in 2024 it had a population of 2,033.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Kfarnin_%28cropped%29.jpg/330px-Kfarnin_%28cropped%29.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Nein",
+    "christ_connection": "Christ's raising of the widow's son at Nain demonstrated His power over death and compassion for the sorrowing",
+    "lat": 32.63055556,
+    "lon": 35.35
   },
   {
     "id": "place:siloam",

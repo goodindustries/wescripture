@@ -3047,7 +3047,11 @@
       "Zechariah 4:6",
       "Zechariah 9:10",
       "Zechariah 9:13"
-    ]
+    ],
+    "desc": "Belief in the teachings of a religion",
+    "wikipedia_title": "Faith",
+    "wikipedia_summary": "In religion, faith is the \"belief in God or in the doctrines or teachings of religion\".",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Faith"
   },
   {
     "id": "topic:repentance",
@@ -4310,7 +4314,11 @@
       "Zechariah 14:21",
       "Zechariah 7:14",
       "Zephaniah 1:15"
-    ]
+    ],
+    "desc": "Reviewing one's actions and feeling contrition or regret",
+    "wikipedia_title": "Repentance",
+    "wikipedia_summary": "Repentance is reviewing one's actions and feeling contrition or regret for past or present wrongdoings, which is accompanied by commitment to and actual actions that show and prove a change for the better.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Repentance"
   },
   {
     "id": "topic:baptism",
@@ -5217,7 +5225,12 @@
       "Zechariah 13:6",
       "Zechariah 14:21",
       "Zechariah 9:12"
-    ]
+    ],
+    "desc": "Christian rite of initiation into the Church",
+    "wikipedia_title": "Baptism",
+    "wikipedia_summary": "Baptism is a Christian rite of initiation almost invariably with the use of water. It may be performed by sprinkling or pouring water on the head, or immersing in water, traditionally three times for each person of the Trinity. It is also called christening, although this is typically reserved for the baptism of infants. Baptism is regarded as a sacrament in most churches and an ordinance in others, with the synoptic gospels recounting that John the Baptist baptized Jesus.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Baptism_in_the_Jordan_River_140308-N-HB951-058.jpg/330px-Baptism_in_the_Jordan_River_140308-N-HB951-058.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Baptism"
   },
   {
     "id": "topic:holy_ghost",
@@ -6513,7 +6526,12 @@
       "Titus 3:5",
       "Words Of Mormon 1:15",
       "Zechariah 13:6"
-    ]
+    ],
+    "desc": "Third person of the Trinity",
+    "wikipedia_title": "Holy Ghost",
+    "wikipedia_summary": "Most Christian denominations believe the Holy Spirit, or Holy Ghost, to be the third divine Person of the Trinity, a triune god manifested as God the Father, God the Son, and God the Holy Spirit, each being God. Nontrinitarian Christians, who reject the doctrine of the Trinity, differ significantly from mainstream Christianity in their beliefs about the Holy Spirit. In Christian theology, pneumatology is the study of the Holy Spirit. Due to Christianity's historical relationship with Judaism, theologians often identify the Holy Spirit with the concept of the Ruach Hakodesh in Jewish scripture,",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Rom%2C_Vatikan%2C_Basilika_St._Peter%2C_Die_Taube_des_Heiligen_Geistes_%28Cathedra_Petri%2C_Bernini%29.jpg/330px-Rom%2C_Vatikan%2C_Basilika_St._Peter%2C_Die_Taube_des_Heiligen_Geistes_%28Cathedra_Petri%2C_Bernini%29.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Holy_Spirit_in_Christianity"
   },
   {
     "id": "topic:atonement",
@@ -7708,7 +7726,11 @@
       "Zechariah 12:13",
       "Zechariah 12:14",
       "Zechariah 14:1"
-    ]
+    ],
+    "desc": "Concept of a person taking action to correct previous wrongdoing",
+    "wikipedia_title": "Atonement",
+    "wikipedia_summary": "Atonement, atoning, or making amends is the concept of a person taking action to correct previous wrongdoing on their part, either through direct action to undo the consequences of that act, equivalent action to do good for others, or some other expression of feelings of remorse. Atonement \"is closely associated to forgiveness, reconciliation, sorrow, remorse, repentance, reparation, and guilt\". It can be seen as a necessary step on a path to redemption. Expiation is the related concept of removing guilt, particularly the undoing of sin or other transgressions in religious contexts.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Atonement"
   },
   {
     "id": "topic:resurrection",
@@ -8729,7 +8751,12 @@
       "Zechariah 14:19",
       "Zechariah 14:21",
       "Zechariah 14:5"
-    ]
+    ],
+    "desc": "Concept of coming back to life",
+    "wikipedia_title": "Resurrection",
+    "wikipedia_summary": "Resurrection or anastasis is the concept of coming back to life after death. This is quite different from reincarnation, a process involving a person or deity returning to life in a different body. The disappearance of a body is another similar but distinct belief in some religions.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Mantegna%2C_Andrea_-_La_R%C3%A9surrection_-_1457-1459.jpg/330px-Mantegna%2C_Andrea_-_La_R%C3%A9surrection_-_1457-1459.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Resurrection"
   },
   {
     "id": "topic:prayer",
@@ -9922,7 +9949,12 @@
       "Zechariah 10:1",
       "Zechariah 13:6",
       "Zechariah 14:21"
-    ]
+    ],
+    "desc": "Invocation or act that seeks to activate a rapport with a deity",
+    "wikipedia_title": "Prayer",
+    "wikipedia_summary": "Prayer is an invocation or act that seeks to activate a rapport with an object of worship through deliberate communication. In the narrow sense, the term refers to an act of supplication or intercession directed towards a deity or a deified ancestor. More generally, prayer can also have the purpose of giving thanks or praise, and in comparative religion is closely associated with more abstract forms of meditation and with charms or spells.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Prayers-collage.png/330px-Prayers-collage.png",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Prayer"
   },
   {
     "id": "topic:revelation",
@@ -12397,7 +12429,12 @@
       "Zechariah 6:5",
       "Zechariah 7:14",
       "Zephaniah 3:20"
-    ]
+    ],
+    "desc": "Communication from a deity",
+    "wikipedia_title": "Revelation",
+    "wikipedia_summary": "Revelation, or divine revelation, is the disclosing of some form of truth or knowledge through communication with a deity (god) or other supernatural entity or entities in the view of religion and theology.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Hildegard_von_Bingen.jpg/330px-Hildegard_von_Bingen.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Revelation"
   },
   {
     "id": "topic:prophecy",
@@ -15034,7 +15071,12 @@
       "Zephaniah 3:12",
       "Zephaniah 3:20",
       "Zephaniah 3:9"
-    ]
+    ],
+    "desc": "Message claimed to be from a deity",
+    "wikipedia_title": "Prophecy",
+    "wikipedia_summary": "In religion, mythology, and fiction, a prophecy is a message that has been communicated to a person by a supernatural entity. Prophecies are a feature of many cultures and belief systems and usually contain divine will or law, or preternatural knowledge, for example of future events. They can be revealed to the prophet in various ways depending on the religion and the story, such as visions, or direct interaction with divine beings in physical form. Stories of prophetic deeds sometimes receive considerable attention and some have been known to survive for centuries through oral tradition or as",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Olaus_Magnus_-_On_the_Art_of_Prophecy.jpg/330px-Olaus_Magnus_-_On_the_Art_of_Prophecy.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Prophecy"
   },
   {
     "id": "topic:priesthood",
@@ -16841,7 +16883,12 @@
       "Zechariah 3:1",
       "Zechariah 4:6",
       "Zechariah 8:23"
-    ]
+    ],
+    "desc": "Person authorized to lead the sacred rituals of a religion",
+    "wikipedia_title": "Priesthood",
+    "wikipedia_summary": "A priest is a religious leader authorized to perform the sacred rituals of a religion, especially as a mediatory agent between humans and one or more deities. They also have the authority or power to administer religious rites; in particular, rites of sacrifice to, and propitiation of, a deity or deities. Their office or position is the \"priesthood\", a term which also may apply to such persons collectively. A priest may have the duty to hear confessions periodically, give marriage counseling, provide prenuptial counseling, give spiritual direction, teach catechism, or visit those confined indo",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Priests_rome.jpg/330px-Priests_rome.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Priest"
   },
   {
     "id": "topic:temple",
@@ -18589,7 +18636,12 @@
       "Zechariah 9:9",
       "Zephaniah 3:19",
       "Zephaniah 3:20"
-    ]
+    ],
+    "desc": "Structure reserved for religious or spiritual activities",
+    "wikipedia_title": "Temple",
+    "wikipedia_summary": "A temple is a place of worship, a building used for spiritual rituals and activities such as prayer and sacrifice. By convention, the specially built places of worship for some religions are commonly called \"temples\" in English, while those of other religions are not, even though they fulfill very similar functions.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Ankor_Wat_temple.jpg/330px-Ankor_Wat_temple.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Temple"
   },
   {
     "id": "topic:salvation",
@@ -22047,7 +22099,11 @@
       "Zechariah 6:5",
       "Zechariah 9:11",
       "Zechariah 9:9"
-    ]
+    ],
+    "desc": "Concept in religion and theology",
+    "wikipedia_title": "Salvation",
+    "wikipedia_summary": "Salvation is the state of being saved or protected from harm or a dire situation. In religion and theology, salvation generally refers to the deliverance of the soul from sin and its consequences. The academic study of salvation is called soteriology.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Salvation"
   },
   {
     "id": "topic:grace",
@@ -23109,7 +23165,12 @@
       "Zechariah 13:9",
       "Zechariah 2:12",
       "Zechariah 7:10"
-    ]
+    ],
+    "wikipedia_title": "Grace in Christianity",
+    "desc": "Concept in Christianity",
+    "wikipedia_summary": "In Western Christian beliefs, grace is God's favor, and a \"share in the divine life of God\". It is a spontaneous gift from God – \"generous, free and totally unexpected and undeserved\" – that cannot be earned. In the Eastern Orthodox Church, grace is the uncreated energies of God. Among Eastern Christians generally, grace is considered to be the partaking of the divine nature described in 2 Peter 1:4 and grace is the working of God himself, not a created substance of any kind that can be treated like a commodity.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Stained_glass%2C_Holy_Family_Church%2C_Teconnaught%2C_September_2010_crop.jpg/330px-Stained_glass%2C_Holy_Family_Church%2C_Teconnaught%2C_September_2010_crop.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Grace_in_Christianity"
   },
   {
     "id": "topic:obedience",
@@ -24726,7 +24787,11 @@
       "Zechariah 14:21",
       "Zechariah 6:15",
       "Zechariah 8:23"
-    ]
+    ],
+    "desc": "Yielding to instructions from an authority figure",
+    "wikipedia_title": "Obedience",
+    "wikipedia_summary": "Obedience, in human behavior, is a form of \"social influence in which a person yields to explicit instructions or orders from an authority figure\". Obedience is generally distinguished from compliance, which some authors define as behavior influenced by peers while others use it as a more general term for positive responses to another individual's request, and from conformity, which is behavior intended to match that of the majority. Depending on context, obedience can be seen as moral, immoral, or amoral. For example, in psychological research, individuals are usually confronted with immoral ",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Obedience"
   },
   {
     "id": "topic:agency",
@@ -25322,7 +25387,11 @@
       "Titus 3:5",
       "Words Of Mormon 1:18",
       "Zechariah 14:21"
-    ]
+    ],
+    "wikipedia_title": "Agency (philosophy)",
+    "desc": "Capacity of an actor to act in a given environment",
+    "wikipedia_summary": "Agency is the capacity of an actor to act in a given environment. In some contexts, the exercise of agency is linked to questions of moral responsibility, and may pertain to questions of moral agency.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Agency_(philosophy)"
   },
   {
     "id": "topic:charity",
@@ -25813,7 +25882,12 @@
       "Romans 8:35",
       "Song Of Solomon 8:14",
       "Titus 3:15"
-    ]
+    ],
+    "wikipedia_title": "Charity (Christian virtue)",
+    "desc": "One of the seven theological virtues",
+    "wikipedia_summary": "In Christian theology, charity is considered one of the seven virtues and was understood by Thomas Aquinas as \"the friendship of man for God\", which \"unites us to God\". He holds it as \"the most excellent of the virtues\". Aquinas further holds that \"the habit of charity extends not only to the love of God, but also to the love of our neighbor\".",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Van_Dyck_-_Charity.jpg/330px-Van_Dyck_-_Charity.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Charity_(Christian_virtue)"
   },
   {
     "id": "topic:eternal_life",
@@ -26739,7 +26813,12 @@
       "Titus 2:12",
       "Titus 3:5",
       "Zechariah 14:21"
-    ]
+    ],
+    "wikipedia_title": "Eternal life (Christianity)",
+    "desc": "Concept of continued life after death",
+    "wikipedia_summary": "Eternal life traditionally refers to continued life after death, as outlined in Christian eschatology. The Apostles' Creed testifies: \"I believe... the resurrection of the body, and life everlasting.\" In this view, eternal life commences after the Second Coming of Jesus Christ and the resurrection of the dead, although in the New Testament's Johannine literature there are references to eternal life commencing in the earthly life of the believer, possibly indicating an inaugurated eschatology.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/The_Ladder_of_Divine_Ascent.jpg/330px-The_Ladder_of_Divine_Ascent.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Eternal_life_(Christianity)"
   },
   {
     "id": "topic:second_coming",
@@ -27773,7 +27852,12 @@
       "Zechariah 9:10",
       "Zechariah 9:9",
       "Zephaniah 1:15"
-    ]
+    ],
+    "desc": "Christian and Islamic belief that Jesus will return to Earth",
+    "wikipedia_title": "Second Coming",
+    "wikipedia_summary": "The Second Coming is the Christian and Islamic belief that Jesus Christ will return to Earth after his ascension to Heaven. The idea is based on messianic prophecies and is part of most Christian eschatologies.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Second_Coming_of_Christ_window.jpg/330px-Second_Coming_of_Christ_window.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Second_Coming"
   },
   {
     "id": "topic:judgment",
@@ -29036,7 +29120,12 @@
       "Zechariah 5:4",
       "Zechariah 6:5",
       "Zechariah 7:10"
-    ]
+    ],
+    "desc": "Evaluation of circumstances to make a decision",
+    "wikipedia_title": "Judgment",
+    "wikipedia_summary": "Judgement is the evaluation of given circumstances to make a decision or form an opinion. It may also refer to the result of such an evaluation, or to the ability of someone to make good judgements.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Roters_Illustrators_19807_%28thinking_judge%29.svg/330px-Roters_Illustrators_19807_%28thinking_judge%29.svg.png",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Judgement"
   },
   {
     "id": "topic:creation",
@@ -29780,7 +29869,12 @@
       "Romans 8:28",
       "Romans 9:21",
       "Romans 9:29"
-    ]
+    ],
+    "wikipedia_title": "Creation in Genesis",
+    "desc": "Creation myth of Judaism and Christianity",
+    "wikipedia_summary": "The creation myth of Judaism and Christianity is found in chapters 1 and 2 of the Book of Genesis. While both faith traditions have historically understood the account as a single unified story, modern scholars of biblical criticism have identified it as being a composite of two stories drawn from different sources expressing distinct views about the nature of God and creation.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Tissot_The_Creation.jpg/330px-Tissot_The_Creation.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Genesis_creation_narrative"
   },
   {
     "id": "topic:light_of_christ",
@@ -30156,7 +30250,11 @@
       "Romans 2:17",
       "Romans 8:26",
       "Titus 2:7"
-    ]
+    ],
+    "desc": "Christian theological concept",
+    "wikipedia_title": "Light of Christ",
+    "wikipedia_summary": "The light of Christ is a concept in Christianity deriving from several passages in the New Testament. One of the main reference points for 'the light of Christ,' is in the prologue of John's Gospel, John 1:9, \"That was the true Light, which lighteth every man that cometh into the world\". Another is the Apostle Paul's citation \"Christ will shine on you\".",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Light_of_Christ"
   },
   {
     "id": "topic:word_of_god",
@@ -34680,7 +34778,11 @@
       "Zechariah 14:4",
       "Zechariah 8:5",
       "Zechariah 9:12"
-    ]
+    ],
+    "wikipedia_title": "Covenant (biblical)",
+    "desc": "Religious concept in the Hebrew Bible",
+    "wikipedia_summary": "The Hebrew Bible makes reference to a number of covenants with God (YHWH). These include the Noahic Covenant set out in Genesis 9, which is decreed between God and all living creatures, as well as a number of more specific covenants with Abraham, the whole Israelite people, the Israelite priesthood, and the Davidic lineage of kings. In form and terminology, these covenants echo the kinds of treaty agreements existing in the surrounding ancient world.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Covenant_(biblical)"
   },
   {
     "id": "topic:gathering",
@@ -35141,7 +35243,11 @@
       "Zechariah 13:7",
       "Zechariah 2:13",
       "Zephaniah 3:9"
-    ]
+    ],
+    "desc": "Aspect of Jewish eschatology",
+    "wikipedia_title": "Gathering of Israel",
+    "wikipedia_summary": "The Gathering of Israel, or the Ingathering of the Jewish diaspora, is the biblical promise of Deuteronomy 30:1–5, made by Moses to the Israelites prior to their entry into the Land of Israel.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Gathering_of_Israel"
   },
   {
     "id": "topic:zion",
@@ -35839,7 +35945,14 @@
       "Zechariah 9:10",
       "Zechariah 9:9",
       "Zephaniah 3:19"
-    ]
+    ],
+    "desc": "Synonym for Jerusalem or Land of Israel",
+    "wikipedia_title": "Zion",
+    "wikipedia_summary": "Zion is a placename in the Tanakh, often used as a synonym for Jerusalem as well as for the Land of Israel as a whole.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Lieder_des_Ghetto_11.jpg/330px-Lieder_des_Ghetto_11.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Zion",
+    "lat": 31.77166667,
+    "lon": 35.22916667
   },
   {
     "id": "topic:tithing",
@@ -36145,7 +36258,11 @@
       "Romans 4:3",
       "Zechariah 14:21",
       "Zechariah 7:5"
-    ]
+    ],
+    "desc": "Historic English legal, administrative or territorial unit",
+    "wikipedia_title": "Tithing",
+    "wikipedia_summary": "A tithing or tything was a historic English legal, administrative or territorial unit, originally ten hides. Tithings later came to be seen as subdivisions of a manor or civil parish. The tithing's leader or spokesman was known as a tithingman.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Tithing"
   },
   {
     "id": "topic:sabbath",
@@ -36500,7 +36617,11 @@
       "Romans 14:17",
       "Romans 3:28",
       "Titus 1:7"
-    ]
+    ],
+    "desc": "Day set aside for rest and worship",
+    "wikipedia_title": "Sabbath",
+    "wikipedia_summary": "In Abrahamic religions, the Sabbath or Shabbat is a day set aside for rest and worship. According to the Book of Exodus, the Sabbath is a day of rest on the seventh day commanded by God to be kept as a holy day of rest as God rested in the Genesis creation narrative. Shabbat observance is commanded in the Ten Commandments: \"Remember the sabbath day, to keep it holy\" in the Masoretic text contrasting with the Samaritan Pentateuch which says \"Keep the Sabbath day to keep it holy.\"",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Sabbath"
   },
   {
     "id": "topic:fasting",
@@ -36912,7 +37033,12 @@
       "Ruth 3:3",
       "Ruth 4:22",
       "Zechariah 6:15"
-    ]
+    ],
+    "desc": "Willing abstinence from, or reduced consumption of, food and/or drink",
+    "wikipedia_title": "Fasting",
+    "wikipedia_summary": "Fasting is the act of refraining from eating, and sometimes drinking. However, from a physiological context, \"fasting\" may refer to the metabolic status of a person who has not eaten overnight, or to the metabolic state achieved after complete digestion and absorption of a meal. Metabolic changes in the fasting state begin after absorption of a meal.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Empty_table_setting_plate_fork_knife_%2842585288225%29.jpg/330px-Empty_table_setting_plate_fork_knife_%2842585288225%29.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Fasting"
   },
   {
     "id": "topic:scripture_study",
@@ -37347,7 +37473,12 @@
       "Romans 8:14",
       "Romans 8:36",
       "Zechariah 9:17"
-    ]
+    ],
+    "desc": "Dedicated follower of Jesus",
+    "wikipedia_title": "Discipleship",
+    "wikipedia_summary": "In Christianity, a disciple is a dedicated follower of Jesus. This term is found in the New Testament only in the Gospels and Acts. Originating in the ancient Near East, the concept of a disciple is an adherent of a teacher. Discipleship is not the same as being a student in the modern sense; a disciple in the ancient biblical world actively imitated both the life and teaching of the master. It was a deliberate apprenticeship which made the fully formed disciple a living copy of the master.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Christ_Taking_Leave_of_the_Apostles.jpg/330px-Christ_Taking_Leave_of_the_Apostles.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Disciple_(Christianity)"
   },
   {
     "id": "topic:sin",
@@ -39716,7 +39847,12 @@
       "Zechariah 5:5",
       "Zephaniah 1:15",
       "Zephaniah 3:12"
-    ]
+    ],
+    "desc": "Transgression against divine law",
+    "wikipedia_title": "Sin",
+    "wikipedia_summary": "The term sin originates from the Old English synn, tracing back to Proto-Germanic and Proto-Indo-European roots meaning “being” or “truly guilty,” implying a judgment of wrongdoing. Over time, different religions and cultures developed distinct understandings of sin, often shaping moral frameworks and spiritual practices. Each culture has its own interpretation of what it means to commit a sin. While sins are generally considered actions, any thought, word, or act considered immoral, amoral, selfish, shameful, harmful, or alienating might be termed \"sinful.\"",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Jan_Brueghel_de_Oude_en_Peter_Paul_Rubens_-_Het_aards_paradijs_met_de_zondeval_van_Adam_en_Eva.jpg/330px-Jan_Brueghel_de_Oude_en_Peter_Paul_Rubens_-_Het_aards_paradijs_met_de_zondeval_van_Adam_en_Eva.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Sin"
   },
   {
     "id": "topic:forgiveness",
@@ -40291,7 +40427,12 @@
       "Romans 8:23",
       "Song Of Solomon 8:14",
       "Titus 3:15"
-    ]
+    ],
+    "desc": "Renunciation or cessation of resentment, indignation, or anger",
+    "wikipedia_title": "Forgiveness",
+    "wikipedia_summary": "Forgiveness, in a psychological sense, is the intentional and voluntary process by which one who has felt wronged, harmed, or hurt changes their feelings and attitude towards the offender, and overcomes the impact of the offense, including negative emotions such as resentment or desire for vengeance. Theorists differ in the extent to which they believe forgiveness also implies replacing the negative emotions with positive attitudes, or requires reconciliation with the offender.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Marco_aurelio_e_barbaros_-_museus_capitolinos.jpg/330px-Marco_aurelio_e_barbaros_-_museus_capitolinos.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Forgiveness"
   },
   {
     "id": "topic:love",
@@ -41921,7 +42062,11 @@
       "Zechariah 1:8",
       "Zechariah 7:14",
       "Zechariah 8:17"
-    ]
+    ],
+    "desc": "Strong, positive emotional/mental states",
+    "wikipedia_title": "Love",
+    "wikipedia_summary": "Love is an emotion involving strong attraction, affection, emotional attachment or concern for a person, animal, or thing. It is expressed in many forms, encompassing a range of strong and positive emotional and mental states, from the most sublime virtue, good habit, deepest interpersonal affection, to the simplest pleasure. An example of this range of meanings is that the love of a mother differs from the love of a spouse, which, in turn, differs from the love of food.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Love"
   },
   {
     "id": "topic:truth",
@@ -44953,7 +45098,11 @@
       "Zechariah 7:14",
       "Zechariah 8:23",
       "Zechariah 9:17"
-    ]
+    ],
+    "desc": "Conformity to reality",
+    "wikipedia_title": "Truth",
+    "wikipedia_summary": "\nTruth is conformity to reality or fact. It contrasts with falsity or misrepresentation that fails to align with the world. Truth is typically treated as a property of truthbearers, such as sentences, propositions, or beliefs that describe things as they are. It is closely related to truthfulness, a virtue associated with honesty, and to truthlikeness, a characteristic of theories that approximate the truth.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Truth"
   },
   {
     "id": "topic:humility",
@@ -45757,7 +45906,12 @@
       "Words Of Mormon 1:13",
       "Zechariah 9:9",
       "Zephaniah 1:18"
-    ]
+    ],
+    "desc": "Quality of being humble",
+    "wikipedia_title": "Humility",
+    "wikipedia_summary": "Humility is the quality of being humble and kind. While older definitions, such as the 1998 Oxford Dictionary entry, described humility as having a \"low opinion of oneself\" or \"not being proudful\", more recent psychological and philosophical definitions emphasize having an \"accurate opinion of oneself\". This modern view includes expressing modesty appropriately, possessing clear goal orientation, openness, broad-mindedness, and a non-imposing mentality.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Rochdale_Unitarian_Church_%22Humility%22.jpg/330px-Rochdale_Unitarian_Church_%22Humility%22.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Humility"
   },
   {
     "id": "topic:knowledge",
@@ -48076,7 +48230,12 @@
       "Zechariah 14:21",
       "Zechariah 4:10",
       "Zechariah 8:23"
-    ]
+    ],
+    "desc": "Awareness of facts, or competency",
+    "wikipedia_title": "Knowledge",
+    "wikipedia_summary": "Knowledge is an awareness of facts, a familiarity with individuals and situations, or a practical skill. Knowledge of facts, also called propositional knowledge, is often characterized as true belief that is distinct from opinion or guesswork by virtue of justification. While there is wide agreement among philosophers that propositional knowledge is a form of true belief, many controversies focus on justification. This includes questions like how to understand justification, whether it is needed at all, and whether something else besides it is needed. These controversies intensified in the lat",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Tetradrachm_Athens_480-420BC_MBA_Lyon.jpg/330px-Tetradrachm_Athens_480-420BC_MBA_Lyon.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Knowledge"
   },
   {
     "id": "topic:eternal_family",
@@ -48435,7 +48594,11 @@
       "Romans 8:28",
       "Romans 9:33",
       "Romans 9:4"
-    ]
+    ],
+    "desc": "Japanese original video animation",
+    "wikipedia_title": "Eternal Family",
+    "wikipedia_summary": "Eternal Family  is a 1997 OVA directed by Koji Morimoto and released by Japanese animation studio, Studio 4°C. The film is about the daily life of a group of six very different strangers who, for scientific purposes, are brainwashed into believing that they are a family. The family is filmed and to recoup scientific expenses the distribution rights for the footage are sold to a television station for broadcast as a domestic soap opera called Eternal Family. The show becomes highly popular in the outside world so when a plumbing disaster results in the family accidentally escaping, the televisi",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Eternal_Family"
   },
   {
     "id": "topic:premortal_life",
@@ -48792,7 +48955,12 @@
       "Romans 9:11",
       "Romans 9:13",
       "Titus 1:2"
-    ]
+    ],
+    "wikipedia_title": "Premortal existence",
+    "desc": "Belief that souls exist before conception",
+    "wikipedia_summary": "Pre-existence, premortal existence, beforelife, or life before birth, is the belief that each individual human soul existed before mortal conception, and at some point before birth enters or is placed into the body. Concepts of pre-existence can encompass either the belief that the soul came into existence at some time prior to conception or the belief that the soul is eternal. Alternative positions are traducianism and creationism, which both hold that the individual human soul does not come into existence until conception or later. It is to be distinguished from preformation, which is about ",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Monreale_god_resting_after_creation.jpg/330px-Monreale_god_resting_after_creation.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Pre-existence"
   },
   {
     "id": "topic:plan_of_salvation",
@@ -49214,7 +49382,11 @@
       "Romans 6:6",
       "Song Of Solomon 8:14",
       "Titus 1:2"
-    ]
+    ],
+    "desc": "Christian concept",
+    "wikipedia_title": "Plan of Salvation",
+    "wikipedia_summary": "The plan of salvation is a Christian concept regarding God's plan to save humanity from sin and its consequences. It occurs first in the New Testament, for example in the Gospel of Matthew and the Gospel of Mark, although some scholars consider the idea fully developed first in the Gospel of Luke.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Plan_of_salvation"
   },
   {
     "id": "topic:godhead",
@@ -49442,7 +49614,11 @@
       "Revelation 7:15",
       "Romans 4:13",
       "Romans 6:3"
-    ]
+    ],
+    "desc": "Theological concept",
+    "wikipedia_title": "Godhead",
+    "wikipedia_summary": "Godhead is a Middle English variant of the word godhood, and denotes the divinity or substance (ousia) of God. The term refers to the aspect or substratum of God that lies behind God's actions or properties, and its nature has been the subject of long debate in every major religion.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Godhead"
   },
   {
     "id": "topic:holy_spirit",
@@ -49827,7 +50003,8 @@
       "Song Of Solomon 8:14",
       "Titus 3:5",
       "Zechariah 13:6"
-    ]
+    ],
+    "wikipedia_title": "Gift of the Holy Spirit"
   },
   {
     "id": "topic:patriarchal_blessing",
@@ -50668,7 +50845,11 @@
       "Zechariah 14:21",
       "Zechariah 4:3",
       "Zephaniah 3:12"
-    ]
+    ],
+    "desc": "Blessing in the Latter Day Saint movement",
+    "wikipedia_title": "Patriarchal Blessing",
+    "wikipedia_summary": "In the Latter Day Saint movement, a patriarchal blessing or evangelist blessing is administered by the laying on of hands, with accompanying words of counsel, reassurance and lifelong guidance intended solely for those receiving the blessing. The words are spoken by an ordained patriarch (evangelist) of the church, but are believed to be inspired by the Holy Ghost. These blessings are given in both the Church of Jesus Christ of Latter-day Saints and the Community of Christ. The patriarchal/evangelist blessings are modeled after the blessing given by Jacob to each of his sons prior to his death",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Patriarchal_blessing"
   },
   {
     "id": "topic:endowment",
@@ -50836,7 +51017,11 @@
       "Psalms 24:6",
       "Revelation 2:2",
       "Romans 4:13"
-    ]
+    ],
+    "wikipedia_title": "Endowment (Latter Day Saints)",
+    "desc": "Latter Day Saint temple practice",
+    "wikipedia_summary": "In the theology of the Latter Day Saint movement, an endowment refers to a gift of \"power from on high\", typically associated with the ordinances performed in Latter Day Saint temples. The purpose and meaning of the endowment varied during the life of movement founder Joseph Smith. The term has referred to many such gifts of heavenly power, including the confirmation ritual, the institution of the High Priesthood in 1831, events and rituals occurring in the Kirtland Temple in the mid-1830s, and an elaborate ritual performed in the Nauvoo Temple in the 1840s.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Endowment_(Latter_Day_Saints)"
   },
   {
     "id": "topic:word_of_wisdom",
@@ -50993,7 +51178,11 @@
       "Philippians 4:5",
       "Proverbs 16:32",
       "Romans 12:6"
-    ]
+    ],
+    "desc": "Spiritual gift in Christianity",
+    "wikipedia_title": "Word of Wisdom",
+    "wikipedia_summary": "In Christianity, the word of wisdom is a spiritual gift listed in 1 Corinthians 12:8. The function that this gift is given varies. Some Christians see in this gift a prophetic-like function. Others see in the word of wisdom a teaching function. This gift is closely related with the gift of the word of knowledge.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Word_of_wisdom"
   },
   {
     "id": "topic:missionary_work",
@@ -51763,7 +51952,11 @@
       "Zechariah 12:6",
       "Zechariah 13:1",
       "Zechariah 9:12"
-    ]
+    ],
+    "wikipedia_title": "Christian mission",
+    "desc": "Organized effort to spread Christianity",
+    "wikipedia_summary": "The Christian mission can be understood as the conviction that all believers are called to spread the Christian gospel to the whole world, in accordance, for example, with the Great Commission set out by Jesus and recorded in Matthew 28:16-20. More specifically, a Christian Mission is an organized effort to carry on evangelism, in the name of the Christian faith, or a location established for this purpose. Missions involve sending individuals and groups across boundaries, most commonly geographical boundaries. Sometimes individuals are sent and are called missionaries, and historically may hav",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Christian_mission"
   },
   {
     "id": "topic:service",
@@ -53728,7 +53921,12 @@
       "Zechariah 2:13",
       "Zechariah 5:5",
       "Zechariah 9:10"
-    ]
+    ],
+    "desc": "Abrahamic term for Israel and Palestine",
+    "wikipedia_title": "Holy Land",
+    "wikipedia_summary": "The term \"Holy Land\" is used to collectively denote areas of the Southern Levant that hold great significance in the Abrahamic religions, primarily because of their association with people and events featured in the Bible. It is traditionally synonymous with what is known as the Land of Israel (Zion) or the Promised Land in a biblical or religious context, or as Canaan or Palestine in a secular or geographic context—referring to a region that is mostly between the Mediterranean Sea and the Jordan River. Today, it chiefly overlaps with the combined territory of the modern states of Israel and P",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/The_map_of_the_Holy_Land_by_Marino_Sanudo_%28drawn_in_1320%29.jpg/330px-The_map_of_the_Holy_Land_by_Marino_Sanudo_%28drawn_in_1320%29.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Holy_Land"
   },
   {
     "id": "topic:angels",
@@ -54840,7 +55038,12 @@
       "Zechariah 3:1",
       "Zechariah 6:5",
       "Zechariah 9:9"
-    ]
+    ],
+    "desc": "Supernatural being in religions and mythologies",
+    "wikipedia_title": "Angels",
+    "wikipedia_summary": "An angel is a spiritual heavenly, or supernatural entity, usually humanoid with bird-like wings, often depicted as a messenger or intermediary between God and humanity in various traditions like the Abrahamic religions. Other roles include protectors and guides for humans, such as guardian angels and servants of God. In Western belief-systems the term is often used to distinguish benevolent from malevolent intermediary beings.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Angel_of_the_Annunciation_MET_DP167921.jpg/330px-Angel_of_the_Annunciation_MET_DP167921.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Angel"
   },
   {
     "id": "topic:devil",

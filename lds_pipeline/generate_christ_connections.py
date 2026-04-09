@@ -69,6 +69,14 @@ Description: {desc}
 How does this object point to or connect with Jesus Christ?\
 """
 
+PROMPT_TOPIC = """\
+Entity type: Theological topic / doctrine
+Name: {name}
+Terms: {terms}
+
+How does this topic or doctrine point to or connect with Jesus Christ?\
+"""
+
 
 def ollama_generate(model: str, prompt: str, retries: int = 3) -> str:
     payload = json.dumps({
@@ -115,6 +123,9 @@ def process_entity(model: str, entity: dict, etype: str) -> str:
             name=name, group=entity.get("group", "scripture"), desc=desc)
     elif etype == "place":
         prompt = PROMPT_PLACE.format(name=name, desc=desc)
+    elif etype == "topic":
+        terms = ', '.join(entity.get("terms", [])[:6])
+        prompt = PROMPT_TOPIC.format(name=name, terms=terms)
     else:
         prompt = PROMPT_THING.format(name=name, desc=desc)
     return ollama_generate(model, prompt)
@@ -187,13 +198,14 @@ def main():
         "people":  ("people.json",  "person"),
         "places":  ("places.json",  "place"),
         "things":  ("things.json",  "thing"),
+        "topics":  ("topics.json",  "topic"),
     }
 
-    # Default: scripture figures + places + things (skip the 1660-entry people.json unless specified)
+    # Default: scripture figures + places + things + topics (skip the 1660-entry people.json unless specified)
     if args.only:
         run_keys = [args.only] if args.only in targets else []
     else:
-        run_keys = ["scripture_people", "places", "things"]
+        run_keys = ["scripture_people", "places", "things", "topics"]
 
     for key in run_keys:
         fname, etype = targets[key]

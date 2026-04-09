@@ -196,3 +196,7 @@
 {"event": "task_completed", "task_id": "T-0064", "agent": "WorkerA", "ts": "2026-04-09T02:43:56+00:00", "commit": "230eeea7", "notes": "completed by task_worker (non-zero exit)"}
 {"event": "task_claimed", "task_id": "T-0065", "agent": "WorkerB", "ts": "2026-04-09T02:53:59+00:00"}
 {"event": "task_completed", "task_id": "T-0065", "agent": "WorkerB", "ts": "2026-04-09T02:54:04+00:00", "notes": "completed by task_worker (non-zero exit)"}
+{"event": "task_claimed", "task_id": "T-0065", "agent": "Claude", "ts": "2026-04-09T03:13:06+00:00"}
+{"event": "task_claimed", "task_id": "T-0059", "agent": "Claude", "ts": "2026-04-09T03:13:06+00:00"}
+{"event": "task_claimed", "task_id": "T-0062", "agent": "Claude", "ts": "2026-04-09T03:13:06+00:00"}
+{"event": "task_completed", "task_id": "T-0065", "agent": "ClaudeCode", "commit": "ee6ae699", "notes": "1259 Donaldson files normalized: whitespace cleaned, preamble headers removed (193 notes), notes converted to {p, text} objects", "ts": "2026-04-09T03:21:08+00:00"}

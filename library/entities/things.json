@@ -11352,7 +11352,8 @@
     "excerpts": [],
     "wikipedia_summary": "According to the Book of Mormon, Captain Moroni was an important Nephite military commander who lived during the first century BC. He is first mentioned in the Book of Alma as \"the chief captain over the Nephites.\"",
     "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/George_Ottinger%2C_Moroni_Raises_the_Title_of_Liberty%2C_published_1888%2C_cropped.png/330px-George_Ottinger%2C_Moroni_Raises_the_Title_of_Liberty%2C_published_1888%2C_cropped.png",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Captain_Moroni"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Captain_Moroni",
+    "christ_connection": "[1 Nephi 13:22] The banner raised by Captain Moroni, inscribed with a covenant to defend freedom and faith, typifies the spiritual liberty granted through the covenant of grace, wherein the faithful are liberated from bondage to sin and from the dominion of the devil. This object, though a physical artifact of the Book of Mormon, reflects the eternal covenant of Christ, wherein He is the ultimate liberator and the source of spiritual freedom. The banner, as a symbol of covenant, parallels the covenant of Jesus Christ, wherein He binds Himself to the world through the blood of the Lamb, thereby securing the freedom of the children of God."
   },
   {
     "id": "thing:jaredite_barges",
@@ -11369,7 +11370,8 @@
     "doc_ids": [],
     "excerpts": [],
     "wikipedia_summary": "The Jaredites are one of four peoples that the Latter-day Saints believe settled in ancient America.",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Jaredites"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Jaredites",
+    "christ_connection": "The Jaredite barges, as a symbolic and literal vessel, point to the concept of divine transportation and the fulfillment of the covenantal promise. Their construction and purpose mirror the spiritual journey of the Israelites, who were also entrusted with the sacred task of conveying the word of God. The sealing of these vessels reflects the sacred nature of the covenant, akin to the sealing of the Law and the Book of Mormon, which are both entrusted to the faithful. The barges, as an object of divine purpose, typify the role of the Church as a vessel through which God's word is carried to the world, fulfilling the prophecy of the \"barges\" as a means of divine revelation and salvation."
   },
   {
     "id": "thing:plates_of_ether",
@@ -11386,7 +11388,8 @@
     "doc_ids": [],
     "excerpts": [],
     "wikipedia_summary": "The Book of Ether is one of the books of the Book of Mormon. It describes the Jaredites, descendants of Jared and his companions, who were led by God to the Americas shortly after the confusion of tongues and the destruction of the Tower of Babel. Ether consists of fifteen chapters.",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Book_of_Ether"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Book_of_Ether",
+    "christ_connection": "[Ether 1:1] The plates of Ether, discovered by the people of Limhi, serve as a typological representation of the covenantal record of God's people, reflecting the divine purpose of preserving the law and the gospel. [Ether 1:2] These plates, which were inscribed with the account of the Jaredites, prefigure the coming of Christ as the ultimate mediator and revealer of divine truth. [Ether 1:3] The act of translating the record of the Jaredites into the language of the people of Limhi parallels the revelation of the gospel through the preaching of the gospel, illustrating the divine process of revelation and the covenantal promise of salvation. [Ether 1:4] The plates, as a sacred artifact, are a testament to the enduring nature of God's covenant and the perpetual call of the gospel to all nations."
   },
   {
     "id": "thing:brazen_serpent",
@@ -11404,7 +11407,8 @@
     "doc_ids": [],
     "excerpts": [],
     "wikipedia_summary": "In the biblical Books of Kings, the Nehushtan is the bronze image of a serpent on a pole. The image is described in the Book of Numbers, where Yahweh instructed Moses to erect it so that the Israelites who saw it would be cured and be protected from dying from the bites of the \"fiery serpents\", which Yahweh had sent to punish them for speaking against him and Moses.",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Nehushtan"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Nehushtan",
+    "christ_connection": "The Brazen Serpent, as depicted in Exodus 4:1-9 and Numbers 22:31-35, serves as a typological prefiguration of Christ, who is referred to as the \"Lamb of God\" (Revelation 1:5). Its role in the wilderness, where it healed the Israelites of snakebite, typifies the sacrificial atonement of Christ, who through His death upon the cross, breaks the power of sin and death. The serpent, though seemingly cursed, becomes a vehicle of salvation, mirroring how Christ, though condemned, becomes the source of redemption. This object thus functions as a covenantal emblem, illustrating the fulfillment of the Old Testament prophecy concerning the Messiah's redemptive work."
   },
   {
     "id": "thing:noahs_ark",
@@ -11422,7 +11426,8 @@
     "excerpts": [],
     "wikipedia_summary": "Noah's Ark is the boat in the Genesis flood narrative through which God spares Noah, his family, and one pair of every animal species in the world from a global deluge.",
     "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Edward_Hicks%2C_American_-_Noah%27s_Ark_-_Google_Art_Project.jpg/330px-Edward_Hicks%2C_American_-_Noah%27s_Ark_-_Google_Art_Project.jpg",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Noah's_Ark"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Noah's_Ark",
+    "christ_connection": "Noah's ark, as a vessel of salvation, typifies the covenantal promise of Jesus Christ, who is the ultimate mediator between God and humanity. The ark, constructed by Noah in obedience to God's command, reflects the covenantal faith that Jesus embodies—faithfulness, obedience, and the commitment to preserve life through sacrifice. The flood, which destroyed all unfaithful life, parallels the atonement and redemption wrought by Jesus, who, through his death and resurrection, offers salvation to all who believe. Thus, the ark serves as a type of the covenantal salvation that Jesus Christ fulfills, illustrating the enduring nature of God's covenant and the redemptive work of Christ."
   },
   {
     "id": "thing:rainbow",
@@ -11431,13 +11436,17 @@
       "bow in the cloud",
       "sign of the covenant"
     ],
-    "wikipedia_title": "Rainbow in the Bible",
+    "wikipedia_title": "Rainbow",
     "desc": "Sign of the Noahic covenant placed in the cloud as God's promise to never again destroy the earth by flood",
     "related_people": [],
     "related_places": [],
     "related_scriptures": [],
     "doc_ids": [],
-    "excerpts": []
+    "excerpts": [],
+    "wikipedia_summary": "A rainbow is an optical phenomenon caused by refraction, internal reflection and dispersion of light in water droplets resulting in a continuous spectrum of light appearing in the sky. The rainbow takes the form of a multicoloured circular arc. Rainbows caused by sunlight always appear in the section of sky directly opposite the sun. Rainbows can be caused by many forms of airborne water. These include not only rain, but also mist, spray, and airborne dew.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Double-alaskan-rainbow.jpg/330px-Double-alaskan-rainbow.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Rainbow",
+    "christ_connection": "The rainbow, as a sign of the Noahic covenant [Genesis 9:12-14], serves as a typological reminder of God's covenantal promise to never again destroy the earth by flood. This covenantal sign, which was instituted by God in the aftermath of the Great Flood, typifies the eternal nature of Christ's redemptive work, wherein God's promise of salvation is unchanging and eternal. The rainbow, therefore, points to the enduring nature of God's grace and the fulfillment of His covenantal promises through the incarnate Son, Jesus Christ, who is the ultimate embodiment of this covenantal faith."
   },
   {
     "id": "thing:coat_of_many_colors",
@@ -11456,7 +11465,8 @@
     "excerpts": [],
     "wikipedia_summary": "In the Hebrew Bible, the coat of many colors or ketonet passim is the name for the garment that the Biblical Joseph owned; it was given to him by his father Jacob in Vayeshev.",
     "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Jacob_blesses_Joseph_and_gives_him_the_coat.JPG/330px-Jacob_blesses_Joseph_and_gives_him_the_coat.JPG",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Coat_of_many_colors"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Coat_of_many_colors",
+    "christ_connection": "[Genesis 37:30] The coat of many colors, given to Joseph by his father Jacob, symbolizes the multifaceted nature of God's grace and the paradox of divine rejection. It typifies the suffering and eventual exaltation of Jesus, who, like Joseph, was rejected by his own people yet was destined for greatness. The garment, which initially signified favor and protection, ultimately points to the fulfillment of the covenant through Christ, who, as the \"servant of the Lord\" [Isaiah 53:12], is both the rejected and exalted one. Thus, the coat of many colors serves as a type of the mystery of Christ, wherein the servant of God is both despised and glorified."
   },
   {
     "id": "thing:paschal_lamb",
@@ -11475,7 +11485,8 @@
     "excerpts": [],
     "wikipedia_summary": "The Passover sacrifice, also known as the Paschal lamb or the Passover lamb, is the sacrifice that the Torah mandates the Israelites to ritually slaughter on the evening of Nisan 14, before Passover of Nisan 15, and eat lamb on the first night of the holiday with bitter herbs and matzo. According to the Torah, it was first offered on the night of the Exodus from Egypt. Although practiced by Jews in ancient times, the sacrifice is today not performed by the vast majority of Rabbinic Jews, but part of Beta Israel, Karaite and Samaritan observance.",
     "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/%D7%9E%D7%A2%D7%9E%D7%93_%D7%94%D7%9B%D7%A0%D7%94_%D7%9C%D7%A7%D7%A8%D7%90%D7%AA_%D7%A7%D7%A8%D7%91%D7%9F_%D7%A4%D7%A1%D7%97.JPG/330px-%D7%9E%D7%A2%D7%9E%D7%93_%D7%94%D7%9B%D7%A0%D7%94_%D7%9C%D7%A7%D7%A8%D7%90%D7%AA_%D7%A7%D7%A8%D7%91%D7%9F_%D7%A4%D7%A1%D7%97.JPG",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Passover_sacrifice"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Passover_sacrifice",
+    "christ_connection": "The Paschal lamb, as the central type of Christ, points to the sacrificial nature of redemption through the covenantal sacrifice of Jesus. Its death and resurrection mirror the paschal mystery, wherein the lamb's death typifies Christ's death, and its resurrection typifies Christ's resurrection. The paschal lamb, as the unblemished sacrifice, prefigures Christ's perfect obedience and atoning death, fulfilling the Old Testament prophecy of the Lamb of God [Heb 10:12]. This object thus serves as a covenantal sign, illustrating the fulfillment of the Old Testament promises in the New Covenant, and exemplifying the doctrine of the Lamb of God, wherein Christ is both the sacrifice and the victor [1 Pet 1:18-19]."
   },
   {
     "id": "thing:burning_incense",
@@ -11493,7 +11504,8 @@
     "doc_ids": [],
     "excerpts": [],
     "wikipedia_summary": "Altars in the Hebrew Bible were typically made of earth or unwrought stone. Altars were generally erected in conspicuous places.",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Altar_(Bible)"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Altar_(Bible)",
+    "christ_connection": "The incense altar, as described in [Exodus 30:1-10], serves as a typological representation of the intercessory prayer that Jesus Christ offers through the Holy Spirit. This altar, which was golden and stood before the Ark of the Covenant, symbolizes the mediating role of Christ in the heavenly sanctuary, where He intercedes for believers. The act of offering incense, which was a ritual of ascent and purification, parallels the prayers of the faithful that ascend to God, culminating in the mediation of Christ who, through His sacrifice, reconciles the divided wills of God and man. Thus, the incense altar points to the sacred mystery of Christ's mediation, wherein He offers Himself as a fragrant offering to the Father, fulfilling the covenantal promise of atonement and reconciliation."
   },
   {
     "id": "thing:living_water",
@@ -11512,7 +11524,8 @@
     "excerpts": [],
     "wikipedia_summary": "Living water is a biblical term which appears in both the Old and New Testaments. In Jeremiah 2:13 and 17:13, the prophet describes God as \"the spring of living water\", who has been forsaken by his chosen people Israel. Later, the prophet Zechariah described Jerusalem as a source of \"living water\", \"half [flowing] east to the Dead Sea and half of it west to the Mediterranean Sea, in summer and in winter\". The Pulpit Commentary notes that the city of Jerusalem \"was, as we know, abundantly supplied with water by many conduits and subterranean channels; but standing, as it does, surrounded by hil",
     "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/The_Angel_shows_Saint_John_the_Fountain_of_Living_Water%2C_from_the_Apocalypse_MET_DP815698.jpg/330px-The_Angel_shows_Saint_John_the_Fountain_of_Living_Water%2C_from_the_Apocalypse_MET_DP815698.jpg",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Living_Water"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Living_Water",
+    "christ_connection": "[John 4:14] The living water symbolized the divine grace and eternal life imparted by the Holy Spirit, fulfilling the covenantal promise of life in the Spirit, as depicted in [Ezekiel 47:1-12]. This imagery connects to Jesus Christ through the covenantal typology of the Spirit as the source of life, mirroring the fulfillment of the promise in [John 7:39]. The living water, as both a physical and spiritual reality, typifies the eternal presence and provision of the Holy Spirit, which is essential to the believer's eternal life and the fulfillment of the divine covenant."
   },
   {
     "id": "thing:bread_of_life",
@@ -11531,7 +11544,8 @@
     "excerpts": [],
     "wikipedia_summary": "The Bread of Life Discourse is a portion of the teaching of Jesus which appears in chapter 6 of John's Gospel and was delivered in the synagogue at Capernaum.",
     "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Eucharistic_bread_and_fish.jpg/330px-Eucharistic_bread_and_fish.jpg",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Bread_of_Life_Discourse"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Bread_of_Life_Discourse",
+    "christ_connection": "The Bread of Life, as proclaimed by Christ in John 6:35, serves as a typological fulfillment of the covenantal promise made to Abraham in Genesis 22:18. This object not only typifies the sacrificial lamb of God but also prophesies the coming of the Messiah, who would offer Himself as the ultimate sustenance for the soul. The reference to \"the bread that gives life\" directly connects to the Passover meal, where the bread symbolized the presence of God and the fulfillment of the covenant. Thus, the Bread of Life is both a type and a prophecy, underscoring the divine nature and redemptive work of Jesus Christ."
   },
   {
     "id": "thing:oil_lamps",
@@ -11550,7 +11564,8 @@
     "excerpts": [],
     "wikipedia_summary": "The Parable of the Ten Virgins, also known as the Parable of the Wise and Foolish Virgins or the Parable of the Ten Bridesmaids, is one of the parables of Jesus. According to Matthew 25:1–13, ten virgins await a bridegroom; five have brought enough oil for their lamps for the wait, while the oil of the other five runs out. The five virgins who are prepared for the bridegroom's arrival are rewarded, while the five who went to buy further oil miss the bridegroom's arrival and are disowned.",
     "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Blake_Wise_And_Foolish_Virgins_1826.jpg/330px-Blake_Wise_And_Foolish_Virgins_1826.jpg",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Parable_of_the_Ten_Virgins"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Parable_of_the_Ten_Virgins",
+    "christ_connection": "The oil and lamps in the parable of the ten virgins [Matthew 25:1-13] serve as a typological representation of the spiritual preparedness required for the coming of Christ and the outpouring of the Holy Spirit. The lamps, which are meant to illuminate the way, symbolize the light of Christ, while the oil, which is essential for the lamps to function, represents the Spirit's indwelling and enabling power. This imagery underscores the necessity of spiritual readiness and the importance of being prepared for the Lord's return, reflecting the covenantal promises and the prophetic expectation of the Holy Spirit's arrival. The parable thus connects to Jesus Christ through the lens of covenantal typology, emphasizing the dual aspects of faith and the indwelling presence of the Spirit."
   },
   {
     "id": "thing:talents",
@@ -11568,7 +11583,8 @@
     "excerpts": [],
     "wikipedia_summary": "The Parable of the Talents is one of the parables of Jesus. It appears in two of the synoptic, canonical gospels of the New Testament:Matthew 25:14–30\nLuke 19:11–27",
     "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Parable_of_talents.jpg/330px-Parable_of_talents.jpg",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Parable_of_the_Talents"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Parable_of_the_Talents",
+    "christ_connection": "[Titus 2:10] The parable of the talents, found in [Titus 2:10], serves as a typological reflection of Jesus Christ's own stewardship and divine commission. The servants are entrusted with different sums, symbolizing the varied gifts and responsibilities bestowed upon believers by God. This narrative points to Christ as the ultimate steward, who gave all things to His Church, and as the one who calls upon His followers to manage their resources with diligence and faith. The parable thus typifies the spiritual investment and accountability required of Christians, mirroring the covenantal trust placed upon Jesus by the Father."
   },
   {
     "id": "thing:birthright_blessing",
@@ -11584,7 +11600,8 @@
     "related_places": [],
     "related_scriptures": [],
     "doc_ids": [],
-    "excerpts": []
+    "excerpts": [],
+    "christ_connection": "The Birthright blessing, as a covenant inheritance, typifies Christ's role as the firstborn of every creature, for it is through this blessing that the Son of God is designated as the firstborn in the family of God, fulfilling the promise that \"the firstborn of the dead shall rise first\" [Ephesians 1:16]. This blessing, which was originally given to the sons of Israel, is thus a foretaste of the eternal inheritance that Christ receives through His resurrection and ascension, wherein He is both the firstborn and the lastborn, completing the divine order established in the covenant. The Birthright blessing, therefore, serves as a type of Christ's eternal priesthood and the inauguration of the new covenant, wherein the firstborn of the dead are made heirs of eternal life."
   },
   {
     "id": "thing:pillar_of_cloud",
@@ -11594,13 +11611,17 @@
       "cloud by day fire by night",
       "shekinah"
     ],
-    "wikipedia_title": "Pillar of cloud and fire",
+    "wikipedia_title": "Pillar of cloud",
     "desc": "Divine presence that guided Israel as a cloud by day and fire by night, typifying the Holy Ghost as guide",
     "related_people": [],
     "related_places": [],
     "related_scriptures": [],
     "doc_ids": [],
-    "excerpts": []
+    "excerpts": [],
+    "wikipedia_summary": "The pillar of fire and pillar of cloud are a dual theophany described in various places in the first five books of the Hebrew Bible. The pillars are said to have guided the Israelites through the desert during the Exodus from Egypt. The pillar of cloud provided a visible guide for the Israelites during the day, while the pillar of fire lit their way by night.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Benjamin_West_-_Joshua_passing_the_River_Jordan_with_the_Ark_of_the_Covenant_-_Google_Art_Project.jpg/330px-Benjamin_West_-_Joshua_passing_the_River_Jordan_with_the_Ark_of_the_Covenant_-_Google_Art_Project.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Pillars_of_fire_and_cloud",
+    "christ_connection": "The Pillar of Cloud, as described in Exodus 13:21-23, serves as a typological precursor to the Holy Ghost, who is the spiritual guide of the Church. This entity points to Jesus Christ through the covenantal relationship established between God and Israel, wherein the Pillar of Cloud symbolized the divine presence and guidance that would ultimately be fulfilled in the Spirit of Christ. The covenantal role of the Pillar of Cloud, which was both a physical manifestation and a spiritual guide, typifies the ministry of the Holy Ghost, who is the Spirit of Christ, guiding the Church into all truth. The narrative of the Pillar of Cloud thus connects to Jesus Christ through the arc of sacred history, illustrating the progression from the Old Testament covenantal realities to the New Testament spiritual guidance of the Holy Ghost."
   },
   {
     "id": "thing:baptismal_font",
@@ -11620,7 +11641,8 @@
     "excerpts": [],
     "wikipedia_summary": "A baptismal font is an ecclesiastical architectural element, which serves as a receptacle for baptismal water used for baptism, as a part of Christian initiation for both rites of infant and adult baptism.",
     "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Gr%C3%B6tlingbo_kyrka_dopfunt.jpg/330px-Gr%C3%B6tlingbo_kyrka_dopfunt.jpg",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Baptismal_font"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Baptismal_font",
+    "christ_connection": "The baptismal font, as a vessel of water, typifies the cleansing and renewal of sins, mirroring the act of baptism in the New Testament, where water symbolizes the washing away of moral defilement and the beginning of a new life in Christ [Matthew 27:1-10]. Its placement upon twelve oxen, representing the twelve tribes, reflects the covenantal structure of the Old Testament, where the tabernacle and its furnishings were designed to signify the unity and divine purpose of the people of God [Exodus 25:17-21]. Furthermore, the font's use in the Temple, a sacred space of worship and ritual, underscores its role in the ongoing covenant between God and His people, a covenant that is fulfilled in Christ through the redemptive work of His sacrifice [Hebrews 10:1-10]."
   },
   {
     "id": "thing:endowment",
@@ -11638,7 +11660,8 @@
     "doc_ids": [],
     "excerpts": [],
     "wikipedia_summary": "In the theology of the Latter Day Saint movement, an endowment refers to a gift of \"power from on high\", typically associated with the ordinances performed in Latter Day Saint temples. The purpose and meaning of the endowment varied during the life of movement founder Joseph Smith. The term has referred to many such gifts of heavenly power, including the confirmation ritual, the institution of the High Priesthood in 1831, events and rituals occurring in the Kirtland Temple in the mid-1830s, and an elaborate ritual performed in the Nauvoo Temple in the 1840s.",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Endowment_(Latter_Day_Saints)"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Endowment_(Latter_Day_Saints)",
+    "christ_connection": "The Temple endowment, as a sacred ordinance received in LDS temples, serves as a typological reflection of the priesthood and the plan of salvation, mirroring the Aaronic priesthood and its role in the Mosaic covenant. It is rooted in the Old Testament, where the Aaronic priesthood was instituted to minister in the tabernacle and to teach the people [Exodus 28:1-16]. The endowment, therefore, is a covenantal institution that upholds the priesthood and the gospel, fulfilling the prophecy of the \"priesthood of all nations\" [Matthew 28:18-20]. Furthermore, the endowment is a manifestation of the New Testament promise of the \"firstfruits of the Spirit\" and the \"priesthood of Christ\" [Romans 1:3-4], thereby connecting the sacred ordinance to the eternal priesthood of Jesus Christ."
   },
   {
     "id": "thing:abrahamic_covenant",
@@ -11657,7 +11680,8 @@
     "excerpts": [],
     "wikipedia_summary": "According to the Hebrew Bible, the covenant of the pieces or covenant between the parts is an important event in Jewish History. In this central narrative God revealed himself to Abraham and made a covenant with him, in which God announced to Abraham that his descendants would eventually inherit the Land of Israel.",
     "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/A_Deep_Sleep_Fell_Upon_Abram_and_a_Horror_Seized_Him_%285752557%29.jpg/330px-A_Deep_Sleep_Fell_Upon_Abram_and_a_Horror_Seized_Him_%285752557%29.jpg",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Covenant_of_the_pieces"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Covenant_of_the_pieces",
+    "christ_connection": "The Abrahamic covenant, as a foundational agreement between God and Abraham, prefigures the New Covenant established through Christ. It establishes the principle of divine promise and the role of the Messiah as the fulfillment of God's covenantal purpose. The covenant's emphasis on the seed of Abraham, who would bring blessing to all nations, directly points to Jesus Christ as the incarnate Messiah, who is both the heir of the covenant and the embodiment of its promises. The covenant's structure and language—such as the promise of land and posterity—find their definitive realization in the Gospel of Matthew, where Jesus is presented as the fulfillment of the covenantal oath, thereby connecting the Abrahamic covenant to the incarnate Christ through the lens of typology and prophecy."
   },
   {
     "id": "thing:sealing_ordinance",
@@ -11677,7 +11701,8 @@
     "excerpts": [],
     "wikipedia_summary": "Sealing is an ordinance (ritual) performed in Latter Day Saint temples by a person holding the sealing authority. The purpose of this ordinance is to seal familial relationships, making possible the existence of family relationships throughout eternity. Sealings are typically performed as marriages or as sealing of children to parents. They were performed prior to the death of Joseph Smith, and subsequently performed in the largest of the faiths that came from the movement, The Church of Jesus Christ of Latter-day Saints. LDS Church teachings place great importance on the specific authority re",
     "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Phil_and_Marlene.jpg",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Sealing_(Mormonism)"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Sealing_(Mormonism)",
+    "christ_connection": "The sealing ordinance, as instituted by Jesus Christ through the Melchizedek Priesthood, serves as a covenantal seal upon the faithful, binding them unto eternal life and affirming their eternal relationship with God. This ordinance, rooted in the Book of Mormon [Moses:1:3], typifies the eternal covenant of love and fidelity that Christ established, and it is a manifestation of the divine promise that through Christ, all who are called shall be sealed and eternally joined to God. The sealing power, which is exercised by the Melchizedek Priesthood, is a prophetic fulfillment of the covenantal promises made in the Book of Mormon and in the Book of Revelation [Revelation:7:9], thereby establishing the ordinance as a vital component of the eternal covenant between God and His people."
   },
   {
     "id": "thing:still_small_voice",
@@ -11693,7 +11718,8 @@
     "related_places": [],
     "related_scriptures": [],
     "doc_ids": [],
-    "excerpts": []
+    "excerpts": [],
+    "christ_connection": "[1 Samuel 3:18] The still small voice, which spoke to Elijah after the earthquake and fire at Horeb, typifies the Spirit of God, who, in the New Testament, is referred to as \"the still, small voice\" in [John 15:26], and who, in the Holy Spirit, is the embodiment of the covenantal promise of divine revelation. This voice, though silent in the moment of revelation, is the agent of divine communication, and thus points to the Spirit's role in the covenant of grace, wherein the Holy Spirit, as the Spirit of promise, continues to speak to the elect. The still small voice, as a type of the Spirit's quiet witness, connects to Jesus Christ through the doctrine of the Holy Spirit, wherein the Spirit's ministry is both a continuation and a fulfillment of the covenantal promise, as seen in the ministry of the Spirit in the life and teachings of Christ."
   },
   {
     "id": "thing:dove",
@@ -11703,13 +11729,14 @@
       "Holy Ghost as dove",
       "dove descending"
     ],
-    "wikipedia_title": "Dove as symbol",
+    "wikipedia_title": "Dove (Christianity)",
     "desc": "At Christ's baptism the Holy Ghost descended in the form of a dove; also Noah's dove signaling the end of the flood",
     "related_people": [],
     "related_places": [],
     "related_scriptures": [],
     "doc_ids": [],
-    "excerpts": []
+    "excerpts": [],
+    "christ_connection": "The dove, as a symbol of the Holy Spirit at Christ's baptism [Matthew 3:16], typifies the covenantal promise of divine presence and guidance, mirroring the role of the Spirit in the life of Jesus. Similarly, the dove of Noah, which returned to the Ark after the flood [Genesis 8:12], prefigures the resurrection of Christ, signifying the restoration of relationship with God. Thus, the dove serves as a typological link, illustrating the fulfillment of the covenantal imagery in the person of Jesus Christ."
   },
   {
     "id": "thing:scepter",
@@ -11727,7 +11754,8 @@
     "excerpts": [],
     "wikipedia_summary": "A sceptre is a staff or wand held in the hand by a ruling monarch as an item of royal or imperial insignia, signifying sovereign authority.",
     "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Darius_the_Great.jpg/330px-Darius_the_Great.jpg",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Sceptre"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Sceptre",
+    "christ_connection": "The scepter, as depicted in Genesis 49:10, serves as a typological emblem of royal authority, symbolizing the coming of the Messiah, Shiloh, who is designated as the rightful king of Judah. This object functions as a covenantal token, affirming the divine promise that the line of Judah would endure and that the king would be anointed by the Spirit of God. The scepter's perpetual association with Judah underscores its role in the fulfillment of the prophecy that Christ would be both the descendant of Judah and the sovereign ruler of the world, thereby establishing a direct connection to Jesus Christ as the promised Messiah and King."
   },
   {
     "id": "thing:scroll",
@@ -11746,7 +11774,8 @@
     "excerpts": [],
     "wikipedia_summary": "A scroll, also known as a roll, is a roll of papyrus, parchment, or paper containing writing.",
     "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Joshua_Roll.jpg/330px-Joshua_Roll.jpg",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Scroll"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Scroll",
+    "christ_connection": "The scroll, as described in Revelation 5:1-14, is a sacred artifact that embodies the divine authority of Jesus Christ. It is the very instrument through which Christ exercises His sovereign rule over the cosmos, as the Lamb is deemed worthy to open it. This act typifies Christ's unique role as the mediator between God and humanity, fulfilling the covenantal promise of salvation. The scroll's inclusion in the book of Revelation, which is centered on Christ's redemptive work, underscores its significance as a prophetic symbol of the ultimate revelation of God's plan for salvation, thereby connecting it directly to the incarnate Christ who is the fulfillment of all prophecy."
   },
   {
     "id": "thing:prodigal_son",
@@ -11764,7 +11793,8 @@
     "excerpts": [],
     "wikipedia_summary": "The parable of the Prodigal Son is one of the parables of Jesus in the Bible, appearing in Luke 15:11–32. In Luke 15, Jesus tells this story, along with those of a man with 100 sheep and a woman with ten coins, to a group of Pharisees and religious leaders who criticized him for welcoming and eating with tax collectors and others seen as sinners.",
     "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Pompeo_Batoni_003.jpg/330px-Pompeo_Batoni_003.jpg",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Parable_of_the_Prodigal_Son"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Parable_of_the_Prodigal_Son",
+    "christ_connection": "The parable of the prodigal son [Luke 15:11-32] typifies the covenantal mercy of God, illustrating the nature of the atonement through the father's unconditional love and restoration. It reflects the sacrificial atonement of Jesus Christ, wherein God's grace extends to those who repent, mirroring the redemptive work of Christ who gave His life for the sins of the world. The father's action of running to meet his son underscores the divine initiative in salvation, pointing to the central role of Jesus as the mediator of the covenant, through whom God's mercy is made manifest."
   },
   {
     "id": "thing:brother_of_jared_stones",
@@ -11783,6 +11813,7 @@
     "excerpts": [],
     "wikipedia_summary": "In the Book of Mormon, the Brother of Jared is the most prominent person in the account given in the beginning of the Book of Ether. The Brother of Jared's name is not given in the text of the Book of Mormon, but Joseph Smith stated in 1834 that it was Mahonri Moriancumer.",
     "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Lehi_Blesses_His_Posterity%2C_cropped.jpg/330px-Lehi_Blesses_His_Posterity%2C_cropped.jpg",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Brother_of_Jared"
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Brother_of_Jared",
+    "christ_connection": "The Stones of the Brother of Jared, as a tangible manifestation of faith, serve as a typological reflection of Christ's ministry and divine illumination. These stones, molten and transparent, symbolize the purity and transparency of the divine light that Christ brings, illuminating the minds and hearts of those who accept His teachings. The act of the Lord touching the stones to provide light parallels Christ's incarnation, wherein He became the light of the world, dispelling darkness and revealing truth. This object thus functions as a covenantal sign, affirming the promise of divine illumination through Christ, and is a precursor to the fuller revelation of the Gospel in the New Testament. [Isaiah 40:3; 1 Corinthians 3:11]"
   }
 ]
