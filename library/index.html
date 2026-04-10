@@ -213,6 +213,41 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 .search-result-text { color: var(--text); }
 .search-hl { background: rgba(156,122,77,0.22); border-radius: 2px; font-weight: 500; }
 
+/* ── Study overlay (saved verses, username) ── */
+#study-overlay {
+    position: fixed; inset: 0; background: rgba(38,34,29,0.45); z-index: 200;
+    display: none; align-items: center; justify-content: center; padding: 20px;
+}
+#study-overlay.open { display: flex; }
+.study-modal {
+    background: #FEFCF8; border-radius: 12px; max-width: 420px; width: 100%;
+    max-height: 85vh; overflow: auto; box-shadow: 0 12px 48px rgba(0,0,0,0.2);
+    border: 1px solid var(--divider);
+}
+.study-modal-hdr {
+    padding: 14px 18px; border-bottom: 1px solid var(--divider);
+    font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+    color: var(--muted); display: flex; justify-content: space-between; align-items: center;
+}
+.study-modal-body { padding: 14px 18px 18px; font-size: 13px; }
+.study-modal-body label { display: block; margin-bottom: 6px; color: var(--muted); font-size: 11px; }
+.study-modal-body input[type="text"] {
+    width: 100%; padding: 8px 10px; border: 1px solid var(--divider); border-radius: 6px;
+    font-family: inherit; font-size: 13px; margin-bottom: 12px;
+}
+.study-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.study-actions button {
+    padding: 8px 12px; font-size: 12px; font-weight: 600; color: var(--accent);
+    background: rgba(156,122,77,0.1); border: none; border-radius: 8px; cursor: pointer; font-family: inherit;
+}
+.study-actions button:hover { background: rgba(156,122,77,0.2); }
+#study-list { list-style: none; margin: 0; padding: 0; }
+#study-list li {
+    padding: 10px 0; border-bottom: 1px solid var(--divider);
+    display: flex; justify-content: space-between; align-items: center; gap: 8px;
+}
+#study-list li button { font-size: 11px; color: var(--accent); background: none; border: none; cursor: pointer; }
+
 /* ── Loading state ── */
 #splash { position: fixed; inset: 0; background: var(--bg); display: flex;
     flex-direction: column; align-items: center; justify-content: center; gap: 14px; z-index: 400; }
@@ -642,6 +677,12 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 .word-more-btn { display: block; width: 100%; text-align: left; padding: 12px 28px; font-size: 12px; font-weight: 600; color: var(--accent); background: none; border: none; border-bottom: 1px solid var(--divider); cursor: pointer; font-family: inherit; }
 .word-more-btn:hover { background: rgba(0,0,0,0.03); }
 .word-cards-wrap.expanded .word-more-btn { display: none; }
+/* Verse panel: Commentary + Cross References — show 3, then expand */
+.verse-panel-cards:not(.expanded) > .comm-card:nth-child(n+4),
+.verse-panel-cards:not(.expanded) > .scrip-card:nth-child(n+4) { display: none; }
+.verse-panel-cards.expanded > .comm-card,
+.verse-panel-cards.expanded > .scrip-card { display: block; }
+.verse-panel-cards.expanded .word-more-btn { display: none; }
 /* Expand overflow for all card types */
 .word-card.expanded .note-overflow,
 .comm-card.expanded .quote-overflow,
@@ -820,6 +861,11 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     </button>
     <div id="breadcrumbs"></div>
     <span id="location-label"></span>
+    <button id="study-btn" onclick="openStudyPanel()" title="My study">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h10v12H4z"/><path d="M6 8h6M6 11h4"/>
+        </svg>
+    </button>
     <button id="search-btn" onclick="openSearch()" title="Search scriptures">
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="8" cy="8" r="5"/><line x1="12" y1="12" x2="16" y2="16"/>
@@ -843,6 +889,23 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     </div>
     <div id="search-status"></div>
     <div id="search-results"></div>
+</div>
+
+<div id="study-overlay" onclick="if (event.target === this) closeStudyPanel()">
+    <div class="study-modal" onclick="event.stopPropagation()">
+        <div class="study-modal-hdr">
+            <span>My study</span>
+            <button type="button" id="study-close" onclick="closeStudyPanel()" style="background:none;border:none;cursor:pointer;color:var(--muted)">✕</button>
+        </div>
+        <div class="study-modal-body">
+            <label for="study-username">Display name (stored on this device)</label>
+            <input type="text" id="study-username" placeholder="Reader" maxlength="64" autocomplete="nickname"/>
+            <div class="study-actions">
+                <button type="button" onclick="saveCurrentVerseToStudy()">Save current verse</button>
+            </div>
+            <ul id="study-list"></ul>
+        </div>
+    </div>
 </div>
 
 <div id="shell">
@@ -968,6 +1031,94 @@ var titlePageDataPromise = null;
 
 // Highlights: { chapterId: [{start,end,color,text,note}] }
 var highlights = JSON.parse(localStorage.getItem(SITE.storageKey + '_highlights') || '{}');
+
+// Study saves (verse refs) — localStorage MVP (see plan Pillar 5)
+var studyState = (function() {
+    try {
+        var raw = localStorage.getItem(SITE.storageKey + '_study_v1');
+        if (raw) return JSON.parse(raw);
+    } catch (e) {}
+    return { version: 1, username: '', saves: [] };
+})();
+function persistStudyState() {
+    try {
+        localStorage.setItem(SITE.storageKey + '_study_v1', JSON.stringify(studyState));
+    } catch (e) {}
+}
+function parseVerseRefForStudy(ref) {
+    if (!ref || typeof ref !== 'string') return null;
+    var m = ref.trim().match(/^(.+?)\s+(\d+):(\d+)\s*$/);
+    if (!m) return null;
+    var bookSlug = m[1].toLowerCase().replace(/ /g, '_');
+    return {
+        chapterId: bookSlug + '_' + parseInt(m[2], 10),
+        verse: parseInt(m[3], 10),
+        ref: ref.trim()
+    };
+}
+function verseRefFromUi() {
+    var w = document.getElementById('ch-word');
+    if (w && w.textContent && String(w.textContent).indexOf(':') !== -1) return String(w.textContent).trim();
+    if (!currentChapter || !focusedVerseEl) return '';
+    var cm = currentChapter.match(/^(.+)_(\d+)$/);
+    if (!cm) return '';
+    var vn = (focusedVerseEl.id || '').replace(/^v/, '');
+    return slugToBookName(cm[1]) + ' ' + cm[2] + ':' + vn;
+}
+function renderStudyList() {
+    var ul = document.getElementById('study-list');
+    if (!ul) return;
+    var items = studyState.saves || [];
+    if (!items.length) {
+        ul.innerHTML = '<li style="border:none;color:var(--muted);padding:8px 0">No saved verses yet.</li>';
+        return;
+    }
+    ul.innerHTML = items.slice().reverse().map(function(s, idx) {
+        var realIdx = items.length - 1 - idx;
+        return '<li><span>' + escapeHtml(s.ref || '') + '</span>'
+            + '<button type="button" data-study-idx="' + realIdx + '">Open</button></li>';
+    }).join('');
+    ul.onclick = function(e) {
+        var b = e.target.closest('button[data-study-idx]');
+        if (!b) return;
+        var s = studyState.saves[parseInt(b.dataset.studyIdx, 10)];
+        if (!s || !s.ref) return;
+        closeStudyPanel();
+        var p = parseVerseRefForStudy(s.ref);
+        if (p) jumpTo(p.chapterId, p.verse);
+    };
+}
+function openStudyPanel() {
+    var o = document.getElementById('study-overlay');
+    var u = document.getElementById('study-username');
+    if (u) u.value = studyState.username || '';
+    renderStudyList();
+    if (o) o.classList.add('open');
+}
+function closeStudyPanel() {
+    var o = document.getElementById('study-overlay');
+    if (o) o.classList.remove('open');
+}
+function saveCurrentVerseToStudy() {
+    var ref = verseRefFromUi();
+    if (!ref) return;
+    var dup = (studyState.saves || []).some(function(s) { return s.ref === ref; });
+    if (dup) return;
+    studyState.saves = studyState.saves || [];
+    studyState.saves.push({ ref: ref, ts: Date.now(), chapterId: currentChapter || '' });
+    persistStudyState();
+    renderStudyList();
+}
+(function initStudyUi() {
+    var u = document.getElementById('study-username');
+    if (u) {
+        u.value = studyState.username || '';
+        u.addEventListener('change', function() {
+            studyState.username = this.value.trim().slice(0, 64);
+            persistStudyState();
+        });
+    }
+})();
 
 // ── TOC toggle ───────────────────────────────────────────────────────────
 function toggleToc() {
@@ -2126,7 +2277,8 @@ function expandCard(btn) {
     btn.closest('.note-card, .quote-card, .hist-card, .comm-card, .word-card').classList.add('expanded');
 }
 function expandWordCards(btn) {
-    btn.closest('.word-cards-wrap').classList.add('expanded');
+    var wrap = btn.closest('.word-cards-wrap, .verse-panel-cards');
+    if (wrap) wrap.classList.add('expanded');
 }
 function makeExpandable(text, previewClass, overflowClass, moreClass) {
     if (!text) return '';
@@ -2187,7 +2339,18 @@ function chapterGraphEchoes(chapterId, vnum) {
         }
     });
     results.sort(function(a, b){ return b.score - a.score; });
-    return results;
+    return results.slice(0, 24);
+}
+
+/** Dedupe verse_discovery rows by document + paragraph. */
+function dedupeVerseDiscoveryEntries(arr) {
+    var seen = {};
+    return (arr || []).filter(function(e) {
+        var k = (e.source_doc_id || '') + '\u0000' + String(e.source_para == null ? '' : e.source_para);
+        if (seen[k]) return false;
+        seen[k] = true;
+        return true;
+    });
 }
 
 function openVerseDiscovery(ref) {
@@ -2196,11 +2359,11 @@ function openVerseDiscovery(ref) {
     var chapterId = currentChapter || '';
 
     var rawEntries = verseDiscovery[ref] || [];
-    // Filter out chapter-level noise
-    var entries = rawEntries.filter(function(e) {
+    // Filter out chapter-level noise; dedupe by source doc + paragraph
+    var entries = dedupeVerseDiscoveryEntries(rawEntries.filter(function(e) {
         if (e.source === 'millennial_star') return false;
         return !discIsRepeat(e.source_text);
-    });
+    }));
 
     // Donaldson notes for this verse
     var donaEntry  = (donaldsonNotes[chapterId] && donaldsonNotes[chapterId][vnum]) || {};
@@ -2220,9 +2383,11 @@ function openVerseDiscovery(ref) {
         + '</div>';
 
     // ── People · Places · Things in this verse ──
+    var showedEntityChips = false;
     if (verseText) {
         var ents = scanVerseEntities(verseText);
         if (ents.persons.length || ents.places.length || ents.things.length) {
+            showedEntityChips = true;
             html += '<div class="panel-section">People · Places · Things</div>';
             html += renderChips(ents.persons, 'person');
             html += renderChips(ents.places, 'place');
@@ -2232,7 +2397,9 @@ function openVerseDiscovery(ref) {
 
     // ── Key words: Donaldson (injection) → Strong's (scholarly source) ──
     var strongsEntries = (strongsIndexCache[chapterId] || {})[vnum] || [];
+    var showedKeyWords = false;
     if (donaWords.length) {
+        showedKeyWords = true;
         html += '<div class="panel-section">Key Words</div>';
         html += '<div class="word-cards-wrap' + (donaWords.length <= 2 ? ' expanded' : '') + '">';
         donaWords.forEach(function(w) {
@@ -2249,6 +2416,10 @@ function openVerseDiscovery(ref) {
         html += '</div>';
     } else if (strongsEntries.length) {
         var sFiltered = strongsEntries.filter(function(e) { return (e.lm || e.xl) && (strongsPlain[e.sn] || strongsCleanDef(e.gl, e.kj)); });
+        if (sFiltered.length) showedKeyWords = true;
+        if (!sFiltered.length) {
+            /* no key words block */
+        } else {
         html += '<div class="panel-section">Key Words</div>';
         html += '<div class="word-cards-wrap' + (sFiltered.length <= 2 ? ' expanded' : '') + '">';
         sFiltered.forEach(function(entry) {
@@ -2268,11 +2439,10 @@ function openVerseDiscovery(ref) {
             html += '<button class="word-more-btn" onclick="expandWordCards(this)">Show ' + extra2 + ' more word' + (extra2 > 1 ? 's' : '') + ' \u2192</button>';
         }
         html += '</div>';
+        }
     }
 
-    if (!entries.length && !donaNotes.length && !donaWords.length && !donaQuotes.length && !strongsEntries.length) {
-        html += '<div style="padding:28px;color:var(--muted);font-size:13px">No commentary found for this verse.</div>';
-    }
+    var scriptureEdgesEarly = chapterGraphEchoes(chapterId, vnum);
 
     // ── Commentary: Donaldson notes + attributed quotes + cross-tradition voices (unified) ──
     var spoonNotes = (donaEntry.spoon && donaEntry.spoon.notes) || [];
@@ -2303,6 +2473,7 @@ function openVerseDiscovery(ref) {
     });
     if (allCommentary.length) {
         html += '<div class="panel-section">Commentary</div>';
+        html += '<div class="verse-panel-cards' + (allCommentary.length <= 3 ? ' expanded' : '') + '">';
         allCommentary.forEach(function(c) {
             html += '<div class="comm-card' + (c.hasLink ? ' has-link' : '') + '"'
                 + (c.entryIdx != null ? ' data-idx="' + c.entryIdx + '"' : '') + '>'
@@ -2313,18 +2484,31 @@ function openVerseDiscovery(ref) {
                 + makeExpandable(c.text, 'quote-preview', 'quote-overflow', 'quote-more')
                 + '</div></div>';
         });
+        if (allCommentary.length > 3) {
+            html += '<button type="button" class="word-more-btn" onclick="expandWordCards(this)">Show ' + (allCommentary.length - 3) + ' more \u2192</button>';
+        }
+        html += '</div>';
     }
 
-    // ── Scripture echoes from chapter graph ──
-    var scriptureEdges = chapterGraphEchoes(chapterId, vnum);
+    // ── Scripture echoes from chapter graph (same cap + expand as commentary) ──
+    var scriptureEdges = scriptureEdgesEarly;
     if (scriptureEdges.length) {
         html += '<div class="panel-section">Cross References</div>';
+        html += '<div class="verse-panel-cards' + (scriptureEdges.length <= 3 ? ' expanded' : '') + '">';
         scriptureEdges.forEach(function(s) {
             html += '<div class="scrip-card">'
                 + '<div class="scrip-ref">' + escapeHtml(s.ref) + '</div>'
                 + '<div class="scrip-text">' + escapeHtml(s.text) + '</div>'
                 + '</div>';
         });
+        if (scriptureEdges.length > 3) {
+            html += '<button type="button" class="word-more-btn" onclick="expandWordCards(this)">Show ' + (scriptureEdges.length - 3) + ' more \u2192</button>';
+        }
+        html += '</div>';
+    }
+
+    if (!allCommentary.length && !scriptureEdges.length && !showedKeyWords && !showedEntityChips) {
+        html += '<div style="padding:28px;color:var(--muted);font-size:13px">No commentary found for this verse.</div>';
     }
 
     var panelBody = document.getElementById('panel-body');

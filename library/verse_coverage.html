@@ -100,6 +100,13 @@
     document.getElementById('generated').textContent =
       'Generated: ' + (s.generated || data.generated || '?');
     const sum = document.getElementById('summary');
+    const vd = s.verse_discovery || {};
+    const ent = s.entity_registry || {};
+    const entCards = Object.keys(ent).map(function (k) {
+      const r = ent[k];
+      if (!r || r.records == null) return null;
+      return { k: k.replace('.json', '') + ' w/ refs', v: (r.with_scripture_refs != null ? r.with_scripture_refs + '/' + r.records : '—') };
+    }).filter(Boolean);
     sum.innerHTML = [
       { k: 'Verses', v: s.verses },
       { k: 'Full (D+E+V)', v: s.verses_full },
@@ -108,7 +115,8 @@
       { k: 'Donaldson hits', v: s.bit_hits && s.bit_hits.donaldson },
       { k: 'Entity hits', v: s.bit_hits && s.bit_hits.entity_links },
       { k: 'Discovery hits', v: s.bit_hits && s.bit_hits.verse_discovery },
-    ].map(function (x) {
+      { k: 'VD rows >3 (verses)', v: vd.verses_with_more_than_three_rows },
+    ].concat(entCards).map(function (x) {
       return '<div class="card"><span>' + x.k + '</span><strong>' + (x.v != null ? x.v : '—') + '</strong></div>';
     }).join('');
 

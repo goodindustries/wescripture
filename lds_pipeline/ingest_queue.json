@@ -1,0 +1,14 @@
+{
+  "description": "Governed backlog for adding corpus sources. Only items with status approved are eligible for ingestion.",
+  "items": [
+    {
+      "id": "example-journal-discourses",
+      "title": "Journal of Discourses (complete segment)",
+      "rationale": "Primary LDS historical corpus; cross-links already partially supported in discovery.",
+      "sources": [],
+      "priority": "medium",
+      "status": "proposed",
+      "notes": "Replace with real URLs or file paths when ready; human approval required before ingest."
+    }
+  ]
+}

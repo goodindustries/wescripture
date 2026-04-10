@@ -24,7 +24,8 @@ Format:
   }
 
 Each verse lists its top cross-tradition connections (up to MAX_PER_VERSE),
-sorted by score descending.
+sorted by score descending. The reader shows the first 3 with a continuation;
+keeping up to MAX_PER_VERSE allows “show more” without re-querying graphs.
 
 Run from repo root:
     python3 lds_pipeline/build_verse_discovery.py [--min-score 0.40]
@@ -39,7 +40,7 @@ REPO      = Path(__file__).parent.parent
 CHAPTERS  = REPO / "library" / "chapters"
 OUT_FILE  = REPO / "library" / "verse_discovery.json"
 
-MAX_PER_VERSE = 8   # max cross-tradition passages per verse
+MAX_PER_VERSE = 12   # cap per verse (reader displays 3 + expand)
 
 # ── Reuse classification from build_discovery_feed.py ─────────────────────────
 

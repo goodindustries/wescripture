@@ -117,6 +117,34 @@ def main() -> None:
     if VD.is_file():
         vd = json.loads(VD.read_text(encoding="utf-8"))
 
+    vd_rows_gt3 = sum(
+        1 for _ref, rows in vd.items()
+        if isinstance(rows, list) and len(rows) > 3
+    )
+
+    entity_stats: dict = {}
+    for fname in ("people.json", "places.json", "things.json", "topics.json"):
+        ep = LIB / "entities" / fname
+        if not ep.is_file():
+            continue
+        try:
+            arr = json.loads(ep.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            entity_stats[fname] = {"error": "json"}
+            continue
+        if not isinstance(arr, list):
+            continue
+        with_refs = 0
+        for row in arr:
+            if not isinstance(row, dict):
+                continue
+            sr = row.get("scripture_refs") or row.get("related_scriptures")
+            if isinstance(sr, list) and len(sr) > 0:
+                with_refs += 1
+            elif isinstance(sr, dict):
+                with_refs += 1
+        entity_stats[fname] = {"records": len(arr), "with_scripture_refs": with_refs}
+
     chapters_out: dict = {}
     tot = full = 0
     d_hit = e_hit = v_hit = 0
@@ -186,6 +214,11 @@ def main() -> None:
                 "entity_links": e_hit,
                 "verse_discovery": v_hit,
             },
+            "verse_discovery": {
+                "verses_with_more_than_three_rows": vd_rows_gt3,
+                "note": "Reader shows top 3 + expand; >3 rows means continuation data exists",
+            },
+            "entity_registry": entity_stats,
             "legend": {
                 "bits": "bitmask per verse index: 1=Donaldson content, 2=entity markup, 4=verse_discovery row; 7=all",
             },
