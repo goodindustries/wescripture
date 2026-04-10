@@ -29,10 +29,10 @@ Reader **Home** uses `SITE.homeUrl` → `../index.html` when the pathname starts
 
 ## Prebuilt deploy (save Netlify build minutes)
 
-From repo root, after linking the site:
+**Canonical production deploy:** from repo root, with the site linked (`netlify link`) and CLI logged in:
 
 ```bash
 npx netlify-cli deploy --prod --dir library
 ```
 
-This uploads the prebuilt `library/` tree; Netlify does not run a separate build command.
+This uploads the existing `library/` tree; Netlify does not run a separate build command (`command = ""` in `netlify.toml`). Use this after merges or local changes—do not rely on an implicit Netlify Git build unless you have that wired up separately.

@@ -1,5 +1,5 @@
 ---
-description: Auto-commit and push after making changes (Netlify deploy)
+description: Commit, push, and deploy via Netlify CLI (prebuilt library/)
 alwaysApply: true
 ---
 
@@ -10,5 +10,12 @@ After making any edits to this project, always:
 1. `git add -A`
 2. `git commit -m "<descriptive message>"`
 3. `git push`
+4. From repo root, **production deploy with Netlify CLI** (prebuilt static; no Netlify build step):
 
-This triggers Netlify deployment so changes go live.
+   ```bash
+   npx netlify-cli deploy --prod --dir library
+   ```
+
+   Requires a linked site (`netlify link`) and CLI auth. This is the canonical way this repo goes live; do not assume git push alone updates Netlify unless that integration is explicitly configured.
+
+No separate “build” step: `publish = library` in `netlify.toml`; the deploy uploads the existing `library/` tree.
