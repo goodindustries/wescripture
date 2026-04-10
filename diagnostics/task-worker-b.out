@@ -712,3 +712,7 @@ Reopened T-0099.
   [ledger] pushed to origin
   pushed to origin
 [WorkerB] T-0099 no dispatch rule — reopened.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] claimed T-0113: Donaldson — 1_chronicles_1: add commentary JSON
+[WorkerB] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)

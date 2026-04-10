@@ -1826,3 +1826,25 @@ Reopened T-0099.
 [Worker003] claimed T-0112: Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
 [Worker003] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
 [Worker003] checking for pending tasks…
+[Worker003] claimed T-0113: Donaldson — 1_chronicles_1: add commentary JSON
+[Worker003] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0113.
+[main 7126d536] [task] T-0112: matthew_2_notes.html already present
+ Committer: Reif Tauati <reify@MacBookPro.lan>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 18 files changed, 290 insertions(+)
+ create mode 100644 library/chapters/matthew_2_notes.html
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker003] T-0113 no dispatch rule — reopened.
+Completed T-0112.
+  pushed to origin

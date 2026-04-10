@@ -1238,3 +1238,6 @@ Reopened T-0099.
 [Worker007] checking for pending tasks…
 [Worker007] claimed T-0113: Donaldson — 1_chronicles_1: add commentary JSON
 [Worker007] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0113.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker007] T-0113 no dispatch rule — reopened.

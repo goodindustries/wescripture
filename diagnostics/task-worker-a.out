@@ -706,3 +706,13 @@ Already up to date.
 Reopened T-0112.
   pushed to origin
 [WorkerA] T-0112 no dispatch rule — reopened.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] claimed T-0115: Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+[WorkerA] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+  [dispatch] /Library/Developer/CommandLineTools/usr/bin/python3 /Users/reify/Classified/wescripture/lds_pipeline/annotate_entity_spans.py --books deuteronomy
+Loading entity indexes…
+  134 scripture-person variants, 81 place variants, 207 thing variants
+Annotating 1 chapters…
+
+Done. 0 chapters changed, 29 verses scanned, 0 entity spans added.
