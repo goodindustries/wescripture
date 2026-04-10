@@ -689,3 +689,18 @@ Completed T-0092.
   [ledger] pushed to origin
   pushed to origin
 [WorkerB] T-0092 error. commit=5f7a37ec
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[WorkerB] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  [ledger] pushed to origin
+  pushed to origin
+[WorkerB] T-0096 no dispatch rule — reopened.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[WorkerB] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  pushed to origin
+[WorkerB] T-0096 no dispatch rule — reopened.

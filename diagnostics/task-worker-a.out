@@ -686,3 +686,16 @@ Completed T-0095.
   [ledger] pushed to origin
   pushed to origin
 [WorkerA] T-0095 error. commit=87900b89
+[WorkerA] checking for pending tasks…
+[WorkerA] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[WorkerA] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  [ledger] pushed to origin
+  pushed to origin
+[WorkerA] T-0096 no dispatch rule — reopened.
+[WorkerA] checking for pending tasks…
+[WorkerA] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[WorkerA] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  pushed to origin
+[WorkerA] T-0096 no dispatch rule — reopened.

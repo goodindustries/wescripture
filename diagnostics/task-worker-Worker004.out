@@ -642,3 +642,726 @@ Completed T-0097.
 [Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
 [Worker004] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
 Reopened T-0096.
+  pushed to origin
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:20:47Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:21:18Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  [ledger] pushed to origin
+  pushed to origin
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:21:47Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  pushed to origin
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:22:16Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:22:46Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:23:16Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:23:45Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0099 no dispatch rule — reopened.
+=== 2026-04-10T02:24:15Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:24:45Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  [ledger] pushed to origin
+  pushed to origin
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:25:15Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:25:44Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:26:12Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:26:42Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:27:12Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  pushed to origin
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:27:41Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  [ledger] pushed to origin
+  pushed to origin
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:28:09Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:28:37Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:29:06Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  pushed to origin
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:29:35Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:30:04Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  pushed to origin
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:30:32Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+  pushed to origin
+[Worker004] T-0099 no dispatch rule — reopened.
+=== 2026-04-10T02:31:01Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:31:29Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:31:58Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:32:05Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:32:27Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:32:31Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+=== 2026-04-10T02:32:32Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+=== 2026-04-10T02:32:33Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+  pushed to origin
+[Worker004] T-0096 no dispatch rule — reopened.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:32:57Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:33:01Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+=== 2026-04-10T02:33:01Z start Worker004 ===
+Reopened T-0096.
+[Worker004] checking for pending tasks…
+=== 2026-04-10T02:33:02Z start Worker004 ===
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+[Worker004] checking for pending tasks…
+Reopened T-0096.
+[Worker004] claimed T-0100: Donaldson — 2_samuel: add commentary JSON for 4 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0100.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0100 no dispatch rule — reopened.
+=== 2026-04-10T02:33:27Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+=== 2026-04-10T02:33:30Z start Worker004 ===
+[Worker004] checking for pending tasks…
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+=== 2026-04-10T02:33:30Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+=== 2026-04-10T02:33:31Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+Reopened T-0096.
+  [ledger] pushed to origin
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:33:57Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+=== 2026-04-10T02:33:58Z start Worker004 ===
+[Worker004] checking for pending tasks…
+Reopened T-0099.
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+=== 2026-04-10T02:33:59Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+=== 2026-04-10T02:34:00Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+  pushed to origin
+[Worker004] T-0099 no dispatch rule — reopened.
+Reopened T-0099.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+Reopened T-0096.
+  pushed to origin
+[Worker004] T-0099 no dispatch rule — reopened.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:34:21Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:34:27Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+=== 2026-04-10T02:34:28Z start Worker004 ===
+Reopened T-0096.
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+=== 2026-04-10T02:34:28Z start Worker004 ===
+[Worker004] checking for pending tasks…
+Reopened T-0096.
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+Reopened T-0096.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:34:52Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:34:58Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+=== 2026-04-10T02:34:58Z start Worker004 ===
+[Worker004] checking for pending tasks…
+=== 2026-04-10T02:34:59Z start Worker004 ===
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+[Worker004] checking for pending tasks…
+Reopened T-0096.
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0099 no dispatch rule — reopened.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:35:22Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:35:27Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+=== 2026-04-10T02:35:28Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+=== 2026-04-10T02:35:29Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:35:52Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+=== 2026-04-10T02:35:54Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+  pushed to origin
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:35:58Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+=== 2026-04-10T02:35:59Z start Worker004 ===
+Reopened T-0096.
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  pushed to origin
+[Worker004] T-0096 no dispatch rule — reopened.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:36:25Z start Worker004 ===
+=== 2026-04-10T02:36:25Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+[Worker004] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+Reopened T-0099.
+  pushed to origin
+[Worker004] T-0096 no dispatch rule — reopened.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0099 no dispatch rule — reopened.
+=== 2026-04-10T02:36:31Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+=== 2026-04-10T02:36:33Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+  pushed to origin
+[Worker004] T-0099 no dispatch rule — reopened.
+=== 2026-04-10T02:36:57Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+=== 2026-04-10T02:37:01Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+Reopened T-0096.
+=== 2026-04-10T02:37:05Z start Worker004 ===
+=== 2026-04-10T02:37:05Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] checking for pending tasks…
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0099 no dispatch rule — reopened.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+[Worker004] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  pushed to origin
+[Worker004] T-0096 no dispatch rule — reopened.
+Reopened T-0099.
+  pushed to origin
+[Worker004] T-0099 no dispatch rule — reopened.
+=== 2026-04-10T02:37:31Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+=== 2026-04-10T02:37:33Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:37:36Z start Worker004 ===
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+=== 2026-04-10T02:37:38Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+Reopened T-0096.
+  pushed to origin
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:38:03Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+=== 2026-04-10T02:38:04Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+Reopened T-0096.
+  [ledger] pushed to origin
+=== 2026-04-10T02:38:07Z start Worker004 ===
+  pushed to origin
+[Worker004] T-0096 no dispatch rule — reopened.
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+=== 2026-04-10T02:38:08Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:38:33Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+=== 2026-04-10T02:38:35Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  pushed to origin
+[Worker004] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:38:39Z start Worker004 ===
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+=== 2026-04-10T02:38:40Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0096 no dispatch rule — reopened.
+  pushed to origin
+[Worker004] T-0099 no dispatch rule — reopened.
+=== 2026-04-10T02:39:05Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+=== 2026-04-10T02:39:07Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0099 no dispatch rule — reopened.
+Reopened T-0099.
+  [ledger] pushed to origin
+=== 2026-04-10T02:39:12Z start Worker004 ===
+  pushed to origin
+[Worker004] T-0099 no dispatch rule — reopened.
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+=== 2026-04-10T02:39:13Z start Worker004 ===
+[Worker004] checking for pending tasks…
+Reopened T-0099.
+[Worker004] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0099 no dispatch rule — reopened.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0099 no dispatch rule — reopened.
+=== 2026-04-10T02:39:35Z start Worker004 ===
+[Worker004] checking for pending tasks…
+=== 2026-04-10T02:39:35Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+[Worker004] claimed T-0101: Registry Wikipedia — people.json batch 5/40 (40 entries)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+  [dispatch] /Library/Developer/CommandLineTools/usr/bin/python3 /Users/reify/Classified/wescripture/lds_pipeline/build_entity_wikipedia.py --people --limit 40
+Reopened T-0099.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0099 no dispatch rule — reopened.
+=== 2026-04-10T02:39:42Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+=== 2026-04-10T02:39:43Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+  pushed to origin
+[Worker004] T-0099 no dispatch rule — reopened.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0099 no dispatch rule — reopened.
+=== 2026-04-10T02:40:11Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+=== 2026-04-10T02:40:13Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0099 no dispatch rule — reopened.
+=== 2026-04-10T02:40:15Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+  pushed to origin
+[Worker004] T-0099 no dispatch rule — reopened.
+Reopened T-0099.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0099 no dispatch rule — reopened.
+=== 2026-04-10T02:40:43Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+=== 2026-04-10T02:40:44Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+=== 2026-04-10T02:40:45Z start Worker004 ===
+[Worker004] checking for pending tasks…
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0099 no dispatch rule — reopened.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0099 no dispatch rule — reopened.
+[Worker004] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+  [ledger] pushed to origin
+  pushed to origin
+[Worker004] T-0099 no dispatch rule — reopened.
+=== 2026-04-10T02:41:14Z start Worker004 ===
+[Worker004] checking for pending tasks…
+=== 2026-04-10T02:41:15Z start Worker004 ===
+[Worker004] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+[Worker004] checking for pending tasks…
+Reopened T-0099.
+[Worker004] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+=== 2026-04-10T02:41:16Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+  pushed to origin
+[Worker004] T-0099 no dispatch rule — reopened.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0099 no dispatch rule — reopened.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0099 no dispatch rule — reopened.
+=== 2026-04-10T02:41:45Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+=== 2026-04-10T02:41:47Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+Reopened T-0099.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0099 no dispatch rule — reopened.
+  pushed to origin
+[Worker004] T-0099 no dispatch rule — reopened.
+Enriching people (/Users/reify/Classified/wescripture/library/entities/people.json)...
+  enriched: C.S Lewis
+  enriched: Harold G. Hillam
+  enriched: Albert E. Bowen
+  enriched: Kelly Ogden
+  enriched: Coleen K. Menlove
+  enriched: Janette C. Hales
+  enriched: Ardeth G. Kapp
+  enriched: W. Eugene Hansen
+  enriched: Chieko Okazaki
+  enriched: New American Bible
+  enriched: G. B. Caird
+  enriched: Bonnie L. Oscarson
+  enriched: Paul R. Cheesman
+  enriched: Lee Donaldson
+  enriched: Elaine Cannon
+  enriched: Melvin J. Ballard
+  enriched: Chris Conkling
+  enriched: Shayne M. Bowen
+  enriched: F. Melvin Hammond
+  enriched: Bible Dictionary
+  enriched: Erastus Snow
+  enriched: Robert C. Oaks
+  enriched: Dwan J. Young
+  enriched: Ted E. Brewerton
+  enriched: Ben B. Banks
+  enriched: Sydney S. Reynolds
+  enriched: W. Craig Zwick
+  enriched: Rosemary M. Wixom
+  enriched: Mary Ellen Edmunds
+  enriched: Lectures on Faith
+  enriched: Brent A. Barlow
+  enriched: C. Scott Grow
+  enriched: LDS Church News
+  enriched: Hugh W. Nibley
+  enriched: Online Bible
+  enriched: John A. Widstoe
+  enriched: Alfred Edersheim
+  enriched: Durrel A. Woolsey
+  enriched: Rudger Clawson
+  enriched: Alma Sonne
+  people: 40 enriched, 363 skipped
+
+Total enriched: 40

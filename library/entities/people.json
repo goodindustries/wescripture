@@ -10891,7 +10891,18 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 6,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "British writer, lay theologian, and scholar (1898–1963)",
+    "wikipedia_title": "C.S Lewis",
+    "wikipedia_summary": "Clive Staples Lewis was a British author, literary scholar and Anglican lay theologian. He held academic positions in English literature at both Magdalen College, Oxford (1925–1954), and Magdalene College, Cambridge (1954–1963). He is best known as the author of The Chronicles of Narnia, but he is also noted for his other works of fiction, such as The Screwtape Letters and The Space Trilogy, and for his non-fiction Christian apologetics, including Mere Christianity, Miracles and The Problem of Pain.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/CS_Lewis_photo_on_dust_jacket.jpg/330px-CS_Lewis_photo_on_dust_jacket.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/C._S._Lewis",
+    "born": {
+      "year": 1925
+    },
+    "died": {
+      "year": 1954
+    }
   },
   {
     "id": "person:harold_g_hillam",
@@ -10910,7 +10921,12 @@
       "general_conference:general_conference_2005_04_the_worth_of_souls"
     ],
     "quote_count": 1,
-    "talk_count": 5
+    "talk_count": 5,
+    "desc": "American religious leader",
+    "wikipedia_title": "Harold G. Hillam",
+    "wikipedia_summary": "Harold Gordon Hillam was a general authority of the Church of Jesus Christ of Latter-day Saints from 1990 until his death. Hillam was the fifteenth general president of the LDS Church's Sunday School organization from 1995 to 2000 and was president of the Boise Idaho Temple from 2005 to 2008.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Harold_Hillam_Time_Capsule.jpg/330px-Harold_Hillam_Time_Capsule.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Harold_G._Hillam"
   },
   {
     "id": "person:marcus_b_nash",
@@ -10963,7 +10979,12 @@
       "general_conference:october_1948"
     ],
     "quote_count": 6,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American Mormon leader (1875–1953)",
+    "wikipedia_title": "Albert E. Bowen",
+    "wikipedia_summary": "Albert Ernest Bowen was an American lawyer and Mormon religious leader who served as a member of the Quorum of the Twelve Apostles of the Church of Jesus Christ of Latter-day Saints.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/d/da/Albert_E_Bowen.JPG",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Albert_E._Bowen"
   },
   {
     "id": "person:craig_a_cardon",
@@ -11020,7 +11041,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 6,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American pop punk band",
+    "wikipedia_title": "Kelly Ogden",
+    "wikipedia_summary": "The Dollyrots are an American punk rock band formed in 2000, composed of Kelly Ogden and Luis Cabezas. They have released nine studio albums under Panic Button, Joan Jett's Blackheart Records, Little Steven's Wicked Cool Records, their own label, Arrested Youth Records and currently Wicked Cool Records.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/The_Dollyrots_2012.JPG/330px-The_Dollyrots_2012.JPG",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/The_Dollyrots"
   },
   {
     "id": "person:jfb_commentary",
@@ -11061,7 +11087,11 @@
       "general_conference:oct._2002"
     ],
     "quote_count": 3,
-    "talk_count": 3
+    "talk_count": 3,
+    "desc": "American religious leader (born 1943)",
+    "wikipedia_title": "Coleen K. Menlove",
+    "wikipedia_summary": "Coleen K. Menlove is an American religious leader who was the tenth Primary general president of the Church of Jesus Christ of Latter-day Saints from 1999 to 2005.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Coleen_K._Menlove"
   },
   {
     "id": "person:janette_c_hales",
@@ -11079,7 +11109,11 @@
       "general_conference:general_conference_1995_04_ye_shall_feast_upon_this_fruit"
     ],
     "quote_count": 2,
-    "talk_count": 4
+    "talk_count": 4,
+    "desc": "American religious leader and politician (1933–2022)",
+    "wikipedia_title": "Janette C. Hales",
+    "wikipedia_summary": "Janette Hales Beckham, commonly known as Janette C. Hales and later, Janette Hales Beckham, was the tenth general president of the Young Women organization of the Church of Jesus Christ of Latter-day Saints from 1992 to 1997. She was also a member of the Utah State Legislature from 1988 to 1991.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Janette_Hales_Beckham"
   },
   {
     "id": "person:ardeth_g_kapp",
@@ -11096,7 +11130,11 @@
       "general_conference:general_conference_1990_10_crickets_can_be_destroyed_through_spirituality"
     ],
     "quote_count": 1,
-    "talk_count": 5
+    "talk_count": 5,
+    "desc": "Canadian cleric and writer (1931–2024)",
+    "wikipedia_title": "Ardeth G. Kapp",
+    "wikipedia_summary": "Ardeth Greene Kapp was the ninth Young Women general president of the Church of Jesus Christ of Latter-day Saints from 1984 to 1992.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ardeth_G._Kapp"
   },
   {
     "id": "person:w_eugene_hansen",
@@ -11114,7 +11152,11 @@
       "general_conference:oct._1993"
     ],
     "quote_count": 2,
-    "talk_count": 4
+    "talk_count": 4,
+    "desc": "American religious leader",
+    "wikipedia_title": "W. Eugene Hansen",
+    "wikipedia_summary": "Warren Eugene Hansen was a general authority of the Church of Jesus Christ of Latter-day Saints from 1989 until his death. He became a member of the First Quorum of the Seventy in 1989 and was a member of the Presidency of the Seventy from 1993 to 1998.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/W._Eugene_Hansen"
   },
   {
     "id": "person:cree_l_kofford",
@@ -11152,7 +11194,18 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 6,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American writer, educator, and religious leader (1926 – 2011)",
+    "wikipedia_title": "Chieko Okazaki",
+    "wikipedia_summary": "Chieko Nishimura Okazaki was an American writer, educator, and religious leader. She served as first counselor to Elaine L. Jack in the Relief Society general presidency of the Church of Jesus Christ of Latter-day Saints from 1990 to 1997. She was the first person of color to serve in an LDS Church general organization presidency, as well as the first woman to serve in all three of the women-led organizations at a general church level: the general boards of the Young Women (1961-66) and Primary (1988-1990), along with the Relief Society.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/en/2/29/Chieko_N._Okazaki.JPG",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Chieko_N._Okazaki",
+    "born": {
+      "year": 1961
+    },
+    "died": {
+      "year": 1990
+    }
   },
   {
     "id": "person:d_e_nineham",
@@ -11174,7 +11227,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 6,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "English-language Catholic Book translation",
+    "wikipedia_title": "New American Bible",
+    "wikipedia_summary": "The New American Bible (NAB) is an English translation of the Bible first published in 1970. The 1986 Revised NAB is the basis of the revised Lectionary. In the Catholic Church it is the only translation approved for use during Mass in the United States. The 1970 NAB is also approved for use in the Episcopal Church in the United States.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/NAB_cover.png/330px-NAB_cover.png",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/New_American_Bible"
   },
   {
     "id": "person:g_b_caird",
@@ -11185,7 +11243,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 6,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "British theologian, biblical scholar and Congregational minister (1917–1984)",
+    "wikipedia_title": "G. B. Caird",
+    "wikipedia_summary": "George Bradford Caird, known as G. B. Caird, was a British theologian, biblical scholar and Congregational minister. At the time of his death he was Dean Ireland's Professor of the Exegesis of Holy Scripture at the University of Oxford.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Caird_at_the_Queen%27s.jpg/330px-Caird_at_the_Queen%27s.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/G._B._Caird"
   },
   {
     "id": "person:international_standard_encylopedia",
@@ -11290,7 +11353,10 @@
       "general_conference:general_conference_2017_10_the_needs_before_us"
     ],
     "quote_count": 0,
-    "talk_count": 6
+    "talk_count": 6,
+    "wikipedia_title": "Bonnie L. Oscarson",
+    "wikipedia_summary": "Bonnie Lee Green Oscarson was the fourteenth president of the Young Women organization of the Church of Jesus Christ of Latter-day Saints from 2013 to 2018.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Bonnie_L._Oscarson"
   },
   {
     "id": "person:carole_m_stephens",
@@ -11439,7 +11505,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 5,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American Mormon scholar",
+    "wikipedia_title": "Paul R. Cheesman",
+    "wikipedia_summary": "Paul Robert Cheesman was an American academic and a professor of religion at Brigham Young University (BYU).",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Paul_R._Cheesman"
   },
   {
     "id": "person:david_h_madsen",
@@ -11472,7 +11542,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 5,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American politician",
+    "wikipedia_title": "Lee Donaldson",
+    "wikipedia_summary": "Lee A. Donaldson, Jr. was a former Republican member of the Pennsylvania House of Representatives.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Lee_Donaldson"
   },
   {
     "id": "person:elaine_cannon",
@@ -11486,7 +11560,11 @@
       "general_conference:general_conference_1983_10_agency_and_accountability"
     ],
     "quote_count": 3,
-    "talk_count": 2
+    "talk_count": 2,
+    "wikipedia_title": "Elaine Cannon",
+    "wikipedia_summary": "Elaine Anderson Cannon was the eighth general president of the Young Women organization of the Church of Jesus Christ of Latter-day Saints from 1978 to 1984. Cannon was a writer and an editor and the author of over fifty books.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/en/6/6e/Elaine_A._Cannon.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Elaine_A._Cannon"
   },
   {
     "id": "person:clate_w_mask_jr",
@@ -11517,7 +11595,12 @@
       "general_conference:april_1937"
     ],
     "quote_count": 5,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American Mormon leader",
+    "wikipedia_title": "Melvin J. Ballard",
+    "wikipedia_summary": "Melvin Joseph Ballard was a member of the Quorum of the Twelve Apostles of the Church of Jesus Christ of Latter-day Saints. His grandson, M. Russell Ballard, also became an apostle.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/3/32/Melvin_J._Ballard.JPG",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Melvin_J._Ballard"
   },
   {
     "id": "person:jerrie_w_hurd",
@@ -11556,7 +11639,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 5,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American writer",
+    "wikipedia_title": "Chris Conkling",
+    "wikipedia_summary": "Jon Christopher Conkling is an American writer. He is best known as the co-writer of the screenplay for the animated version of Lord of the Rings, directed by Ralph Bakshi and produced by Saul Zaentz. He has also published articles in BYU Studies, the Journal of Book of Mormon Studies and the Ensign, and wrote the 1979 book A Joseph Smith Chronology and an award-winning article on Melville's \"Bartleby The Scrivener.\"",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Chris_Conkling"
   },
   {
     "id": "person:shayne_m_bowen",
@@ -11574,7 +11661,10 @@
       "general_conference:oct._2006"
     ],
     "quote_count": 1,
-    "talk_count": 4
+    "talk_count": 4,
+    "wikipedia_title": "Shayne M. Bowen",
+    "wikipedia_summary": "\n\n\nThe following individuals are the current general authorities of the Church of Jesus Christ of Latter-day Saints. Individual hierarchical positions and some of current specialized assignments in the church, if any, are listed.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/List_of_general_authorities_(LDS_Church)"
   },
   {
     "id": "person:dale_e_miller",
@@ -11660,7 +11750,12 @@
       "general_conference:general_conference_2002_10_dad_are_you_awake"
     ],
     "quote_count": 2,
-    "talk_count": 3
+    "talk_count": 3,
+    "desc": "American religious leader and politician",
+    "wikipedia_title": "F. Melvin Hammond",
+    "wikipedia_summary": "Floyd Melvin (\"Mel\") Hammond was an Idaho politician and has been a general authority of the Church of Jesus Christ of Latter-day Saints since 1989. He was the nineteenth general president of the church's Young Men organization from 2001 to 2004.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/6/64/F._Melvin_Hammond.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/F._Melvin_Hammond"
   },
   {
     "id": "person:brad_w_constantine",
@@ -11694,7 +11789,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 5,
-    "talk_count": 0
+    "talk_count": 0,
+    "wikipedia_title": "Bible Dictionary",
+    "wikipedia_summary": "A Bible dictionary is a reference work containing encyclopedic entries related to the Bible, typically concerning people, places, customs, doctrine and Biblical criticism. Bible dictionaries can be scholarly or popular in tone.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Smith%27s_Bible_Dictionary_1863.jpg/330px-Smith%27s_Bible_Dictionary_1863.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/List_of_Bible_dictionaries"
   },
   {
     "id": "person:cheiko_okazaki",
@@ -11716,7 +11815,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 5,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American religious leader (1818–1888)",
+    "wikipedia_title": "Erastus Snow",
+    "wikipedia_summary": "Erastus Snow was a member of the Quorum of the Twelve Apostles of the Church of Jesus Christ of Latter-day Saints from 1849 until his death. Snow was a leading figure in the Mormon colonization of Arizona, Colorado, and New Mexico.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/0/03/Erastussnow.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Erastus_Snow"
   },
   {
     "id": "person:vicki_f_matsumori",
@@ -11766,7 +11870,12 @@
       "general_conference:oct._2006"
     ],
     "quote_count": 2,
-    "talk_count": 3
+    "talk_count": 3,
+    "desc": "US Air Force general",
+    "wikipedia_title": "Robert C. Oaks",
+    "wikipedia_summary": "Robert Charles Oaks is a retired United States Air Force (USAF) general who served as commander of Air Training Command and United States Air Forces in Europe. Oaks was also a general authority of the Church of Jesus Christ of Latter-day Saints from 2000 to 2009. He is a first cousin to LDS Church president Dallin H. Oaks.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/RobertOaks.jpg/330px-RobertOaks.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Robert_C._Oaks"
   },
   {
     "id": "person:dwan_j_young",
@@ -11782,7 +11891,10 @@
       "general_conference:general_conference_1986_10_the_light_of_hope"
     ],
     "quote_count": 1,
-    "talk_count": 4
+    "talk_count": 4,
+    "wikipedia_title": "Dwan J. Young",
+    "wikipedia_summary": "Dwan Jacobsen Young was the seventh general president of the Primary organization of the Church of Jesus Christ of Latter-day Saints from 1980 to 1988.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Dwan_J._Young"
   },
   {
     "id": "person:oscar_w_mc_conkie",
@@ -11838,7 +11950,11 @@
       "general_conference:oct._1986"
     ],
     "quote_count": 2,
-    "talk_count": 3
+    "talk_count": 3,
+    "desc": "LDS leader (1925–2021)",
+    "wikipedia_title": "Ted E. Brewerton",
+    "wikipedia_summary": "Teddy Eugene Brewerton was a Canadian-born American general authority of the Church of Jesus Christ of Latter-day Saints from 1978 until his death.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ted_E._Brewerton"
   },
   {
     "id": "person:w_jeffrey_marsh",
@@ -11867,7 +11983,11 @@
       "general_conference:oct._1999"
     ],
     "quote_count": 1,
-    "talk_count": 4
+    "talk_count": 4,
+    "desc": "American Mormon leader (born 1932)",
+    "wikipedia_title": "Ben B. Banks",
+    "wikipedia_summary": "Benjamin Berry Banks has been a general authority of the Church of Jesus Christ of Latter-day Saints since 1989. He was a member of the seven-man Presidency of the Seventy from 1999 to 2002 and has also been president of the church's Jordan River Utah Temple.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ben_B._Banks"
   },
   {
     "id": "person:sydney_s_reynolds",
@@ -11884,7 +12004,11 @@
       "general_conference:oct._2003"
     ],
     "quote_count": 2,
-    "talk_count": 3
+    "talk_count": 3,
+    "desc": "American political scientist and academic",
+    "wikipedia_title": "Sydney S. Reynolds",
+    "wikipedia_summary": "Noel Beldon Reynolds is an American political scientist and an emeritus professor of political science at Brigham Young University (BYU), where he has also served as an associate academic vice president and as director for the Foundation for Ancient Research and Mormon Studies (FARMS). He was a member of the BYU faculty from 1971 to 2011. He has also written widely on the theology of the Church of Jesus Christ of Latter-day Saints, of which he is a member.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Noel_B._Reynolds"
   },
   {
     "id": "person:bryant_richards",
@@ -11962,7 +12086,12 @@
       "general_conference:oct._2003"
     ],
     "quote_count": 1,
-    "talk_count": 4
+    "talk_count": 4,
+    "desc": "American religious leader",
+    "wikipedia_title": "W. Craig Zwick",
+    "wikipedia_summary": "William Craig Zwick has been a general authority of the Church of Jesus Christ of Latter-day Saints since 1995. Zwick was born in Salt Lake City, Utah. He received a degree in business management and finance from the University of Utah.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Janet_%26_William_Craig_Zwick_%2841192654235%29_%28cropped%29.jpg/330px-Janet_%26_William_Craig_Zwick_%2841192654235%29_%28cropped%29.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/W._Craig_Zwick"
   },
   {
     "id": "person:joe_temple",
@@ -12045,7 +12174,10 @@
       "general_conference:general_conference_2015_10_discovering_the_divinity_within"
     ],
     "quote_count": 0,
-    "talk_count": 5
+    "talk_count": 5,
+    "wikipedia_title": "Rosemary M. Wixom",
+    "wikipedia_summary": "Rosemary Mix Wixom was the general president of the Primary of the Church of Jesus Christ of Latter-day Saints from 2010 to 2016. She was the twelfth general president of the Primary, the organization that is responsible for the instruction of the church's children ages three to eleven.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Rosemary_M._Wixom"
   },
   {
     "id": "person:ted_e_davis_church_audit_committee",
@@ -12111,7 +12243,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 4,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American LDS missionary and speaker",
+    "wikipedia_title": "Mary Ellen Edmunds",
+    "wikipedia_summary": "Mary Ellen Edmunds is an American religious public speaker, author, and nurse. A member of the Church of Jesus Christ of Latter-day Saints, she was the Director of Training in the Missionary Training Center in Provo, Utah 1978–1995. She also served as a member of the Relief Society general board. Edmunds also served as an LDS missionary in Taiwan, Hong Kong, the Philippines, and Indonesia. She was the director of the Thrasher International Program for Children in Nigeria for a short time.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Mary_Ellen_Edmunds_%2827223320597%29.jpg/330px-Mary_Ellen_Edmunds_%2827223320597%29.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Mary_Ellen_Edmunds"
   },
   {
     "id": "person:c_max_caldwell",
@@ -12136,7 +12273,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 4,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "Religious text of the Latter-day Saint movement",
+    "wikipedia_title": "Lectures on Faith",
+    "wikipedia_summary": "\"Lectures on Faith\" is a set of seven lectures on the doctrine and theology of the Church of Jesus Christ of Latter Day Saints, first published as the doctrine portion of the 1835 edition of the canonical Doctrine and Covenants (D&C), but later removed from that work by both major branches of the faith. The lectures were originally presented by Joseph Smith to a group of elders in a course known as the \"School of the Prophets\" in the early winter of 1834–35 in Kirtland, Ohio.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Lectures_on_Faith_First_Page.PNG/330px-Lectures_on_Faith_First_Page.PNG",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Lectures_on_Faith"
   },
   {
     "id": "person:brent_a_barlow",
@@ -12147,7 +12289,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 4,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American academic",
+    "wikipedia_title": "Brent A. Barlow",
+    "wikipedia_summary": "Brent A. Barlow is a former professor of marriage, family and human development at Brigham Young University (BYU). He is now retired. He has written several articles and books on topics related to marriage and family.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Brent_A._Barlow"
   },
   {
     "id": "person:c_f_keil_and_f_delitzsch",
@@ -12175,7 +12321,11 @@
       "general_conference:oct._2005"
     ],
     "quote_count": 1,
-    "talk_count": 3
+    "talk_count": 3,
+    "desc": "American politician from Idaho",
+    "wikipedia_title": "C. Scott Grow",
+    "wikipedia_summary": "Cecil Scott Grow is an American politician and religious leader and has been the State Senator for Idaho's District 14 since his appointment in August 2018. Grow has been a general authority of the Church of Jesus Christ of Latter-day Saints since 2005.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/C._Scott_Grow"
   },
   {
     "id": "person:collected_works_of_hugh_nibley",
@@ -12208,7 +12358,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 4,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "Newspaper in Salt Lake City, Utah",
+    "wikipedia_title": "LDS Church News",
+    "wikipedia_summary": "The Church News is a multi-platform supplement and subdivision of the Deseret News, a Salt Lake City, Utah newspaper owned by the Church of Jesus Christ of Latter-day Saints. It is published daily online, and weekly as tabloid-sized. Deseret News also provides the news site Of Good Report. It is the only LDS Church publication entirely devoted to news coverage of church.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Church_News"
   },
   {
     "id": "person:lucile_c_tate",
@@ -12230,7 +12384,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 4,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "Latter-day Saint religious scholar (1910–2005)",
+    "wikipedia_title": "Hugh W. Nibley",
+    "wikipedia_summary": "Hugh Winder Nibley was an American scholar and member of the Church of Jesus Christ of Latter-day Saints who was a professor at Brigham Young University (BYU) for nearly 50 years. He was a prolific author, and wrote apologetic works supporting the archaeological, linguistic, and historical claims of Joseph Smith. He was a member of the LDS Church, and wrote and lectured on LDS scripture and doctrinal topics, publishing many articles in the LDS Church magazines.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Nibley_faculty_photo.png/330px-Nibley_faculty_photo.png",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Hugh_Nibley"
   },
   {
     "id": "person:stephen_b_oveson",
@@ -12257,7 +12416,10 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 4,
-    "talk_count": 0
+    "talk_count": 0,
+    "wikipedia_title": "Online Bible",
+    "wikipedia_summary": "The Online Bible (OLB) is a Bible Reference software package created in 1987 by Larry Pierce in Canada, who believed the Bible should be freely shared. In 1995 a Windows edition was released as download as well as on cd-rom. The first Mac version was developed by Ken Hamel, and lateron continued from Canada, till is was discontinued. However in Europe there was developed a whole new range of Online Bible apps for iOS (2013), Android (2014) and macOS (2015). These apps are available in App Store and Play Store.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Online_Bible"
   },
   {
     "id": "person:john_a_widstoe",
@@ -12270,7 +12432,12 @@
       "general_conference:april_1945"
     ],
     "quote_count": 4,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "Norwegian-American scientist, author and religious leader",
+    "wikipedia_title": "John A. Widstoe",
+    "wikipedia_summary": "John Andreas Widtsoe was a Norwegian-American scientist, author, and religious leader who was a member of the Quorum of the Twelve Apostles of the Church of Jesus Christ of Latter-day Saints from 1921 until his death in 1952.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/John_A._Widtsoe2.jpg/330px-John_A._Widtsoe2.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/John_A._Widtsoe"
   },
   {
     "id": "person:s_michael_wilcox",
@@ -12292,7 +12459,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 4,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "Austro-Hungarian born British biblical scholar (1825-1889)",
+    "wikipedia_title": "Alfred Edersheim",
+    "wikipedia_summary": "Alfred Edersheim was an Austrian Jewish convert to Christianity and a Biblical scholar known especially for his book The Life and Times of Jesus the Messiah (1883).",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/f/f9/AlfredEdersheim.png",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Alfred_Edersheim"
   },
   {
     "id": "person:durrel_a_woolsey",
@@ -12307,7 +12479,11 @@
       "general_conference:oct._1995"
     ],
     "quote_count": 3,
-    "talk_count": 1
+    "talk_count": 1,
+    "desc": "American Mormon leader",
+    "wikipedia_title": "Durrel A. Woolsey",
+    "wikipedia_summary": "Durrel Arden Woolsey was an American oil executive and general authority of the Church of Jesus Christ of Latter-day Saints from 1990 to 1995. He was a member of the Second Quorum of the Seventy.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Durrel_A._Woolsey"
   },
   {
     "id": "person:kevin_l_barney",
@@ -12350,7 +12526,12 @@
       "general_conference:oct._1901"
     ],
     "quote_count": 4,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "Religious leader (1857–1943)",
+    "wikipedia_title": "Rudger Clawson",
+    "wikipedia_summary": "Rudger Judd Clawson was a member of the Quorum of the Twelve Apostles of the Church of Jesus Christ of Latter-day Saints from 1898 until his death in 1943. He also served as President of the Quorum of the Twelve Apostles from 1921 until his death. For five days in 1901 he was a member of the First Presidency of the LDS Church.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Rudgerclawson.gif",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Rudger_Clawson"
   },
   {
     "id": "person:claudio_d_zivic",
@@ -12427,7 +12608,11 @@
       "general_conference:october_1965"
     ],
     "quote_count": 4,
-    "talk_count": 0
+    "talk_count": 0,
+    "wikipedia_title": "Alma Sonne",
+    "wikipedia_summary": "Alma Sonne was a general authority of the Church of Jesus Christ of Latter-day Saints from 1941 until his death.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Alma_Sonne.jpg/330px-Alma_Sonne.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Alma_Sonne"
   },
   {
     "id": "person:j_lewis_taylor",

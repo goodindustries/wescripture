@@ -76,6 +76,16 @@ def try_dispatch(task: dict) -> DispatchOutcome:
         rc = _run(argv)
         return DispatchOutcome(True, rc, f"build_entity_wikipedia --scripture-people (exit {rc})")
 
+    if title.startswith("People registry: Wikipedia enrichment for scripture figures"):
+        rc = _run(
+            [
+                sys.executable,
+                str(REPO / "lds_pipeline" / "build_entity_wikipedia.py"),
+                "--scripture-people",
+            ]
+        )
+        return DispatchOutcome(True, rc, f"build_entity_wikipedia --scripture-people (People registry task) exit {rc}")
+
     if title.startswith("Registry Wikipedia — places"):
         rc = _run(_wiki_limit_argv("--places"))
         return DispatchOutcome(True, rc, f"build_entity_wikipedia --places (exit {rc})")

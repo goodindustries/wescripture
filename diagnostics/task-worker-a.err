@@ -24,3 +24,6 @@ Everything up-to-date
 Everything up-to-date
 Everything up-to-date
 Everything up-to-date
+Everything up-to-date
+  [ledger] push failed: Command '['git', 'commit', '-m', 'ledger: task_reopened T-0096']' returned non-zero exit status 1.
+Everything up-to-date
