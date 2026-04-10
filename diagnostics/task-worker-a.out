@@ -588,3 +588,24 @@ Already up to date.
 Already up to date.
 [WorkerA] checking for pending tasks…
 [WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] no pending tasks — exiting.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] claimed T-0062: Things registry: expand to 60+ entries and verify christ_connection on all
+[WorkerA] running claude --model sonnet …
+You've hit your limit · resets Apr 13, 3pm (America/Chicago)
+Completed T-0062.
+  [ledger] pushed to origin
+  pushed to origin
+[WorkerA] T-0062 error. commit=

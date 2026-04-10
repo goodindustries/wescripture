@@ -1,0 +1,30 @@
+2026-04-09T19:03:08Z === orchestrate start ===
+2026-04-09T19:03:08Z git pull → 0
+2026-04-09T19:03:08Z Already up to date.
+2026-04-09T19:03:08Z pending=0
+2026-04-09T19:03:08Z task_scout --max 45 --streams all --push
+task_scout: appending 45 task(s) (dry_run=False)
+  • Ch genesis_1: add entity span annotations (data-entity / place / thing)
+  • Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+  • Donaldson — doctrine_and_covenants: add commentary JSON for 138 missing chapter(s)
+  • Registry Wikipedia — scripture_people: enrich 46 missing summaries
+  • Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+  • Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+  • Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+  • Registry Wikipedia — places: enrich 14 missing summaries
+  • Ch esther_1: add entity span annotations (data-entity / place / thing)
+  • Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+  • Donaldson — 1_chronicles: add commentary JSON for 25 missing chapter(s)
+  • Registry Wikipedia — things: enrich 13 missing summaries
+  • Ch esther_3: add entity span annotations (data-entity / place / thing)
+  • Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+  • Donaldson — 2_chronicles: add commentary JSON for 20 missing chapter(s)
+  … +30 more
+  [ledger] pushed to origin
+2026-04-09T19:03:13Z after scout pending=45
+2026-04-09T19:03:13Z wave 1: 4 workers backend=dispatch
+Starting 4 workers from /Users/reify/Classified/wescripture (backend=dispatch, max=32) …
+  Worker000  → diagnostics/task-worker-Worker000.out
+  Worker001  → diagnostics/task-worker-Worker001.out
+  Worker002  → diagnostics/task-worker-Worker002.out
+  Worker003  → diagnostics/task-worker-Worker003.out

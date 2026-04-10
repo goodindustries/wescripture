@@ -1,0 +1,7 @@
+  [ledger] push failed: To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at 24f6c5376610806f28a6b820bdf50bf6b8fc6294 but expected a7d029d1e6dd178659dd18e8b8f10f6bad16695c)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+
+To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at 2d8892dafdf50f329b1c7acfe35ae1001c42b0c4 but expected 24f6c5376610806f28a6b820bdf50bf6b8fc6294)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'

@@ -1,0 +1,6 @@
+Starting 4 workers from /Users/reify/Classified/wescripture (backend=dispatch, max=16) …
+  Worker000  → diagnostics/task-worker-Worker000.out
+  Worker001  → diagnostics/task-worker-Worker001.out
+  Worker002  → diagnostics/task-worker-Worker002.out
+  Worker003  → diagnostics/task-worker-Worker003.out
+All 4 workers finished.

@@ -1,0 +1,7 @@
+2026-04-09T19:03:08Z === orchestrate start ===
+2026-04-09T19:03:08Z git pull → 0
+2026-04-09T19:03:08Z Already up to date.
+2026-04-09T19:03:08Z pending=0
+2026-04-09T19:03:08Z task_scout --max 45 --streams all --push
+2026-04-09T19:03:13Z after scout pending=45
+2026-04-09T19:03:13Z wave 1: 4 workers backend=dispatch

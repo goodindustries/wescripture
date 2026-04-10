@@ -595,3 +595,21 @@ Already up to date.
 Already up to date.
 [WorkerB] checking for pending tasks…
 [WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] no pending tasks — exiting.
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] claimed T-0059: People registry: rebuild to 200 figures and fill christ_connection for all new entries
+[WorkerB] running claude --model sonnet …
+You've hit your limit · resets Apr 13, 3pm (America/Chicago)
+Completed T-0059.
+  [ledger] pushed to origin
+  pushed to origin
+[WorkerB] T-0059 error. commit=6ecfd599
