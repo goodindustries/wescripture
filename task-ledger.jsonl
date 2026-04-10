@@ -1235,3 +1235,5 @@
 {"event": "task_reopened", "task_id": "T-0080", "ts": "2026-04-10T00:43:16+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
 {"event": "task_reopened", "task_id": "T-0080", "ts": "2026-04-10T00:43:16+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
 {"event": "task_reopened", "task_id": "T-0080", "ts": "2026-04-10T00:43:16+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
+{"event": "task_reopened", "task_id": "T-0080", "ts": "2026-04-10T00:43:21+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
+{"event": "task_completed", "task_id": "T-0081", "agent": "Worker004", "ts": "2026-04-10T00:43:21+00:00", "commit": "e9eef4e3", "notes": "dispatch: build_entity_wikipedia --topics (exit 0)"}
