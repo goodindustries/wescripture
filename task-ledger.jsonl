@@ -20015,3 +20015,4 @@
 {"event": "task_reopened", "task_id": "T-0117", "ts": "2026-04-10T04:54:38+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
 {"event": "task_reopened", "task_id": "T-0117", "ts": "2026-04-10T04:54:38+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
 {"event": "task_reopened", "task_id": "T-0117", "ts": "2026-04-10T04:54:39+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
+{"event": "task_reopened", "task_id": "T-0113", "ts": "2026-04-10T04:54:41+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
