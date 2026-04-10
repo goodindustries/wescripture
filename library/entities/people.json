@@ -6060,7 +6060,11 @@
       "general_conference:oct._1996"
     ],
     "quote_count": 38,
-    "talk_count": 2
+    "talk_count": 2,
+    "desc": "American religious leader, attorney and academic",
+    "wikipedia_title": "Bruce C. Hafen",
+    "wikipedia_summary": "Bruce Clark Hafen is an American attorney, academic and religious leader. He has been a general authority of the Church of Jesus Christ of Latter-day Saints since 1996.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Bruce_C._Hafen"
   },
   {
     "id": "person:mc_conkie_and_millet",
@@ -6140,7 +6144,12 @@
       "general_conference:oct._2003"
     ],
     "quote_count": 6,
-    "talk_count": 32
+    "talk_count": 32,
+    "desc": "American religious leader",
+    "wikipedia_title": "Quentin L. Cook",
+    "wikipedia_summary": "Quentin LaMar Cook is a member of the Quorum of the Twelve Apostles in the Church of Jesus Christ of Latter-day Saints. Currently, he is the fifth most senior apostle in the church. Prior to his calling as an Apostle, he worked as a lawyer and business executive.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Elder_Quentin_L._Cook.png/330px-Elder_Quentin_L._Cook.png",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Quentin_L._Cook"
   },
   {
     "id": "person:george_q_cannon",
@@ -6165,7 +6174,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 37,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American mathematician and Mormon religious leader (1811–1881)",
+    "wikipedia_title": "Orson Pratt",
+    "wikipedia_summary": "Orson Pratt Sr. was an American religious leader and mathematician who was an original member of the Quorum of the Twelve Apostles of the Church of Christ. After the succession crisis Pratt continued in the Quorum of the Twelve of the Church of Jesus Christ of Latter-day Saints and was a leading Mormon theologian and writer until his death.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/e/ed/OrsonPratt.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Orson_Pratt"
   },
   {
     "id": "person:people_s_nt_notes",
@@ -6187,7 +6201,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 36,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American biblical scholar (1921–2019)",
+    "wikipedia_title": "Robert Mounce",
+    "wikipedia_summary": "Robert Hayden Mounce was an American New Testament scholar and president emeritus of Whitworth University in Spokane, Washington.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Robert_H._Mounce"
   },
   {
     "id": "person:vaughn_j_featherstone",
@@ -6269,7 +6287,12 @@
       "general_conference:oct._1999"
     ],
     "quote_count": 2,
-    "talk_count": 32
+    "talk_count": 32,
+    "desc": "American Latter-day Saint leader (born 1951)",
+    "wikipedia_title": "Neil L. Andersen",
+    "wikipedia_summary": "Neil Linden Andersen is an American religious leader and former business executive who serves as a member of the Quorum of the Twelve Apostles of the Church of Jesus Christ of Latter-day Saints. He was sustained by church membership as an apostle on April 4, 2009, during the church's General Conference. At the time of his call to the Twelve, Andersen had been serving as an LDS general authority since 1993, including service in the Presidency of the Seventy from 2005 to 2009. Currently, he is the seventh most senior apostle in the church.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Elder_Neil_L._Andersen_%2841220662734%29.jpg/330px-Elder_Neil_L._Andersen_%2841220662734%29.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Neil_L._Andersen"
   },
   {
     "id": "person:spencer_j_condie",
@@ -6288,7 +6311,11 @@
       "general_conference:oct._2007"
     ],
     "quote_count": 29,
-    "talk_count": 4
+    "talk_count": 4,
+    "desc": "American Mormon leader (born 1940)",
+    "wikipedia_title": "Spencer J. Condie",
+    "wikipedia_summary": "Spencer Joel Condie has been a general authority of the Church of Jesus Christ of Latter-day Saints since 1989. Condie previously worked as a professor at Brigham Young University (BYU) and also served as a mission president for the LDS Church in Eastern Europe. In 2010, he was designated as an emeritus general authority.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Spencer_J._Condie"
   },
   {
     "id": "person:kent_p_jackson",
@@ -6299,7 +6326,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 33,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American scholar (born 1949)",
+    "wikipedia_title": "Kent P. Jackson",
+    "wikipedia_summary": "Kent Phillips Jackson is an American scholar who was a professor of ancient scripture at Brigham Young University (BYU). He has written on Joseph Smith's translation of and commentary on the Bible.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Kent_P._Jackson.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Kent_P._Jackson"
   },
   {
     "id": "person:j_reuben_clark",
@@ -6321,7 +6353,12 @@
       "general_conference:october_1958"
     ],
     "quote_count": 32,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American leader of the LDS Church (1871–1961)",
+    "wikipedia_title": "J. Reuben Clark",
+    "wikipedia_summary": "Joshua Reuben Clark Jr. was an American attorney, civil servant, and a leader in the Church of Jesus Christ of Latter-day Saints. Born in Grantsville, Utah Territory, he was an attorney in the Department of State and was Undersecretary of State for U.S. President Calvin Coolidge until 1930, when he appointed United States Ambassador to Mexico. In 1933, Clark was called to the LDS Church's First Presidency, serving as counselor to three of its presidents.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/J._Reuben_Clark%2C_1935.jpg/330px-J._Reuben_Clark%2C_1935.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/J._Reuben_Clark"
   },
   {
     "id": "person:john_w_welch",
@@ -6332,7 +6369,10 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 31,
-    "talk_count": 0
+    "talk_count": 0,
+    "wikipedia_title": "John W. Welch",
+    "wikipedia_summary": "John Woodland \"Jack\" Welch is a scholar of law and religion. Welch is a member of the Church of Jesus Christ of Latter-day Saints and currently teaches at the J. Reuben Clark Law School (JRCLS) at Brigham Young University (BYU) in Provo, Utah, where he is the Robert K. Thomas University Professor of Law. He is notable for his contributions to LDS (Mormon) scholarship, including his claim to have discovered the ancient literary form chiasmus in the Book of Mormon.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/John_W._Welch"
   },
   {
     "id": "person:gene_r_cook",
@@ -6399,7 +6439,11 @@
       "general_conference:oct._1973"
     ],
     "quote_count": 4,
-    "talk_count": 26
+    "talk_count": 26,
+    "wikipedia_title": "Victor L. Brown",
+    "wikipedia_summary": "Victor Lee Brown was the tenth Presiding Bishop of the Church of Jesus Christ of Latter-day Saints from 1972 to 1985. He was an LDS Church general authority from 1961 until his death.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Victor_L._Brown.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Victor_L._Brown"
   },
   {
     "id": "person:w_f_albright_and_c_s_mann",
@@ -6465,7 +6509,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 29,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "Canadian theological academic (born 1937)",
+    "wikipedia_title": "David B. Galbraith",
+    "wikipedia_summary": "David Brian Galbraith is a retired Brigham Young University (BYU) professor of political science who served as director of the BYU Jerusalem Center.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/David_B._Galbraith"
   },
   {
     "id": "person:alexander_b_morrison",
@@ -6485,7 +6533,12 @@
       "general_conference:oct._2000"
     ],
     "quote_count": 25,
-    "talk_count": 3
+    "talk_count": 3,
+    "desc": "Canadian scientist, academic, and public servant",
+    "wikipedia_title": "Alexander B. Morrison",
+    "wikipedia_summary": "Alexander Baillie Morrison was a Canadian scientist, academic, and public servant and was a general authority of the Church of Jesus Christ of Latter-day Saints from 1987 until his death.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Alexander_B._Morrison.jpg/330px-Alexander_B._Morrison.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Alexander_B._Morrison"
   },
   {
     "id": "person:sterling_w_sill",
@@ -6516,7 +6569,11 @@
       "general_conference:october_1968"
     ],
     "quote_count": 17,
-    "talk_count": 11
+    "talk_count": 11,
+    "wikipedia_title": "Sterling W. Sill",
+    "wikipedia_summary": "Sterling Welling Sill was a general authority in the Church of Jesus Christ of Latter-day Saints. He was an Assistant to the Quorum of the Twelve Apostles from 1954 to 1976 and was a member of the First Quorum of the Seventy from 1976 to 1978. In 1978, he received general authority emeritus status.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/en/9/9e/Sterling_W._Sill.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Sterling_W._Sill"
   },
   {
     "id": "person:robert_e_wells",
@@ -6631,7 +6688,12 @@
       "general_conference:october_1970"
     ],
     "quote_count": 13,
-    "talk_count": 14
+    "talk_count": 14,
+    "desc": "American genealogist & LDS Church leader (1907–1989)",
+    "wikipedia_title": "Theodore M. Burton",
+    "wikipedia_summary": "Theodore Moyle Burton was a general authority of the Church of Jesus Christ of Latter-day Saints and one of the main leaders of the church's Genealogical Department in the 1960s. Under his direction the department expanded its operations, largely through the opening of many more Family History Centers.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/en/a/a3/Theodore_M._Burton.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Theodore_M._Burton"
   },
   {
     "id": "person:franklin_d_richards",
@@ -6779,7 +6841,12 @@
       "pioneer_journals:wilford_woodruff_journals"
     ],
     "quote_count": 25,
-    "talk_count": 1
+    "talk_count": 1,
+    "desc": "4th President of the LDS Church from 1889 to 1898",
+    "wikipedia_title": "Wilford Woodruff",
+    "wikipedia_summary": "Wilford Woodruff Sr. was an American religious leader who served as the fourth president of the Church of Jesus Christ of Latter-day Saints from 1889 until his death. He ended the public practice of plural marriage among members of the LDS Church in 1890.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Wilford_Woodruff_1889.jpg/330px-Wilford_Woodruff_1889.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Wilford_Woodruff"
   },
   {
     "id": "person:barbara_b_smith",
@@ -6814,7 +6881,11 @@
       "general_conference:oct._1982"
     ],
     "quote_count": 7,
-    "talk_count": 19
+    "talk_count": 19,
+    "wikipedia_title": "Barbara B. Smith",
+    "wikipedia_summary": "Barbara Bradshaw Smith was the tenth general president of the Relief Society of the Church of Jesus Christ of Latter-day Saints from 1974 to 1984. She was the first Relief Society General President to have been born in the 20th century.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Barbara_B._Smith.jpg/330px-Barbara_B._Smith.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Barbara_B._Smith"
   },
   {
     "id": "person:earl_c_tingey",
@@ -6851,7 +6922,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 25,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "German Lutheran Old Testament commentator (1807–1888)",
+    "wikipedia_title": "Keil and Delitzsch",
+    "wikipedia_summary": "Johann Friedrich Karl Keil or Carl Friedrich Keil was a conservative German Lutheran Old Testament commentator. Keil was appointed to the theological faculty of Dorpat in Estonia where he taught Bible, New Testament exegesis, and Oriental languages. In 1859 he was called to serve the Lutheran church in Leipzig. In 1887 he moved to Rödletz, where he died. Keil was a conservative critic who reacted strongly against the scientific biblical criticism of his day. He strongly supported Mosaic authorship of the Pentateuch. He maintained the validity of the historico-critical investigation of the Bibl",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Carl-Friedrich-Keil.jpg/330px-Carl-Friedrich-Keil.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Carl_Friedrich_Keil"
   },
   {
     "id": "person:richard_dilworth_rust",
@@ -6898,7 +6974,12 @@
       "general_conference:oct._1995"
     ],
     "quote_count": 8,
-    "talk_count": 17
+    "talk_count": 17,
+    "desc": "American religious leader (1930–2001)",
+    "wikipedia_title": "Loren C. Dunn",
+    "wikipedia_summary": "Loren Charles Dunn was a general authority of the Church of Jesus Christ of Latter-day Saints from 1968 until his death.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/en/8/8a/Loren_C._Dunn.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Loren_C._Dunn"
   },
   {
     "id": "person:hugh_b_brown",
@@ -6920,7 +7001,12 @@
       "general_conference:october_1969"
     ],
     "quote_count": 23,
-    "talk_count": 2
+    "talk_count": 2,
+    "desc": "American religious leader (1883–1975)",
+    "wikipedia_title": "Hugh B. Brown",
+    "wikipedia_summary": "Hugh Brown Brown was an American attorney, educator, author and leader in the Church of Jesus Christ of Latter-day Saints. He was a member of the church's Quorum of the Twelve Apostles and First Presidency. Born in Utah, Brown held both American and Canadian citizenship.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Hugh_B._Brown.jpg/330px-Hugh_B._Brown.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Hugh_B._Brown"
   },
   {
     "id": "person:legrand_richards",
@@ -6958,7 +7044,12 @@
       "general_conference:general_conference_1982_04_what_the_gospel_teaches"
     ],
     "quote_count": 3,
-    "talk_count": 22
+    "talk_count": 22,
+    "desc": "American Mormon missionary and leader",
+    "wikipedia_title": "Legrand Richards",
+    "wikipedia_summary": "LeGrand Richards was a prominent missionary and leader in the Church of Jesus Christ of Latter-day Saints. He served as the seventh presiding bishop of the LDS Church from 1938 to 1952, and was then called as a member of the Quorum of the Twelve Apostles by church president David O. McKay. Richards served in the Quorum of the Twelve until his death in Salt Lake City, Utah, at the age of 96.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/LeGrand_Richards.jpg/330px-LeGrand_Richards.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/LeGrand_Richards"
   },
   {
     "id": "person:h_burke_peterson",
@@ -6994,7 +7085,11 @@
       "general_conference:oct._1983"
     ],
     "quote_count": 4,
-    "talk_count": 20
+    "talk_count": 20,
+    "desc": "Mormon leader (1923–2013)",
+    "wikipedia_title": "H. Burke Peterson",
+    "wikipedia_summary": "Harold Burke Peterson was a general authority of the Church of Jesus Christ of Latter-day Saints from 1972 until his death. He was a counselor to the presiding bishop and a member of the First Quorum of the Seventy. He became an emeritus general authority in 1993.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/H._Burke_Peterson"
   },
   {
     "id": "person:orson_f_whitney",
@@ -7015,7 +7110,12 @@
       "general_conference:october_1924"
     ],
     "quote_count": 24,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American religious leader (1855–1931)",
+    "wikipedia_title": "Orson F. Whitney",
+    "wikipedia_summary": "Orson Ferguson Whitney, born in Salt Lake City, Utah Territory, was a member of the Quorum of the Twelve Apostles of the Church of Jesus Christ of Latter-day Saints from 1906 until his death.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Orson_F._Whitney.JPG/330px-Orson_F._Whitney.JPG",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Orson_F._Whitney"
   },
   {
     "id": "person:richard_c_edgley",
@@ -7046,7 +7146,11 @@
       "general_conference:oct._2003"
     ],
     "quote_count": 11,
-    "talk_count": 13
+    "talk_count": 13,
+    "desc": "American Mormon leader (1936–2026)",
+    "wikipedia_title": "Richard C. Edgley",
+    "wikipedia_summary": "Richard Crockett Edgley was an American general authority of the Church of Jesus Christ of Latter-day Saints from October 1992 until his death. He was the first counselor in the church's presiding bishopric from 1995 to 2012 and was the second counselor from 1992 to 1995. He was designated as an emeritus general authority in March 2012.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Richard_C._Edgley"
   },
   {
     "id": "person:dean_l_larsen",
@@ -7074,7 +7178,11 @@
       "general_conference:oct._1992"
     ],
     "quote_count": 14,
-    "talk_count": 10
+    "talk_count": 10,
+    "desc": "Mormon leader",
+    "wikipedia_title": "Dean L. Larsen",
+    "wikipedia_summary": "Dean LeRoy Larsen was a general authority of the Church of Jesus Christ of Latter-day Saints from 1976 until his death. He was the eighteenth Church Historian and Recorder from 1985 to 1997.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Dean_L._Larsen"
   },
   {
     "id": "person:edward_j_brandt",
@@ -7162,7 +7270,11 @@
       "general_conference:oct._1986"
     ],
     "quote_count": 6,
-    "talk_count": 17
+    "talk_count": 17,
+    "wikipedia_title": "A. Theodore Tuttle",
+    "wikipedia_summary": "Albert Theodore Tuttle  was an American general authority of the Church of Jesus Christ of Latter-day Saints from 1958 until his death.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/A._Theodore_Tuttle.jpg/330px-A._Theodore_Tuttle.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/A._Theodore_Tuttle"
   },
   {
     "id": "person:ogden_and_skinner",
@@ -7194,7 +7306,18 @@
       "general_conference:general_conference_1996_10_raised_in_hope"
     ],
     "quote_count": 14,
-    "talk_count": 8
+    "talk_count": 8,
+    "desc": "American writer, educator, and religious leader (1926 – 2011)",
+    "wikipedia_title": "Chieko N. Okazaki",
+    "wikipedia_summary": "Chieko Nishimura Okazaki was an American writer, educator, and religious leader. She served as first counselor to Elaine L. Jack in the Relief Society general presidency of the Church of Jesus Christ of Latter-day Saints from 1990 to 1997. She was the first person of color to serve in an LDS Church general organization presidency, as well as the first woman to serve in all three of the women-led organizations at a general church level: the general boards of the Young Women (1961-66) and Primary (1988-1990), along with the Relief Society.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/en/2/29/Chieko_N._Okazaki.JPG",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Chieko_N._Okazaki",
+    "born": {
+      "year": 1961
+    },
+    "died": {
+      "year": 1990
+    }
   },
   {
     "id": "person:joe_cannon",
@@ -7221,7 +7344,12 @@
       "general_conference:oct._1922"
     ],
     "quote_count": 22,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American Mormon politician (1857–1933)",
+    "wikipedia_title": "B.H. Roberts",
+    "wikipedia_summary": "Brigham Henry Roberts was a historian, politician, and leader in the Church of Jesus Christ of Latter-day Saints. He edited the seven-volume History of the Church of Jesus Christ of Latter-day Saints and independently wrote the six-volume Comprehensive History of the Church of Jesus Christ of Latter-day Saints. Roberts also wrote Studies of the Book of Mormon—published posthumously—which discussed the validity of the Book of Mormon as an ancient record. Roberts was denied a seat as a member of United States Congress because of his practice of polygamy.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Brigham_Henry_Roberts2.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/B._H._Roberts"
   },
   {
     "id": "person:david_a_dorsey",
@@ -7258,7 +7386,12 @@
       "general_conference:october_1960"
     ],
     "quote_count": 18,
-    "talk_count": 3
+    "talk_count": 3,
+    "desc": "American author, educator and religious leader",
+    "wikipedia_title": "Milton R. Hunter",
+    "wikipedia_summary": "Milton Reed Hunter was an American author, educator, and religious leader in the Church of Jesus Christ of Latter-day Saints. He served as a member of the church's First Council of the Seventy from 1945 until his death in 1975.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Milton_R._Hunter.jpg/330px-Milton_R._Hunter.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Milton_R._Hunter"
   },
   {
     "id": "person:ronald_a_rasband",
@@ -7291,7 +7424,12 @@
       "general_conference:oct._2000"
     ],
     "quote_count": 3,
-    "talk_count": 18
+    "talk_count": 18,
+    "desc": "American religious leader (born 1951)",
+    "wikipedia_title": "Ronald A. Rasband",
+    "wikipedia_summary": "Ronald Anderson Rasband is a member of the Quorum of the Twelve Apostles of the Church of Jesus Christ of Latter-day Saints. He has been a general authority of the church since 2000. Currently, he is the eighth most senior apostle in the church.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Elder_Ronald_A._Rasband.jpg/330px-Elder_Ronald_A._Rasband.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ronald_A._Rasband"
   },
   {
     "id": "person:thomas_l_constable",
@@ -7368,7 +7506,12 @@
       "general_conference:general_conference_2011_10_what_i_hope_my_granddaughters_and_grandsons_will_understand_about_relief_society"
     ],
     "quote_count": 5,
-    "talk_count": 14
+    "talk_count": 14,
+    "desc": "American religious leader",
+    "wikipedia_title": "Julie B. Beck",
+    "wikipedia_summary": "Julie Bangerter Beck was the fifteenth general president of the Relief Society of the Church of Jesus Christ of Latter-day Saints from 2007 to 2012.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/JulieBBeck.jpg/330px-JulieBBeck.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Julie_B._Beck"
   },
   {
     "id": "person:h_david_burton",
@@ -7399,7 +7542,11 @@
       "general_conference:general_conference_2011_04_the_sanctifying_work_of_welfare"
     ],
     "quote_count": 5,
-    "talk_count": 14
+    "talk_count": 14,
+    "desc": "American Mormon leader (born 1938)",
+    "wikipedia_title": "H. David Burton",
+    "wikipedia_summary": "Harold David Burton was the thirteenth Presiding Bishop of the Church of Jesus Christ of Latter-day Saints from 1995 to 2012 and has been the chairman of the University of Utah board of trustees since 2016.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/H._David_Burton"
   },
   {
     "id": "person:s_dilworth_young",
@@ -7427,7 +7574,12 @@
       "general_conference:oct._1978"
     ],
     "quote_count": 9,
-    "talk_count": 10
+    "talk_count": 10,
+    "desc": "American religious leader",
+    "wikipedia_title": "S. Dilworth Young",
+    "wikipedia_summary": "Seymour Dilworth Young was a general authority of the Church of Jesus Christ of Latter-day Saints from 1945 until his death.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/S._Dilworth_Young.jpg/330px-S._Dilworth_Young.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/S._Dilworth_Young"
   },
   {
     "id": "person:david_e_sorensen",
@@ -7448,7 +7600,10 @@
       "general_conference:oct._1998"
     ],
     "quote_count": 14,
-    "talk_count": 5
+    "talk_count": 5,
+    "wikipedia_title": "David E. Sorensen",
+    "wikipedia_summary": "David Eugene Sorensen was a general authority of the Church of Jesus Christ of Latter-day Saints from 1992 until his death. He served in the First and Second Quorums of the Seventy and as a member of the Presidency of the Seventy. He was the executive director of the church's Temple Department during the temple building boom of the late 1990s and early 2000s.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/David_E._Sorensen"
   },
   {
     "id": "person:j_richard_clarke",
@@ -7477,7 +7632,11 @@
       "general_conference:general_conference_1993_04_the_lord_of_life"
     ],
     "quote_count": 6,
-    "talk_count": 13
+    "talk_count": 13,
+    "desc": "Mormon leader (1927–2022)",
+    "wikipedia_title": "J. Richard Clarke",
+    "wikipedia_summary": "John Richard Clarke was a general authority of the Church of Jesus Christ of Latter-day Saints from 1976 until his death. He served both in the church's presiding bishopric and the Presidency of the Seventy.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/J._Richard_Clarke"
   },
   {
     "id": "person:charles_w_penrose",
@@ -7492,7 +7651,12 @@
       "general_conference:october_1914"
     ],
     "quote_count": 18,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American Mormon leader (1832–1925)",
+    "wikipedia_title": "Charles W. Penrose",
+    "wikipedia_summary": "Charles William Penrose was a member of the Quorum of the Twelve Apostles of the Church of Jesus Christ of Latter-day Saints from 1904 to 1911. Penrose was also a member of the First Presidency, serving as a counselor to church presidents Joseph F. Smith and Heber J. Grant from 1911 until his death.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Charleswpenrose.gif",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Charles_W._Penrose"
   },
   {
     "id": "person:john_l_sorenson",
@@ -7503,7 +7667,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 18,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American anthropologist, scholar, and author (1924–2021)",
+    "wikipedia_title": "John L. Sorenson",
+    "wikipedia_summary": "John Leon Sorenson was an American anthropologist, scholar and author. He was a professor of anthropology at Brigham Young University, and the author of An Ancient American Setting for the Book of Mormon, as well as many other books and articles on the Book of Mormon and archaeology.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/en/1/1d/John_L._Sorenson.png",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/John_L._Sorenson"
   },
   {
     "id": "person:f_burton_howard",
@@ -7551,7 +7720,11 @@
       "general_conference:oct._1996"
     ],
     "quote_count": 7,
-    "talk_count": 11
+    "talk_count": 11,
+    "desc": "Canadian-American LDS Church leader (1928–2025)",
+    "wikipedia_title": "Elaine L. Jack",
+    "wikipedia_summary": "Elaine Jack was the twelfth Relief Society general president of the Church of Jesus Christ of Latter-day Saints from 1990 to 1997. She also served in the general presidency of the church's Young Women organization from 1987 to 1990. Jack was the first Relief Society General President to be born outside of the United States.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Elaine_L._Jack"
   },
   {
     "id": "person:gary_e_stevenson",
@@ -7611,7 +7784,12 @@
       "general_conference:october_1962"
     ],
     "quote_count": 6,
-    "talk_count": 11
+    "talk_count": 11,
+    "desc": "American Mormon leader (1909–2000)",
+    "wikipedia_title": "Bernard P. Brockbank",
+    "wikipedia_summary": "Bernard Park Brockbank, Sr. was a general authority of the Church of Jesus Christ of Latter-day Saints from 1962 to his death. Brockbank was an Assistant to the Quorum of the Twelve from 1962 to 1976 and a member of the First Quorum of the Seventy from 1976 to 1980. One of his major contributions was heading the Mormon Pavilion at the New York World's Fair in 1964 and 1965.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Bernard_P._Brockbank.jpg/330px-Bernard_P._Brockbank.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Bernard_P._Brockbank"
   },
   {
     "id": "person:stephen_e_robinson",
@@ -7622,7 +7800,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 17,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American Mormon religious scholar",
+    "wikipedia_title": "Stephen E. Robinson",
+    "wikipedia_summary": "Stephen Edward Robinson was a religious scholar and apologist, who was a member of the Church of Jesus Christ of Latter-day Saints.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Stephen_E._Robinson"
   },
   {
     "id": "person:richard_l_evans",
@@ -7649,7 +7831,15 @@
       "general_conference:october_1969"
     ],
     "quote_count": 15,
-    "talk_count": 2
+    "talk_count": 2,
+    "desc": "American Latter Day Saint writers and apostle; radio producer and announcer (1906–1971)",
+    "wikipedia_title": "Richard L. Evans",
+    "wikipedia_summary": "Richard Louis Evans was a member of the Quorum of the Twelve Apostles of the Church of Jesus Christ of Latter-day Saints (1953–71); the president of Rotary International (1966–67); and the writer, producer, and announcer of Music and the Spoken Word (1929–71).",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Richard_L._Evans.JPG/330px-Richard_L._Evans.JPG",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Richard_L._Evans",
+    "born": {
+      "year": 1953
+    }
   },
   {
     "id": "person:matthew_henry_s_commentary",

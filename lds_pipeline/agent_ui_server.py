@@ -65,6 +65,110 @@ def _pgrep_count(pattern: str) -> int:
         return 0
 
 
+def _pgrep_fl_lines(pattern: str) -> list[str]:
+    try:
+        r = subprocess.run(
+            ["pgrep", "-fl", pattern],
+            capture_output=True,
+            text=True,
+            timeout=5,
+        )
+        if r.returncode != 0 or not (r.stdout or "").strip():
+            return []
+        return [x.strip() for x in r.stdout.strip().splitlines() if x.strip()]
+    except (OSError, subprocess.TimeoutExpired):
+        return []
+
+
+_AGENT_RE = re.compile(r"--agent\s+(Worker\d+)")
+
+
+def _task_worker_processes() -> list[dict]:
+    """Running task_worker.py PIDs with WorkerNNN from argv."""
+    rows: list[dict] = []
+    for line in _pgrep_fl_lines("lds_pipeline/task_worker.py"):
+        parts = line.split(None, 1)
+        pid = parts[0] if parts else ""
+        rest = parts[1] if len(parts) > 1 else line
+        m = _AGENT_RE.search(rest)
+        rows.append(
+            {
+                "pid": pid,
+                "agent": m.group(1) if m else "?",
+                "cmdline_tail": rest[-120:] if len(rest) > 120 else rest,
+            }
+        )
+    rows.sort(key=lambda x: x.get("agent") or "")
+    return rows
+
+
+def _wave_cap() -> int:
+    return int(
+        os.environ.get(
+            "ORCHESTRATE_WAVE_SIZE",
+            os.environ.get("MAX_PARALLEL_WORKERS", "8"),
+        )
+    )
+
+
+def _last_orchestrate_wave_info() -> dict:
+    """Best-effort parse of last 'wave N: M workers' from orchestrate.log."""
+    out: dict = {"wave_num": None, "workers_requested": None, "line": ""}
+    if not ORCH_LOG.is_file():
+        return out
+    try:
+        lines = ORCH_LOG.read_text(encoding="utf-8", errors="replace").splitlines()
+    except OSError:
+        return out
+    wave_re = re.compile(r"wave\s+(\d+):\s+(\d+)\s+workers\s+backend=")
+    for line in reversed(lines[-400:]):
+        m = wave_re.search(line)
+        if m:
+            out["wave_num"] = int(m.group(1))
+            out["workers_requested"] = int(m.group(2))
+            out["line"] = line.strip()[:200]
+            break
+    return out
+
+
+def _worker_out_tail(agent: str) -> dict[str, str]:
+    path = DIAG / f"task-worker-{agent}.out"
+    empty = {"models_line": "", "last_claim_line": "", "activity_line": ""}
+    if not path.is_file():
+        return empty
+    try:
+        lines = path.read_text(encoding="utf-8", errors="replace").splitlines()
+    except OSError:
+        return empty
+    chunk = lines[-100:] if len(lines) > 100 else lines
+    models_line = ""
+    claim_line = ""
+    for line in reversed(chunk):
+        s = line.strip()
+        if not s or s.startswith("==="):
+            continue
+        if "models:" in s and "backend=" in s:
+            models_line = s[:240]
+            break
+    for line in reversed(chunk):
+        s = line.strip()
+        if "] claimed " in s and "T-" in s:
+            claim_line = s[:240]
+            break
+    activity_line = ""
+    for line in reversed(chunk[-25:]):
+        s = line.strip()
+        if not s or s.startswith("==="):
+            continue
+        activity_line = s[:240]
+        break
+    return {
+        "models_line": models_line,
+        "last_claim_line": claim_line,
+        "activity_line": activity_line,
+    }
+
+
 def _forever_running() -> bool:
     return _pgrep_count("run_orchestrate_forever") > 0
 
@@ -78,6 +182,65 @@ def collect_state() -> dict:
         feed_tail = lines[-24:]
 
     procs = {p: _pgrep_count(p) for p in PGREP_PATTERNS}
+    tw = _task_worker_processes()
+    n_run = len(tw)
+    cap = _wave_cap()
+    ow = _last_orchestrate_wave_info()
+    workers_requested = ow.get("workers_requested") or cap
+    idle_slots = max(0, int(workers_requested) - n_run)
+
+    ledger_by_agent: dict[str, dict] = {}
+    for t in tasks.values():
+        if t.get("status") != "claimed":
+            continue
+        ag = t.get("claimed_by") or ""
+        if not ag or not ag.startswith("Worker"):
+            continue
+        ledger_by_agent[ag] = {
+            "task_id": t.get("task_id", ""),
+            "title": (t.get("title") or "")[:300],
+            "claim_ts": t.get("claim_ts") or "",
+        }
+
+    agents_seen: set[str] = {r["agent"] for r in tw if r.get("agent") != "?"}
+    agents_seen |= set(ledger_by_agent.keys())
+    for row in scan_worker_out_logs(DIAG, tail_lines=400):
+        agents_seen.add(row.get("agent", ""))
+    agents = sorted(a for a in agents_seen if a and a.startswith("Worker"))
+
+    worker_rows: list[dict] = []
+    for ag in agents:
+        pid = next((r["pid"] for r in tw if r.get("agent") == ag), "")
+        st = _worker_out_tail(ag)
+        lg = ledger_by_agent.get(ag)
+        task_id = lg["task_id"] if lg else ""
+        title = lg["title"] if lg else ""
+        if not title and st["last_claim_line"]:
+            title = st["last_claim_line"][:200]
+        phase = "running" if pid else "idle"
+        if lg and pid:
+            phase = "active"
+        elif lg and not pid:
+            phase = "claimed (process ended?)"
+        worker_rows.append(
+            {
+                "agent": ag,
+                "pid": pid,
+                "phase": phase,
+                "task_id": task_id,
+                "title": title,
+                "models_line": st["models_line"],
+                "last_claim_line": st["last_claim_line"],
+                "activity_line": st["activity_line"],
+            }
+        )
+
+    def _agent_sort(name: str) -> tuple[int, str]:
+        m = re.match(r"Worker(\d+)$", name)
+        return (int(m.group(1)), name) if m else (9999, name)
+
+    worker_rows.sort(key=lambda r: _agent_sort(r.get("agent") or ""))
+
     return {
         "time_utc": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S"),
         "ledger": {
@@ -89,6 +252,15 @@ def collect_state() -> dict:
         "forever_running": _forever_running(),
         "feed_path": _feed_rel(),
         "feed_tail": feed_tail,
+        "workers": {
+            "running_count": n_run,
+            "parallelism_cap_env": cap,
+            "last_wave": ow,
+            "idle_slots_vs_wave": idle_slots,
+            "workers_requested_last_wave": workers_requested,
+        },
+        "worker_processes": tw,
+        "worker_rows": worker_rows,
     }
 
 
@@ -109,6 +281,7 @@ class Handler(BaseHTTPRequestHandler):
         data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
         self.send_response(code)
         self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Cache-Control", "no-store, no-cache, must-revalidate")
         self.send_header("Content-Length", str(len(data)))
         self.end_headers()
         self.wfile.write(data)

@@ -461,3 +461,52 @@ Loading entity indexes…
 Annotating 16 chapters…
 
 Done. 0 chapters changed, 391 verses scanned, 0 entity spans added.
+=== 2026-04-10T01:55:17Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0089: Registry Wikipedia — people.json batch 2/40 (40 entries)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+  [dispatch] /Library/Developer/CommandLineTools/usr/bin/python3 /Users/reify/Classified/wescripture/lds_pipeline/build_entity_wikipedia.py --people --limit 40
+Enriching people (/Users/reify/Classified/wescripture/library/entities/people.json)...
+  enriched: Bruce C. Hafen
+  enriched: Quentin L. Cook
+  enriched: Orson Pratt
+  enriched: Robert Mounce
+  enriched: Neil L. Andersen
+  enriched: Spencer J. Condie
+  enriched: Kent P. Jackson
+  enriched: J. Reuben Clark
+  enriched: John W. Welch
+  enriched: Victor L. Brown
+  enriched: David B. Galbraith
+  enriched: Alexander B. Morrison
+  enriched: Sterling W. Sill
+  enriched: Theodore M. Burton
+  enriched: Wilford Woodruff
+  enriched: Barbara B. Smith
+  enriched: Keil and Delitzsch
+  enriched: Loren C. Dunn
+  enriched: Hugh B. Brown
+  enriched: Legrand Richards
+  enriched: H. Burke Peterson
+  enriched: Orson F. Whitney
+  enriched: Richard C. Edgley
+  enriched: Dean L. Larsen
+  enriched: A. Theodore Tuttle
+  enriched: Chieko N. Okazaki
+  enriched: B.H. Roberts
+  enriched: Milton R. Hunter
+  enriched: Ronald A. Rasband
+  enriched: Julie B. Beck
+  enriched: H. David Burton
+  enriched: S. Dilworth Young
+  enriched: David E. Sorensen
+  enriched: J. Richard Clarke
+  enriched: Charles W. Penrose
+  enriched: John L. Sorenson
+  enriched: Elaine L. Jack
+  enriched: Bernard P. Brockbank
+  enriched: Stephen E. Robinson
+  enriched: Richard L. Evans
+  people: 40 enriched, 97 skipped
+
+Total enriched: 40

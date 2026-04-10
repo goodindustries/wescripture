@@ -508,3 +508,14 @@ Traceback (most recent call last):
   File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 528, in run
     raise CalledProcessError(retcode, process.args,
 subprocess.CalledProcessError: Command '['git', 'commit', '-m', '[task] T-0086: annotate_entity_spans --books job (exit 0)']' returned non-zero exit status 128.
+  [ledger] push failed: fatal: Unable to create '/Users/reify/Classified/wescripture/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at 749afcadd93e5d386d6f86f1134188058e5cbd64 but expected ed779152cf8166ade4203f3dcb588c18d4d19087)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'

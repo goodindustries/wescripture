@@ -695,3 +695,16 @@ Reopened T-0084.
 [Worker002] T-0084 no dispatch rule — reopened.
 === 2026-04-10T01:52:44Z start Worker002 ===
 [Worker002] checking for pending tasks…
+[Worker002] claimed T-0084: Donaldson — jeremiah: add commentary JSON for 13 missing chapter(s)
+[Worker002] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0084.
+  [ledger] pushed to origin
+  pushed to origin
+[Worker002] T-0084 no dispatch rule — reopened.
+=== 2026-04-10T01:55:17Z start Worker002 ===
+[Worker002] checking for pending tasks…
+[Worker002] claimed T-0088: Donaldson — ezekiel: add commentary JSON for 9 missing chapter(s)
+[Worker002] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0088.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker002] T-0088 no dispatch rule — reopened.

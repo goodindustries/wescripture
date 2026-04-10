@@ -685,3 +685,30 @@ Loading entity indexes…
 Annotating 16 chapters…
 
 Done. 0 chapters changed, 391 verses scanned, 0 entity spans added.
+[main b726bb24] [task] T-0086: annotate_entity_spans --books job (exit 0)
+ Committer: Reif Tauati <reify@MacBookPro.lan>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 18 files changed, 438 insertions(+)
+ create mode 100644 diagnostics/task-worker-Worker007.log
+Completed T-0086.
+  pushed to origin
+  [followup] exit 2 (non-fatal)
+[Worker001] T-0086 success. commit=b726bb24
+=== 2026-04-10T01:54:55Z exit 0 Worker001 ===
+=== 2026-04-10T01:55:17Z start Worker001 ===
+[Worker001] checking for pending tasks…
+[Worker001] claimed T-0088: Donaldson — ezekiel: add commentary JSON for 9 missing chapter(s)
+[Worker001] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0088.
+  pushed to origin
+[Worker001] T-0088 no dispatch rule — reopened.

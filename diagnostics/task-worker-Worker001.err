@@ -684,3 +684,14 @@ remove the file manually to continue.
 To https://github.com/reif-is-a-foofie/wescripture.git
  ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at d4b75fab2e85aa42f3ce667c26976aa8c0e0d0cc but expected d54cd184cfcd2da375b27ce47719d6bc64acd655)
 error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+  [ledger] push failed: To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at c3836f4ced41aaccf0aa5e970dc047c08082372d but expected b726bb247890710c94bb5aa49dbe62e288d54951)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+
+Everything up-to-date
+task_followup: Ollama error: timed out
+  [ledger] push failed: To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at d251eee1712791aaa8199a2ead24e785b7a702ef but expected 749afcadd93e5d386d6f86f1134188058e5cbd64)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+
+Everything up-to-date

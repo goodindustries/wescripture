@@ -18,3 +18,4 @@
 {"ts": "2026-04-10T00:32:09+00:00", "task_id": "T-0072", "agent": "WorkerB", "outcome": "error", "notes": "commit=", "backend": "claude", "claude_model": "sonnet", "ollama": "gemma4:e2b"}
 {"ts": "2026-04-10T00:42:29+00:00", "task_id": "T-0076", "agent": "WorkerB", "outcome": "error", "notes": "commit=36261e87", "backend": "claude", "claude_model": "sonnet", "ollama": "gemma4:e2b"}
 {"ts": "2026-04-10T01:42:46+00:00", "task_id": "T-0080", "agent": "WorkerB", "outcome": "error", "notes": "commit=", "backend": "claude", "claude_model": "sonnet", "ollama": "gemma4:e2b", "title": "Donaldson \u2014 2_chronicles: add commentary JSON for 20 missing chapter(s)"}
+{"ts": "2026-04-10T01:53:05+00:00", "task_id": "T-0084", "agent": "WorkerB", "outcome": "error", "notes": "commit=", "backend": "claude", "claude_model": "sonnet", "ollama": "gemma4:e2b", "title": "Donaldson \u2014 jeremiah: add commentary JSON for 13 missing chapter(s)"}
