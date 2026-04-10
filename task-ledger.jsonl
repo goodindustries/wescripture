@@ -715,3 +715,8 @@
 {"event": "task_claimed", "task_id": "T-0071", "agent": "Worker004", "ts": "2026-04-10T00:20:10+00:00"}
 {"event": "task_claimed", "task_id": "T-0071", "agent": "Worker002", "ts": "2026-04-10T00:20:10+00:00"}
 {"event": "task_claimed", "task_id": "T-0071", "agent": "Worker005", "ts": "2026-04-10T00:20:10+00:00"}
+{"event": "task_reopened", "task_id": "T-0067", "ts": "2026-04-10T00:20:11+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
+{"event": "task_reopened", "task_id": "T-0071", "ts": "2026-04-10T00:20:11+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
+{"event": "task_reopened", "task_id": "T-0067", "ts": "2026-04-10T00:20:11+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
+{"event": "task_reopened", "task_id": "T-0071", "ts": "2026-04-10T00:20:11+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
+{"event": "task_reopened", "task_id": "T-0071", "ts": "2026-04-10T00:20:11+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
