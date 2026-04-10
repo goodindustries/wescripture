@@ -1017,3 +1017,20 @@ Completed T-0101.
   push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
 [Worker007] T-0099 no dispatch rule — reopened.
   push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+=== 2026-04-10T02:42:47Z start Worker007 ===
+=== 2026-04-10T02:42:47Z start Worker007 ===
+[Worker007] checking for pending tasks…
+[Worker007] checking for pending tasks…
+[Worker007] claimed T-0111: Ch genesis_1: add entity span annotations (data-entity / place / thing)
+[Worker007] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+  [dispatch] /Library/Developer/CommandLineTools/usr/bin/python3 /Users/reify/Classified/wescripture/lds_pipeline/annotate_entity_spans.py --books genesis
+[Worker007] claimed T-0112: Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+[Worker007] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0112.
+Loading entity indexes…
+  134 scripture-person variants, 81 place variants, 207 thing variants
+Annotating 1 chapters…
+
+Done. 0 chapters changed, 31 verses scanned, 0 entity spans added.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker007] T-0112 no dispatch rule — reopened.

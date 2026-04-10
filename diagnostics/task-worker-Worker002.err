@@ -1807,3 +1807,6 @@ error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescript
 
 To https://github.com/reif-is-a-foofie/wescripture.git
    a4a331cf..e0bfeefa  main -> main
+  [ledger] push failed: Command '['git', 'commit', '-m', 'ledger: task_reopened T-0112']' returned non-zero exit status 1.
+To https://github.com/reif-is-a-foofie/wescripture.git
+   1ce666e2..4754f5cc  main -> main

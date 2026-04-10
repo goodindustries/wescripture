@@ -1603,3 +1603,13 @@ After doing this, you may fix the identity used for this commit with:
     git commit --amend --reset-author
 
  1 file changed, 44 insertions(+)
+=== 2026-04-10T02:42:47Z start Worker003 ===
+=== 2026-04-10T02:42:47Z start Worker003 ===
+[Worker003] checking for pending tasks…
+[Worker003] checking for pending tasks…
+[Worker003] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker003] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+[Worker003] claimed T-0112: Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+[Worker003] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+Completed T-0109.
