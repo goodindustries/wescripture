@@ -1314,3 +1314,9 @@
 {"event": "task_claimed", "task_id": "T-0088", "agent": "Worker004", "ts": "2026-04-10T01:55:17+00:00"}
 {"event": "task_claimed", "task_id": "T-0088", "agent": "Worker003", "ts": "2026-04-10T01:55:17+00:00"}
 {"event": "task_claimed", "task_id": "T-0089", "agent": "Worker005", "ts": "2026-04-10T01:55:17+00:00"}
+{"event": "task_reopened", "task_id": "T-0088", "ts": "2026-04-10T01:55:18+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
+{"event": "task_reopened", "task_id": "T-0088", "ts": "2026-04-10T01:55:18+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
+{"event": "task_reopened", "task_id": "T-0088", "ts": "2026-04-10T01:55:18+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
+{"event": "task_reopened", "task_id": "T-0088", "ts": "2026-04-10T01:55:18+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
+{"event": "task_reopened", "task_id": "T-0088", "ts": "2026-04-10T01:55:18+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
+{"event": "task_reopened", "task_id": "T-0088", "ts": "2026-04-10T01:55:18+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
