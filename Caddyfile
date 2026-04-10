@@ -4,6 +4,10 @@
 
     encode zstd gzip
 
+    handle /healthz {
+        respond "ok" 200
+    }
+
     # API boundary for future stateful features.
     handle_path /api/* {
         reverse_proxy api:8000
@@ -22,21 +26,3 @@
         file_server
     }
 }
-:80 {
-:    # HTTP only by default (dev). In production, switch to `your-domain.com { ... }`
-:    # and Caddy will automatically manage TLS.
-:
-:    encode zstd gzip
-:
-:    # Serve the existing static app output exactly as-is.
-:    root * /srv/static
-:    file_server
-:
-:    # API boundary for future stateful features.
-:    handle_path /api/* {
-:        reverse_proxy api:8000
-:    }
-:
-:    # Health check (no auth) for ops.
-:    respond /healthz 200
-:}

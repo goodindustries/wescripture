@@ -37,6 +37,11 @@
     ],
     "quote_count": 1152,
     "talk_count": 0,
+    "christ_connection": "McConkie’s teaching and commentary consistently directed readers to Jesus Christ as the God of Israel, the atoning Messiah, and the judge of the living and the dead.",
+    "scripture_refs": [
+      {"slug": "doctrine_and_covenants_1", "verse": 38, "label": "Doctrine and Covenants 1:38"},
+      {"slug": "2_nephi_31", "verse": 21, "label": "2 Nephi 31:21"}
+    ],
     "desc": "American religious leader (1915–1985)",
     "wikipedia_title": "Bruce R. McConkie",
     "wikipedia_summary": "Bruce Redd McConkie was a member of the Quorum of the Twelve Apostles of the Church of Jesus Christ of Latter-day Saints from 1972 until his death. McConkie was a member of the LDS Church's First Council of the Seventy from 1946 until his calling to the Quorum of the Twelve.",
@@ -160,6 +165,11 @@
     ],
     "quote_count": 926,
     "talk_count": 53,
+    "christ_connection": "Maxwell’s writings emphasized grace, discipleship, and Christlike character, framing the covenant path as participation in the Savior’s redemptive work.",
+    "scripture_refs": [
+      {"slug": "moroni_10", "verse": 32, "label": "Moroni 10:32"},
+      {"slug": "3_nephi_27", "verse": 27, "label": "3 Nephi 27:27"}
+    ],
     "desc": "American scholar, educator, and religious leader (1926–2004)",
     "wikipedia_title": "Neal A. Maxwell",
     "wikipedia_summary": "Neal Ash Maxwell was an American scholar, educator, and religious leader who served as a member of the Quorum of the Twelve Apostles of the Church of Jesus Christ of Latter-day Saints from 1981 until his death in 2004.",
@@ -176,6 +186,11 @@
     "doc_ids": [],
     "quote_count": 505,
     "talk_count": 0,
+    "christ_connection": "Parry’s Hebrew Bible and Dead Sea Scrolls scholarship helps readers see the Old Testament as covenant history that anticipates the Messiah and clarifies the Savior’s mission in scripture.",
+    "scripture_refs": [
+      {"slug": "2_nephi_11", "verse": 4, "label": "2 Nephi 11:4"},
+      {"slug": "isaiah_53", "verse": 5, "label": "Isaiah 53:5"}
+    ],
     "desc": "American academic",
     "wikipedia_title": "Donald W. Parry",
     "wikipedia_summary": "Donald W. Parry is an American academic who is a professor of Hebrew Bible in the Department of Asian and Near Eastern Languages at Brigham Young University. He holds the Abraham O. Smoot Professorship. He is the author and editor of works related to the Dead Sea Scrolls and the Hebrew Bible. He has been a member of the International Team of Translators of the Dead Sea Scrolls since January 1994. He served as a member of the Dead Sea Scrolls Foundation Board of Advisors, 2008–present and presently serves as a member of the Dead Sea Scrolls Foundation Board of Trustees. He is also a member of t",
@@ -2266,6 +2281,7 @@
     ],
     "ref_count": 414,
     "group": "restoration",
+    "christ_connection": "Joseph Smith’s role in the Restoration centers on Christ: the Book of Mormon’s witness of Jesus, priesthood keys that bind on earth and in heaven, and revelations that point to the Savior’s atonement and covenant path.",
     "desc": "Prophet of the Restoration; First Vision; received and translated the Book of Mormon",
     "wikipedia_title": "Joseph Smith",
     "wikipedia_summary": "Joseph Smith Jr. was an American religious and political leader and the founder of Mormonism and the Latter Day Saint movement. Publishing the Book of Mormon at the age of 24, Smith attracted tens of thousands of followers by the time of his death fourteen years later. The religious movement he founded is followed by millions of global adherents and several churches, the largest of which is the Church of Jesus Christ of Latter-day Saints.",
@@ -2417,6 +2433,11 @@
     ],
     "quote_count": 327,
     "talk_count": 90,
+    "christ_connection": "President Nelson’s ministry emphasized Jesus Christ as the center of the gospel, the temple as a covenant path to Christ, and gathering Israel as the Lord’s work of salvation.",
+    "scripture_refs": [
+      {"slug": "3_nephi_11", "verse": 10, "label": "3 Nephi 11:10"},
+      {"slug": "matthew_11", "verse": 28, "label": "Matthew 11:28"}
+    ],
     "desc": "LDS Church president (1924–2025)",
     "wikipedia_title": "Russell M. Nelson",
     "wikipedia_summary": "Russell Marion Nelson Sr. was an American religious leader and surgeon who was the seventeenth president of the Church of Jesus Christ of Latter-day Saints from 2018 until his death in 2025. Before becoming church president, Nelson was a member of its Quorum of the Twelve Apostles for nearly thirty-four years and was the quorum president from 2015 to 2018. As church president, Nelson was recognized by the church as the prophet, seer, and revelator.",

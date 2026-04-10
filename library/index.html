@@ -39,6 +39,11 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 #toc-btn:hover { background: rgba(0,0,0,0.06); color: var(--text); }
 #topbar .logo { font-weight: 600; font-size: 14px; letter-spacing: -0.04em;
     color: var(--accent); text-decoration: none; }
+a.home-nav-reader {
+    font-size: 12px; font-weight: 600; color: var(--accent); text-decoration: none;
+    padding: 6px 8px; border-radius: 8px; white-space: nowrap;
+}
+a.home-nav-reader:hover { background: rgba(0,0,0,0.06); color: var(--text); }
 #back-btn { background: none; border: none; cursor: pointer; padding: 6px; border-radius: 6px;
     color: var(--muted); display: none; align-items: center; flex-shrink: 0; }
 #back-btn.show { display: flex; }
@@ -854,6 +859,7 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
             <line x1="3" y1="5" x2="15" y2="5"/><line x1="3" y1="9" x2="15" y2="9"/><line x1="3" y1="13" x2="11" y2="13"/>
         </svg>
     </button>
+    <a id="home-nav-btn" class="home-nav-reader" href="#" title="WeScripture home">Home</a>
     <button id="back-btn" onclick="quickBack()" title="Go back">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="10 3 5 8 10 13"></polyline>
@@ -971,9 +977,17 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 // ── Site config (override to white-label) ────────────────────────────────
 var SITE = {
     name:       'The Good Project',
-    homeUrl:    '../index.html',
+    // Netlify (publish=library): reader is / or /index.html → home at ./home.html
+    // VPS/Caddy: reader under /library/ → repo-root home at ../index.html
+    homeUrl:    (function() {
+        var p = location.pathname || '';
+        if (p.indexOf('/library/') === 0) return '../index.html';
+        return './home.html';
+    })(),
     storageKey: 'lds',          // localStorage prefix
 };
+// Phase B VPS sync; see docs/API_SCOPE.md — null keeps Netlify/static-only (no /api calls).
+window.WESCRIPTURE_API = null;
 
 function safeGtag() {
     if (typeof window.gtag !== 'function') return;
@@ -984,6 +998,14 @@ function safeGtag() {
 (function() {
     var el = document.getElementById('site-home');
     if (el) { el.textContent = SITE.name; el.href = SITE.homeUrl; }
+    var hn = document.getElementById('home-nav-btn');
+    if (hn) {
+        hn.href = SITE.homeUrl;
+        hn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = SITE.homeUrl;
+        });
+    }
 })();
 
 // ── State ────────────────────────────────────────────────────────────────
@@ -1072,7 +1094,7 @@ function recordRecentScripture(chapterId, verseNum) {
     var chNum = cm ? parseInt(cm[1], 10) : null;
     if (!chNum) return;
     var label = meta.book + ' ' + chNum + (verseNum ? (':' + parseInt(verseNum, 10)) : '');
-    var href = './library/index.html?jump=' + encodeURIComponent(label);
+    var href = './index.html?jump=' + encodeURIComponent(label);
     var now = Date.now();
     recentState.items = (recentState.items || []).filter(function(it) { return it && it.href && it.href !== href; });
     recentState.items.unshift({ label: label, href: href, ts: now });

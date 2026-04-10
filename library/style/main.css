@@ -3,43 +3,19 @@
    Typography system
    ═══════════════════════════════════════════════════════════════════════════ */
 
-/* ── Font faces ─────────────────────────────────────────────────────────── */
-@font-face {
-    font-family: 'EBGaramond';
-    src: url('../fonts/EBGaramond-Regular.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'EBGaramond';
-    src: url('../fonts/EBGaramond-Italic.otf') format('opentype');
-    font-weight: normal;
-    font-style: italic;
-}
-@font-face {
-    font-family: 'CrimsonPro';
-    src: url('../fonts/CrimsonPro-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'CrimsonPro';
-    src: url('../fonts/CrimsonPro-Italic.ttf') format('truetype');
-    font-weight: normal;
-    font-style: italic;
-}
+/* EB Garamond: loaded in library/index.html via Google Fonts — do not bundle broken OTF here. */
 
 /* ── Base ────────────────────────────────────────────────────────────────── */
 /* .scripture wraps chapter content when embedded in the web reader.
    body rules apply when chapters are loaded as standalone pages (epub). */
 .scripture {
-    font-family: 'EBGaramond', Georgia, serif;
+    font-family: 'EB Garamond', Georgia, serif;
     font-size: 1.08em;
     line-height: 1.7;
     color: #1a1a1a;
 }
 body {
-    font-family: 'EBGaramond', Georgia, serif;
+    font-family: 'EB Garamond', Georgia, serif;
     font-size: 1.08em;
     line-height: 1.7;
     max-width: 780px;
@@ -51,7 +27,7 @@ body {
 
 /* ── Volume & book headers ───────────────────────────────────────────────── */
 h1.volume-title {
-    font-family: 'EBGaramond', Georgia, serif;
+    font-family: 'EB Garamond', Georgia, serif;
     font-size: 1.8em;
     font-weight: normal;
     text-align: center;
@@ -66,7 +42,7 @@ h1.volume-title {
 }
 
 h2.book-title {
-    font-family: 'EBGaramond', Georgia, serif;
+    font-family: 'EB Garamond', Georgia, serif;
     font-size: 1.5em;
     font-weight: normal;
     text-align: center;
@@ -78,7 +54,7 @@ h2.book-title {
 }
 
 h3.chapter-heading {
-    font-family: 'EBGaramond', Georgia, serif;
+    font-family: 'EB Garamond', Georgia, serif;
     font-size: 1.1em;
     font-weight: normal;
     font-style: italic;
@@ -141,7 +117,7 @@ div.verse.expanded span.verse-num::after {
 }
 
 span.verse-num {
-    font-family: 'EBGaramond', Georgia, serif;
+    font-family: 'EB Garamond', Georgia, serif;
     font-size: 1.5em;
     color: #8b7355;
     font-weight: bold;
@@ -152,14 +128,14 @@ span.verse-num {
 }
 
 span.verse-text {
-    font-family: 'EBGaramond', Georgia, serif;
+    font-family: 'EB Garamond', Georgia, serif;
     font-size: 1em;
     color: #1a1a1a;
 }
 
 /* ── Chapter numbers ─────────────────────────────────────────────────────── */
 p.chapter-num {
-    font-family: 'EBGaramond', Georgia, serif;
+    font-family: 'EB Garamond', Georgia, serif;
     font-size: 3.5em;
     font-weight: normal;
     line-height: 1;
@@ -174,7 +150,7 @@ div.jst-block {
     padding: 0.55em 0.85em;
     background-color: #f0ede8;
     border-left: 3px solid #a08060;
-    font-family: 'EBGaramond', Georgia, serif;
+    font-family: 'EB Garamond', Georgia, serif;
     font-size: 0.93em;
     color: #3d2b1f;
     font-style: italic;
@@ -209,7 +185,7 @@ div.etymology-block {
     padding: 0.5em 0.8em;
     background-color: #faf6ef;
     border-left: 3px solid #c8a96e;
-    font-family: 'CrimsonPro', 'Palatino Linotype', serif;
+    font-family: 'EB Garamond', 'Palatino Linotype', serif;
     font-size: 0.82em;
     color: #4a3520;
 }
@@ -265,7 +241,7 @@ div.rabbinical-block {
     padding: 0.5em 0.8em;
     background-color: #f5f0e8;
     border-left: 4px solid #7a9a6a;
-    font-family: 'CrimsonPro', 'Palatino Linotype', serif;
+    font-family: 'EB Garamond', 'Palatino Linotype', serif;
     font-size: 0.88em;
     color: #2a3520;
 }
@@ -299,7 +275,7 @@ div.lds-commentary-block {
     padding: 0.5em 0.8em;
     background-color: #eef2f7;
     border-left: 4px solid #4a6a9a;
-    font-family: 'CrimsonPro', 'Palatino Linotype', serif;
+    font-family: 'EB Garamond', 'Palatino Linotype', serif;
     font-size: 0.88em;
     color: #1a2535;
 }
@@ -337,7 +313,7 @@ div.jsp-block {
     padding: 0.5em 0.8em;
     background-color: #f7f0f5;
     border-left: 4px solid #8a5a8a;
-    font-family: 'CrimsonPro', 'Palatino Linotype', serif;
+    font-family: 'EB Garamond', 'Palatino Linotype', serif;
     font-size: 0.88em;
     color: #2a1525;
 }
@@ -357,7 +333,7 @@ div.fathers-block {
     padding: 0.5em 0.8em;
     background-color: #f0eaf5;
     border-left: 4px solid #7a5a9a;
-    font-family: 'CrimsonPro', 'Palatino Linotype', serif;
+    font-family: 'EB Garamond', 'Palatino Linotype', serif;
     font-size: 0.88em;
     color: #1a0a2a;
 }
@@ -384,7 +360,7 @@ div.ancient-block {
     padding: 0.5em 0.8em;
     background-color: #f5ede0;
     border-left: 4px solid #b87333;
-    font-family: 'CrimsonPro', 'Palatino Linotype', serif;
+    font-family: 'EB Garamond', 'Palatino Linotype', serif;
     font-size: 0.88em;
     color: #2a1800;
 }
@@ -427,7 +403,7 @@ div.semantic-block {
     padding: 0.5em 0.8em;
     background-color: #eef5ee;
     border-left: 3px solid #5a8a5a;
-    font-family: 'CrimsonPro', 'Palatino Linotype', serif;
+    font-family: 'EB Garamond', 'Palatino Linotype', serif;
     font-size: 0.88em;
     color: #1a2a1a;
 }
@@ -448,7 +424,7 @@ div.semantic-quote {
     background: #f7f4ef;
     border-left: 3px solid rgba(90, 138, 90, 0.35);
     border-radius: 0 3px 3px 0;
-    font-family: 'CrimsonPro', 'Palatino Linotype', serif;
+    font-family: 'EB Garamond', 'Palatino Linotype', serif;
     font-size: 0.93em;
 }
 

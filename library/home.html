@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeScripture</title>
+    <meta name="description" content="Fast routing into scripture: jump to a reference, continue reading, or browse the canon.">
+    <meta property="og:title" content="WeScripture">
+    <meta property="og:description" content="Fast routing into scripture: jump to a reference, continue reading, or browse the canon.">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PCMWDK746H"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-PCMWDK746H');
+    </script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./home.css">
+</head>
+<body>
+<header class="home-header">
+    <a class="home-brand" href="./home.html" aria-label="WeScripture home">
+        <span class="home-brand-name">WeScripture</span>
+    </a>
+    <nav class="home-nav" aria-label="Primary">
+        <a class="home-nav-link" href="./index.html">Read</a>
+        <a class="home-nav-link" href="./source-dashboard.html">Sources</a>
+    </nav>
+</header>
+
+<main class="home">
+    <section class="home-jump" aria-label="Jump">
+        <form id="jump-form" class="jump-form" autocomplete="off">
+            <label class="jump-label" for="jump-input">Go to scripture, topic, person, or verse</label>
+            <div class="jump-row">
+                <input id="jump-input" class="jump-input" type="search" inputmode="search" spellcheck="false" placeholder="e.g. John 3:16, Genesis 4, Alma 32, faith" aria-describedby="jump-help">
+                <button class="jump-go" type="submit">Go</button>
+            </div>
+            <div id="jump-help" class="jump-help">Enter a reference for a direct jump, or a word/phrase to search.</div>
+        </form>
+    </section>
+
+    <section id="continue" class="home-continue" hidden aria-label="Continue reading">
+        <div class="home-section-hdr">
+            <div class="home-section-title">Continue reading</div>
+        </div>
+        <div id="continue-row" class="chip-row"></div>
+    </section>
+
+    <section class="home-grid" aria-label="Scripture collections">
+        <div class="home-section-hdr">
+            <div class="home-section-title">Scriptures</div>
+        </div>
+        <div class="dest-grid">
+            <a class="dest-card" href="./index.html?open=scriptures" data-evt="home_open_scriptures">
+                <div class="dest-title">All scripture</div>
+                <div class="dest-meta">Browse the canon</div>
+            </a>
+            <a class="dest-card" href="./index.html?jump=Genesis%201" data-evt="home_open_ot">
+                <div class="dest-title">Old Testament</div>
+                <div class="dest-meta">Start at Genesis</div>
+            </a>
+            <a class="dest-card" href="./index.html?jump=Matthew%201" data-evt="home_open_nt">
+                <div class="dest-title">New Testament</div>
+                <div class="dest-meta">Start at Matthew</div>
+            </a>
+            <a class="dest-card" href="./index.html?jump=1%20Nephi%201" data-evt="home_open_bom">
+                <div class="dest-title">Book of Mormon</div>
+                <div class="dest-meta">Start at 1 Nephi</div>
+            </a>
+            <a class="dest-card" href="./index.html?jump=Doctrine%20and%20Covenants%201" data-evt="home_open_dc">
+                <div class="dest-title">Doctrine and Covenants</div>
+                <div class="dest-meta">Start at Section 1</div>
+            </a>
+            <a class="dest-card" href="./index.html?jump=Moses%201" data-evt="home_open_pgp">
+                <div class="dest-title">Pearl of Great Price</div>
+                <div class="dest-meta">Start at Moses 1</div>
+            </a>
+        </div>
+    </section>
+
+    <section class="home-tools" aria-label="Study tools">
+        <div class="home-section-hdr">
+            <div class="home-section-title">Study tools</div>
+        </div>
+        <div class="tool-row">
+            <a class="tool-card" href="./index.html?q=faith" data-evt="home_tool_search">
+                <div class="tool-title">Search</div>
+                <div class="tool-meta">Topics, people, keywords</div>
+            </a>
+            <a class="tool-card" href="./index.html?open=general_conference" data-evt="home_tool_gc">
+                <div class="tool-title">General Conference</div>
+                <div class="tool-meta">Open sources</div>
+            </a>
+            <a class="tool-card" href="./source-dashboard.html" data-evt="home_tool_sources">
+                <div class="tool-title">Source dashboard</div>
+                <div class="tool-meta">Browse study sources</div>
+            </a>
+        </div>
+    </section>
+</main>
+
+<script>
+(function() {
+    var STORAGE_KEY = 'lds';
+
+    function safeGtag() {
+        if (typeof window.gtag !== 'function') return;
+        try { window.gtag.apply(null, arguments); } catch (e) {}
+    }
+
+    function escapeHtml(str) {
+        return String(str || '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
+
+    function readJson(key, fallback) {
+        try {
+            var raw = localStorage.getItem(key);
+            if (!raw) return fallback;
+            return JSON.parse(raw);
+        } catch (e) {
+            return fallback;
+        }
+    }
+
+    function pushUrl(u, evtName, evtData) {
+        safeGtag('event', evtName, Object.assign({ page: 'home' }, evtData || {}));
+        window.location.href = u;
+    }
+
+    function renderContinueReading() {
+        var cont = document.getElementById('continue');
+        var row = document.getElementById('continue-row');
+        if (!cont || !row) return;
+
+        var pos = null;
+        try { pos = localStorage.getItem(STORAGE_KEY + '_position'); } catch (e) {}
+        var recents = readJson(STORAGE_KEY + '_recent_v1', { version: 1, items: [] });
+        var items = [];
+
+        if (pos) items.push({ kind: 'position', label: 'Resume', href: './index.html?jump=' + encodeURIComponent(pos.replace(/_/g, ' ')) });
+        (recents.items || []).slice(0, 3).forEach(function(it) {
+            if (!it || !it.href || !it.label) return;
+            if (items.some(function(x) { return x.href === it.href; })) return;
+            items.push(it);
+        });
+
+        if (!items.length) {
+            cont.hidden = true;
+            return;
+        }
+
+        row.innerHTML = items.slice(0, 3).map(function(it) {
+            return '<a class="chip" href="' + escapeHtml(it.href) + '" data-evt="home_continue">' + escapeHtml(it.label) + '</a>';
+        }).join('');
+        cont.hidden = false;
+
+        row.addEventListener('click', function(e) {
+            var a = e.target.closest('a.chip');
+            if (!a) return;
+            e.preventDefault();
+            pushUrl(a.getAttribute('href'), 'home_continue_reading', { target: a.textContent.trim().slice(0, 80) });
+        });
+    }
+
+    function looksLikeDirectJump(q) {
+        var s = String(q || '').trim();
+        if (!s) return false;
+        return /(\d+:\d+)|\b\d+\b/.test(s);
+    }
+
+    function onSubmitJump(e) {
+        e.preventDefault();
+        var input = document.getElementById('jump-input');
+        if (!input) return;
+        var q = String(input.value || '').trim();
+        if (!q) return;
+
+        var isJump = looksLikeDirectJump(q);
+        if (isJump) {
+            pushUrl('./index.html?jump=' + encodeURIComponent(q), 'home_jump_submit', { kind: 'jump' });
+        } else {
+            pushUrl('./index.html?q=' + encodeURIComponent(q), 'home_jump_submit', { kind: 'search' });
+        }
+    }
+
+    function wireEvents() {
+        var form = document.getElementById('jump-form');
+        if (form) form.addEventListener('submit', onSubmitJump);
+
+        document.addEventListener('click', function(e) {
+            var a = e.target.closest('a[data-evt]');
+            if (!a) return;
+            safeGtag('event', a.dataset.evt, { page: 'home' });
+        });
+    }
+
+    renderContinueReading();
+    wireEvents();
+})();
+</script>
+
+</body>
+</html>
