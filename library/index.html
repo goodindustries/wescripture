@@ -2305,10 +2305,9 @@ function openVerseDiscovery(ref) {
         sFiltered.forEach(function(entry) {
             var sn     = entry.sn || '';
             var plain  = sn && strongsPlain[sn];
-            var def    = plain || strongsCleanDef(entry.gl, entry.kj);
+            var def    = plain || strongsReaderDef(entry);
             var root   = plain ? '' : strongsRoot(entry.dv || '');
-            var gloss  = (entry.gl || '').match(/^([^(,]+)/);
-            var engLabel = gloss ? gloss[1].trim() : (entry.xl || '');
+            var engLabel = strongsHeadwordEnglish(entry);
             var defShow = stripOriginalLanguageNotes(def + (root ? ' (from ' + root + ')' : ''));
             html += '<div class="word-card">'
                 + '<div class="word-english">' + escapeHtml(engLabel || sn) + '</div>'
@@ -3689,9 +3688,81 @@ function strongsCleanDef(gl, kj) {
 }
 
 function strongsRoot(dv) {
-    // "from G3004 (λέγω);" → "λέγω"
-    var m = dv && dv.match(/\(([^\u0000-\u007F][^)]*)\)/);
-    return m ? m[1] : '';
+    if (!dv) return '';
+    // Lemma after "G1234 (…)" — skip G3588 (article ὁ) so we don't show "from ὁ"
+    var m = dv.match(/G(?!3588)(\d{3,})\s*\(([^\u0000-\u007F][^)]*)\)/);
+    if (m) return m[2];
+    m = dv.match(/\(([^\u0000-\u007F][^)]*)\)/);
+    var r = m ? m[1] : '';
+    return r === 'ὁ' ? '' : r;
+}
+
+/** KJV gloss headword for Key Words / study (skip Strong's "X" cross-ref lines). */
+function strongsHeadwordEnglish(entry) {
+    var kj = (entry && entry.kj) || '';
+    if (kj) {
+        var parts = kj.split(',');
+        for (var i = 0; i < parts.length; i++) {
+            var p = parts[i].trim();
+            if (!p || /^X\s/i.test(p)) continue;
+            var w = p.replace(/\([^)]*\)/g, '').trim();
+            if (w) return w.split(/\s+/)[0];
+        }
+    }
+    var gl = (entry && entry.gl) || '';
+    var gloss = gl.match(/^([^(,;]+)/);
+    if (gloss && gloss[1]) {
+        var t = gloss[1].trim();
+        if (t && !/^figuratively/i.test(t)) return t;
+    }
+    return ((entry && (entry.lm || entry.xl)) || (entry && entry.sn) || '').trim();
+}
+
+/** Strip Strong's parenthetical G-number refs from a definition clause. */
+function strongsStripGRefs(s) {
+    if (!s) return '';
+    var out = s;
+    var prev;
+    do {
+        prev = out;
+        out = out.replace(/\([^)]*G\d{3,}[^)]*\)/g, '');
+    } while (out !== prev);
+    return out.replace(/\s+/g, ' ').trim();
+}
+
+/** Prefer plain-English sense: skip "figuratively…" gloss lead-ins; fall back to dv. */
+function strongsReaderDef(entry) {
+    if (!entry) return '';
+    var sn = entry.sn || '';
+    if (sn && strongsPlain[sn]) return strongsPlain[sn];
+    var gl = entry.gl || '';
+    var kj = entry.kj || '';
+    var dv = entry.dv || '';
+
+    if (gl) {
+        var cleaned = gl.replace(/\([^)]*[A-Z]\d{3,}[^)]*\)/g, '').trim();
+        var clauses = cleaned.split(';').map(function(s) { return s.trim(); }).filter(Boolean);
+        for (var i = 0; i < clauses.length; i++) {
+            var c = clauses[i];
+            if (/^figuratively/i.test(c)) continue;
+            if (/^by Hebraism/i.test(c)) continue;
+            if (c.length > 8) return c;
+        }
+    }
+    if (dv) {
+        var dcs = dv.split(';').map(function(s) { return s.trim(); }).filter(Boolean);
+        for (var j = 0; j < dcs.length; j++) {
+            var d = strongsStripGRefs(dcs[j]);
+            if (/^of uncertain affinity$/i.test(d)) continue;
+            if (/^from /i.test(d) && d.length < 52) continue;
+            if (d.length > 12) return d;
+        }
+        for (var j2 = 0; j2 < dcs.length; j2++) {
+            var d2 = strongsStripGRefs(dcs[j2]);
+            if (d2.length > 10) return d2;
+        }
+    }
+    return strongsCleanDef(gl, kj);
 }
 
 function renderWordStudy(wordText, entries) {
@@ -3707,7 +3778,7 @@ function renderWordStudy(wordText, entries) {
         '<div class="ch-study-title">Original Language</div>' +
         entries.map(function(entry) {
             var script = entry.lm || entry.xl || '';  // Greek/Hebrew character
-            var def    = strongsCleanDef(entry.gl, entry.kj);
+            var def    = strongsReaderDef(entry);
             var root   = strongsRoot(entry.dv || '');
             var sn     = entry.sn || '';
 
