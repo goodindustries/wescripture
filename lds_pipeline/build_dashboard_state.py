@@ -20,13 +20,13 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO / "lds_pipeline"))
 LIB = REPO / "library"
 VC = LIB / "verse_coverage.json"
 OUT = LIB / "dashboard_state.json"
 LEDGER = REPO / "task-ledger.jsonl"
 HB = LIB / "agent_heartbeat.json"
 
-sys.path.insert(0, str(REPO / "lds_pipeline"))
 from task_ledger import _load_events, _project  # noqa: E402
 
 

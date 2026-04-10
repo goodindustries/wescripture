@@ -107,7 +107,7 @@ agents are named `Worker000`…`Worker015`. Set `TASK_WORKER_BACKEND=hybrid` for
 **Drain the queue:** `./lds_pipeline/run_task_drain.sh [wave-size]` runs wave after wave until
 `pending-count` is zero (does not run scout — refill with `task_scout` or `autonomous_runner` first).
 `python3 lds_pipeline/task_ledger.py pending-count` prints pending tasks only.
-**Terminal progress:** `python3 lds_pipeline/watch_progress.py` refreshes every 5s (pass seconds as first arg; `0` = snapshot once). Shows **deployed test URLs** (override base with `WESCRIPTURE_SITE_URL`). `tail -f diagnostics/orchestrate.log` lists pending/claimed tasks with the same UI hints after each pull/wave.
+**Activity feed (local, pipe-friendly):** `python3 lds_pipeline/track_feed.py --follow` streams merged ledger + orchestrator + worker lines to stdout and appends **`diagnostics/track.feed.txt`** — use **`tail -f diagnostics/track.feed.txt`** in another terminal. Not deployed. Optional: `watch_progress.py` (full-screen refresh) or `tail -f diagnostics/orchestrate.log` (verbose orchestrator only).
 
 **Verse done-ness dashboard:** `python3 lds_pipeline/build_verse_coverage.py` writes
 `library/verse_coverage.json` (Donaldson + entity markup + verse discovery per verse).
