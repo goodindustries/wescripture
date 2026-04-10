@@ -378,3 +378,8 @@ Reopened T-0072.
   [ledger] pushed to origin
   pushed to origin
 [Worker001] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:22:42Z start Worker001 ===
+[Worker001] checking for pending tasks…
+[Worker001] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+[Worker001] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0072.

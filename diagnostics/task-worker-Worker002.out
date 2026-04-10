@@ -358,3 +358,32 @@ Enriching places (/Users/reify/Classified/wescripture/library/entities/places.js
   places: 0 enriched, 122 skipped
 
 Total enriched: 0
+[main ba8db211] [task] T-0073: build_entity_wikipedia --places (exit 0)
+ Committer: Reif Tauati <reify@Reifs-MacBook-Pro.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 22 files changed, 3943 insertions(+)
+ create mode 100644 diagnostics/task-worker-Worker003.log
+ create mode 100644 diagnostics/task-worker-Worker005.log
+Completed T-0073.
+  [ledger] pushed to origin
+  pushed to origin
+=== 2026-04-10T00:22:42Z start Worker002 ===
+[Worker002] checking for pending tasks…
+[Worker002] claimed T-0074: Ch esther_1: add entity span annotations (data-entity / place / thing)
+[Worker002] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+  [dispatch] /Library/Developer/CommandLineTools/usr/bin/python3 /Users/reify/Classified/wescripture/lds_pipeline/annotate_entity_spans.py --books esther
+Loading entity indexes…
+  134 scripture-person variants, 81 place variants, 207 thing variants
+Annotating 3 chapters…
+
+Done. 1 chapters changed, 40 verses scanned, 1 entity spans added.

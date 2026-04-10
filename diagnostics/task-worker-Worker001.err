@@ -412,3 +412,4 @@ remove the file manually to continue.
 To https://github.com/reif-is-a-foofie/wescripture.git
    3863d03a..fe635d69  main -> main
 Everything up-to-date
+  [ledger] push failed: Command '['git', 'commit', '-m', 'ledger: task_reopened T-0072']' returned non-zero exit status 1.
