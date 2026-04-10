@@ -4341,3 +4341,4 @@
 {"event": "task_reopened", "task_id": "T-0113", "ts": "2026-04-10T02:54:00+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
 {"event": "task_reopened", "task_id": "T-0113", "ts": "2026-04-10T02:54:00+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
 {"event": "task_reopened", "task_id": "T-0113", "ts": "2026-04-10T02:54:00+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
+{"event": "task_completed", "task_id": "T-0112", "agent": "Worker003", "ts": "2026-04-10T02:54:01+00:00", "commit": "c2a6e0c3", "notes": "dispatch: matthew_2_notes.html already present"}
