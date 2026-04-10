@@ -56,41 +56,42 @@ def main() -> None:
     interval = float(argv[0]) if argv else 5.0
 
     def frame() -> None:
+        if not once:
             if os.name != "nt":
                 os.system("clear")
             else:
                 os.system("cls")
-            now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
-            tasks = _project(_load_events())
-            c = Counter(t.get("status") for t in tasks.values())
-            pend = c.get("pending", 0)
-            claim = c.get("claimed", 0)
-            done = c.get("completed", 0)
+        now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+        tasks = _project(_load_events())
+        c = Counter(t.get("status") for t in tasks.values())
+        pend = c.get("pending", 0)
+        claim = c.get("claimed", 0)
+        done = c.get("completed", 0)
 
-            print(f"  WeScripture · {now}")
-            print("=" * 56)
-            print(f"  Ledger:  pending {pend}  |  claimed {claim}  |  completed {done}")
-            print()
-            print("  Processes (0 = nothing matching — start orchestrate or track_feed):")
-            any_on = False
-            for p in PATTERNS:
-                n = pgrep_count(p)
-                if n:
-                    any_on = True
-                print(f"    {p:28} {n}")
-            print(f"    {'ANY agent activity':28} {'yes' if any_on else 'NO — start a runner'}")
-            print()
-            print(f"  Last lines ({FEED.name}):")
-            if FEED.is_file():
-                lines = FEED.read_text(encoding="utf-8", errors="replace").splitlines()
-                for line in lines[-18:]:
-                    print(f"    {line[:118]}")
-            else:
-                print("    (file missing — run: python3 lds_pipeline/track_feed.py --follow)")
-            print()
-            print("=" * 56)
-            if not once:
-                print(f"  Refreshing every {interval:g}s  ·  Ctrl+C to stop")
+        print(f"  WeScripture · {now}")
+        print("=" * 56)
+        print(f"  Ledger:  pending {pend}  |  claimed {claim}  |  completed {done}")
+        print()
+        print("  Processes (0 = nothing matching — start orchestrate or track_feed):")
+        any_on = False
+        for p in PATTERNS:
+            n = pgrep_count(p)
+            if n:
+                any_on = True
+            print(f"    {p:28} {n}")
+        print(f"    {'ANY agent activity':28} {'yes' if any_on else 'NO — start a runner'}")
+        print()
+        print(f"  Last lines ({FEED.name}):")
+        if FEED.is_file():
+            lines = FEED.read_text(encoding="utf-8", errors="replace").splitlines()
+            for line in lines[-18:]:
+                print(f"    {line[:118]}")
+        else:
+            print("    (file missing — run: python3 lds_pipeline/track_feed.py --follow)")
+        print()
+        print("=" * 56)
+        if not once:
+            print(f"  Refreshing every {interval:g}s  ·  Ctrl+C to stop")
 
     if once:
         frame()
