@@ -757,3 +757,65 @@ Reopened T-0092.
 [Worker001] T-0092 no dispatch rule — reopened.
 === 2026-04-10T02:07:48Z start Worker001 ===
 [Worker001] checking for pending tasks…
+[Worker001] claimed T-0092: Donaldson — song_of_solomon: add commentary JSON for 7 missing chapter(s)
+[Worker001] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0092.
+  pushed to origin
+[Worker001] T-0092 no dispatch rule — reopened.
+=== 2026-04-10T02:10:19Z start Worker001 ===
+[Worker001] checking for pending tasks…
+[Worker001] claimed T-0092: Donaldson — song_of_solomon: add commentary JSON for 7 missing chapter(s)
+[Worker001] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0092.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker001] T-0092 no dispatch rule — reopened.
+=== 2026-04-10T02:10:50Z start Worker001 ===
+[Worker001] checking for pending tasks…
+[Worker001] claimed T-0092: Donaldson — song_of_solomon: add commentary JSON for 7 missing chapter(s)
+[Worker001] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0092.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker001] T-0092 no dispatch rule — reopened.
+=== 2026-04-10T02:11:22Z start Worker001 ===
+[Worker001] checking for pending tasks…
+[Worker001] claimed T-0092: Donaldson — song_of_solomon: add commentary JSON for 7 missing chapter(s)
+[Worker001] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0092.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker001] T-0092 no dispatch rule — reopened.
+=== 2026-04-10T02:11:53Z start Worker001 ===
+[Worker001] checking for pending tasks…
+[Worker001] claimed T-0092: Donaldson — song_of_solomon: add commentary JSON for 7 missing chapter(s)
+[Worker001] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0092.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker001] T-0092 no dispatch rule — reopened.
+=== 2026-04-10T02:12:24Z start Worker001 ===
+[Worker001] checking for pending tasks…
+[Worker001] claimed T-0092: Donaldson — song_of_solomon: add commentary JSON for 7 missing chapter(s)
+[Worker001] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0092.
+  [ledger] pushed to origin
+  pushed to origin
+[Worker001] T-0092 no dispatch rule — reopened.
+=== 2026-04-10T02:12:54Z start Worker001 ===
+[Worker001] checking for pending tasks…
+[Worker001] claimed T-0092: Donaldson — song_of_solomon: add commentary JSON for 7 missing chapter(s)
+[Worker001] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0092.
+  pushed to origin
+[Worker001] T-0092 no dispatch rule — reopened.
+=== 2026-04-10T02:13:25Z start Worker001 ===
+[Worker001] checking for pending tasks…
+[Worker001] claimed T-0095: Ch mark_4: add or repair _notes.html (commentary / semantic panel)
+[Worker001] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0095.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker001] T-0095 no dispatch rule — reopened.
+=== 2026-04-10T02:13:56Z start Worker001 ===
+[Worker001] checking for pending tasks…
+[Worker001] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker001] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker001] T-0096 no dispatch rule — reopened.
