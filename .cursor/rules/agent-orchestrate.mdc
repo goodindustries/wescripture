@@ -1,0 +1,14 @@
+---
+description: Execute agent orchestrator — do not only suggest shell commands
+alwaysApply: true
+---
+
+# Agent orchestration (WeScripture)
+
+When the user wants **agents running**, **workers**, **the task queue**, **ledger work**, **scout**, **parallel execution**, **orchestration**, or **draining tasks**:
+
+1. **Run it in the terminal yourself** from repo root: `python3 lds_pipeline/orchestrate.py` (adjust `--backend`, `--wave-size`, `--no-scout`, `--once`, `--max-waves` as needed). Do not only paste commands for the user to run.
+2. For **long-running / always-on** execution: `nohup python3 lds_pipeline/orchestrate.py >> diagnostics/orchestrate-run.out 2>&1 &` or `./lds_pipeline/run_orchestrate_forever.sh` (sleeps between cycles when the queue is empty).
+3. `./lds_pipeline/launch_agents.sh` defaults to **orchestrate.py**; `--legacy` uses `autonomous_runner.py`.
+
+After editing **orchestrator, task_worker, task_dispatch, or task_scout** code, run a quick check when safe: `python3 lds_pipeline/orchestrate.py --once --no-scout`.

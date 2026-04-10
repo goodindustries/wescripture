@@ -97,6 +97,8 @@ are the baseline so the queue does not depend on repeated manual prompting.
 (pull → `task_scout` when pending is low → parallel worker waves until the queue drains).
 Use `./lds_pipeline/launch_agents.sh --legacy` for the old single-worker **`autonomous_runner.py`** loop.
 CLI: `python3 lds_pipeline/orchestrate.py` (`--backend`, `--wave-size`, `--max-waves`, `--no-scout`, `--once`).
+**Always-on loop:** `./lds_pipeline/run_orchestrate_forever.sh` (re-runs orchestrate after each drain; `ORCHESTRATE_LOOP_SLEEP` between cycles, default 120s).
+Cursor agents are instructed to **execute** orchestrate when you ask for workers — not only suggest commands (see `.cursor/rules/agent-orchestrate.mdc`).
 **Parallel throughput (manual wave):** `./lds_pipeline/run_parallel_task_workers.sh`
 starts one worker per slot (default count ≈ `2×CPU`, capped by `MAX_PARALLEL_WORKERS`, default 16);
 agents are named `Worker000`…`Worker015`. Set `TASK_WORKER_BACKEND=hybrid` for dispatch-first.
