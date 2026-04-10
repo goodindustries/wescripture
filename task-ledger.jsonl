@@ -259,3 +259,7 @@
 {"ts": "2026-04-10T00:03:10+00:00", "event": "task_queued", "task_id": "T-0108", "title": "Donaldson — 1_samuel: add commentary JSON for 2 missing chapter(s)", "notes": "MISSION: Donaldson notes feed verse-level insight. Missing chapter ids: 1_samuel_30, 1_samuel_5. Output: library/donaldson/{slug}.json aligned with existing schema in sibling files."}
 {"ts": "2026-04-10T00:03:10+00:00", "event": "task_queued", "task_id": "T-0109", "title": "Registry Wikipedia — people.json batch 7/40 (40 entries)", "notes": "python3 lds_pipeline/build_entity_wikipedia.py --people --limit 40"}
 {"ts": "2026-04-10T00:03:10+00:00", "event": "task_queued", "task_id": "T-0110", "title": "Ch job_14: add entity span annotations (data-entity / place / thing)", "notes": "MISSION: discovery panel chips for people/places/things. Run from repo root: python3 lds_pipeline/annotate_entity_spans.py (scope this chapter: --books pattern matching job_14). Match rules in annotate_entity_spans.py / AGENT_GUIDELINES.md §4."}
+{"event": "task_claimed", "task_id": "T-0066", "agent": "Worker001", "ts": "2026-04-10T00:03:14+00:00"}
+{"event": "task_claimed", "task_id": "T-0066", "agent": "Worker003", "ts": "2026-04-10T00:03:14+00:00"}
+{"event": "task_claimed", "task_id": "T-0066", "agent": "Worker002", "ts": "2026-04-10T00:03:14+00:00"}
+{"event": "task_claimed", "task_id": "T-0066", "agent": "Worker000", "ts": "2026-04-10T00:03:14+00:00"}
