@@ -28,11 +28,21 @@ def load_index(name: str) -> dict:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--strict", action="store_true", help="Require christ_connection + scripture refs")
+    ap.add_argument("--strict", action="store_true", help="Strict mode (defaults to people only)")
+    ap.add_argument("--strict-places", action="store_true", help="Strict for places too")
+    ap.add_argument("--strict-things", action="store_true", help="Strict for things too")
+    ap.add_argument("--strict-topics", action="store_true", help="Strict for topics too")
+    ap.add_argument("--only", type=str, default="", help="Validate only ids containing this substring (optional)")
     args = ap.parse_args()
 
     err = 0
     warned = 0
+    indexed_ids = {
+        "people.json": set(load_index("people_index.json").values()),
+        "places.json": set(load_index("places_index.json").values()),
+        "things.json": set(load_index("things_index.json").values()),
+        "topics.json": set(),  # no index gate by default
+    }
     for fname, prefix in FILES:
         path = ENT / fname
         if not path.is_file():
@@ -49,6 +59,8 @@ def main() -> None:
                 err += 1
                 continue
             eid = row.get("id", "")
+            if args.only and (not isinstance(eid, str) or args.only not in eid):
+                continue
             if not eid or not isinstance(eid, str):
                 print(f"ERROR {fname}[{i}]: missing id", file=sys.stderr)
                 err += 1
@@ -59,7 +71,16 @@ def main() -> None:
                 print(f"ERROR {fname} id={eid}: missing name", file=sys.stderr)
                 err += 1
             refs = row.get("scripture_refs") or row.get("related_scriptures")
-            if args.strict:
+            strict_here = bool(args.strict)
+            if fname == "places.json" and not args.strict_places:
+                strict_here = False
+            if fname == "things.json" and not args.strict_things:
+                strict_here = False
+            if fname == "topics.json" and not args.strict_topics:
+                strict_here = False
+            if strict_here and indexed_ids.get(fname):
+                strict_here = eid in indexed_ids[fname]
+            if strict_here:
                 if not row.get("christ_connection"):
                     print(f"STRICT {fname} id={eid}: missing christ_connection", file=sys.stderr)
                     err += 1

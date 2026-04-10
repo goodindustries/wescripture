@@ -90,6 +90,7 @@ def load_source_catalog() -> tuple[dict, dict]:
                     'label': item['label'],
                     'href': item['href'],
                     'collection': collection.get('id', ''),
+                    'meta': item.get('meta', ''),
                 }
                 docs[item['id']] = meta
                 labels[item['label']].append(meta)
@@ -124,7 +125,7 @@ def load_source_paragraphs(doc_id: str) -> list[str]:
 
     html_text = path.read_text(encoding='utf-8', errors='replace')
     paragraphs = []
-    for raw in re.findall(r'<p class="source-para">(.*?)</p>', html_text, re.S):
+    for raw in re.findall(r'<p[^>]*class="[^"]*source-para[^"]*"[^>]*>(.*?)</p>', html_text, re.S | re.I):
         text = re.sub(r'<[^>]+>', ' ', raw)
         text = re.sub(r'\s+', ' ', html.unescape(text)).strip()
         paragraphs.append(text)
@@ -153,12 +154,27 @@ def resolve_source_doc_id(src: str, label: str) -> Optional[str]:
                 return candidate
 
     if src == 'general_conference':
+        # Common graph label form: "GC 1971/04 — Bishop John H. Vandenberg"
+        m = re.match(r"GC\s+(\d{4})/(\d{2})\s*[—\-]\s*(.+)$", (label or "").strip())
+        if m:
+            year = m.group(1)
+            mo = m.group(2)
+            speaker = m.group(3).strip().lower()
+            # Match against source catalog metadata: speaker + session label
+            session_label = f"{'April' if mo == '04' else 'October'} {year}"
+            for meta in docs.values():
+                if meta.get("collection") != "general_conference":
+                    continue
+                meta_str = (meta.get("meta") or "").lower()
+                if session_label.lower() in meta_str and speaker and speaker in meta_str:
+                    return meta.get("id")
+        # Fallbacks
         for candidate in exact:
-            if candidate['collection'] == 'general_conference':
-                return candidate['id']
+            if candidate.get('collection') == 'general_conference':
+                return candidate.get('id')
         for meta in docs.values():
-            if meta['collection'] == 'general_conference' and meta['label'] == label:
-                return meta['id']
+            if meta.get('collection') == 'general_conference' and meta.get('label') == label:
+                return meta.get('id')
 
     return None
 

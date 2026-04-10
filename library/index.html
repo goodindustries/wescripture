@@ -975,6 +975,11 @@ var SITE = {
     storageKey: 'lds',          // localStorage prefix
 };
 
+function safeGtag() {
+    if (typeof window.gtag !== 'function') return;
+    try { window.gtag.apply(null, arguments); } catch (e) {}
+}
+
 // Apply site config to DOM
 (function() {
     var el = document.getElementById('site-home');
@@ -1044,6 +1049,35 @@ function persistStudyState() {
     try {
         localStorage.setItem(SITE.storageKey + '_study_v1', JSON.stringify(studyState));
     } catch (e) {}
+}
+
+// Recent destinations (MRU) for home routing surface
+var recentState = (function() {
+    try {
+        var raw = localStorage.getItem(SITE.storageKey + '_recent_v1');
+        if (raw) return JSON.parse(raw);
+    } catch (e) {}
+    return { version: 1, items: [] };
+})();
+function persistRecentState() {
+    try {
+        localStorage.setItem(SITE.storageKey + '_recent_v1', JSON.stringify(recentState));
+    } catch (e) {}
+}
+function recordRecentScripture(chapterId, verseNum) {
+    if (!chapterId) return;
+    var meta = chapterMeta[chapterId];
+    if (!meta || !meta.book) return;
+    var cm = String(chapterId).match(/_(\d+)$/);
+    var chNum = cm ? parseInt(cm[1], 10) : null;
+    if (!chNum) return;
+    var label = meta.book + ' ' + chNum + (verseNum ? (':' + parseInt(verseNum, 10)) : '');
+    var href = './library/index.html?jump=' + encodeURIComponent(label);
+    var now = Date.now();
+    recentState.items = (recentState.items || []).filter(function(it) { return it && it.href && it.href !== href; });
+    recentState.items.unshift({ label: label, href: href, ts: now });
+    recentState.items = recentState.items.slice(0, 24);
+    persistRecentState();
 }
 function parseVerseRefForStudy(ref) {
     if (!ref || typeof ref !== 'string') return null;

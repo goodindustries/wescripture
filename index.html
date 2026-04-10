@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Good Project — Venture Studio</title>
-    <meta name="description" content="The Good Project is a venture studio building, collaborating, and co-investing in durable enterprises.">
-    <meta property="og:title" content="The Good Project — Venture Studio">
-    <meta property="og:description" content="The Good Project is a venture studio building, collaborating, and co-investing in durable enterprises.">
+    <title>WeScripture</title>
+    <meta name="description" content="Fast routing into scripture: jump to a reference, continue reading, or browse the canon.">
+    <meta property="og:title" content="WeScripture">
+    <meta property="og:description" content="Fast routing into scripture: jump to a reference, continue reading, or browse the canon.">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PCMWDK746H"></script>
@@ -24,456 +24,195 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
-
-    <style>
-* { box-sizing: border-box; }
-
-:root {
-    --bg: #F5F2EC;
-    --bg2: #FDFAF5;
-    --bg3: #F1EBE1;
-    --text: #26221D;
-    --muted: #776B5D;
-    --divider: rgba(156, 122, 77, 0.16);
-    --divider-strong: rgba(156, 122, 77, 0.28);
-    --accent: #087074;
-    --accent-hover: #065A5D;
-}
-
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-}
-
-.container {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 80px 24px;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 24px 0 10px;
-    height: 120px;
-    min-height: 120px;
-    width: 100%;
-    border-bottom: 1px solid var(--divider);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
-    background: var(--bg2);
-    box-shadow: 0 2px 20px rgba(38,34,29,0.04);
-    overflow: visible;
-}
-
-nav .logo-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    min-height: 0;
-    flex-shrink: 0;
-}
-
-nav .logo {
-    display: block;
-    height: 100%;
-    width: auto;
-    max-height: none;
-    object-fit: contain;
-    object-position: left center;
-    margin: 0;
-    padding: 0;
-}
-
-nav .nav-links {
-    display: flex;
-    align-items: center;
-    padding: 0 24px;
-}
-
-nav .nav-links a {
-    text-decoration: none;
-    color: var(--text);
-    margin-left: 24px;
-    font-size: 14px;
-}
-
-nav .nav-links a:hover {
-    opacity: 0.6;
-}
-
-.hero {
-    padding: calc(120px + 64px) 24px 98px;
-    background: var(--bg2);
-}
-
-.hero .mission {
-    font-family: 'Nanum Myeongjo', serif;
-    font-size: clamp(46px, 6.4vw, 78px);
-    font-weight: 700;
-    line-height: 1.14;
-    letter-spacing: -0.01em;
-    max-width: 1040px;
-    margin: 0 0 28px;
-}
-
-.hero .deck {
-    max-width: 680px;
-    color: #3F3F3F;
-    font-size: 26px;
-    line-height: 1.45;
-    margin: 0 0 14px;
-}
-
-.hero .method {
-    max-width: 680px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 24px;
-    color: #6B6B6B;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    line-height: 1.6;
-    margin-bottom: 34px;
-}
-
-.section {
-    border-top: 1px solid var(--divider);
-    background: var(--bg);
-}
-
-#work,
-#contact {
-    scroll-margin-top: 130px;
-}
-
-.section .section-title {
-    font-size: 32px;
-    margin-bottom: 60px;
-    font-weight: 500;
-}
-
-.project-category {
-    margin-bottom: 110px;
-}
-
-.project-category h2 {
-    font-size: 20px;
-    margin-bottom: 16px;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.project-category .category-intro {
-    max-width: 720px;
-    color: var(--muted);
-    font-size: 18px;
-    margin-bottom: 40px;
-}
-
-.project {
-    margin-bottom: 32px;
-}
-
-.project:last-child {
-    margin-bottom: 0;
-}
-
-.project h3 {
-    font-size: 20px;
-    margin-bottom: 12px;
-    font-weight: 500;
-}
-
-.project h3 a {
-    color: inherit;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(8, 112, 116, 0.35);
-}
-
-.project h3 a:hover {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
-}
-
-.project p {
-    max-width: 760px;
-    color: var(--muted);
-    margin: 6px 0;
-}
-
-.testimonials .reference {
-    margin-bottom: 40px;
-}
-
-.testimonials .reference h3 {
-    font-size: 20px;
-    margin-bottom: 12px;
-    font-weight: 500;
-    color: var(--text);
-}
-
-.testimonials .reference h3 a {
-    color: inherit;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(8, 112, 116, 0.35);
-}
-
-.testimonials .reference h3 a:hover {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
-}
-
-.testimonials .reference p {
-    max-width: 760px;
-    color: var(--muted);
-    margin: 6px 0;
-}
-
-.cta {
-    text-align: center;
-    padding: 120px 24px;
-    background: var(--bg2);
-}
-
-.cta h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: var(--text);
-}
-
-.cta a {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 14px 32px;
-    border: 1px solid var(--accent);
-    background: var(--accent);
-    text-decoration: none;
-    color: #FFFFFF;
-    font-size: 14px;
-}
-
-.cta a:hover {
-    background: var(--accent-hover);
-    border-color: var(--accent-hover);
-    color: #FFFFFF;
-}
-
-footer {
-    border-top: 1px solid var(--divider);
-    padding: 60px 24px 40px;
-    font-size: 14px;
-    color: var(--muted);
-    text-align: center;
-    overflow: visible;
-    background: var(--bg3);
-}
-
-footer .footer-quote {
-    font-size: 20px;
-    color: #333;
-    margin-bottom: 24px;
-    font-style: italic;
-    line-height: 1.35;
-    overflow: visible;
-}
-
-footer .footer-build {
-    display: inline-block;
-    line-height: 1.1;
-    padding: 0 4px;
-    overflow: visible;
-    position: relative;
-}
-
-footer .footer-build svg {
-    overflow: visible !important;
-}
-
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./home.css">
 </head>
 <body>
+<header class="home-header">
+    <a class="home-brand" href="./index.html" aria-label="WeScripture home">
+        <span class="home-brand-name">WeScripture</span>
+    </a>
+    <nav class="home-nav" aria-label="Primary">
+        <a class="home-nav-link" href="./library/index.html">Read</a>
+        <a class="home-nav-link" href="./library/source-dashboard.html">Sources</a>
+    </nav>
+</header>
 
-<nav>
-    <a href="/" class="logo-link"><img src="./logo.png" alt="The Good Project" class="logo"></a>
-    <div class="nav-links">
-        <a href="./library/index.html">Scriptures</a>
-        <a href="#work">Our Work</a>
-        <a href="#contact">Contact Us</a>
-    </div>
-</nav>
+<main class="home">
+    <section class="home-jump" aria-label="Jump">
+        <form id="jump-form" class="jump-form" autocomplete="off">
+            <label class="jump-label" for="jump-input">Go to scripture, topic, person, or verse</label>
+            <div class="jump-row">
+                <input id="jump-input" class="jump-input" type="search" inputmode="search" spellcheck="false" placeholder="e.g. John 3:16, Genesis 4, Alma 32, faith" aria-describedby="jump-help">
+                <button class="jump-go" type="submit">Go</button>
+            </div>
+            <div id="jump-help" class="jump-help">Enter a reference for a direct jump, or a word/phrase to search.</div>
+        </form>
+    </section>
 
-<section class="hero">
-    <div class="container">
-        <h1 class="mission">We believe better companies make for a better world.</h1>
-        <p class="deck">We exist to support exceptional founders.</p>
-        <p class="method">
-            <span>Capital raising</span>
-            <span>Go-to-market support</span>
-            <span>Tool building</span>
-        </p>
-    </div>
-</section>
+    <section id="continue" class="home-continue" hidden aria-label="Continue reading">
+        <div class="home-section-hdr">
+            <div class="home-section-title">Continue reading</div>
+        </div>
+        <div id="continue-row" class="chip-row"></div>
+    </section>
 
-<section id="work" class="section">
-<div class="container">
-<h2 class="section-title">Selected Work</h2>
+    <section class="home-grid" aria-label="Scripture collections">
+        <div class="home-section-hdr">
+            <div class="home-section-title">Scriptures</div>
+        </div>
+        <div class="dest-grid">
+            <a class="dest-card" href="./library/index.html?open=scriptures" data-evt="home_open_scriptures">
+                <div class="dest-title">All scripture</div>
+                <div class="dest-meta">Browse the canon</div>
+            </a>
+            <a class="dest-card" href="./library/index.html?jump=Genesis%201" data-evt="home_open_ot">
+                <div class="dest-title">Old Testament</div>
+                <div class="dest-meta">Start at Genesis</div>
+            </a>
+            <a class="dest-card" href="./library/index.html?jump=Matthew%201" data-evt="home_open_nt">
+                <div class="dest-title">New Testament</div>
+                <div class="dest-meta">Start at Matthew</div>
+            </a>
+            <a class="dest-card" href="./library/index.html?jump=1%20Nephi%201" data-evt="home_open_bom">
+                <div class="dest-title">Book of Mormon</div>
+                <div class="dest-meta">Start at 1 Nephi</div>
+            </a>
+            <a class="dest-card" href="./library/index.html?jump=Doctrine%20and%20Covenants%201" data-evt="home_open_dc">
+                <div class="dest-title">Doctrine and Covenants</div>
+                <div class="dest-meta">Start at Section 1</div>
+            </a>
+            <a class="dest-card" href="./library/index.html?jump=Moses%201" data-evt="home_open_pgp">
+                <div class="dest-title">Pearl of Great Price</div>
+                <div class="dest-meta">Start at Moses 1</div>
+            </a>
+        </div>
+    </section>
 
-<div class="project-category">
-<h2>We help founders raise capital</h2>
-<p class="category-intro">We help founders raise capital for projects that are ready to grow</p>
+    <section class="home-tools" aria-label="Study tools">
+        <div class="home-section-hdr">
+            <div class="home-section-title">Study tools</div>
+        </div>
+        <div class="tool-row">
+            <a class="tool-card" href="./library/index.html?q=faith" data-evt="home_tool_search">
+                <div class="tool-title">Search</div>
+                <div class="tool-meta">Topics, people, keywords</div>
+            </a>
+            <a class="tool-card" href="./library/index.html?open=general_conference" data-evt="home_tool_gc">
+                <div class="tool-title">General Conference</div>
+                <div class="tool-meta">Open sources</div>
+            </a>
+            <a class="tool-card" href="./library/source-dashboard.html" data-evt="home_tool_sources">
+                <div class="tool-title">Source dashboard</div>
+                <div class="tool-meta">Browse study sources</div>
+            </a>
+        </div>
+    </section>
+</main>
 
-<div class="project">
-<h3><a href="https://turninghearts.com" target="_blank" rel="noopener noreferrer">Turning Hearts</a></h3>
-<p>Full platform rebuild from legacy WordPress infrastructure.</p>
-<p>Head of Technology role leading scalable software architecture and professional development transition.</p>
-<p>Result: Enabled significant user growth.</p>
-</div>
-
-<div class="project">
-<h3><a href="https://colourhills.com/home" target="_blank" rel="noopener noreferrer">Colour Hills</a></h3>
-<p>AUD 10M SPV capital formation initiative.</p>
-<p>Partner engagement in structuring and capital sourcing.</p>
-<p>Status: Raise ongoing.</p>
-</div>
-
-</div>
-
-<div class="project-category">
-<h2>We help founders go to market</h2>
-<p class="category-intro">We work alongside founders on sales, distribution, and execution</p>
-
-<div class="project">
-<h3><a href="https://www.practiceoflife.com/" target="_blank" rel="noopener noreferrer">Practice of Life</a></h3>
-<p>Pre-revenue digital health platform.</p>
-<p>Founder support building outbound BD systems, refining product delivery, and digitizing operations.</p>
-<p>Result: Paying customers and pilot validation secured.</p>
-</div>
-
-<div class="project">
-<h3><a href="https://www.goldback.com/" target="_blank" rel="noopener noreferrer">GoldBack</a></h3>
-<p>Affiliate-led retail expansion initiative.</p>
-<p>Established new retail distributor partnerships and supported multi-state expansion.</p>
-<p>Status: Ongoing channel growth.</p>
-</div>
-
-</div>
-
-<div class="project-category">
-<h2>We help founders build the tools they need</h2>
-<p class="category-intro">When key systems are missing, we build practical tools founders can run on</p>
-
-<div class="project">
-<h3>Kyros Consulting</h3>
-<p>Retail hardware operation (&gt;$5M revenue).</p>
-<p>Founder support focused on real-time analytics dashboards and reporting infrastructure.</p>
-<p>Status: Ongoing operational refinement.</p>
-</div>
-
-<div class="project">
-<h3>Liahona</h3>
-<p>Community task management infrastructure.</p>
-<p>Founder support focused on structured workflows and AI-assisted task sizing.</p>
-<p>Status: Alpha stage.</p>
-</div>
-
-</div>
-
-</div>
-</section>
-
-<section class="section testimonials">
-<div class="container">
-<h2 class="section-title">References</h2>
-
-<div class="reference">
-<h3>Kate Larson, Founder of <a href="https://www.practiceoflife.com/" target="_blank" rel="noopener noreferrer">Practice of Life</a></h3>
-<p>Reif was an absolute gift to work with. As a bootstrapped founder, I valued having a true partner who understands every part of building a startup. He made our systems clearer, our process stronger, and our team better.</p>
-</div>
-
-<div class="reference">
-<h3>Christopher Hamze, Founder of <a href="https://teelaunch.com" target="_blank" rel="noopener noreferrer">teelaunch</a></h3>
-<p>Reif's versatility is unmatched. He's smart, resourceful, and a tech genius with a heart of gold.</p>
-</div>
-
-<div class="reference">
-<h3>Gary Kliegman, COO at <a href="https://matefertility.com" target="_blank" rel="noopener noreferrer">Mate Fertility</a></h3>
-<p>From leading through a merger to handling the challenges of a global pandemic, Reif's leadership is unparalleled. He's the kind of leader every growth-stage company needs.</p>
-</div>
-
-<div class="reference">
-<h3>Mike Kunz, SVP Operations at <a href="https://www.aapc.com" target="_blank" rel="noopener noreferrer">AAPC</a></h3>
-<p>Reif is one of the smartest individuals I have had the pleasure of working with. He streamlines processes and adds value in ways that are both innovative and efficient.</p>
-</div>
-
-<div class="reference">
-<h3>Michael Simon, Managing Principal at <a href="https://traversepoint.com" target="_blank" rel="noopener noreferrer">Traverse Pointe Partners</a></h3>
-<p>Reif is the full package - tech-savvy, resourceful, passionate, and a team player. He's the rare talent who can set vision at a high level and also get scrappy when needed.</p>
-</div>
-</div>
-</section>
-
-<section id="contact" class="cta">
-    <h2>Say hello.</h2>
-    <p>Have a project you'd like to collaborate on?</p>
-    <a href="mailto:hello@thegoodproject.net">Contact Us</a>
-</section>
-
-<footer>
-    <p class="footer-quote"><span id="footer-build" class="footer-build">Build</span> the change you wish to see in the world.</p>
-    <p>© 2024 The Good Project</p>
-</footer>
-
-<script src="https://unpkg.com/rough-notation/lib/rough-notation.iife.js"></script>
 <script>
-const footerBuild = document.getElementById('footer-build');
-if (footerBuild && window.RoughNotation) {
-    const annotationTypes = ['circle', 'bracket', 'underline', 'box'];
-    let annotationIndex = 0;
-    let annotation;
+(function() {
+    var STORAGE_KEY = 'lds';
 
-    const showAnnotation = () => {
-        if (annotation) {
-            annotation.hide();
+    function safeGtag() {
+        if (typeof window.gtag !== 'function') return;
+        try { window.gtag.apply(null, arguments); } catch (e) {}
+    }
+
+    function escapeHtml(str) {
+        return String(str || '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
+
+    function readJson(key, fallback) {
+        try {
+            var raw = localStorage.getItem(key);
+            if (!raw) return fallback;
+            return JSON.parse(raw);
+        } catch (e) {
+            return fallback;
+        }
+    }
+
+    function pushUrl(u, evtName, evtData) {
+        safeGtag('event', evtName, Object.assign({ page: 'home' }, evtData || {}));
+        window.location.href = u;
+    }
+
+    function renderContinueReading() {
+        var cont = document.getElementById('continue');
+        var row = document.getElementById('continue-row');
+        if (!cont || !row) return;
+
+        var pos = null;
+        try { pos = localStorage.getItem(STORAGE_KEY + '_position'); } catch (e) {}
+        var recents = readJson(STORAGE_KEY + '_recent_v1', { version: 1, items: [] });
+        var items = [];
+
+        if (pos) items.push({ kind: 'position', label: 'Resume', href: './library/index.html?jump=' + encodeURIComponent(pos.replace(/_/g, ' ')) });
+        (recents.items || []).slice(0, 3).forEach(function(it) {
+            if (!it || !it.href || !it.label) return;
+            if (items.some(function(x) { return x.href === it.href; })) return;
+            items.push(it);
+        });
+
+        if (!items.length) {
+            cont.hidden = true;
+            return;
         }
 
-        const type = annotationTypes[annotationIndex];
-        const options = {
-            type,
-            color: '#087074',
-            strokeWidth: 2,
-            iterations: 3,
-            padding: 5
-        };
+        row.innerHTML = items.slice(0, 3).map(function(it) {
+            return '<a class="chip" href="' + escapeHtml(it.href) + '" data-evt="home_continue">' + escapeHtml(it.label) + '</a>';
+        }).join('');
+        cont.hidden = false;
 
-        if (type === 'bracket') {
-            options.brackets = ['top', 'bottom'];
+        row.addEventListener('click', function(e) {
+            var a = e.target.closest('a.chip');
+            if (!a) return;
+            e.preventDefault();
+            pushUrl(a.getAttribute('href'), 'home_continue_reading', { target: a.textContent.trim().slice(0, 80) });
+        });
+    }
+
+    function looksLikeDirectJump(q) {
+        var s = String(q || '').trim();
+        if (!s) return false;
+        return /(\d+:\d+)|\b\d+\b/.test(s);
+    }
+
+    function onSubmitJump(e) {
+        e.preventDefault();
+        var input = document.getElementById('jump-input');
+        if (!input) return;
+        var q = String(input.value || '').trim();
+        if (!q) return;
+
+        var isJump = looksLikeDirectJump(q);
+        if (isJump) {
+            pushUrl('./library/index.html?jump=' + encodeURIComponent(q), 'home_jump_submit', { kind: 'jump' });
+        } else {
+            pushUrl('./library/index.html?q=' + encodeURIComponent(q), 'home_jump_submit', { kind: 'search' });
         }
+    }
 
-        annotation = RoughNotation.annotate(footerBuild, options);
-        annotation.show();
-    };
+    function wireEvents() {
+        var form = document.getElementById('jump-form');
+        if (form) form.addEventListener('submit', onSubmitJump);
 
-    showAnnotation();
-    setInterval(() => {
-        annotationIndex = (annotationIndex + 1) % annotationTypes.length;
-        showAnnotation();
-    }, 10000);
-}
+        document.addEventListener('click', function(e) {
+            var a = e.target.closest('a[data-evt]');
+            if (!a) return;
+            safeGtag('event', a.dataset.evt, { page: 'home' });
+        });
+    }
+
+    renderContinueReading();
+    wireEvents();
+})();
 </script>
 
 </body>

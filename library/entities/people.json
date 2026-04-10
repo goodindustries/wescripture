@@ -2858,14 +2858,31 @@
     "variants": [
       "Ellis T. Rasmussen"
     ],
-    "roles": [],
+    "roles": [
+      "BYU dean of Religious Instruction",
+      "Old Testament scholar"
+    ],
+    "born": "Sep 21, 1915",
+    "died": "Jun 6, 2011",
+    "desc": "Latter-day Saint scholar and teacher of the Old Testament; helped produce the 1979 LDS Bible edition.",
+    "christ_connection": "Rasmussen’s work points readers back to Christ by teaching the Old Testament as covenant history that anticipates and typifies the Messiah, and by helping modern Saints read scripture with clearer context and stronger doctrinal footing.",
+    "scripture_refs": [
+      "1 Corinthians 12:4",
+      "Moroni 10:8"
+    ],
+    "excerpts": [
+      {
+        "text": "Critics have also pointed to the similarity between Paul's teachings in 1 Corinthians 12:4-11 and 13:4-8 and those in Moroni 10:8-17 and 7:45-46.",
+        "source": "gc",
+        "ref": null,
+        "speaker": "person:ellis_t_rasmussen",
+        "attr": "Ellis T. Rasmussen, \"Sidney B. Sperry-Student of the Book of Mormon,\" Ensign, July 1986, 27"
+      }
+    ],
     "doc_ids": [],
     "quote_count": 382,
     "talk_count": 0,
-    "wikipedia_title": "Ellis T. Rasmussen",
-    "wikipedia_summary": "Ellis Theo Rasmussen was an American professor and dean of Religious Instruction at Brigham Young University (BYU). He helped produce the edition of the Bible published by the Church of Jesus Christ of Latter-day Saints in 1979.",
-    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/en/7/7a/Ellis_T._Rasmussen.jpg",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Ellis_T._Rasmussen"
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/en/7/7a/Ellis_T._Rasmussen.jpg"
   },
   {
     "id": "person:thomas_s_monson",

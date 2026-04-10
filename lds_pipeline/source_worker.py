@@ -186,16 +186,30 @@ def fetch_gc_session_index(year: int, session: str) -> list[dict]:
 
 
 def fetch_gc_talk_text(uri: str) -> str:
-    """Fetch full text of a talk — strips all HTML tags from body."""
+    """Fetch full text of a talk, preserving paragraph breaks.
+
+    We keep paragraph boundaries as blank lines so downstream builders can
+    produce stable paragraph indices/anchors for deep linking.
+    """
     url = GC_CONTENT_API + urllib.request.quote(uri, safe="")
     try:
         data = json.loads(fetch(url, timeout=20))
         body = data.get("content", {}).get("body", "")
         # Extract title and author from meta if present
         title = data.get("meta", {}).get("title", "")
-        # Strip HTML, collapse whitespace
-        text = re.sub(r'<[^>]+>', ' ', body)
-        text = re.sub(r'\s+', ' ', text).strip()
+        # Preserve block boundaries before stripping tags
+        html_body = str(body or "")
+        html_body = re.sub(r'</\s*p\s*>', '\n\n', html_body, flags=re.I)
+        html_body = re.sub(r'<\s*br\s*/?\s*>', '\n', html_body, flags=re.I)
+        html_body = re.sub(r'</\s*h[1-6]\s*>', '\n\n', html_body, flags=re.I)
+        html_body = re.sub(r'</\s*li\s*>', '\n', html_body, flags=re.I)
+        # Strip remaining tags, keep newlines
+        text = re.sub(r'<[^>]+>', ' ', html_body)
+        # Normalize spaces but preserve blank lines
+        text = re.sub(r'[ \t]+', ' ', text)
+        text = re.sub(r'\n{3,}', '\n\n', text)
+        text = "\n".join(line.strip() for line in text.splitlines())
+        text = re.sub(r'\n{3,}', '\n\n', text).strip()
         if title:
             text = title + "\n\n" + text
         return text
