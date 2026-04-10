@@ -10,3 +10,6 @@ library/strongs_plain.json
 library/strongs_hebrew.json
 library/strongs_greek.json
 library/para_verse_map.json
+
+# Local Netlify folder
+.netlify
