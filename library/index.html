@@ -1350,35 +1350,83 @@ Promise.all([
         setTocPathForChapter(startId);
         loadChapter(startId, true).then(() => {
             document.getElementById('splash').classList.add('gone');
-            if (window.innerWidth >= 768) {
-                tocOpen = true;
-                document.getElementById('toc').classList.remove('hidden');
-            }
-            // Handle ?open= URL parameter from home page collection links
-            var openParam = new URLSearchParams(window.location.search).get('open');
-            if (openParam) {
-                if (openParam === 'scriptures') {
-                    tocPath = { level: 'scripture-root', volume: null, book: null, sourceCollection: null };
-                    renderTocView();
-                    tocOpen = true;
-                    document.getElementById('toc').classList.remove('hidden');
-                } else {
-                    var coll = findSourceCollection(openParam);
-                    if (coll) {
-                        tocPath = { level: 'source-collection', volume: null, book: null, sourceCollection: coll };
+            // Home is a routing surface; keep TOC closed by default.
+            tocOpen = false;
+            document.getElementById('toc').classList.add('hidden');
+
+            // Handle URL routing params from home (and other deep links).
+            (function handleUrlParams() {
+                var params = new URLSearchParams(window.location.search);
+                var didConsume = false;
+
+                // 1) Open shelf views (kept for collection routing)
+                var openParam = params.get('open');
+                if (openParam) {
+                    didConsume = true;
+                    if (openParam === 'scriptures') {
+                        tocPath = { level: 'scripture-root', volume: null, book: null, sourceCollection: null };
                         renderTocView();
                         tocOpen = true;
                         document.getElementById('toc').classList.remove('hidden');
                     } else {
-                        tocPath = { level: 'source-root', volume: null, book: null, sourceCollection: null };
-                        renderTocView();
-                        tocOpen = true;
-                        document.getElementById('toc').classList.remove('hidden');
+                        var coll = findSourceCollection(openParam);
+                        if (coll) {
+                            tocPath = { level: 'source-collection', volume: null, book: null, sourceCollection: coll };
+                            renderTocView();
+                            tocOpen = true;
+                            document.getElementById('toc').classList.remove('hidden');
+                        } else {
+                            tocPath = { level: 'source-root', volume: null, book: null, sourceCollection: null };
+                            renderTocView();
+                            tocOpen = true;
+                            document.getElementById('toc').classList.remove('hidden');
+                        }
                     }
                 }
-                // Clean the URL without reload
-                history.replaceState(null, '', window.location.pathname);
-            }
+
+                // 2) Direct scripture jump by reference text, chapterId, or verse ref.
+                var jumpParam = params.get('jump');
+                if (jumpParam) {
+                    didConsume = true;
+                    var jumpText = String(jumpParam || '').trim();
+                    safeGtag('event', 'reader_url_jump', { kind: 'jump' });
+                    if (jumpText) {
+                        var exact = resolveScriptureRef(jumpText);
+                        if (exact && exact.chapterId) {
+                            jumpTo(exact.chapterId, exact.verse);
+                        } else {
+                            var ch = resolveScriptureChapter(jumpText);
+                            if (ch && ch.book && ch.chapter) {
+                                var bookRec = findBookRecord(ch.book);
+                                if (bookRec && bookRec.firstChapter) {
+                                    var prefix = bookRec.firstChapter.replace(/_1$/, '');
+                                    jumpTo(prefix + '_' + parseInt(ch.chapter, 10));
+                                }
+                            } else if (/^[a-z0-9_]+_\d+$/i.test(jumpText)) {
+                                jumpTo(jumpText);
+                            }
+                        }
+                    }
+                }
+
+                // 3) Open search with prefilled query.
+                var qParam = params.get('q');
+                if (qParam) {
+                    didConsume = true;
+                    var q = String(qParam || '').trim();
+                    safeGtag('event', 'reader_url_jump', { kind: 'search' });
+                    if (q) {
+                        var input = document.getElementById('search-input');
+                        if (input) input.value = q;
+                        openSearch();
+                    }
+                }
+
+                if (didConsume) {
+                    // Clean the URL without reload (preserve hash).
+                    history.replaceState(null, '', window.location.pathname + (window.location.hash || ''));
+                }
+            })();
         });
     });
 
@@ -1777,6 +1825,7 @@ function jumpTo(chapterId, verseNum, opts) {
         currentChapter = chapterId;
         updateLocationLabel(chapterId);
         updateActiveToc(chapterId);
+        recordRecentScripture(chapterId, verseNum || null);
         var target;
         if (verseNum) {
             var block = document.getElementById('ch-' + chapterId);
