@@ -510,3 +510,40 @@ Enriching people (/Users/reify/Classified/wescripture/library/entities/people.js
   people: 40 enriched, 97 skipped
 
 Total enriched: 40
+[main d75b5001] [task] T-0089: build_entity_wikipedia --people --limit 40 (exit 0)
+ Committer: Reif Tauati <reify@MacBookPro.lan>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 32 files changed, 861 insertions(+), 40 deletions(-)
+Completed T-0089.
+  [ledger] pushed to origin
+  pushed to origin
+  [followup] exit 2 (non-fatal)
+[Worker005] T-0089 success. commit=d75b5001
+=== 2026-04-10T01:58:47Z exit 0 Worker005 ===
+=== 2026-04-10T01:59:08Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0088: Donaldson — ezekiel: add commentary JSON for 9 missing chapter(s)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0088.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0088 no dispatch rule — reopened.
+=== 2026-04-10T01:59:39Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0090: Ch job_7: add entity span annotations (data-entity / place / thing)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+  [dispatch] /Library/Developer/CommandLineTools/usr/bin/python3 /Users/reify/Classified/wescripture/lds_pipeline/annotate_entity_spans.py --books job
+Loading entity indexes…
+  134 scripture-person variants, 81 place variants, 207 thing variants
+Annotating 16 chapters…
+
+Done. 0 chapters changed, 391 verses scanned, 0 entity spans added.

@@ -22,3 +22,20 @@ Done. 0 chapters changed, 391 verses scanned, 0 entity spans added.
 Reopened T-0088.
   pushed to origin
 [Worker006] T-0088 no dispatch rule — reopened.
+=== 2026-04-10T01:59:08Z start Worker006 ===
+[Worker006] checking for pending tasks…
+[Worker006] claimed T-0088: Donaldson — ezekiel: add commentary JSON for 9 missing chapter(s)
+[Worker006] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0088.
+  pushed to origin
+[Worker006] T-0088 no dispatch rule — reopened.
+=== 2026-04-10T01:59:39Z start Worker006 ===
+[Worker006] checking for pending tasks…
+[Worker006] claimed T-0090: Ch job_7: add entity span annotations (data-entity / place / thing)
+[Worker006] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+  [dispatch] /Library/Developer/CommandLineTools/usr/bin/python3 /Users/reify/Classified/wescripture/lds_pipeline/annotate_entity_spans.py --books job
+Loading entity indexes…
+  134 scripture-person variants, 81 place variants, 207 thing variants
+Annotating 16 chapters…
+
+Done. 0 chapters changed, 391 verses scanned, 0 entity spans added.

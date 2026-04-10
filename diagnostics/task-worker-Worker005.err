@@ -540,3 +540,35 @@ Traceback (most recent call last):
   File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 528, in run
     raise CalledProcessError(retcode, process.args,
 subprocess.CalledProcessError: Command '['git', 'add', '-A']' returned non-zero exit status 128.
+Everything up-to-date
+task_followup: Ollama error: timed out
+  [ledger] push failed: fatal: Unable to create '/Users/reify/Classified/wescripture/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at 0358b9c6d27abfd84e7b02138c12e546620e320a but expected 43ac4e1b6129bd3e26c40fc1ab3434f64112a47b)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+fatal: Unable to create '/Users/reify/Classified/wescripture/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+Traceback (most recent call last):
+  File "/Users/reify/Classified/wescripture/lds_pipeline/task_worker.py", line 354, in <module>
+    main()
+  File "/Users/reify/Classified/wescripture/lds_pipeline/task_worker.py", line 279, in main
+    new_commit = git_commit_work(tid, d.summary)
+  File "/Users/reify/Classified/wescripture/lds_pipeline/task_worker.py", line 164, in git_commit_work
+    run(["git", "add", "-A"])
+  File "/Users/reify/Classified/wescripture/lds_pipeline/task_worker.py", line 81, in run
+    return subprocess.run(
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 528, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'add', '-A']' returned non-zero exit status 128.
