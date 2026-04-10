@@ -3195,3 +3195,4 @@
 {"event": "task_reopened", "task_id": "T-0099", "ts": "2026-04-10T02:42:21+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
 {"event": "task_reopened", "task_id": "T-0099", "ts": "2026-04-10T02:42:21+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
 {"event": "task_completed", "task_id": "T-0105", "agent": "Worker002", "ts": "2026-04-10T02:42:42+00:00", "commit": "e8b1594d", "notes": "dispatch: build_entity_wikipedia --people --limit 40 (exit 0)"}
+{"event": "task_completed", "task_id": "T-0105", "agent": "Worker000", "ts": "2026-04-10T02:42:44+00:00", "commit": "5c7b9236", "notes": "dispatch: build_entity_wikipedia --people --limit 40 (exit 0)"}
