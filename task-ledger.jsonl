@@ -2943,3 +2943,4 @@
 {"event": "task_completed", "task_id": "T-0103", "agent": "CursorPlan", "ts": "2026-04-10T02:39:51+00:00", "notes": "minimal _notes.html scaffold"}
 {"event": "task_completed", "task_id": "T-0107", "agent": "CursorPlan", "ts": "2026-04-10T02:39:54+00:00", "notes": "minimal _notes.html scaffold"}
 {"event": "task_completed", "task_id": "T-0102", "agent": "CursorPlan", "ts": "2026-04-10T02:40:04+00:00", "notes": "annotate_entity_spans.py --books job (0 new spans)"}
+{"event": "task_completed", "task_id": "T-0106", "agent": "CursorPlan", "ts": "2026-04-10T02:40:07+00:00", "notes": "annotate_entity_spans.py --books job (0 new spans)"}
