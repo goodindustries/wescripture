@@ -1067,3 +1067,9 @@
 {"event": "task_completed", "task_id": "T-0072", "agent": "WorkerB", "ts": "2026-04-10T00:32:03+00:00", "notes": "completed by task_worker (non-zero exit)"}
 {"event": "task_claimed", "task_id": "T-0075", "agent": "WorkerA", "ts": "2026-04-10T00:32:08+00:00"}
 {"event": "task_completed", "task_id": "T-0075", "agent": "WorkerA", "ts": "2026-04-10T00:32:16+00:00", "notes": "completed by task_worker (non-zero exit)"}
+{"event": "task_claimed", "task_id": "T-0076", "agent": "Worker001", "ts": "2026-04-10T00:32:23+00:00"}
+{"event": "task_claimed", "task_id": "T-0076", "agent": "Worker000", "ts": "2026-04-10T00:32:23+00:00"}
+{"event": "task_claimed", "task_id": "T-0076", "agent": "Worker003", "ts": "2026-04-10T00:32:23+00:00"}
+{"event": "task_claimed", "task_id": "T-0076", "agent": "Worker002", "ts": "2026-04-10T00:32:23+00:00"}
+{"event": "task_claimed", "task_id": "T-0077", "agent": "Worker004", "ts": "2026-04-10T00:32:23+00:00"}
+{"event": "task_claimed", "task_id": "T-0077", "agent": "Worker005", "ts": "2026-04-10T00:32:23+00:00"}
