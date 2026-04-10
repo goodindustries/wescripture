@@ -1194,3 +1194,5 @@
 {"event": "task_reopened", "task_id": "T-0076", "ts": "2026-04-10T00:41:42+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
 {"event": "task_reopened", "task_id": "T-0079", "ts": "2026-04-10T00:41:42+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
 {"event": "task_reopened", "task_id": "T-0080", "ts": "2026-04-10T00:41:42+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
+{"event": "task_reopened", "task_id": "T-0079", "ts": "2026-04-10T00:41:42+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
+{"event": "task_reopened", "task_id": "T-0080", "ts": "2026-04-10T00:41:42+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
