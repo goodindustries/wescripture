@@ -663,3 +663,19 @@ Reopened T-0080.
 [Worker003] claimed T-0080: Donaldson — 2_chronicles: add commentary JSON for 20 missing chapter(s)
 [Worker003] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
 Reopened T-0080.
+  pushed to origin
+[Worker003] T-0080 no dispatch rule — reopened.
+=== 2026-04-10T01:38:57Z start Worker003 ===
+[Worker003] checking for pending tasks…
+[Worker003] claimed T-0080: Donaldson — 2_chronicles: add commentary JSON for 20 missing chapter(s)
+[Worker003] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0080.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker003] T-0080 no dispatch rule — reopened.
+=== 2026-04-10T01:49:10Z start Worker003 ===
+[Worker003] checking for pending tasks…
+[Worker003] claimed T-0084: Donaldson — jeremiah: add commentary JSON for 13 missing chapter(s)
+[Worker003] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0084.
+  pushed to origin
+[Worker003] T-0084 no dispatch rule — reopened.

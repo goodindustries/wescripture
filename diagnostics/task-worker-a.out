@@ -646,3 +646,13 @@ Completed T-0079.
   [ledger] pushed to origin
   pushed to origin
 [WorkerA] T-0079 error. commit=
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] claimed T-0083: Ch matthew_22: add or repair _notes.html (commentary / semantic panel)
+[WorkerA] models: backend=claude claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+[WorkerA] running claude --model sonnet …
+You've hit your limit · resets Apr 13, 3pm (America/Chicago)
+Completed T-0083.
+  [ledger] pushed to origin
+  pushed to origin
+[WorkerA] T-0083 error. commit=

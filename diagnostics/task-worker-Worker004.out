@@ -410,3 +410,20 @@ Reopened T-0080.
 [Worker004] checking for pending tasks…
 [Worker004] claimed T-0080: Donaldson — 2_chronicles: add commentary JSON for 20 missing chapter(s)
 [Worker004] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0080.
+  pushed to origin
+[Worker004] T-0080 no dispatch rule — reopened.
+=== 2026-04-10T01:38:57Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0080: Donaldson — 2_chronicles: add commentary JSON for 20 missing chapter(s)
+[Worker004] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0080.
+  pushed to origin
+[Worker004] T-0080 no dispatch rule — reopened.
+=== 2026-04-10T01:49:10Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0084: Donaldson — jeremiah: add commentary JSON for 13 missing chapter(s)
+[Worker004] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0084.
+  pushed to origin
+[Worker004] T-0084 no dispatch rule — reopened.

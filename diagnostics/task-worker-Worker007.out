@@ -1,0 +1,49 @@
+=== 2026-04-10T01:49:10Z start Worker007 ===
+[Worker007] checking for pending tasks…
+[Worker007] claimed T-0085: Registry Wikipedia — people.json batch 1/40 (40 entries)
+[Worker007] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+  [dispatch] /Library/Developer/CommandLineTools/usr/bin/python3 /Users/reify/Classified/wescripture/lds_pipeline/build_entity_wikipedia.py --people --limit 40
+Enriching people (/Users/reify/Classified/wescripture/library/entities/people.json)...
+  enriched: Donald W. Parry
+  enriched: Adam Clarke
+  enriched: Ellis T. Rasmussen
+  enriched: Thomas S. Monson
+  enriched: Nahum Sarna
+  enriched: James E. Faust
+  enriched: Daniel H. Ludlow
+  enriched: Joseph Fielding Smith
+  enriched: Jacob Milgrom
+  enriched: Victor L. Ludlow
+  enriched: Henry B. Eyring
+  enriched: Howard W. Hunter
+  enriched: Joseph B. Wirthlin
+  enriched: M. Russell Ballard
+  enriched: Robert D. Hales
+  enriched: Marion G. Romney
+  enriched: Harold B. Lee
+  enriched: Robert J. Matthews
+  enriched: L. Tom Perry
+  enriched: Robert L. Millet
+  enriched: Richard G. Scott
+  enriched: Teachings of the Prophet Joseph Smith
+  enriched: David B. Haight
+  enriched: Bryan Richards
+  enriched: Dieter F. Uchtdorf
+  enriched: Marvin J. Ashton
+  enriched: Richard Lloyd Anderson
+  enriched: Mark E. Petersen
+  enriched: Monte S. Nyman
+  enriched: N. Eldon Tanner
+  enriched: David A. Bednar
+  enriched: Gerald N. Lund
+  enriched: Joseph F. Smith
+  enriched: D. Todd Christofferson
+  enriched: Marion D. Hanks
+  enriched: Carlos E. Asay
+  enriched: Sidney B. Sperry
+  enriched: Robert Norman
+  enriched: S. Kent Brown
+  enriched: Delbert L. Stapley
+  people: 40 enriched, 27 skipped
+
+Total enriched: 40

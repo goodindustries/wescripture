@@ -480,3 +480,12 @@ are terminated then try again. If it still fails, a git process
 may have crashed in this repository earlier:
 remove the file manually to continue.
 
+To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at b4dc7ad4c616fd43d054900818ba71dcc11bc5df but expected fff3b4af7ae1197ee767896e09c896f85f4518f7)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+  [ledger] push failed: To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at 7abd0f7fa29d712cf7b98fb98116f60acfa38b94 but expected b0de4f69bc6161c44407aae60ebef2d9effadb58)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+
+Everything up-to-date
+Everything up-to-date
