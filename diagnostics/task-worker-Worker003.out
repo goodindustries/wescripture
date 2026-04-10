@@ -567,3 +567,16 @@ Reopened T-0072.
 Reopened T-0076.
   pushed to origin
 [Worker003] T-0076 no dispatch rule — reopened.
+=== 2026-04-10T00:35:01Z start Worker003 ===
+[Worker003] checking for pending tasks…
+[Worker003] claimed T-0076: Donaldson — 1_chronicles: add commentary JSON for 25 missing chapter(s)
+[Worker003] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0076.
+  [ledger] pushed to origin
+  pushed to origin
+[Worker003] T-0076 no dispatch rule — reopened.
+=== 2026-04-10T00:35:34Z start Worker003 ===
+[Worker003] checking for pending tasks…
+[Worker003] claimed T-0076: Donaldson — 1_chronicles: add commentary JSON for 25 missing chapter(s)
+[Worker003] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0076.

@@ -671,3 +671,12 @@ remove the file manually to continue.
 
 To https://github.com/reif-is-a-foofie/wescripture.git
    40ec08a0..28874be6  main -> main
+Everything up-to-date
+  [ledger] push failed: fatal: Unable to create '/Users/reify/Classified/wescripture/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+

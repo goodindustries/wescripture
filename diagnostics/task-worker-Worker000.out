@@ -586,3 +586,14 @@ Reopened T-0072.
 Reopened T-0076.
   pushed to origin
 [Worker000] T-0076 no dispatch rule — reopened.
+=== 2026-04-10T00:35:01Z start Worker000 ===
+[Worker000] checking for pending tasks…
+[Worker000] claimed T-0076: Donaldson — 1_chronicles: add commentary JSON for 25 missing chapter(s)
+[Worker000] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0076.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker000] T-0076 no dispatch rule — reopened.
+=== 2026-04-10T00:35:34Z start Worker000 ===
+[Worker000] checking for pending tasks…
+[Worker000] claimed T-0076: Donaldson — 1_chronicles: add commentary JSON for 25 missing chapter(s)
+[Worker000] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)

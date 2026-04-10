@@ -272,3 +272,41 @@ Enriching things (/Users/reify/Classified/wescripture/library/entities/things.js
   things: 0 enriched, 61 skipped
 
 Total enriched: 0
+[main f0eb3686] [task] T-0077: build_entity_wikipedia --things (exit 0)
+ Committer: Reif Tauati <reify@Reifs-MacBook-Pro.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 21 files changed, 2159 insertions(+), 88 deletions(-)
+ create mode 100644 diagnostics/task-worker-Worker002.log
+Completed T-0077.
+  [ledger] pushed to origin
+  pushed to origin
+  [followup] exit 2 (non-fatal)
+[Worker004] T-0077 success. commit=f0eb3686
+=== 2026-04-10T00:34:40Z exit 0 Worker004 ===
+=== 2026-04-10T00:35:01Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0076: Donaldson — 1_chronicles: add commentary JSON for 25 missing chapter(s)
+[Worker004] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0076.
+  pushed to origin
+[Worker004] T-0076 no dispatch rule — reopened.
+=== 2026-04-10T00:35:34Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0078: Ch esther_3: add entity span annotations (data-entity / place / thing)
+[Worker004] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+  [dispatch] /Library/Developer/CommandLineTools/usr/bin/python3 /Users/reify/Classified/wescripture/lds_pipeline/annotate_entity_spans.py --books esther
+Loading entity indexes…
+  134 scripture-person variants, 81 place variants, 207 thing variants
+Annotating 2 chapters…
+
+Done. 0 chapters changed, 25 verses scanned, 0 entity spans added.
