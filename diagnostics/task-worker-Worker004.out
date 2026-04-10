@@ -461,3 +461,51 @@ Loading entity indexes…
 Annotating 16 chapters…
 
 Done. 0 chapters changed, 391 verses scanned, 0 entity spans added.
+[main feb4716b] [task] T-0090: annotate_entity_spans --books job (exit 0)
+ Committer: Reif Tauati <reify@MacBookPro.lan>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 26 files changed, 745 insertions(+)
+Completed T-0090.
+  [ledger] pushed to origin
+  pushed to origin
+  [followup] exit 2 (non-fatal)
+[Worker004] T-0090 success. commit=feb4716b
+=== 2026-04-10T02:01:49Z exit 0 Worker004 ===
+=== 2026-04-10T02:02:10Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0088: Donaldson — ezekiel: add commentary JSON for 9 missing chapter(s)
+[Worker004] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0088.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0088 no dispatch rule — reopened.
+=== 2026-04-10T02:02:41Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0091: Ch mark_1: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0091.
+  pushed to origin
+[Worker004] T-0091 no dispatch rule — reopened.
+=== 2026-04-10T02:03:12Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0091: Ch mark_1: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0091.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0091 no dispatch rule — reopened.
+=== 2026-04-10T02:03:43Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0092: Donaldson — song_of_solomon: add commentary JSON for 7 missing chapter(s)
+[Worker004] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0092.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0092 no dispatch rule — reopened.

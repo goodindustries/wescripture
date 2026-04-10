@@ -547,3 +547,31 @@ Loading entity indexes…
 Annotating 16 chapters…
 
 Done. 0 chapters changed, 391 verses scanned, 0 entity spans added.
+=== 2026-04-10T02:02:10Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0088: Donaldson — ezekiel: add commentary JSON for 9 missing chapter(s)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0088.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0088 no dispatch rule — reopened.
+=== 2026-04-10T02:02:41Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0088: Donaldson — ezekiel: add commentary JSON for 9 missing chapter(s)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0088.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0088 no dispatch rule — reopened.
+=== 2026-04-10T02:03:13Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0092: Donaldson — song_of_solomon: add commentary JSON for 7 missing chapter(s)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0092.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0092 no dispatch rule — reopened.
+=== 2026-04-10T02:03:43Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0092: Donaldson — song_of_solomon: add commentary JSON for 7 missing chapter(s)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0092.
+  pushed to origin
+[Worker005] T-0092 no dispatch rule — reopened.

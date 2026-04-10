@@ -39,3 +39,73 @@ Loading entity indexes…
 Annotating 16 chapters…
 
 Done. 0 chapters changed, 391 verses scanned, 0 entity spans added.
+=== 2026-04-10T02:02:10Z start Worker006 ===
+[Worker006] checking for pending tasks…
+[Worker006] claimed T-0088: Donaldson — ezekiel: add commentary JSON for 9 missing chapter(s)
+[Worker006] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0088.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker006] T-0088 no dispatch rule — reopened.
+=== 2026-04-10T02:02:41Z start Worker006 ===
+[Worker006] checking for pending tasks…
+[Worker006] claimed T-0088: Donaldson — ezekiel: add commentary JSON for 9 missing chapter(s)
+[Worker006] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0088.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker006] T-0088 no dispatch rule — reopened.
+=== 2026-04-10T02:03:13Z start Worker006 ===
+[Worker006] checking for pending tasks…
+[Worker006] claimed T-0092: Donaldson — song_of_solomon: add commentary JSON for 7 missing chapter(s)
+[Worker006] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0092.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker006] T-0092 no dispatch rule — reopened.
+=== 2026-04-10T02:03:43Z start Worker006 ===
+[Worker006] checking for pending tasks…
+[Worker006] claimed T-0093: Registry Wikipedia — people.json batch 3/40 (40 entries)
+[Worker006] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+  [dispatch] /Library/Developer/CommandLineTools/usr/bin/python3 /Users/reify/Classified/wescripture/lds_pipeline/build_entity_wikipedia.py --people --limit 40
+Enriching people (/Users/reify/Classified/wescripture/library/entities/people.json)...
+  enriched: James A. Cullimore
+  enriched: George Albert Smith
+  enriched: Ellis Rasmussen
+  enriched: Robert S. Wood
+  enriched: Heber J. Grant
+  enriched: Henry D. Taylor
+  enriched: John A. Widtsoe
+  enriched: Elaine S. Dalton
+  enriched: Sheri L. Dew
+  enriched: Discourses of Brigham Young
+  enriched: Glenn L. Pace
+  enriched: James Talmage
+  enriched: Bible in Basic English
+  enriched: Charles Didier
+  enriched: Jay E. Jensen
+  enriched: Bonnie D. Parkin
+  enriched: George F. Richards
+  enriched: Stephen D. Ricks
+  enriched: Elder Paul H. Dunn
+  enriched: Marlin K. Jensen
+  enriched: Aileen H. Clyde
+  enriched: John K. Carmack
+  enriched: Richard O. Cowan
+  enriched: Susan W. Tanner
+  enriched: Lorenzo Snow
+  enriched: Charles A. Callis
+  enriched: Bruce D. Porter
+  enriched: F. Enzio Busche
+  enriched: Hugh W. Pinnock
+  enriched: Joe J. Christensen
+  enriched: John H. Groberg
+  enriched: NT Wright
+  enriched: Douglas J. Moo
+  enriched: Roy W. Doxey
+  enriched: H. Donl Peterson
+  enriched: Virginia U. Jensen
+  enriched: Robert L. Backman
+  enriched: Ronald E. Poelman
+  enriched: Mary Ellen Smoot
+  enriched: Yoshihiko Kikuchi
+  people: 40 enriched, 167 skipped
+
+Total enriched: 40

@@ -25,3 +25,8 @@ Everything up-to-date
 Everything up-to-date
 Everything up-to-date
 Everything up-to-date
+  [ledger] push failed: To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at 9ba81a560d4592e96da4dc300cb0a55d153daf4d but expected 21c6fdca3eeb524ad0599807efbfc9701f4d006e)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+
+Everything up-to-date

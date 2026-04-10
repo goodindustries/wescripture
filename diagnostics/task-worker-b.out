@@ -670,3 +670,12 @@ Completed T-0084.
   [ledger] pushed to origin
   pushed to origin
 [WorkerB] T-0084 error. commit=
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] claimed T-0088: Donaldson — ezekiel: add commentary JSON for 9 missing chapter(s)
+[WorkerB] models: backend=claude claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+[WorkerB] running claude --model sonnet …
+You've hit your limit · resets Apr 13, 3pm (America/Chicago)
+Completed T-0088.
+  pushed to origin
+[WorkerB] T-0088 error. commit=a5ab6d92
