@@ -26,6 +26,7 @@ sys.path.insert(0, str(REPO / "lds_pipeline"))
 from task_ledger import _load_events, _project  # noqa: E402
 
 from orchestrate_hints import scan_worker_out_logs  # noqa: E402
+from track_feed import collect_recent_completions  # noqa: E402
 
 DIAG = REPO / "diagnostics"
 ORCH_LOG = DIAG / "orchestrate.log"
@@ -243,6 +244,17 @@ def collect_state() -> dict:
 
     worker_rows.sort(key=lambda r: _agent_sort(r.get("agent") or ""))
 
+    recent_completions: list[dict] = []
+    for t, _src, text in collect_recent_completions(40):
+        recent_completions.append(
+            {
+                "ts": datetime.fromtimestamp(t, tz=timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+                if t > 0
+                else "",
+                "text": text,
+            }
+        )
+
     return {
         "time_utc": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S"),
         "ledger": {
@@ -254,6 +266,7 @@ def collect_state() -> dict:
         "forever_running": _forever_running(),
         "feed_path": _feed_rel(),
         "feed_tail": feed_tail,
+        "recent_completions": recent_completions,
         "workers": {
             "running_count": n_run,
             "parallelism_cap_env": cap,

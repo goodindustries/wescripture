@@ -9,7 +9,7 @@
 #   ./lds_pipeline/run_parallel_task_workers.sh 12         # exactly 12 workers
 #
 # Env:
-#   TASK_WORKER_BACKEND   hybrid | dispatch | claude  (default: claude)
+#   TASK_WORKER_BACKEND   hybrid | dispatch | claude  (default: dispatch — local pipelines)
 #   MAX_PARALLEL_WORKERS  upper cap (default: 16)
 #   DEFAULT_PARALLEL_WORKERS  when $1 omitted (default: min(2*CPUs, MAX_PARALLEL_WORKERS))
 #
@@ -40,7 +40,7 @@ if [ "$N" -gt "$MAX" ]; then
 fi
 
 mkdir -p diagnostics
-BACKEND="${TASK_WORKER_BACKEND:-claude}"
+BACKEND="${TASK_WORKER_BACKEND:-dispatch}"
 OLLAMA="${OLLAMA_MODEL:-${GENERATE_CHRIST_MODEL:-gemma4:e2b}}"
 echo "Starting $N workers from $ROOT (backend=$BACKEND, max=$MAX, OLLAMA_MODEL=$OLLAMA) …"
 for ((i = 0; i < N; i++)); do

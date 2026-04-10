@@ -118,7 +118,8 @@
 
   <h2>Ledger &amp; processes</h2>
   <div class="panel" id="status">Loading…</div>
-  <h2>Feed tail</h2>
+  <h2>Activity feed</h2>
+  <p class="hint" style="margin-top:0">Recent <strong>task_completed</strong> rows from the ledger, then <code>track.feed.txt</code> (if you run <code>track_feed.py --follow</code>).</p>
   <div class="panel feed" id="feed"></div>
   <script>
     const statusEl = document.getElementById("status");
@@ -205,9 +206,25 @@
         lines.push("Orchestrate loop running: " + (d.forever_running ? "yes" : "no"));
         statusEl.textContent = lines.join("\n");
 
-        feedEl.textContent = (d.feed_tail && d.feed_tail.length)
-          ? d.feed_tail.join("\n")
-          : "(no " + (d.feed_path || "track.feed.txt") + " — run track_feed.py --follow)";
+        const parts = [];
+        const rc = d.recent_completions || [];
+        if (rc.length) {
+          parts.push("── Recent completions (ledger) ──");
+          for (const c of rc) {
+            parts.push((c.ts || "").slice(0, 19) + "  [complete] " + c.text);
+          }
+          parts.push("");
+        }
+        if (d.feed_tail && d.feed_tail.length) {
+          parts.push("── track.feed.txt tail ──");
+          parts.push.apply(parts, d.feed_tail);
+        } else if (!parts.length) {
+          parts.push("(no track.feed.txt yet — run: python3 lds_pipeline/track_feed.py --follow)");
+        } else {
+          parts.push("── track.feed.txt tail ──");
+          parts.push("(empty — run track_feed.py --follow for merged ledger/orchestrate/worker lines)");
+        }
+        feedEl.textContent = parts.join("\n");
       } catch (e) {
         statusEl.textContent = "Error: " + e.message;
         feedEl.textContent = "";

@@ -174,10 +174,21 @@ def main() -> None:
             break
 
         om = os.environ.get("OLLAMA_MODEL", os.environ.get("GENERATE_CHRIST_MODEL", "gemma4:e2b"))
-        log(
-            f"wave {wave}: {args.wave_size} workers backend={args.backend} "
-            f"(claude default model=sonnet unless worker overrides; ollama christ/followup={om})"
-        )
+        if args.backend == "dispatch":
+            log(
+                f"wave {wave}: {args.wave_size} workers backend=dispatch "
+                f"(local Python pipelines + Ollama christ/followup={om}; no Anthropic/Claude in worker)"
+            )
+        elif args.backend == "hybrid":
+            log(
+                f"wave {wave}: {args.wave_size} workers backend=hybrid "
+                f"(dispatch first; Claude CLI only if no rule — ollama={om})"
+            )
+        else:
+            log(
+                f"wave {wave}: {args.wave_size} workers backend=claude "
+                f"(Claude Code CLI per task; ollama christ/followup={om})"
+            )
         log(
             "  each slot: task_worker.py once → ledger claim → dispatch or claude → commit; "
             "logs: diagnostics/task-worker-WorkerNNN.out + model line on stdout"

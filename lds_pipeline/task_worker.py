@@ -21,9 +21,9 @@ Environment:
     ANTHROPIC_API_KEY  — required for --backend claude (or hybrid fallback)
 
 Backends:
-    claude   — Claude Code CLI (default)
-    dispatch — Local pipelines only (task_dispatch.py); no cloud LLM
-    hybrid   — Try dispatch first; if no rule matches, run Claude
+  dispatch — Local pipelines only (task_dispatch.py); no cloud LLM (orchestrate + parallel script default)
+  claude   — Claude Code CLI (`claude -p`)
+  hybrid   — Try dispatch first; if no rule matches, run Claude
 
 After a successful completion, task_followup.py (Ollama, default gemma4:e2b) queues
 one grounded follow-on task unless --no-followup.
@@ -199,6 +199,15 @@ def ollama_model_display() -> str:
     return os.environ.get("OLLAMA_MODEL", os.environ.get("GENERATE_CHRIST_MODEL", "gemma4:e2b"))
 
 
+def claude_model_logged(backend: str, ran_claude: bool, model: str) -> str:
+    """Omit Sonnet from logs when work is dispatch-only (local / Ollama)."""
+    if backend == "dispatch":
+        return "—"
+    if backend == "hybrid" and not ran_claude:
+        return "—"
+    return model
+
+
 def main():
     parser = argparse.ArgumentParser(description="Autonomous task worker for wescripture.")
     parser.add_argument("--agent",     default=DEFAULT_AGENT, help="Agent name for ledger")
@@ -206,8 +215,10 @@ def main():
     parser.add_argument("--budget",    default=MAX_BUDGET,    help="Max USD spend per task")
     parser.add_argument("--dry-run",   action="store_true",   help="Claim task, print prompt, don't run claude")
     parser.add_argument(
-        "--backend", choices=("claude", "dispatch", "hybrid"), default="claude",
-        help="dispatch = local pipelines; hybrid = dispatch then Claude",
+        "--backend",
+        choices=("claude", "dispatch", "hybrid"),
+        default=os.environ.get("TASK_WORKER_BACKEND", "dispatch"),
+        help="dispatch = local pipelines (default); hybrid = dispatch then Claude; claude = CLI only",
     )
     parser.add_argument("--no-followup", action="store_true", help="Skip Ollama follow-on task queue")
     parser.add_argument(
@@ -228,11 +239,25 @@ def main():
     title = task["title"]
     print(f"[{args.agent}] claimed {tid}: {title}", flush=True)
     ollama = ollama_model_display()
-    print(
-        f"[{args.agent}] models: backend={args.backend} claude_cli={args.model} "
-        f"ollama={ollama} (christ gen + task_followup unless --no-followup)",
-        flush=True,
-    )
+    ran_claude = False
+    if args.backend == "dispatch":
+        print(
+            f"[{args.agent}] models: backend=dispatch (local pipeline scripts only; no Claude CLI) "
+            f"ollama={ollama} (christ gen + task_followup unless --no-followup)",
+            flush=True,
+        )
+    elif args.backend == "hybrid":
+        print(
+            f"[{args.agent}] models: backend=hybrid (local dispatch first; Claude only if no rule) "
+            f"ollama={ollama}",
+            flush=True,
+        )
+    else:
+        print(
+            f"[{args.agent}] models: backend=claude claude_cli={args.model} "
+            f"ollama={ollama}",
+            flush=True,
+        )
 
     # ── Build prompt ──────────────────────────────────────────────────────────
     prompt = build_prompt(task)
@@ -270,7 +295,7 @@ def main():
                     "error",
                     d.summary,
                     backend=args.backend,
-                    claude_model=args.model,
+                    claude_model=claude_model_logged(args.backend, ran_claude, args.model),
                     ollama=ollama_model_display(),
                     title=title,
                 )
@@ -291,7 +316,7 @@ def main():
                 "reopened",
                 "dispatch: no handler — use hybrid or claude",
                 backend=args.backend,
-                claude_model=args.model,
+                claude_model=claude_model_logged(args.backend, ran_claude, args.model),
                 ollama=ollama_model_display(),
                 title=title,
             )
@@ -299,6 +324,7 @@ def main():
             sys.exit(1)
 
     if args.backend in ("claude", "hybrid") and not success:
+        ran_claude = True
         print(f"[{args.agent}] running claude --model {args.model} …", flush=True)
         claude_result = subprocess.run(
             [
@@ -343,7 +369,7 @@ def main():
         outcome,
         f"commit={new_commit}",
         backend=args.backend,
-        claude_model=args.model,
+        claude_model=claude_model_logged(args.backend, ran_claude, args.model),
         ollama=ollama_model_display(),
         title=title,
     )

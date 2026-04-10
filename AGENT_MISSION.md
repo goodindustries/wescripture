@@ -103,7 +103,7 @@ Cursor agents are instructed to **execute** orchestrate when you ask for workers
 **Small scout tasks (default):** `task_scout` queues **one** Wikipedia entry and **one** Christ-connection per task (`TASK_SCOUT_WIKI_CHUNK` / `TASK_SCOUT_CHRIST_CHUNK` default **1**), **one Donaldson chapter per task** (`TASK_SCOUT_DONALDSON_BUNDLE=1`). Raise those env vars to batch. **`--micro`** is 1/1/1 (same as defaults). **Pause workers:** `./lds_pipeline/pause_agents.sh` (or `PAUSE_TRACK_FEED=1` to also stop `track_feed.py`). **Workers** print `models: backend=… claude_cli=… ollama=…` after each claim; set **`OLLAMA_MODEL`** for local Ollama (christ generation + followup).
 **Parallel throughput (manual wave):** `./lds_pipeline/run_parallel_task_workers.sh`
 starts one worker per slot (default count ≈ `2×CPU`, capped by `MAX_PARALLEL_WORKERS`, default 16);
-agents are named `Worker000`…`Worker015`. Set `TASK_WORKER_BACKEND=hybrid` for dispatch-first.
+agents are named `Worker000`…`Worker015`. Default backend is **dispatch** (local pipelines + Ollama). Set `TASK_WORKER_BACKEND=claude` or `hybrid` if you want the Claude CLI.
 **Drain the queue:** `./lds_pipeline/run_task_drain.sh [wave-size]` runs wave after wave until
 `pending-count` is zero (does not run scout — refill with `task_scout` or `autonomous_runner` first).
 `python3 lds_pipeline/task_ledger.py pending-count` prints pending tasks only.

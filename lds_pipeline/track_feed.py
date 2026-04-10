@@ -44,34 +44,52 @@ def _parse_iso(s: str) -> float:
         return 0.0
 
 
+def _ledger_event_tuple(ev: dict, tasks: dict[str, dict], source: str) -> tuple[float, str, str]:
+    """One feed line from a ledger JSONL event."""
+    ts = ev.get("ts") or ""
+    kind = ev.get("event", ev.get("type", "?"))
+    tid = ev.get("task_id", "")
+    ag = ev.get("agent", "")
+    title = (ev.get("title") or ev.get("note") or "").strip()
+    if not title and tid:
+        title = (tasks.get(tid) or {}).get("title") or ""
+    title = title[:140]
+    body = f"{kind} {tid}".strip()
+    if ag:
+        body += f" agent={ag}"
+    if title:
+        body += f" — {title}"
+    notes = (ev.get("notes") or "").strip()
+    if kind == "task_completed" and ev.get("commit"):
+        body += f" commit={str(ev['commit'])[:12]}"
+    if notes and kind in ("task_reopened", "task_completed", "task_noted", "task_queued"):
+        snip = notes[:160] + ("…" if len(notes) > 160 else "")
+        body += f" | {snip}"
+    t = _parse_iso(ts) if ts else 0.0
+    return (t, source, body.strip())
+
+
 def collect_ledger_items(limit: int = 60) -> list[tuple[float, str, str]]:
     """Ledger lines: task titles come from projected state (claim/reopen rows often omit title)."""
-    out: list[tuple[float, str, str]] = []
     events = _load_events()
     tasks = _project(events)
-    for ev in events[-limit:]:
-        ts = ev.get("ts") or ""
-        kind = ev.get("event", ev.get("type", "?"))
-        tid = ev.get("task_id", "")
-        ag = ev.get("agent", "")
-        title = (ev.get("title") or ev.get("note") or "").strip()
-        if not title and tid:
-            title = (tasks.get(tid) or {}).get("title") or ""
-        title = title[:140]
-        body = f"{kind} {tid}".strip()
-        if ag:
-            body += f" agent={ag}"
-        if title:
-            body += f" — {title}"
-        notes = (ev.get("notes") or "").strip()
-        if kind == "task_completed" and ev.get("commit"):
-            body += f" commit={str(ev['commit'])[:12]}"
-        if notes and kind in ("task_reopened", "task_completed", "task_noted", "task_queued"):
-            snip = notes[:160] + ("…" if len(notes) > 160 else "")
-            body += f" | {snip}"
-        t = _parse_iso(ts) if ts else 0.0
-        out.append((t, "ledger", body.strip()))
-    return out
+    return [_ledger_event_tuple(ev, tasks, "ledger") for ev in events[-limit:]]
+
+
+def collect_recent_completions(limit: int = 45) -> list[tuple[float, str, str]]:
+    """Newest-last task_completed rows from full ledger (not only tail window)."""
+    events = _load_events()
+    tasks = _project(events)
+    picked: list[tuple[float, str, str]] = []
+    for ev in reversed(events):
+        kind = ev.get("event", ev.get("type", ""))
+        if kind not in ("task_completed", "completed"):
+            continue
+        picked.append(_ledger_event_tuple(ev, tasks, "complete"))
+        if len(picked) >= limit:
+            break
+    picked.reverse()
+    return picked
 
 
 def collect_orchestrate_items(limit: int = 40) -> list[tuple[float, str, str]]:
@@ -120,8 +138,9 @@ def collect_worker_json_items(limit_per_file: int = 8) -> list[tuple[float, str,
             extra = []
             if row.get("backend"):
                 extra.append(f"backend={row['backend']}")
-            if row.get("claude_model"):
-                extra.append(f"claude={row['claude_model']}")
+            cm = row.get("claude_model")
+            if cm and str(cm).strip() not in ("", "—"):
+                extra.append(f"claude={cm}")
             if row.get("ollama"):
                 extra.append(f"ollama={row['ollama']}")
             notes_w = (row.get("notes") or "").strip()
@@ -137,16 +156,18 @@ def collect_worker_json_items(limit_per_file: int = 8) -> list[tuple[float, str,
 def merge_feed(
     ledger_limit: int = 80,
     orch_limit: int = 50,
+    completion_limit: int = 45,
 ) -> list[dict]:
     items: list[tuple[float, str, str]] = []
     items.extend(collect_ledger_items(ledger_limit))
+    items.extend(collect_recent_completions(completion_limit))
     items.extend(collect_orchestrate_items(orch_limit))
     items.extend(collect_worker_json_items())
     items.sort(key=lambda x: x[0])
     seen = set()
     rows: list[dict] = []
     for t, src, msg in items:
-        key = (src, msg[:200], int(t))
+        key = (int(t), msg[:200])
         if key in seen:
             continue
         seen.add(key)
@@ -165,7 +186,7 @@ def merge_feed(
 def format_lines(rows: list[dict], base_url: str) -> str:
     lines = [
         f"# WeScripture activity feed  ·  site: {base_url}",
-        "# sources: ledger | orchestrate | worker (.log JSON)",
+        "# sources: ledger | complete (recent task_done) | orchestrate | worker (.log JSON)",
         "",
     ]
     for r in rows:
