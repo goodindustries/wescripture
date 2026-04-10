@@ -821,3 +821,4 @@
 {"event": "task_claimed", "task_id": "T-0074", "agent": "Worker002", "ts": "2026-04-10T00:22:43+00:00"}
 {"event": "task_reopened", "task_id": "T-0072", "ts": "2026-04-10T00:22:43+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
 {"event": "task_reopened", "task_id": "T-0072", "ts": "2026-04-10T00:22:43+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
+{"event": "task_completed", "task_id": "T-0074", "agent": "Worker002", "ts": "2026-04-10T00:22:45+00:00", "commit": "550e3e03", "notes": "dispatch: annotate_entity_spans --books esther (exit 0)"}
