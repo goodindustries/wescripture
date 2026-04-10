@@ -263,3 +263,4 @@
 {"event": "task_claimed", "task_id": "T-0066", "agent": "Worker003", "ts": "2026-04-10T00:03:14+00:00"}
 {"event": "task_claimed", "task_id": "T-0066", "agent": "Worker002", "ts": "2026-04-10T00:03:14+00:00"}
 {"event": "task_claimed", "task_id": "T-0066", "agent": "Worker000", "ts": "2026-04-10T00:03:14+00:00"}
+{"event": "task_completed", "task_id": "T-0066", "agent": "Worker000", "ts": "2026-04-10T00:03:15+00:00", "commit": "f87bd9e8", "notes": "dispatch: annotate_entity_spans --books genesis (exit 0)"}
