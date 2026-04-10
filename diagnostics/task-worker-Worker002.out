@@ -47,3 +47,6 @@ Reopened T-0067.
 === 2026-04-10T00:07:51Z start Worker002 ===
 [Worker002] checking for pending tasks…
 [Worker002] claimed T-0068: Donaldson — doctrine_and_covenants: add commentary JSON for 138 missing chapter(s)
+Reopened T-0068.
+  pushed to origin
+[Worker002] T-0068 no dispatch rule — reopened.

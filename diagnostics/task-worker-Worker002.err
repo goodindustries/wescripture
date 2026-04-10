@@ -60,3 +60,8 @@ error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescript
 error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
 
 Everything up-to-date
+  [ledger] push failed: To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at 358fc6cedba671277bdedf89dc3891b9f6233bdd but expected c994c7c903f9f341b31f6a7cb5e070b570b61363)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+
+Everything up-to-date
