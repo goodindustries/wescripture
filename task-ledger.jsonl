@@ -4347,3 +4347,11 @@
 {"event": "task_reopened", "task_id": "T-0113", "ts": "2026-04-10T02:54:18+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
 {"event": "task_completed", "task_id": "T-0099", "agent": "CursorPlan", "ts": "2026-04-10T02:54:19+00:00", "notes": "mark_8_notes.html present; task_dispatch now handles Ch * _notes titles"}
 {"event": "task_completed", "task_id": "T-0115", "agent": "WorkerA", "ts": "2026-04-10T02:54:22+00:00", "commit": "9222c9e4", "notes": "dispatch: annotate_entity_spans --books deuteronomy (exit 0)"}
+{"event": "task_claimed", "task_id": "T-0113", "agent": "Worker000", "ts": "2026-04-10T02:54:26+00:00"}
+{"event": "task_claimed", "task_id": "T-0113", "agent": "Worker002", "ts": "2026-04-10T02:54:26+00:00"}
+{"event": "task_claimed", "task_id": "T-0113", "agent": "Worker001", "ts": "2026-04-10T02:54:26+00:00"}
+{"event": "task_claimed", "task_id": "T-0113", "agent": "Worker006", "ts": "2026-04-10T02:54:26+00:00"}
+{"event": "task_claimed", "task_id": "T-0113", "agent": "Worker003", "ts": "2026-04-10T02:54:26+00:00"}
+{"event": "task_claimed", "task_id": "T-0113", "agent": "Worker004", "ts": "2026-04-10T02:54:26+00:00"}
+{"event": "task_claimed", "task_id": "T-0113", "agent": "Worker005", "ts": "2026-04-10T02:54:26+00:00"}
+{"event": "task_claimed", "task_id": "T-0113", "agent": "Worker007", "ts": "2026-04-10T02:54:26+00:00"}
