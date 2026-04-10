@@ -3452,3 +3452,4 @@
 {"event": "task_reopened", "task_id": "T-0099", "ts": "2026-04-10T02:46:17+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
 {"event": "task_completed", "task_id": "T-0114", "agent": "Worker002", "ts": "2026-04-10T02:46:20+00:00", "commit": "048db141", "notes": "dispatch: build_entity_wikipedia --scripture-people (exit 0)"}
 {"event": "task_completed", "task_id": "T-0114", "agent": "Worker004", "ts": "2026-04-10T02:46:20+00:00", "commit": "048db141", "notes": "dispatch: build_entity_wikipedia --scripture-people (exit 0)"}
+{"event": "task_reopened", "task_id": "T-0099", "ts": "2026-04-10T02:46:21+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
