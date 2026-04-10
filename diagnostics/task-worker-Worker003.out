@@ -1545,3 +1545,47 @@ Reopened T-0099.
 [Worker003] T-0099 no dispatch rule — reopened.
   push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
 [Worker003] T-0099 no dispatch rule — reopened.
+Enriching people (/Users/reify/Classified/wescripture/library/entities/people.json)...
+  enriched: C.S Lewis
+  enriched: Harold G. Hillam
+  enriched: Albert E. Bowen
+  enriched: Kelly Ogden
+  enriched: Coleen K. Menlove
+  enriched: Janette C. Hales
+  enriched: Ardeth G. Kapp
+  enriched: W. Eugene Hansen
+  enriched: Chieko Okazaki
+  enriched: New American Bible
+  enriched: G. B. Caird
+  enriched: Bonnie L. Oscarson
+  enriched: Paul R. Cheesman
+  enriched: Lee Donaldson
+  enriched: Elaine Cannon
+  enriched: Melvin J. Ballard
+  enriched: Chris Conkling
+  enriched: Shayne M. Bowen
+  enriched: F. Melvin Hammond
+  enriched: Bible Dictionary
+  enriched: Erastus Snow
+  enriched: Robert C. Oaks
+  enriched: Dwan J. Young
+  enriched: Ted E. Brewerton
+  enriched: Ben B. Banks
+  enriched: Sydney S. Reynolds
+  enriched: W. Craig Zwick
+  enriched: Rosemary M. Wixom
+  enriched: Mary Ellen Edmunds
+  enriched: Lectures on Faith
+  enriched: Brent A. Barlow
+  enriched: C. Scott Grow
+  enriched: LDS Church News
+  enriched: Hugh W. Nibley
+  enriched: Online Bible
+  enriched: John A. Widstoe
+  enriched: Alfred Edersheim
+  enriched: Durrel A. Woolsey
+  enriched: Rudger Clawson
+  enriched: Alma Sonne
+  people: 40 enriched, 363 skipped
+
+Total enriched: 40
