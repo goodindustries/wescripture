@@ -1,0 +1,42 @@
+:80 {
+    # HTTP only by default (dev). In production, switch to `your-domain.com { ... }`
+    # and Caddy will automatically manage TLS.
+
+    encode zstd gzip
+
+    # API boundary for future stateful features.
+    handle_path /api/* {
+        reverse_proxy api:8000
+    }
+
+    # Static site: serve repo-root `index.html` at /, and `library/` at /library/.
+    handle /library/* {
+        root * /srv/static
+        try_files {path} {path}/ /library/index.html
+        file_server
+    }
+
+    handle {
+        root * /srv/static
+        try_files {path} {path}/ /index.html
+        file_server
+    }
+}
+:80 {
+:    # HTTP only by default (dev). In production, switch to `your-domain.com { ... }`
+:    # and Caddy will automatically manage TLS.
+:
+:    encode zstd gzip
+:
+:    # Serve the existing static app output exactly as-is.
+:    root * /srv/static
+:    file_server
+:
+:    # API boundary for future stateful features.
+:    handle_path /api/* {
+:        reverse_proxy api:8000
+:    }
+:
+:    # Health check (no auth) for ops.
+:    respond /healthz 200
+:}

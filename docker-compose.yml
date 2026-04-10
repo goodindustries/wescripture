@@ -1,0 +1,79 @@
+services:
+  caddy:
+    image: caddy:2
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./index.html:/srv/static/index.html:ro
+      - ./home.css:/srv/static/home.css:ro
+      - ./assets:/srv/static/assets:ro
+      - ./library:/srv/static/library:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  api:
+    build:
+      context: ./server
+    environment:
+      APP_ENV: ${APP_ENV:-local}
+      DATABASE_URL: ${DATABASE_URL:-postgresql://wescripture:wescripture@postgres:5432/wescripture}
+      SESSION_SECRET: ${SESSION_SECRET:-dev-insecure-change-me}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost,http://127.0.0.1}
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+  migrate:
+    build:
+      context: ./server
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql://wescripture:wescripture@postgres:5432/wescripture}
+    depends_on:
+      - postgres
+    entrypoint: ["/bin/bash", "/app/scripts/apply_migrations.sh"]
+    restart: "no"
+
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: wescripture
+      POSTGRES_USER: wescripture
+      POSTGRES_PASSWORD: wescripture
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  pg_backup:
+    image: postgres:16
+    environment:
+      PGPASSWORD: ${POSTGRES_PASSWORD:-wescripture}
+      POSTGRES_USER: ${POSTGRES_USER:-wescripture}
+      POSTGRES_DB: ${POSTGRES_DB:-wescripture}
+      POSTGRES_HOST: ${POSTGRES_HOST:-postgres}
+      BACKUP_DIR: /backups
+      RETENTION_DAYS: ${RETENTION_DAYS:-14}
+      CRON: ${BACKUP_CRON:-0 3 * * *}
+    volumes:
+      - ./backups/postgres:/backups
+    depends_on:
+      - postgres
+    restart: unless-stopped
+    entrypoint: ["/bin/bash", "-lc"]
+    command: >
+      apt-get update -y &&
+      apt-get install -y --no-install-recommends cron ca-certificates &&
+      rm -rf /var/lib/apt/lists/* &&
+      echo "$CRON /usr/bin/pg_dump -h $POSTGRES_HOST -U $POSTGRES_USER $POSTGRES_DB | gzip -c > $BACKUP_DIR/backup-$(date +\\%F).sql.gz && find $BACKUP_DIR -type f -name 'backup-*.sql.gz' -mtime +$RETENTION_DAYS -delete" > /etc/cron.d/pg_backup &&
+      chmod 0644 /etc/cron.d/pg_backup &&
+      crontab /etc/cron.d/pg_backup &&
+      cron -f
+
+volumes:
+  pg_data:
+  caddy_data:
+  caddy_config:
