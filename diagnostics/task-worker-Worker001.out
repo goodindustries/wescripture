@@ -6,3 +6,10 @@ Reopened T-0062.
 [Worker001] T-0062 no dispatch rule — reopened.
 === 2026-04-10T00:03:13Z start Worker001 ===
 [Worker001] checking for pending tasks…
+[Worker001] claimed T-0066: Ch genesis_1: add entity span annotations (data-entity / place / thing)
+  [dispatch] /Library/Developer/CommandLineTools/usr/bin/python3 /Users/reify/Classified/wescripture/lds_pipeline/annotate_entity_spans.py --books genesis
+Loading entity indexes…
+  134 scripture-person variants, 81 place variants, 207 thing variants
+Annotating 1 chapters…
+
+Done. 0 chapters changed, 31 verses scanned, 0 entity spans added.
