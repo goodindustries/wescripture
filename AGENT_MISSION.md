@@ -110,6 +110,7 @@ agents are named `Worker000`…`Worker015`. Set `TASK_WORKER_BACKEND=hybrid` for
 **Activity feed (local, pipe-friendly):** `python3 lds_pipeline/track_feed.py --follow` streams merged ledger + orchestrator + worker lines to stdout and appends **`diagnostics/track.feed.txt`** — use **`tail -f diagnostics/track.feed.txt`** in another terminal. Not deployed. Optional: `watch_progress.py` (full-screen refresh) or `tail -f diagnostics/orchestrate.log` (verbose orchestrator only).
 
 **“Is it running?”:** `python3 lds_pipeline/watch_it.py` refreshes a dashboard (ledger counts, `pgrep` counts for orchestrate/workers/track_feed, tail of `track.feed.txt`). `python3 lds_pipeline/watch_it.py --once` for a single snapshot.
+**Browser control (local only):** `./lds_pipeline/run_agent_ui.sh` then open **http://127.0.0.1:8765/** — start/stop workers (`run_orchestrate_forever.sh` / `pause_agents.sh`), ledger counts, process counts, feed tail. Not deployed; bind `AGENT_UI_BIND` / `AGENT_UI_PORT` if needed.
 
 **Verse done-ness dashboard:** `python3 lds_pipeline/build_verse_coverage.py` writes
 `library/verse_coverage.json` (Donaldson + entity markup + verse discovery per verse).

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WeScripture · agents</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 42rem;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      line-height: 1.45;
+    }
+    h1 { font-size: 1.2rem; font-weight: 600; }
+    .hint { font-size: 0.9rem; opacity: 0.85; margin: 0.5rem 0 1rem; }
+    .row { display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center; margin: 1rem 0; }
+    button {
+      padding: 0.45rem 0.9rem;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border-radius: 6px;
+      border: 1px solid #8884;
+    }
+    .btn-start { background: #166534; color: #fff; border-color: #166534; }
+    .btn-stop { background: #991b1b; color: #fff; border-color: #991b1b; }
+    .btn-ghost { background: transparent; }
+    .panel {
+      background: color-mix(in srgb, Canvas 92%, CanvasText 8%);
+      border-radius: 8px;
+      padding: 0.9rem 1rem;
+      font-family: ui-monospace, "Cascadia Code", monospace;
+      font-size: 0.82rem;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .feed {
+      max-height: 16rem;
+      overflow-y: auto;
+      margin-top: 0.5rem;
+      font-size: 0.78rem;
+      opacity: 0.95;
+    }
+    #msg { min-height: 1.25rem; font-size: 0.88rem; }
+    #msg.ok { color: #166534; }
+    #msg.err { color: #991b1b; }
+    h2 { font-size: 0.95rem; margin: 1.25rem 0 0.35rem; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <h1>WeScripture · agent control</h1>
+  <p class="hint">
+    Runs on your machine only (<code>127.0.0.1</code>). Start launches
+    <code>run_orchestrate_forever.sh</code>; Stop runs <code>pause_agents.sh</code>.
+  </p>
+  <div class="row">
+    <button type="button" class="btn-start" id="btnStart">Start workers</button>
+    <button type="button" class="btn-stop" id="btnStop">Stop workers</button>
+    <button type="button" class="btn-ghost" id="btnRefresh">Refresh</button>
+    <label style="font-size:0.88rem;display:flex;align-items:center;gap:0.35rem;">
+      <input type="checkbox" id="auto" checked /> Auto-refresh 5s
+    </label>
+  </div>
+  <p id="msg"></p>
+  <h2>Ledger &amp; processes</h2>
+  <div class="panel" id="status">Loading…</div>
+  <h2>Feed tail</h2>
+  <div class="panel feed" id="feed"></div>
+  <script>
+    const statusEl = document.getElementById("status");
+    const feedEl = document.getElementById("feed");
+    const msgEl = document.getElementById("msg");
+    let timer = null;
+
+    function showMsg(text, ok) {
+      msgEl.textContent = text || "";
+      msgEl.className = text ? (ok ? "ok" : "err") : "";
+    }
+
+    async function loadState() {
+      try {
+        const r = await fetch("/api/state", { cache: "no-store" });
+        const d = await r.json();
+        if (!r.ok) throw new Error(d.error || r.statusText);
+        const L = d.ledger || {};
+        const lines = [
+          "Time (UTC): " + (d.time_utc || "—"),
+          "",
+          "Ledger  pending: " + (L.pending ?? "—") +
+            "  |  claimed: " + (L.claimed ?? "—") +
+            "  |  completed: " + (L.completed ?? "—"),
+          "",
+          "Processes (pgrep):",
+        ];
+        const procs = d.processes || {};
+        for (const k of Object.keys(procs).sort()) {
+          lines.push("  " + k.padEnd(28, " ") + String(procs[k]));
+        }
+        lines.push("");
+        lines.push("Orchestrate loop running: " + (d.forever_running ? "yes" : "no"));
+        statusEl.textContent = lines.join("\n");
+        feedEl.textContent = (d.feed_tail && d.feed_tail.length)
+          ? d.feed_tail.join("\n")
+          : "(no " + (d.feed_path || "track.feed.txt") + " — run track_feed.py --follow)";
+      } catch (e) {
+        statusEl.textContent = "Error: " + e.message;
+        feedEl.textContent = "";
+      }
+    }
+
+    async function post(path) {
+      showMsg("");
+      try {
+        const r = await fetch(path, { method: "POST", cache: "no-store" });
+        const d = await r.json();
+        if (!r.ok) throw new Error(d.error || d.message || r.statusText);
+        showMsg(d.message || "OK", true);
+        await loadState();
+      } catch (e) {
+        showMsg(e.message || String(e), false);
+      }
+    }
+
+    document.getElementById("btnStart").onclick = () => post("/api/start");
+    document.getElementById("btnStop").onclick = () => post("/api/stop");
+    document.getElementById("btnRefresh").onclick = () => loadState();
+
+    function armAuto() {
+      if (timer) clearInterval(timer);
+      timer = null;
+      if (document.getElementById("auto").checked) {
+        timer = setInterval(loadState, 5000);
+      }
+    }
+    document.getElementById("auto").onchange = armAuto;
+
+    loadState();
+    armAuto();
+  </script>
+</body>
+</html>
