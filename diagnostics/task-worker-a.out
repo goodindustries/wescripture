@@ -609,3 +609,21 @@ Completed T-0062.
   [ledger] pushed to origin
   pushed to origin
 [WorkerA] T-0062 error. commit=
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] claimed T-0068: Donaldson — doctrine_and_covenants: add commentary JSON for 138 missing chapter(s)
+[WorkerA] running claude --model sonnet …
+You've hit your limit · resets Apr 13, 3pm (America/Chicago)
+Completed T-0068.
+  [ledger] pushed to origin
+  pushed to origin
+[WorkerA] T-0068 error. commit=
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] claimed T-0071: Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+[WorkerA] models: backend=claude claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+[WorkerA] running claude --model sonnet …
+You've hit your limit · resets Apr 13, 3pm (America/Chicago)
+Completed T-0071.
+  pushed to origin
+[WorkerA] T-0071 error. commit=8aad0d42

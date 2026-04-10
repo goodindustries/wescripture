@@ -13,3 +13,5 @@
 {"ts": "2026-04-09T02:43:58+00:00", "task_id": "T-0064", "agent": "WorkerB", "outcome": "error", "notes": "commit=248feb0f"}
 {"ts": "2026-04-09T02:54:08+00:00", "task_id": "T-0065", "agent": "WorkerB", "outcome": "error", "notes": "commit="}
 {"ts": "2026-04-10T00:01:23+00:00", "task_id": "T-0059", "agent": "WorkerB", "outcome": "error", "notes": "commit=6ecfd599"}
+{"ts": "2026-04-10T00:11:41+00:00", "task_id": "T-0067", "agent": "WorkerB", "outcome": "error", "notes": "commit=4f28f7cc"}
+{"ts": "2026-04-10T00:21:53+00:00", "task_id": "T-0067", "agent": "WorkerB", "outcome": "error", "notes": "commit=b37dd339", "backend": "claude", "claude_model": "sonnet", "ollama": "gemma4:e2b"}

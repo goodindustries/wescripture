@@ -6,3 +6,173 @@ Enriching scripture_people (/Users/reify/Classified/wescripture/library/entities
   scripture_people: 0 enriched, 200 skipped
 
 Total enriched: 0
+[main fe7562e1] [task] T-0069: build_entity_wikipedia --scripture-people (exit 0)
+ Committer: Reif Tauati <reify@Reifs-MacBook-Pro.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 9 files changed, 48 insertions(+)
+Completed T-0069.
+  [ledger] pushed to origin
+  pushed to origin
+  [followup] exit 2 (non-fatal)
+[Worker005] T-0069 success. commit=fe7562e1
+=== 2026-04-10T00:10:10Z exit 0 Worker005 ===
+=== 2026-04-10T00:10:31Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0068: Donaldson — doctrine_and_covenants: add commentary JSON for 138 missing chapter(s)
+Reopened T-0068.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0068 no dispatch rule — reopened.
+=== 2026-04-10T00:11:01Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0068: Donaldson — doctrine_and_covenants: add commentary JSON for 138 missing chapter(s)
+Reopened T-0068.
+  pushed to origin
+[Worker005] T-0068 no dispatch rule — reopened.
+=== 2026-04-10T00:11:32Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0071: Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+Reopened T-0071.
+  pushed to origin
+[Worker005] T-0071 no dispatch rule — reopened.
+=== 2026-04-10T00:12:03Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+Reopened T-0072.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:12:34Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0071: Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+Reopened T-0071.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0071 no dispatch rule — reopened.
+=== 2026-04-10T00:13:05Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+Reopened T-0072.
+  pushed to origin
+[Worker005] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:13:36Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0071: Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+Reopened T-0071.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0071 no dispatch rule — reopened.
+=== 2026-04-10T00:14:07Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0071: Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+Reopened T-0071.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0071 no dispatch rule — reopened.
+=== 2026-04-10T00:14:39Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0071: Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+Reopened T-0071.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0071 no dispatch rule — reopened.
+=== 2026-04-10T00:15:11Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+Reopened T-0072.
+  pushed to origin
+[Worker005] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:15:41Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0071: Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+Reopened T-0071.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0071 no dispatch rule — reopened.
+=== 2026-04-10T00:16:11Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0067: Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+Reopened T-0067.
+  pushed to origin
+[Worker005] T-0067 no dispatch rule — reopened.
+=== 2026-04-10T00:16:41Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0071: Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+Reopened T-0071.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0071 no dispatch rule — reopened.
+=== 2026-04-10T00:17:10Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0071: Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+Reopened T-0071.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0071 no dispatch rule — reopened.
+=== 2026-04-10T00:17:40Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0067: Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+Reopened T-0067.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0067 no dispatch rule — reopened.
+=== 2026-04-10T00:18:10Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0071: Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+Reopened T-0071.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0071 no dispatch rule — reopened.
+=== 2026-04-10T00:18:40Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0067: Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+Reopened T-0067.
+  pushed to origin
+[Worker005] T-0067 no dispatch rule — reopened.
+=== 2026-04-10T00:19:10Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+Reopened T-0072.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:19:39Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0067: Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0067.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0067 no dispatch rule — reopened.
+=== 2026-04-10T00:20:10Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0071: Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0071.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0071 no dispatch rule — reopened.
+=== 2026-04-10T00:20:40Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0067: Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0067.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0067 no dispatch rule — reopened.
+=== 2026-04-10T00:21:09Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0071: Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0071.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0071 no dispatch rule — reopened.
+=== 2026-04-10T00:21:39Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0071: Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0071.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0071 no dispatch rule — reopened.
+=== 2026-04-10T00:22:10Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0072.
+  pushed to origin
+[Worker005] T-0072 no dispatch rule — reopened.

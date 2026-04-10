@@ -90,3 +90,245 @@ Starting 4 workers from /Users/reify/Classified/wescripture (backend=dispatch, m
   Worker001  → diagnostics/task-worker-Worker001.out
   Worker002  → diagnostics/task-worker-Worker002.out
   Worker003  → diagnostics/task-worker-Worker003.out
+All 4 workers finished.
+All 6 workers finished.
+2026-04-09T19:10:10Z wave 1 worker script exit=0; pending now 42
+2026-04-09T19:10:22Z git pull → 0
+2026-04-09T19:10:22Z Already up to date.
+2026-04-09T19:10:22Z pending=42
+2026-04-09T19:10:22Z wave 7: 4 workers backend=dispatch
+Starting 4 workers from /Users/reify/Classified/wescripture (backend=dispatch, max=32) …
+  Worker000  → diagnostics/task-worker-Worker000.out
+  Worker001  → diagnostics/task-worker-Worker001.out
+  Worker002  → diagnostics/task-worker-Worker002.out
+  Worker003  → diagnostics/task-worker-Worker003.out
+All 4 workers finished.
+2026-04-09T19:10:31Z git pull → 0
+2026-04-09T19:10:31Z Already up to date.
+2026-04-09T19:10:31Z pending=42
+2026-04-09T19:10:31Z wave 2: 6 workers backend=dispatch
+Starting 6 workers from /Users/reify/Classified/wescripture (backend=dispatch, max=32) …
+  Worker000  → diagnostics/task-worker-Worker000.out
+  Worker001  → diagnostics/task-worker-Worker001.out
+  Worker002  → diagnostics/task-worker-Worker002.out
+  Worker003  → diagnostics/task-worker-Worker003.out
+  Worker004  → diagnostics/task-worker-Worker004.out
+  Worker005  → diagnostics/task-worker-Worker005.out
+All 6 workers finished.
+2026-04-09T19:10:40Z wave 2 worker script exit=0; pending now 42
+2026-04-09T19:10:52Z git pull → 0
+2026-04-09T19:10:52Z Already up to date.
+2026-04-09T19:10:52Z pending=42
+2026-04-09T19:10:52Z wave 8: 4 workers backend=dispatch
+Starting 4 workers from /Users/reify/Classified/wescripture (backend=dispatch, max=32) …
+  Worker000  → diagnostics/task-worker-Worker000.out
+  Worker001  → diagnostics/task-worker-Worker001.out
+  Worker002  → diagnostics/task-worker-Worker002.out
+  Worker003  → diagnostics/task-worker-Worker003.out
+2026-04-09T19:11:01Z git pull → 0
+2026-04-09T19:11:01Z Already up to date.
+2026-04-09T19:11:01Z pending=42
+2026-04-09T19:11:01Z wave 3: 6 workers backend=dispatch
+Starting 6 workers from /Users/reify/Classified/wescripture (backend=dispatch, max=32) …
+  Worker000  → diagnostics/task-worker-Worker000.out
+  Worker001  → diagnostics/task-worker-Worker001.out
+  Worker002  → diagnostics/task-worker-Worker002.out
+  Worker003  → diagnostics/task-worker-Worker003.out
+  Worker004  → diagnostics/task-worker-Worker004.out
+  Worker005  → diagnostics/task-worker-Worker005.out
+All 4 workers finished.
+All 6 workers finished.
+2026-04-09T19:11:11Z wave 3 worker script exit=0; pending now 42
+2026-04-09T19:11:22Z git pull → 0
+2026-04-09T19:11:22Z Already up to date.
+2026-04-09T19:11:22Z pending=42
+2026-04-09T19:11:22Z wave 9: 4 workers backend=dispatch
+Starting 4 workers from /Users/reify/Classified/wescripture (backend=dispatch, max=32) …
+  Worker000  → diagnostics/task-worker-Worker000.out
+  Worker001  → diagnostics/task-worker-Worker001.out
+  Worker002  → diagnostics/task-worker-Worker002.out
+  Worker003  → diagnostics/task-worker-Worker003.out
+All 4 workers finished.
+2026-04-09T19:11:32Z git pull → 0
+2026-04-09T19:11:32Z Already up to date.
+2026-04-09T19:11:32Z pending=42
+2026-04-09T19:11:32Z wave 4: 6 workers backend=dispatch
+Starting 6 workers from /Users/reify/Classified/wescripture (backend=dispatch, max=32) …
+  Worker000  → diagnostics/task-worker-Worker000.out
+  Worker001  → diagnostics/task-worker-Worker001.out
+  Worker002  → diagnostics/task-worker-Worker002.out
+  Worker003  → diagnostics/task-worker-Worker003.out
+  Worker004  → diagnostics/task-worker-Worker004.out
+  Worker005  → diagnostics/task-worker-Worker005.out
+All 6 workers finished.
+2026-04-09T19:11:42Z wave 4 worker script exit=0; pending now 41
+2026-04-09T19:11:53Z git pull → 0
+2026-04-09T19:11:53Z Already up to date.
+2026-04-09T19:11:53Z pending=41
+2026-04-09T19:11:53Z wave 10: 4 workers backend=dispatch
+Starting 4 workers from /Users/reify/Classified/wescripture (backend=dispatch, max=32) …
+  Worker000  → diagnostics/task-worker-Worker000.out
+  Worker001  → diagnostics/task-worker-Worker001.out
+  Worker002  → diagnostics/task-worker-Worker002.out
+  Worker003  → diagnostics/task-worker-Worker003.out
+All 4 workers finished.
+2026-04-09T19:12:03Z git pull → 0
+2026-04-09T19:12:03Z Already up to date.
+2026-04-09T19:12:03Z pending=41
+2026-04-09T19:12:03Z wave 5: 6 workers backend=dispatch
+Starting 6 workers from /Users/reify/Classified/wescripture (backend=dispatch, max=32) …
+  Worker000  → diagnostics/task-worker-Worker000.out
+  Worker001  → diagnostics/task-worker-Worker001.out
+  Worker002  → diagnostics/task-worker-Worker002.out
+  Worker003  → diagnostics/task-worker-Worker003.out
+  Worker004  → diagnostics/task-worker-Worker004.out
+  Worker005  → diagnostics/task-worker-Worker005.out
+All 6 workers finished.
+2026-04-09T19:12:13Z wave 5 worker script exit=0; pending now 41
+2026-04-09T19:12:24Z git pull → 0
+2026-04-09T19:12:24Z Already up to date.
+2026-04-09T19:12:24Z pending=41
+2026-04-09T19:12:24Z wave 11: 4 workers backend=dispatch
+Starting 4 workers from /Users/reify/Classified/wescripture (backend=dispatch, max=32) …
+  Worker000  → diagnostics/task-worker-Worker000.out
+  Worker001  → diagnostics/task-worker-Worker001.out
+  Worker002  → diagnostics/task-worker-Worker002.out
+  Worker003  → diagnostics/task-worker-Worker003.out
+2026-04-09T19:12:34Z git pull → 0
+2026-04-09T19:12:34Z Already up to date.
+2026-04-09T19:12:34Z pending=41
+2026-04-09T19:12:34Z wave 6: 6 workers backend=dispatch
+Starting 6 workers from /Users/reify/Classified/wescripture (backend=dispatch, max=32) …
+  Worker000  → diagnostics/task-worker-Worker000.out
+  Worker001  → diagnostics/task-worker-Worker001.out
+  Worker002  → diagnostics/task-worker-Worker002.out
+  Worker003  → diagnostics/task-worker-Worker003.out
+  Worker004  → diagnostics/task-worker-Worker004.out
+  Worker005  → diagnostics/task-worker-Worker005.out
+All 4 workers finished.
+All 6 workers finished.
+2026-04-09T19:12:44Z wave 6 worker script exit=0; pending now 41
+2026-04-09T19:12:55Z git pull → 0
+2026-04-09T19:12:55Z Already up to date.
+2026-04-09T19:12:55Z pending=41
+2026-04-09T19:12:55Z wave 12: 4 workers backend=dispatch
+Starting 4 workers from /Users/reify/Classified/wescripture (backend=dispatch, max=32) …
+  Worker000  → diagnostics/task-worker-Worker000.out
+  Worker001  → diagnostics/task-worker-Worker001.out
+  Worker002  → diagnostics/task-worker-Worker002.out
+  Worker003  → diagnostics/task-worker-Worker003.out
+All 4 workers finished.
+2026-04-09T19:13:05Z git pull → 0
+2026-04-09T19:13:05Z Already up to date.
+2026-04-09T19:13:05Z pending=41
+2026-04-09T19:13:05Z wave 7: 6 workers backend=dispatch
+Starting 6 workers from /Users/reify/Classified/wescripture (backend=dispatch, max=32) …
+  Worker000  → diagnostics/task-worker-Worker000.out
+  Worker001  → diagnostics/task-worker-Worker001.out
+  Worker002  → diagnostics/task-worker-Worker002.out
+  Worker003  → diagnostics/task-worker-Worker003.out
+  Worker004  → diagnostics/task-worker-Worker004.out
+  Worker005  → diagnostics/task-worker-Worker005.out
+All 6 workers finished.
+2026-04-09T19:13:15Z wave 7 worker script exit=0; pending now 41
+2026-04-09T19:13:25Z git pull → 0
+2026-04-09T19:13:25Z Already up to date.
+2026-04-09T19:13:25Z pending=41
+2026-04-09T19:13:25Z wave 13: 4 workers backend=dispatch
+Starting 4 workers from /Users/reify/Classified/wescripture (backend=dispatch, max=32) …
+  Worker000  → diagnostics/task-worker-Worker000.out
+  Worker001  → diagnostics/task-worker-Worker001.out
+  Worker002  → diagnostics/task-worker-Worker002.out
+  Worker003  → diagnostics/task-worker-Worker003.out
+All 4 workers finished.
+2026-04-09T19:13:36Z git pull → 0
+2026-04-09T19:13:36Z Already up to date.
+2026-04-09T19:13:36Z pending=41
+2026-04-09T19:13:36Z wave 8: 6 workers backend=dispatch
+Starting 6 workers from /Users/reify/Classified/wescripture (backend=dispatch, max=32) …
+  Worker000  → diagnostics/task-worker-Worker000.out
+  Worker001  → diagnostics/task-worker-Worker001.out
+  Worker002  → diagnostics/task-worker-Worker002.out
+  Worker003  → diagnostics/task-worker-Worker003.out
+  Worker004  → diagnostics/task-worker-Worker004.out
+  Worker005  → diagnostics/task-worker-Worker005.out
+All 6 workers finished.
+2026-04-09T19:13:46Z wave 8 worker script exit=0; pending now 41
+2026-04-09T19:13:56Z git pull → 0
+2026-04-09T19:13:56Z Already up to date.
+2026-04-09T19:13:56Z pending=41
+2026-04-09T19:13:56Z wave 14: 4 workers backend=dispatch
+Starting 4 workers from /Users/reify/Classified/wescripture (backend=dispatch, max=32) …
+  Worker000  → diagnostics/task-worker-Worker000.out
+  Worker001  → diagnostics/task-worker-Worker001.out
+  Worker002  → diagnostics/task-worker-Worker002.out
+  Worker003  → diagnostics/task-worker-Worker003.out
+All 4 workers finished.
+2026-04-09T19:14:07Z git pull → 0
+2026-04-09T19:14:07Z Already up to date.
+2026-04-09T19:14:07Z pending=41
+2026-04-09T19:14:07Z wave 9: 6 workers backend=dispatch
+Starting 6 workers from /Users/reify/Classified/wescripture (backend=dispatch, max=32) …
+  Worker000  → diagnostics/task-worker-Worker000.out
+  Worker001  → diagnostics/task-worker-Worker001.out
+  Worker002  → diagnostics/task-worker-Worker002.out
+  Worker003  → diagnostics/task-worker-Worker003.out
+  Worker004  → diagnostics/task-worker-Worker004.out
+  Worker005  → diagnostics/task-worker-Worker005.out
+All 6 workers finished.
+2026-04-09T19:14:17Z wave 9 worker script exit=0; pending now 41
+2026-04-09T19:14:27Z git pull → 0
+2026-04-09T19:14:27Z Already up to date.
+2026-04-09T19:14:27Z pending=41
+2026-04-09T19:14:27Z wave 15: 4 workers backend=dispatch
+Starting 4 workers from /Users/reify/Classified/wescripture (backend=dispatch, max=32) …
+  Worker000  → diagnostics/task-worker-Worker000.out
+  Worker001  → diagnostics/task-worker-Worker001.out
+  Worker002  → diagnostics/task-worker-Worker002.out
+  Worker003  → diagnostics/task-worker-Worker003.out
+All 4 workers finished.
+2026-04-09T19:14:38Z git pull → 0
+2026-04-09T19:14:38Z Already up to date.
+2026-04-09T19:14:38Z pending=41
+2026-04-09T19:14:38Z wave 10: 6 workers backend=dispatch
+Starting 6 workers from /Users/reify/Classified/wescripture (backend=dispatch, max=32) …
+  Worker000  → diagnostics/task-worker-Worker000.out
+  Worker001  → diagnostics/task-worker-Worker001.out
+  Worker002  → diagnostics/task-worker-Worker002.out
+  Worker003  → diagnostics/task-worker-Worker003.out
+  Worker004  → diagnostics/task-worker-Worker004.out
+  Worker005  → diagnostics/task-worker-Worker005.out
+All 6 workers finished.
+2026-04-09T19:14:49Z wave 10 worker script exit=0; pending now 41
+2026-04-09T19:14:59Z git pull → 0
+2026-04-09T19:14:59Z Already up to date.
+2026-04-09T19:14:59Z pending=41
+2026-04-09T19:14:59Z wave 16: 4 workers backend=dispatch
+Starting 4 workers from /Users/reify/Classified/wescripture (backend=dispatch, max=32) …
+  Worker000  → diagnostics/task-worker-Worker000.out
+  Worker001  → diagnostics/task-worker-Worker001.out
+  Worker002  → diagnostics/task-worker-Worker002.out
+  Worker003  → diagnostics/task-worker-Worker003.out
+All 4 workers finished.
+2026-04-09T19:15:10Z git pull → 0
+2026-04-09T19:15:10Z Already up to date.
+2026-04-09T19:15:10Z pending=41
+2026-04-09T19:15:10Z wave 11: 6 workers backend=dispatch
+Starting 6 workers from /Users/reify/Classified/wescripture (backend=dispatch, max=32) …
+  Worker000  → diagnostics/task-worker-Worker000.out
+  Worker001  → diagnostics/task-worker-Worker001.out
+  Worker002  → diagnostics/task-worker-Worker002.out
+  Worker003  → diagnostics/task-worker-Worker003.out
+  Worker004  → diagnostics/task-worker-Worker004.out
+  Worker005  → diagnostics/task-worker-Worker005.out
+All 6 workers finished.
+2026-04-09T19:15:20Z wave 11 worker script exit=0; pending now 41
+2026-04-09T19:15:30Z git pull → 0
+2026-04-09T19:15:30Z Already up to date.
+2026-04-09T19:15:30Z pending=41
+2026-04-09T19:15:30Z wave 17: 4 workers backend=dispatch
+Starting 4 workers from /Users/reify/Classified/wescripture (backend=dispatch, max=32) …
+  Worker000  → diagnostics/task-worker-Worker000.out
+  Worker001  → diagnostics/task-worker-Worker001.out
+  Worker002  → diagnostics/task-worker-Worker002.out
+  Worker003  → diagnostics/task-worker-Worker003.out
