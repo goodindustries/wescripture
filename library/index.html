@@ -1952,18 +1952,6 @@ function openProfilePanel(entity, typeLabel, placeholderIcon, extraHtml) {
         }
     }
 
-    // Wire up chip clicks
-    chList.querySelectorAll('.ep-chip[data-chip-id]').forEach(function(chip) {
-        chip.addEventListener('click', function() {
-            var ctype = chip.dataset.chipType;
-            var cid   = chip.dataset.chipId;
-            if (ctype === 'person') openEntityProfile(cid);
-            else if (ctype === 'place') openPlaceProfile(cid);
-            else if (ctype === 'thing') openThingProfile(cid);
-            else if (ctype === 'topic') openTopicProfile(cid);
-        });
-    });
-
     // Wire up scripture ref clicks
     chList.querySelectorAll('.ep-scripture-ref[data-verse-ref]').forEach(function(span) {
         span.addEventListener('click', function() {
@@ -3885,6 +3873,18 @@ document.addEventListener('click', function(e) {
     else if (link.dataset.topic) openTopicProfile(link.dataset.topic);
 });
 
+// People / Places / Things chips (verse discovery + entity profiles) — one listener on #panel-body
+document.getElementById('panel-body').addEventListener('click', function(e) {
+    var chip = e.target.closest('.ep-chip[data-chip-id]');
+    if (!chip) return;
+    e.stopPropagation();
+    var ctype = chip.dataset.chipType;
+    var cid   = chip.dataset.chipId;
+    if (ctype === 'person') openEntityProfile(cid);
+    else if (ctype === 'place') openPlaceProfile(cid);
+    else if (ctype === 'thing') openThingProfile(cid);
+    else if (ctype === 'topic') openTopicProfile(cid);
+});
 
 function openChannelEmpty(word) {
     channelWord    = word;
