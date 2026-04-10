@@ -1349,3 +1349,11 @@
 {"event": "task_reopened", "task_id": "T-0088", "ts": "2026-04-10T01:59:39+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
 {"event": "task_completed", "task_id": "T-0090", "agent": "Worker004", "ts": "2026-04-10T01:59:43+00:00", "commit": "feb4716b", "notes": "dispatch: annotate_entity_spans --books job (exit 0)"}
 {"event": "task_reopened", "task_id": "T-0088", "ts": "2026-04-10T01:59:43+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
+{"event": "task_claimed", "task_id": "T-0088", "agent": "Worker001", "ts": "2026-04-10T02:02:10+00:00"}
+{"event": "task_claimed", "task_id": "T-0088", "agent": "Worker004", "ts": "2026-04-10T02:02:10+00:00"}
+{"event": "task_claimed", "task_id": "T-0088", "agent": "Worker003", "ts": "2026-04-10T02:02:10+00:00"}
+{"event": "task_claimed", "task_id": "T-0088", "agent": "Worker000", "ts": "2026-04-10T02:02:10+00:00"}
+{"event": "task_claimed", "task_id": "T-0088", "agent": "Worker006", "ts": "2026-04-10T02:02:10+00:00"}
+{"event": "task_claimed", "task_id": "T-0088", "agent": "Worker002", "ts": "2026-04-10T02:02:10+00:00"}
+{"event": "task_claimed", "task_id": "T-0088", "agent": "Worker007", "ts": "2026-04-10T02:02:10+00:00"}
+{"event": "task_claimed", "task_id": "T-0088", "agent": "Worker005", "ts": "2026-04-10T02:02:10+00:00"}
