@@ -782,3 +782,4 @@
 {"event": "task_reopened", "task_id": "T-0071", "ts": "2026-04-10T00:21:40+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
 {"event": "task_claimed", "task_id": "T-0067", "agent": "WorkerB", "ts": "2026-04-10T00:21:43+00:00"}
 {"event": "task_reopened", "task_id": "T-0067", "ts": "2026-04-10T00:21:43+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
+{"event": "task_completed", "task_id": "T-0067", "agent": "WorkerB", "ts": "2026-04-10T00:21:47+00:00", "commit": "b37dd339", "notes": "completed by task_worker (non-zero exit)"}
