@@ -20,13 +20,13 @@ topics, people.json). Titles match `task_dispatch.py` rules for local workers.
 
 Schedule (example): every few hours so workers never run out of scoped work.
 
-Batch sizes (small by default for visible progress):
-  TASK_SCOUT_WIKI_CHUNK (default 3) — Registry Wikipedia entries per task
-  TASK_SCOUT_CHRIST_CHUNK (default 2) — Christ / Ollama entities per task (keep tiny)
-  TASK_SCOUT_DONALDSON_BUNDLE (default 1) — 1 = one ledger task per missing Donaldson chapter
+Batch sizes (defaults = smallest practical unit per task):
+  TASK_SCOUT_WIKI_CHUNK (default 1) — one Registry Wikipedia entry per task
+  TASK_SCOUT_CHRIST_CHUNK (default 1) — one Christ / Ollama figure per task
+  TASK_SCOUT_DONALDSON_BUNDLE (default 1) — one ledger row per missing Donaldson chapter
 
-Legacy tasks in the ledger (old “whole book” Donaldson rows, etc.) stay until completed or reopened;
-new scout runs only append new small titles. Use `--micro` for the smallest batches (1/1/1).
+Legacy ledger rows (old bundled titles) stay until completed or reopened. Raise env vars to batch
+more work per task. `--micro` is 1/1/1 (same as defaults).
 """
 
 from __future__ import annotations
@@ -48,9 +48,9 @@ TOC_PATH = LIB / "toc.json"
 CHAP_DIR = LIB / "chapters"
 DON_DIR = LIB / "donaldson"
 
-# Defaults tuned for fast feedback; override with env or --micro.
-_DEF_WIKI = os.environ.get("TASK_SCOUT_WIKI_CHUNK", "3")
-_DEF_CHRIST = os.environ.get("TASK_SCOUT_CHRIST_CHUNK", "2")
+# Defaults: one unit per ledger row; raise env to batch (e.g. WIKI_CHUNK=5).
+_DEF_WIKI = os.environ.get("TASK_SCOUT_WIKI_CHUNK", "1")
+_DEF_CHRIST = os.environ.get("TASK_SCOUT_CHRIST_CHUNK", "1")
 _DEF_DON = os.environ.get("TASK_SCOUT_DONALDSON_BUNDLE", "1")
 
 
