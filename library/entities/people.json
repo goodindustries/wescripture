@@ -14156,7 +14156,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 3,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American professor (born 1935)",
+    "wikipedia_title": "Robert Alter",
+    "wikipedia_summary": "Robert Bernard Alter is an American professor emeritus of Hebrew and comparative literature at the University of California, Berkeley, where he has taught since 1967. He has published two dozen books, including an award-winning translation of the Hebrew Bible in 2018, which was twenty-four years in the making.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Robert_Alter"
   },
   {
     "id": "person:barnes_notes",
@@ -14197,7 +14201,10 @@
       "general_conference:oct._2003"
     ],
     "quote_count": 2,
-    "talk_count": 1
+    "talk_count": 1,
+    "wikipedia_title": "William W. Parmley",
+    "wikipedia_summary": "William Watts Parmley was a general authority of the Church of Jesus Christ of Latter-day Saints from 2003 to 2009. Prior to becoming a general authority, Parmley had served as the chief of cardiology at the University of California, San Francisco and did studies primarily relating to cardiovascular pharmacology.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/William_W._Parmley"
   },
   {
     "id": "person:w_mack_lawrence",
@@ -14406,7 +14413,12 @@
       "general_conference:general_conference_2014_10_covenant_daughters_of_god"
     ],
     "quote_count": 0,
-    "talk_count": 3
+    "talk_count": 3,
+    "desc": "Children's organization within The Church of Jesus Christ of Latter-day Saints",
+    "wikipedia_title": "Jean A. Stevens",
+    "wikipedia_summary": "The Primary is the children's organization of the Church of Jesus Christ of Latter-day Saints. It acts as a Sunday school organization for the church's children.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/en/0/07/Primary_seal.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Primary_(LDS_Church)"
   },
   {
     "id": "person:william_r_walker",
@@ -14469,7 +14481,11 @@
       "general_conference:general_conference_1997_04_modern_pioneers"
     ],
     "quote_count": 0,
-    "talk_count": 3
+    "talk_count": 3,
+    "desc": "American religious leader and politician (1933–2022)",
+    "wikipedia_title": "Janette Hales Beckham",
+    "wikipedia_summary": "Janette Hales Beckham, commonly known as Janette C. Hales and later, Janette Hales Beckham, was the tenth general president of the Young Women organization of the Church of Jesus Christ of Latter-day Saints from 1992 to 1997. She was also a member of the Utah State Legislature from 1988 to 1991.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Janette_Hales_Beckham"
   },
   {
     "id": "person:jack_h_goaslind_jr",
@@ -14500,7 +14516,10 @@
       "general_conference:general_conference_1981_10_an_opportunity_for_continual_learning"
     ],
     "quote_count": 0,
-    "talk_count": 3
+    "talk_count": 3,
+    "wikipedia_title": "Shirley W. Thomas",
+    "wikipedia_summary": "This list of general presidencies of the Relief Society includes the general president and the counselors of the Relief Society General Presidency of the Church of Jesus Christ of Latter-day Saints.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/List_of_general_presidencies_of_the_Relief_Society"
   },
   {
     "id": "person:spencer_w_kimball_acting",
@@ -14538,7 +14557,18 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 2,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American pastor and writer (1929–2019)",
+    "wikipedia_title": "Warren Wiersbe",
+    "wikipedia_summary": "Warren Wendall Wiersbe was an American Christian clergyman, Bible teacher, conference speaker and a prolific writer of Christian literature and theological works. Wiersbe is perhaps best known for his series of 50 books in the \"BE\" series: Be Real, Be Rich, Be Obedient, Be Mature, Be Joyful, etc., and other theological works. He pastored the Moody Church in Chicago (1971–1978) and succeeded Theodore Epp as director of the Back to the Bible radio ministry.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/en/7/79/Warren_Wiersbe.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Warren_W._Wiersbe",
+    "born": {
+      "year": 1971
+    },
+    "died": {
+      "year": 1978
+    }
   },
   {
     "id": "person:kenneth_l_higbee",
@@ -14571,7 +14601,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 2,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American diplomat (1859–1942)",
+    "wikipedia_title": "George Horton",
+    "wikipedia_summary": "George Horton was a member of the United States diplomatic service who held several consular offices in Greece and the Ottoman Empire between 1893 and 1924. During two periods he was the U.S. Consul or Consul General at Smyrna, 1911–1917 and 1919–1922. The first ended when the U.S. entered World War I and diplomatic relations with the Ottoman Empire were terminated. The second covered Greek administration of the city during the Greco-Turkish War. The Greek administration of Smyrna was appointed by the Allied Powers following the Ottoman defeat in World War I and the seizure of Smyrna.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/en/b/b0/George-horton.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/George_Horton"
   },
   {
     "id": "person:dean_l_marriott",
@@ -14608,7 +14643,10 @@
       "general_conference:oct._2005"
     ],
     "quote_count": 1,
-    "talk_count": 1
+    "talk_count": 1,
+    "wikipedia_title": "Lowell M. Snow",
+    "wikipedia_summary": "Lowell Miller Snow was a general authority of the Church of Jesus Christ of Latter-day Saints from 2005 to 2011. Snow was a member of the Second Quorum of the Seventy and in 2006 became the president of the Africa West Area of the church.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Lowell_M._Snow"
   },
   {
     "id": "person:brandt_gardner",
@@ -14657,7 +14695,12 @@
       "general_conference:oct._1994"
     ],
     "quote_count": 1,
-    "talk_count": 1
+    "talk_count": 1,
+    "desc": "American physician (1930-2019)",
+    "wikipedia_title": "James O. Mason",
+    "wikipedia_summary": "James Ostermann Mason was an American medical doctor and public health administrator. He was the United States Assistant Secretary for Health (ASH) from 1989 to 1993 and the Acting Surgeon General of the United States from 1989 to 1990. As the ASH he was also a four-star admiral in the United States Public Health Service Commissioned Corps. He was also a director of the Centers for Disease Control and Prevention and a general authority of the Church of Jesus Christ of Latter-day Saints.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/James_O._Mason_USPHS.jpg/330px-James_O._Mason_USPHS.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/James_O._Mason"
   },
   {
     "id": "person:if_thou_endure_it_well",
@@ -14690,7 +14733,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 2,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American educator, author, businessman and motivational speaker",
+    "wikipedia_title": "Stephen R. Covey",
+    "wikipedia_summary": "Stephen Richards Covey was an American educator, author, businessman, and speaker. His most popular book is The 7 Habits of Highly Effective People. His other books include First Things First, Principle-Centered Leadership, The 7 Habits of Highly Effective Families, The 8th Habit, and The Leader In Me: How Schools and Parents Around the World Are Inspiring Greatness, One Child at a Time. In 1996, Time magazine named him one of the 25 most influential people. He was a professor at the Jon M. Huntsman School of Business at Utah State University (USU) at the time of his death.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Stephen_Covey_174-CD-L05-03-02A-002_%28cropped%29.jpg/330px-Stephen_Covey_174-CD-L05-03-02A-002_%28cropped%29.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Stephen_Covey"
   },
   {
     "id": "person:the_teachings_of_george_albert_smith",
@@ -14714,7 +14762,12 @@
       "general_conference:apr._1901"
     ],
     "quote_count": 2,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "Apostle of The Church of Jesus Christ of Latter-day Saints",
+    "wikipedia_title": "Abraham O. Woodruff",
+    "wikipedia_summary": "Abraham Owen Woodruff was a member of the Quorum of the Twelve Apostles of the Church of Jesus Christ of Latter-day Saints. He was also the son of LDS Church president Wilford Woodruff.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/3/33/Abraham_Owen_Woodruff.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Abraham_O._Woodruff"
   },
   {
     "id": "person:orson_pratt_s_works",
@@ -14769,7 +14822,18 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 2,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American pastor and writer (1929–2019)",
+    "wikipedia_title": "Warren W. Wiersbe",
+    "wikipedia_summary": "Warren Wendall Wiersbe was an American Christian clergyman, Bible teacher, conference speaker and a prolific writer of Christian literature and theological works. Wiersbe is perhaps best known for his series of 50 books in the \"BE\" series: Be Real, Be Rich, Be Obedient, Be Mature, Be Joyful, etc., and other theological works. He pastored the Moody Church in Chicago (1971–1978) and succeeded Theodore Epp as director of the Back to the Bible radio ministry.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/en/7/79/Warren_Wiersbe.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Warren_W._Wiersbe",
+    "born": {
+      "year": 1971
+    },
+    "died": {
+      "year": 1978
+    }
   },
   {
     "id": "person:j_r_dummelow",
@@ -14791,7 +14855,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 2,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American historian of the Latter Day Saint movement (1936–2019)",
+    "wikipedia_title": "Robert J. Woodford",
+    "wikipedia_summary": "Robert John Woodford was an American expert on Joseph Smith and the Doctrine and Covenants. He was a teacher in seminaries and institutes with the Church Educational System of the Church of Jesus Christ of Latter-day Saints for many years. Woodford was one of the editors with the Joseph Smith Papers Project and along with Steven C. Harper and Robin Scott Jensen was a volume editor of The Joseph Smith Papers: Revelations and Translations, Manuscript Revelations Books, Facsimile Edition that was published in 2009.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Robert_J._Woodford"
   },
   {
     "id": "person:improvement_era",
@@ -14802,7 +14870,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 2,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "Official magazine of the LDS Church",
+    "wikipedia_title": "Improvement Era",
+    "wikipedia_summary": "The Improvement Era was an official magazine of the Church of Jesus Christ of Latter-day Saints between 1897 and 1970.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Improvement_Era_cover_Volume_12.jpg/330px-Improvement_Era_cover_Volume_12.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Improvement_Era"
   },
   {
     "id": "person:easton_s_bible_dictionary",
@@ -14847,7 +14920,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 2,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "Early leader in the Latter Day Saint movement",
+    "wikipedia_title": "George A. Smith",
+    "wikipedia_summary": "George Albert Smith was an early leader in the Latter Day Saint movement. He served in the Quorum of the Twelve Apostles and as a member of the First Presidency of the Church of Jesus Christ of Latter-day Saints.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/e/ee/GeorgeAlbertSmith.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/George_A._Smith"
   },
   {
     "id": "person:isaiah_prophet",
@@ -14880,7 +14958,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 2,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "Illustrated Bible dictionary compiled by Matthew George Easton",
+    "wikipedia_title": "Illustrated Bible Dictionary",
+    "wikipedia_summary": "The Illustrated Bible Dictionary, better known as Easton's Bible Dictionary, is a reference work on topics related to the Christian Bible, compiled by Matthew George Easton. The first edition was published in 1893, and a revised edition was published the following year. The most popular edition, however, was the third, published by Thomas Nelson in 1897, three years after Easton's death. The last contains nearly 4,000 entries relating to the Bible. Many of the entries in Easton's are encyclopedic in nature, although there are also short dictionary-type entries.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Easton%27s_Bible_Dictionary_1894.jpg/330px-Easton%27s_Bible_Dictionary_1894.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Easton's_Bible_Dictionary"
   },
   {
     "id": "person:quoted_in_a_heschel",
@@ -14915,7 +14998,12 @@
       "general_conference:october_1900"
     ],
     "quote_count": 2,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "Politician and religious leader (1844–1921)",
+    "wikipedia_title": "Anthon H. Lund",
+    "wikipedia_summary": "Anthon Henrik Lund was a member of the Quorum of the Twelve Apostles and the First Presidency of the Church of Jesus Christ of Latter-day Saints and a prominent Utah leader.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/0/01/Anthon_H._Lund.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Anthon_H._Lund"
   },
   {
     "id": "person:james_m_dunn",
@@ -14967,7 +15055,12 @@
       "general_conference:oct._2007"
     ],
     "quote_count": 2,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American educator and religious leader (born 1956)",
+    "wikipedia_title": "Daniel K Judd",
+    "wikipedia_summary": "Daniel K. Judd is an American educator and religious leader who served as first counselor to A. Roger Merrill in the Sunday School General Presidency of the Church of Jesus Christ of Latter-day Saints from 2004 to 2009. From 2019 to 2021, Judd was dean of Brigham Young University's (BYU) Department of Religious Education. He had previously served as chair of BYU's Ancient Scripture Department.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Daniel_K._Judd_%2827069426957%29.jpg/330px-Daniel_K._Judd_%2827069426957%29.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Daniel_K._Judd"
   },
   {
     "id": "person:catherine_thomas_in_studies_in_scripture",
@@ -15040,7 +15133,12 @@
       "general_conference:apr._1910"
     ],
     "quote_count": 2,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American religious leader",
+    "wikipedia_title": "Francis M. Lyman",
+    "wikipedia_summary": "Francis Marion Lyman was a member of the Quorum of the Twelve Apostles of the Church of Jesus Christ of Latter-day Saints. He was the President of the Quorum of the Twelve from 1903 until his death.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Francis_M._Lyman.jpg/330px-Francis_M._Lyman.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Francis_M._Lyman"
   },
   {
     "id": "person:tad_callister",
@@ -15051,7 +15149,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 2,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American religious leader (1945–2025)",
+    "wikipedia_title": "Tad Callister",
+    "wikipedia_summary": "Tad Richards Callister was an American religious leader who was the 21st Sunday School General President of the Church of Jesus Christ of Latter-day Saints from 2014 to 2019. He served previously in the church as a general authority from 2008 to 2014, including as a member of the Presidency of the Seventy from 2011 to 2014.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/en/a/a3/Tad_R._Callister.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Tad_R._Callister"
   },
   {
     "id": "person:the_neal_a_maxwell_quote_book",
@@ -15073,7 +15176,10 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 2,
-    "talk_count": 0
+    "talk_count": 0,
+    "wikipedia_title": "Ed J. Pinegar",
+    "wikipedia_summary": "Ed Jolley Pinegar was an American author, educator and leader in the Church of Jesus Christ of Latter-day Saints. His books include Look to the Temple, Raising the Bar, and several works dealing with the study of the Book of Mormon. Many of his books were written with LDS author Richard J. Allen. With Rodger Dean Duncan, Pinegar is co-author of the book Leadership for Saints.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ed_J._Pinegar"
   },
   {
     "id": "person:carla_edington",
@@ -15106,7 +15212,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 2,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American politician and businessman",
+    "wikipedia_title": "Joseph A. Cannon",
+    "wikipedia_summary": "Joseph Angus Cannon is a businessman with interests in steel and energy, and active in the Utah Republican Party. He was Chairman of the Utah Republican Party from 2002 to 2006. Along with his brother, Chris Cannon, he operated Geneva Steel in Utah County, Utah from 1987 to its closure in 2001–2002.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Joseph_A._Cannon"
   },
   {
     "id": "person:blaine_m_yorgason",
@@ -15117,7 +15227,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 2,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American novelist",
+    "wikipedia_title": "Blaine M. Yorgason",
+    "wikipedia_summary": "Blaine Michael Yorgason was an American Latter-day Saint novelist who has also written biographies.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Blaine_Yorgason"
   },
   {
     "id": "person:lucy_mack_smith",
@@ -15130,7 +15244,12 @@
       "pioneer_journals:lucy_mack_smith_history"
     ],
     "quote_count": 1,
-    "talk_count": 1
+    "talk_count": 1,
+    "desc": "Religious leader and mother of Joseph Smith",
+    "wikipedia_title": "Lucy Mack Smith",
+    "wikipedia_summary": "Lucy Mack Smith was the mother of Joseph Smith, founder of the Latter Day Saint movement. She is noted for writing the memoir, Biographical Sketches of Joseph Smith, the Prophet, and His Progenitors for Many Generations and was an important leader of the movement during Joseph's life.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Lucy_Mack_Smith2.jpg/330px-Lucy_Mack_Smith2.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Lucy_Mack_Smith"
   },
   {
     "id": "person:the_discourses_of_wilford_woodruff",
@@ -15174,7 +15293,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 2,
-    "talk_count": 0
+    "talk_count": 0,
+    "wikipedia_title": "Milton V. Backman Jr.",
+    "wikipedia_summary": "Milton Vaughn Backman Jr. was a historian of American religions with particular emphasis on the early history of the Latter Day Saint movement.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/en/2/2d/Milton_V._Backman.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Milton_V._Backman"
   },
   {
     "id": "person:glenn_l_pearson",
@@ -15196,7 +15319,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 2,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American novelist (born 1939)",
+    "wikipedia_title": "Gerald Lund",
+    "wikipedia_summary": "Gerald Niels Lund was a general authority of the Church of Jesus Christ of Latter-day Saints from 2002 to 2008. Lund was released as a general authority and member of the church's Second Quorum of the Seventy on October 4, 2008.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Gerald_N._Lund"
   },
   {
     "id": "person:richard_neitzel_holzapfel",
@@ -15218,7 +15345,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 2,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American theologian (born 1947)",
+    "wikipedia_title": "Robert Millet",
+    "wikipedia_summary": "Robert L. Millet is a professor of ancient scripture and emeritus Dean of Religious Education at Brigham Young University (BYU) in Provo, Utah. Millet is a Latter-day Saint author and speaker with more than 60 published works on different aspects of Mormonism. Millet was at the forefront of establishing evangelical-Mormon dialogue.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Robert_L._Millet"
   },
   {
     "id": "person:dennis_largey",
@@ -15242,7 +15373,12 @@
       "general_conference:general_conference_2011_10_teaching_after_the_manner_of_the_spirit"
     ],
     "quote_count": 1,
-    "talk_count": 1
+    "talk_count": 1,
+    "desc": "American professor (born 1960)",
+    "wikipedia_title": "Matthew O. Richardson",
+    "wikipedia_summary": "Matthew Ottesen Richardson was the Advancement Vice President at Brigham Young University (BYU) from 2014 to 2020. He served previously as a professor of religion at BYU and from 2002 to 2006 he was an associate dean of religious education at BYU.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Matthew_O._Richardson_%2838927061515%29.jpg/330px-Matthew_O._Richardson_%2838927061515%29.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Matthew_O._Richardson"
   },
   {
     "id": "person:v_dallas_merrell",
@@ -15283,7 +15419,12 @@
       "general_conference:april_1913"
     ],
     "quote_count": 2,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American Mormon leader (1874–1945)",
+    "wikipedia_title": "Samuel O. Bennion",
+    "wikipedia_summary": "Samuel Otis Bennion was a member of the First Council of the Seventy of the Church of Jesus Christ of Latter-day Saints from 1933 until his death.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Samuel_O._Bennion.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Samuel_O._Bennion"
   },
   {
     "id": "person:art_e_berg",
@@ -15305,7 +15446,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 2,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American linguist",
+    "wikipedia_title": "Royal Skousen",
+    "wikipedia_summary": "Royal Jon Skousen is an American linguist and retired professor of linguistics and English at Brigham Young University (BYU), where he is editor of the Book of Mormon Critical Text Project. He is \"the leading expert on the textual history of the Book of Mormon\" and the founder of the analogical modeling approach to language modeling.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Royal_Skousen_002.jpg/330px-Royal_Skousen_002.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Royal_Skousen"
   },
   {
     "id": "person:allen_j_christenson",
@@ -15364,7 +15510,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 2,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "1st-century Jewish preacher and religious leader",
+    "wikipedia_title": "Jesus Christ",
+    "wikipedia_summary": "Jesus, also referred to as Jesus Christ, Jesus of Nazareth, and by various other names and titles, was a 1st-century Jewish preacher and religious leader in the Roman province of Judaea. He is the central figure of Christianity, the world's largest religion. Most Christians consider Jesus to be the incarnation of God the Son and the awaited messiah, or Christ, a descendant of the Davidic line prophesied in the Old Testament. Virtually all modern scholars of antiquity agree that Jesus existed historically. Accounts of Jesus's life are contained in the Gospels, especially the four canonical Gosp",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Spas_vsederzhitel_sinay_%28cropped1%29.jpg/330px-Spas_vsederzhitel_sinay_%28cropped1%29.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Jesus"
   },
   {
     "id": "person:robert_k_thomas",
@@ -15397,7 +15548,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 2,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American politician",
+    "wikipedia_title": "Robert E. Parsons",
+    "wikipedia_summary": "Robert E. Parsons was an American politician who was the 90th lieutenant governor of Connecticut from 1948 to 1949.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Robert_E._Parsons"
   },
   {
     "id": "person:david_o_mc_kay_in_cr",
@@ -15430,7 +15585,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 2,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American author and publisher",
+    "wikipedia_title": "Sheri Dew",
+    "wikipedia_summary": "Sheri Linn Dew is an American author, publisher, the executive vice president of Deseret Management Corporation, and chief executive officer of the Deseret Book Company, headquartered in Salt Lake City, Utah. Dew has also been a religious leader in the Church of Jesus Christ of Latter-day Saints and an inspirational speaker. In 2003, she was described as \"the most prominent single [unmarried] LDS woman right now.\"",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Sheri_L._Dew"
   },
   {
     "id": "person:patricia_t_holland",
@@ -15441,7 +15600,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 2,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American educator and religious leader (1942–2023)",
+    "wikipedia_title": "Patricia T. Holland",
+    "wikipedia_summary": "Patricia Terry Holland was an American educator, writer, and religious leader in the Church of Jesus Christ of Latter-day Saints. She was a counselor in the church's Young Women General Presidency from 1984 to 1986. From 1980 to 1989, Holland was \"first lady\" of Brigham Young University (BYU) where her husband, Jeffrey R. Holland, was president of the institution.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Patricia_T._Holland"
   },
   {
     "id": "person:douglas_e_brinley",
@@ -15463,7 +15626,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 2,
-    "talk_count": 0
+    "talk_count": 0,
+    "wikipedia_title": "Franklin S. Harris",
+    "wikipedia_summary": "Franklin Stewart Harris was president of Brigham Young University (BYU) from 1921 to 1945, and president of Utah State Agricultural College (USAG) from 1945 to 1950. His administration was the longest in BYU history and saw the granting of the first master's degrees. Under his administration the school became an accredited university. He set up several colleges, such as the College of Fine and Performing Arts, with Gerrit De Jong as the founding dean. Harris was an agricultural scientist, holding a doctorate in agronomy from Cornell University. He had served as the agriculture department head ",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Franklin_S_Harris.jpg/330px-Franklin_S_Harris.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Franklin_S._Harris"
   },
   {
     "id": "person:james_plastaras",
@@ -15574,7 +15741,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 2,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American writer",
+    "wikipedia_title": "C. Terry Warner",
+    "wikipedia_summary": "\nC. Terry Warner is an American academic, author and business consultant. He founded the Arbinger Institute, which does consulting and training based on his academic work on the foundations of human behavior and self-deception. In writings and seminars, Warner argues that people are responsible for their own actions and even negative emotions which are often used to accuse others rather than responding to their needs, and that people therefore have the power to free their relationships with others from negativity.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/C._Terry_Warner"
   },
   {
     "id": "person:robert_l_millett",
@@ -15600,7 +15771,10 @@
       "general_conference:oct._2005"
     ],
     "quote_count": 1,
-    "talk_count": 1
+    "talk_count": 1,
+    "wikipedia_title": "Paul K. Sybrowsky",
+    "wikipedia_summary": "Paul Kay Sybrowsky was the president of Southern Virginia University (SVU) from June 1, 2012 until August 31, 2014. He was a general authority of the Church of Jesus Christ of Latter-day Saints from 2005 until 2011. He also served as a commissioner of the Northwest Commission on Colleges and Universities and chairman of the board of trustees of Utah Valley University.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Paul_K._Sybrowsky"
   },
   {
     "id": "person:hugh_b_brown_in_cr",
@@ -15636,7 +15810,11 @@
       "general_conference:general_conference_1988_04_shepherds_of_israel"
     ],
     "quote_count": 1,
-    "talk_count": 1
+    "talk_count": 1,
+    "desc": "United States Air Force general",
+    "wikipedia_title": "John R. Lasater",
+    "wikipedia_summary": "John Roger Lasater was a U.S. Air Force Brigadier General who served as a deputy assistant secretary of defense for European and North Atlantic Treaty Organization policy, the principal director for European and North Atlantic Treaty Organization policy, Office of the Assistant Secretary of Defense for International Security Policy, and as commander of the Strategic Air Command's 4th Air Division at Francis E. Warren Air Force Base, Wyoming. After his retirement from the Air Force in 1983, Lasater served as a general authority of the Church of Jesus Christ of Latter-day Saints from 1987 to 199",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/John_R._Lasater"
   },
   {
     "id": "person:evelyn_t_marshall",
@@ -15658,7 +15836,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 2,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "1968 book",
+    "wikipedia_title": "Jerome Bible Commentary",
+    "wikipedia_summary": "The Jerome Biblical Commentary is a series of books of Biblical scholarship, whose first edition was published in 1968. It is arguably the most-used volume of Catholic scriptural commentary in the United States.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/MatthiasStom-SaintJerome-Nantes.jpg/330px-MatthiasStom-SaintJerome-Nantes.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Jerome_Biblical_Commentary"
   },
   {
     "id": "person:john_sonnenberg",
@@ -15695,7 +15878,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 2,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American psychologist",
+    "wikipedia_title": "Carlfred B. Broderick",
+    "wikipedia_summary": "Carlfred Bartholomew Broderick was an American psychologist, sociologist, and family therapist, a scholar of marriage and family relations at the University of Southern California, and an author of several books. He was born in Salt Lake City, Utah, in 1932, and he died of cancer in 1999 in Cerritos, California, at the age of 67.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/en/1/1e/Carlfred_Broderick.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Carlfred_Broderick"
   },
   {
     "id": "person:robert_g_boling",
