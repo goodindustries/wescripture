@@ -8,14 +8,14 @@
     :root { color-scheme: light dark; }
     body {
       font-family: system-ui, -apple-system, sans-serif;
-      max-width: 42rem;
-      margin: 2rem auto;
+      max-width: 52rem;
+      margin: 1.25rem auto;
       padding: 0 1rem;
       line-height: 1.45;
     }
     h1 { font-size: 1.2rem; font-weight: 600; }
-    .hint { font-size: 0.9rem; opacity: 0.85; margin: 0.5rem 0 1rem; }
-    .row { display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center; margin: 1rem 0; }
+    .hint { font-size: 0.88rem; opacity: 0.88; margin: 0.5rem 0 1rem; }
+    .row { display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center; margin: 0.75rem 0; }
     button {
       padding: 0.45rem 0.9rem;
       font-size: 0.95rem;
@@ -23,36 +23,64 @@
       border-radius: 6px;
       border: 1px solid #8884;
     }
+    button:disabled { opacity: 0.55; cursor: wait; }
     .btn-start { background: #166534; color: #fff; border-color: #166534; }
     .btn-stop { background: #991b1b; color: #fff; border-color: #991b1b; }
     .btn-ghost { background: transparent; }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+      gap: 0.65rem;
+      margin: 1rem 0;
+    }
+    .stat {
+      background: color-mix(in srgb, Canvas 92%, CanvasText 8%);
+      border-radius: 8px;
+      padding: 0.65rem 0.75rem;
+      font-size: 0.82rem;
+    }
+    .stat strong { display: block; font-size: 1.35rem; font-weight: 600; margin-bottom: 0.2rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.78rem;
+      background: color-mix(in srgb, Canvas 94%, CanvasText 6%);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.45rem 0.5rem;
+      border-bottom: 1px solid color-mix(in srgb, CanvasText 12%, transparent);
+      vertical-align: top;
+    }
+    th { font-weight: 600; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.03em; opacity: 0.9; }
+    tr:last-child td { border-bottom: none; }
+    .mono { font-family: ui-monospace, "Cascadia Code", monospace; word-break: break-word; }
     .panel {
       background: color-mix(in srgb, Canvas 92%, CanvasText 8%);
       border-radius: 8px;
-      padding: 0.9rem 1rem;
-      font-family: ui-monospace, "Cascadia Code", monospace;
-      font-size: 0.82rem;
+      padding: 0.75rem 1rem;
+      font-family: ui-monospace, monospace;
+      font-size: 0.78rem;
       white-space: pre-wrap;
       word-break: break-word;
     }
-    .feed {
-      max-height: 16rem;
-      overflow-y: auto;
-      margin-top: 0.5rem;
-      font-size: 0.78rem;
-      opacity: 0.95;
-    }
+    .feed { max-height: 12rem; overflow-y: auto; margin-top: 0.35rem; }
     #msg { min-height: 1.25rem; font-size: 0.88rem; }
     #msg.ok { color: #166534; }
     #msg.err { color: #991b1b; }
-    h2 { font-size: 0.95rem; margin: 1.25rem 0 0.35rem; font-weight: 600; }
+    h2 { font-size: 0.95rem; margin: 1.1rem 0 0.4rem; font-weight: 600; }
+    .meta { font-size: 0.8rem; opacity: 0.85; margin: 0.25rem 0 0.75rem; }
+    .phase-active { color: #166534; font-weight: 600; }
+    .phase-idle { opacity: 0.75; }
   </style>
 </head>
 <body>
   <h1>WeScripture · agent control</h1>
   <p class="hint">
-    Runs on your machine only (<code>127.0.0.1</code>). Start launches
-    <code>run_orchestrate_forever.sh</code>; Stop runs <code>pause_agents.sh</code>.
+    Local only (<code>127.0.0.1</code>). Start → <code>run_orchestrate_forever.sh</code>;
+    Stop → <code>pause_agents.sh</code>. Refresh re-fetches state (no cache).
   </p>
   <div class="row">
     <button type="button" class="btn-start" id="btnStart">Start workers</button>
@@ -63,6 +91,31 @@
     </label>
   </div>
   <p id="msg"></p>
+  <p class="meta" id="meta">Last refresh: —</p>
+
+  <div class="stats" id="stats"></div>
+
+  <h2>Workers (each row = one slot)</h2>
+  <p class="hint" style="margin-top:0">
+    <strong>Running</strong> = <code>task_worker.py</code> processes now.
+    <strong>Idle capacity</strong> = last wave size minus running (between waves, running may be 0).
+    Ledger <strong>claimed</strong> can differ while a worker finishes or ledger lags.
+  </p>
+  <div style="overflow-x:auto">
+    <table id="wkTable">
+      <thead>
+        <tr>
+          <th>Worker</th>
+          <th>PID</th>
+          <th>Phase</th>
+          <th>Task</th>
+          <th>Models / activity</th>
+        </tr>
+      </thead>
+      <tbody id="wkBody"><tr><td colspan="5">Loading…</td></tr></tbody>
+    </table>
+  </div>
+
   <h2>Ledger &amp; processes</h2>
   <div class="panel" id="status">Loading…</div>
   <h2>Feed tail</h2>
@@ -71,24 +124,75 @@
     const statusEl = document.getElementById("status");
     const feedEl = document.getElementById("feed");
     const msgEl = document.getElementById("msg");
+    const metaEl = document.getElementById("meta");
+    const statsEl = document.getElementById("stats");
+    const wkBody = document.getElementById("wkBody");
+    const btnRefresh = document.getElementById("btnRefresh");
     let timer = null;
+
+    function esc(s) {
+      const d = document.createElement("div");
+      d.textContent = s ?? "";
+      return d.innerHTML;
+    }
 
     function showMsg(text, ok) {
       msgEl.textContent = text || "";
       msgEl.className = text ? (ok ? "ok" : "err") : "";
     }
 
+    function setBusy(busy) {
+      btnRefresh.disabled = !!busy;
+      document.getElementById("btnStart").disabled = !!busy;
+      document.getElementById("btnStop").disabled = !!busy;
+    }
+
     async function loadState() {
+      setBusy(true);
       try {
-        const r = await fetch("/api/state", { cache: "no-store" });
+        const r = await fetch("/api/state?t=" + Date.now(), {
+          cache: "no-store",
+          headers: { "Cache-Control": "no-cache" },
+        });
         const d = await r.json();
         if (!r.ok) throw new Error(d.error || r.statusText);
+
+        metaEl.textContent = "Last refresh (local): " + new Date().toLocaleString();
+
+        const W = d.workers || {};
+        const cap = W.parallelism_cap_env ?? "—";
+        const run = W.running_count ?? 0;
+        const idle = W.idle_slots_vs_wave;
+        const lw = W.last_wave || {};
         const L = d.ledger || {};
+
+        statsEl.innerHTML = [
+          stat("Running workers", run, "task_worker.py PIDs"),
+          stat("Parallelism cap (env)", cap, "ORCHESTRATE_WAVE_SIZE / MAX_PARALLEL_WORKERS"),
+          stat("Last wave workers", lw.workers_requested != null ? lw.workers_requested : "—", lw.line ? lw.line.slice(0, 80) : "from orchestrate.log"),
+          stat("Idle vs last wave", idle != null ? idle : "—", "max(0, wave − running)"),
+          stat("Pending tasks", L.pending ?? "—", "ledger"),
+          stat("Claimed", L.claimed ?? "—", "ledger"),
+        ].join("");
+
+        const rows = d.worker_rows || [];
+        if (!rows.length) {
+          wkBody.innerHTML = '<tr><td colspan="5" class="mono">No worker rows yet (start orchestrate or wait for a wave).</td></tr>';
+        } else {
+          wkBody.innerHTML = rows.map((w) => {
+            const ph = (w.phase || "").includes("active") ? "phase-active" : "phase-idle";
+            const models = w.models_line || w.activity_line || "—";
+            const task = (w.task_id ? w.task_id + " " : "") + (w.title || "");
+            return "<tr><td class='mono'>" + esc(w.agent) + "</td><td class='mono'>" + esc(w.pid || "—") +
+              "</td><td class='" + ph + "'>" + esc(w.phase) + "</td><td class='mono'>" + esc(task || "—") +
+              "</td><td class='mono'>" + esc(models) + "</td></tr>";
+          }).join("");
+        }
+
         const lines = [
           "Time (UTC): " + (d.time_utc || "—"),
           "",
-          "Ledger  pending: " + (L.pending ?? "—") +
-            "  |  claimed: " + (L.claimed ?? "—") +
+          "Ledger  pending: " + (L.pending ?? "—") + "  |  claimed: " + (L.claimed ?? "—") +
             "  |  completed: " + (L.completed ?? "—"),
           "",
           "Processes (pgrep):",
@@ -100,17 +204,27 @@
         lines.push("");
         lines.push("Orchestrate loop running: " + (d.forever_running ? "yes" : "no"));
         statusEl.textContent = lines.join("\n");
+
         feedEl.textContent = (d.feed_tail && d.feed_tail.length)
           ? d.feed_tail.join("\n")
           : "(no " + (d.feed_path || "track.feed.txt") + " — run track_feed.py --follow)";
       } catch (e) {
         statusEl.textContent = "Error: " + e.message;
         feedEl.textContent = "";
+        wkBody.innerHTML = '<tr><td colspan="5" class="mono">' + esc(e.message) + "</td></tr>";
+      } finally {
+        setBusy(false);
       }
+    }
+
+    function stat(label, value, sub) {
+      return "<div class='stat'><strong>" + esc(String(value)) + "</strong>" + esc(label) +
+        "<span style='opacity:0.75;font-size:0.72rem;display:block;margin-top:0.25rem'>" + esc(sub) + "</span></div>";
     }
 
     async function post(path) {
       showMsg("");
+      setBusy(true);
       try {
         const r = await fetch(path, { method: "POST", cache: "no-store" });
         const d = await r.json();
@@ -119,12 +233,17 @@
         await loadState();
       } catch (e) {
         showMsg(e.message || String(e), false);
+      } finally {
+        setBusy(false);
       }
     }
 
-    document.getElementById("btnStart").onclick = () => post("/api/start");
-    document.getElementById("btnStop").onclick = () => post("/api/stop");
-    document.getElementById("btnRefresh").onclick = () => loadState();
+    document.getElementById("btnStart").addEventListener("click", () => post("/api/start"));
+    document.getElementById("btnStop").addEventListener("click", () => post("/api/stop"));
+    btnRefresh.addEventListener("click", (ev) => {
+      ev.preventDefault();
+      loadState();
+    });
 
     function armAuto() {
       if (timer) clearInterval(timer);
@@ -133,7 +252,7 @@
         timer = setInterval(loadState, 5000);
       }
     }
-    document.getElementById("auto").onchange = armAuto;
+    document.getElementById("auto").addEventListener("change", armAuto);
 
     loadState();
     armAuto();

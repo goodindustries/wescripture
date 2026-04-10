@@ -205,7 +205,9 @@ def collect_state() -> dict:
     agents_seen: set[str] = {r["agent"] for r in tw if r.get("agent") != "?"}
     agents_seen |= set(ledger_by_agent.keys())
     for row in scan_worker_out_logs(DIAG, tail_lines=400):
-        agents_seen.add(row.get("agent", ""))
+        ag = row.get("agent") or ""
+        if ag.startswith("Worker"):
+            agents_seen.add(ag)
     agents = sorted(a for a in agents_seen if a and a.startswith("Worker"))
 
     worker_rows: list[dict] = []
