@@ -2815,3 +2815,4 @@
 {"event": "task_reopened", "task_id": "T-0099", "ts": "2026-04-10T02:38:42+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
 {"event": "task_reopened", "task_id": "T-0096", "ts": "2026-04-10T02:38:45+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
 {"event": "task_reopened", "task_id": "T-0096", "ts": "2026-04-10T02:38:46+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
+{"event": "task_completed", "task_id": "T-0096", "agent": "CursorPlan", "ts": "2026-04-10T02:38:57+00:00", "notes": "library/donaldson 2_kings_* placeholder {} (no source corpus)"}
