@@ -1,0 +1,4 @@
+=== 2026-04-10T00:07:39Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0069: Registry Wikipedia — scripture_people: enrich 46 missing summaries
+  [dispatch] /Library/Developer/CommandLineTools/usr/bin/python3 /Users/reify/Classified/wescripture/lds_pipeline/build_entity_wikipedia.py --scripture-people

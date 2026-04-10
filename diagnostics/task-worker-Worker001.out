@@ -13,3 +13,57 @@ Loading entity indexes…
 Annotating 1 chapters…
 
 Done. 0 chapters changed, 31 verses scanned, 0 entity spans added.
+[main c1e87e17] [task] T-0066: annotate_entity_spans --books genesis (exit 0)
+ Committer: Reif Tauati <reify@Reifs-MacBook-Pro.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 32 insertions(+)
+Completed T-0066.
+  pushed to origin
+  [followup] exit 2 (non-fatal)
+[Worker001] T-0066 success. commit=c1e87e17
+=== 2026-04-10T00:05:25Z exit 0 Worker001 ===
+=== 2026-04-10T00:05:46Z start Worker001 ===
+[Worker001] checking for pending tasks…
+[Worker001] claimed T-0067: Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+Reopened T-0067.
+  [ledger] pushed to origin
+  pushed to origin
+[Worker001] T-0067 no dispatch rule — reopened.
+=== 2026-04-10T00:06:17Z start Worker001 ===
+[Worker001] checking for pending tasks…
+[Worker001] claimed T-0067: Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+Reopened T-0067.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker001] T-0067 no dispatch rule — reopened.
+=== 2026-04-10T00:06:48Z start Worker001 ===
+[Worker001] checking for pending tasks…
+[Worker001] claimed T-0067: Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+Reopened T-0067.
+  pushed to origin
+[Worker001] T-0067 no dispatch rule — reopened.
+=== 2026-04-10T00:07:19Z start Worker001 ===
+[Worker001] checking for pending tasks…
+[Worker001] claimed T-0068: Donaldson — doctrine_and_covenants: add commentary JSON for 138 missing chapter(s)
+Reopened T-0068.
+  pushed to origin
+[Worker001] T-0068 no dispatch rule — reopened.
+=== 2026-04-10T00:07:39Z start Worker001 ===
+[Worker001] checking for pending tasks…
+[Worker001] claimed T-0067: Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+Reopened T-0067.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker001] T-0067 no dispatch rule — reopened.
+=== 2026-04-10T00:07:51Z start Worker001 ===
+[Worker001] checking for pending tasks…
+[Worker001] claimed T-0068: Donaldson — doctrine_and_covenants: add commentary JSON for 138 missing chapter(s)
+Reopened T-0068.
