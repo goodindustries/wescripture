@@ -387,3 +387,197 @@ Loading entity indexes…
 Annotating 3 chapters…
 
 Done. 1 chapters changed, 40 verses scanned, 1 entity spans added.
+[main 550e3e03] [task] T-0074: annotate_entity_spans --books esther (exit 0)
+ Committer: Reif Tauati <reify@Reifs-MacBook-Pro.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 11 files changed, 86 insertions(+), 1 deletion(-)
+Completed T-0074.
+  [ledger] pushed to origin
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+  [followup] exit 2 (non-fatal)
+[Worker002] T-0073 success. commit=ba8db211
+=== 2026-04-10T00:24:43Z exit 0 Worker002 ===
+  [followup] exit 2 (non-fatal)
+[Worker002] T-0074 success. commit=550e3e03
+=== 2026-04-10T00:24:53Z exit 0 Worker002 ===
+=== 2026-04-10T00:25:04Z start Worker002 ===
+[Worker002] checking for pending tasks…
+[Worker002] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+[Worker002] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0072.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker002] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:25:14Z start Worker002 ===
+[Worker002] checking for pending tasks…
+[Worker002] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+[Worker002] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0072.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker002] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:25:35Z start Worker002 ===
+[Worker002] checking for pending tasks…
+[Worker002] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+[Worker002] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0072.
+  pushed to origin
+[Worker002] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:25:45Z start Worker002 ===
+[Worker002] checking for pending tasks…
+[Worker002] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+[Worker002] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0072.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker002] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:26:05Z start Worker002 ===
+[Worker002] checking for pending tasks…
+[Worker002] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+[Worker002] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0072.
+  [ledger] pushed to origin
+=== 2026-04-10T00:26:16Z start Worker002 ===
+[Worker002] checking for pending tasks…
+[Worker002] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+[Worker002] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0072.
+  pushed to origin
+[Worker002] T-0072 no dispatch rule — reopened.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker002] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:26:38Z start Worker002 ===
+[Worker002] checking for pending tasks…
+[Worker002] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+[Worker002] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0072.
+  pushed to origin
+[Worker002] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:26:47Z start Worker002 ===
+[Worker002] checking for pending tasks…
+[Worker002] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+[Worker002] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0072.
+  pushed to origin
+[Worker002] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:27:09Z start Worker002 ===
+[Worker002] checking for pending tasks…
+[Worker002] claimed T-0075: Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+[Worker002] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0075.
+  pushed to origin
+[Worker002] T-0075 no dispatch rule — reopened.
+=== 2026-04-10T00:27:19Z start Worker002 ===
+[Worker002] checking for pending tasks…
+[Worker002] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+[Worker002] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0072.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker002] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:27:41Z start Worker002 ===
+[Worker002] checking for pending tasks…
+[Worker002] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+[Worker002] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0072.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker002] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:27:50Z start Worker002 ===
+[Worker002] checking for pending tasks…
+[Worker002] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+[Worker002] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0072.
+  pushed to origin
+[Worker002] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:28:12Z start Worker002 ===
+[Worker002] checking for pending tasks…
+[Worker002] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+[Worker002] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0072.
+  pushed to origin
+[Worker002] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:28:21Z start Worker002 ===
+[Worker002] checking for pending tasks…
+[Worker002] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+[Worker002] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0072.
+  pushed to origin
+[Worker002] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:28:42Z start Worker002 ===
+[Worker002] checking for pending tasks…
+[Worker002] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+[Worker002] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0072.
+  pushed to origin
+[Worker002] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:28:53Z start Worker002 ===
+[Worker002] checking for pending tasks…
+[Worker002] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+[Worker002] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0072.
+  pushed to origin
+[Worker002] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:29:13Z start Worker002 ===
+[Worker002] checking for pending tasks…
+[Worker002] claimed T-0075: Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+[Worker002] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0075.
+  pushed to origin
+[Worker002] T-0075 no dispatch rule — reopened.
+=== 2026-04-10T00:29:24Z start Worker002 ===
+[Worker002] checking for pending tasks…
+[Worker002] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+[Worker002] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0072.
+  pushed to origin
+[Worker002] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:29:54Z start Worker002 ===
+[Worker002] checking for pending tasks…
+[Worker002] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+[Worker002] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0072.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker002] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:30:24Z start Worker002 ===
+[Worker002] checking for pending tasks…
+[Worker002] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+[Worker002] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0072.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker002] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:30:54Z start Worker002 ===
+[Worker002] checking for pending tasks…
+[Worker002] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+[Worker002] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0072.
+  [ledger] pushed to origin
+  pushed to origin
+[Worker002] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:31:23Z start Worker002 ===
+[Worker002] checking for pending tasks…
+[Worker002] claimed T-0075: Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+[Worker002] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0075.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker002] T-0075 no dispatch rule — reopened.
+=== 2026-04-10T00:31:53Z start Worker002 ===
+[Worker002] checking for pending tasks…
+[Worker002] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+[Worker002] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0072.
+  [ledger] pushed to origin
+  pushed to origin
+[Worker002] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:32:23Z start Worker002 ===
+[Worker002] checking for pending tasks…
+[Worker002] claimed T-0076: Donaldson — 1_chronicles: add commentary JSON for 25 missing chapter(s)
+[Worker002] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0076.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker002] T-0076 no dispatch rule — reopened.

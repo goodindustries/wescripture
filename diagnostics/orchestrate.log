@@ -255,3 +255,120 @@
 2026-04-09T19:22:42Z Already up to date.
 2026-04-09T19:22:42Z pending=38
 2026-04-09T19:22:42Z wave 26: 6 workers backend=dispatch
+2026-04-09T19:24:53Z wave 26 worker script exit=0; pending now 37
+2026-04-09T19:25:03Z git pull → 0
+2026-04-09T19:25:03Z Already up to date.
+2026-04-09T19:25:03Z pending=37
+2026-04-09T19:25:03Z wave 32: 4 workers backend=dispatch
+2026-04-09T19:25:14Z git pull → 0
+2026-04-09T19:25:14Z Already up to date.
+2026-04-09T19:25:14Z pending=37
+2026-04-09T19:25:14Z wave 27: 6 workers backend=dispatch
+2026-04-09T19:25:24Z wave 27 worker script exit=0; pending now 37
+2026-04-09T19:25:34Z git pull → 0
+2026-04-09T19:25:34Z Already up to date.
+2026-04-09T19:25:34Z pending=37
+2026-04-09T19:25:34Z wave 33: 4 workers backend=dispatch
+2026-04-09T19:25:45Z git pull → 0
+2026-04-09T19:25:45Z Already up to date.
+2026-04-09T19:25:45Z pending=37
+2026-04-09T19:25:45Z wave 28: 6 workers backend=dispatch
+2026-04-09T19:25:55Z wave 28 worker script exit=0; pending now 37
+2026-04-09T19:26:05Z git pull → 0
+2026-04-09T19:26:05Z Already up to date.
+2026-04-09T19:26:05Z pending=37
+2026-04-09T19:26:05Z wave 34: 4 workers backend=dispatch
+2026-04-09T19:26:16Z git pull → 0
+2026-04-09T19:26:16Z Already up to date.
+2026-04-09T19:26:16Z pending=37
+2026-04-09T19:26:16Z wave 29: 6 workers backend=dispatch
+2026-04-09T19:26:26Z wave 29 worker script exit=0; pending now 37
+2026-04-09T19:26:38Z git pull → 0
+2026-04-09T19:26:38Z Already up to date.
+2026-04-09T19:26:38Z pending=37
+2026-04-09T19:26:38Z wave 35: 4 workers backend=dispatch
+2026-04-09T19:26:47Z git pull → 0
+2026-04-09T19:26:47Z Already up to date.
+2026-04-09T19:26:47Z pending=37
+2026-04-09T19:26:47Z wave 30: 6 workers backend=dispatch
+2026-04-09T19:26:58Z wave 30 worker script exit=0; pending now 37
+2026-04-09T19:27:09Z git pull → 0
+2026-04-09T19:27:09Z Already up to date.
+2026-04-09T19:27:09Z pending=37
+2026-04-09T19:27:09Z wave 36: 4 workers backend=dispatch
+2026-04-09T19:27:18Z git pull → 0
+2026-04-09T19:27:18Z Already up to date.
+2026-04-09T19:27:18Z pending=37
+2026-04-09T19:27:18Z wave 31: 6 workers backend=dispatch
+2026-04-09T19:27:29Z wave 31 worker script exit=0; pending now 37
+2026-04-09T19:27:41Z git pull → 0
+2026-04-09T19:27:41Z Already up to date.
+2026-04-09T19:27:41Z pending=37
+2026-04-09T19:27:41Z wave 37: 4 workers backend=dispatch
+2026-04-09T19:27:50Z git pull → 0
+2026-04-09T19:27:50Z Already up to date.
+2026-04-09T19:27:50Z pending=37
+2026-04-09T19:27:50Z wave 32: 6 workers backend=dispatch
+2026-04-09T19:28:01Z wave 32 worker script exit=0; pending now 37
+2026-04-09T19:28:12Z git pull → 0
+2026-04-09T19:28:12Z Already up to date.
+2026-04-09T19:28:12Z pending=37
+2026-04-09T19:28:12Z wave 38: 4 workers backend=dispatch
+2026-04-09T19:28:21Z git pull → 0
+2026-04-09T19:28:21Z Already up to date.
+2026-04-09T19:28:21Z pending=37
+2026-04-09T19:28:21Z wave 33: 6 workers backend=dispatch
+2026-04-09T19:28:31Z wave 33 worker script exit=0; pending now 37
+2026-04-09T19:28:42Z git pull → 0
+2026-04-09T19:28:42Z Already up to date.
+2026-04-09T19:28:42Z pending=37
+2026-04-09T19:28:42Z wave 39: 4 workers backend=dispatch
+2026-04-09T19:28:53Z git pull → 0
+2026-04-09T19:28:53Z Already up to date.
+2026-04-09T19:28:53Z pending=37
+2026-04-09T19:28:53Z wave 34: 6 workers backend=dispatch
+2026-04-09T19:29:03Z wave 34 worker script exit=0; pending now 37
+2026-04-09T19:29:13Z git pull → 0
+2026-04-09T19:29:13Z Already up to date.
+2026-04-09T19:29:13Z pending=37
+2026-04-09T19:29:13Z wave 40: 4 workers backend=dispatch
+2026-04-09T19:29:23Z git pull → 0
+2026-04-09T19:29:23Z Already up to date.
+2026-04-09T19:29:23Z pending=37
+2026-04-09T19:29:23Z wave 35: 6 workers backend=dispatch
+2026-04-09T19:29:33Z wave 35 worker script exit=0; pending now 37
+2026-04-09T19:29:43Z git pull → 0
+2026-04-09T19:29:43Z Already up to date.
+2026-04-09T19:29:43Z pending=37
+2026-04-09T19:29:43Z stopped: max-waves 40
+2026-04-09T19:29:43Z running build_dashboard_state.py
+2026-04-09T19:29:43Z === orchestrate end ===
+2026-04-09T19:29:54Z git pull → 0
+2026-04-09T19:29:54Z Already up to date.
+2026-04-09T19:29:54Z pending=37
+2026-04-09T19:29:54Z wave 36: 6 workers backend=dispatch
+2026-04-09T19:30:03Z wave 36 worker script exit=0; pending now 37
+2026-04-09T19:30:24Z git pull → 0
+2026-04-09T19:30:24Z Already up to date.
+2026-04-09T19:30:24Z pending=37
+2026-04-09T19:30:24Z wave 37: 6 workers backend=dispatch
+2026-04-09T19:30:32Z wave 37 worker script exit=0; pending now 37
+2026-04-09T19:30:54Z git pull → 0
+2026-04-09T19:30:54Z Already up to date.
+2026-04-09T19:30:54Z pending=37
+2026-04-09T19:30:54Z wave 38: 6 workers backend=dispatch
+2026-04-09T19:31:03Z wave 38 worker script exit=0; pending now 37
+2026-04-09T19:31:23Z git pull → 0
+2026-04-09T19:31:23Z Already up to date.
+2026-04-09T19:31:23Z pending=37
+2026-04-09T19:31:23Z wave 39: 6 workers backend=dispatch
+2026-04-09T19:31:32Z wave 39 worker script exit=0; pending now 37
+2026-04-09T19:31:53Z git pull → 0
+2026-04-09T19:31:53Z Already up to date.
+2026-04-09T19:31:53Z pending=37
+2026-04-09T19:31:53Z wave 40: 6 workers backend=dispatch
+2026-04-09T19:32:02Z wave 40 worker script exit=0; pending now 37
+2026-04-09T19:32:23Z git pull → 0
+2026-04-09T19:32:23Z Already up to date.
+2026-04-09T19:32:23Z pending=35
+2026-04-09T19:32:23Z wave 41: 6 workers backend=dispatch

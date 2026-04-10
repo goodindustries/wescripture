@@ -186,3 +186,110 @@ Loading entity indexes…
 Annotating 3 chapters…
 
 Done. 1 chapters changed, 40 verses scanned, 1 entity spans added.
+=== 2026-04-10T00:25:14Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0072.
+  pushed to origin
+[Worker005] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:25:45Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0075: Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0075.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0075 no dispatch rule — reopened.
+=== 2026-04-10T00:26:16Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0072.
+  pushed to origin
+[Worker005] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:26:47Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0075: Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0075.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0075 no dispatch rule — reopened.
+=== 2026-04-10T00:27:19Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0075: Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0075.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0075 no dispatch rule — reopened.
+=== 2026-04-10T00:27:50Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0072.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:28:21Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0072.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:28:53Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0075: Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0075.
+  pushed to origin
+[Worker005] T-0075 no dispatch rule — reopened.
+=== 2026-04-10T00:29:24Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0072.
+  pushed to origin
+[Worker005] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:29:54Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0075: Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0075.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0075 no dispatch rule — reopened.
+=== 2026-04-10T00:30:24Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0072.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:30:54Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0072.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:31:23Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0075: Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0075.
+  pushed to origin
+[Worker005] T-0075 no dispatch rule — reopened.
+=== 2026-04-10T00:31:53Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0072: Donaldson — psalms: add commentary JSON for 27 missing chapter(s)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0072.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0072 no dispatch rule — reopened.
+=== 2026-04-10T00:32:23Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0077: Registry Wikipedia — things: enrich 13 missing summaries
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+  [dispatch] /Library/Developer/CommandLineTools/usr/bin/python3 /Users/reify/Classified/wescripture/lds_pipeline/build_entity_wikipedia.py --things
+Enriching things (/Users/reify/Classified/wescripture/library/entities/things.json)...
+  things: 0 enriched, 61 skipped
+
+Total enriched: 0

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-09T22:43:58+00:00",
+  "generated": "2026-04-10T00:29:43+00:00",
   "coverage_generated": "2026-04-09T22:35:36+00:00",
   "coverage": {
     "chapters_scanned": 1582,
@@ -16,26 +16,13 @@
     }
   },
   "ledger": {
-    "last_event_ts": "2026-04-09T03:21:08+00:00",
-    "pending": 0,
-    "claimed": 3,
+    "last_event_ts": "2026-04-10T00:29:28+00:00",
+    "pending": 37,
+    "claimed": 1,
     "agents_claimed_now": [
-      "Claude",
       "WorkerA"
     ],
     "claimed_tasks": [
-      {
-        "task_id": "T-0059",
-        "agent": "Claude",
-        "title": "People registry: rebuild to 200 figures and fill christ_connection for all new entries",
-        "claim_ts": "2026-04-09T03:13:06+00:00"
-      },
-      {
-        "task_id": "T-0062",
-        "agent": "Claude",
-        "title": "Things registry: expand to 60+ entries and verify christ_connection on all",
-        "claim_ts": "2026-04-09T03:13:06+00:00"
-      },
       {
         "task_id": "T-0060",
         "agent": "WorkerA",
@@ -43,139 +30,144 @@
         "claim_ts": "2026-04-09T02:15:12+00:00"
       }
     ],
-    "completed_last_24h": 39,
+    "completed_last_24h": 51,
     "agents_active_7d": [
       "Claude",
       "ClaudeCode",
+      "Worker000",
+      "Worker001",
+      "Worker002",
+      "Worker003",
+      "Worker005",
       "WorkerA",
       "WorkerB"
     ]
   },
   "recent_events": [
     {
-      "event": "task_completed",
-      "task_id": "T-0065",
-      "agent": "ClaudeCode",
-      "ts": "2026-04-09T03:21:08+00:00",
+      "event": "task_reopened",
+      "task_id": "T-0072",
+      "agent": null,
+      "ts": "2026-04-10T00:29:28+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_reopened",
+      "task_id": "T-0072",
+      "agent": null,
+      "ts": "2026-04-10T00:29:24+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_reopened",
+      "task_id": "T-0075",
+      "agent": null,
+      "ts": "2026-04-10T00:29:24+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_reopened",
+      "task_id": "T-0072",
+      "agent": null,
+      "ts": "2026-04-10T00:29:24+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_reopened",
+      "task_id": "T-0072",
+      "agent": null,
+      "ts": "2026-04-10T00:29:24+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_reopened",
+      "task_id": "T-0072",
+      "agent": null,
+      "ts": "2026-04-10T00:29:24+00:00",
       "title": ""
     },
     {
       "event": "task_claimed",
-      "task_id": "T-0062",
-      "agent": "Claude",
-      "ts": "2026-04-09T03:13:06+00:00",
+      "task_id": "T-0075",
+      "agent": "Worker003",
+      "ts": "2026-04-10T00:29:24+00:00",
       "title": ""
     },
     {
       "event": "task_claimed",
-      "task_id": "T-0059",
-      "agent": "Claude",
-      "ts": "2026-04-09T03:13:06+00:00",
+      "task_id": "T-0072",
+      "agent": "Worker005",
+      "ts": "2026-04-10T00:29:24+00:00",
       "title": ""
     },
     {
       "event": "task_claimed",
-      "task_id": "T-0065",
-      "agent": "Claude",
-      "ts": "2026-04-09T03:13:06+00:00",
-      "title": ""
-    },
-    {
-      "event": "task_completed",
-      "task_id": "T-0065",
-      "agent": "WorkerB",
-      "ts": "2026-04-09T02:54:04+00:00",
+      "task_id": "T-0072",
+      "agent": "Worker004",
+      "ts": "2026-04-10T00:29:24+00:00",
       "title": ""
     },
     {
       "event": "task_claimed",
-      "task_id": "T-0065",
-      "agent": "WorkerB",
-      "ts": "2026-04-09T02:53:59+00:00",
-      "title": ""
-    },
-    {
-      "event": "task_completed",
-      "task_id": "T-0064",
-      "agent": "WorkerA",
-      "ts": "2026-04-09T02:43:56+00:00",
-      "title": ""
-    },
-    {
-      "event": "task_completed",
-      "task_id": "T-0064",
-      "agent": "WorkerB",
-      "ts": "2026-04-09T02:43:54+00:00",
+      "task_id": "T-0072",
+      "agent": "Worker002",
+      "ts": "2026-04-10T00:29:24+00:00",
       "title": ""
     },
     {
       "event": "task_claimed",
-      "task_id": "T-0064",
-      "agent": "WorkerA",
-      "ts": "2026-04-09T02:43:50+00:00",
+      "task_id": "T-0072",
+      "agent": "Worker001",
+      "ts": "2026-04-10T00:29:24+00:00",
       "title": ""
     },
     {
       "event": "task_claimed",
-      "task_id": "T-0064",
-      "agent": "WorkerB",
-      "ts": "2026-04-09T02:43:50+00:00",
+      "task_id": "T-0072",
+      "agent": "Worker000",
+      "ts": "2026-04-10T00:29:24+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_reopened",
+      "task_id": "T-0072",
+      "agent": null,
+      "ts": "2026-04-10T00:29:17+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_reopened",
+      "task_id": "T-0075",
+      "agent": null,
+      "ts": "2026-04-10T00:29:13+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_reopened",
+      "task_id": "T-0075",
+      "agent": null,
+      "ts": "2026-04-10T00:29:13+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_reopened",
+      "task_id": "T-0072",
+      "agent": null,
+      "ts": "2026-04-10T00:29:13+00:00",
       "title": ""
     },
     {
       "event": "task_claimed",
-      "task_id": "T-0062",
-      "agent": "WorkerB",
-      "ts": "2026-04-09T02:31:12+00:00",
-      "title": ""
-    },
-    {
-      "event": "task_queued",
-      "task_id": "T-0065",
-      "agent": "Claude",
-      "ts": "2026-04-09T02:30:05+00:00",
-      "title": "Normalize Donaldson commentary text"
-    },
-    {
-      "event": "task_completed",
-      "task_id": "T-0061",
-      "agent": "WorkerB",
-      "ts": "2026-04-09T02:21:02+00:00",
+      "task_id": "T-0075",
+      "agent": "Worker003",
+      "ts": "2026-04-10T00:29:13+00:00",
       "title": ""
     },
     {
       "event": "task_claimed",
-      "task_id": "T-0061",
-      "agent": "WorkerB",
-      "ts": "2026-04-09T02:15:18+00:00",
-      "title": ""
-    },
-    {
-      "event": "task_claimed",
-      "task_id": "T-0060",
-      "agent": "WorkerA",
-      "ts": "2026-04-09T02:15:12+00:00",
-      "title": ""
-    },
-    {
-      "event": "task_claimed",
-      "task_id": "T-0059",
-      "agent": "WorkerA",
-      "ts": "2026-04-09T02:11:01+00:00",
-      "title": ""
-    },
-    {
-      "event": "task_completed",
-      "task_id": "T-0063",
-      "agent": "Claude",
-      "ts": "2026-04-09T02:08:17+00:00",
-      "title": ""
-    },
-    {
-      "event": "task_completed",
-      "task_id": "T-0058",
-      "agent": "Claude",
-      "ts": "2026-04-09T02:08:13+00:00",
+      "task_id": "T-0075",
+      "agent": "Worker002",
+      "ts": "2026-04-10T00:29:13+00:00",
       "title": ""
     }
   ],
