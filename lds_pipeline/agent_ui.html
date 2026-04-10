@@ -79,12 +79,16 @@
 <body>
   <h1>WeScripture · agent control</h1>
   <p class="hint">
-    Local only (<code>127.0.0.1</code>). Start → <code>run_orchestrate_forever.sh</code>;
-    Stop → <code>pause_agents.sh</code>. Refresh re-fetches state (no cache).
+    Local only (<code>127.0.0.1</code>). Legacy: Start → <code>run_orchestrate_forever.sh</code>;
+    Stop → <code>pause_agents.sh</code>. Crew swarm uses <code>diagnostics/crew_events.jsonl</code> (see <code>requirements-crew.txt</code>).
   </p>
+  <div id="crewBadge" class="panel" style="display:none;background:#16653422;border:1px solid #16653488;margin-bottom:0.75rem;font-size:0.9rem"></div>
   <div class="row">
     <button type="button" class="btn-start" id="btnStart">Start workers</button>
     <button type="button" class="btn-stop" id="btnStop">Stop workers</button>
+    <button type="button" class="btn-start" id="btnStartCrew">Start crew loop</button>
+    <button type="button" class="btn-stop" id="btnStopCrew">Stop crew loop</button>
+    <button type="button" class="btn-ghost" id="btnCrewSeen">Mark crew completions seen</button>
     <button type="button" class="btn-ghost" id="btnRefresh">Refresh</button>
     <label style="font-size:0.88rem;display:flex;align-items:center;gap:0.35rem;">
       <input type="checkbox" id="auto" checked /> Auto-refresh 5s
@@ -118,13 +122,20 @@
 
   <h2>Ledger &amp; processes</h2>
   <div class="panel" id="status">Loading…</div>
+  <h2>Crew swarm completions</h2>
+  <p class="hint" style="margin-top:0">New <strong>task_completed</strong> events in <code>diagnostics/crew_events.jsonl</code>. Badge when something newer than your last “seen” timestamp (stored in <code>localStorage</code>).</p>
+  <div class="panel feed" id="crewFeed">Loading…</div>
+
   <h2>Activity feed</h2>
-  <p class="hint" style="margin-top:0">Recent <strong>task_completed</strong> rows from the ledger, then <code>track.feed.txt</code> (if you run <code>track_feed.py --follow</code>).</p>
+  <p class="hint" style="margin-top:0">Recent <strong>task_completed</strong> rows from the legacy ledger, then <code>track.feed.txt</code> (if you run <code>track_feed.py --follow</code>).</p>
   <div class="panel feed" id="feed"></div>
   <script>
     const statusEl = document.getElementById("status");
     const feedEl = document.getElementById("feed");
+    const crewFeedEl = document.getElementById("crewFeed");
+    const crewBadge = document.getElementById("crewBadge");
     const msgEl = document.getElementById("msg");
+    const CREW_SEEN_KEY = "crewLastSeenCompletionTs";
     const metaEl = document.getElementById("meta");
     const statsEl = document.getElementById("stats");
     const wkBody = document.getElementById("wkBody");
@@ -146,6 +157,41 @@
       btnRefresh.disabled = !!busy;
       document.getElementById("btnStart").disabled = !!busy;
       document.getElementById("btnStop").disabled = !!busy;
+      document.getElementById("btnStartCrew").disabled = !!busy;
+      document.getElementById("btnStopCrew").disabled = !!busy;
+    }
+
+    async function updateCrewBadge() {
+      try {
+        const seen = localStorage.getItem(CREW_SEEN_KEY) || "";
+        const r = await fetch("/api/crew/completions?since=" + encodeURIComponent(seen) + "&limit=200&t=" + Date.now(), { cache: "no-store" });
+        const d = await r.json();
+        if (!r.ok) throw new Error(d.error || r.statusText);
+        const list = d.completions || [];
+        if (list.length) {
+          crewBadge.style.display = "block";
+          crewBadge.textContent = "New: " + list.length + " crew task_completed event(s) since last marked seen.";
+        } else {
+          crewBadge.style.display = "none";
+        }
+      } catch (_) {
+        crewBadge.style.display = "none";
+      }
+    }
+
+    async function loadCrewFeed() {
+      try {
+        const r = await fetch("/api/crew/completions?since=&limit=40&t=" + Date.now(), { cache: "no-store" });
+        const d = await r.json();
+        if (!r.ok) throw new Error(d.error || r.statusText);
+        const list = d.completions || [];
+        const lines = list.map((c) =>
+          (c.ts || "").slice(0, 19) + "  " + (c.task_id || "") + "  " + (c.summary || "").slice(0, 200)
+        );
+        crewFeedEl.textContent = lines.length ? lines.join("\n") : "(no crew completions yet)";
+      } catch (e) {
+        crewFeedEl.textContent = "Error: " + e.message;
+      }
     }
 
     async function loadState() {
@@ -167,13 +213,18 @@
         const lw = W.last_wave || {};
         const L = d.ledger || {};
 
+        const C = d.crew || {};
+        const Cc = C.counts || {};
         statsEl.innerHTML = [
           stat("Running workers", run, "task_worker.py PIDs"),
           stat("Parallelism cap (env)", cap, "ORCHESTRATE_WAVE_SIZE / MAX_PARALLEL_WORKERS"),
           stat("Last wave workers", lw.workers_requested != null ? lw.workers_requested : "—", lw.line ? lw.line.slice(0, 80) : "from orchestrate.log"),
           stat("Idle vs last wave", idle != null ? idle : "—", "max(0, wave − running)"),
-          stat("Pending tasks", L.pending ?? "—", "ledger"),
-          stat("Claimed", L.claimed ?? "—", "ledger"),
+          stat("Pending tasks", L.pending ?? "—", "legacy ledger"),
+          stat("Claimed", L.claimed ?? "—", "legacy ledger"),
+          stat("Crew swarm running", C.swarm_running ? "yes" : "no", "crew_swarm/runner.py"),
+          stat("Crew queue pending", Cc.pending ?? "—", "crew_events.jsonl"),
+          stat("Crew completed", Cc.completed ?? "—", "crew_events.jsonl"),
         ].join("");
 
         const rows = d.worker_rows || [];
@@ -225,6 +276,9 @@
           parts.push("(empty — run track_feed.py --follow for merged ledger/orchestrate/worker lines)");
         }
         feedEl.textContent = parts.join("\n");
+
+        await updateCrewBadge();
+        await loadCrewFeed();
       } catch (e) {
         statusEl.textContent = "Error: " + e.message;
         feedEl.textContent = "";
@@ -257,6 +311,22 @@
 
     document.getElementById("btnStart").addEventListener("click", () => post("/api/start"));
     document.getElementById("btnStop").addEventListener("click", () => post("/api/stop"));
+    document.getElementById("btnStartCrew").addEventListener("click", () => post("/api/start-crew"));
+    document.getElementById("btnStopCrew").addEventListener("click", () => post("/api/stop-crew"));
+    document.getElementById("btnCrewSeen").addEventListener("click", async () => {
+      try {
+        const r = await fetch("/api/crew/completions?since=&limit=1&t=" + Date.now());
+        const d = await r.json();
+        const ts = d.latest_ts || "";
+        if (ts) localStorage.setItem(CREW_SEEN_KEY, ts);
+        crewBadge.style.display = "none";
+        await updateCrewBadge();
+        await loadCrewFeed();
+        showMsg("Marked crew completions seen.", true);
+      } catch (e) {
+        showMsg(e.message || String(e), false);
+      }
+    });
     btnRefresh.addEventListener("click", (ev) => {
       ev.preventDefault();
       loadState();
@@ -273,6 +343,7 @@
 
     loadState();
     armAuto();
+    setInterval(() => { updateCrewBadge(); loadCrewFeed(); }, 5000);
   </script>
 </body>
 </html>

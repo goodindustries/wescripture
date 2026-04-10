@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
-Local-only HTTP UI for starting/stopping agents and viewing ledger + process state.
+Local-only HTTP UI for starting/stopping agents, Crew swarm, and viewing ledger + process state.
 
   python3 lds_pipeline/agent_ui_server.py
   # open http://127.0.0.1:8765/
 
 Binds 127.0.0.1 only. Set AGENT_UI_PORT to change port.
+Crew swarm: pip install -r requirements-crew.txt; see lds_pipeline/crew_swarm/runner.py.
 """
 
 from __future__ import annotations
@@ -19,7 +20,7 @@ from collections import Counter
 from datetime import datetime, timezone
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import parse_qs, urlparse
 
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "lds_pipeline"))
@@ -29,6 +30,9 @@ from orchestrate_hints import scan_worker_out_logs  # noqa: E402
 from track_feed import collect_recent_completions  # noqa: E402
 
 DIAG = REPO / "diagnostics"
+CREW_EVENTS = DIAG / "crew_events.jsonl"
+CREW_RUNNER = REPO / "lds_pipeline" / "crew_swarm" / "runner.py"
+CREW_RUN_LOG = DIAG / "crew-swarm-run.out"
 ORCH_LOG = DIAG / "orchestrate.log"
 FEED = DIAG / "track.feed.txt"
 PAUSE_SH = REPO / "lds_pipeline" / "pause_agents.sh"
@@ -174,6 +178,39 @@ def _forever_running() -> bool:
     return _pgrep_count("run_orchestrate_forever") > 0
 
 
+def _crew_swarm_running() -> bool:
+    return _pgrep_count("crew_swarm/runner.py") > 0
+
+
+def _crew_queue_counts() -> dict:
+    try:
+        from crew_swarm.events import load_events, project_tasks
+
+        tasks = project_tasks(load_events())
+        pend = sum(1 for t in tasks.values() if t.get("status") == "pending")
+        done = sum(1 for t in tasks.values() if t.get("status") == "completed")
+        fail = sum(1 for t in tasks.values() if t.get("status") == "failed")
+        return {"pending": pend, "completed": done, "failed": fail}
+    except Exception:
+        return {"pending": 0, "completed": 0, "failed": 0}
+
+
+def _crew_latest_completion_ts() -> str:
+    try:
+        from crew_swarm.events import latest_completion_ts
+
+        return latest_completion_ts() or ""
+    except Exception:
+        return ""
+
+
+def _python_for_crew() -> str:
+    v = REPO / ".venv" / "bin" / "python"
+    if v.is_file():
+        return str(v)
+    return sys.executable
+
+
 def collect_state() -> dict:
     tasks = _project(_load_events())
     c = Counter(t.get("status") for t in tasks.values())
@@ -276,6 +313,12 @@ def collect_state() -> dict:
         },
         "worker_processes": tw,
         "worker_rows": worker_rows,
+        "crew": {
+            "swarm_running": _crew_swarm_running(),
+            "events_file": str(CREW_EVENTS),
+            "counts": _crew_queue_counts(),
+            "latest_completion_ts": _crew_latest_completion_ts(),
+        },
     }
 
 
@@ -309,7 +352,30 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(body)
 
     def do_GET(self) -> None:
-        path = urlparse(self.path).path
+        parsed = urlparse(self.path)
+        path = parsed.path
+        if path == "/api/crew/completions":
+            try:
+                from crew_swarm.events import completions_since, latest_completion_ts
+
+                qs = parse_qs(parsed.query)
+                since = (qs.get("since") or [None])[0]
+                lim_raw = (qs.get("limit") or ["80"])[0]
+                try:
+                    lim = max(1, min(200, int(lim_raw or "80")))
+                except ValueError:
+                    lim = 80
+                items = completions_since(since, limit=lim)
+                self._json(
+                    200,
+                    {
+                        "completions": items,
+                        "latest_ts": latest_completion_ts() or "",
+                    },
+                )
+            except Exception as e:  # noqa: BLE001
+                self._json(500, {"error": str(e)})
+            return
         if path == "/api/state":
             try:
                 self._json(200, collect_state())
@@ -327,6 +393,53 @@ class Handler(BaseHTTPRequestHandler):
     def do_POST(self) -> None:
         path = urlparse(self.path).path
         _read_body(self)
+
+        if path == "/api/stop-crew":
+            try:
+                subprocess.run(
+                    ["pkill", "-f", "crew_swarm/runner.py"],
+                    cwd=str(REPO),
+                    capture_output=True,
+                    timeout=30,
+                )
+                self._json(200, {"ok": True, "message": "Stop issued for crew_swarm runner."})
+            except Exception as e:  # noqa: BLE001
+                self._json(500, {"ok": False, "error": str(e)})
+            return
+
+        if path == "/api/start-crew":
+            if not CREW_RUNNER.is_file():
+                self._json(500, {"ok": False, "error": f"missing {CREW_RUNNER}"})
+                return
+            if _crew_swarm_running():
+                self._json(200, {"ok": True, "message": "Crew swarm runner already running."})
+                return
+            DIAG.mkdir(parents=True, exist_ok=True)
+            log_f = CREW_RUN_LOG.open("a", encoding="utf-8")
+            try:
+                log_f.write(
+                    f"\n--- agent_ui start-crew {datetime.now(timezone.utc).isoformat()} ---\n"
+                )
+                log_f.flush()
+                subprocess.Popen(
+                    [_python_for_crew(), str(CREW_RUNNER), "--loop", "--sleep", "30"],
+                    cwd=str(REPO),
+                    stdout=log_f,
+                    stderr=subprocess.STDOUT,
+                    start_new_session=True,
+                )
+            except Exception as e:  # noqa: BLE001
+                log_f.close()
+                self._json(500, {"ok": False, "error": str(e)})
+                return
+            self._json(
+                200,
+                {
+                    "ok": True,
+                    "message": "Started crew_swarm/runner.py --loop (logs → diagnostics/crew-swarm-run.out).",
+                },
+            )
+            return
 
         if path == "/api/stop":
             if not PAUSE_SH.is_file():

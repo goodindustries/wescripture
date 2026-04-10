@@ -1,5 +1,8 @@
 .DS_Store
 .idea/
+.venv/
+diagnostics/crew_events.jsonl
+diagnostics/crew-swarm-run.out
 lds_pipeline/cache/
 
 # Large source collection files (1.7GB total — pipeline output, not source-controlled)
