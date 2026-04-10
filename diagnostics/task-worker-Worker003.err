@@ -783,3 +783,12 @@ remove the file manually to continue.
 To https://github.com/reif-is-a-foofie/wescripture.git
  ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at 72e1ff271b6099640976c61b530a1ebe34ad4551 but expected eeae730e0436e7a1ffa3cc0d4540d09e998d3342)
 error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+Everything up-to-date
+  [ledger] push failed: fatal: Unable to create '/Users/reify/Classified/wescripture/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+

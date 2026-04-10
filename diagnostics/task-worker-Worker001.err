@@ -636,3 +636,39 @@ remove the file manually to continue.
 To https://github.com/reif-is-a-foofie/wescripture.git
  ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at b7defb6fcc837ee709149d09a513e7e9a0c6d2da but expected 593bc858083c214eeddb0c8505148a8ab31d52c2)
 error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+  [ledger] push failed: To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at 72e1ff271b6099640976c61b530a1ebe34ad4551 but expected eeae730e0436e7a1ffa3cc0d4540d09e998d3342)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+
+To https://github.com/reif-is-a-foofie/wescripture.git
+   72e1ff27..e9eef4e3  main -> main
+  [ledger] push failed: fatal: Unable to create '/Users/reify/Classified/wescripture/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at e6dfa60e066c055d9411c304f2d76c5a745fe319 but expected 0fea01841764932c2c6047b8b6d7dcf07bb20635)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+fatal: Unable to create '/Users/reify/Classified/wescripture/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+Traceback (most recent call last):
+  File "/Users/reify/Classified/wescripture/lds_pipeline/task_worker.py", line 354, in <module>
+    main()
+  File "/Users/reify/Classified/wescripture/lds_pipeline/task_worker.py", line 279, in main
+    new_commit = git_commit_work(tid, d.summary)
+  File "/Users/reify/Classified/wescripture/lds_pipeline/task_worker.py", line 164, in git_commit_work
+    run(["git", "add", "-A"])
+  File "/Users/reify/Classified/wescripture/lds_pipeline/task_worker.py", line 81, in run
+    return subprocess.run(
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 528, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'add', '-A']' returned non-zero exit status 128.

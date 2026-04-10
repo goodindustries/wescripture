@@ -380,3 +380,33 @@ Enriching topics (/Users/reify/Classified/wescripture/library/entities/topics.js
   topics: 0 enriched, 49 skipped
 
 Total enriched: 0
+[main e9eef4e3] [task] T-0081: build_entity_wikipedia --topics (exit 0)
+ Committer: Reif Tauati <reify@Reifs-MacBook-Pro.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 23 files changed, 601 insertions(+), 9 deletions(-)
+Completed T-0081.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+  [followup] exit 2 (non-fatal)
+[Worker004] T-0081 success. commit=e9eef4e3
+=== 2026-04-10T01:35:24Z exit 0 Worker004 ===
+=== 2026-04-10T01:35:46Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0080: Donaldson — 2_chronicles: add commentary JSON for 20 missing chapter(s)
+[Worker004] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0080.
+  pushed to origin
+[Worker004] T-0080 no dispatch rule — reopened.
+=== 2026-04-10T01:36:24Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0080: Donaldson — 2_chronicles: add commentary JSON for 20 missing chapter(s)
+[Worker004] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)

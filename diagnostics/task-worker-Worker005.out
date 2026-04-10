@@ -399,3 +399,22 @@ Reopened T-0080.
 [Worker005] claimed T-0080: Donaldson — 2_chronicles: add commentary JSON for 20 missing chapter(s)
 [Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
 Reopened T-0080.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0080 no dispatch rule — reopened.
+=== 2026-04-10T01:35:46Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0080: Donaldson — 2_chronicles: add commentary JSON for 20 missing chapter(s)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0080.
+  pushed to origin
+[Worker005] T-0080 no dispatch rule — reopened.
+=== 2026-04-10T01:36:24Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0082: Ch esther_10: add entity span annotations (data-entity / place / thing)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+  [dispatch] /Library/Developer/CommandLineTools/usr/bin/python3 /Users/reify/Classified/wescripture/lds_pipeline/annotate_entity_spans.py --books esther
+Loading entity indexes…
+  134 scripture-person variants, 81 place variants, 207 thing variants
+Annotating 2 chapters…
+
+Done. 0 chapters changed, 25 verses scanned, 0 entity spans added.
