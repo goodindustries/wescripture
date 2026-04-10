@@ -2140,3 +2140,10 @@ remove the file manually to continue.
 To https://github.com/reif-is-a-foofie/wescripture.git
  ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at 7714d7ca054bf69205b1f871c186d94e32c75325 but expected 3e9aaa1539d3c397b4deadc2a4af8322fc73c07a)
 error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [rejected]          main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
