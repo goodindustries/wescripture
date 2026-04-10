@@ -1306,3 +1306,11 @@
 {"event": "task_claimed", "task_id": "T-0087", "agent": "WorkerA", "ts": "2026-04-10T01:52:59+00:00"}
 {"event": "task_completed", "task_id": "T-0084", "agent": "WorkerB", "ts": "2026-04-10T01:52:59+00:00", "notes": "completed by task_worker (non-zero exit)"}
 {"event": "task_completed", "task_id": "T-0087", "agent": "WorkerA", "ts": "2026-04-10T01:53:08+00:00", "notes": "completed by task_worker (non-zero exit)"}
+{"event": "task_claimed", "task_id": "T-0088", "agent": "Worker001", "ts": "2026-04-10T01:55:17+00:00"}
+{"event": "task_claimed", "task_id": "T-0088", "agent": "Worker000", "ts": "2026-04-10T01:55:17+00:00"}
+{"event": "task_claimed", "task_id": "T-0088", "agent": "Worker007", "ts": "2026-04-10T01:55:17+00:00"}
+{"event": "task_claimed", "task_id": "T-0088", "agent": "Worker002", "ts": "2026-04-10T01:55:17+00:00"}
+{"event": "task_claimed", "task_id": "T-0088", "agent": "Worker006", "ts": "2026-04-10T01:55:17+00:00"}
+{"event": "task_claimed", "task_id": "T-0088", "agent": "Worker004", "ts": "2026-04-10T01:55:17+00:00"}
+{"event": "task_claimed", "task_id": "T-0088", "agent": "Worker003", "ts": "2026-04-10T01:55:17+00:00"}
+{"event": "task_claimed", "task_id": "T-0089", "agent": "Worker005", "ts": "2026-04-10T01:55:17+00:00"}
