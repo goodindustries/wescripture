@@ -1848,3 +1848,9 @@ After doing this, you may fix the identity used for this commit with:
 [Worker003] T-0113 no dispatch rule — reopened.
 Completed T-0112.
   pushed to origin
+=== 2026-04-10T02:58:03Z start Worker003 ===
+[Worker003] checking for pending tasks…
+=== 2026-04-10T02:58:04Z start Worker003 ===
+[Worker003] checking for pending tasks…
+[Worker003] claimed T-0116: Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+[Worker003] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)

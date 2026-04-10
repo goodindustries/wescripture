@@ -1877,3 +1877,12 @@ Completed T-0099.
 Reopened T-0113.
   push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
 [Worker001] T-0113 no dispatch rule — reopened.
+=== 2026-04-10T02:58:03Z start Worker001 ===
+[Worker001] checking for pending tasks…
+=== 2026-04-10T02:58:04Z start Worker001 ===
+[Worker001] checking for pending tasks…
+[Worker001] claimed T-0113: Donaldson — 1_chronicles_1: add commentary JSON
+[Worker001] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+[Worker001] claimed T-0116: Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+[Worker001] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0113.
