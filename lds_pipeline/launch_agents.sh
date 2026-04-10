@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
-# Start the autonomous agent loop from repo root (pull → scout refill → hybrid worker).
-# Example: ./lds_pipeline/launch_agents.sh
-# Example: ./lds_pipeline/launch_agents.sh --once --no-followup
+# Default: multi-worker orchestration (pull → scout → parallel waves). See lds_pipeline/orchestrate.py
+# Legacy single-threaded loop (one task_worker per iteration): ./lds_pipeline/launch_agents.sh --legacy …
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
-exec python3 lds_pipeline/autonomous_runner.py "$@"
+if [[ "${1:-}" == "--legacy" ]]; then
+  shift
+  exec python3 lds_pipeline/autonomous_runner.py "$@"
+fi
+exec python3 lds_pipeline/orchestrate.py "$@"

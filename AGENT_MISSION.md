@@ -93,8 +93,11 @@ follow-on task from the git diff and pushes the ledger. Use `--no-followup` or
 Humans and chat agents should still append high-judgment tasks; scout + followup
 are the baseline so the queue does not depend on repeated manual prompting.
 
-**Start agents (one process):** from repo root, `./lds_pipeline/launch_agents.sh` (same
-args as `autonomous_runner.py`). **Parallel throughput:** `./lds_pipeline/run_parallel_task_workers.sh`
+**Orchestration (default):** `./lds_pipeline/launch_agents.sh` runs **`orchestrate.py`**
+(pull → `task_scout` when pending is low → parallel worker waves until the queue drains).
+Use `./lds_pipeline/launch_agents.sh --legacy` for the old single-worker **`autonomous_runner.py`** loop.
+CLI: `python3 lds_pipeline/orchestrate.py` (`--backend`, `--wave-size`, `--max-waves`, `--no-scout`, `--once`).
+**Parallel throughput (manual wave):** `./lds_pipeline/run_parallel_task_workers.sh`
 starts one worker per slot (default count ≈ `2×CPU`, capped by `MAX_PARALLEL_WORKERS`, default 16);
 agents are named `Worker000`…`Worker015`. Set `TASK_WORKER_BACKEND=hybrid` for dispatch-first.
 **Drain the queue:** `./lds_pipeline/run_task_drain.sh [wave-size]` runs wave after wave until
