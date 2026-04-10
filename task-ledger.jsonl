@@ -1039,3 +1039,9 @@
 {"event": "task_reopened", "task_id": "T-0072", "ts": "2026-04-10T00:30:54+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
 {"event": "task_reopened", "task_id": "T-0072", "ts": "2026-04-10T00:30:54+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
 {"event": "task_reopened", "task_id": "T-0072", "ts": "2026-04-10T00:30:57+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
+{"event": "task_claimed", "task_id": "T-0072", "agent": "Worker000", "ts": "2026-04-10T00:31:24+00:00"}
+{"event": "task_claimed", "task_id": "T-0072", "agent": "Worker001", "ts": "2026-04-10T00:31:24+00:00"}
+{"event": "task_claimed", "task_id": "T-0075", "agent": "Worker004", "ts": "2026-04-10T00:31:24+00:00"}
+{"event": "task_claimed", "task_id": "T-0075", "agent": "Worker003", "ts": "2026-04-10T00:31:24+00:00"}
+{"event": "task_claimed", "task_id": "T-0075", "agent": "Worker002", "ts": "2026-04-10T00:31:24+00:00"}
+{"event": "task_claimed", "task_id": "T-0075", "agent": "Worker005", "ts": "2026-04-10T00:31:24+00:00"}
