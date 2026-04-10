@@ -813,3 +813,9 @@
 {"event": "task_reopened", "task_id": "T-0072", "ts": "2026-04-10T00:22:26+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
 {"event": "task_reopened", "task_id": "T-0072", "ts": "2026-04-10T00:22:30+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
 {"event": "task_completed", "task_id": "T-0073", "agent": "Worker002", "ts": "2026-04-10T00:22:36+00:00", "commit": "ba8db211", "notes": "dispatch: build_entity_wikipedia --places (exit 0)"}
+{"event": "task_claimed", "task_id": "T-0072", "agent": "Worker000", "ts": "2026-04-10T00:22:43+00:00"}
+{"event": "task_claimed", "task_id": "T-0072", "agent": "Worker003", "ts": "2026-04-10T00:22:43+00:00"}
+{"event": "task_claimed", "task_id": "T-0072", "agent": "Worker001", "ts": "2026-04-10T00:22:43+00:00"}
+{"event": "task_claimed", "task_id": "T-0074", "agent": "Worker005", "ts": "2026-04-10T00:22:43+00:00"}
+{"event": "task_claimed", "task_id": "T-0074", "agent": "Worker004", "ts": "2026-04-10T00:22:43+00:00"}
+{"event": "task_claimed", "task_id": "T-0074", "agent": "Worker002", "ts": "2026-04-10T00:22:43+00:00"}
