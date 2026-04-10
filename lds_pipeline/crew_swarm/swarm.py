@@ -12,7 +12,7 @@ REPO = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(REPO / "lds_pipeline"))
 
 from crew_swarm.events import append_claimed, append_completed, append_failed
-from crew_swarm.llm_config import build_chat_llm
+from crew_swarm.llm_config import build_crew_llm, kickoff_output_text
 from crew_swarm.tools import LAST_EXIT, LAST_HANDLED, LAST_SUMMARY, build_dispatch_tool
 
 
@@ -49,7 +49,7 @@ def run_swarm_on_task(task: dict[str, Any], verbose: bool = True) -> dict[str, A
 
     append_claimed(tid, agent="CrewSwarm")
 
-    llm = build_chat_llm()
+    llm = build_crew_llm()
     dispatch_tool = build_dispatch_tool()
 
     dispatcher = Agent(
@@ -59,7 +59,6 @@ def run_swarm_on_task(task: dict[str, Any], verbose: bool = True) -> dict[str, A
         llm=llm,
         verbose=verbose,
         allow_delegation=False,
-        memory=False,
     )
     worker = Agent(
         role="Pipeline worker",
@@ -69,7 +68,6 @@ def run_swarm_on_task(task: dict[str, Any], verbose: bool = True) -> dict[str, A
         tools=[dispatch_tool],
         verbose=verbose,
         allow_delegation=False,
-        memory=False,
     )
     aggregator = Agent(
         role="Run summarizer",
@@ -78,7 +76,6 @@ def run_swarm_on_task(task: dict[str, Any], verbose: bool = True) -> dict[str, A
         llm=llm,
         verbose=verbose,
         allow_delegation=False,
-        memory=False,
     )
 
     t1 = Task(
@@ -89,6 +86,7 @@ def run_swarm_on_task(task: dict[str, Any], verbose: bool = True) -> dict[str, A
             f"notes: {notes}\n"
             f"Reply with one line: confirmed, ready for pipeline worker."
         ),
+        expected_output="One line confirming readiness.",
         agent=dispatcher,
     )
     t2 = Task(
@@ -96,6 +94,7 @@ def run_swarm_on_task(task: dict[str, Any], verbose: bool = True) -> dict[str, A
             "Call the tool run_wescripture_dispatch exactly once. "
             f"Pass this JSON string as the only argument (copy verbatim): {payload}"
         ),
+        expected_output="Raw tool output: JSON with handled, exit_code, summary.",
         agent=worker,
     )
     t3 = Task(
@@ -103,6 +102,7 @@ def run_swarm_on_task(task: dict[str, Any], verbose: bool = True) -> dict[str, A
             "Based on the worker output above, state whether the dispatch ran, "
             "whether it matched a handler, and the exit code if mentioned."
         ),
+        expected_output="One or two sentences summarizing success or failure.",
         agent=aggregator,
     )
 
@@ -110,12 +110,13 @@ def run_swarm_on_task(task: dict[str, Any], verbose: bool = True) -> dict[str, A
         agents=[dispatcher, worker, aggregator],
         tasks=[t1, t2, t3],
         process=Process.sequential,
-        verbose=2 if verbose else 0,
+        verbose=verbose,
     )
 
     narrative = ""
     try:
-        narrative = crew.kickoff() or ""
+        raw = crew.kickoff()
+        narrative = kickoff_output_text(raw)
     except Exception as e:  # noqa: BLE001
         append_failed(tid, f"crew kickoff: {e!s}")
         return {"ok": False, "error": str(e), "narrative": narrative}

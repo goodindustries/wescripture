@@ -4,7 +4,7 @@ Minimal checks for Ollama + smallest model (smoke test before swarm runs).
 
   python3 lds_pipeline/crew_swarm/eval_model.py
 
-Env: CREW_OLLAMA_BASE_URL, CREW_OLLAMA_MODEL (same as swarm).
+Env: CREW_OLLAMA_BASE_URL (Ollama root or .../v1), CREW_OLLAMA_MODEL (same as swarm).
 """
 
 from __future__ import annotations
@@ -16,8 +16,23 @@ import urllib.error
 import urllib.request
 
 
+def _ollama_root(url: str) -> str:
+    u = url.rstrip("/")
+    if u.endswith("/v1"):
+        return u[:-3]
+    return u
+
+
+def _openai_v1_chat_url(base: str) -> str:
+    """Ollama OpenAI-compatible chat endpoint."""
+    b = base.rstrip("/")
+    if b.endswith("/v1"):
+        return b + "/chat/completions"
+    return b + "/v1/chat/completions"
+
+
 def _ollama_tags(base: str) -> dict | None:
-    root = base.rsplit("/v1", 1)[0]
+    root = _ollama_root(base)
     url = root + "/api/tags"
     try:
         with urllib.request.urlopen(url, timeout=8) as r:
@@ -27,7 +42,7 @@ def _ollama_tags(base: str) -> dict | None:
 
 
 def main() -> None:
-    base = os.environ.get("CREW_OLLAMA_BASE_URL", "http://127.0.0.1:11434/v1")
+    base = os.environ.get("CREW_OLLAMA_BASE_URL", "http://127.0.0.1:11434")
     model = os.environ.get("CREW_OLLAMA_MODEL", "qwen2.5:1.5b")
     print(f"CREW_OLLAMA_BASE_URL={base}")
     print(f"CREW_OLLAMA_MODEL={model}")
@@ -44,7 +59,6 @@ def main() -> None:
         print(f"WARN: model '{model}' not found in ollama tags. Pull it, e.g.:")
         print(f"  ollama pull {model}")
 
-    # Optional: one chat completion via OpenAI-compatible endpoint
     payload = json.dumps(
         {
             "model": model,
@@ -52,8 +66,9 @@ def main() -> None:
             "temperature": 0,
         }
     ).encode()
+    chat_url = _openai_v1_chat_url(base)
     req = urllib.request.Request(
-        base.rstrip("/") + "/chat/completions",
+        chat_url,
         data=payload,
         headers={"Content-Type": "application/json"},
         method="POST",

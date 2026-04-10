@@ -7,9 +7,9 @@ Run Crew swarm on the next pending task from diagnostics/crew_events.jsonl.
   python3 lds_pipeline/crew_swarm/runner.py --seed "Ch genesis_1: add entity span annotations"
 
 Env:
-  CREW_OLLAMA_BASE_URL   default http://127.0.0.1:11434/v1
+  CREW_OLLAMA_BASE_URL   default http://127.0.0.1:11434 (Ollama root; /v1 stripped if present)
   CREW_OLLAMA_MODEL      default qwen2.5:1.5b
-  CREW_OLLAMA_API_KEY    default ollama
+Requires Python 3.10+ and: pip install -r requirements-crew.txt
 """
 
 from __future__ import annotations

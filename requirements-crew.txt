@@ -1,11 +1,13 @@
-# Crew swarm stack (lds_pipeline/crew_swarm/). Install: pip install -r requirements-crew.txt
-# Python 3.9: crewai 0.1.32. Python 3.10+: you may upgrade crewai for newer APIs.
+# Crew swarm — Python 3.10+ (required for current CrewAI / LangChain stacks).
+# Install: pip install -r requirements-crew.txt
 #
-# Ollama (local LLM):
-#   CREW_OLLAMA_BASE_URL   default http://127.0.0.1:11434/v1
-#   CREW_OLLAMA_MODEL      default qwen2.5:1.5b  (ollama pull qwen2.5:1.5b)
-#   CREW_OLLAMA_API_KEY    default ollama
+# Ollama:
+#   CREW_OLLAMA_BASE_URL   default http://127.0.0.1:11434  (no /v1; stripped if present)
+#   CREW_OLLAMA_MODEL      default qwen2.5:1.5b
+#   CREW_OLLAMA_TEMPERATURE default 0.15
 # Smoke test: python3 lds_pipeline/crew_swarm/eval_model.py
-crewai==0.1.32
-litellm>=1.40,<2
-langchain-openai>=0.0.2
+#
+crewai>=0.86.0,<1.0.0
+litellm>=1.55.0,<2.0.0
+langchain-core>=0.3.45
+langchain-openai>=0.2.0

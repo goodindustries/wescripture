@@ -1,4 +1,4 @@
-"""LangChain tool wrapping task_dispatch.try_dispatch."""
+"""LangChain Core tool wrapping task_dispatch.try_dispatch (CrewAI-compatible)."""
 
 from __future__ import annotations
 
@@ -47,18 +47,18 @@ def _dispatch_json(task_json: str) -> str:
 
 
 def build_dispatch_tool():
+    """StructuredTool (LangChain Core) — preferred for modern agents."""
     try:
-        from langchain.tools import Tool
+        from langchain_core.tools import StructuredTool
     except ImportError as e:
-        raise ImportError("pip install -r requirements-crew.txt") from e
+        raise ImportError("pip install -r requirements-crew.txt (langchain-core)") from e
 
-    return Tool(
+    return StructuredTool.from_function(
         name="run_wescripture_dispatch",
-        func=_dispatch_json,
         description=(
             "Runs the wescripture pipeline for one task. "
-            "Input must be a single JSON object string with keys: "
-            'task_id (string), title (string), notes (string). Example: '
-            '\'{"task_id":"C-0001","title":"Ch genesis_1: ...","notes":""}\''
+            "Input: a JSON object string with keys task_id, title, notes. "
+            'Example: {"task_id":"C-0001","title":"Ch genesis_1: add entity span annotations","notes":""}'
         ),
+        func=_dispatch_json,
     )
