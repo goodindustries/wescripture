@@ -14128,3 +14128,11 @@
 {"event": "task_reopened", "task_id": "T-0113", "ts": "2026-04-10T04:10:17+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
 {"event": "task_reopened", "task_id": "T-0113", "ts": "2026-04-10T04:10:18+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
 {"event": "task_reopened", "task_id": "T-0113", "ts": "2026-04-10T04:10:20+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
+{"event": "task_claimed", "task_id": "T-0113", "agent": "Worker001", "ts": "2026-04-10T04:10:37+00:00"}
+{"event": "task_claimed", "task_id": "T-0113", "agent": "Worker005", "ts": "2026-04-10T04:10:37+00:00"}
+{"event": "task_claimed", "task_id": "T-0113", "agent": "Worker000", "ts": "2026-04-10T04:10:37+00:00"}
+{"event": "task_claimed", "task_id": "T-0113", "agent": "Worker002", "ts": "2026-04-10T04:10:37+00:00"}
+{"event": "task_claimed", "task_id": "T-0113", "agent": "Worker003", "ts": "2026-04-10T04:10:37+00:00"}
+{"event": "task_claimed", "task_id": "T-0113", "agent": "Worker004", "ts": "2026-04-10T04:10:37+00:00"}
+{"event": "task_claimed", "task_id": "T-0113", "agent": "Worker006", "ts": "2026-04-10T04:10:37+00:00"}
+{"event": "task_claimed", "task_id": "T-0113", "agent": "Worker007", "ts": "2026-04-10T04:10:37+00:00"}
