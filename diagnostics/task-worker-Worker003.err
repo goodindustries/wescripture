@@ -18589,3 +18589,5 @@ are terminated then try again. If it still fails, a git process
 may have crashed in this repository earlier:
 remove the file manually to continue.
 
+To https://github.com/reif-is-a-foofie/wescripture.git
+   eab01e6ef..81ba62815  main -> main

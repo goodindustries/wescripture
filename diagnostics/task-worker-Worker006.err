@@ -19822,3 +19822,14 @@ remove the file manually to continue.
 To https://github.com/reif-is-a-foofie/wescripture.git
  ! [remote rejected]     main -> main (cannot lock ref 'refs/heads/main': is at 0ecf39a6427fcaa42ac8adda9a382b3c567b9467 but expected e9a608fa6519552cda88ed4bcdc25d25d2646b70)
 error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+  [ledger] push failed: To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]     main -> main (cannot lock ref 'refs/heads/main': is at dcf1806fae41dc696f54988f4509a03002cb1de6 but expected eab01e6ef975e57db8399d3f81674c9db5fa1433)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+
+To https://github.com/reif-is-a-foofie/wescripture.git
+   dcf1806fa..f44b44239  main -> main
+  [ledger] push failed: To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]     main -> main (cannot lock ref 'refs/heads/main': is at 63cca4275ed146d865513d112353b1e5fbe810b2 but expected dcf1806fae41dc696f54988f4509a03002cb1de6)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+
+Everything up-to-date

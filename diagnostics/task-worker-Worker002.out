@@ -14637,3 +14637,10 @@ Reopened T-0113.
 [Worker002] claimed T-0118: Registry Wikipedia — scripture_people batch 2/46 (1 entries)
 [Worker002] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
   [dispatch] /Library/Developer/CommandLineTools/usr/bin/python3 /Users/reify/Classified/wescripture/lds_pipeline/build_entity_wikipedia.py --scripture-people --limit 1
+Reopened T-0117.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker002] T-0117 no dispatch rule — reopened.
+Enriching scripture_people (/Users/reify/Classified/wescripture/library/entities/scripture_people.json)...
+  scripture_people: 0 enriched, 200 skipped
+
+Total enriched: 0

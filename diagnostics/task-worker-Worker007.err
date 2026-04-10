@@ -19787,3 +19787,6 @@ Traceback (most recent call last):
   File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 528, in run
     raise CalledProcessError(retcode, process.args,
 subprocess.CalledProcessError: Command '['git', 'add', '-A']' returned non-zero exit status 128.
+To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]     main -> main (cannot lock ref 'refs/heads/main': is at dcf1806fae41dc696f54988f4509a03002cb1de6 but expected eab01e6ef975e57db8399d3f81674c9db5fa1433)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
