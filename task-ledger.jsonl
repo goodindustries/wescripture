@@ -927,3 +927,6 @@
 {"event": "task_claimed", "task_id": "T-0072", "agent": "Worker001", "ts": "2026-04-10T00:27:41+00:00"}
 {"event": "task_claimed", "task_id": "T-0072", "agent": "Worker002", "ts": "2026-04-10T00:27:41+00:00"}
 {"event": "task_claimed", "task_id": "T-0075", "agent": "Worker003", "ts": "2026-04-10T00:27:41+00:00"}
+{"event": "task_reopened", "task_id": "T-0072", "ts": "2026-04-10T00:27:41+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
+{"event": "task_reopened", "task_id": "T-0075", "ts": "2026-04-10T00:27:41+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
+{"event": "task_reopened", "task_id": "T-0072", "ts": "2026-04-10T00:27:41+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
