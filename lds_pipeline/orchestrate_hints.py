@@ -29,9 +29,12 @@ def ui_hints_for_task_title(title: str, base: str | None = None) -> list[str]:
 
     m = re.match(r"^Donaldson — ([a-z0-9_]+):", t, re.I)
     if m:
-        book = m.group(1)
-        out.append(f"TOC / search: {b}/index.html")
-        out.append(f"Try a chapter in that book, e.g. {b}/chapters/{book}_1.html (if present)")
+        slug = m.group(1)
+        if re.search(r"_\d+$", slug):
+            out.append(f"Chapter reader: {b}/chapters/{slug}.html")
+            out.append(f"Donaldson file (when built): same repo library/donaldson/{slug}.json")
+        else:
+            out.append(f"Book group `{slug}` — use TOC {b}/index.html to open a chapter")
 
     if "Registry Wikipedia" in t or t.startswith("Christ —"):
         out.append(f"Main app + entity panels: {b}/index.html")

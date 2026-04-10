@@ -60,44 +60,32 @@ def try_dispatch(task: dict) -> DispatchOutcome:
         return DispatchOutcome(True, rc, f"annotate_entity_spans --books {book} (exit {rc})")
 
     # ── Registry Wikipedia — … ───────────────────────────────────────────────
+    def _wiki_limit_argv(flag: str) -> list[str]:
+        lim_m = re.search(r"--limit\s+(\d+)", notes)
+        argv = [
+            sys.executable,
+            str(REPO / "lds_pipeline" / "build_entity_wikipedia.py"),
+            flag,
+        ]
+        if lim_m:
+            argv += ["--limit", lim_m.group(1)]
+        return argv
+
     if title.startswith("Registry Wikipedia — scripture_people"):
-        rc = _run(
-            [
-                sys.executable,
-                str(REPO / "lds_pipeline" / "build_entity_wikipedia.py"),
-                "--scripture-people",
-            ]
-        )
+        argv = _wiki_limit_argv("--scripture-people")
+        rc = _run(argv)
         return DispatchOutcome(True, rc, f"build_entity_wikipedia --scripture-people (exit {rc})")
 
     if title.startswith("Registry Wikipedia — places"):
-        rc = _run(
-            [
-                sys.executable,
-                str(REPO / "lds_pipeline" / "build_entity_wikipedia.py"),
-                "--places",
-            ]
-        )
+        rc = _run(_wiki_limit_argv("--places"))
         return DispatchOutcome(True, rc, f"build_entity_wikipedia --places (exit {rc})")
 
     if title.startswith("Registry Wikipedia — things"):
-        rc = _run(
-            [
-                sys.executable,
-                str(REPO / "lds_pipeline" / "build_entity_wikipedia.py"),
-                "--things",
-            ]
-        )
+        rc = _run(_wiki_limit_argv("--things"))
         return DispatchOutcome(True, rc, f"build_entity_wikipedia --things (exit {rc})")
 
     if title.startswith("Registry Wikipedia — topics"):
-        rc = _run(
-            [
-                sys.executable,
-                str(REPO / "lds_pipeline" / "build_entity_wikipedia.py"),
-                "--topics",
-            ]
-        )
+        rc = _run(_wiki_limit_argv("--topics"))
         return DispatchOutcome(True, rc, f"build_entity_wikipedia --topics (exit {rc})")
 
     if title.startswith("Registry Wikipedia — people.json"):

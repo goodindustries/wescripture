@@ -180,17 +180,23 @@ def run_followup(task_id: str, commit: str, model: str) -> None:
         print(f"  [followup] exit {r.returncode} (non-fatal)", flush=True)
 
 
-def log_run(task_id: str, agent: str, outcome: str, notes: str = ""):
+def log_run(task_id: str, agent: str, outcome: str, notes: str = "", **extra) -> None:
     LOG_DIR.mkdir(parents=True, exist_ok=True)
     path = LOG_DIR / f"task-worker-{agent}.log"
+    row = {
+        "ts": utc_now(),
+        "task_id": task_id,
+        "agent": agent,
+        "outcome": outcome,
+        "notes": notes,
+    }
+    row.update(extra)
     with path.open("a", encoding="utf-8") as fh:
-        fh.write(json.dumps({
-            "ts":      utc_now(),
-            "task_id": task_id,
-            "agent":   agent,
-            "outcome": outcome,
-            "notes":   notes,
-        }) + "\n")
+        fh.write(json.dumps(row) + "\n")
+
+
+def ollama_model_display() -> str:
+    return os.environ.get("OLLAMA_MODEL", os.environ.get("GENERATE_CHRIST_MODEL", "gemma4:e2b"))
 
 
 def main():
@@ -221,6 +227,12 @@ def main():
     tid   = task["task_id"]
     title = task["title"]
     print(f"[{args.agent}] claimed {tid}: {title}", flush=True)
+    ollama = ollama_model_display()
+    print(
+        f"[{args.agent}] models: backend={args.backend} claude_cli={args.model} "
+        f"ollama={ollama} (christ gen + task_followup unless --no-followup)",
+        flush=True,
+    )
 
     # ── Build prompt ──────────────────────────────────────────────────────────
     prompt = build_prompt(task)
@@ -252,7 +264,15 @@ def main():
                     "--notes", f"dispatch failed exit={d.exit_code}: {d.summary[:200]}",
                 ])
                 push_origin()
-                log_run(tid, args.agent, "error", d.summary)
+                log_run(
+                    tid,
+                    args.agent,
+                    "error",
+                    d.summary,
+                    backend=args.backend,
+                    claude_model=args.model,
+                    ollama=ollama_model_display(),
+                )
                 print(f"[{args.agent}] {tid} dispatch failed.", flush=True)
                 sys.exit(1)
             new_commit = git_commit_work(tid, d.summary)
@@ -306,7 +326,15 @@ def main():
         run_followup(tid, new_commit or git_rev_short(), args.followup_model)
 
     outcome = "success" if success else "error"
-    log_run(tid, args.agent, outcome, f"commit={new_commit}")
+    log_run(
+        tid,
+        args.agent,
+        outcome,
+        f"commit={new_commit}",
+        backend=args.backend,
+        claude_model=args.model,
+        ollama=ollama_model_display(),
+    )
     print(f"[{args.agent}] {tid} {outcome}. commit={new_commit}", flush=True)
 
 

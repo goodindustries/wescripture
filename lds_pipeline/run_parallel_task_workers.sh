@@ -41,7 +41,8 @@ fi
 
 mkdir -p diagnostics
 BACKEND="${TASK_WORKER_BACKEND:-claude}"
-echo "Starting $N workers from $ROOT (backend=$BACKEND, max=$MAX) …"
+OLLAMA="${OLLAMA_MODEL:-${GENERATE_CHRIST_MODEL:-gemma4:e2b}}"
+echo "Starting $N workers from $ROOT (backend=$BACKEND, max=$MAX, OLLAMA_MODEL=$OLLAMA) …"
 for ((i = 0; i < N; i++)); do
   AG="$(printf 'Worker%03d' "$i")"
   OUT="diagnostics/task-worker-${AG}.out"

@@ -19,12 +19,18 @@ Streams (default **all**): chapter gaps (entity, notes, Donaldson) plus **regist
 topics, people.json). Titles match `task_dispatch.py` rules for local workers.
 
 Schedule (example): every few hours so workers never run out of scoped work.
+
+Batch sizes (small by default for visible progress):
+  TASK_SCOUT_WIKI_CHUNK (default 5) — Registry Wikipedia tasks per row
+  TASK_SCOUT_CHRIST_CHUNK (default 5) — Christ / Ollama tasks per row
+  TASK_SCOUT_DONALDSON_BUNDLE (default 1) — 1 = one ledger task per missing Donaldson chapter
 """
 
 from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sys
 from collections import defaultdict
@@ -39,10 +45,11 @@ TOC_PATH = LIB / "toc.json"
 CHAP_DIR = LIB / "chapters"
 DON_DIR = LIB / "donaldson"
 
-PEOPLE_WIKI_CHUNK = 40
-CHRIST_SP_CHUNK = 35
-CHRIST_TOPIC_CHUNK = 18
-CHRIST_PEOPLE_CHUNK = 45
+# Small batches → faster ledger feedback. Override with env for experiments.
+WIKI_CHUNK = int(os.environ.get("TASK_SCOUT_WIKI_CHUNK", "5"))
+CHRIST_CHUNK = int(os.environ.get("TASK_SCOUT_CHRIST_CHUNK", "5"))
+# 1 = one ledger row per missing Donaldson chapter; >1 bundles up to N chapters per task
+DONALDSON_CHAPTERS_PER_TASK = int(os.environ.get("TASK_SCOUT_DONALDSON_BUNDLE", "1"))
 
 
 def load_chapter_ids() -> list[str]:
@@ -125,16 +132,21 @@ def _load_entity_array(path: Path) -> list[dict]:
 def collect_registry_tasks() -> list[tuple[str, str]]:
     """Wikipedia + christ_connection backlog; titles align with task_dispatch.py."""
     out: list[tuple[str, str]] = []
+    wc, cc = WIKI_CHUNK, CHRIST_CHUNK
 
     sp = _load_entity_array(ENT / "scripture_people.json")
     miss_w = [e for e in sp if not e.get("wikipedia_summary")]
     if miss_w:
-        out.append(
-            (
-                f"Registry Wikipedia — scripture_people: enrich {len(miss_w)} missing summaries",
-                "python3 lds_pipeline/build_entity_wikipedia.py --scripture-people",
+        total_b = (len(miss_w) + wc - 1) // wc
+        for i in range(0, len(miss_w), wc):
+            batch = miss_w[i : i + wc]
+            bi = i // wc + 1
+            out.append(
+                (
+                    f"Registry Wikipedia — scripture_people batch {bi}/{total_b} ({len(batch)} entries)",
+                    f"python3 lds_pipeline/build_entity_wikipedia.py --scripture-people --limit {len(batch)}",
+                )
             )
-        )
 
     for label, fname in (
         ("places", "places.json"),
@@ -144,20 +156,24 @@ def collect_registry_tasks() -> list[tuple[str, str]]:
         arr = _load_entity_array(ENT / fname)
         miss = [e for e in arr if not e.get("wikipedia_summary")]
         if miss:
-            out.append(
-                (
-                    f"Registry Wikipedia — {label}: enrich {len(miss)} missing summaries",
-                    f"python3 lds_pipeline/build_entity_wikipedia.py --{label}",
+            total_b = (len(miss) + wc - 1) // wc
+            for i in range(0, len(miss), wc):
+                batch = miss[i : i + wc]
+                bi = i // wc + 1
+                out.append(
+                    (
+                        f"Registry Wikipedia — {label} batch {bi}/{total_b} ({len(batch)} entries)",
+                        f"python3 lds_pipeline/build_entity_wikipedia.py --{label} --limit {len(batch)}",
+                    )
                 )
-            )
 
     pe = _load_entity_array(ENT / "people.json")
     miss_p = [e for e in pe if not e.get("wikipedia_summary")]
     if miss_p:
-        total_b = (len(miss_p) + PEOPLE_WIKI_CHUNK - 1) // PEOPLE_WIKI_CHUNK
-        for i in range(0, len(miss_p), PEOPLE_WIKI_CHUNK):
-            batch = miss_p[i : i + PEOPLE_WIKI_CHUNK]
-            bi = i // PEOPLE_WIKI_CHUNK + 1
+        total_b = (len(miss_p) + wc - 1) // wc
+        for i in range(0, len(miss_p), wc):
+            batch = miss_p[i : i + wc]
+            bi = i // wc + 1
             out.append(
                 (
                     f"Registry Wikipedia — people.json batch {bi}/{total_b} ({len(batch)} entries)",
@@ -167,13 +183,13 @@ def collect_registry_tasks() -> list[tuple[str, str]]:
 
     miss_c = [e for e in sp if not e.get("christ_connection")]
     if miss_c:
-        total_b = (len(miss_c) + CHRIST_SP_CHUNK - 1) // CHRIST_SP_CHUNK
-        for i in range(0, len(miss_c), CHRIST_SP_CHUNK):
-            batch = miss_c[i : i + CHRIST_SP_CHUNK]
-            bi = i // CHRIST_SP_CHUNK + 1
+        total_b = (len(miss_c) + cc - 1) // cc
+        for i in range(0, len(miss_c), cc):
+            batch = miss_c[i : i + cc]
+            bi = i // cc + 1
             out.append(
                 (
-                    f"Christ — scripture_people: connections batch {bi}/{total_b} (~{len(batch)} figs)",
+                    f"Christ — scripture_people: connections batch {bi}/{total_b} ({len(batch)} figs)",
                     "python3 lds_pipeline/generate_christ_connections.py --only scripture_people "
                     f"--workers 1 --limit {len(batch)}",
                 )
@@ -182,13 +198,13 @@ def collect_registry_tasks() -> list[tuple[str, str]]:
     tp = _load_entity_array(ENT / "topics.json")
     miss_t = [e for e in tp if not e.get("christ_connection")]
     if miss_t:
-        total_b = (len(miss_t) + CHRIST_TOPIC_CHUNK - 1) // CHRIST_TOPIC_CHUNK
-        for i in range(0, len(miss_t), CHRIST_TOPIC_CHUNK):
-            batch = miss_t[i : i + CHRIST_TOPIC_CHUNK]
-            bi = i // CHRIST_TOPIC_CHUNK + 1
+        total_b = (len(miss_t) + cc - 1) // cc
+        for i in range(0, len(miss_t), cc):
+            batch = miss_t[i : i + cc]
+            bi = i // cc + 1
             out.append(
                 (
-                    f"Christ — topics: connections batch {bi}/{total_b} (~{len(batch)} topics)",
+                    f"Christ — topics: connections batch {bi}/{total_b} ({len(batch)} topics)",
                     "python3 lds_pipeline/generate_christ_connections.py --only topics "
                     f"--workers 1 --limit {len(batch)}",
                 )
@@ -196,13 +212,13 @@ def collect_registry_tasks() -> list[tuple[str, str]]:
 
     miss_pp = [e for e in pe if not e.get("christ_connection")]
     if miss_pp:
-        total_b = (len(miss_pp) + CHRIST_PEOPLE_CHUNK - 1) // CHRIST_PEOPLE_CHUNK
-        for i in range(0, len(miss_pp), CHRIST_PEOPLE_CHUNK):
-            batch = miss_pp[i : i + CHRIST_PEOPLE_CHUNK]
-            bi = i // CHRIST_PEOPLE_CHUNK + 1
+        total_b = (len(miss_pp) + cc - 1) // cc
+        for i in range(0, len(miss_pp), cc):
+            batch = miss_pp[i : i + cc]
+            bi = i // cc + 1
             out.append(
                 (
-                    f"Christ — people.json: connections batch {bi}/{total_b} (~{len(batch)} entries)",
+                    f"Christ — people.json: connections batch {bi}/{total_b} ({len(batch)} entries)",
                     "python3 lds_pipeline/generate_christ_connections.py --only people "
                     f"--workers 1 --limit {len(batch)}",
                 )
@@ -215,14 +231,18 @@ def collect_registry_tasks() -> list[tuple[str, str]]:
         arr = _load_entity_array(ENT / fname)
         miss = [e for e in arr if not e.get("christ_connection")]
         if miss:
-            lim = min(60, len(miss))
-            out.append(
-                (
-                    f"Christ — {only_key}: fill christ_connection ({len(miss)} entries)",
-                    "python3 lds_pipeline/generate_christ_connections.py "
-                    f"--only {only_key} --workers 1 --limit {lim}",
+            total_b = (len(miss) + cc - 1) // cc
+            for i in range(0, len(miss), cc):
+                batch = miss[i : i + cc]
+                bi = i // cc + 1
+                lim = len(batch)
+                out.append(
+                    (
+                        f"Christ — {only_key}: connections batch {bi}/{total_b} ({lim} entries)",
+                        "python3 lds_pipeline/generate_christ_connections.py "
+                        f"--only {only_key} --workers 1 --limit {lim}",
+                    )
                 )
-            )
 
     return out
 
@@ -231,24 +251,38 @@ def collect_donaldson_tasks(chapter_ids: list[str]) -> list[tuple[str, str]]:
     don = {p.stem for p in DON_DIR.glob("*.json")}
     ch_set = set(chapter_ids)
     missing = sorted(ch_set - don)
+    out: list[tuple[str, str]] = []
+    bundle = max(1, DONALDSON_CHAPTERS_PER_TASK)
+
+    if bundle == 1:
+        for cid in missing:
+            title = f"Donaldson — {cid}: add commentary JSON"
+            notes = (
+                f"MISSION: Single chapter. Output library/donaldson/{cid}.json "
+                "aligned with existing Donaldson schema in sibling files."
+            )
+            out.append((title, notes))
+        return out
+
     by_book: dict[str, list[str]] = defaultdict(list)
     for cid in missing:
         m = re.match(r"^(.+)_(\d+)$", cid)
         book = m.group(1) if m else cid
         by_book[book].append(cid)
 
-    out: list[tuple[str, str]] = []
     for book, slugs in sorted(by_book.items(), key=lambda x: (-len(x[1]), x[0])):
-        n = len(slugs)
-        title = f"Donaldson — {book}: add commentary JSON for {n} missing chapter(s)"
-        sample = ", ".join(slugs[:15])
-        if len(slugs) > 15:
-            sample += ", …"
-        notes = (
-            f"MISSION: Donaldson notes feed verse-level insight. Missing chapter ids: {sample}. "
-            "Output: library/donaldson/{slug}.json aligned with existing schema in sibling files."
-        )
-        out.append((title, notes))
+        for i in range(0, len(slugs), bundle):
+            chunk = slugs[i : i + bundle]
+            n = len(chunk)
+            title = f"Donaldson — {book}: add commentary JSON for {n} chapter(s)"
+            sample = ", ".join(chunk[:12])
+            if len(chunk) > 12:
+                sample += ", …"
+            notes = (
+                f"MISSION: Donaldson notes. Chapter ids: {sample}. "
+                "Output: library/donaldson/{slug}.json per chapter."
+            )
+            out.append((title, notes))
     return out
 
 

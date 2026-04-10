@@ -173,10 +173,14 @@ def main() -> None:
             log(f"stopped: max-waves {args.max_waves}")
             break
 
-        log(f"wave {wave}: {args.wave_size} workers backend={args.backend}")
+        om = os.environ.get("OLLAMA_MODEL", os.environ.get("GENERATE_CHRIST_MODEL", "gemma4:e2b"))
         log(
-            "  (each slot runs task_worker.py once: claims → dispatch/claude → commit; "
-            "see diagnostics/task-worker-WorkerNNN.out)"
+            f"wave {wave}: {args.wave_size} workers backend={args.backend} "
+            f"(claude default model=sonnet unless worker overrides; ollama christ/followup={om})"
+        )
+        log(
+            "  each slot: task_worker.py once → ledger claim → dispatch or claude → commit; "
+            "logs: diagnostics/task-worker-WorkerNNN.out + model line on stdout"
         )
         env = os.environ.copy()
         env["TASK_WORKER_BACKEND"] = args.backend

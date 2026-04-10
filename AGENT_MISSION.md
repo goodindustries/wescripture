@@ -99,6 +99,8 @@ Use `./lds_pipeline/launch_agents.sh --legacy` for the old single-worker **`auto
 CLI: `python3 lds_pipeline/orchestrate.py` (`--backend`, `--wave-size`, `--max-waves`, `--no-scout`, `--once`).
 **Always-on loop:** `./lds_pipeline/run_orchestrate_forever.sh` (re-runs orchestrate after each drain; `ORCHESTRATE_LOOP_SLEEP` between cycles, default 120s).
 Cursor agents are instructed to **execute** orchestrate when you ask for workers — not only suggest commands (see `.cursor/rules/agent-orchestrate.mdc`).
+
+**Small scout tasks (default):** `task_scout` uses tiny batches — `TASK_SCOUT_WIKI_CHUNK` / `TASK_SCOUT_CHRIST_CHUNK` (default **5**), and **one Donaldson chapter per task** (`TASK_SCOUT_DONALDSON_BUNDLE=1`). **Workers** print `models: backend=… claude_cli=… ollama=…` after each claim; set **`OLLAMA_MODEL`** for local Ollama (christ generation + followup).
 **Parallel throughput (manual wave):** `./lds_pipeline/run_parallel_task_workers.sh`
 starts one worker per slot (default count ≈ `2×CPU`, capped by `MAX_PARALLEL_WORKERS`, default 16);
 agents are named `Worker000`…`Worker015`. Set `TASK_WORKER_BACKEND=hybrid` for dispatch-first.
