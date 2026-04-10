@@ -310,3 +310,29 @@ Loading entity indexes…
 Annotating 2 chapters…
 
 Done. 0 chapters changed, 25 verses scanned, 0 entity spans added.
+=== 2026-04-10T00:38:03Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0076: Donaldson — 1_chronicles: add commentary JSON for 25 missing chapter(s)
+[Worker004] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0076.
+  pushed to origin
+[Worker004] T-0076 no dispatch rule — reopened.
+=== 2026-04-10T00:38:33Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0076: Donaldson — 1_chronicles: add commentary JSON for 25 missing chapter(s)
+[Worker004] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0076.
+  pushed to origin
+[Worker004] T-0076 no dispatch rule — reopened.
+=== 2026-04-10T00:39:04Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0076: Donaldson — 1_chronicles: add commentary JSON for 25 missing chapter(s)
+[Worker004] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0076.
+  pushed to origin
+[Worker004] T-0076 no dispatch rule — reopened.
+=== 2026-04-10T00:39:34Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0076: Donaldson — 1_chronicles: add commentary JSON for 25 missing chapter(s)
+[Worker004] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0076.

@@ -597,3 +597,31 @@ Reopened T-0076.
 [Worker000] checking for pending tasks…
 [Worker000] claimed T-0076: Donaldson — 1_chronicles: add commentary JSON for 25 missing chapter(s)
 [Worker000] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0076.
+  pushed to origin
+[Worker000] T-0076 no dispatch rule — reopened.
+=== 2026-04-10T00:38:03Z start Worker000 ===
+[Worker000] checking for pending tasks…
+[Worker000] claimed T-0076: Donaldson — 1_chronicles: add commentary JSON for 25 missing chapter(s)
+[Worker000] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0076.
+  pushed to origin
+[Worker000] T-0076 no dispatch rule — reopened.
+=== 2026-04-10T00:38:33Z start Worker000 ===
+[Worker000] checking for pending tasks…
+[Worker000] claimed T-0076: Donaldson — 1_chronicles: add commentary JSON for 25 missing chapter(s)
+[Worker000] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0076.
+  [ledger] pushed to origin
+  pushed to origin
+[Worker000] T-0076 no dispatch rule — reopened.
+=== 2026-04-10T00:39:04Z start Worker000 ===
+[Worker000] checking for pending tasks…
+[Worker000] claimed T-0076: Donaldson — 1_chronicles: add commentary JSON for 25 missing chapter(s)
+[Worker000] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0076.
+  [ledger] pushed to origin
+  pushed to origin
+[Worker000] T-0076 no dispatch rule — reopened.
+=== 2026-04-10T00:39:34Z start Worker000 ===
+[Worker000] checking for pending tasks…

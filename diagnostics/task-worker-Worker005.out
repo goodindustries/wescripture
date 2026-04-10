@@ -310,3 +310,51 @@ Loading entity indexes…
 Annotating 2 chapters…
 
 Done. 0 chapters changed, 25 verses scanned, 0 entity spans added.
+[main 26738383] [task] T-0078: annotate_entity_spans --books esther (exit 0)
+ Committer: Reif Tauati <reify@Reifs-MacBook-Pro.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 16 files changed, 331 insertions(+)
+ create mode 100644 diagnostics/task-worker-Worker004.log
+ create mode 100644 diagnostics/track.feed.txt
+ create mode 100644 lds_pipeline/watch_it.py
+Completed T-0078.
+  [ledger] pushed to origin
+  pushed to origin
+  [followup] exit 2 (non-fatal)
+[Worker005] T-0078 success. commit=26738383
+=== 2026-04-10T00:37:42Z exit 0 Worker005 ===
+=== 2026-04-10T00:38:03Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0076: Donaldson — 1_chronicles: add commentary JSON for 25 missing chapter(s)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0076.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0076 no dispatch rule — reopened.
+=== 2026-04-10T00:38:33Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0076: Donaldson — 1_chronicles: add commentary JSON for 25 missing chapter(s)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0076.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0076 no dispatch rule — reopened.
+=== 2026-04-10T00:39:04Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0076: Donaldson — 1_chronicles: add commentary JSON for 25 missing chapter(s)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0076.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker005] T-0076 no dispatch rule — reopened.
+=== 2026-04-10T00:39:34Z start Worker005 ===
+[Worker005] checking for pending tasks…
+[Worker005] claimed T-0079: Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+[Worker005] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)

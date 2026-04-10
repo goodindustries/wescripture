@@ -21,9 +21,12 @@ topics, people.json). Titles match `task_dispatch.py` rules for local workers.
 Schedule (example): every few hours so workers never run out of scoped work.
 
 Batch sizes (small by default for visible progress):
-  TASK_SCOUT_WIKI_CHUNK (default 5) — Registry Wikipedia tasks per row
-  TASK_SCOUT_CHRIST_CHUNK (default 5) — Christ / Ollama tasks per row
+  TASK_SCOUT_WIKI_CHUNK (default 3) — Registry Wikipedia entries per task
+  TASK_SCOUT_CHRIST_CHUNK (default 2) — Christ / Ollama entities per task (keep tiny)
   TASK_SCOUT_DONALDSON_BUNDLE (default 1) — 1 = one ledger task per missing Donaldson chapter
+
+Legacy tasks in the ledger (old “whole book” Donaldson rows, etc.) stay until completed or reopened;
+new scout runs only append new small titles. Use `--micro` for the smallest batches (1/1/1).
 """
 
 from __future__ import annotations
@@ -45,11 +48,21 @@ TOC_PATH = LIB / "toc.json"
 CHAP_DIR = LIB / "chapters"
 DON_DIR = LIB / "donaldson"
 
-# Small batches → faster ledger feedback. Override with env for experiments.
-WIKI_CHUNK = int(os.environ.get("TASK_SCOUT_WIKI_CHUNK", "5"))
-CHRIST_CHUNK = int(os.environ.get("TASK_SCOUT_CHRIST_CHUNK", "5"))
-# 1 = one ledger row per missing Donaldson chapter; >1 bundles up to N chapters per task
-DONALDSON_CHAPTERS_PER_TASK = int(os.environ.get("TASK_SCOUT_DONALDSON_BUNDLE", "1"))
+# Defaults tuned for fast feedback; override with env or --micro.
+_DEF_WIKI = os.environ.get("TASK_SCOUT_WIKI_CHUNK", "3")
+_DEF_CHRIST = os.environ.get("TASK_SCOUT_CHRIST_CHUNK", "2")
+_DEF_DON = os.environ.get("TASK_SCOUT_DONALDSON_BUNDLE", "1")
+
+
+def _chunk_sizes(micro: bool) -> tuple[int, int, int]:
+    """Returns (wiki_chunk, christ_chunk, donaldson_chapters_per_task)."""
+    if micro:
+        return 1, 1, 1
+    return (
+        max(1, int(_DEF_WIKI)),
+        max(1, int(_DEF_CHRIST)),
+        max(1, int(_DEF_DON)),
+    )
 
 
 def load_chapter_ids() -> list[str]:
@@ -129,10 +142,10 @@ def _load_entity_array(path: Path) -> list[dict]:
     return raw if isinstance(raw, list) else list(raw.values())
 
 
-def collect_registry_tasks() -> list[tuple[str, str]]:
+def collect_registry_tasks(wiki_chunk: int, christ_chunk: int) -> list[tuple[str, str]]:
     """Wikipedia + christ_connection backlog; titles align with task_dispatch.py."""
     out: list[tuple[str, str]] = []
-    wc, cc = WIKI_CHUNK, CHRIST_CHUNK
+    wc, cc = wiki_chunk, christ_chunk
 
     sp = _load_entity_array(ENT / "scripture_people.json")
     miss_w = [e for e in sp if not e.get("wikipedia_summary")]
@@ -247,12 +260,14 @@ def collect_registry_tasks() -> list[tuple[str, str]]:
     return out
 
 
-def collect_donaldson_tasks(chapter_ids: list[str]) -> list[tuple[str, str]]:
+def collect_donaldson_tasks(
+    chapter_ids: list[str], chapters_per_task: int = 1
+) -> list[tuple[str, str]]:
     don = {p.stem for p in DON_DIR.glob("*.json")}
     ch_set = set(chapter_ids)
     missing = sorted(ch_set - don)
     out: list[tuple[str, str]] = []
-    bundle = max(1, DONALDSON_CHAPTERS_PER_TASK)
+    bundle = max(1, chapters_per_task)
 
     if bundle == 1:
         for cid in missing:
@@ -334,7 +349,14 @@ def main() -> None:
         default="all",
         help="all | comma list: entity, notes, donaldson, registry",
     )
+    ap.add_argument(
+        "--micro",
+        action="store_true",
+        help="Smallest batches: wiki=1, christ=1, Donaldson bundle=1 (overrides env for this run)",
+    )
     args = ap.parse_args()
+
+    wiki_c, christ_c, don_b = _chunk_sizes(args.micro)
 
     if not TOC_PATH.is_file():
         print("ERROR: library/toc.json missing", file=sys.stderr)
@@ -349,16 +371,20 @@ def main() -> None:
     if "notes" in streams:
         queues.append(collect_notes_tasks(chapter_ids))
     if "donaldson" in streams:
-        queues.append(collect_donaldson_tasks(chapter_ids))
+        queues.append(collect_donaldson_tasks(chapter_ids, don_b))
     if "registry" in streams:
         if ENT.is_dir():
-            queues.append(collect_registry_tasks())
+            queues.append(collect_registry_tasks(wiki_c, christ_c))
         else:
             print("task_scout: skip registry (library/entities missing)", flush=True)
 
     open_titles = open_task_titles()
     candidates = round_robin_take(queues, set(open_titles), args.max)
 
+    print(
+        f"task_scout: chunks wiki={wiki_c} christ={christ_c} donaldson_bundle={don_b} "
+        f"(micro={args.micro})"
+    )
     if not candidates:
         print("task_scout: no new tasks (queues empty or all titles already open).")
         return

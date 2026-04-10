@@ -24,3 +24,5 @@
 2026-04-10T00:35:34  [ledger      ] task_claimed T-0078 agent=Worker005
 2026-04-10T00:35:34  [ledger      ] task_claimed T-0078 agent=Worker004
 2026-04-10T00:35:34  [ledger      ] task_reopened T-0076
+2026-04-10T00:35:36  [ledger      ] task_completed T-0078 agent=Worker005
+2026-04-10T00:35:39  [ledger      ] task_reopened T-0076
