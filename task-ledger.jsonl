@@ -3364,3 +3364,4 @@
 {"event": "task_claimed", "task_id": "T-0099", "agent": "Worker001", "ts": "2026-04-10T02:45:28+00:00"}
 {"event": "task_claimed", "task_id": "T-0099", "agent": "Worker006", "ts": "2026-04-10T02:45:28+00:00"}
 {"event": "task_claimed", "task_id": "T-0099", "agent": "Worker005", "ts": "2026-04-10T02:45:28+00:00"}
+{"event": "task_claimed", "task_id": "T-0099", "agent": "Worker007", "ts": "2026-04-10T02:45:28+00:00"}
