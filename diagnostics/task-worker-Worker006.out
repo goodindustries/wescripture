@@ -109,3 +109,33 @@ Enriching people (/Users/reify/Classified/wescripture/library/entities/people.js
   people: 40 enriched, 167 skipped
 
 Total enriched: 40
+[main 1d1053a2] [task] T-0093: build_entity_wikipedia --people --limit 40 (exit 0)
+ Committer: Reif Tauati <reify@MacBookPro.lan>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 33 files changed, 1833 insertions(+), 40 deletions(-)
+Completed T-0093.
+  [ledger] pushed to origin
+  pushed to origin
+  [followup] exit 2 (non-fatal)
+[Worker006] T-0093 success. commit=1d1053a2
+=== 2026-04-10T02:07:27Z exit 0 Worker006 ===
+=== 2026-04-10T02:07:48Z start Worker006 ===
+[Worker006] checking for pending tasks…
+[Worker006] claimed T-0094: Ch job_8: add entity span annotations (data-entity / place / thing)
+[Worker006] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+  [dispatch] /Library/Developer/CommandLineTools/usr/bin/python3 /Users/reify/Classified/wescripture/lds_pipeline/annotate_entity_spans.py --books job
+Loading entity indexes…
+  134 scripture-person variants, 81 place variants, 207 thing variants
+Annotating 16 chapters…
+
+Done. 0 chapters changed, 391 verses scanned, 0 entity spans added.

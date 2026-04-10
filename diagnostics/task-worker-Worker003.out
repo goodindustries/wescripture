@@ -741,3 +741,13 @@ Reopened T-0091.
 Reopened T-0092.
   push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
 [Worker003] T-0092 no dispatch rule — reopened.
+=== 2026-04-10T02:07:48Z start Worker003 ===
+[Worker003] checking for pending tasks…
+[Worker003] claimed T-0094: Ch job_8: add entity span annotations (data-entity / place / thing)
+[Worker003] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+  [dispatch] /Library/Developer/CommandLineTools/usr/bin/python3 /Users/reify/Classified/wescripture/lds_pipeline/annotate_entity_spans.py --books job
+Loading entity indexes…
+  134 scripture-person variants, 81 place variants, 207 thing variants
+Annotating 16 chapters…
+
+Done. 0 chapters changed, 391 verses scanned, 0 entity spans added.

@@ -757,3 +757,7 @@ Reopened T-0092.
   [ledger] pushed to origin
   pushed to origin
 [Worker000] T-0092 no dispatch rule — reopened.
+=== 2026-04-10T02:07:48Z start Worker000 ===
+[Worker000] checking for pending tasks…
+[Worker000] claimed T-0092: Donaldson — song_of_solomon: add commentary JSON for 7 missing chapter(s)
+[Worker000] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)

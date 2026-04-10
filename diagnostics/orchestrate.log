@@ -1351,3 +1351,108 @@
 2026-04-09T21:03:43Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
 2026-04-09T21:03:43Z wave 9: 8 workers backend=dispatch (claude default model=sonnet unless worker overrides; ollama christ/followup=gemma4:e2b)
 2026-04-09T21:03:43Z   each slot: task_worker.py once → ledger claim → dispatch or claude → commit; logs: diagnostics/task-worker-WorkerNNN.out + model line on stdout
+2026-04-09T21:07:27Z wave 9 worker script exit=0; pending now 18
+2026-04-09T21:07:27Z Last claim line per worker log (if any):
+2026-04-09T21:07:27Z   task-worker-Worker000.out: Worker000 → T-0092: Donaldson — song_of_solomon: add commentary JSON for 7 missing chapter(s)
+2026-04-09T21:07:27Z     UI: Book group `song_of_solomon` — use TOC https://thegoodproject.net/index.html to open a chapter
+2026-04-09T21:07:27Z   task-worker-Worker001.out: Worker001 → T-0092: Donaldson — song_of_solomon: add commentary JSON for 7 missing chapter(s)
+2026-04-09T21:07:27Z     UI: Book group `song_of_solomon` — use TOC https://thegoodproject.net/index.html to open a chapter
+2026-04-09T21:07:27Z   task-worker-Worker002.out: Worker002 → T-0092: Donaldson — song_of_solomon: add commentary JSON for 7 missing chapter(s)
+2026-04-09T21:07:27Z     UI: Book group `song_of_solomon` — use TOC https://thegoodproject.net/index.html to open a chapter
+2026-04-09T21:07:27Z   task-worker-Worker003.out: Worker003 → T-0092: Donaldson — song_of_solomon: add commentary JSON for 7 missing chapter(s)
+2026-04-09T21:07:27Z     UI: Book group `song_of_solomon` — use TOC https://thegoodproject.net/index.html to open a chapter
+2026-04-09T21:07:27Z   task-worker-Worker004.out: Worker004 → T-0092: Donaldson — song_of_solomon: add commentary JSON for 7 missing chapter(s)
+2026-04-09T21:07:27Z     UI: Book group `song_of_solomon` — use TOC https://thegoodproject.net/index.html to open a chapter
+2026-04-09T21:07:27Z   task-worker-Worker005.out: Worker005 → T-0092: Donaldson — song_of_solomon: add commentary JSON for 7 missing chapter(s)
+2026-04-09T21:07:27Z     UI: Book group `song_of_solomon` — use TOC https://thegoodproject.net/index.html to open a chapter
+2026-04-09T21:07:27Z   task-worker-Worker006.out: Worker006 → T-0093: Registry Wikipedia — people.json batch 3/40 (40 entries)
+2026-04-09T21:07:27Z     UI: Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:07:27Z   task-worker-Worker007.out: Worker007 → T-0093: Registry Wikipedia — people.json batch 3/40 (40 entries)
+2026-04-09T21:07:27Z     UI: Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:07:27Z   post-wave Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:07:27Z   post-wave Pending: 18  |  Claimed (in-flight): 1
+2026-04-09T21:07:27Z   post-wave Next pending (showing 14 of 18):
+2026-04-09T21:07:27Z   post-wave   T-0092  Donaldson — song_of_solomon: add commentary JSON for 7 missing chapter(s)
+2026-04-09T21:07:27Z   post-wave     → Book group `song_of_solomon` — use TOC https://thegoodproject.net/index.html to open a chapter
+2026-04-09T21:07:27Z   post-wave   T-0094  Ch job_8: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:07:27Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/job_8.html
+2026-04-09T21:07:27Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:07:27Z   post-wave   T-0095  Ch mark_4: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:07:27Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/mark_4.html
+2026-04-09T21:07:27Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:07:27Z   post-wave   T-0096  Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+2026-04-09T21:07:27Z   post-wave     → Book group `2_kings` — use TOC https://thegoodproject.net/index.html to open a chapter
+2026-04-09T21:07:27Z   post-wave   T-0097  Registry Wikipedia — people.json batch 4/40 (40 entries)
+2026-04-09T21:07:27Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:07:27Z   post-wave   T-0098  Ch job_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:07:27Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/job_10.html
+2026-04-09T21:07:27Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:07:27Z   post-wave   T-0099  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:07:27Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:07:27Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:07:27Z   post-wave   T-0100  Donaldson — 2_samuel: add commentary JSON for 4 missing chapter(s)
+2026-04-09T21:07:27Z   post-wave     → Book group `2_samuel` — use TOC https://thegoodproject.net/index.html to open a chapter
+2026-04-09T21:07:27Z   post-wave   T-0101  Registry Wikipedia — people.json batch 5/40 (40 entries)
+2026-04-09T21:07:27Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:07:27Z   post-wave   T-0102  Ch job_11: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:07:27Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/job_11.html
+2026-04-09T21:07:27Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:07:27Z   post-wave   T-0103  Ch mark_9: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:07:27Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/mark_9.html
+2026-04-09T21:07:27Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:07:27Z   post-wave   T-0104  Donaldson — deuteronomy: add commentary JSON for 4 missing chapter(s)
+2026-04-09T21:07:27Z   post-wave     → Book group `deuteronomy` — use TOC https://thegoodproject.net/index.html to open a chapter
+2026-04-09T21:07:27Z   post-wave   T-0105  Registry Wikipedia — people.json batch 6/40 (40 entries)
+2026-04-09T21:07:27Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:07:27Z   post-wave   T-0106  Ch job_13: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:07:27Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/job_13.html
+2026-04-09T21:07:27Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:07:27Z   post-wave In-flight claims:
+2026-04-09T21:07:27Z   post-wave   T-0060  agent=WorkerA  People registry: Wikipedia enrichment for scripture figures — born/died, thumbnail, summary
+2026-04-09T21:07:27Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:07:48Z git pull → 0
+2026-04-09T21:07:48Z Already up to date.
+2026-04-09T21:07:48Z pending=18
+2026-04-09T21:07:48Z Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:07:48Z Pending: 18  |  Claimed (in-flight): 1
+2026-04-09T21:07:48Z Next pending (showing 14 of 18):
+2026-04-09T21:07:48Z   T-0092  Donaldson — song_of_solomon: add commentary JSON for 7 missing chapter(s)
+2026-04-09T21:07:48Z     → Book group `song_of_solomon` — use TOC https://thegoodproject.net/index.html to open a chapter
+2026-04-09T21:07:48Z   T-0094  Ch job_8: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:07:48Z     → Reader chapter: https://thegoodproject.net/chapters/job_8.html
+2026-04-09T21:07:48Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:07:48Z   T-0095  Ch mark_4: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:07:48Z     → Reader chapter: https://thegoodproject.net/chapters/mark_4.html
+2026-04-09T21:07:48Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:07:48Z   T-0096  Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+2026-04-09T21:07:48Z     → Book group `2_kings` — use TOC https://thegoodproject.net/index.html to open a chapter
+2026-04-09T21:07:48Z   T-0097  Registry Wikipedia — people.json batch 4/40 (40 entries)
+2026-04-09T21:07:48Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:07:48Z   T-0098  Ch job_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:07:48Z     → Reader chapter: https://thegoodproject.net/chapters/job_10.html
+2026-04-09T21:07:48Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:07:48Z   T-0099  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:07:48Z     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:07:48Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:07:48Z   T-0100  Donaldson — 2_samuel: add commentary JSON for 4 missing chapter(s)
+2026-04-09T21:07:48Z     → Book group `2_samuel` — use TOC https://thegoodproject.net/index.html to open a chapter
+2026-04-09T21:07:48Z   T-0101  Registry Wikipedia — people.json batch 5/40 (40 entries)
+2026-04-09T21:07:48Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:07:48Z   T-0102  Ch job_11: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:07:48Z     → Reader chapter: https://thegoodproject.net/chapters/job_11.html
+2026-04-09T21:07:48Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:07:48Z   T-0103  Ch mark_9: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:07:48Z     → Reader chapter: https://thegoodproject.net/chapters/mark_9.html
+2026-04-09T21:07:48Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:07:48Z   T-0104  Donaldson — deuteronomy: add commentary JSON for 4 missing chapter(s)
+2026-04-09T21:07:48Z     → Book group `deuteronomy` — use TOC https://thegoodproject.net/index.html to open a chapter
+2026-04-09T21:07:48Z   T-0105  Registry Wikipedia — people.json batch 6/40 (40 entries)
+2026-04-09T21:07:48Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:07:48Z   T-0106  Ch job_13: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:07:48Z     → Reader chapter: https://thegoodproject.net/chapters/job_13.html
+2026-04-09T21:07:48Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:07:48Z In-flight claims:
+2026-04-09T21:07:48Z   T-0060  agent=WorkerA  People registry: Wikipedia enrichment for scripture figures — born/died, thumbnail, summary
+2026-04-09T21:07:48Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:07:48Z wave 10: 8 workers backend=dispatch (claude default model=sonnet unless worker overrides; ollama christ/followup=gemma4:e2b)
+2026-04-09T21:07:48Z   each slot: task_worker.py once → ledger claim → dispatch or claude → commit; logs: diagnostics/task-worker-WorkerNNN.out + model line on stdout
