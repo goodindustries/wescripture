@@ -1473,3 +1473,100 @@ error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescript
 To https://github.com/reif-is-a-foofie/wescripture.git
  ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at 1b1dc271cec44a100d371699217d7178a135f44f but expected 1ce666e2b82cfb8b3ee8e6a52f6748d0c8d507ac)
 error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+  [ledger] push failed: To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at 8f4de61918892c54e3ac8ec8623e82295f6bd06a but expected ada0ad5780fe040a64732021216fce8526a4b925)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+
+Everything up-to-date
+  [ledger] push failed: To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at 30e8610721c04d4a7b891f9a1c48822bf6c47fa9 but expected dd1cdf3b45e1e88c4e0f76a1d908cb5716bf851c)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+
+Everything up-to-date
+  [ledger] push failed: fatal: Unable to create '/Users/reify/Classified/wescripture/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at 83ff26696cb4dd97d61d12018967956324a3f677 but expected 48da03845384ffda824b3e40d645078d555f36d2)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+  [ledger] push failed: fatal: Unable to create '/Users/reify/Classified/wescripture/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at 55ba9b8957992ea68c4a5c94f3914607364a4324 but expected 6daac046909d56f608b1657dfa12bccd230ddc8f)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+task_followup: Ollama error: timed out
+  [ledger] push failed: To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at 21800532bac24aa85c42a9347c04e6097e764dce but expected 491a2df31f619a75e611f38a9b4bdd7677b87c77)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+
+To https://github.com/reif-is-a-foofie/wescripture.git
+   21800532..2e23fdf8  main -> main
+  [ledger] push failed: fatal: Unable to create '/Users/reify/Classified/wescripture/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+To https://github.com/reif-is-a-foofie/wescripture.git
+   2e23fdf8..8f8d29ba  main -> main
+  [ledger] push failed: fatal: Unable to create '/Users/reify/Classified/wescripture/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+Everything up-to-date
+  [ledger] push failed: To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at 1e0ab6d13f76da3230bc0af0f0b46d63278fc558 but expected 01fb927156137a23409dce73c15e81697d53d8f2)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+
+Everything up-to-date
+Everything up-to-date
+  [ledger] push failed: fatal: Unable to create '/Users/reify/Classified/wescripture/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+
+To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at ca516205be33fa82b5f21ff7d948f4944a75dfe4 but expected 1e0ab6d13f76da3230bc0af0f0b46d63278fc558)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+  [ledger] push failed: Command '['git', 'commit', '-m', 'ledger: task_claimed T-0099']' returned non-zero exit status 1.
+  [ledger] push failed: To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at e7257983e20bc0e19118278e3b5db8489f26dd81 but expected f28a03052b8a2b9e17bfa22c86d54d07953224fa)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+
+To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at e7257983e20bc0e19118278e3b5db8489f26dd81 but expected f28a03052b8a2b9e17bfa22c86d54d07953224fa)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+  [ledger] push failed: Command '['git', 'commit', '-m', 'ledger: task_reopened T-0113']' returned non-zero exit status 1.
+To https://github.com/reif-is-a-foofie/wescripture.git
+   e7257983..63122ae7  main -> main
+To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at 3d9301079f3df814ebdb4eccdb3e6bb9b57e254d but expected e7257983e20bc0e19118278e3b5db8489f26dd81)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+  [ledger] push failed: fatal: Unable to create '/Users/reify/Classified/wescripture/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+

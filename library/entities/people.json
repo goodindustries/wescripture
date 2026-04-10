@@ -12676,7 +12676,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 4,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "1958 book by Bruce R. McConkie",
+    "wikipedia_title": "Mormon Doctrine",
+    "wikipedia_summary": "\nMormon Doctrine is a 1958 book written by Bruce R. McConkie, a general authority of the Church of Jesus Christ of Latter-day Saints and intended as an encyclopedic collection of the church's core concepts and beliefs.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/3/39/MormonDoctrineCover2ndEdition1966.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Mormon_Doctrine_(book)"
   },
   {
     "id": "person:matthew_henry",
@@ -12687,7 +12692,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 4,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "British Nonconformist minister and author (1662–1714)",
+    "wikipedia_title": "Matthew Henry",
+    "wikipedia_summary": "Matthew Henry was a British Nonconformist and Presbyterian minister and author who was born in Wales but spent much of his life in England. He is best known for the six-volume biblical commentary Exposition of the Old and New Testaments.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Matthew_Henry_Portrait_1707.png/330px-Matthew_Henry_Portrait_1707.png",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Matthew_Henry"
   },
   {
     "id": "person:russell_c_taylor",
@@ -12741,7 +12751,10 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 4,
-    "talk_count": 0
+    "talk_count": 0,
+    "wikipedia_title": "Roger R. Keller",
+    "wikipedia_summary": "Roger R. Keller was a professor of religion at Brigham Young University (BYU). He was born in Massillon, Ohio. He retired in the summer of 2012.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Roger_R._Keller"
   },
   {
     "id": "person:john_f_walvoord",
@@ -12752,7 +12765,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 4,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American Protestant theologian (1910–2002)",
+    "wikipedia_title": "John F. Walvoord",
+    "wikipedia_summary": "John Flipse Walvoord was a Christian theologian, pastor, and president of Dallas Theological Seminary from 1952 to 1986. He authored over 30 books, focusing primarily on eschatology and theology, including The Rapture Question, and was co-editor of The Bible Knowledge Commentary with Roy B. Zuck. He earned the degrees of Bachelor of Arts and Doctor of Divinity from Wheaton College, a Master of Arts degree from Texas Christian University in philosophy, a Bachelor of Theology, Master of Theology, and Doctor of Theology in systematic theology from Dallas Theological Seminary, and a Litt.D. from L",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/John_Walvoord"
   },
   {
     "id": "person:george_a_horton_jr",
@@ -12817,7 +12834,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 4,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "Russian-born American Conservative rabbi and Talmudic scholar (1873-1953)",
+    "wikipedia_title": "Louis Ginzberg",
+    "wikipedia_summary": "Louis Ginzberg was a Russian-born American rabbi and Talmudic scholar of Lithuanian-Jewish descent, contributing editor to numerous articles of The Jewish Encyclopedia (1906), and leading figure in the Conservative movement of Judaism during the early 20th century.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/en/f/f6/Louisginzberg.jpeg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Louis_Ginzberg"
   },
   {
     "id": "person:anchor_bible_dictionary",
@@ -12828,7 +12850,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 4,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "Exegetical lexicon",
+    "wikipedia_title": "Anchor Bible Dictionary",
+    "wikipedia_summary": "The Anchor Bible Series, which consists of a commentary series, a Bible dictionary, and a reference library, is a scholarly and commercial co-venture which was begun in 1956, with the publication of individual volumes in the commentary series. Over 1,000 scholars—representing Jewish, Catholic, Eastern Orthodox, Protestant, Muslim, secular, and other traditions—have contributed to the project. Their works offer discussions that reflect a range of viewpoints across a wide theological spectrum.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Anchor_Bible_Series"
   },
   {
     "id": "person:h_dean_garrett",
@@ -12865,7 +12891,12 @@
       "general_conference:general_conference_1985_04_look_for_the_beautiful"
     ],
     "quote_count": 3,
-    "talk_count": 1
+    "talk_count": 1,
+    "desc": "American Mormon leader",
+    "wikipedia_title": "Keith W. Wilcox",
+    "wikipedia_summary": "Keith Wilson Wilcox was a general authority of the Church of Jesus Christ of Latter-day Saints from 1984 to 1989. He was also a prominent architect who designed the Missionary Training Center in Provo, Utah and the Washington D.C. Temple. He also served one term in the Utah House of Representatives.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Washington_D.C._Temple_At_Dusk.jpg/330px-Washington_D.C._Temple_At_Dusk.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Keith_W._Wilcox"
   },
   {
     "id": "person:george_q_morris",
@@ -12880,7 +12911,12 @@
       "general_conference:april_1958"
     ],
     "quote_count": 4,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "LDS Church figure",
+    "wikipedia_title": "George Q. Morris",
+    "wikipedia_summary": "George Quayle Morris was a member of the Quorum of the Twelve Apostles in the Church of Jesus Christ of Latter-day Saints from 1954 until his death.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/George_Q._Morris2.jpg/330px-George_Q._Morris2.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/George_Q._Morris"
   },
   {
     "id": "person:the_jerome_bible_commentary",
@@ -12891,7 +12927,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 4,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "1968 book",
+    "wikipedia_title": "The Jerome Bible Commentary",
+    "wikipedia_summary": "The Jerome Biblical Commentary is a series of books of Biblical scholarship, whose first edition was published in 1968. It is arguably the most-used volume of Catholic scriptural commentary in the United States.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/MatthiasStom-SaintJerome-Nantes.jpg/330px-MatthiasStom-SaintJerome-Nantes.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Jerome_Biblical_Commentary"
   },
   {
     "id": "person:john_lightfoot",
@@ -12902,7 +12943,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 4,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "English churchman, rabbinical scholar (1602–1675)",
+    "wikipedia_title": "John Lightfoot",
+    "wikipedia_summary": "John Lightfoot was an English churchman, rabbinical scholar, Vice-Chancellor of the University of Cambridge and Master of St Catharine's College, Cambridge.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/John_Lightfoot.jpg/330px-John_Lightfoot.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/John_Lightfoot"
   },
   {
     "id": "person:benjam_n_de_hoyos",
@@ -12930,7 +12976,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 4,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American historian",
+    "wikipedia_title": "Reed C. Durham",
+    "wikipedia_summary": "Reed Connell Durham Jr. is a historian of the Latter Day Saint movement and former director of the Institute of Religion in Salt Lake City, Utah for the Church of Jesus Christ of Latter-day Saints. Durham is remembered for a controversial speech given in 1974 about Freemasonry and the Latter Day Saint movement.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Reed_C._Durham"
   },
   {
     "id": "person:john_david_clark",
@@ -12991,7 +13041,11 @@
       "general_conference:general_conference_2020_04_14jones"
     ],
     "quote_count": 0,
-    "talk_count": 4
+    "talk_count": 4,
+    "wikipedia_title": "Joy D. Jones",
+    "wikipedia_summary": "Joy Diane Harmon Jones was the 13th Primary general president of the Church of Jesus Christ of Latter-day Saints from 2016 to 2021.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Joy_D._Jones_%2841373521664%29.jpg/330px-Joy_D._Jones_%2841373521664%29.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Joy_D._Jones"
   },
   {
     "id": "person:jean_b_bingham",
@@ -13007,7 +13061,12 @@
       "general_conference:general_conference_2020_04_34bingham"
     ],
     "quote_count": 0,
-    "talk_count": 4
+    "talk_count": 4,
+    "desc": "American Latter-day Saint religious leader (born 1952)",
+    "wikipedia_title": "Jean B. Bingham",
+    "wikipedia_summary": "Jean Barrus Bingham was the 17th Relief Society General President of the Church of Jesus Christ of Latter-day Saints from April 2017 to August 2022.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/JeanBBingham.jpg/330px-JeanBBingham.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Jean_B._Bingham"
   },
   {
     "id": "person:bonnie_h_cordon",
@@ -13023,7 +13082,11 @@
       "general_conference:general_conference_2020_04_42cordon"
     ],
     "quote_count": 0,
-    "talk_count": 4
+    "talk_count": 4,
+    "desc": "American church leader",
+    "wikipedia_title": "Bonnie H. Cordon",
+    "wikipedia_summary": "Bonnie H. Cordon was the fifteenth general president of the Young Women (YW) organization of the Church of Jesus Christ of Latter-day Saints from 2018 to 2023. On October 13, 2023, Cordon was announced as the 10th president of Southern Virginia University, effective immediately.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Bonnie_H._Cordon"
   },
   {
     "id": "person:dean_m_davies",
@@ -13072,7 +13135,11 @@
       "general_conference:general_conference_2017_10_abiding_in_god_and_repairing_the_breach"
     ],
     "quote_count": 0,
-    "talk_count": 4
+    "talk_count": 4,
+    "wikipedia_title": "Neill F. Marriott",
+    "wikipedia_summary": "Evelyn Neill Foote Marriott is an American religious leader, who was the second counselor in the general presidency of the Young Women organization of the Church of Jesus Christ of Latter-day Saints from 2013 to 2018.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Neill_F._Marriott_%2842471074334%29.jpg/330px-Neill_F._Marriott_%2842471074334%29.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Neill_F._Marriott"
   },
   {
     "id": "person:cheryl_a_esplin",
@@ -13168,7 +13235,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 3,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "Welsh politician",
+    "wikipedia_title": "Catherine Thomas",
+    "wikipedia_summary": "Catherine Thomas is a Welsh politician and former Labour Welsh Assembly Member for the constituency of Llanelli. She narrowly beat Helen Mary Jones of Plaid Cymru at the 2003 Assembly election with a majority of 21. Helen Mary Jones defeated her in the 2007 election.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Catherine_Thomas.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Catherine_Thomas"
   },
   {
     "id": "person:robert_brow",
@@ -13194,7 +13266,12 @@
       "general_conference:oct._1997"
     ],
     "quote_count": 2,
-    "talk_count": 1
+    "talk_count": 1,
+    "desc": "American pollster",
+    "wikipedia_title": "Richard B. Wirthlin",
+    "wikipedia_summary": "Richard Bitner Wirthlin was a prominent American pollster, who is best known as Ronald Reagan's chief strategist, serving as his political consultant and pollster for twenty years, from 1968 through the end of his presidency. He became a senior adviser and member of Reagan's inner circle and is known to have helped him shape his political message and strategies, both in presidential campaigns and in the White House. Wirthlin also was a general authority of the Church of Jesus Christ of Latter-day Saints and a member of its Second Quorum of the Seventy from 1996 to 2001.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/en/0/08/Richard_B._Wirthlin.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Richard_Wirthlin"
   },
   {
     "id": "person:encyclopedia_of_mormonism",
@@ -13205,7 +13282,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 3,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "English-language book series published in 1992",
+    "wikipedia_title": "Encyclopedia of Mormonism",
+    "wikipedia_summary": "The Encyclopedia of Mormonism is a semi-official English-language encyclopedia for topics relevant to the Church of Jesus Christ of Latter-day Saints. The encyclopedia's five volumes have been digitized and are available for free online via the Harold B. Lee Library's official website.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/en/8/88/Encyclopedia_of_Mormonism.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Encyclopedia_of_Mormonism"
   },
   {
     "id": "person:rulon_g_craven",
@@ -13256,7 +13338,12 @@
       "general_conference:oct._1953"
     ],
     "quote_count": 3,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American religious leader",
+    "wikipedia_title": "Matthew Cowley",
+    "wikipedia_summary": "Matthew Cowley was an American missionary in New Zealand and then served as a member of the Quorum of the Twelve Apostles of the Church of Jesus Christ of Latter-day Saints from 1945 until his death.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Matthew_Cowley.JPG/330px-Matthew_Cowley.JPG",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Matthew_Cowley"
   },
   {
     "id": "person:j_m_sjodahl",
@@ -13278,7 +13365,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 3,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "Educational organization of The Church of Jesus Christ of Latter-day Saints",
+    "wikipedia_title": "Gospel Doctrine",
+    "wikipedia_summary": "Sunday School is an organization of the Church of Jesus Christ of Latter-day Saints. All members of the church and any interested nonmembers, age 11 and older, are encouraged to participate in Sunday School.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Sunday_School_(LDS_Church)"
   },
   {
     "id": "person:peoples_nt_notes",
@@ -13313,7 +13404,11 @@
       "general_conference:general_conference_1984_04_youth_of_the_noble_birthright"
     ],
     "quote_count": 2,
-    "talk_count": 1
+    "talk_count": 1,
+    "desc": "Canadian cleric and writer (1931–2024)",
+    "wikipedia_title": "Ardeth Greene Kapp",
+    "wikipedia_summary": "Ardeth Greene Kapp was the ninth Young Women general president of the Church of Jesus Christ of Latter-day Saints from 1984 to 1992.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ardeth_G._Kapp"
   },
   {
     "id": "person:scott_nash",
@@ -13324,7 +13419,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 3,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "Australian hard rock band",
+    "wikipedia_title": "Scott Nash",
+    "wikipedia_summary": "Asteroid B-612 were an Australian hard rock band, which formed in 1992. By the following year the line-up was Michael Gibbons on guitar, Grant McIver on lead vocals, Scott Nash on bass guitar, Darren Pierce on drums and John Spittles on guitar. They released four studio albums, Asteroid B-612 (1993), Forced into a Corner (1994), Not Meant for this World and Readin' Between the Lines (2000), before disbanding in 2004.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Asteroid_B-612"
   },
   {
     "id": "person:richard_tice",
@@ -13335,7 +13434,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 3,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "British businessman and politician (born 1964)",
+    "wikipedia_title": "Richard Tice",
+    "wikipedia_summary": "Richard Tice is a British businessman and politician who is Member of Parliament (MP) for Boston and Skegness. He has served as Deputy Leader of Reform UK since 2024 and as the Reform UK Business, Trade and Energy spokesperson since February 2026.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Official_portrait_of_Richard_Tice_MP_crop_2.jpg/330px-Official_portrait_of_Richard_Tice_MP_crop_2.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Richard_Tice"
   },
   {
     "id": "person:keil_and_delitzsch_commentary",
@@ -13371,7 +13475,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 3,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "English translation of the Bible",
+    "wikipedia_title": "Revised Standard Version",
+    "wikipedia_summary": "The Revised Standard Version (RSV) is an English translation of the Bible published in 1952 by the Division of Christian Education of the National Council of the Churches of Christ in the USA. This translation is a revision of the American Standard Version (ASV) of 1901, and was intended to be a readable and literally accurate modern English translation which aimed to \"preserve all that is best in the English Bible as it has been known and used through the years\" and \"to put the message of the Bible in simple, enduring words that are worthy to stand in the great Tyndale-King James tradition.\"",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/en/4/47/RSV_front_cover.jpeg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Revised_Standard_Version"
   },
   {
     "id": "person:catherine_thomas_in_kent_p_jackson",
@@ -13413,7 +13522,11 @@
       "general_conference:oct._2004"
     ],
     "quote_count": 1,
-    "talk_count": 2
+    "talk_count": 2,
+    "desc": "American politician and businessman",
+    "wikipedia_title": "Ronald T. Halverson",
+    "wikipedia_summary": "Ronald Tomlinson Halvorson was an American politician and businessman.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Ronald_T._Halverson"
   },
   {
     "id": "person:rulon_t_burton",
@@ -13440,7 +13553,12 @@
       "general_conference:october_1952"
     ],
     "quote_count": 3,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American religious leader",
+    "wikipedia_title": "Thorpe B. Isaacson",
+    "wikipedia_summary": "Henry Thorpe Beal Isaacson was a leader in the Church of Jesus Christ of Latter-day Saints, serving as a counselor in the First Presidency to church president David O. McKay from 1965 to 1970.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Thorpe_B._Isaacson2.jpg/330px-Thorpe_B._Isaacson2.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Thorpe_B._Isaacson"
   },
   {
     "id": "person:f_david_stanley",
@@ -13488,7 +13606,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 3,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "Collection of public sermons by early LDS leaders",
+    "wikipedia_title": "Journal of Discourses",
+    "wikipedia_summary": "\nThe Journal of Discourses is a 26-volume collection of public sermons by early leaders of the Church of Jesus Christ of Latter-day Saints. The first editions of the Journal were published in England by George D. Watt, the stenographer of Brigham Young. Publication began in 1854, with the approval and endorsement of the church's First Presidency, and ended in 1886. The Journal is one of the richest sources of early Latter-day Saint theology and thinking. It includes 1,438 sermons given by 55 church leaders, including most numerously Brigham Young, John Taylor, Orson Pratt, Heber C. Kimball, an",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Journal_of_Discourses"
   },
   {
     "id": "person:wm_rolfe_kerr",
@@ -13503,7 +13625,12 @@
       "general_conference:oct._1996"
     ],
     "quote_count": 2,
-    "talk_count": 1
+    "talk_count": 1,
+    "desc": "American Mormon leader",
+    "wikipedia_title": "Wm. Rolfe Kerr",
+    "wikipedia_summary": "William Rolfe Kerr is an emeritus general authority of the Church of Jesus Christ of Latter-day Saints. He served previously as the fifteenth Commissioner of Church Education and as president of the Logan Utah Temple.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/f/fe/W._Rolfe_Kerr.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/W._Rolfe_Kerr"
   },
   {
     "id": "person:truman_madsen",
@@ -13514,7 +13641,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 3,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American philosopher",
+    "wikipedia_title": "Truman Madsen",
+    "wikipedia_summary": "Truman Grant Madsen was an American professor of religion and philosophy at Brigham Young University (BYU) and director of the Brigham Young University Jerusalem Center for Near Eastern Studies. He was a prolific author, a recognized authority on Joseph Smith, and a popular lecturer among Latter-day Saints. At one point, Madsen was an instructor at the LDS Institute of Religion in Berkeley, California.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/en/b/b0/Madsen_Truman-Web-compressor.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Truman_G._Madsen"
   },
   {
     "id": "person:clyde_j_williams",
@@ -13540,7 +13672,12 @@
       "general_conference:october_1914"
     ],
     "quote_count": 3,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American Mormon leader (1852–1934)",
+    "wikipedia_title": "Anthony W. Ivins",
+    "wikipedia_summary": "Anthony Woodward Ivins was an apostle of the Church of Jesus Christ of Latter-day Saints and was a member of the church's First Presidency from 1921 until his death.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Anthony_W._Ivins2.jpg/330px-Anthony_W._Ivins2.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Anthony_W._Ivins"
   },
   {
     "id": "person:john_h_taylor",
@@ -13566,7 +13703,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 3,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "British/New Zealand organizational theorist (born 1953)",
+    "wikipedia_title": "Rodney Turner",
+    "wikipedia_summary": "\n\nJohn Rodney Turner is a British/New Zealand organizational theorist and Professor of Project Management at Skema Business School since 2004 and at the Kingston Business School since 2013. He is known for his work of project management.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Rodney_Turner"
   },
   {
     "id": "person:levi_edgar_young",
@@ -13581,7 +13722,12 @@
       "general_conference:october_1951"
     ],
     "quote_count": 3,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "Latter-day Saint mission president and seventy",
+    "wikipedia_title": "Levi Edgar Young",
+    "wikipedia_summary": "Levi Edgar Young was a general authority of the Church of Jesus Christ of Latter-day Saints. He was one of the seven presidents of the Seventy from 1909 until his death. He has been associated with the release of the 1832 account of Joseph Smith's First Vision, which was previously not widely known. Aside from his service in the Seventy, Young served as president of various LDS Church missions. Young received a master's degree from Columbia University in history and was a professor of history at the University of Utah.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Levi_E._Young2.jpg/330px-Levi_E._Young2.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Levi_E._Young"
   },
   {
     "id": "person:won_yong_ko",
@@ -13612,7 +13758,12 @@
       "general_conference:oct._2006"
     ],
     "quote_count": 1,
-    "talk_count": 2
+    "talk_count": 2,
+    "desc": "Scottish LDS Church leader (1955–2025)",
+    "wikipedia_title": "David S. Baxter",
+    "wikipedia_summary": "David Steward Baxter was a Scottish general authority of the Church of Jesus Christ of Latter-day Saints from 2006 until his death. A native of Scotland, and a resident of England at the time of his call, he was the third general authority who was native to the United Kingdom and also living there at the time of his call.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/David_S._Baxter.jpg/330px-David_S._Baxter.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/David_S._Baxter"
   },
   {
     "id": "person:ned_b_rouech",
@@ -13639,7 +13790,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 3,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American political scientist and academic",
+    "wikipedia_title": "Noel B. Reynolds",
+    "wikipedia_summary": "Noel Beldon Reynolds is an American political scientist and an emeritus professor of political science at Brigham Young University (BYU), where he has also served as an associate academic vice president and as director for the Foundation for Ancient Research and Mormon Studies (FARMS). He was a member of the BYU faculty from 1971 to 2011. He has also written widely on the theology of the Church of Jesus Christ of Latter-day Saints, of which he is a member.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Noel_B._Reynolds"
   },
   {
     "id": "person:keith_r_edwards",
@@ -13690,7 +13845,12 @@
       "general_conference:april_1963"
     ],
     "quote_count": 3,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "Canadian politician and Mormon religious leader (1898–1982)",
+    "wikipedia_title": "Nathan Eldon Tanner",
+    "wikipedia_summary": "Nathan Eldon Tanner was a Canadian politician and a leader of the Church of Jesus Christ of Latter-day Saints. He served in the Legislative Assembly of Alberta from 1935 to 1952 as a member of the Social Credit caucus in government. He served as Speaker of the Legislative Assembly from 1936 to 1937 and as a cabinet minister in the governments of William Aberhart and Ernest Manning from 1937 to 1952, in various portfolios related to resource industries.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/N._Eldon_Tanner2.jpg/330px-N._Eldon_Tanner2.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Nathan_Eldon_Tanner"
   },
   {
     "id": "person:paul_y_hoskisson",
@@ -13701,7 +13861,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 3,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American professor of Ancient scripture",
+    "wikipedia_title": "Paul Y. Hoskisson",
+    "wikipedia_summary": "Paul Y. Hoskisson is an American professor of Ancient scripture and former associate dean of Religious Education at Brigham Young University (BYU). In 2008, he was appointed director of the Laura F. Willes Center for Book of Mormon Research.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Paul_Y._Hoskisson"
   },
   {
     "id": "person:gerald_e_jones",
@@ -13749,7 +13913,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 3,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "Dutch writer (1910–1988)",
+    "wikipedia_title": "Friedrich Weinreb",
+    "wikipedia_summary": "Friedrich Weinreb was a Dutch economist and narrative author.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Friedrich_Weinreb_Portrait.jpg/330px-Friedrich_Weinreb_Portrait.jpg",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Friedrich_Weinreb"
   },
   {
     "id": "person:frank_f_judd",
@@ -13795,7 +13964,12 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 3,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "Biblical commentary",
+    "wikipedia_title": "Jamieson-Fausset-Brown Commentary",
+    "wikipedia_summary": "The Jamieson-Fausset-Brown Bible Commentary refers to a biblical commentary entitled a Commentary Critical and Explanatory on the Whole Bible, prepared by Robert Jamieson, Andrew Robert Fausset and David Brown and published in 1871; and derived works from this initial publication, in differing numbers of volumes and abridgements.",
+    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Commentary_Critical_and_Explanatory.png/330px-Commentary_Critical_and_Explanatory.png",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Jamieson-Fausset-Brown_Bible_Commentary"
   },
   {
     "id": "person:e_ray_bateman",
@@ -13865,7 +14039,11 @@
       "general_conference:oct._1999"
     ],
     "quote_count": 1,
-    "talk_count": 2
+    "talk_count": 2,
+    "desc": "Military historian of Russia based in the United States",
+    "wikipedia_title": "David R. Stone",
+    "wikipedia_summary": "David Russell Stone is an American military historian and the William Eldridge Odom Professor of Russian Studies in the Strategy and Policy Department at the U.S. Naval War College.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/David_R._Stone"
   },
   {
     "id": "person:lenet_h_read",
@@ -13914,7 +14092,11 @@
     "roles": [],
     "doc_ids": [],
     "quote_count": 3,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American organizational theorist",
+    "wikipedia_title": "David A. Whetten",
+    "wikipedia_summary": "David Allred Whetten is an American organizational theorist and Professor of Organizational Leadership and Strategy at the Marriott School of Management at the Brigham Young University. He is known for his work on organizational identity research methodology, and organizational effectiveness.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/David_A._Whetten"
   },
   {
     "id": "person:peter_ellis",

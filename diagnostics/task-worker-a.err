@@ -27,3 +27,8 @@ Everything up-to-date
 Everything up-to-date
   [ledger] push failed: Command '['git', 'commit', '-m', 'ledger: task_reopened T-0096']' returned non-zero exit status 1.
 Everything up-to-date
+  [ledger] push failed: To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at 48da03845384ffda824b3e40d645078d555f36d2 but expected aea2c5b4cac94c22c5e97826dca77cf282a05b6f)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+
+Everything up-to-date

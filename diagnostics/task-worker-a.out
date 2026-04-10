@@ -699,3 +699,10 @@ Reopened T-0096.
 Reopened T-0096.
   pushed to origin
 [WorkerA] T-0096 no dispatch rule — reopened.
+Already up to date.
+[WorkerA] checking for pending tasks…
+[WorkerA] claimed T-0112: Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+[WorkerA] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0112.
+  pushed to origin
+[WorkerA] T-0112 no dispatch rule — reopened.

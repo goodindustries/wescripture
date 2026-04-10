@@ -12580,3 +12580,1781 @@
 2026-04-09T21:42:56Z   post-wave   T-0124  Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
 2026-04-09T21:42:56Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_20.html
 2026-04-09T21:42:56Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:17Z git pull → 0
+2026-04-09T21:43:17Z Already up to date.
+2026-04-09T21:43:17Z pending=45
+2026-04-09T21:43:17Z Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:43:17Z Pending: 45  |  Claimed (in-flight): 0
+2026-04-09T21:43:17Z Next pending (showing 14 of 45):
+2026-04-09T21:43:17Z   T-0099  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:43:17Z     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:43:17Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:17Z   T-0112  Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:43:17Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:43:17Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:17Z   T-0113  Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:43:17Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:43:17Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:43:17Z   T-0114  Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:43:17Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:43:17Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:43:17Z   T-0115  Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:43:17Z     → Reader chapter: https://thegoodproject.net/chapters/deuteronomy_14.html
+2026-04-09T21:43:17Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:17Z   T-0116  Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:43:17Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_8.html
+2026-04-09T21:43:17Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:17Z   T-0117  Donaldson — 1_chronicles_10: add commentary JSON
+2026-04-09T21:43:17Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_10.html
+2026-04-09T21:43:17Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_10.json
+2026-04-09T21:43:17Z   T-0118  Registry Wikipedia — scripture_people batch 2/46 (1 entries)
+2026-04-09T21:43:17Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:43:17Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:43:17Z   T-0119  Ch esther_1: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:43:17Z     → Reader chapter: https://thegoodproject.net/chapters/esther_1.html
+2026-04-09T21:43:17Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:17Z   T-0120  Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:43:17Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_12.html
+2026-04-09T21:43:17Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:17Z   T-0121  Donaldson — 1_chronicles_11: add commentary JSON
+2026-04-09T21:43:17Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_11.html
+2026-04-09T21:43:17Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_11.json
+2026-04-09T21:43:17Z   T-0122  Registry Wikipedia — scripture_people batch 3/46 (1 entries)
+2026-04-09T21:43:17Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:43:17Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:43:17Z   T-0123  Ch esther_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:43:17Z     → Reader chapter: https://thegoodproject.net/chapters/esther_10.html
+2026-04-09T21:43:17Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:17Z   T-0124  Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:43:17Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_20.html
+2026-04-09T21:43:17Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:17Z wave 22: 8 workers backend=dispatch (local Python pipelines + Ollama christ/followup=gemma4:e2b; no Anthropic/Claude in worker)
+2026-04-09T21:43:17Z   each slot: task_worker.py once → ledger claim → dispatch or claude → commit; logs: diagnostics/task-worker-WorkerNNN.out + model line on stdout
+2026-04-09T21:43:28Z wave 22 worker script exit=0; pending now 45
+2026-04-09T21:43:28Z Last claim line per worker log (if any):
+2026-04-09T21:43:28Z   task-worker-Worker000.out: Worker000 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:43:28Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:43:28Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:28Z   task-worker-Worker001.out: Worker001 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:43:28Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:43:28Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:28Z   task-worker-Worker002.out: Worker002 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:43:28Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:43:28Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:28Z   task-worker-Worker003.out: Worker003 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:43:28Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:43:28Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:28Z   task-worker-Worker004.out: Worker004 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:43:28Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:43:28Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:28Z   task-worker-Worker005.out: Worker005 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:43:28Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:43:28Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:28Z   task-worker-Worker006.out: Worker006 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:43:28Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:43:28Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:28Z   task-worker-Worker007.out: Worker007 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:43:28Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:43:28Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:28Z   post-wave Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:43:28Z   post-wave Pending: 45  |  Claimed (in-flight): 0
+2026-04-09T21:43:28Z   post-wave Next pending (showing 14 of 45):
+2026-04-09T21:43:28Z   post-wave   T-0099  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:43:28Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:43:28Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:28Z   post-wave   T-0112  Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:43:28Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:43:28Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:28Z   post-wave   T-0113  Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:43:28Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:43:28Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:43:28Z   post-wave   T-0114  Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:43:28Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:43:28Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:43:28Z   post-wave   T-0115  Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:43:28Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/deuteronomy_14.html
+2026-04-09T21:43:28Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:28Z   post-wave   T-0116  Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:43:28Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_8.html
+2026-04-09T21:43:28Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:28Z   post-wave   T-0117  Donaldson — 1_chronicles_10: add commentary JSON
+2026-04-09T21:43:28Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_10.html
+2026-04-09T21:43:28Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_10.json
+2026-04-09T21:43:28Z   post-wave   T-0118  Registry Wikipedia — scripture_people batch 2/46 (1 entries)
+2026-04-09T21:43:28Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:43:28Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:43:28Z   post-wave   T-0119  Ch esther_1: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:43:28Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/esther_1.html
+2026-04-09T21:43:28Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:28Z   post-wave   T-0120  Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:43:28Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_12.html
+2026-04-09T21:43:28Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:28Z   post-wave   T-0121  Donaldson — 1_chronicles_11: add commentary JSON
+2026-04-09T21:43:28Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_11.html
+2026-04-09T21:43:28Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_11.json
+2026-04-09T21:43:28Z   post-wave   T-0122  Registry Wikipedia — scripture_people batch 3/46 (1 entries)
+2026-04-09T21:43:28Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:43:28Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:43:28Z   post-wave   T-0123  Ch esther_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:43:28Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/esther_10.html
+2026-04-09T21:43:28Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:28Z   post-wave   T-0124  Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:43:28Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_20.html
+2026-04-09T21:43:28Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:49Z git pull → 0
+2026-04-09T21:43:49Z Already up to date.
+2026-04-09T21:43:49Z pending=45
+2026-04-09T21:43:49Z Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:43:49Z Pending: 45  |  Claimed (in-flight): 0
+2026-04-09T21:43:49Z Next pending (showing 14 of 45):
+2026-04-09T21:43:49Z   T-0099  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:43:49Z     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:43:49Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:49Z   T-0112  Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:43:49Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:43:49Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:49Z   T-0113  Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:43:49Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:43:49Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:43:49Z   T-0114  Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:43:49Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:43:49Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:43:49Z   T-0115  Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:43:49Z     → Reader chapter: https://thegoodproject.net/chapters/deuteronomy_14.html
+2026-04-09T21:43:49Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:49Z   T-0116  Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:43:49Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_8.html
+2026-04-09T21:43:49Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:49Z   T-0117  Donaldson — 1_chronicles_10: add commentary JSON
+2026-04-09T21:43:49Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_10.html
+2026-04-09T21:43:49Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_10.json
+2026-04-09T21:43:49Z   T-0118  Registry Wikipedia — scripture_people batch 2/46 (1 entries)
+2026-04-09T21:43:49Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:43:49Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:43:49Z   T-0119  Ch esther_1: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:43:49Z     → Reader chapter: https://thegoodproject.net/chapters/esther_1.html
+2026-04-09T21:43:49Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:49Z   T-0120  Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:43:49Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_12.html
+2026-04-09T21:43:49Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:49Z   T-0121  Donaldson — 1_chronicles_11: add commentary JSON
+2026-04-09T21:43:49Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_11.html
+2026-04-09T21:43:49Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_11.json
+2026-04-09T21:43:49Z   T-0122  Registry Wikipedia — scripture_people batch 3/46 (1 entries)
+2026-04-09T21:43:49Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:43:49Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:43:49Z   T-0123  Ch esther_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:43:49Z     → Reader chapter: https://thegoodproject.net/chapters/esther_10.html
+2026-04-09T21:43:49Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:49Z   T-0124  Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:43:49Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_20.html
+2026-04-09T21:43:49Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:43:49Z wave 23: 8 workers backend=dispatch (local Python pipelines + Ollama christ/followup=gemma4:e2b; no Anthropic/Claude in worker)
+2026-04-09T21:43:49Z   each slot: task_worker.py once → ledger claim → dispatch or claude → commit; logs: diagnostics/task-worker-WorkerNNN.out + model line on stdout
+2026-04-09T21:44:00Z wave 23 worker script exit=0; pending now 45
+2026-04-09T21:44:00Z Last claim line per worker log (if any):
+2026-04-09T21:44:00Z   task-worker-Worker000.out: Worker000 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:00Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:00Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:00Z   task-worker-Worker001.out: Worker001 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:00Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:00Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:00Z   task-worker-Worker002.out: Worker002 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:00Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:00Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:00Z   task-worker-Worker003.out: Worker003 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:00Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:00Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:00Z   task-worker-Worker004.out: Worker004 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:00Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:00Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:00Z   task-worker-Worker005.out: Worker005 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:00Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:00Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:00Z   task-worker-Worker006.out: Worker006 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:01Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:01Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:01Z   task-worker-Worker007.out: Worker007 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:01Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:01Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:01Z   post-wave Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:44:01Z   post-wave Pending: 45  |  Claimed (in-flight): 0
+2026-04-09T21:44:01Z   post-wave Next pending (showing 14 of 45):
+2026-04-09T21:44:01Z   post-wave   T-0099  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:01Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:01Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:01Z   post-wave   T-0112  Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:01Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:44:01Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:01Z   post-wave   T-0113  Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:44:01Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:44:01Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:44:01Z   post-wave   T-0114  Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:44:01Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:44:01Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:44:01Z   post-wave   T-0115  Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:44:01Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/deuteronomy_14.html
+2026-04-09T21:44:01Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:01Z   post-wave   T-0116  Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:01Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_8.html
+2026-04-09T21:44:01Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:01Z   post-wave   T-0117  Donaldson — 1_chronicles_10: add commentary JSON
+2026-04-09T21:44:01Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_10.html
+2026-04-09T21:44:01Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_10.json
+2026-04-09T21:44:01Z   post-wave   T-0118  Registry Wikipedia — scripture_people batch 2/46 (1 entries)
+2026-04-09T21:44:01Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:44:01Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:44:01Z   post-wave   T-0119  Ch esther_1: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:44:01Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/esther_1.html
+2026-04-09T21:44:01Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:01Z   post-wave   T-0120  Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:01Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_12.html
+2026-04-09T21:44:01Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:01Z   post-wave   T-0121  Donaldson — 1_chronicles_11: add commentary JSON
+2026-04-09T21:44:01Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_11.html
+2026-04-09T21:44:01Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_11.json
+2026-04-09T21:44:01Z   post-wave   T-0122  Registry Wikipedia — scripture_people batch 3/46 (1 entries)
+2026-04-09T21:44:01Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:44:01Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:44:01Z   post-wave   T-0123  Ch esther_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:44:01Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/esther_10.html
+2026-04-09T21:44:01Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:01Z   post-wave   T-0124  Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:01Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_20.html
+2026-04-09T21:44:01Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:21Z git pull → 0
+2026-04-09T21:44:21Z Already up to date.
+2026-04-09T21:44:22Z pending=45
+2026-04-09T21:44:22Z Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:44:22Z Pending: 45  |  Claimed (in-flight): 0
+2026-04-09T21:44:22Z Next pending (showing 14 of 45):
+2026-04-09T21:44:22Z   T-0099  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:22Z     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:22Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:22Z   T-0112  Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:22Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:44:22Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:22Z   T-0113  Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:44:22Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:44:22Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:44:22Z   T-0114  Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:44:22Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:44:22Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:44:22Z   T-0115  Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:44:22Z     → Reader chapter: https://thegoodproject.net/chapters/deuteronomy_14.html
+2026-04-09T21:44:22Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:22Z   T-0116  Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:22Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_8.html
+2026-04-09T21:44:22Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:22Z   T-0117  Donaldson — 1_chronicles_10: add commentary JSON
+2026-04-09T21:44:22Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_10.html
+2026-04-09T21:44:22Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_10.json
+2026-04-09T21:44:22Z   T-0118  Registry Wikipedia — scripture_people batch 2/46 (1 entries)
+2026-04-09T21:44:22Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:44:22Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:44:22Z   T-0119  Ch esther_1: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:44:22Z     → Reader chapter: https://thegoodproject.net/chapters/esther_1.html
+2026-04-09T21:44:22Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:22Z   T-0120  Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:22Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_12.html
+2026-04-09T21:44:22Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:22Z   T-0121  Donaldson — 1_chronicles_11: add commentary JSON
+2026-04-09T21:44:22Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_11.html
+2026-04-09T21:44:22Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_11.json
+2026-04-09T21:44:22Z   T-0122  Registry Wikipedia — scripture_people batch 3/46 (1 entries)
+2026-04-09T21:44:22Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:44:22Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:44:22Z   T-0123  Ch esther_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:44:22Z     → Reader chapter: https://thegoodproject.net/chapters/esther_10.html
+2026-04-09T21:44:22Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:22Z   T-0124  Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:22Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_20.html
+2026-04-09T21:44:22Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:22Z wave 24: 8 workers backend=dispatch (local Python pipelines + Ollama christ/followup=gemma4:e2b; no Anthropic/Claude in worker)
+2026-04-09T21:44:22Z   each slot: task_worker.py once → ledger claim → dispatch or claude → commit; logs: diagnostics/task-worker-WorkerNNN.out + model line on stdout
+2026-04-09T21:44:22Z wave 58 worker script exit=0; pending now 45
+2026-04-09T21:44:22Z Last claim line per worker log (if any):
+2026-04-09T21:44:22Z   task-worker-Worker000.out: Worker000 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:22Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:22Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:22Z   task-worker-Worker001.out: Worker001 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:22Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:22Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:22Z   task-worker-Worker002.out: Worker002 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:22Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:22Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:22Z   task-worker-Worker003.out: Worker003 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:22Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:22Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:22Z   task-worker-Worker004.out: Worker004 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:22Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:22Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:22Z   task-worker-Worker005.out: Worker005 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:22Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:22Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:22Z   task-worker-Worker006.out: Worker006 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:22Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:22Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:22Z   task-worker-Worker007.out: Worker007 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:22Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:22Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:22Z   post-wave Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:44:22Z   post-wave Pending: 45  |  Claimed (in-flight): 0
+2026-04-09T21:44:22Z   post-wave Next pending (showing 14 of 45):
+2026-04-09T21:44:22Z   post-wave   T-0099  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:22Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:22Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:22Z   post-wave   T-0112  Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:22Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:44:22Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:22Z   post-wave   T-0113  Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:44:22Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:44:22Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:44:22Z   post-wave   T-0114  Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:44:22Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:44:22Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:44:22Z   post-wave   T-0115  Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:44:22Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/deuteronomy_14.html
+2026-04-09T21:44:22Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:22Z   post-wave   T-0116  Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:22Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_8.html
+2026-04-09T21:44:22Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:22Z   post-wave   T-0117  Donaldson — 1_chronicles_10: add commentary JSON
+2026-04-09T21:44:22Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_10.html
+2026-04-09T21:44:22Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_10.json
+2026-04-09T21:44:22Z   post-wave   T-0118  Registry Wikipedia — scripture_people batch 2/46 (1 entries)
+2026-04-09T21:44:22Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:44:22Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:44:22Z   post-wave   T-0119  Ch esther_1: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:44:22Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/esther_1.html
+2026-04-09T21:44:22Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:22Z   post-wave   T-0120  Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:22Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_12.html
+2026-04-09T21:44:22Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:22Z   post-wave   T-0121  Donaldson — 1_chronicles_11: add commentary JSON
+2026-04-09T21:44:22Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_11.html
+2026-04-09T21:44:22Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_11.json
+2026-04-09T21:44:22Z   post-wave   T-0122  Registry Wikipedia — scripture_people batch 3/46 (1 entries)
+2026-04-09T21:44:22Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:44:22Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:44:22Z   post-wave   T-0123  Ch esther_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:44:22Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/esther_10.html
+2026-04-09T21:44:22Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:22Z   post-wave   T-0124  Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:22Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_20.html
+2026-04-09T21:44:22Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:33Z wave 24 worker script exit=0; pending now 45
+2026-04-09T21:44:33Z Last claim line per worker log (if any):
+2026-04-09T21:44:33Z   task-worker-Worker000.out: Worker000 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:33Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:33Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:33Z   task-worker-Worker001.out: Worker001 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:33Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:33Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:33Z   task-worker-Worker002.out: Worker002 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:33Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:33Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:33Z   task-worker-Worker003.out: Worker003 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:33Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:33Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:33Z   task-worker-Worker004.out: Worker004 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:33Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:33Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:33Z   task-worker-Worker005.out: Worker005 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:33Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:33Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:33Z   task-worker-Worker006.out: Worker006 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:33Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:33Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:33Z   task-worker-Worker007.out: Worker007 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:33Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:33Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:33Z   post-wave Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:44:33Z   post-wave Pending: 45  |  Claimed (in-flight): 0
+2026-04-09T21:44:33Z   post-wave Next pending (showing 14 of 45):
+2026-04-09T21:44:33Z   post-wave   T-0099  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:33Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:33Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:33Z   post-wave   T-0112  Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:33Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:44:33Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:33Z   post-wave   T-0113  Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:44:33Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:44:33Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:44:33Z   post-wave   T-0114  Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:44:33Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:44:33Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:44:33Z   post-wave   T-0115  Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:44:33Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/deuteronomy_14.html
+2026-04-09T21:44:33Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:33Z   post-wave   T-0116  Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:33Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_8.html
+2026-04-09T21:44:33Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:33Z   post-wave   T-0117  Donaldson — 1_chronicles_10: add commentary JSON
+2026-04-09T21:44:33Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_10.html
+2026-04-09T21:44:33Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_10.json
+2026-04-09T21:44:33Z   post-wave   T-0118  Registry Wikipedia — scripture_people batch 2/46 (1 entries)
+2026-04-09T21:44:33Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:44:33Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:44:33Z   post-wave   T-0119  Ch esther_1: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:44:33Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/esther_1.html
+2026-04-09T21:44:33Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:33Z   post-wave   T-0120  Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:33Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_12.html
+2026-04-09T21:44:33Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:33Z   post-wave   T-0121  Donaldson — 1_chronicles_11: add commentary JSON
+2026-04-09T21:44:33Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_11.html
+2026-04-09T21:44:33Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_11.json
+2026-04-09T21:44:33Z   post-wave   T-0122  Registry Wikipedia — scripture_people batch 3/46 (1 entries)
+2026-04-09T21:44:33Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:44:33Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:44:33Z   post-wave   T-0123  Ch esther_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:44:33Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/esther_10.html
+2026-04-09T21:44:33Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:33Z   post-wave   T-0124  Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:33Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_20.html
+2026-04-09T21:44:33Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:43Z git pull → 0
+2026-04-09T21:44:43Z Already up to date.
+2026-04-09T21:44:43Z pending=45
+2026-04-09T21:44:43Z Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:44:43Z Pending: 45  |  Claimed (in-flight): 0
+2026-04-09T21:44:43Z Next pending (showing 14 of 45):
+2026-04-09T21:44:43Z   T-0099  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:43Z     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:43Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:43Z   T-0112  Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:43Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:44:43Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:43Z   T-0113  Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:44:43Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:44:43Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:44:43Z   T-0114  Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:44:43Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:44:43Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:44:43Z   T-0115  Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:44:43Z     → Reader chapter: https://thegoodproject.net/chapters/deuteronomy_14.html
+2026-04-09T21:44:43Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:43Z   T-0116  Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:43Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_8.html
+2026-04-09T21:44:43Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:43Z   T-0117  Donaldson — 1_chronicles_10: add commentary JSON
+2026-04-09T21:44:43Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_10.html
+2026-04-09T21:44:43Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_10.json
+2026-04-09T21:44:43Z   T-0118  Registry Wikipedia — scripture_people batch 2/46 (1 entries)
+2026-04-09T21:44:43Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:44:43Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:44:43Z   T-0119  Ch esther_1: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:44:43Z     → Reader chapter: https://thegoodproject.net/chapters/esther_1.html
+2026-04-09T21:44:43Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:43Z   T-0120  Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:43Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_12.html
+2026-04-09T21:44:43Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:43Z   T-0121  Donaldson — 1_chronicles_11: add commentary JSON
+2026-04-09T21:44:43Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_11.html
+2026-04-09T21:44:43Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_11.json
+2026-04-09T21:44:43Z   T-0122  Registry Wikipedia — scripture_people batch 3/46 (1 entries)
+2026-04-09T21:44:43Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:44:43Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:44:43Z   T-0123  Ch esther_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:44:43Z     → Reader chapter: https://thegoodproject.net/chapters/esther_10.html
+2026-04-09T21:44:43Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:43Z   T-0124  Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:43Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_20.html
+2026-04-09T21:44:43Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:43Z wave 59: 8 workers backend=dispatch (claude default model=sonnet unless worker overrides; ollama christ/followup=gemma4:e2b)
+2026-04-09T21:44:43Z   each slot: task_worker.py once → ledger claim → dispatch or claude → commit; logs: diagnostics/task-worker-WorkerNNN.out + model line on stdout
+2026-04-09T21:44:53Z wave 59 worker script exit=0; pending now 45
+2026-04-09T21:44:53Z Last claim line per worker log (if any):
+2026-04-09T21:44:53Z   task-worker-Worker000.out: Worker000 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:53Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:53Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:53Z   task-worker-Worker001.out: Worker001 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:53Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:53Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:53Z   task-worker-Worker002.out: Worker002 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:53Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:53Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:53Z   task-worker-Worker003.out: Worker003 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:53Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:53Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:53Z   task-worker-Worker004.out: Worker004 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:53Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:53Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:53Z   task-worker-Worker005.out: Worker005 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:53Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:53Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:53Z   task-worker-Worker006.out: Worker006 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:53Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:53Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:53Z   task-worker-Worker007.out: Worker007 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:53Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:53Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:53Z   post-wave Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:44:53Z   post-wave Pending: 45  |  Claimed (in-flight): 0
+2026-04-09T21:44:53Z   post-wave Next pending (showing 14 of 45):
+2026-04-09T21:44:53Z   post-wave   T-0099  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:53Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:53Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:53Z   post-wave   T-0112  Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:53Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:44:53Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:53Z   post-wave   T-0113  Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:44:53Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:44:53Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:44:53Z   post-wave   T-0114  Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:44:53Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:44:53Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:44:53Z   post-wave   T-0115  Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:44:53Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/deuteronomy_14.html
+2026-04-09T21:44:53Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:53Z   post-wave   T-0116  Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:53Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_8.html
+2026-04-09T21:44:53Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:53Z   post-wave   T-0117  Donaldson — 1_chronicles_10: add commentary JSON
+2026-04-09T21:44:53Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_10.html
+2026-04-09T21:44:53Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_10.json
+2026-04-09T21:44:53Z   post-wave   T-0118  Registry Wikipedia — scripture_people batch 2/46 (1 entries)
+2026-04-09T21:44:53Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:44:53Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:44:53Z   post-wave   T-0119  Ch esther_1: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:44:53Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/esther_1.html
+2026-04-09T21:44:53Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:53Z   post-wave   T-0120  Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:53Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_12.html
+2026-04-09T21:44:53Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:53Z   post-wave   T-0121  Donaldson — 1_chronicles_11: add commentary JSON
+2026-04-09T21:44:53Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_11.html
+2026-04-09T21:44:53Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_11.json
+2026-04-09T21:44:53Z   post-wave   T-0122  Registry Wikipedia — scripture_people batch 3/46 (1 entries)
+2026-04-09T21:44:53Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:44:53Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:44:53Z   post-wave   T-0123  Ch esther_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:44:53Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/esther_10.html
+2026-04-09T21:44:53Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:53Z   post-wave   T-0124  Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:53Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_20.html
+2026-04-09T21:44:53Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:54Z git pull → 0
+2026-04-09T21:44:54Z Already up to date.
+2026-04-09T21:44:54Z pending=45
+2026-04-09T21:44:54Z Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:44:54Z Pending: 45  |  Claimed (in-flight): 0
+2026-04-09T21:44:54Z Next pending (showing 14 of 45):
+2026-04-09T21:44:54Z   T-0099  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:54Z     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:44:54Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:54Z   T-0112  Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:54Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:44:54Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:54Z   T-0113  Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:44:54Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:44:54Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:44:54Z   T-0114  Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:44:54Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:44:54Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:44:54Z   T-0115  Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:44:54Z     → Reader chapter: https://thegoodproject.net/chapters/deuteronomy_14.html
+2026-04-09T21:44:54Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:54Z   T-0116  Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:54Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_8.html
+2026-04-09T21:44:54Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:54Z   T-0117  Donaldson — 1_chronicles_10: add commentary JSON
+2026-04-09T21:44:54Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_10.html
+2026-04-09T21:44:54Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_10.json
+2026-04-09T21:44:54Z   T-0118  Registry Wikipedia — scripture_people batch 2/46 (1 entries)
+2026-04-09T21:44:54Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:44:54Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:44:54Z   T-0119  Ch esther_1: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:44:54Z     → Reader chapter: https://thegoodproject.net/chapters/esther_1.html
+2026-04-09T21:44:54Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:54Z   T-0120  Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:54Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_12.html
+2026-04-09T21:44:54Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:54Z   T-0121  Donaldson — 1_chronicles_11: add commentary JSON
+2026-04-09T21:44:54Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_11.html
+2026-04-09T21:44:54Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_11.json
+2026-04-09T21:44:54Z   T-0122  Registry Wikipedia — scripture_people batch 3/46 (1 entries)
+2026-04-09T21:44:54Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:44:54Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:44:54Z   T-0123  Ch esther_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:44:54Z     → Reader chapter: https://thegoodproject.net/chapters/esther_10.html
+2026-04-09T21:44:54Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:54Z   T-0124  Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:44:54Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_20.html
+2026-04-09T21:44:54Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:44:54Z wave 25: 8 workers backend=dispatch (local Python pipelines + Ollama christ/followup=gemma4:e2b; no Anthropic/Claude in worker)
+2026-04-09T21:44:54Z   each slot: task_worker.py once → ledger claim → dispatch or claude → commit; logs: diagnostics/task-worker-WorkerNNN.out + model line on stdout
+2026-04-09T21:45:03Z wave 21 worker script exit=0; pending now 45
+2026-04-09T21:45:03Z Last claim line per worker log (if any):
+2026-04-09T21:45:03Z   task-worker-Worker000.out: Worker000 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:03Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:03Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:03Z   task-worker-Worker001.out: Worker001 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:03Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:03Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:03Z   task-worker-Worker002.out: Worker002 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:03Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:03Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:03Z   task-worker-Worker003.out: Worker003 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:03Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:03Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:03Z   task-worker-Worker004.out: Worker004 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:03Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:03Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:03Z   task-worker-Worker005.out: Worker005 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:03Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:03Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:03Z   task-worker-Worker006.out: Worker006 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:03Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:03Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:03Z   task-worker-Worker007.out: Worker007 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:03Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:03Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:03Z   post-wave Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:45:03Z   post-wave Pending: 45  |  Claimed (in-flight): 0
+2026-04-09T21:45:03Z   post-wave Next pending (showing 14 of 45):
+2026-04-09T21:45:03Z   post-wave   T-0099  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:03Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:03Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:03Z   post-wave   T-0112  Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:03Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:45:03Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:03Z   post-wave   T-0113  Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:45:03Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:45:03Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:45:03Z   post-wave   T-0114  Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:45:03Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:03Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:03Z   post-wave   T-0115  Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:03Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/deuteronomy_14.html
+2026-04-09T21:45:03Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:03Z   post-wave   T-0116  Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:03Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_8.html
+2026-04-09T21:45:03Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:03Z   post-wave   T-0117  Donaldson — 1_chronicles_10: add commentary JSON
+2026-04-09T21:45:03Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_10.html
+2026-04-09T21:45:03Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_10.json
+2026-04-09T21:45:03Z   post-wave   T-0118  Registry Wikipedia — scripture_people batch 2/46 (1 entries)
+2026-04-09T21:45:03Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:03Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:03Z   post-wave   T-0119  Ch esther_1: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:03Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/esther_1.html
+2026-04-09T21:45:03Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:03Z   post-wave   T-0120  Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:03Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_12.html
+2026-04-09T21:45:03Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:03Z   post-wave   T-0121  Donaldson — 1_chronicles_11: add commentary JSON
+2026-04-09T21:45:03Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_11.html
+2026-04-09T21:45:03Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_11.json
+2026-04-09T21:45:03Z   post-wave   T-0122  Registry Wikipedia — scripture_people batch 3/46 (1 entries)
+2026-04-09T21:45:03Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:03Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:03Z   post-wave   T-0123  Ch esther_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:03Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/esther_10.html
+2026-04-09T21:45:03Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:03Z   post-wave   T-0124  Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:03Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_20.html
+2026-04-09T21:45:03Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:04Z wave 25 worker script exit=0; pending now 45
+2026-04-09T21:45:04Z Last claim line per worker log (if any):
+2026-04-09T21:45:04Z   task-worker-Worker000.out: Worker000 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:04Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:04Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:04Z   task-worker-Worker001.out: Worker001 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:04Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:04Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:04Z   task-worker-Worker002.out: Worker002 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:04Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:04Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:04Z   task-worker-Worker003.out: Worker003 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:04Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:04Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:04Z   task-worker-Worker004.out: Worker004 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:04Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:04Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:04Z   task-worker-Worker005.out: Worker005 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:04Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:04Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:04Z   task-worker-Worker006.out: Worker006 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:04Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:04Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:04Z   task-worker-Worker007.out: Worker007 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:04Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:04Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:04Z   post-wave Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:45:04Z   post-wave Pending: 45  |  Claimed (in-flight): 0
+2026-04-09T21:45:04Z   post-wave Next pending (showing 14 of 45):
+2026-04-09T21:45:04Z   post-wave   T-0099  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:04Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:04Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:04Z   post-wave   T-0112  Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:04Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:45:04Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:04Z   post-wave   T-0113  Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:45:04Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:45:04Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:45:04Z   post-wave   T-0114  Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:45:04Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:04Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:04Z   post-wave   T-0115  Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:04Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/deuteronomy_14.html
+2026-04-09T21:45:04Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:04Z   post-wave   T-0116  Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:04Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_8.html
+2026-04-09T21:45:04Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:04Z   post-wave   T-0117  Donaldson — 1_chronicles_10: add commentary JSON
+2026-04-09T21:45:04Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_10.html
+2026-04-09T21:45:04Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_10.json
+2026-04-09T21:45:04Z   post-wave   T-0118  Registry Wikipedia — scripture_people batch 2/46 (1 entries)
+2026-04-09T21:45:04Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:04Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:04Z   post-wave   T-0119  Ch esther_1: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:04Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/esther_1.html
+2026-04-09T21:45:04Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:04Z   post-wave   T-0120  Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:04Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_12.html
+2026-04-09T21:45:04Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:04Z   post-wave   T-0121  Donaldson — 1_chronicles_11: add commentary JSON
+2026-04-09T21:45:04Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_11.html
+2026-04-09T21:45:04Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_11.json
+2026-04-09T21:45:04Z   post-wave   T-0122  Registry Wikipedia — scripture_people batch 3/46 (1 entries)
+2026-04-09T21:45:04Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:04Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:04Z   post-wave   T-0123  Ch esther_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:04Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/esther_10.html
+2026-04-09T21:45:04Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:04Z   post-wave   T-0124  Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:04Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_20.html
+2026-04-09T21:45:04Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:05Z wave 19 worker script exit=0; pending now 45
+2026-04-09T21:45:05Z Last claim line per worker log (if any):
+2026-04-09T21:45:05Z   task-worker-Worker000.out: Worker000 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:05Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:05Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:05Z   task-worker-Worker001.out: Worker001 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:05Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:05Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:05Z   task-worker-Worker002.out: Worker002 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:05Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:05Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:05Z   task-worker-Worker003.out: Worker003 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:05Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:05Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:05Z   task-worker-Worker004.out: Worker004 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:05Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:05Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:05Z   task-worker-Worker005.out: Worker005 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:05Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:05Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:05Z   task-worker-Worker006.out: Worker006 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:05Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:05Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:05Z   task-worker-Worker007.out: Worker007 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:05Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:05Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:05Z   post-wave Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:45:05Z   post-wave Pending: 45  |  Claimed (in-flight): 0
+2026-04-09T21:45:05Z   post-wave Next pending (showing 14 of 45):
+2026-04-09T21:45:05Z   post-wave   T-0099  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:05Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:05Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:05Z   post-wave   T-0112  Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:05Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:45:05Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:05Z   post-wave   T-0113  Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:45:05Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:45:05Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:45:05Z   post-wave   T-0114  Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:45:05Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:05Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:05Z   post-wave   T-0115  Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:05Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/deuteronomy_14.html
+2026-04-09T21:45:05Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:05Z   post-wave   T-0116  Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:05Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_8.html
+2026-04-09T21:45:05Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:05Z   post-wave   T-0117  Donaldson — 1_chronicles_10: add commentary JSON
+2026-04-09T21:45:05Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_10.html
+2026-04-09T21:45:05Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_10.json
+2026-04-09T21:45:05Z   post-wave   T-0118  Registry Wikipedia — scripture_people batch 2/46 (1 entries)
+2026-04-09T21:45:05Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:05Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:05Z   post-wave   T-0119  Ch esther_1: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:05Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/esther_1.html
+2026-04-09T21:45:05Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:05Z   post-wave   T-0120  Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:05Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_12.html
+2026-04-09T21:45:05Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:05Z   post-wave   T-0121  Donaldson — 1_chronicles_11: add commentary JSON
+2026-04-09T21:45:05Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_11.html
+2026-04-09T21:45:05Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_11.json
+2026-04-09T21:45:05Z   post-wave   T-0122  Registry Wikipedia — scripture_people batch 3/46 (1 entries)
+2026-04-09T21:45:05Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:05Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:05Z   post-wave   T-0123  Ch esther_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:05Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/esther_10.html
+2026-04-09T21:45:05Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:05Z   post-wave   T-0124  Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:05Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_20.html
+2026-04-09T21:45:05Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:14Z git pull → 0
+2026-04-09T21:45:14Z Already up to date.
+2026-04-09T21:45:14Z pending=45
+2026-04-09T21:45:14Z Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:45:14Z Pending: 45  |  Claimed (in-flight): 0
+2026-04-09T21:45:14Z Next pending (showing 14 of 45):
+2026-04-09T21:45:14Z   T-0099  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:14Z     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:14Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:14Z   T-0112  Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:14Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:45:14Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:14Z   T-0113  Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:45:14Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:45:14Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:45:14Z   T-0114  Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:45:14Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:14Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:14Z   T-0115  Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:14Z     → Reader chapter: https://thegoodproject.net/chapters/deuteronomy_14.html
+2026-04-09T21:45:14Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:14Z   T-0116  Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:14Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_8.html
+2026-04-09T21:45:14Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:14Z   T-0117  Donaldson — 1_chronicles_10: add commentary JSON
+2026-04-09T21:45:14Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_10.html
+2026-04-09T21:45:14Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_10.json
+2026-04-09T21:45:14Z   T-0118  Registry Wikipedia — scripture_people batch 2/46 (1 entries)
+2026-04-09T21:45:14Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:14Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:14Z   T-0119  Ch esther_1: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:14Z     → Reader chapter: https://thegoodproject.net/chapters/esther_1.html
+2026-04-09T21:45:14Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:14Z   T-0120  Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:14Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_12.html
+2026-04-09T21:45:14Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:14Z   T-0121  Donaldson — 1_chronicles_11: add commentary JSON
+2026-04-09T21:45:14Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_11.html
+2026-04-09T21:45:14Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_11.json
+2026-04-09T21:45:14Z   T-0122  Registry Wikipedia — scripture_people batch 3/46 (1 entries)
+2026-04-09T21:45:14Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:14Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:14Z   T-0123  Ch esther_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:14Z     → Reader chapter: https://thegoodproject.net/chapters/esther_10.html
+2026-04-09T21:45:14Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:14Z   T-0124  Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:14Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_20.html
+2026-04-09T21:45:14Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:14Z wave 60: 8 workers backend=dispatch (claude default model=sonnet unless worker overrides; ollama christ/followup=gemma4:e2b)
+2026-04-09T21:45:14Z   each slot: task_worker.py once → ledger claim → dispatch or claude → commit; logs: diagnostics/task-worker-WorkerNNN.out + model line on stdout
+2026-04-09T21:45:24Z git pull → 0
+2026-04-09T21:45:24Z Already up to date.
+2026-04-09T21:45:24Z pending=45
+2026-04-09T21:45:24Z Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:45:24Z Pending: 45  |  Claimed (in-flight): 0
+2026-04-09T21:45:24Z Next pending (showing 14 of 45):
+2026-04-09T21:45:24Z   T-0099  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:24Z     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:24Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:24Z   T-0112  Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:24Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:45:24Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:24Z   T-0113  Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:45:24Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:45:24Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:45:24Z   T-0114  Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:45:24Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:24Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:24Z   T-0115  Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:24Z     → Reader chapter: https://thegoodproject.net/chapters/deuteronomy_14.html
+2026-04-09T21:45:24Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:24Z   T-0116  Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:24Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_8.html
+2026-04-09T21:45:24Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:24Z   T-0117  Donaldson — 1_chronicles_10: add commentary JSON
+2026-04-09T21:45:24Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_10.html
+2026-04-09T21:45:24Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_10.json
+2026-04-09T21:45:24Z   T-0118  Registry Wikipedia — scripture_people batch 2/46 (1 entries)
+2026-04-09T21:45:24Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:24Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:24Z   T-0119  Ch esther_1: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:24Z     → Reader chapter: https://thegoodproject.net/chapters/esther_1.html
+2026-04-09T21:45:24Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:24Z   T-0120  Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:24Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_12.html
+2026-04-09T21:45:24Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:24Z   T-0121  Donaldson — 1_chronicles_11: add commentary JSON
+2026-04-09T21:45:24Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_11.html
+2026-04-09T21:45:24Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_11.json
+2026-04-09T21:45:24Z   T-0122  Registry Wikipedia — scripture_people batch 3/46 (1 entries)
+2026-04-09T21:45:24Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:24Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:24Z   T-0123  Ch esther_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:24Z     → Reader chapter: https://thegoodproject.net/chapters/esther_10.html
+2026-04-09T21:45:24Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:24Z   T-0124  Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:24Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_20.html
+2026-04-09T21:45:24Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:24Z wave 22: 8 workers backend=dispatch (local Python pipelines + Ollama christ/followup=gemma4:e2b; no Anthropic/Claude in worker)
+2026-04-09T21:45:24Z   each slot: task_worker.py once → ledger claim → dispatch or claude → commit; logs: diagnostics/task-worker-WorkerNNN.out + model line on stdout
+2026-04-09T21:45:24Z wave 60 worker script exit=0; pending now 45
+2026-04-09T21:45:24Z Last claim line per worker log (if any):
+2026-04-09T21:45:24Z   task-worker-Worker000.out: Worker000 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:24Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:24Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:24Z   task-worker-Worker001.out: Worker001 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:24Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:24Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:24Z   task-worker-Worker002.out: Worker002 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:24Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:24Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:24Z   task-worker-Worker003.out: Worker003 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:24Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:24Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:24Z   task-worker-Worker004.out: Worker004 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:24Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:24Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:24Z   task-worker-Worker005.out: Worker005 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:24Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:24Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:24Z   task-worker-Worker006.out: Worker006 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:24Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:24Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:24Z   task-worker-Worker007.out: Worker007 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:24Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:24Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:24Z   post-wave Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:45:24Z   post-wave Pending: 45  |  Claimed (in-flight): 0
+2026-04-09T21:45:24Z   post-wave Next pending (showing 14 of 45):
+2026-04-09T21:45:24Z   post-wave   T-0099  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:24Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:24Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:24Z   post-wave   T-0112  Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:24Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:45:24Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:24Z   post-wave   T-0113  Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:45:24Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:45:24Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:45:24Z   post-wave   T-0114  Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:45:24Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:24Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:24Z   post-wave   T-0115  Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:24Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/deuteronomy_14.html
+2026-04-09T21:45:24Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:24Z   post-wave   T-0116  Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:24Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_8.html
+2026-04-09T21:45:24Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:24Z   post-wave   T-0117  Donaldson — 1_chronicles_10: add commentary JSON
+2026-04-09T21:45:24Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_10.html
+2026-04-09T21:45:24Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_10.json
+2026-04-09T21:45:24Z   post-wave   T-0118  Registry Wikipedia — scripture_people batch 2/46 (1 entries)
+2026-04-09T21:45:24Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:24Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:24Z   post-wave   T-0119  Ch esther_1: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:24Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/esther_1.html
+2026-04-09T21:45:24Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:24Z   post-wave   T-0120  Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:24Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_12.html
+2026-04-09T21:45:24Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:24Z   post-wave   T-0121  Donaldson — 1_chronicles_11: add commentary JSON
+2026-04-09T21:45:24Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_11.html
+2026-04-09T21:45:24Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_11.json
+2026-04-09T21:45:24Z   post-wave   T-0122  Registry Wikipedia — scripture_people batch 3/46 (1 entries)
+2026-04-09T21:45:24Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:24Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:24Z   post-wave   T-0123  Ch esther_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:24Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/esther_10.html
+2026-04-09T21:45:24Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:24Z   post-wave   T-0124  Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:24Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_20.html
+2026-04-09T21:45:24Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:25Z git pull → 128
+2026-04-09T21:45:25Z pending=45
+2026-04-09T21:45:25Z Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:45:25Z Pending: 45  |  Claimed (in-flight): 0
+2026-04-09T21:45:25Z Next pending (showing 14 of 45):
+2026-04-09T21:45:25Z   T-0099  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:25Z     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:25Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:25Z   T-0112  Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:25Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:45:25Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:25Z   T-0113  Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:45:25Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:45:25Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:45:25Z   T-0114  Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:45:25Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:25Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:25Z   T-0115  Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:25Z     → Reader chapter: https://thegoodproject.net/chapters/deuteronomy_14.html
+2026-04-09T21:45:25Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:25Z   T-0116  Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:25Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_8.html
+2026-04-09T21:45:25Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:25Z   T-0117  Donaldson — 1_chronicles_10: add commentary JSON
+2026-04-09T21:45:25Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_10.html
+2026-04-09T21:45:25Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_10.json
+2026-04-09T21:45:25Z   T-0118  Registry Wikipedia — scripture_people batch 2/46 (1 entries)
+2026-04-09T21:45:25Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:25Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:25Z   T-0119  Ch esther_1: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:25Z     → Reader chapter: https://thegoodproject.net/chapters/esther_1.html
+2026-04-09T21:45:25Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:25Z   T-0120  Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:25Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_12.html
+2026-04-09T21:45:25Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:25Z   T-0121  Donaldson — 1_chronicles_11: add commentary JSON
+2026-04-09T21:45:25Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_11.html
+2026-04-09T21:45:25Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_11.json
+2026-04-09T21:45:25Z   T-0122  Registry Wikipedia — scripture_people batch 3/46 (1 entries)
+2026-04-09T21:45:25Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:25Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:25Z   T-0123  Ch esther_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:25Z     → Reader chapter: https://thegoodproject.net/chapters/esther_10.html
+2026-04-09T21:45:25Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:25Z   T-0124  Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:25Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_20.html
+2026-04-09T21:45:25Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:25Z wave 26: 8 workers backend=dispatch (local Python pipelines + Ollama christ/followup=gemma4:e2b; no Anthropic/Claude in worker)
+2026-04-09T21:45:25Z   each slot: task_worker.py once → ledger claim → dispatch or claude → commit; logs: diagnostics/task-worker-WorkerNNN.out + model line on stdout
+2026-04-09T21:45:26Z git pull → 0
+2026-04-09T21:45:26Z Already up to date.
+2026-04-09T21:45:26Z pending=44
+2026-04-09T21:45:26Z Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:45:26Z Pending: 44  |  Claimed (in-flight): 1
+2026-04-09T21:45:26Z Next pending (showing 14 of 44):
+2026-04-09T21:45:26Z   T-0112  Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:26Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:45:26Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:26Z   T-0113  Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:45:26Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:45:26Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:45:26Z   T-0114  Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:45:26Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:26Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:26Z   T-0115  Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:26Z     → Reader chapter: https://thegoodproject.net/chapters/deuteronomy_14.html
+2026-04-09T21:45:26Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:26Z   T-0116  Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:26Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_8.html
+2026-04-09T21:45:26Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:26Z   T-0117  Donaldson — 1_chronicles_10: add commentary JSON
+2026-04-09T21:45:26Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_10.html
+2026-04-09T21:45:26Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_10.json
+2026-04-09T21:45:26Z   T-0118  Registry Wikipedia — scripture_people batch 2/46 (1 entries)
+2026-04-09T21:45:26Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:26Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:26Z   T-0119  Ch esther_1: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:26Z     → Reader chapter: https://thegoodproject.net/chapters/esther_1.html
+2026-04-09T21:45:26Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:26Z   T-0120  Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:26Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_12.html
+2026-04-09T21:45:26Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:26Z   T-0121  Donaldson — 1_chronicles_11: add commentary JSON
+2026-04-09T21:45:26Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_11.html
+2026-04-09T21:45:26Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_11.json
+2026-04-09T21:45:26Z   T-0122  Registry Wikipedia — scripture_people batch 3/46 (1 entries)
+2026-04-09T21:45:26Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:26Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:26Z   T-0123  Ch esther_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:26Z     → Reader chapter: https://thegoodproject.net/chapters/esther_10.html
+2026-04-09T21:45:26Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:26Z   T-0124  Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:26Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_20.html
+2026-04-09T21:45:26Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:26Z   T-0125  Donaldson — 1_chronicles_12: add commentary JSON
+2026-04-09T21:45:26Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_12.html
+2026-04-09T21:45:26Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_12.json
+2026-04-09T21:45:26Z In-flight claims:
+2026-04-09T21:45:26Z   T-0099  agent=Worker007  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:26Z     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:26Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:26Z wave 20: 8 workers backend=dispatch (local Python pipelines + Ollama christ/followup=gemma4:e2b; no Anthropic/Claude in worker)
+2026-04-09T21:45:26Z   each slot: task_worker.py once → ledger claim → dispatch or claude → commit; logs: diagnostics/task-worker-WorkerNNN.out + model line on stdout
+2026-04-09T21:45:35Z wave 22 worker script exit=0; pending now 45
+2026-04-09T21:45:35Z Last claim line per worker log (if any):
+2026-04-09T21:45:35Z   task-worker-Worker000.out: Worker000 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:35Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:35Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:35Z   task-worker-Worker001.out: Worker001 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:35Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:35Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:35Z   task-worker-Worker002.out: Worker002 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:35Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:35Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:35Z   task-worker-Worker003.out: Worker003 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:35Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:35Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:35Z   task-worker-Worker004.out: Worker004 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:35Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:35Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:35Z   task-worker-Worker005.out: Worker005 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:35Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:35Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:35Z   task-worker-Worker006.out: Worker006 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:35Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:35Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:35Z   task-worker-Worker007.out: Worker007 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:35Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:35Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:35Z   post-wave Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:45:35Z   post-wave Pending: 45  |  Claimed (in-flight): 0
+2026-04-09T21:45:35Z   post-wave Next pending (showing 14 of 45):
+2026-04-09T21:45:35Z   post-wave   T-0099  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:35Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:35Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:35Z   post-wave   T-0112  Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:35Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:45:36Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:36Z   post-wave   T-0113  Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:45:36Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:45:36Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:45:36Z   post-wave   T-0114  Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:45:36Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:36Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:36Z   post-wave   T-0115  Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:36Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/deuteronomy_14.html
+2026-04-09T21:45:36Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:36Z   post-wave   T-0116  Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:36Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_8.html
+2026-04-09T21:45:36Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:36Z   post-wave   T-0117  Donaldson — 1_chronicles_10: add commentary JSON
+2026-04-09T21:45:36Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_10.html
+2026-04-09T21:45:36Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_10.json
+2026-04-09T21:45:36Z   post-wave   T-0118  Registry Wikipedia — scripture_people batch 2/46 (1 entries)
+2026-04-09T21:45:36Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:36Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:36Z   post-wave   T-0119  Ch esther_1: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:36Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/esther_1.html
+2026-04-09T21:45:36Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:36Z   post-wave   T-0120  Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:36Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_12.html
+2026-04-09T21:45:36Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:36Z   post-wave   T-0121  Donaldson — 1_chronicles_11: add commentary JSON
+2026-04-09T21:45:36Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_11.html
+2026-04-09T21:45:36Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_11.json
+2026-04-09T21:45:36Z   post-wave   T-0122  Registry Wikipedia — scripture_people batch 3/46 (1 entries)
+2026-04-09T21:45:36Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:36Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:36Z   post-wave   T-0123  Ch esther_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:36Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/esther_10.html
+2026-04-09T21:45:36Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:36Z   post-wave   T-0124  Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:36Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_20.html
+2026-04-09T21:45:36Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z wave 26 worker script exit=0; pending now 45
+2026-04-09T21:45:37Z Last claim line per worker log (if any):
+2026-04-09T21:45:37Z   task-worker-Worker000.out: Worker000 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:37Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:37Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z   task-worker-Worker001.out: Worker001 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:37Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:37Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z   task-worker-Worker002.out: Worker002 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:37Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:37Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z   task-worker-Worker003.out: Worker003 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:37Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:37Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z   task-worker-Worker004.out: Worker004 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:37Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:37Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z   task-worker-Worker005.out: Worker005 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:37Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:37Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z   task-worker-Worker006.out: Worker006 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:37Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:37Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z   task-worker-Worker007.out: Worker007 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:37Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:37Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z   post-wave Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:45:37Z   post-wave Pending: 45  |  Claimed (in-flight): 0
+2026-04-09T21:45:37Z   post-wave Next pending (showing 14 of 45):
+2026-04-09T21:45:37Z   post-wave   T-0099  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:37Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:37Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z   post-wave   T-0112  Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:37Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:45:37Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z   post-wave   T-0113  Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:45:37Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:45:37Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:45:37Z   post-wave   T-0114  Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:45:37Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:37Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:37Z   post-wave   T-0115  Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:37Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/deuteronomy_14.html
+2026-04-09T21:45:37Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z   post-wave   T-0116  Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:37Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_8.html
+2026-04-09T21:45:37Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z   post-wave   T-0117  Donaldson — 1_chronicles_10: add commentary JSON
+2026-04-09T21:45:37Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_10.html
+2026-04-09T21:45:37Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_10.json
+2026-04-09T21:45:37Z   post-wave   T-0118  Registry Wikipedia — scripture_people batch 2/46 (1 entries)
+2026-04-09T21:45:37Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:37Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:37Z   post-wave   T-0119  Ch esther_1: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:37Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/esther_1.html
+2026-04-09T21:45:37Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z   post-wave   T-0120  Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:37Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_12.html
+2026-04-09T21:45:37Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z   post-wave   T-0121  Donaldson — 1_chronicles_11: add commentary JSON
+2026-04-09T21:45:37Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_11.html
+2026-04-09T21:45:37Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_11.json
+2026-04-09T21:45:37Z   post-wave   T-0122  Registry Wikipedia — scripture_people batch 3/46 (1 entries)
+2026-04-09T21:45:37Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:37Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:37Z   post-wave   T-0123  Ch esther_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:37Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/esther_10.html
+2026-04-09T21:45:37Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z   post-wave   T-0124  Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:37Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_20.html
+2026-04-09T21:45:37Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z wave 20 worker script exit=0; pending now 45
+2026-04-09T21:45:37Z Last claim line per worker log (if any):
+2026-04-09T21:45:37Z   task-worker-Worker000.out: Worker000 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:37Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:37Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z   task-worker-Worker001.out: Worker001 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:37Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:37Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z   task-worker-Worker002.out: Worker002 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:37Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:37Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z   task-worker-Worker003.out: Worker003 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:37Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:37Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z   task-worker-Worker004.out: Worker004 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:37Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:37Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z   task-worker-Worker005.out: Worker005 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:37Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:37Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z   task-worker-Worker006.out: Worker006 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:37Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:37Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z   task-worker-Worker007.out: Worker007 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:37Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:37Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z   post-wave Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:45:37Z   post-wave Pending: 45  |  Claimed (in-flight): 0
+2026-04-09T21:45:37Z   post-wave Next pending (showing 14 of 45):
+2026-04-09T21:45:37Z   post-wave   T-0099  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:37Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:37Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z   post-wave   T-0112  Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:37Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:45:37Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z   post-wave   T-0113  Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:45:37Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:45:37Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:45:37Z   post-wave   T-0114  Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:45:37Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:37Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:37Z   post-wave   T-0115  Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:37Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/deuteronomy_14.html
+2026-04-09T21:45:37Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z   post-wave   T-0116  Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:37Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_8.html
+2026-04-09T21:45:37Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z   post-wave   T-0117  Donaldson — 1_chronicles_10: add commentary JSON
+2026-04-09T21:45:37Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_10.html
+2026-04-09T21:45:37Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_10.json
+2026-04-09T21:45:37Z   post-wave   T-0118  Registry Wikipedia — scripture_people batch 2/46 (1 entries)
+2026-04-09T21:45:37Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:37Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:37Z   post-wave   T-0119  Ch esther_1: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:37Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/esther_1.html
+2026-04-09T21:45:37Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z   post-wave   T-0120  Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:37Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_12.html
+2026-04-09T21:45:37Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z   post-wave   T-0121  Donaldson — 1_chronicles_11: add commentary JSON
+2026-04-09T21:45:37Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_11.html
+2026-04-09T21:45:37Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_11.json
+2026-04-09T21:45:37Z   post-wave   T-0122  Registry Wikipedia — scripture_people batch 3/46 (1 entries)
+2026-04-09T21:45:37Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:37Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:37Z   post-wave   T-0123  Ch esther_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:37Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/esther_10.html
+2026-04-09T21:45:37Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:37Z   post-wave   T-0124  Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:37Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_20.html
+2026-04-09T21:45:37Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:45Z git pull → 0
+2026-04-09T21:45:45Z Already up to date.
+2026-04-09T21:45:45Z pending=45
+2026-04-09T21:45:45Z Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:45:45Z Pending: 45  |  Claimed (in-flight): 0
+2026-04-09T21:45:45Z Next pending (showing 14 of 45):
+2026-04-09T21:45:45Z   T-0099  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:45Z     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:45Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:45Z   T-0112  Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:45Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:45:45Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:45Z   T-0113  Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:45:45Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:45:45Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:45:45Z   T-0114  Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:45:45Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:45Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:45Z   T-0115  Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:45Z     → Reader chapter: https://thegoodproject.net/chapters/deuteronomy_14.html
+2026-04-09T21:45:45Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:45Z   T-0116  Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:45Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_8.html
+2026-04-09T21:45:45Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:45Z   T-0117  Donaldson — 1_chronicles_10: add commentary JSON
+2026-04-09T21:45:45Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_10.html
+2026-04-09T21:45:45Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_10.json
+2026-04-09T21:45:45Z   T-0118  Registry Wikipedia — scripture_people batch 2/46 (1 entries)
+2026-04-09T21:45:45Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:45Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:45Z   T-0119  Ch esther_1: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:45Z     → Reader chapter: https://thegoodproject.net/chapters/esther_1.html
+2026-04-09T21:45:45Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:45Z   T-0120  Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:45Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_12.html
+2026-04-09T21:45:45Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:45Z   T-0121  Donaldson — 1_chronicles_11: add commentary JSON
+2026-04-09T21:45:45Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_11.html
+2026-04-09T21:45:45Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_11.json
+2026-04-09T21:45:45Z   T-0122  Registry Wikipedia — scripture_people batch 3/46 (1 entries)
+2026-04-09T21:45:45Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:45Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:45Z   T-0123  Ch esther_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:45Z     → Reader chapter: https://thegoodproject.net/chapters/esther_10.html
+2026-04-09T21:45:45Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:45Z   T-0124  Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:45Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_20.html
+2026-04-09T21:45:45Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:45Z wave 61: 8 workers backend=dispatch (claude default model=sonnet unless worker overrides; ollama christ/followup=gemma4:e2b)
+2026-04-09T21:45:45Z   each slot: task_worker.py once → ledger claim → dispatch or claude → commit; logs: diagnostics/task-worker-WorkerNNN.out + model line on stdout
+2026-04-09T21:45:55Z wave 61 worker script exit=0; pending now 45
+2026-04-09T21:45:55Z Last claim line per worker log (if any):
+2026-04-09T21:45:55Z   task-worker-Worker000.out: Worker000 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:55Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:55Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:55Z   task-worker-Worker001.out: Worker001 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:55Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:55Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:55Z   task-worker-Worker002.out: Worker002 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:55Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:55Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:55Z   task-worker-Worker003.out: Worker003 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:55Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:55Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:55Z   task-worker-Worker004.out: Worker004 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:55Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:55Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:55Z   task-worker-Worker005.out: Worker005 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:55Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:55Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:55Z   task-worker-Worker006.out: Worker006 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:55Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:55Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:55Z   task-worker-Worker007.out: Worker007 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:55Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:55Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:55Z   post-wave Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:45:55Z   post-wave Pending: 45  |  Claimed (in-flight): 0
+2026-04-09T21:45:55Z   post-wave Next pending (showing 14 of 45):
+2026-04-09T21:45:55Z   post-wave   T-0099  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:55Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:55Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:55Z   post-wave   T-0112  Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:55Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:45:55Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:55Z   post-wave   T-0113  Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:45:55Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:45:55Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:45:55Z   post-wave   T-0114  Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:45:55Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:55Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:55Z   post-wave   T-0115  Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:55Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/deuteronomy_14.html
+2026-04-09T21:45:55Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:55Z   post-wave   T-0116  Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:55Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_8.html
+2026-04-09T21:45:55Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:55Z   post-wave   T-0117  Donaldson — 1_chronicles_10: add commentary JSON
+2026-04-09T21:45:55Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_10.html
+2026-04-09T21:45:55Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_10.json
+2026-04-09T21:45:55Z   post-wave   T-0118  Registry Wikipedia — scripture_people batch 2/46 (1 entries)
+2026-04-09T21:45:55Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:55Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:55Z   post-wave   T-0119  Ch esther_1: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:55Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/esther_1.html
+2026-04-09T21:45:55Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:55Z   post-wave   T-0120  Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:55Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_12.html
+2026-04-09T21:45:55Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:55Z   post-wave   T-0121  Donaldson — 1_chronicles_11: add commentary JSON
+2026-04-09T21:45:55Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_11.html
+2026-04-09T21:45:55Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_11.json
+2026-04-09T21:45:55Z   post-wave   T-0122  Registry Wikipedia — scripture_people batch 3/46 (1 entries)
+2026-04-09T21:45:55Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:55Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:55Z   post-wave   T-0123  Ch esther_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:55Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/esther_10.html
+2026-04-09T21:45:55Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:55Z   post-wave   T-0124  Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:55Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_20.html
+2026-04-09T21:45:55Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:56Z git pull → 0
+2026-04-09T21:45:56Z Already up to date.
+2026-04-09T21:45:56Z pending=45
+2026-04-09T21:45:56Z Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:45:56Z Pending: 45  |  Claimed (in-flight): 0
+2026-04-09T21:45:56Z Next pending (showing 14 of 45):
+2026-04-09T21:45:56Z   T-0099  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:56Z     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:56Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:56Z   T-0112  Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:56Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:45:56Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:56Z   T-0113  Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:45:56Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:45:56Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:45:56Z   T-0114  Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:45:56Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:56Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:56Z   T-0115  Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:56Z     → Reader chapter: https://thegoodproject.net/chapters/deuteronomy_14.html
+2026-04-09T21:45:56Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:56Z   T-0116  Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:56Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_8.html
+2026-04-09T21:45:56Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:56Z   T-0117  Donaldson — 1_chronicles_10: add commentary JSON
+2026-04-09T21:45:56Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_10.html
+2026-04-09T21:45:56Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_10.json
+2026-04-09T21:45:56Z   T-0118  Registry Wikipedia — scripture_people batch 2/46 (1 entries)
+2026-04-09T21:45:56Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:56Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:56Z   T-0119  Ch esther_1: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:56Z     → Reader chapter: https://thegoodproject.net/chapters/esther_1.html
+2026-04-09T21:45:56Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:56Z   T-0120  Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:56Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_12.html
+2026-04-09T21:45:56Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:56Z   T-0121  Donaldson — 1_chronicles_11: add commentary JSON
+2026-04-09T21:45:56Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_11.html
+2026-04-09T21:45:56Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_11.json
+2026-04-09T21:45:56Z   T-0122  Registry Wikipedia — scripture_people batch 3/46 (1 entries)
+2026-04-09T21:45:56Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:56Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:56Z   T-0123  Ch esther_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:56Z     → Reader chapter: https://thegoodproject.net/chapters/esther_10.html
+2026-04-09T21:45:56Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:56Z   T-0124  Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:56Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_20.html
+2026-04-09T21:45:56Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:56Z wave 23: 8 workers backend=dispatch (local Python pipelines + Ollama christ/followup=gemma4:e2b; no Anthropic/Claude in worker)
+2026-04-09T21:45:56Z   each slot: task_worker.py once → ledger claim → dispatch or claude → commit; logs: diagnostics/task-worker-WorkerNNN.out + model line on stdout
+2026-04-09T21:45:57Z git pull → 128
+2026-04-09T21:45:57Z pending=45
+2026-04-09T21:45:57Z Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:45:57Z Pending: 45  |  Claimed (in-flight): 0
+2026-04-09T21:45:57Z Next pending (showing 14 of 45):
+2026-04-09T21:45:57Z   T-0099  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:57Z     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:57Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:57Z   T-0112  Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:58Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:45:58Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:58Z   T-0113  Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:45:58Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:45:58Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:45:58Z   T-0114  Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:45:58Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:58Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:58Z   T-0115  Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:58Z     → Reader chapter: https://thegoodproject.net/chapters/deuteronomy_14.html
+2026-04-09T21:45:58Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:58Z   T-0116  Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:58Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_8.html
+2026-04-09T21:45:58Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:58Z   T-0117  Donaldson — 1_chronicles_10: add commentary JSON
+2026-04-09T21:45:58Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_10.html
+2026-04-09T21:45:58Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_10.json
+2026-04-09T21:45:58Z   T-0118  Registry Wikipedia — scripture_people batch 2/46 (1 entries)
+2026-04-09T21:45:58Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:58Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:58Z   T-0119  Ch esther_1: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:58Z     → Reader chapter: https://thegoodproject.net/chapters/esther_1.html
+2026-04-09T21:45:58Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:58Z   T-0120  Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:58Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_12.html
+2026-04-09T21:45:58Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:58Z   T-0121  Donaldson — 1_chronicles_11: add commentary JSON
+2026-04-09T21:45:58Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_11.html
+2026-04-09T21:45:58Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_11.json
+2026-04-09T21:45:58Z   T-0122  Registry Wikipedia — scripture_people batch 3/46 (1 entries)
+2026-04-09T21:45:58Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:58Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:58Z   T-0123  Ch esther_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:58Z     → Reader chapter: https://thegoodproject.net/chapters/esther_10.html
+2026-04-09T21:45:58Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:58Z   T-0124  Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:58Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_20.html
+2026-04-09T21:45:58Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:58Z wave 27: 8 workers backend=dispatch (local Python pipelines + Ollama christ/followup=gemma4:e2b; no Anthropic/Claude in worker)
+2026-04-09T21:45:58Z   each slot: task_worker.py once → ledger claim → dispatch or claude → commit; logs: diagnostics/task-worker-WorkerNNN.out + model line on stdout
+2026-04-09T21:45:58Z git pull → 128
+2026-04-09T21:45:58Z pending=45
+2026-04-09T21:45:58Z Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:45:58Z Pending: 45  |  Claimed (in-flight): 0
+2026-04-09T21:45:58Z Next pending (showing 14 of 45):
+2026-04-09T21:45:58Z   T-0099  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:58Z     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:45:58Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:58Z   T-0112  Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:58Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:45:58Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:58Z   T-0113  Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:45:58Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:45:58Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:45:58Z   T-0114  Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:45:58Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:58Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:58Z   T-0115  Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:58Z     → Reader chapter: https://thegoodproject.net/chapters/deuteronomy_14.html
+2026-04-09T21:45:58Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:58Z   T-0116  Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:58Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_8.html
+2026-04-09T21:45:58Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:58Z   T-0117  Donaldson — 1_chronicles_10: add commentary JSON
+2026-04-09T21:45:58Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_10.html
+2026-04-09T21:45:58Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_10.json
+2026-04-09T21:45:58Z   T-0118  Registry Wikipedia — scripture_people batch 2/46 (1 entries)
+2026-04-09T21:45:58Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:58Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:58Z   T-0119  Ch esther_1: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:58Z     → Reader chapter: https://thegoodproject.net/chapters/esther_1.html
+2026-04-09T21:45:58Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:58Z   T-0120  Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:58Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_12.html
+2026-04-09T21:45:58Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:58Z   T-0121  Donaldson — 1_chronicles_11: add commentary JSON
+2026-04-09T21:45:58Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_11.html
+2026-04-09T21:45:58Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_11.json
+2026-04-09T21:45:58Z   T-0122  Registry Wikipedia — scripture_people batch 3/46 (1 entries)
+2026-04-09T21:45:58Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:45:58Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:45:58Z   T-0123  Ch esther_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:45:58Z     → Reader chapter: https://thegoodproject.net/chapters/esther_10.html
+2026-04-09T21:45:58Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:58Z   T-0124  Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:45:58Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_20.html
+2026-04-09T21:45:58Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:45:58Z wave 21: 8 workers backend=dispatch (local Python pipelines + Ollama christ/followup=gemma4:e2b; no Anthropic/Claude in worker)
+2026-04-09T21:45:58Z   each slot: task_worker.py once → ledger claim → dispatch or claude → commit; logs: diagnostics/task-worker-WorkerNNN.out + model line on stdout
+2026-04-09T21:46:09Z wave 23 worker script exit=0; pending now 44
+2026-04-09T21:46:09Z Last claim line per worker log (if any):
+2026-04-09T21:46:09Z   task-worker-Worker000.out: Worker000 → T-0113: Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:46:09Z     UI: Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:46:09Z     UI: Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:46:09Z   task-worker-Worker001.out: Worker001 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:46:09Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:46:09Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:09Z   task-worker-Worker002.out: Worker002 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:46:09Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:46:09Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:09Z   task-worker-Worker003.out: Worker003 → T-0113: Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:46:09Z     UI: Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:46:09Z     UI: Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:46:09Z   task-worker-Worker004.out: Worker004 → T-0112: Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:46:09Z     UI: Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:46:09Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:09Z   task-worker-Worker005.out: Worker005 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:46:09Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:46:09Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:09Z   task-worker-Worker006.out: Worker006 → T-0114: Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:46:09Z     UI: Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:46:09Z     UI: Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:46:09Z   task-worker-Worker007.out: Worker007 → T-0113: Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:46:09Z     UI: Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:46:09Z     UI: Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:46:09Z   post-wave Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:46:09Z   post-wave Pending: 44  |  Claimed (in-flight): 1
+2026-04-09T21:46:09Z   post-wave Next pending (showing 14 of 44):
+2026-04-09T21:46:09Z   post-wave   T-0099  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:46:09Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:46:09Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:09Z   post-wave   T-0112  Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:46:09Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:46:09Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:09Z   post-wave   T-0113  Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:46:09Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:46:09Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:46:09Z   post-wave   T-0115  Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:46:09Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/deuteronomy_14.html
+2026-04-09T21:46:09Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:09Z   post-wave   T-0116  Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:46:09Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_8.html
+2026-04-09T21:46:09Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:09Z   post-wave   T-0117  Donaldson — 1_chronicles_10: add commentary JSON
+2026-04-09T21:46:09Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_10.html
+2026-04-09T21:46:09Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_10.json
+2026-04-09T21:46:09Z   post-wave   T-0118  Registry Wikipedia — scripture_people batch 2/46 (1 entries)
+2026-04-09T21:46:09Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:46:09Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:46:09Z   post-wave   T-0119  Ch esther_1: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:46:09Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/esther_1.html
+2026-04-09T21:46:09Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:09Z   post-wave   T-0120  Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:46:09Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_12.html
+2026-04-09T21:46:09Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:09Z   post-wave   T-0121  Donaldson — 1_chronicles_11: add commentary JSON
+2026-04-09T21:46:09Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_11.html
+2026-04-09T21:46:09Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_11.json
+2026-04-09T21:46:09Z   post-wave   T-0122  Registry Wikipedia — scripture_people batch 3/46 (1 entries)
+2026-04-09T21:46:09Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:46:09Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:46:09Z   post-wave   T-0123  Ch esther_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:46:09Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/esther_10.html
+2026-04-09T21:46:09Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:09Z   post-wave   T-0124  Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:46:09Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_20.html
+2026-04-09T21:46:09Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:09Z   post-wave   T-0125  Donaldson — 1_chronicles_12: add commentary JSON
+2026-04-09T21:46:09Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_12.html
+2026-04-09T21:46:09Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_12.json
+2026-04-09T21:46:09Z   post-wave In-flight claims:
+2026-04-09T21:46:09Z   post-wave   T-0114  agent=Worker006  Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:46:09Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:46:09Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:46:10Z wave 27 worker script exit=0; pending now 44
+2026-04-09T21:46:10Z Last claim line per worker log (if any):
+2026-04-09T21:46:10Z   task-worker-Worker000.out: Worker000 → T-0113: Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:46:10Z     UI: Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:46:10Z     UI: Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:46:10Z   task-worker-Worker001.out: Worker001 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:46:10Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:46:10Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:10Z   task-worker-Worker002.out: Worker002 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:46:10Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:46:10Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:10Z   task-worker-Worker003.out: Worker003 → T-0113: Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:46:10Z     UI: Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:46:10Z     UI: Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:46:10Z   task-worker-Worker004.out: Worker004 → T-0112: Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:46:10Z     UI: Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:46:10Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:10Z   task-worker-Worker005.out: Worker005 → T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:46:10Z     UI: Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:46:10Z     UI: Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:10Z   task-worker-Worker006.out: Worker006 → T-0114: Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:46:10Z     UI: Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:46:10Z     UI: Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:46:10Z   task-worker-Worker007.out: Worker007 → T-0113: Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:46:10Z     UI: Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:46:10Z     UI: Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:46:10Z   post-wave Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:46:10Z   post-wave Pending: 44  |  Claimed (in-flight): 1
+2026-04-09T21:46:10Z   post-wave Next pending (showing 14 of 44):
+2026-04-09T21:46:10Z   post-wave   T-0099  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:46:10Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:46:10Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:10Z   post-wave   T-0112  Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:46:10Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:46:10Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:10Z   post-wave   T-0113  Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:46:10Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:46:10Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:46:10Z   post-wave   T-0115  Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:46:10Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/deuteronomy_14.html
+2026-04-09T21:46:10Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:10Z   post-wave   T-0116  Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:46:10Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_8.html
+2026-04-09T21:46:10Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:10Z   post-wave   T-0117  Donaldson — 1_chronicles_10: add commentary JSON
+2026-04-09T21:46:10Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_10.html
+2026-04-09T21:46:10Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_10.json
+2026-04-09T21:46:10Z   post-wave   T-0118  Registry Wikipedia — scripture_people batch 2/46 (1 entries)
+2026-04-09T21:46:10Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:46:10Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:46:10Z   post-wave   T-0119  Ch esther_1: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:46:10Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/esther_1.html
+2026-04-09T21:46:10Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:10Z   post-wave   T-0120  Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:46:10Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_12.html
+2026-04-09T21:46:10Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:10Z   post-wave   T-0121  Donaldson — 1_chronicles_11: add commentary JSON
+2026-04-09T21:46:10Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_11.html
+2026-04-09T21:46:10Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_11.json
+2026-04-09T21:46:10Z   post-wave   T-0122  Registry Wikipedia — scripture_people batch 3/46 (1 entries)
+2026-04-09T21:46:10Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:46:10Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:46:10Z   post-wave   T-0123  Ch esther_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:46:10Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/esther_10.html
+2026-04-09T21:46:10Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:10Z   post-wave   T-0124  Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:46:10Z   post-wave     → Reader chapter: https://thegoodproject.net/chapters/matthew_20.html
+2026-04-09T21:46:10Z   post-wave     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:10Z   post-wave   T-0125  Donaldson — 1_chronicles_12: add commentary JSON
+2026-04-09T21:46:10Z   post-wave     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_12.html
+2026-04-09T21:46:10Z   post-wave     → Donaldson file (when built): same repo library/donaldson/1_chronicles_12.json
+2026-04-09T21:46:10Z   post-wave In-flight claims:
+2026-04-09T21:46:10Z   post-wave   T-0114  agent=Worker006  Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:46:10Z   post-wave     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:46:10Z   post-wave     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:46:15Z git pull → 0
+2026-04-09T21:46:15Z Already up to date.
+2026-04-09T21:46:15Z pending=44
+2026-04-09T21:46:16Z Public site base: https://thegoodproject.net (override: WESCRIPTURE_SITE_URL)
+2026-04-09T21:46:16Z Pending: 44  |  Claimed (in-flight): 1
+2026-04-09T21:46:16Z Next pending (showing 14 of 44):
+2026-04-09T21:46:16Z   T-0099  Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:46:16Z     → Reader chapter: https://thegoodproject.net/chapters/mark_8.html
+2026-04-09T21:46:16Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:16Z   T-0112  Ch matthew_2: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:46:16Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_2.html
+2026-04-09T21:46:16Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:16Z   T-0113  Donaldson — 1_chronicles_1: add commentary JSON
+2026-04-09T21:46:16Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_1.html
+2026-04-09T21:46:16Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_1.json
+2026-04-09T21:46:16Z   T-0115  Ch deuteronomy_14: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:46:16Z     → Reader chapter: https://thegoodproject.net/chapters/deuteronomy_14.html
+2026-04-09T21:46:16Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:16Z   T-0116  Ch matthew_8: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:46:16Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_8.html
+2026-04-09T21:46:16Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:16Z   T-0117  Donaldson — 1_chronicles_10: add commentary JSON
+2026-04-09T21:46:16Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_10.html
+2026-04-09T21:46:16Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_10.json
+2026-04-09T21:46:16Z   T-0118  Registry Wikipedia — scripture_people batch 2/46 (1 entries)
+2026-04-09T21:46:16Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:46:16Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:46:16Z   T-0119  Ch esther_1: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:46:16Z     → Reader chapter: https://thegoodproject.net/chapters/esther_1.html
+2026-04-09T21:46:16Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:16Z   T-0120  Ch matthew_12: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:46:16Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_12.html
+2026-04-09T21:46:16Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:16Z   T-0121  Donaldson — 1_chronicles_11: add commentary JSON
+2026-04-09T21:46:16Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_11.html
+2026-04-09T21:46:16Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_11.json
+2026-04-09T21:46:16Z   T-0122  Registry Wikipedia — scripture_people batch 3/46 (1 entries)
+2026-04-09T21:46:16Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:46:16Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:46:16Z   T-0123  Ch esther_10: add entity span annotations (data-entity / place / thing)
+2026-04-09T21:46:16Z     → Reader chapter: https://thegoodproject.net/chapters/esther_10.html
+2026-04-09T21:46:16Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:16Z   T-0124  Ch matthew_20: add or repair _notes.html (commentary / semantic panel)
+2026-04-09T21:46:16Z     → Reader chapter: https://thegoodproject.net/chapters/matthew_20.html
+2026-04-09T21:46:16Z     → Right-panel spec (test): https://thegoodproject.net/test.html — open same chapter from TOC
+2026-04-09T21:46:16Z   T-0125  Donaldson — 1_chronicles_12: add commentary JSON
+2026-04-09T21:46:16Z     → Chapter reader: https://thegoodproject.net/chapters/1_chronicles_12.html
+2026-04-09T21:46:16Z     → Donaldson file (when built): same repo library/donaldson/1_chronicles_12.json
+2026-04-09T21:46:16Z In-flight claims:
+2026-04-09T21:46:16Z   T-0114  agent=Worker006  Registry Wikipedia — scripture_people batch 1/46 (1 entries)
+2026-04-09T21:46:16Z     → Main app + entity panels: https://thegoodproject.net/index.html
+2026-04-09T21:46:16Z     → Figures surface in reader chips: https://thegoodproject.net/index.html (any chapter with entities)
+2026-04-09T21:46:16Z wave 62: 8 workers backend=dispatch (claude default model=sonnet unless worker overrides; ollama christ/followup=gemma4:e2b)
+2026-04-09T21:46:16Z   each slot: task_worker.py once → ledger claim → dispatch or claude → commit; logs: diagnostics/task-worker-WorkerNNN.out + model line on stdout

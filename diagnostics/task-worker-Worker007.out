@@ -1034,3 +1034,101 @@ Annotating 1 chapters…
 Done. 0 chapters changed, 31 verses scanned, 0 entity spans added.
   push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
 [Worker007] T-0112 no dispatch rule — reopened.
+=== 2026-04-10T02:43:17Z start Worker007 ===
+[Worker007] checking for pending tasks…
+[Worker007] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker007] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker007] T-0099 no dispatch rule — reopened.
+=== 2026-04-10T02:43:49Z start Worker007 ===
+[Worker007] checking for pending tasks…
+[Worker007] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker007] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker007] T-0099 no dispatch rule — reopened.
+=== 2026-04-10T02:44:22Z start Worker007 ===
+  [followup] exit 2 (non-fatal)
+[Worker007] T-0101 success. commit=382160a3
+=== 2026-04-10T02:44:22Z exit 0 Worker007 ===
+[Worker007] checking for pending tasks…
+[Worker007] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker007] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+  pushed to origin
+[Worker007] T-0099 no dispatch rule — reopened.
+=== 2026-04-10T02:44:43Z start Worker007 ===
+[Worker007] checking for pending tasks…
+[Worker007] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker007] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker007] T-0099 no dispatch rule — reopened.
+=== 2026-04-10T02:44:54Z start Worker007 ===
+[Worker007] checking for pending tasks…
+[Worker007] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker007] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker007] T-0099 no dispatch rule — reopened.
+=== 2026-04-10T02:45:14Z start Worker007 ===
+[Worker007] checking for pending tasks…
+[Worker007] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker007] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker007] T-0099 no dispatch rule — reopened.
+=== 2026-04-10T02:45:24Z start Worker007 ===
+[Worker007] checking for pending tasks…
+[Worker007] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker007] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+=== 2026-04-10T02:45:25Z start Worker007 ===
+[Worker007] checking for pending tasks…
+[Worker007] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker007] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+=== 2026-04-10T02:45:27Z start Worker007 ===
+Reopened T-0099.
+[Worker007] checking for pending tasks…
+[Worker007] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker007] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker007] T-0099 no dispatch rule — reopened.
+Reopened T-0099.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker007] T-0099 no dispatch rule — reopened.
+  pushed to origin
+[Worker007] T-0099 no dispatch rule — reopened.
+=== 2026-04-10T02:45:45Z start Worker007 ===
+[Worker007] checking for pending tasks…
+[Worker007] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker007] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker007] T-0099 no dispatch rule — reopened.
+=== 2026-04-10T02:45:56Z start Worker007 ===
+[Worker007] checking for pending tasks…
+[Worker007] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker007] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+=== 2026-04-10T02:45:58Z start Worker007 ===
+Reopened T-0099.
+[Worker007] checking for pending tasks…
+=== 2026-04-10T02:45:58Z start Worker007 ===
+[Worker007] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker007] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+[Worker007] checking for pending tasks…
+Reopened T-0099.
+[Worker007] claimed T-0113: Donaldson — 1_chronicles_1: add commentary JSON
+[Worker007] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0113.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker007] T-0099 no dispatch rule — reopened.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker007] T-0099 no dispatch rule — reopened.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker007] T-0113 no dispatch rule — reopened.
+=== 2026-04-10T02:46:16Z start Worker007 ===
+[Worker007] checking for pending tasks…
+[Worker007] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker007] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
