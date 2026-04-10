@@ -59,6 +59,22 @@ def try_dispatch(task: dict) -> DispatchOutcome:
         )
         return DispatchOutcome(True, rc, f"annotate_entity_spans --books {book} (exit {rc})")
 
+    # ── Ch mark_8: add or repair _notes.html ───────────────────────────────
+    m_notes = re.match(
+        r"^Ch ([a-z0-9_]+): add or repair _notes\.html",
+        title,
+        re.I,
+    )
+    if m_notes:
+        cid = m_notes.group(1)
+        out = REPO / "library" / "chapters" / f"{cid}_notes.html"
+        out.parent.mkdir(parents=True, exist_ok=True)
+        shell = "<!DOCTYPE html>\n<html lang=\"en\">\n<body>\n</body>\n</html>\n"
+        if not out.is_file():
+            out.write_text(shell, encoding="utf-8")
+            return DispatchOutcome(True, 0, f"wrote scaffold {out.name}")
+        return DispatchOutcome(True, 0, f"{out.name} already present")
+
     # ── Registry Wikipedia — … ───────────────────────────────────────────────
     def _wiki_limit_argv(flag: str) -> list[str]:
         lim_m = re.search(r"--limit\s+(\d+)", notes)
