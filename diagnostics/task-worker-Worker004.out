@@ -1365,3 +1365,17 @@ Enriching people (/Users/reify/Classified/wescripture/library/entities/people.js
   people: 40 enriched, 363 skipped
 
 Total enriched: 40
+=== 2026-04-10T02:42:16Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+=== 2026-04-10T02:42:16Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker004] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0099 no dispatch rule — reopened.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker004] T-0099 no dispatch rule — reopened.

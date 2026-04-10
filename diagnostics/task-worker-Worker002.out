@@ -1548,3 +1548,61 @@ Enriching people (/Users/reify/Classified/wescripture/library/entities/people.js
   people: 40 enriched, 363 skipped
 
 Total enriched: 40
+=== 2026-04-10T02:42:16Z start Worker002 ===
+[Worker002] checking for pending tasks…
+[Worker002] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker002] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+=== 2026-04-10T02:42:16Z start Worker002 ===
+[Worker002] checking for pending tasks…
+[Worker002] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker002] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker002] T-0099 no dispatch rule — reopened.
+Reopened T-0099.
+  pushed to origin
+[Worker002] T-0099 no dispatch rule — reopened.
+Enriching people (/Users/reify/Classified/wescripture/library/entities/people.json)...
+  enriched: C.S Lewis
+  enriched: Harold G. Hillam
+  enriched: Albert E. Bowen
+  enriched: Kelly Ogden
+  enriched: Coleen K. Menlove
+  enriched: Janette C. Hales
+  enriched: Ardeth G. Kapp
+  enriched: W. Eugene Hansen
+  enriched: Chieko Okazaki
+  enriched: New American Bible
+  enriched: G. B. Caird
+  enriched: Bonnie L. Oscarson
+  enriched: Paul R. Cheesman
+  enriched: Lee Donaldson
+  enriched: Elaine Cannon
+  enriched: Melvin J. Ballard
+  enriched: Chris Conkling
+  enriched: Shayne M. Bowen
+  enriched: F. Melvin Hammond
+  enriched: Bible Dictionary
+  enriched: Erastus Snow
+  enriched: Robert C. Oaks
+  enriched: Dwan J. Young
+  enriched: Ted E. Brewerton
+  enriched: Ben B. Banks
+  enriched: Sydney S. Reynolds
+  enriched: W. Craig Zwick
+  enriched: Rosemary M. Wixom
+  enriched: Mary Ellen Edmunds
+  enriched: Lectures on Faith
+  enriched: Brent A. Barlow
+  enriched: C. Scott Grow
+  enriched: LDS Church News
+  enriched: Hugh W. Nibley
+  enriched: Online Bible
+  enriched: John A. Widstoe
+  enriched: Alfred Edersheim
+  enriched: Durrel A. Woolsey
+  enriched: Rudger Clawson
+  enriched: Alma Sonne
+  people: 40 enriched, 363 skipped
+
+Total enriched: 40

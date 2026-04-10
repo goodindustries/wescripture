@@ -986,3 +986,34 @@ Enriching people (/Users/reify/Classified/wescripture/library/entities/people.js
   people: 40 enriched, 363 skipped
 
 Total enriched: 40
+[main 382160a3] [task] T-0101: build_entity_wikipedia --people --limit 40 (exit 0)
+ Committer: Reif Tauati <reify@MacBookPro.lan>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 35 files changed, 32301 insertions(+), 104 deletions(-)
+=== 2026-04-10T02:42:16Z start Worker007 ===
+[Worker007] checking for pending tasks…
+[Worker007] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker007] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+=== 2026-04-10T02:42:16Z start Worker007 ===
+[Worker007] checking for pending tasks…
+[Worker007] claimed T-0099: Ch mark_8: add or repair _notes.html (commentary / semantic panel)
+[Worker007] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0099.
+Completed T-0101.
+  [ledger] pushed to origin
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker007] T-0099 no dispatch rule — reopened.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker007] T-0099 no dispatch rule — reopened.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
