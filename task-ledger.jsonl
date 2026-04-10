@@ -1346,3 +1346,4 @@
 {"event": "task_claimed", "task_id": "T-0090", "agent": "Worker002", "ts": "2026-04-10T01:59:39+00:00"}
 {"event": "task_claimed", "task_id": "T-0090", "agent": "Worker007", "ts": "2026-04-10T01:59:39+00:00"}
 {"event": "task_claimed", "task_id": "T-0090", "agent": "Worker006", "ts": "2026-04-10T01:59:39+00:00"}
+{"event": "task_reopened", "task_id": "T-0088", "ts": "2026-04-10T01:59:39+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
