@@ -1099,3 +1099,4 @@
 {"event": "task_reopened", "task_id": "T-0076", "ts": "2026-04-10T00:35:34+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
 {"event": "task_reopened", "task_id": "T-0076", "ts": "2026-04-10T00:35:34+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
 {"event": "task_reopened", "task_id": "T-0076", "ts": "2026-04-10T00:35:34+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
+{"event": "task_completed", "task_id": "T-0078", "agent": "Worker005", "ts": "2026-04-10T00:35:36+00:00", "commit": "26738383", "notes": "dispatch: annotate_entity_spans --books esther (exit 0)"}
