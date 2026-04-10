@@ -272,6 +272,7 @@ def main():
                     backend=args.backend,
                     claude_model=args.model,
                     ollama=ollama_model_display(),
+                    title=title,
                 )
                 print(f"[{args.agent}] {tid} dispatch failed.", flush=True)
                 sys.exit(1)
@@ -284,6 +285,16 @@ def main():
                 "--notes", "dispatch: no handler for this title — use hybrid or claude",
             ])
             push_origin()
+            log_run(
+                tid,
+                args.agent,
+                "reopened",
+                "dispatch: no handler — use hybrid or claude",
+                backend=args.backend,
+                claude_model=args.model,
+                ollama=ollama_model_display(),
+                title=title,
+            )
             print(f"[{args.agent}] {tid} no dispatch rule — reopened.", flush=True)
             sys.exit(1)
 
@@ -334,6 +345,7 @@ def main():
         backend=args.backend,
         claude_model=args.model,
         ollama=ollama_model_display(),
+        title=title,
     )
     print(f"[{args.agent}] {tid} {outcome}. commit={new_commit}", flush=True)
 

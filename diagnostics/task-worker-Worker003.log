@@ -1,1 +1,2 @@
 {"ts": "2026-04-10T00:10:00+00:00", "task_id": "T-0070", "agent": "Worker003", "outcome": "success", "notes": "commit=54f20c24"}
+{"ts": "2026-04-10T00:43:20+00:00", "task_id": "T-0080", "agent": "Worker003", "outcome": "reopened", "notes": "dispatch: no handler \u2014 use hybrid or claude", "backend": "dispatch", "claude_model": "sonnet", "ollama": "gemma4:e2b", "title": "Donaldson \u2014 2_chronicles: add commentary JSON for 20 missing chapter(s)"}

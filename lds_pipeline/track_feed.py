@@ -27,7 +27,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "lds_pipeline"))
-from task_ledger import _load_events  # noqa: E402
+from task_ledger import _load_events, _project  # noqa: E402
 
 ORCH_LOG = REPO / "diagnostics" / "orchestrate.log"
 TEXT_FEED = REPO / "diagnostics" / "track.feed.txt"
@@ -45,19 +45,30 @@ def _parse_iso(s: str) -> float:
 
 
 def collect_ledger_items(limit: int = 60) -> list[tuple[float, str, str]]:
+    """Ledger lines: task titles come from projected state (claim/reopen rows often omit title)."""
     out: list[tuple[float, str, str]] = []
     events = _load_events()
+    tasks = _project(events)
     for ev in events[-limit:]:
         ts = ev.get("ts") or ""
         kind = ev.get("event", ev.get("type", "?"))
         tid = ev.get("task_id", "")
         ag = ev.get("agent", "")
-        title = (ev.get("title") or ev.get("note") or "")[:100]
-        body = f"{kind} {tid}"
+        title = (ev.get("title") or ev.get("note") or "").strip()
+        if not title and tid:
+            title = (tasks.get(tid) or {}).get("title") or ""
+        title = title[:140]
+        body = f"{kind} {tid}".strip()
         if ag:
             body += f" agent={ag}"
         if title:
             body += f" — {title}"
+        notes = (ev.get("notes") or "").strip()
+        if kind == "task_completed" and ev.get("commit"):
+            body += f" commit={str(ev['commit'])[:12]}"
+        if notes and kind in ("task_reopened", "task_completed", "task_noted", "task_queued"):
+            snip = notes[:160] + ("…" if len(notes) > 160 else "")
+            body += f" | {snip}"
         t = _parse_iso(ts) if ts else 0.0
         out.append((t, "ledger", body.strip()))
     return out
@@ -99,11 +110,13 @@ def collect_worker_json_items(limit_per_file: int = 8) -> list[tuple[float, str,
                 continue
             ts = row.get("ts", "")
             t = _parse_iso(ts) if ts else 0.0
-            parts = [
-                row.get("outcome", "?"),
-                row.get("task_id", ""),
-                row.get("agent", ""),
-            ]
+            tid_w = row.get("task_id", "")
+            ag_w = row.get("agent", "")
+            oc = row.get("outcome", "?")
+            title_w = (row.get("title") or "").strip()[:120]
+            head = f"{oc} {tid_w} {ag_w}".strip()
+            if title_w:
+                head += f" — {title_w}"
             extra = []
             if row.get("backend"):
                 extra.append(f"backend={row['backend']}")
@@ -111,7 +124,12 @@ def collect_worker_json_items(limit_per_file: int = 8) -> list[tuple[float, str,
                 extra.append(f"claude={row['claude_model']}")
             if row.get("ollama"):
                 extra.append(f"ollama={row['ollama']}")
-            msg = " ".join(str(p) for p in parts if p) + ("  " + " ".join(extra) if extra else "")
+            notes_w = (row.get("notes") or "").strip()
+            if notes_w and len(notes_w) < 200:
+                extra.append(notes_w)
+            elif notes_w:
+                extra.append(notes_w[:180] + "…")
+            msg = head + ("  " + " ".join(extra) if extra else "")
             out.append((t, "worker", msg.strip()))
     return out
 

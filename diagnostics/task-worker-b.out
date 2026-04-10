@@ -641,3 +641,13 @@ Completed T-0072.
   [ledger] pushed to origin
   pushed to origin
 [WorkerB] T-0072 error. commit=
+Already up to date.
+[WorkerB] checking for pending tasks…
+[WorkerB] claimed T-0076: Donaldson — 1_chronicles: add commentary JSON for 25 missing chapter(s)
+[WorkerB] models: backend=claude claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+[WorkerB] running claude --model sonnet …
+You've hit your limit · resets Apr 13, 3pm (America/Chicago)
+Completed T-0076.
+  [ledger] pushed to origin
+  pushed to origin
+[WorkerB] T-0076 error. commit=36261e87

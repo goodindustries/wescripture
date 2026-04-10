@@ -1,2 +1,3 @@
 {"ts": "2026-04-10T00:24:43+00:00", "task_id": "T-0073", "agent": "Worker002", "outcome": "success", "notes": "commit=ba8db211", "backend": "dispatch", "claude_model": "sonnet", "ollama": "gemma4:e2b"}
 {"ts": "2026-04-10T00:24:53+00:00", "task_id": "T-0074", "agent": "Worker002", "outcome": "success", "notes": "commit=550e3e03", "backend": "dispatch", "claude_model": "sonnet", "ollama": "gemma4:e2b"}
+{"ts": "2026-04-10T00:43:20+00:00", "task_id": "T-0080", "agent": "Worker002", "outcome": "reopened", "notes": "dispatch: no handler \u2014 use hybrid or claude", "backend": "dispatch", "claude_model": "sonnet", "ollama": "gemma4:e2b", "title": "Donaldson \u2014 2_chronicles: add commentary JSON for 20 missing chapter(s)"}
