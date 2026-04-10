@@ -127,12 +127,13 @@ def main() -> None:
         env["TASK_WORKER_BACKEND"] = args.backend
         cap = max(args.wave_size, int(env.get("MAX_PARALLEL_WORKERS", "32")))
         env["MAX_PARALLEL_WORKERS"] = str(cap)
-        subprocess.run(
+        rc = subprocess.run(
             [str(REPO / "lds_pipeline" / "run_parallel_task_workers.sh"), str(args.wave_size)],
             cwd=str(REPO),
             env=env,
             check=False,
-        )
+        ).returncode
+        log(f"wave {wave} worker script exit={rc}; pending now {pending_count()}")
 
         if args.once:
             log("--once: stopping after single wave")
