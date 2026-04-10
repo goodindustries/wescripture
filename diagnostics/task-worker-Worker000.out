@@ -697,3 +697,13 @@ Reopened T-0084.
   [ledger] pushed to origin
   pushed to origin
 [Worker000] T-0084 no dispatch rule — reopened.
+=== 2026-04-10T01:52:44Z start Worker000 ===
+[Worker000] checking for pending tasks…
+[Worker000] claimed T-0086: Ch job_4: add entity span annotations (data-entity / place / thing)
+[Worker000] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+  [dispatch] /Library/Developer/CommandLineTools/usr/bin/python3 /Users/reify/Classified/wescripture/lds_pipeline/annotate_entity_spans.py --books job
+Loading entity indexes…
+  134 scripture-person variants, 81 place variants, 207 thing variants
+Annotating 16 chapters…
+
+Done. 0 chapters changed, 391 verses scanned, 0 entity spans added.

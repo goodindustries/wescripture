@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import subprocess
 import sys
 from collections import Counter
@@ -24,7 +25,10 @@ REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "lds_pipeline"))
 from task_ledger import _load_events, _project  # noqa: E402
 
+from orchestrate_hints import scan_worker_out_logs  # noqa: E402
+
 DIAG = REPO / "diagnostics"
+ORCH_LOG = DIAG / "orchestrate.log"
 FEED = DIAG / "track.feed.txt"
 PAUSE_SH = REPO / "lds_pipeline" / "pause_agents.sh"
 FOREVER_SH = REPO / "lds_pipeline" / "run_orchestrate_forever.sh"

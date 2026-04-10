@@ -1,0 +1,1 @@
+{"ts": "2026-04-10T01:52:23+00:00", "task_id": "T-0085", "agent": "Worker007", "outcome": "success", "notes": "commit=fc7368a1", "backend": "dispatch", "claude_model": "sonnet", "ollama": "gemma4:e2b", "title": "Registry Wikipedia \u2014 people.json batch 1/40 (40 entries)"}
