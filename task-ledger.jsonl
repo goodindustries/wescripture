@@ -2990,3 +2990,11 @@
 {"ts": "2026-04-10T02:40:08+00:00", "event": "task_queued", "task_id": "T-0154", "title": "Registry Wikipedia — scripture_people batch 11/46 (1 entries)", "notes": "python3 lds_pipeline/build_entity_wikipedia.py --scripture-people --limit 1"}
 {"ts": "2026-04-10T02:40:08+00:00", "event": "task_queued", "task_id": "T-0155", "title": "Ch job_17: add entity span annotations (data-entity / place / thing)", "notes": "MISSION: discovery panel chips for people/places/things. Run from repo root: python3 lds_pipeline/annotate_entity_spans.py (scope this chapter: --books pattern matching job_17). Match rules in annotate_entity_spans.py / AGENT_GUIDELINES.md §4."}
 {"event": "task_completed", "task_id": "T-0110", "agent": "CursorPlan", "ts": "2026-04-10T02:40:11+00:00", "notes": "annotate_entity_spans.py --books job (0 new spans)"}
+{"event": "task_claimed", "task_id": "T-0099", "agent": "Worker006", "ts": "2026-04-10T02:40:11+00:00"}
+{"event": "task_claimed", "task_id": "T-0099", "agent": "Worker002", "ts": "2026-04-10T02:40:11+00:00"}
+{"event": "task_claimed", "task_id": "T-0099", "agent": "Worker000", "ts": "2026-04-10T02:40:11+00:00"}
+{"event": "task_claimed", "task_id": "T-0099", "agent": "Worker003", "ts": "2026-04-10T02:40:11+00:00"}
+{"event": "task_claimed", "task_id": "T-0099", "agent": "Worker001", "ts": "2026-04-10T02:40:11+00:00"}
+{"event": "task_claimed", "task_id": "T-0099", "agent": "Worker004", "ts": "2026-04-10T02:40:11+00:00"}
+{"event": "task_claimed", "task_id": "T-0099", "agent": "Worker005", "ts": "2026-04-10T02:40:11+00:00"}
+{"event": "task_claimed", "task_id": "T-0099", "agent": "Worker007", "ts": "2026-04-10T02:40:12+00:00"}
