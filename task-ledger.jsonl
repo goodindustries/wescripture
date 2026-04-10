@@ -1401,3 +1401,11 @@
 {"event": "task_completed", "task_id": "T-0088", "agent": "WorkerB", "ts": "2026-04-10T02:03:17+00:00", "commit": "a5ab6d92", "notes": "completed by task_worker (non-zero exit)"}
 {"event": "task_reopened", "task_id": "T-0091", "ts": "2026-04-10T02:03:17+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
 {"event": "task_completed", "task_id": "T-0091", "agent": "WorkerA", "ts": "2026-04-10T02:03:24+00:00", "notes": "completed by task_worker (non-zero exit)"}
+{"event": "task_claimed", "task_id": "T-0092", "agent": "Worker000", "ts": "2026-04-10T02:03:43+00:00"}
+{"event": "task_claimed", "task_id": "T-0092", "agent": "Worker003", "ts": "2026-04-10T02:03:43+00:00"}
+{"event": "task_claimed", "task_id": "T-0092", "agent": "Worker001", "ts": "2026-04-10T02:03:43+00:00"}
+{"event": "task_claimed", "task_id": "T-0092", "agent": "Worker002", "ts": "2026-04-10T02:03:43+00:00"}
+{"event": "task_claimed", "task_id": "T-0092", "agent": "Worker005", "ts": "2026-04-10T02:03:43+00:00"}
+{"event": "task_claimed", "task_id": "T-0092", "agent": "Worker004", "ts": "2026-04-10T02:03:43+00:00"}
+{"event": "task_claimed", "task_id": "T-0093", "agent": "Worker007", "ts": "2026-04-10T02:03:43+00:00"}
+{"event": "task_claimed", "task_id": "T-0093", "agent": "Worker006", "ts": "2026-04-10T02:03:43+00:00"}
