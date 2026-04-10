@@ -16,6 +16,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "lds_pipeline"))
+from orchestrate_hints import format_claim_report, site_base, ui_hints_for_task_title  # noqa: E402
 from task_ledger import _load_events, _project  # noqa: E402
 
 
@@ -31,7 +32,9 @@ def run_once() -> None:
     counts = Counter(t["status"] for t in tasks.values())
 
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+    base = site_base()
     print(f"  WeScripture ledger  ·  {now}")
+    print(f"  Deployed UI base: {base}  (WESCRIPTURE_SITE_URL)")
     print("=" * 72)
     print("  COUNTS")
     for status in ("pending", "claimed", "completed", "noted"):
@@ -60,6 +63,8 @@ def run_once() -> None:
             ts = (t.get("claim_ts") or "")[:19]
             print(f"    {tid}  {ag:12}  {ts}")
             print(f"           {title}")
+            for h in ui_hints_for_task_title(t.get("title") or ""):
+                print(f"           → {h}")
 
     pend = [t for t in tasks.values() if t.get("status") == "pending"]
     pend.sort(key=lambda x: x.get("task_id") or "")
@@ -72,6 +77,21 @@ def run_once() -> None:
             tid = t.get("task_id", "")
             title = (t.get("title") or "")[:64]
             print(f"    {tid}  {title}")
+            for h in ui_hints_for_task_title(t.get("title") or ""):
+                print(f"           → {h}")
+
+    print()
+    print("  WORKER LOGS (last claim per Worker*.out)")
+    diag = REPO / "diagnostics"
+    for line in format_claim_report(diag).split("\n"):
+        print(f"    {line}")
+
+    print()
+    print("  QUICK TEST LINKS")
+    print(f"    App:   {base}/index.html")
+    print(f"    Test:  {base}/test.html")
+    print(f"    Ops:   {base}/dashboard.html")
+    print(f"    Cover: {base}/verse_coverage.html")
 
     print()
     print("  RECENT LEDGER (last 12 events)")
