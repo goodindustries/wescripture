@@ -793,3 +793,9 @@
 {"event": "task_reopened", "task_id": "T-0072", "ts": "2026-04-10T00:21:56+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
 {"event": "task_reopened", "task_id": "T-0072", "ts": "2026-04-10T00:21:59+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
 {"event": "task_completed", "task_id": "T-0071", "agent": "WorkerA", "ts": "2026-04-10T00:22:01+00:00", "commit": "8aad0d42", "notes": "completed by task_worker (non-zero exit)"}
+{"event": "task_claimed", "task_id": "T-0072", "agent": "Worker003", "ts": "2026-04-10T00:22:10+00:00"}
+{"event": "task_claimed", "task_id": "T-0072", "agent": "Worker000", "ts": "2026-04-10T00:22:10+00:00"}
+{"event": "task_claimed", "task_id": "T-0072", "agent": "Worker004", "ts": "2026-04-10T00:22:10+00:00"}
+{"event": "task_claimed", "task_id": "T-0072", "agent": "Worker002", "ts": "2026-04-10T00:22:10+00:00"}
+{"event": "task_claimed", "task_id": "T-0072", "agent": "Worker005", "ts": "2026-04-10T00:22:10+00:00"}
+{"event": "task_claimed", "task_id": "T-0072", "agent": "Worker001", "ts": "2026-04-10T00:22:10+00:00"}
