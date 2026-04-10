@@ -1464,3 +1464,12 @@ are terminated then try again. If it still fails, a git process
 may have crashed in this repository earlier:
 remove the file manually to continue.
 
+To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at 1b1dc271cec44a100d371699217d7178a135f44f but expected 1ce666e2b82cfb8b3ee8e6a52f6748d0c8d507ac)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at 1b1dc271cec44a100d371699217d7178a135f44f but expected 1ce666e2b82cfb8b3ee8e6a52f6748d0c8d507ac)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at 1b1dc271cec44a100d371699217d7178a135f44f but expected 1ce666e2b82cfb8b3ee8e6a52f6748d0c8d507ac)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'

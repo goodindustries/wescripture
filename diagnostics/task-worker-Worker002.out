@@ -1630,3 +1630,13 @@ Completed T-0105.
 [Worker002] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
 Reopened T-0099.
   pushed to origin
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker002] T-0099 no dispatch rule — reopened.
+[Worker002] claimed T-0111: Ch genesis_1: add entity span annotations (data-entity / place / thing)
+[Worker002] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+  [dispatch] /Library/Developer/CommandLineTools/usr/bin/python3 /Users/reify/Classified/wescripture/lds_pipeline/annotate_entity_spans.py --books genesis
+Loading entity indexes…
+  134 scripture-person variants, 81 place variants, 207 thing variants
+Annotating 1 chapters…
+
+Done. 0 chapters changed, 31 verses scanned, 0 entity spans added.

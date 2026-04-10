@@ -1399,3 +1399,17 @@ Loading entity indexes…
 Annotating 1 chapters…
 
 Done. 0 chapters changed, 31 verses scanned, 0 entity spans added.
+[main 11e860b5] [task] T-0111: annotate_entity_spans --books genesis (exit 0)
+ Committer: Reif Tauati <reify@MacBookPro.lan>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 19 files changed, 508 insertions(+)

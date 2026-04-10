@@ -1613,3 +1613,8 @@ After doing this, you may fix the identity used for this commit with:
 [Worker003] models: backend=dispatch (local pipeline scripts only; no Claude CLI) ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
 Reopened T-0099.
 Completed T-0109.
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+Reopened T-0112.
+  [ledger] pushed to origin
+  push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
+[Worker003] T-0099 no dispatch rule — reopened.
