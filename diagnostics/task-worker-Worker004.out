@@ -617,3 +617,28 @@ Enriching people (/Users/reify/Classified/wescripture/library/entities/people.js
   people: 40 enriched, 252 skipped
 
 Total enriched: 40
+[main e5b8632f] [task] T-0097: build_entity_wikipedia --people --limit 40 (exit 0)
+ Committer: Reif Tauati <reify@MacBookPro.lan>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 33 files changed, 3264 insertions(+), 40 deletions(-)
+Completed T-0097.
+  [ledger] pushed to origin
+  pushed to origin
+  [followup] exit 2 (non-fatal)
+[Worker004] T-0097 success. commit=e5b8632f
+=== 2026-04-10T02:17:55Z exit 0 Worker004 ===
+=== 2026-04-10T02:18:16Z start Worker004 ===
+[Worker004] checking for pending tasks…
+[Worker004] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker004] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.

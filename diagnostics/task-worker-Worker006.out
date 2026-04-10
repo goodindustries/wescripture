@@ -215,3 +215,8 @@ Reopened T-0095.
 Reopened T-0096.
   pushed to origin
 [Worker006] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:18:16Z start Worker006 ===
+[Worker006] checking for pending tasks…
+[Worker006] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker006] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.

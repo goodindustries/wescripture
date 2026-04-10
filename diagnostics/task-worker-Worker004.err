@@ -672,3 +672,13 @@ remove the file manually to continue.
 
 To https://github.com/reif-is-a-foofie/wescripture.git
    ce34e345..cb11a63e  main -> main
+Everything up-to-date
+task_followup: Ollama error: timed out
+  [ledger] push failed: fatal: Unable to create '/Users/reify/Classified/wescripture/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+

@@ -809,3 +809,8 @@ Reopened T-0095.
 Reopened T-0096.
   push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
 [Worker003] T-0096 no dispatch rule — reopened.
+=== 2026-04-10T02:18:16Z start Worker003 ===
+[Worker003] checking for pending tasks…
+[Worker003] claimed T-0096: Donaldson — 2_kings: add commentary JSON for 5 missing chapter(s)
+[Worker003] models: backend=dispatch claude_cli=sonnet ollama=gemma4:e2b (christ gen + task_followup unless --no-followup)
+Reopened T-0096.
