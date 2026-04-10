@@ -42,3 +42,60 @@ remove the file manually to continue.
 
 Everything up-to-date
 Everything up-to-date
+  [ledger] push failed: To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at 78a1df1ef9128ddacd4ae1101b57bf585fc2a853 but expected 078a16bb309c99251166e3ffaeba50e21e673326)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+
+Everything up-to-date
+To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]   main -> main (cannot lock ref 'refs/heads/main': is at cd5c94672c843d8a7902cbd7eb75fbb29547c919 but expected 624c35e54df983f493d1ae867038af615ea7c781)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+  [ledger] push failed: To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]     main -> main (cannot lock ref 'refs/heads/main': is at f703196845768bfc43c8b53a770f4e3ae902decb but expected a631506c63f463839ae47edab568c8c978192a7d)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+
+To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]     main -> main (cannot lock ref 'refs/heads/main': is at c4699d46fae9dc581588a44f9857640efc4019f5 but expected f703196845768bfc43c8b53a770f4e3ae902decb)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+Everything up-to-date
+Everything up-to-date
+Everything up-to-date
+  [ledger] push failed: To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]     main -> main (cannot lock ref 'refs/heads/main': is at 5fe16d7fa0fd8e342bd8b259076cf221188ec784 but expected b7b01603b432e8ff1b586118d17ec24a5389d046)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+
+Everything up-to-date
+Everything up-to-date
+Everything up-to-date
+Everything up-to-date
+Everything up-to-date
+Everything up-to-date
+Everything up-to-date
+  [ledger] push failed: To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]     main -> main (cannot lock ref 'refs/heads/main': is at 4f94da0d183bb5b9ad8450c79e98b4a835984a70 but expected 47d15a8cac3462bf117a8167163421dd5cc4419e)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+
+Everything up-to-date
+Everything up-to-date
+Everything up-to-date
+  [ledger] push failed: To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]     main -> main (cannot lock ref 'refs/heads/main': is at 8abea452c69cc6516a8512bbd2a56683c3ed21d8 but expected 5051279aa07c6505482c4e7509ac57f6ffafa611)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+
+Everything up-to-date
+To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]     main -> main (cannot lock ref 'refs/heads/main': is at 36432cc778e4238b5a3bd70e6f5d574fcd61f8ca but expected ec00ae130eda8ee32ea64f0babf8f1a86b1c6bce)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+  [ledger] push failed: To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]     main -> main (cannot lock ref 'refs/heads/main': is at bf0b52c53fbe6ceb8c5ed742afee08960a5d0122 but expected c5e9d723db84cf2a0884ca3a88dd09fd8d180aeb)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+
+To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]     main -> main (cannot lock ref 'refs/heads/main': is at edfe35b07b351881d2608f832d901581d2175a0a but expected bf0b52c53fbe6ceb8c5ed742afee08960a5d0122)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+  [ledger] push failed: To https://github.com/reif-is-a-foofie/wescripture.git
+ ! [remote rejected]     main -> main (cannot lock ref 'refs/heads/main': is at 57e3ac78c1f18d1896dd540401a3e7dc1e4c5be2 but expected 08b4430e8ad05cffe6d0854356f184166461fcb3)
+error: failed to push some refs to 'https://github.com/reif-is-a-foofie/wescripture.git'
+
+Everything up-to-date
+Everything up-to-date
