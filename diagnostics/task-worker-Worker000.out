@@ -1609,3 +1609,17 @@ Enriching people (/Users/reify/Classified/wescripture/library/entities/people.js
   people: 40 enriched, 363 skipped
 
 Total enriched: 40
+[main 5c7b9236] [task] T-0105: build_entity_wikipedia --people --limit 40 (exit 0)
+ Committer: Reif Tauati <reify@MacBookPro.lan>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 58 insertions(+)
