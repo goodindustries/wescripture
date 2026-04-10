@@ -30912,3 +30912,4 @@
 {"event": "task_reopened", "task_id": "T-0113", "ts": "2026-04-10T06:17:20+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
 {"event": "task_reopened", "task_id": "T-0113", "ts": "2026-04-10T06:17:21+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
 {"event": "task_reopened", "task_id": "T-0113", "ts": "2026-04-10T06:17:23+00:00", "notes": "dispatch: no handler for this title — use hybrid or claude"}
+{"event": "task_claimed", "task_id": "T-0113", "agent": "WorkerB", "ts": "2026-04-10T06:17:40+00:00"}
