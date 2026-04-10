@@ -14644,3 +14644,21 @@ Enriching scripture_people (/Users/reify/Classified/wescripture/library/entities
   scripture_people: 0 enriched, 200 skipped
 
 Total enriched: 0
+[main 71ea63770] [task] T-0118: build_entity_wikipedia --scripture-people (exit 0)
+ Committer: Reif Tauati <reify@Reifs-MacBook-Pro.local>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 28 files changed, 252 insertions(+)
+Enriching scripture_people (/Users/reify/Classified/wescripture/library/entities/scripture_people.json)...
+  scripture_people: 0 enriched, 200 skipped
+
+Total enriched: 0

@@ -13874,3 +13874,7 @@ Annotating 2 chapters…
 Done. 0 chapters changed, 25 verses scanned, 0 entity spans added.
   push failed (non-fatal): Command '['git', 'push', 'origin', 'main']' returned non-zero exit status 1.
 [Worker007] T-0117 no dispatch rule — reopened.
+Enriching scripture_people (/Users/reify/Classified/wescripture/library/entities/scripture_people.json)...
+  scripture_people: 0 enriched, 200 skipped
+
+Total enriched: 0

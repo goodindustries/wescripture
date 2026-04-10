@@ -13859,3 +13859,7 @@ Completed T-0119.
 Reopened T-0117.
   pushed to origin
 [Worker006] T-0117 no dispatch rule — reopened.
+Enriching scripture_people (/Users/reify/Classified/wescripture/library/entities/scripture_people.json)...
+  scripture_people: 0 enriched, 200 skipped
+
+Total enriched: 0
