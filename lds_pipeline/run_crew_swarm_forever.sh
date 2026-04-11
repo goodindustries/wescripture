@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Loop: run Crew swarm on pending tasks in diagnostics/crew_events.jsonl
+# Optional first: python3 lds_pipeline/ledger_to_crew_feeder.py  (bridge one dispatch-friendly T-* task from task-ledger.jsonl)
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"

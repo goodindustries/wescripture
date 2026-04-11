@@ -67,12 +67,12 @@
 
 ## Execution order when implementing
 
-1. Phase A (ledger exclude-prefix + task_worker).  
-2. Phase B (feeder + ledger completion mirror) with strict Crew-eligible list.  
-3. Phase D smoke correlate.  
-4. Phase C Donaldson hints + optional Crew tool.  
-5. Phase E docs / shell glue.
+1. Phase A (ledger exclude-prefix + task_worker). **Done**
+2. Phase B (feeder + ledger completion mirror) with strict Crew-eligible list. **Done** — `lds_pipeline/ledger_to_crew_feeder.py`; `lds_pipeline/crew_swarm/swarm.py` mirrors ledger complete/reopen when `ledger_task_id:T-*` appears in crew notes.
+3. Phase D smoke correlate. **Done** — `correlate_embeddings.py --books Genesis` (1533 verse JSON under cache, gitignored).
+4. Phase C Donaldson hints + optional Crew tool. **Not started**
+5. Phase E docs / shell glue. **Partial** — run `python3 lds_pipeline/ledger_to_crew_feeder.py` before `crew_swarm/runner.py --loop` as needed.
 
 ---
 
-**Execution:** implement when the user explicitly asks (e.g. “execute the plan” / “implement this”).
+**Execution:** implemented 2026-04-11 (Phases A, B, D partial).
