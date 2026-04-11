@@ -1,0 +1,14 @@
+Library shelf tiles — photographs downloaded from Unsplash (https://unsplash.com/license).
+Self-hosted as 800px-wide JPEGs for offline reliability.
+
+scriptures.jpg — photo-1504052434569 (open Bible / study)
+general_conference.jpg — photo-1438232992991 (church interior / worship space)
+ancient_texts.jpg — photo-1589829085413 (ancient manuscript / scroll)
+church_fathers.jpg — photo-1521587760476 (library / old books)
+joseph_smith_papers.jpg — photo-1455390582262 (handwriting / writing desk)
+times_and_seasons.jpg — photo-1504711434969 (reading newspaper)
+millennial_star.jpg — photo-1462331940025 (night sky / stars)
+gutenberg_lds.jpg — photo-1481627834876 (books / reading room)
+pioneer_journals.jpg — photo-1519682337058 (notebook / journal)
+history_of_church.jpg — photo-1578662996442 (historic architecture)
+journal_of_discourses.jpg — photo-1524995997946 (stack of books)

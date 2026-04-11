@@ -92,6 +92,10 @@
 
     var SHELF_STACK_SVG = '<span class="shelf-stack" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none"><rect x="3" y="10" width="14" height="11" rx="2" stroke="#fff" stroke-width="1.25" fill="rgba(0,0,0,0.2)"/><rect x="7" y="4" width="14" height="11" rx="2" stroke="#fff" stroke-width="1.25" fill="rgba(255,255,255,0.14)"/></svg></span>';
 
+    function shelfCoverPhoto(collectionId) {
+        return dataFilePath('assets/corpus/shelf-covers/' + collectionId + '.jpg');
+    }
+
     function safeGtag() {
         if (typeof window.gtag !== 'function') return;
         try { window.gtag.apply(null, arguments); } catch (e) {}
@@ -296,15 +300,16 @@
                     return String(a.label || '').localeCompare(String(b.label || ''));
                 });
                 var html = '';
-                var scrSrc = dataFilePath('assets/corpus/scriptures.svg');
+                var scrSrc = shelfCoverPhoto('scriptures');
                 html += '<a class="shelf-tile" role="listitem" href="' + escapeHtml(READER_HOME + '?open=scriptures') + '" data-evt="home_shelf_open" data-collection="scriptures">';
-                html += '<div class="shelf-cover"><img class="shelf-cover-img" src="' + escapeHtml(scrSrc) + '" alt="" width="200" height="300" loading="eager" decoding="async"/>' + SHELF_STACK_SVG + '</div>';
+                html += '<div class="shelf-cover"><img class="shelf-cover-img" src="' + escapeHtml(scrSrc) + '" alt="Scriptures — Standard works" width="200" height="300" loading="eager" decoding="async"/>' + SHELF_STACK_SVG + '</div>';
                 html += '<span class="shelf-label">Scriptures</span></a>';
                 cols.forEach(function(c) {
                     var href = READER_HOME + '?open=' + encodeURIComponent(c.id);
-                    var src = dataFilePath('assets/corpus/' + c.id + '.svg');
+                    var src = shelfCoverPhoto(c.id);
+                    var alt = escapeHtml((c.label || c.id) + ' — collection');
                     html += '<a class="shelf-tile" role="listitem" href="' + escapeHtml(href) + '" data-evt="home_shelf_open" data-collection="' + escapeHtml(c.id) + '">';
-                    html += '<div class="shelf-cover"><img class="shelf-cover-img" src="' + escapeHtml(src) + '" alt="" width="200" height="300" loading="lazy" decoding="async"/>' + SHELF_STACK_SVG + '</div>';
+                    html += '<div class="shelf-cover"><img class="shelf-cover-img" src="' + escapeHtml(src) + '" alt="' + alt + '" width="200" height="300" loading="lazy" decoding="async"/>' + SHELF_STACK_SVG + '</div>';
                     html += '<span class="shelf-label">' + escapeHtml(c.label) + '</span></a>';
                 });
                 shelf.innerHTML = html;
