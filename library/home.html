@@ -228,10 +228,13 @@
             .then(function(arr) {
                 booksSuggest = (arr || []).map(function(b) {
                     var cid = (b.chapter_ids && b.chapter_ids[0]) || '';
+                    var slug = (b.slug && String(b.slug)) || '';
+                    var slugM = slug ? slug.replace(/_/g, ' ').toLowerCase() : '';
                     return {
                         kind: 'book',
                         label: b.name || '',
                         abbr: (b.abbreviation || '').trim(),
+                        slugM: slugM,
                         jump: chapterIdToJump(cid, b.name || '')
                     };
                 }).filter(function(x) { return x.label; });
@@ -240,17 +243,115 @@
         return booksLoadPromise;
     }
 
+    /** Strip chapter/verse tails so "John 3:16" and "Gen 1" match books. */
+    function normalizeQueryForBookMatch(raw) {
+        var s = String(raw || '').trim().toLowerCase();
+        if (!s) return '';
+        s = s.replace(/\s+\d+:\d+(?:\s*[-–]\s*\d+)?(?:\s*:\d+)*/gi, '');
+        s = s.replace(/:\d+(?:\s*[-–]\s*\d+)?$/i, '');
+        for (var i = 0; i < 4; i++) {
+            var t = s.replace(/\s+\d+$/, '');
+            if (t === s) break;
+            s = t;
+        }
+        return s.trim();
+    }
+
+    function tokensInOrder(haystack, phrase) {
+        var parts = phrase.split(/\s+/).filter(Boolean);
+        if (parts.length < 2) return false;
+        var idx = 0;
+        for (var p = 0; p < parts.length; p++) {
+            var j = haystack.indexOf(parts[p], idx);
+            if (j === -1) return false;
+            idx = j + parts[p].length;
+        }
+        return true;
+    }
+
+    function bookSuggestScore(nameL, abbrL, slugM, phrase) {
+        if (!phrase) return 0;
+        if (phrase.length === 1) {
+            if (nameL.charAt(0) === phrase) return 30;
+            if (abbrL && abbrL.charAt(0) === phrase) return 28;
+            if (slugM && slugM.charAt(0) === phrase) return 26;
+            return 0;
+        }
+        var fields = [nameL, abbrL, slugM].filter(Boolean);
+        var fl, at, wordStart;
+        for (var fi = 0; fi < fields.length; fi++) {
+            fl = fields[fi];
+            if (fl === phrase) return 120;
+            if (fl.startsWith(phrase)) {
+                if (fi === 0) return 110;
+                if (fi === 1) return 95;
+                return 88;
+            }
+        }
+        if (nameL.indexOf(phrase) !== -1) {
+            at = nameL.indexOf(phrase);
+            wordStart = at === 0 || nameL.charAt(at - 1) === ' ';
+            return wordStart ? 72 : 58;
+        }
+        if (abbrL && abbrL.indexOf(phrase) !== -1) {
+            at = abbrL.indexOf(phrase);
+            wordStart = at === 0 || abbrL.charAt(at - 1) === ' ';
+            return wordStart ? 62 : 48;
+        }
+        if (slugM && slugM.indexOf(phrase) !== -1) return 52;
+        if (tokensInOrder(nameL, phrase)) return 46;
+        if (slugM && tokensInOrder(slugM, phrase)) return 44;
+        var toks = phrase.split(/\s+/).filter(function(t) { return t.length >= 2; });
+        var best = 0;
+        for (var ti = 0; ti < toks.length; ti++) {
+            var tok = toks[ti];
+            if (nameL.indexOf(tok) !== -1) {
+                best = Math.max(best, nameL.startsWith(tok) ? 42 : nameL.indexOf(' ' + tok) !== -1 ? 38 : 34);
+            }
+            if (abbrL && abbrL.indexOf(tok) !== -1) {
+                best = Math.max(best, abbrL.startsWith(tok) ? 40 : 30);
+            }
+            if (slugM && slugM.indexOf(tok) !== -1) {
+                best = Math.max(best, slugM.startsWith(tok) ? 36 : 32);
+            }
+        }
+        return best;
+    }
+
     function filterSuggestions(q) {
-        var s = String(q || '').trim().toLowerCase();
-        if (!s || s.length < 1) return [];
-        var out = [];
-        for (var i = 0; i < booksSuggest.length && out.length < 14; i++) {
+        var raw = String(q || '').trim();
+        if (!raw) return [];
+        var rawL = raw.toLowerCase();
+        var primary = normalizeQueryForBookMatch(raw);
+        if (!primary) primary = rawL;
+        var phrases = [];
+        if (primary) phrases.push(primary);
+        if (rawL !== primary) phrases.push(rawL);
+
+        var scored = [];
+        for (var i = 0; i < booksSuggest.length; i++) {
             var b = booksSuggest[i];
             var nameL = b.label.toLowerCase();
             var abbrL = (b.abbr || '').toLowerCase();
-            if (nameL.indexOf(s) !== -1 || (abbrL && abbrL.indexOf(s) !== -1)) {
-                out.push(b);
+            var slugM = b.slugM || '';
+            var best = 0;
+            for (var pi = 0; pi < phrases.length; pi++) {
+                if (!phrases[pi]) continue;
+                best = Math.max(best, bookSuggestScore(nameL, abbrL, slugM, phrases[pi]));
             }
+            if (best > 0) scored.push({ b: b, score: best });
+        }
+        scored.sort(function(a, b) {
+            if (b.score !== a.score) return b.score - a.score;
+            return a.b.label.localeCompare(b.b.label);
+        });
+        var seen = {};
+        var out = [];
+        for (var si = 0; si < scored.length && out.length < 14; si++) {
+            var item = scored[si].b;
+            if (seen[item.label]) continue;
+            seen[item.label] = true;
+            out.push(item);
         }
         return out;
     }
