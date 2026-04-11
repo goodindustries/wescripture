@@ -164,6 +164,52 @@ a.home-nav-reader:hover { background: rgba(0,0,0,0.06); color: var(--text); }
 .chapter-block { margin-bottom: 3em; }
 #sentinel { height: 60px; }
 
+/* Book / chapter intro lede (fills space below title; data from books.json or Donaldson) */
+.scripture h2.book-title { margin-top: 0.35em; margin-bottom: 0.1em; }
+.scripture p.chapter-num {
+    margin: 0.35em 0 0.15em;
+    font-size: 2.6em;
+    line-height: 1.05;
+}
+.reader-chapter-lede {
+    margin: 0.5em auto 1em;
+    max-width: 38em;
+    padding: 12px 14px 14px;
+    border: 1px solid rgba(139, 115, 85, 0.22);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.55);
+}
+.reader-chapter-lede-kicker {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: center;
+    margin-bottom: 8px;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+.reader-chapter-lede-body {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 0.98em;
+    line-height: 1.55;
+    font-style: italic;
+    text-align: center;
+    color: #4a3d32;
+    margin: 0;
+}
+.reader-chapter-lede-cite {
+    margin: 10px 0 0;
+    font-size: 10px;
+    line-height: 1.4;
+    color: var(--muted);
+    text-align: center;
+    font-style: normal;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+.reader-chapter-lede--pending { min-height: 40px; }
+.scripture div.verse:first-of-type { margin-top: 0.35em; }
+
 /* ── Highlight tooltip ── */
 #hl-tip {
     position: fixed; background: #2a1f14; color: #fff;
@@ -279,9 +325,6 @@ a.home-nav-reader:hover { background: rgba(0,0,0,0.06); color: var(--text); }
     grid-template-columns: 34px minmax(0, 1fr);
     column-gap: 14px;
     align-items: start;
-}
-.scripture div.verse:first-of-type {
-    margin-top: 0.8em;
 }
 .scripture span.verse-num {
     display: block;
@@ -2956,6 +2999,112 @@ function annotateChapterEntities(block) {
     });
 }
 
+function parseChapterIdForLede(id) {
+    var m = String(id || '').match(/^(.+)_(\d+)$/);
+    if (!m) return null;
+    return { slug: m[1], chapterNum: parseInt(m[2], 10) };
+}
+
+function testamentLabelForLede(t) {
+    var map = { OT: 'Old Testament', NT: 'New Testament', BOM: 'Book of Mormon', DC: 'Doctrine and Covenants', PGP: 'Pearl of Great Price' };
+    return map[t] || t || '';
+}
+
+function truncateLedeText(s, max) {
+    s = String(s || '').replace(/\s+/g, ' ').trim();
+    if (s.length <= max) return s;
+    return s.slice(0, max - 1).trim() + '\u2026';
+}
+
+function buildBookLedeFromExcerpt(book) {
+    var ex = (book && book.description_excerpts && book.description_excerpts[0]) || null;
+    if (!ex || !ex.text) return null;
+    return {
+        body: truncateLedeText(ex.text, 340),
+        cite: (ex.attr || '').trim()
+    };
+}
+
+function extractDonaldsonVerseOneLede(dj) {
+    if (!dj || !dj['1']) return null;
+    var v1 = dj['1'];
+    var raw = (v1.notes && v1.notes[0] && v1.notes[0].text) || '';
+    var cite = '';
+    if (!raw && v1.quotes && v1.quotes[0]) {
+        raw = v1.quotes[0].text || '';
+        cite = (v1.quotes[0].attr || '').trim();
+    }
+    if (!raw) return null;
+    raw = stripOriginalLanguageNotes(raw);
+    var hm = raw.match(/^(\d+:\d+(?:-\d+)?)\s+(.+)/);
+    if (hm) {
+        var rest = hm[2].trim();
+        var dot = rest.search(/[.!?](\s|$)/);
+        var title = dot > 0 ? rest.slice(0, dot) : rest;
+        return { kicker: hm[1], body: truncateLedeText(title, 300), cite: cite };
+    }
+    return { kicker: '', body: truncateLedeText(raw, 320), cite: cite };
+}
+
+function chapterLedeFallbackLine(parsed) {
+    var book = bookBySlug[parsed.slug];
+    if (!book) return 'Chapter ' + parsed.chapterNum;
+    return testamentLabelForLede(book.testament) + ' \u00b7 ' + book.name + ' \u00b7 Chapter ' + parsed.chapterNum;
+}
+
+function injectReaderChapterLede(block, chapterId) {
+    if (chapterId === 'title_page') return;
+    var scripture = block.querySelector('.scripture');
+    if (!scripture || scripture.querySelector('.reader-chapter-lede')) return;
+    var cn = scripture.querySelector('.chapter-num');
+    if (!cn) return;
+    var parsed = parseChapterIdForLede(chapterId);
+    if (!parsed) return;
+    var book = bookBySlug[parsed.slug];
+
+    if (parsed.chapterNum === 1 && book) {
+        var bl = buildBookLedeFromExcerpt(book);
+        if (bl) {
+            var vol = testamentLabelForLede(book.testament);
+            var html = '<div class="reader-chapter-lede reader-chapter-lede--book">'
+                + (vol ? '<div class="reader-chapter-lede-kicker">' + escapeHtml(vol) + '</div>' : '')
+                + '<p class="reader-chapter-lede-body">' + escapeHtml(bl.body) + '</p>'
+                + (bl.cite ? '<p class="reader-chapter-lede-cite">' + escapeHtml(bl.cite) + '</p>' : '')
+                + '</div>';
+            cn.insertAdjacentHTML('afterend', html);
+            return;
+        }
+    }
+
+    var pendingId = 'lede-pending-' + String(chapterId).replace(/[^a-z0-9_-]/gi, '_');
+    cn.insertAdjacentHTML('afterend', '<div class="reader-chapter-lede reader-chapter-lede--pending" id="' + pendingId + '"></div>');
+
+    fetch('./donaldson/' + chapterId + '.json')
+        .then(function(r) { return r.ok ? r.json() : null; })
+        .then(function(dj) {
+            var el = document.getElementById(pendingId);
+            if (!el) return;
+            var lede = extractDonaldsonVerseOneLede(dj);
+            var fb = chapterLedeFallbackLine(parsed);
+            var html;
+            if (lede && lede.body) {
+                html = '<div class="reader-chapter-lede reader-chapter-lede--chapter">'
+                    + (lede.kicker ? '<div class="reader-chapter-lede-kicker">' + escapeHtml(lede.kicker) + '</div>' : '')
+                    + '<p class="reader-chapter-lede-body">' + escapeHtml(lede.body) + '</p>'
+                    + (lede.cite ? '<p class="reader-chapter-lede-cite">' + escapeHtml(lede.cite) + '</p>' : '')
+                    + '</div>';
+            } else {
+                html = '<div class="reader-chapter-lede reader-chapter-lede--chapter"><p class="reader-chapter-lede-body">' + escapeHtml(fb) + '</p></div>';
+            }
+            el.outerHTML = html;
+        })
+        .catch(function() {
+            var el = document.getElementById(pendingId);
+            if (!el) return;
+            el.outerHTML = '<div class="reader-chapter-lede reader-chapter-lede--chapter"><p class="reader-chapter-lede-body">' + escapeHtml(chapterLedeFallbackLine(parsed)) + '</p></div>';
+        });
+}
+
 function loadChapter(id, prepend) {
     if (loadedChapters.has(id)) {
         return Promise.resolve();
@@ -2999,6 +3148,7 @@ function loadChapter(id, prepend) {
             setNextToLoad(id);
             markVerseDiscovery(block, id);
             annotateChapterEntities(block);
+            injectReaderChapterLede(block, id);
 
             // Start watching this block — notes load when it enters the viewport
             notesObserver.observe(block);
