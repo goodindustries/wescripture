@@ -1,0 +1,9 @@
+Self-hosted thumbnails from Wikimedia Commons for home “Browse standard works” tiles.
+See each file’s Commons page for license; all used here are public domain except as noted.
+
+kjv1611.jpg — File:KJV-King-James-Version-Bible-first-edition-title-page-1611.jpg (1611 title page; PD-US)
+bom.jpg — File:Book_of_Mormon_1830_edition_reprint.jpg (1830 ed.; PD)
+dc_132.png — File:Doctrine_and_Covenants_132.png (1891 Liverpool D&C p.463; PD-US)
+abraham_f1.png — File:Abraham_Facsimile_1.png (Book of Abraham facsimile; PD)
+
+OT and NT tiles reuse kjv1611.jpg with different color overlays.

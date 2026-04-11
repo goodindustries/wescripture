@@ -206,12 +206,29 @@
         return Math.abs(h);
     }
 
-    function bookCoverGradient(slug, testament) {
-        var bases = { OT: 32, NT: 218, BOM: 172, DC: 278, PGP: 102 };
-        var base = bases[testament] != null ? bases[testament] : 35;
-        var hue = (base + (strHash(slug) % 26)) % 360;
-        var hue2 = (hue + 22) % 360;
-        return 'linear-gradient(148deg,hsl(' + hue + ',42%,36%) 0%,hsl(' + hue2 + ',36%,20%) 100%)';
+    function bookCoverBackground(slug, testament) {
+        var imgs = {
+            OT: 'assets/corpus/covers/kjv1611.jpg',
+            NT: 'assets/corpus/covers/kjv1611.jpg',
+            BOM: 'assets/corpus/covers/bom.jpg',
+            DC: 'assets/corpus/covers/dc_132.png',
+            PGP: 'assets/corpus/covers/abraham_f1.png'
+        };
+        var img = imgs[testament] || imgs.OT;
+        var vol = {
+            OT: { h: 28, span: 12 },
+            NT: { h: 238, span: 14 },
+            BOM: { h: 206, span: 18 },
+            DC: { h: 142, span: 14 },
+            PGP: { h: 38, span: 16 }
+        };
+        var v = vol[testament] || vol.OT;
+        var n = strHash(slug) % (v.span + 1);
+        var h1 = (v.h + n) % 360;
+        var h2 = (v.h + 11 + (n % 9)) % 360;
+        var grad = 'linear-gradient(152deg,hsla(' + h1 + ',46%,14%,.88) 0%,hsla(' + h2 + ',42%,7%,.93) 100%)';
+        var u = dataFilePath(img).replace(/\\/g, '/');
+        return 'background-image:' + grad + ",url('" + u + "');background-size:cover,cover;background-position:center,center;";
     }
 
     function shortCoverLabel(b) {
@@ -255,9 +272,9 @@
             html += '<div class="corpus-book-grid">';
             list.forEach(function(b) {
                 var href = READER_HOME + '?jump=' + encodeURIComponent(b.jump);
-                var grad = bookCoverGradient(b.slug, b.testament);
+                var bg = bookCoverBackground(b.slug, b.testament);
                 html += '<a class="book-tile" href="' + escapeHtml(href) + '" data-evt="home_book_tile" data-book="' + escapeHtml(b.slug) + '">';
-                html += '<div class="book-tile-cover" style="background:' + grad + '"><span class="book-tile-abbr">' + escapeHtml(shortCoverLabel(b)) + '</span></div>';
+                html += '<div class="book-tile-cover" style="' + bg + '"><span class="book-tile-abbr">' + escapeHtml(shortCoverLabel(b)) + '</span></div>';
                 html += '<div class="book-tile-name">' + escapeHtml(b.label) + '</div></a>';
             });
             html += '</div></section>';
