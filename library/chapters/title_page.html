@@ -321,14 +321,151 @@
     margin-bottom: .7rem;
   }
 
+  /* ── Inline browse (TOC) panel — filled by index hydrateTitlePage ── */
+  .title-inline-nav-panel {
+    margin-top: 1.25rem;
+  }
+  .title-inline-nav-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .title-inline-nav-back {
+    flex-shrink: 0;
+    margin-top: 2px;
+    padding: 6px 12px;
+    font-size: .88rem;
+    font-weight: 600;
+    color: #9C7A4D;
+    background: #fcfaf6;
+    border: 1px solid rgba(156,122,77,0.28);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background .12s, border-color .12s;
+  }
+  .title-inline-nav-back:hover {
+    background: rgba(156,122,77,0.08);
+    border-color: rgba(156,122,77,0.45);
+  }
+  .title-inline-nav-back[hidden] {
+    display: none !important;
+  }
+  .title-inline-nav-kicker {
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #9C7A4D;
+    margin-bottom: 4px;
+  }
+  .title-inline-nav-h2 {
+    margin: 0 0 4px;
+    font: 700 1.45rem/1.15 "EB Garamond", Georgia, serif;
+    color: #32281f;
+  }
+  .title-inline-nav-subtitle {
+    margin: 0;
+    font-size: .95rem;
+    color: #776b5d;
+    line-height: 1.45;
+  }
+  .title-inline-nav-subtitle:empty {
+    display: none;
+  }
+  .title-inline-nav-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .title-inline-nav-grid.chapter-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .title-inline-tile {
+    border: 1px solid rgba(156,122,77,0.14);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.82);
+    padding: 12px 10px;
+    min-height: 78px;
+    cursor: pointer;
+    transition: transform .12s, border-color .12s, background .12s, box-shadow .12s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+    font: inherit;
+    text-align: left;
+    color: inherit;
+  }
+  .title-inline-tile:hover {
+    transform: translateY(-1px);
+    border-color: rgba(156,122,77,0.34);
+    background: rgba(156,122,77,0.08);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.04);
+  }
+  .title-inline-tile.active {
+    background: #9C7A4D;
+    border-color: #9C7A4D;
+    color: #fff;
+  }
+  .title-inline-tile-title {
+    font-size: 13px;
+    line-height: 1.2;
+    font-weight: 600;
+    color: #32281f;
+  }
+  .title-inline-tile.active .title-inline-tile-title { color: #fff; }
+  .title-inline-tile-meta {
+    font-size: 10px;
+    line-height: 1.2;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: #8a7c6a;
+  }
+  .title-inline-tile.active .title-inline-tile-meta { color: rgba(255,255,255,0.82); }
+  .title-inline-provenance {
+    font-size: 11px;
+    line-height: 1.55;
+    color: #776b5d;
+    padding: 2px 4px 12px;
+    grid-column: 1 / -1;
+  }
+  .title-inline-tile.chapter-tile {
+    min-height: 0;
+    aspect-ratio: 1 / 1;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .title-inline-tile.book-tile {
+    min-height: 58px;
+    padding: 10px 8px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .title-inline-tile.book-tile .title-inline-tile-title { font-size: 12.5px; }
+  .title-inline-tile.chapter-tile .title-inline-tile-title { font-size: 14px; }
+  .title-inline-tile.wide { grid-column: 1 / -1; }
+  .title-inline-placeholder {
+    margin: 0;
+    font-size: .95rem;
+    color: #8a7c6a;
+    line-height: 1.5;
+    grid-column: 1 / -1;
+  }
+
   @media (max-width: 980px) {
     .hero-grid { grid-template-columns: 1fr; }
+    .title-inline-nav-grid.chapter-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   }
   @media (max-width: 760px) {
     .title-shell { padding: 0 14px 36px; }
     .corpus-table { font-size: .88rem; }
     .bar-row { grid-template-columns: 100px 1fr 42px; }
     .collection-grid { grid-template-columns: 1fr; }
+    .title-inline-nav-grid.chapter-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
 </style>
 <div class="title-shell">
@@ -411,10 +548,23 @@
       </div>
 </section>
 </div>
+
+<section id="title-inline-nav" class="panel title-inline-nav-panel" aria-label="Browse library">
+<div class="title-inline-nav-head">
+<button type="button" id="title-inline-nav-back" class="title-inline-nav-back" hidden aria-label="Back">← Back</button>
+<div class="title-inline-nav-head-copy">
+<div class="title-inline-nav-kicker">Browse</div>
+<h2 id="title-inline-nav-title" class="title-inline-nav-h2">Library browser</h2>
+<p id="title-inline-nav-subtitle" class="title-inline-nav-subtitle"></p>
+</div>
+</div>
+<div id="title-inline-nav-grid" class="title-inline-nav-grid"></div>
+</section>
+
 <!-- Collections by category -->
 <section class="collections-section panel" style="margin-top:20px;">
 <h2>Collections</h2>
-<p>Ten source families organized by type. Click any tile to open that collection in the reader.</p>
+<p>Ten source families organized by type. Click a tile to browse that collection in the panel above.</p>
 <div class="collection-category">
 <div class="collection-category-label">Scripture</div>
 <div class="collection-grid">
@@ -592,7 +742,7 @@
         event.preventDefault();
         var key = link.getAttribute('data-open-shelf');
         if (window.parent && typeof window.parent.postMessage === 'function') {
-          window.parent.postMessage({ type: 'title-page-open-shelf', key: key }, '*');
+          window.parent.postMessage({ type: 'title-page-inline-shelf', key: key }, '*');
         }
       });
     });
@@ -603,7 +753,7 @@
         event.preventDefault();
         var collectionId = link.getAttribute('data-open-shelf-collection');
         if (window.parent && typeof window.parent.postMessage === 'function') {
-          window.parent.postMessage({ type: 'title-page-open-collection', collectionId: collectionId }, '*');
+          window.parent.postMessage({ type: 'title-page-inline-collection', collectionId: collectionId }, '*');
         }
       });
     });
