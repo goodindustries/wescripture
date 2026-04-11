@@ -128,9 +128,37 @@
         }
     }
 
-    function pushUrl(u, evtName, evtData) {
-        safeGtag('event', evtName, Object.assign({ page: 'home' }, evtData || {}));
-        window.location.href = u;
+    function getReaderIframe() {
+        return document.getElementById('home-reader');
+    }
+
+    function postReader(msg) {
+        var iframe = getReaderIframe();
+        if (!iframe || !iframe.contentWindow) return;
+        try {
+            iframe.contentWindow.postMessage(msg, '*');
+        } catch (e) {}
+    }
+
+    function scrollReaderIntoView() {
+        var iframe = getReaderIframe();
+        if (!iframe) return;
+        try {
+            iframe.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } catch (e) {}
+    }
+
+    function navigateReaderTo(href) {
+        var iframe = getReaderIframe();
+        if (!iframe) {
+            window.location.href = href;
+            return;
+        }
+        var resolved = href;
+        try {
+            resolved = new URL(href, window.location.href).href;
+        } catch (e2) {}
+        iframe.src = resolved;
     }
 
     function renderContinueReading() {
@@ -164,7 +192,10 @@
             var a = e.target.closest('a.chip');
             if (!a) return;
             e.preventDefault();
-            pushUrl(a.getAttribute('href'), 'home_continue_reading', { target: a.textContent.trim().slice(0, 80) });
+            var href = a.getAttribute('href');
+            safeGtag('event', 'home_continue_reading', { page: 'home', target: a.textContent.trim().slice(0, 80) });
+            navigateReaderTo(href);
+            scrollReaderIntoView();
         });
     }
 
@@ -295,6 +326,19 @@
         root.setAttribute('aria-busy', 'false');
     }
 
+    function wireCorpusBookTilesToReader() {
+        var root = document.getElementById('corpus-root');
+        if (!root || root.dataset.readerBound) return;
+        root.dataset.readerBound = '1';
+        root.addEventListener('click', function(e) {
+            var a = e.target.closest('a.book-tile');
+            if (!a) return;
+            e.preventDefault();
+            navigateReaderTo(a.getAttribute('href'));
+            scrollReaderIntoView();
+        });
+    }
+
     function renderLibraryShelf() {
         var shelf = document.getElementById('library-shelf');
         if (!shelf) return;
@@ -329,6 +373,24 @@
             });
     }
 
+    function wireShelfToReader() {
+        var shelf = document.getElementById('library-shelf');
+        if (!shelf || shelf.dataset.readerBound) return;
+        shelf.dataset.readerBound = '1';
+        shelf.addEventListener('click', function(e) {
+            var a = e.target.closest('a.shelf-tile');
+            if (!a) return;
+            e.preventDefault();
+            var col = a.getAttribute('data-collection');
+            if (col === 'scriptures') {
+                postReader({ type: 'title-page-open-shelf', key: 'scriptures' });
+            } else {
+                postReader({ type: 'title-page-open-collection', collectionId: col });
+            }
+            scrollReaderIntoView();
+        });
+    }
+
     function wireLibraryBooksDetails() {
         var det = document.getElementById('library-books-details');
         if (!det) return;
@@ -340,6 +402,25 @@
             if (root) root.setAttribute('aria-busy', 'true');
             loadBooksSuggest().then(function() { renderCorpusBooks(); });
         });
+    }
+
+    function wireHomeReaderChrome() {
+        var toc = document.getElementById('home-open-scripture-toc');
+        if (toc) {
+            toc.addEventListener('click', function(e) {
+                e.preventDefault();
+                postReader({ type: 'title-page-open-shelf', key: 'scriptures' });
+                scrollReaderIntoView();
+            });
+        }
+        var gc = document.getElementById('home-tool-gc');
+        if (gc && gc.getAttribute('data-home-open-collection')) {
+            gc.addEventListener('click', function(e) {
+                e.preventDefault();
+                postReader({ type: 'title-page-open-collection', collectionId: gc.getAttribute('data-home-open-collection') });
+                scrollReaderIntoView();
+            });
+        }
     }
 
     function wireEvents() {
@@ -354,6 +435,9 @@
 
     renderContinueReading();
     wireEvents();
+    wireShelfToReader();
+    wireCorpusBookTilesToReader();
+    wireHomeReaderChrome();
     renderLibraryShelf();
     wireLibraryBooksDetails();
 })();
