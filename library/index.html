@@ -729,6 +729,19 @@ a.home-nav-reader:hover { background: rgba(0,0,0,0.06); color: var(--text); }
 .word-english  { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
 .word-original { font-size: 13px; font-family: 'EB Garamond', Georgia, serif; color: var(--muted); margin-bottom: 8px; }
 .word-meaning  { font-size: 14px; color: var(--text); line-height: 1.6; }
+.word-kw-block { margin-top: 10px; }
+.word-kw-block:first-of-type { margin-top: 6px; }
+.word-kw-label {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+.word-kw-text { font-size: 14px; line-height: 1.6; color: var(--text); }
 /* Key words collapse/expand */
 .word-cards-wrap .word-card:nth-child(n+3) { display: none; }
 .word-cards-wrap.expanded .word-card { display: block; }
@@ -2628,51 +2641,22 @@ function openVerseDiscovery(ref) {
         }
     }
 
-    // ── Key words: Donaldson (injection, verse-matched) → Strong's (scholarly source) ──
+    // ── Key words: Donaldson + Strong's (merged, deduped; Strong's numbers never shown) ──
     var strongsEntries = (strongsIndexCache[chapterId] || {})[vnum] || [];
-    var showedKeyWords = false;
-    if (donaWords.length) {
-        showedKeyWords = true;
-        html += '<div class="panel-section">Key Words</div>';
-        html += '<div class="word-cards-wrap' + (donaWords.length <= 2 ? ' expanded' : '') + '">';
-        donaWords.forEach(function(w) {
-            var kwBody = stripOriginalLanguageNotes(w.plain || w.meaning || '');
-            html += '<div class="word-card">'
-                + '<div class="word-english">' + escapeHtml(w.word || '') + '</div>'
-                + '<div class="word-meaning">' + makeExpandable(kwBody, 'note-preview', 'note-overflow', 'note-more') + '</div>'
-                + '</div>';
+    var mergedKw = mergeKeyWordsForVerse(donaWords, strongsEntries, verseText);
+    var showedKeyWords = mergedKw.length > 0;
+    if (showedKeyWords) {
+        html += '<div class="panel-section">Key words</div>';
+        html += '<div class="word-cards-wrap' + (mergedKw.length <= 2 ? ' expanded' : '') + '">';
+        mergedKw.forEach(function(item) {
+            if (item.kind === 'dona') html += htmlKeyWordCardDona(item.w);
+            else html += htmlKeyWordCardStrongs(item.entry);
         });
-        if (donaWords.length > 2) {
-            var extra = donaWords.length - 2;
-            html += '<button class="word-more-btn" onclick="expandWordCards(this)">Show ' + extra + ' more word' + (extra > 1 ? 's' : '') + ' \u2192</button>';
+        if (mergedKw.length > 2) {
+            var extraK = mergedKw.length - 2;
+            html += '<button class="word-more-btn" onclick="expandWordCards(this)">Show ' + extraK + ' more word' + (extraK > 1 ? 's' : '') + ' \u2192</button>';
         }
         html += '</div>';
-    } else if (strongsEntries.length) {
-        var sFiltered = strongsEntries.filter(function(e) { return (e.lm || e.xl) && (strongsPlain[e.sn] || strongsCleanDef(e.gl, e.kj)); });
-        if (sFiltered.length) showedKeyWords = true;
-        if (!sFiltered.length) {
-            /* no key words block */
-        } else {
-        html += '<div class="panel-section">Key Words</div>';
-        html += '<div class="word-cards-wrap' + (sFiltered.length <= 2 ? ' expanded' : '') + '">';
-        sFiltered.forEach(function(entry) {
-            var sn     = entry.sn || '';
-            var plain  = sn && strongsPlain[sn];
-            var def    = plain || strongsReaderDef(entry);
-            var root   = plain ? '' : strongsRoot(entry.dv || '');
-            var engLabel = strongsKeyWordLabel(entry);
-            var defShow = stripOriginalLanguageNotes(def + (root ? ' (from ' + root + ')' : ''));
-            html += '<div class="word-card">'
-                + '<div class="word-english">' + escapeHtml(engLabel || sn) + '</div>'
-                + '<div class="word-meaning">' + makeExpandable(defShow, 'note-preview', 'note-overflow', 'note-more') + '</div>'
-                + '</div>';
-        });
-        if (sFiltered.length > 2) {
-            var extra2 = sFiltered.length - 2;
-            html += '<button class="word-more-btn" onclick="expandWordCards(this)">Show ' + extra2 + ' more word' + (extra2 > 1 ? 's' : '') + ' \u2192</button>';
-        }
-        html += '</div>';
-        }
     }
 
     var scriptureEdgesEarly = chapterGraphEchoes(chapterId, vnum);
@@ -3744,8 +3728,122 @@ function stripOriginalLanguageNotes(s) {
     if (!s) return '';
     return String(s)
         .replace(/\s*\[(Greek|Hebrew|Aramaic|Latin):[^\]]*\]/gi, '')
+        .replace(/\b[HG]\d{2,5}\b/gi, '')
+        .replace(/\(\s*[HG]\d{2,5}[^)]*\)/g, '')
         .replace(/\s{2,}/g, ' ')
         .trim();
+}
+
+/** Dedupe key-word headwords (English or script). */
+function normalizeKeywordKey(s) {
+    return String(s || '').toLowerCase().replace(/[^a-z0-9\u0590-\u05FF\u0370-\u03FF\u1F00-\u1FFF]+/g, '').slice(0, 40);
+}
+
+/** Pull Hebrew/Greek script from a note for display under the English headword. */
+function extractScriptFromNote(s) {
+    var m = String(s || '').match(/[\u0590-\u05FF\u0370-\u03FF\u1F00-\u1FFF]+/g);
+    return m ? m.filter(function(t, i, a) { return a.indexOf(t) === i; }).join(' · ') : '';
+}
+
+/**
+ * Merge Donaldson lemmas (priority) with ranked Strong's rows; hide duplicate headwords.
+ * Strong's numbers stay internal — not shown in the UI.
+ */
+function mergeKeyWordsForVerse(donaWords, strongsEntries, verseText) {
+    var out = [];
+    var seen = {};
+    function mark(k) {
+        var nk = normalizeKeywordKey(k);
+        if (nk) seen[nk] = true;
+    }
+    function has(k) {
+        return !!seen[normalizeKeywordKey(k)];
+    }
+    (donaWords || []).forEach(function(w) {
+        var t = (w.word || '').trim();
+        if (t) mark(t);
+        out.push({ kind: 'dona', w: w });
+    });
+    var sList = (strongsEntries || []).filter(function(e) {
+        return (e.lm || e.xl) && (strongsPlain[e.sn] || strongsCleanDef(e.gl, e.kj));
+    });
+    sList.sort(function(a, b) {
+        return scoreStrongsEntry(verseText, '', b) - scoreStrongsEntry(verseText, '', a);
+    });
+    sList.forEach(function(entry) {
+        var lab = strongsKeyWordLabel(entry);
+        if (!lab) return;
+        if (has(lab)) return;
+        mark(lab);
+        out.push({ kind: 'strongs', entry: entry });
+    });
+    return out.slice(0, 10);
+}
+
+function renderKeyWordLayer(label, text) {
+    if (!text) return '';
+    var t = String(text).trim();
+    if (!t) return '';
+    return '<div class="word-kw-block"><span class="word-kw-label">' + escapeHtml(label) + '</span>'
+        + '<div class="word-kw-text">' + escapeHtml(t) + '</div></div>';
+}
+
+/** Lay-oriented card from Donaldson key-word row (no Strong's numbers in copy). */
+function htmlKeyWordCardDona(w) {
+    var title = (w.word || '').trim() || 'Key term';
+    var raw = w.plain || w.meaning || '';
+    var script = extractScriptFromNote(raw) || '';
+    var sense = stripOriginalLanguageNotes(raw);
+    if (!sense && script) sense = 'See original-language form above; nuance is developed in verse commentary.';
+    var inner = '<div class="word-english">' + escapeHtml(title) + '</div>';
+    if (script) inner += '<div class="word-original" lang="und" dir="auto">' + escapeHtml(script) + '</div>';
+    inner += '<div class="word-kw-block"><span class="word-kw-label">Sense</span><div class="word-kw-text">'
+        + makeExpandable(sense, 'note-preview', 'note-overflow', 'note-more') + '</div></div>';
+    return '<div class="word-card">' + inner + '</div>';
+}
+
+/** Strong's-backed card: definitions only — lemma script optional, never show H/G numbers. */
+function htmlKeyWordCardStrongs(entry) {
+    var title = strongsKeyWordLabel(entry) || 'Term';
+    var script = ((entry.lm || entry.xl || '') + '').trim();
+    var sense = stripOriginalLanguageNotes(strongsReaderDef(entry));
+    var root = strongsRoot(entry.dv || '');
+    var gl = entry.gl || '';
+    var biblical = '';
+    if (gl) {
+        var clauses = gl.split(';').map(function(x) { return stripOriginalLanguageNotes(x).trim(); }).filter(Boolean);
+        for (var i = 0; i < clauses.length; i++) {
+            var c = clauses[i];
+            if (/^figuratively/i.test(c)) continue;
+            if (/^by Hebraism/i.test(c)) continue;
+            if (c.length > 12) { biblical = c; break; }
+        }
+    }
+    if (!biblical && entry.kj) {
+        var kjClean = strongsCleanDef('', entry.kj);
+        if (kjClean) biblical = 'Often translated as: ' + kjClean + '.';
+    }
+    var figurative = '';
+    if (gl && /figuratively/i.test(gl)) {
+        var fm = gl.match(/figuratively[^;]+/i);
+        if (fm) figurative = stripOriginalLanguageNotes(fm[0]);
+    }
+    var etym = '';
+    if (root) {
+        etym = 'Root form: ' + root + '.';
+    } else if (entry.dv) {
+        var dvLine = stripOriginalLanguageNotes(entry.dv);
+        if (dvLine.length > 10 && dvLine.length < 280 && !/^of uncertain affinity/i.test(dvLine)) {
+            etym = dvLine;
+        }
+    }
+    var inner = '<div class="word-english">' + escapeHtml(title) + '</div>';
+    if (script) inner += '<div class="word-original" lang="und" dir="auto">' + escapeHtml(script) + '</div>';
+    inner += renderKeyWordLayer('Sense', sense);
+    inner += renderKeyWordLayer('Etymology', etym);
+    inner += renderKeyWordLayer('Biblical usage', biblical);
+    inner += renderKeyWordLayer('Figurative / symbolic', figurative);
+    return '<div class="word-card">' + inner + '</div>';
 }
 
 function escapeAttr(str) {
@@ -4310,20 +4408,17 @@ function renderWordStudy(wordText, entries) {
     }
     host.hidden = false;
     host.innerHTML =
-        '<div class="ch-study-title">Original Language</div>' +
+        '<div class="ch-study-title">Original language</div>' +
         entries.map(function(entry) {
-            var script = entry.lm || entry.xl || '';  // Greek/Hebrew character
-            var def    = strongsReaderDef(entry);
+            var script = entry.lm || entry.xl || '';
+            var def    = stripOriginalLanguageNotes(strongsReaderDef(entry));
             var root   = strongsRoot(entry.dv || '');
-            var sn     = entry.sn || '';
 
             var html = '<div class="ch-study-entry">';
             if (script) html += '<div style="font-size:22px;font-weight:500;margin-bottom:4px;font-family:serif">'
-                + escapeHtml(script)
-                + (sn ? '<span style="font-size:10px;font-weight:400;color:var(--muted);margin-left:8px;vertical-align:middle">Strong\'s ' + escapeHtml(sn) + '</span>' : '')
-                + '</div>';
+                + escapeHtml(script) + '</div>';
             if (def) html += '<div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:3px">' + escapeHtml(def) + '</div>';
-            if (root) html += '<div style="font-size:11px;color:var(--muted)">from ' + escapeHtml(root) + '</div>';
+            if (root) html += '<div style="font-size:11px;color:var(--muted)">Root: ' + escapeHtml(root) + '</div>';
             html += '</div>';
             return html;
         }).join('');
