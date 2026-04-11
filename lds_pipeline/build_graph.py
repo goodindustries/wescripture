@@ -133,7 +133,97 @@ def load_source_paragraphs(doc_id: str) -> list[str]:
     return paragraphs
 
 
-def resolve_source_doc_id(src: str, label: str) -> Optional[str]:
+def _label_slug_after_colon(label: str) -> Optional[str]:
+    """Text after 'Collection: ' in correlation labels (e.g. millennial_star_1840_1859)."""
+    if not label:
+        return None
+    s = label.strip()
+    m = re.match(r"^[^:]+:\s*(.+)$", s)
+    if m:
+        return m.group(1).strip()
+    return None
+
+
+def _prefix_doc_candidates(src: str, slug: str, docs: dict) -> list[str]:
+    """Doc ids whose id tail extends a coarse slug prefix (merged OCR / correlation stems)."""
+    slug = (slug or "").strip()
+    if not slug:
+        return []
+    prefix = f"{src}:"
+    out: list[str] = []
+    for did in docs:
+        if not did.startswith(prefix):
+            continue
+        rest = did[len(prefix) :]
+        if rest.startswith(slug):
+            out.append(did)
+        elif len(rest) < len(slug) and slug.startswith(rest):
+            out.append(did)
+    return out
+
+
+def _load_para_texts_truncated(doc_id: str, max_chars: int = 65536) -> list[str]:
+    """First paragraphs from start of HTML only — fast path for doc disambiguation."""
+    docs, _ = load_source_catalog()
+    meta = docs.get(doc_id)
+    if not meta:
+        return []
+    path = LIBRARY / meta['href']
+    if not path.exists():
+        return []
+    html_text = path.read_text(encoding='utf-8', errors='replace')
+    if len(html_text) > max_chars:
+        html_text = html_text[:max_chars]
+    paragraphs: list[str] = []
+    for raw in re.findall(r'<p[^>]*class="[^"]*source-para[^"]*"[^>]*>(.*?)</p>', html_text, re.S | re.I):
+        text = re.sub(r'<[^>]+>', ' ', raw)
+        text = re.sub(r'\s+', ' ', html.unescape(text)).strip()
+        paragraphs.append(text)
+    return paragraphs
+
+
+def _excerpt_fit_score(doc_id: str, excerpt: str) -> tuple[int, Optional[int]]:
+    """Return (overlap_score, best_para_index_1based) for ranking candidate docs."""
+    paragraphs = _load_para_texts_truncated(doc_id)
+    if not paragraphs:
+        return 0, None
+    target = normalize_excerpt(excerpt)
+    if not target:
+        return 0, None
+    target_words = [w for w in target.split() if len(w) > 2][:22]
+    if not target_words:
+        return 0, None
+    best_score = 0
+    best_idx: Optional[int] = None
+    for idx, para in enumerate(paragraphs, start=1):
+        hay = normalize_excerpt(para)
+        if not hay:
+            continue
+        if target[:200] and target[:200] in hay:
+            return max(len(target_words), 12), idx
+        overlap = sum(1 for w in target_words if w in hay)
+        if overlap > best_score:
+            best_score = overlap
+            best_idx = idx
+    return best_score, best_idx
+
+
+def _pick_best_doc_by_excerpt(candidates: list[str], excerpt: str) -> Optional[str]:
+    if not candidates or not (excerpt or "").strip():
+        return candidates[0] if len(candidates) == 1 else None
+    best_id: Optional[str] = None
+    best_s = -1
+    for did in candidates:
+        s, _ = _excerpt_fit_score(did, excerpt)
+        if s > best_s:
+            best_s = s
+            best_id = did
+    if best_s >= 3:
+        return best_id
+    return None
+
+
+def resolve_source_doc_id(src: str, label: str, excerpt: Optional[str] = None) -> Optional[str]:
     docs, labels = load_source_catalog()
     exact = labels.get(label, [])
     if len(exact) == 1:
@@ -154,13 +244,12 @@ def resolve_source_doc_id(src: str, label: str) -> Optional[str]:
                 return candidate
 
     if src == 'general_conference':
-        # Common graph label form: "GC 1971/04 — Bishop John H. Vandenberg"
+        # Common graph label form: "GC 1974/04 — Elder Howard W. Hunter"
         m = re.match(r"GC\s+(\d{4})/(\d{2})\s*[—\-]\s*(.+)$", (label or "").strip())
         if m:
             year = m.group(1)
             mo = m.group(2)
             speaker = m.group(3).strip().lower()
-            # Match against source catalog metadata: speaker + session label
             session_label = f"{'April' if mo == '04' else 'October'} {year}"
             for meta in docs.values():
                 if meta.get("collection") != "general_conference":
@@ -168,13 +257,37 @@ def resolve_source_doc_id(src: str, label: str) -> Optional[str]:
                 meta_str = (meta.get("meta") or "").lower()
                 if session_label.lower() in meta_str and speaker and speaker in meta_str:
                     return meta.get("id")
-        # Fallbacks
         for candidate in exact:
             if candidate.get('collection') == 'general_conference':
                 return candidate.get('id')
         for meta in docs.values():
             if meta.get('collection') == 'general_conference' and meta.get('label') == label:
                 return meta.get('id')
+
+    # ── Collection slug → source_toc doc id (periodicals, gutenberg, church_fathers, JSP, pioneer) ──
+    slug = _label_slug_after_colon(label or "")
+    if slug:
+        direct = f"{src}:{slug}"
+        if direct in docs:
+            return direct
+        cands = _prefix_doc_candidates(src, slug, docs)
+        if not cands:
+            for n in (72, 56, 48, 40, 32):
+                if len(slug) > n:
+                    cands = _prefix_doc_candidates(src, slug[:n], docs)
+                    if cands:
+                        break
+        # Cap disambiguation work (large periodical corpora share one OCR stem).
+        MAX_CANDS = 14
+        if len(cands) > MAX_CANDS:
+            cands = sorted(cands)[:MAX_CANDS]
+        if len(cands) == 1:
+            return cands[0]
+        if len(cands) > 1 and excerpt:
+            picked = _pick_best_doc_by_excerpt(cands, excerpt)
+            if picked:
+                return picked
+            return cands[0]
 
     return None
 
@@ -208,11 +321,15 @@ def resolve_source_paragraph(doc_id: str, excerpt: str) -> Optional[int]:
 
 
 def resolve_source_target(src: str, label: str, excerpt: str) -> Optional[dict]:
-    doc_id = resolve_source_doc_id(src, label)
+    doc_id = resolve_source_doc_id(src, label, excerpt)
     if not doc_id:
         return None
-    target = {'d': doc_id}
+    target: dict = {'d': doc_id}
     para_idx = resolve_source_paragraph(doc_id, excerpt)
+    if para_idx is None and excerpt:
+        sc, loose = _excerpt_fit_score(doc_id, excerpt)
+        if loose is not None and sc >= 2:
+            para_idx = loose
     if para_idx is not None:
         target['p'] = para_idx
     return target
@@ -362,8 +479,8 @@ def main():
                 encoding='utf-8',
             )
             written += 1
-            if written % 100 == 0:
-                print(f'  {written} written...')
+            if written % 50 == 0:
+                print(f'  {written} written...', flush=True)
 
         print(f'\nDone. {written} graph files enriched, {len(graph_files) - written} unchanged.')
         return

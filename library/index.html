@@ -889,6 +889,27 @@ a.home-nav-reader:hover { background: rgba(0,0,0,0.06); color: var(--text); }
     font-size: 16px; line-height: 1.75; color: var(--text); font-style: italic;
     padding-left: 16px; border-left: 2px solid rgba(74,103,65,0.3);
 }
+.scrip-card--jump:hover { background: rgba(74,103,65,0.06); }
+.source-cites {
+    margin: -4px 0 12px 0;
+    padding: 0 28px 0 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 10px;
+}
+.source-cite-link {
+    font: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.source-cite-link:hover { color: var(--text); }
 
 /* ── Graph panel ── */
 #graph-panel {
@@ -1086,6 +1107,7 @@ var tocTree = { front: null, volumes: [], sources: [] };
 var chapterMeta = {};
 var sourceMeta = {};
 var sourceLinks    = {};   // doc_id → {para_idx → [{book,ch,v,score,ref}]}
+var sourceCitations = {};  // doc_id → { para_1based → [{ chapterId, v, ch, raw }] }
 var verseDiscovery = {};   // "Book Ch:V" → [{tradition_pair, source_label, source_text, ...}]
 var donaldsonNotes = {};   // chapterId → { "verseNum": [para, ...] }
 var chapterGraphCache = {}; // chapterId → parsed graph data
@@ -1175,13 +1197,34 @@ function recordRecentScripture(chapterId, verseNum) {
 }
 function parseVerseRefForStudy(ref) {
     if (!ref || typeof ref !== 'string') return null;
-    var m = ref.trim().match(/^(.+?)\s+(\d+):(\d+)\s*$/);
+    var t = ref.trim();
+    var dc = t.match(/^D\s*&\s*C\s+(\d+)\s*:\s*(\d+)/i) || t.match(/^Doctrine\s+and\s+Covenants\s+(\d+)\s*:\s*(\d+)/i);
+    if (dc) {
+        return {
+            chapterId: 'doctrine_and_covenants_' + parseInt(dc[1], 10),
+            verse: parseInt(dc[2], 10),
+            ref: t
+        };
+    }
+    var m = t.match(/^(.+?)\s+(\d+):(\d+)\s*$/);
     if (!m) return null;
-    var bookSlug = m[1].toLowerCase().replace(/ /g, '_');
+    var bookPart = m[1].trim();
+    var bookSlug = bookPart.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
+    var chNum = parseInt(m[2], 10);
+    var verse = parseInt(m[3], 10);
+    if (bookBySlug[bookSlug]) {
+        return { chapterId: bookSlug + '_' + chNum, verse: verse, ref: t };
+    }
+    for (var s in bookBySlug) {
+        var b = bookBySlug[s];
+        if (b && b.name && b.name.toLowerCase() === bookPart.toLowerCase()) {
+            return { chapterId: s + '_' + chNum, verse: verse, ref: t };
+        }
+    }
     return {
-        chapterId: bookSlug + '_' + parseInt(m[2], 10),
-        verse: parseInt(m[3], 10),
-        ref: ref.trim()
+        chapterId: bookSlug + '_' + chNum,
+        verse: verse,
+        ref: t
     };
 }
 function verseRefFromUi() {
@@ -1441,6 +1484,8 @@ Promise.all([
         // Load strongs_plain in background — non-blocking, enriches word cards when ready
         fetch('./strongs_plain.json').then(function(r) { return r.ok ? r.json() : {}; })
             .then(function(d) { strongsPlain = d || {}; }).catch(function() {});
+        fetch('./source_citations.json').then(function(r) { return r.ok ? r.json() : {}; })
+            .then(function(d) { sourceCitations = d || {}; }).catch(function() {});
         entityIndex    = results[4] || {};
         entityList     = results[5] || [];
         entityList.forEach(function(p) { entityById[p.id] = p; });
@@ -1727,10 +1772,9 @@ function renderTocView() {
 
 function getTitlePageData() {
     if (!titlePageDataPromise) {
-        titlePageDataPromise = Promise.all([
-            fetch('./source-dashboard.json').then(function(r) { return r.json(); }).catch(function() { return null; }),
-            fetch('./project-progress.json').then(function(r) { return r.json(); }).catch(function() { return null; })
-        ]);
+        titlePageDataPromise = fetch('./source-dashboard.json')
+            .then(function(r) { return r.json(); })
+            .catch(function() { return null; });
     }
     return titlePageDataPromise;
 }
@@ -1748,10 +1792,8 @@ function hydrateTitlePage() {
         return Number(n || 0).toLocaleString();
     }
 
-    getTitlePageData().then(function(payloads) {
-        var dashboard = payloads[0] || {};
-        var progress = payloads[1] || {};
-        var t = dashboard.totals || {};
+    getTitlePageData().then(function(dashboard) {
+        var t = (dashboard && dashboard.totals) || {};
 
         setText('metric-docs', fmt(t.docs));
         setText('metric-doc-coverage', (t.doc_coverage_pct || 0) + '%');
@@ -1760,29 +1802,6 @@ function hydrateTitlePage() {
         setText('metric-linked-pct', (t.linked_pct || 0) + '% of paragraphs now recursively linked');
         setText('metric-collections', fmt(t.collections));
         setText('metric-annotated', (t.annotated_pct || 0) + '%');
-
-        var bars = root.querySelector('#agent-bars');
-        var recent = root.querySelector('#recent-completions');
-        if (bars && progress.agents) {
-            var max = 1;
-            progress.agents.forEach(function(row) { max = Math.max(max, row.completed || 0); });
-            bars.innerHTML = progress.agents.slice(0, 8).map(function(row) {
-                var pct = Math.max(8, Math.round(((row.completed || 0) / max) * 100));
-                return '<div class="bar-row">'
-                    + '<div class="bar-label">' + escapeHtml(row.agent || 'Unknown') + '</div>'
-                    + '<div class="bar-track"><div class="bar-fill" style="width:' + pct + '%"></div></div>'
-                    + '<div class="bar-value">' + (row.completed || 0) + '</div>'
-                    + '</div>';
-            }).join('');
-        }
-        if (recent && progress.recent_completions) {
-            recent.innerHTML = progress.recent_completions.slice(0, 6).map(function(row) {
-                return '<li class="recent-item">'
-                    + '<div class="recent-meta"><span>' + escapeHtml(row.agent || 'Unknown') + '</span><span>' + escapeHtml(row.commit || 'no commit') + '</span><span>' + escapeHtml(row.ts || '') + '</span></div>'
-                    + '<div class="recent-summary">' + escapeHtml(row.summary || row.task_id || 'Completed work') + '</div>'
-                    + '</li>';
-            }).join('');
-        }
     });
 
     root.querySelectorAll('[data-open-shelf]').forEach(function(link) {
@@ -2077,7 +2096,7 @@ function markVerseDiscovery(block, chapterId) {
         var vNum    = verseEl.id.replace('v', '');
         var ref     = bookName + ' ' + chNum + ':' + vNum;
         var entries = (verseDiscovery[ref] || []).filter(function(e) {
-            return e.source !== 'millennial_star' && !discIsRepeat(e.source_text);
+            return !discIsRepeat(e.source_text);
         });
         var donaEntry = (donaldsonNotes[chapterId] && donaldsonNotes[chapterId][vNum]) || {};
         var donaParas = (donaEntry.notes || []).concat(donaEntry.words || []).concat(donaEntry.quotes || []);
@@ -2710,7 +2729,6 @@ function openVerseDiscovery(ref) {
     var rawEntries = verseDiscovery[ref] || [];
     // Filter out chapter-level noise; dedupe by source doc + paragraph
     var entries = dedupeVerseDiscoveryEntries(rawEntries.filter(function(e) {
-        if (e.source === 'millennial_star') return false;
         return !discIsRepeat(e.source_text);
     }));
 
@@ -2817,7 +2835,12 @@ function openVerseDiscovery(ref) {
         html += '<div class="panel-section">Cross References</div>';
         html += '<div class="verse-panel-cards' + (scriptureEdges.length <= 3 ? ' expanded' : '') + '">';
         scriptureEdges.forEach(function(s) {
-            html += '<div class="scrip-card">'
+            var jr = parseVerseRefForStudy(s.ref);
+            html += '<div class="scrip-card' + (jr && chapterMeta[jr.chapterId] ? ' scrip-card--jump' : '') + '"'
+                + (jr && chapterMeta[jr.chapterId]
+                    ? ' data-chapter-id="' + escapeAttr(jr.chapterId) + '" data-v="' + jr.verse + '"'
+                    : '')
+                + ' style="' + (jr && chapterMeta[jr.chapterId] ? 'cursor:pointer;' : '') + '">'
                 + '<div class="scrip-ref">' + escapeHtml(s.ref) + '</div>'
                 + '<div class="scrip-text">' + escapeHtml(s.text) + '</div>'
                 + '</div>';
@@ -2845,6 +2868,16 @@ function openVerseDiscovery(ref) {
             if (meta) {
                 loadSourceDocument(e.source_doc_id, meta.href, { focusPara: e.source_para });
             }
+        });
+    });
+    panelBody.querySelectorAll('.scrip-card--jump').forEach(function(row) {
+        row.addEventListener('click', function() {
+            var cid = row.dataset.chapterId;
+            var v = parseInt(row.dataset.v, 10);
+            if (!cid || !chapterMeta[cid]) return;
+            document.getElementById('channel').classList.remove('open');
+            channelOpen = false;
+            jumpTo(cid, v);
         });
     });
 }
@@ -2924,6 +2957,39 @@ function openSourceParaDiscovery(block, paraNode) {
     });
 }
 
+function injectSourceCitationLinks(block, docId) {
+    var idx = sourceCitations && sourceCitations[docId];
+    if (!idx || !block) return;
+    var paras = block.querySelectorAll('p.source-para');
+    paras.forEach(function(p, i) {
+        var n = String(i + 1);
+        var cites = idx[n];
+        if (!cites || !cites.length) return;
+        var nav = document.createElement('div');
+        nav.className = 'source-cites';
+        nav.setAttribute('aria-label', 'Scripture references');
+        cites.forEach(function(c) {
+            if (!c.chapterId || !chapterMeta[c.chapterId]) return;
+            var a = document.createElement('button');
+            a.type = 'button';
+            a.className = 'source-cite-link';
+            a.textContent = c.raw || (c.chapterId + ':' + c.v);
+            a.dataset.chapterId = c.chapterId;
+            a.dataset.v = String(c.v);
+            nav.appendChild(a);
+        });
+        if (!nav.children.length) return;
+        p.parentNode.insertBefore(nav, p.nextSibling);
+    });
+    block.querySelectorAll('.source-cite-link').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var cid = btn.dataset.chapterId;
+            var v = parseInt(btn.dataset.v, 10);
+            if (cid && chapterMeta[cid]) jumpTo(cid, v);
+        });
+    });
+}
+
 function sanitizeEscapedConnectionMarkup(root) {
     if (!root) return;
     Array.from(root.querySelectorAll('.verse-text, .source-para, .donaldson-para')).forEach(function(node) {
@@ -2965,6 +3031,7 @@ function loadSourceDocument(docId, href, opts) {
             return loadSourceWordIndex(docId).then(function(idx) {
                 annotateSourceBlock(block, idx || {});
                 markLinkedSourceParas(block, docId);
+                injectSourceCitationLinks(block, docId);
                 renderTocView();
                 updateLocationLabel(docId);
                 var para = null;

@@ -562,19 +562,6 @@
 </div>
 </div>
 </section>
-<!-- Agent activity + Recent work -->
-<div class="hero-grid" style="margin-top:20px;">
-<section class="panel">
-<h2>Agent Activity</h2>
-<p>Work is visible. This shows which agents have recorded completed tasks in the immutable ledger.</p>
-<div class="chart-wrap" id="agent-bars"></div>
-</section>
-<section class="panel">
-<h2>Recent Completed Work</h2>
-<p>Recent completions show what changed, who did it, and how the library is moving forward.</p>
-<ul class="recent-list" id="recent-completions"></ul>
-</section>
-</div>
 </div>
 <script>
 (function () {
@@ -596,32 +583,6 @@
     setText('metric-linked-pct', (t.linked_pct || 0) + '% of paragraphs now recursively linked');
     setText('metric-collections', fmt(t.collections));
     setText('metric-annotated', (t.annotated_pct || 0) + '%');
-  }
-
-  function renderProgress(data) {
-    var bars = document.getElementById('agent-bars');
-    var recent = document.getElementById('recent-completions');
-    if (!bars || !recent || !data) return;
-
-    var agents = data.agents || [];
-    var max = 1;
-    agents.forEach(function (row) { max = Math.max(max, row.completed || 0); });
-    bars.innerHTML = agents.slice(0, 8).map(function (row) {
-      var pct = Math.max(8, Math.round(((row.completed || 0) / max) * 100));
-      return '<div class="bar-row">' +
-        '<div class="bar-label">' + row.agent + '</div>' +
-        '<div class="bar-track"><div class="bar-fill" style="width:' + pct + '%"></div></div>' +
-        '<div class="bar-value">' + row.completed + '</div>' +
-      '</div>';
-    }).join('');
-
-    recent.innerHTML = (data.recent_completions || []).slice(0, 6).map(function (row) {
-      var summary = row.summary || row.task_id || 'Completed work';
-      return '<li class="recent-item">' +
-        '<div class="recent-meta"><span>' + (row.agent || 'Unknown') + '</span><span>' + (row.commit || 'no commit') + '</span><span>' + (row.ts || '') + '</span></div>' +
-        '<div class="recent-summary">' + summary + '</div>' +
-      '</li>';
-    }).join('');
   }
 
   function bindShelfLinks() {
@@ -648,13 +609,9 @@
     });
   }
 
-  Promise.all([
-    fetch('../source-dashboard.json').then(function (r) { return r.json(); }),
-    fetch('../project-progress.json').then(function (r) { return r.json(); })
-  ]).then(function (payloads) {
-    renderDashboard(payloads[0]);
-    renderProgress(payloads[1]);
-  }).catch(function () {});
+  fetch('../source-dashboard.json').then(function (r) { return r.json(); })
+    .then(renderDashboard)
+    .catch(function () {});
 
   bindShelfLinks();
 }());

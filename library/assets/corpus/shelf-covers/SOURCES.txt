@@ -1,7 +1,7 @@
-Library shelf tiles — photographs downloaded from Unsplash (https://unsplash.com/license).
-Self-hosted as 800px-wide JPEGs for offline reliability.
+Library shelf tiles — mixed sources, self-hosted JPEGs for offline reliability.
+Most tiles: Unsplash (https://unsplash.com/license), 800px-wide exports.
 
-scriptures.jpg — photo-1504052434569 (open Bible / study)
+scriptures.jpg — from local corpus cover `library/assets/corpus/covers/kjv1611.jpg` (KJV 1611 title page scan); replaces Unsplash tile for canonical-scripture shelf.
 general_conference.jpg — photo-1438232992991 (church interior / worship space)
 ancient_texts.jpg — photo-1589829085413 (ancient manuscript / scroll)
 church_fathers.jpg — photo-1521587760476 (library / old books)
