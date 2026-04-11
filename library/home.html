@@ -43,7 +43,10 @@
         <form id="jump-form" class="jump-form" autocomplete="off">
             <label class="jump-label" for="jump-input">Go to scripture, topic, person, or verse</label>
             <div class="jump-row">
-                <input id="jump-input" class="jump-input" type="search" inputmode="search" spellcheck="false" placeholder="e.g. John 3:16, Genesis 4, Alma 32, faith" aria-describedby="jump-help">
+                <div class="jump-combobox">
+                    <input id="jump-input" class="jump-input" type="search" inputmode="search" spellcheck="false" placeholder="e.g. John 3:16, Genesis 4, Alma 32, faith" aria-describedby="jump-help" role="combobox" aria-autocomplete="list" aria-controls="jump-suggest" aria-expanded="false" autocomplete="off">
+                    <ul id="jump-suggest" class="jump-suggest" role="listbox" hidden aria-label="Suggestions"></ul>
+                </div>
                 <button class="jump-go" type="submit">Go</button>
             </div>
             <div id="jump-help" class="jump-help">Enter a reference for a direct jump, or a word/phrase to search.</div>
@@ -199,6 +202,179 @@
         }
     }
 
+    var booksSuggest = [];
+    var booksLoadPromise = null;
+    var suggestTimer = null;
+    var activeIdx = -1;
+
+    function chapterIdToJump(cid, bookName) {
+        if (!cid || !bookName) return bookName + ' 1';
+        var parts = String(cid).split('_');
+        var n = parts[parts.length - 1];
+        if (!/^\d+$/.test(n)) return bookName + ' 1';
+        return bookName + ' ' + parseInt(n, 10);
+    }
+
+    function loadBooksSuggest() {
+        if (booksSuggest.length) return Promise.resolve();
+        if (booksLoadPromise) return booksLoadPromise;
+        var bu = (function() {
+            var p = document.documentElement.getAttribute('data-assets-prefix');
+            if (p) return p.replace(/\/$/, '') + '/entities/books.json';
+            return './entities/books.json';
+        })();
+        booksLoadPromise = fetch(bu)
+            .then(function(r) { return r.ok ? r.json() : []; })
+            .then(function(arr) {
+                booksSuggest = (arr || []).map(function(b) {
+                    var cid = (b.chapter_ids && b.chapter_ids[0]) || '';
+                    return {
+                        kind: 'book',
+                        label: b.name || '',
+                        abbr: (b.abbreviation || '').trim(),
+                        jump: chapterIdToJump(cid, b.name || '')
+                    };
+                }).filter(function(x) { return x.label; });
+            })
+            .catch(function() { booksSuggest = []; });
+        return booksLoadPromise;
+    }
+
+    function filterSuggestions(q) {
+        var s = String(q || '').trim().toLowerCase();
+        if (!s || s.length < 1) return [];
+        var out = [];
+        for (var i = 0; i < booksSuggest.length && out.length < 14; i++) {
+            var b = booksSuggest[i];
+            var nameL = b.label.toLowerCase();
+            var abbrL = (b.abbr || '').toLowerCase();
+            if (nameL.indexOf(s) !== -1 || (abbrL && abbrL.indexOf(s) !== -1)) {
+                out.push(b);
+            }
+        }
+        return out;
+    }
+
+    function setListOpen(open) {
+        var list = document.getElementById('jump-suggest');
+        var input = document.getElementById('jump-input');
+        if (!list || !input) return;
+        list.hidden = !open;
+        input.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (!open) activeIdx = -1;
+    }
+
+    function renderSuggestList(items) {
+        var list = document.getElementById('jump-suggest');
+        if (!list) return;
+        if (!items.length) {
+            list.innerHTML = '';
+            list.hidden = true;
+            var inp = document.getElementById('jump-input');
+            if (inp) inp.setAttribute('aria-expanded', 'false');
+            return;
+        }
+        list.innerHTML = items.map(function(it, i) {
+            var id = 'jump-opt-' + i;
+            var sub = it.abbr ? ' · ' + escapeHtml(it.abbr) : '';
+            return '<li role="option" id="' + id + '" class="jump-suggest-item" data-jump="' + escapeHtml(it.jump) + '" aria-selected="false">'
+                + '<span class="jump-suggest-label">' + escapeHtml(it.label) + '</span>'
+                + '<span class="jump-suggest-meta">' + sub + '</span>'
+                + '</li>';
+        }).join('');
+        list.hidden = false;
+        var input = document.getElementById('jump-input');
+        if (input) input.setAttribute('aria-expanded', 'true');
+    }
+
+    function highlightActive(items) {
+        var nodes = document.querySelectorAll('#jump-suggest .jump-suggest-item');
+        nodes.forEach(function(n, i) {
+            n.classList.toggle('is-active', i === activeIdx);
+            n.setAttribute('aria-selected', i === activeIdx ? 'true' : 'false');
+        });
+        var input = document.getElementById('jump-input');
+        if (input && activeIdx >= 0 && items[activeIdx]) {
+            input.setAttribute('aria-activedescendant', 'jump-opt-' + activeIdx);
+        } else if (input) {
+            input.removeAttribute('aria-activedescendant');
+        }
+    }
+
+    function applySuggestion(jump) {
+        var input = document.getElementById('jump-input');
+        if (input) input.value = jump;
+        setListOpen(false);
+    }
+
+    function scheduleSuggest() {
+        if (suggestTimer) clearTimeout(suggestTimer);
+        suggestTimer = setTimeout(function() {
+            suggestTimer = null;
+            var input = document.getElementById('jump-input');
+            if (!input) return;
+            loadBooksSuggest().then(function() {
+                var items = filterSuggestions(input.value);
+                activeIdx = items.length ? 0 : -1;
+                renderSuggestList(items);
+                highlightActive(items);
+            });
+        }, 160);
+    }
+
+    function wireJumpAutocomplete() {
+        var input = document.getElementById('jump-input');
+        var list = document.getElementById('jump-suggest');
+        if (!input || !list) return;
+
+        input.addEventListener('focus', function() {
+            loadBooksSuggest().then(function() {
+                scheduleSuggest();
+            });
+        });
+
+        input.addEventListener('input', function() {
+            scheduleSuggest();
+        });
+
+        input.addEventListener('keydown', function(e) {
+            var items = filterSuggestions(input.value);
+            if (list.hidden || !items.length) return;
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                activeIdx = Math.min(activeIdx + 1, items.length - 1);
+                renderSuggestList(items);
+                highlightActive(items);
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                activeIdx = Math.max(activeIdx - 1, 0);
+                renderSuggestList(items);
+                highlightActive(items);
+            } else if (e.key === 'Enter' && activeIdx >= 0 && items[activeIdx]) {
+                e.preventDefault();
+                applySuggestion(items[activeIdx].jump);
+            } else if (e.key === 'Escape') {
+                e.preventDefault();
+                renderSuggestList([]);
+                setListOpen(false);
+            }
+        });
+
+        list.addEventListener('mousedown', function(e) {
+            var li = e.target.closest('.jump-suggest-item');
+            if (!li) return;
+            e.preventDefault();
+            applySuggestion(li.getAttribute('data-jump') || '');
+        });
+
+        document.addEventListener('click', function(e) {
+            var combo = document.querySelector('.jump-combobox');
+            if (combo && !combo.contains(e.target)) {
+                setListOpen(false);
+            }
+        });
+    }
+
     function wireEvents() {
         var form = document.getElementById('jump-form');
         if (form) form.addEventListener('submit', onSubmitJump);
@@ -212,6 +388,7 @@
 
     renderContinueReading();
     wireEvents();
+    wireJumpAutocomplete();
 })();
 </script>
 
