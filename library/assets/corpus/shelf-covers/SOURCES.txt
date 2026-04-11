@@ -1,14 +1,51 @@
-Library shelf tiles — mixed sources, self-hosted JPEGs for offline reliability.
-Most tiles: Unsplash (https://unsplash.com/license), 800px-wide exports.
+Library shelf tiles — self-hosted JPEGs (~800px wide) for offline use.
+Most originals: Unsplash (https://unsplash.com/license). Re-export from the same
+photo page if a file was overwritten or mismatched.
 
-scriptures.jpg — from local corpus cover `library/assets/corpus/covers/kjv1611.jpg` (KJV 1611 title page scan); replaces Unsplash tile for canonical-scripture shelf.
-general_conference.jpg — photo-1438232992991 (church interior / worship space)
-ancient_texts.jpg — photo-1589829085413 (ancient manuscript / scroll)
-church_fathers.jpg — photo-1521587760476 (library / old books)
-joseph_smith_papers.jpg — photo-1455390582262 (handwriting / writing desk)
-times_and_seasons.jpg — photo-1504711434969 (reading newspaper)
-millennial_star.jpg — photo-1462331940025 (night sky / stars)
-gutenberg_lds.jpg — photo-1481627834876 (books / reading room)
-pioneer_journals.jpg — photo-1519682337058 (notebook / journal)
-history_of_church.jpg — photo-1578662996442 (historic architecture)
-journal_of_discourses.jpg — photo-1524995997946 (stack of books)
+TOC alignment (from library/source_toc.json — what each shelf *is*):
+
+- scriptures (extra tile, not in source_toc) — LDS standard works in the reader.
+  Visual: canonical scripture / title page. File: scriptures.jpg (KJV 1611 scan from covers/kjv1611.jpg).
+
+- general_conference — Semi-annual General Conference addresses (1971–present); modern prophetic teaching.
+  Visual: worship / conference / gathered Saints. File: general_conference.jpg.
+
+- ancient_texts — Enoch, Jubilees, Josephus, ancient Near East & Second Temple context for scripture.
+  Visual: ancient manuscript, scroll, clay tablet, or archaeological text — NOT modern books.
+  File: ancient_texts.jpg — Unsplash “ancient manuscript / scroll” (photo-1589829085413).
+
+- church_fathers — Ante-Nicene Christian writers (Clement, Ignatius, Justin, Irenaeus, Origen…).
+  Visual: patristic era: codex, late antique library, old leather binding.
+  File: church_fathers.jpg.
+
+- gutenberg_lds (label: Early LDS Writings) — Project Gutenberg-era LDS books and discourses.
+  Visual: 19th-century book room, reading table, historic print.
+  File: gutenberg_lds.jpg.
+
+- history_of_church — Official 7-volume History of the Church (Joseph Smith era through Nauvoo).
+  Visual: historic Nauvoo/temple/19th-century frontier archive — avoid a flat black placeholder.
+  File: history_of_church.jpg.
+
+- joseph_smith_papers — Revelations, letters, journals from the Joseph Smith Papers.
+  Visual: handwritten journal, ink, manuscript leaves.
+  File: joseph_smith_papers.jpg.
+
+- journal_of_discourses — 26 volumes of transcribed sermons (England, 1854–1886).
+  Visual: stacked period volumes, Victorian bookbinding, pulpit-era sermon print.
+  File: journal_of_discourses.jpg.
+
+- millennial_star — Longest-running LDS periodical (England, 1840–1970); European mission & doctrine.
+  Visual: Victorian periodical / newspaper stack / letterpress — NOT Book of Mormon spine as stand-in.
+  File: millennial_star.jpg — currently a stand-in stack-of-volumes crop (shared look with JD) until a unique periodical photo is exported; do not use unrelated modern book covers.
+
+- pioneer_journals — First-person pioneer journals (e.g. Lucy Mack Smith); migration & frontier faith.
+  Visual: handwritten diary, trail journal, leather-bound notebook.
+  File: pioneer_journals.jpg.
+
+- times_and_seasons — Nauvoo newspaper (1839–1846); revelations, essays, Restoration news.
+  Visual: newspaper stack, newsprint, antebellum print shop.
+  File: times_and_seasons.jpg.
+
+If a tile shows the wrong photo (wrong book cover, unrelated stock), delete the JPG and re-download
+from the intended Unsplash photo ID above, or replace with a vetted Wikimedia Commons asset with
+compatible license, then redeploy.
