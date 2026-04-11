@@ -515,6 +515,9 @@ p.donaldson-para {
     margin: 0.4em 0;
     color: #3a2a00;
     line-height: 1.6;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 /* ── Kindle / e-reader overrides ─────────────────────────────────────────── */

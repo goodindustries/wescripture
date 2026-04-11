@@ -854,6 +854,10 @@ a.home-nav-reader:hover { background: rgba(0,0,0,0.06); color: var(--text); }
     font-family: 'EB Garamond', Georgia, serif;
     font-size: 16px; line-height: 1.8; color: var(--text); font-style: italic;
     padding-left: 16px; border-left: 2px solid rgba(156,122,77,0.3);
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    min-width: 0;
 }
 /* Christ connection section in entity profiles */
 .ep-christ { padding: 14px 16px 12px; border-top: 1px solid var(--divider); }
@@ -2709,9 +2713,7 @@ function openVerseDiscovery(ref) {
                 + (c.badge ? '<div class="hist-badge ' + escapeHtml(c.badgeClass || '') + '">' + escapeHtml(c.badge) + '</div>' : '')
                 + (c.author ? '<div class="comm-author">' + linkifyName(c.author) + '</div>' : '')
                 + (c.work ? '<div class="comm-work">' + escapeHtml(c.work) + '</div>' : '')
-                + '<div class="comm-text">'
-                + makeExpandable(c.text, 'quote-preview', 'quote-overflow', 'quote-more')
-                + '</div></div>';
+                + '<div class="comm-text">' + escapeHtml(c.text || '') + '</div></div>';
         });
         if (allCommentary.length > 3) {
             html += '<button type="button" class="word-more-btn" onclick="expandWordCards(this)">Show ' + (allCommentary.length - 3) + ' more \u2192</button>';
