@@ -19,7 +19,8 @@ import time
 import urllib.request
 from pathlib import Path
 
-CACHE_DIR = Path("/Users/reify/Classified/goodcapital_landing/lds_pipeline/cache")
+_REPO = Path(__file__).resolve().parent.parent
+CACHE_DIR = _REPO / "lds_pipeline" / "cache"
 OUT_DIR   = CACHE_DIR / "standard_works"
 BASE_API  = "https://www.churchofjesuschrist.org/study/api/v3/language-pages/type/content"
 

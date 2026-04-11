@@ -41,6 +41,59 @@ def try_dispatch(task: dict) -> DispatchOutcome:
     title = (task.get("title") or "").strip()
     notes = (task.get("notes") or "").strip()
 
+    # ── Corpus / vectorization (local; may be long-running) ───────────────
+    if title == "Corpus pipeline: sync_standard_works verse catalog":
+        rc = _run([sys.executable, str(REPO / "lds_pipeline" / "sync_standard_works.py")])
+        return DispatchOutcome(True, rc, f"sync_standard_works.py exit {rc}")
+
+    if title == "Corpus pipeline: run correlate_embeddings after sync":
+        rc1 = _run([sys.executable, str(REPO / "lds_pipeline" / "sync_standard_works.py")])
+        if rc1 != 0:
+            return DispatchOutcome(True, rc1, f"sync_standard_works.py exit {rc1}")
+        argv = [sys.executable, str(REPO / "lds_pipeline" / "correlate_embeddings.py")]
+        if "--rebuild" in notes:
+            argv.append("--rebuild")
+        rc2 = _run(argv)
+        return DispatchOutcome(True, rc2, f"sync ok; correlate_embeddings.py exit {rc2}")
+
+    if title == "Corpus pipeline: run correlate_embeddings":
+        argv = [sys.executable, str(REPO / "lds_pipeline" / "correlate_embeddings.py")]
+        if "--rebuild" in notes:
+            argv.append("--rebuild")
+        rc = _run(argv)
+        return DispatchOutcome(True, rc, f"correlate_embeddings.py exit {rc}")
+
+    if title == "Corpus pipeline: correlate_embeddings books" and notes.strip():
+        tokens = notes.split()
+        want_rebuild = "--rebuild" in tokens
+        books = [t for t in tokens if t != "--rebuild"]
+        if not books:
+            return DispatchOutcome(True, 1, "no book names in notes")
+        argv = [
+            sys.executable,
+            str(REPO / "lds_pipeline" / "correlate_embeddings.py"),
+            "--books",
+        ] + books
+        if want_rebuild:
+            argv.append("--rebuild")
+        rc = _run(argv)
+        return DispatchOutcome(True, rc, f"correlate_embeddings --books ({len(books)} names) exit {rc}")
+
+    if title == "Corpus maintenance: lint_source_paras":
+        rc = _run([sys.executable, str(REPO / "lds_pipeline" / "lint_source_paras.py")])
+        return DispatchOutcome(True, rc, f"lint_source_paras.py exit {rc}")
+
+    if title == "Corpus maintenance: add_para_ids_to_sources":
+        argv = [sys.executable, str(REPO / "lds_pipeline" / "add_para_ids_to_sources.py")]
+        if "--normalize" in notes:
+            argv.append("--normalize")
+        rc = _run(argv)
+        return DispatchOutcome(True, rc, f"add_para_ids_to_sources.py exit {rc}")
+
+    if title == "Corpus audit: regenerate resource map":
+        rc = _run([sys.executable, str(REPO / "lds_pipeline" / "audit_corpus_resources.py")])
+        return DispatchOutcome(True, rc, f"audit_corpus_resources.py exit {rc}")
+
     # ── Ch genesis_1: add entity span annotations ─────────────────────────
     m = re.match(
         r"^Ch ([a-z0-9_]+): add entity span annotations",

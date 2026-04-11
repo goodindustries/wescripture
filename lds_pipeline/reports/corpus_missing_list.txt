@@ -1,0 +1,14 @@
+Corpus / vectorization gaps (see corpus_resource_map.json for full detail)
+
+verse_catalog_missing: False
+correlation_json_count: 0
+passage_embedding_cache_ready: False
+cache dirs with zero passage files (first 25): journal_of_discourses, sefaria, general_conference, gutenberg_lds, church_fathers, history_of_church, joseph_smith_papers, donaldson, times_and_seasons, millennial_star, pioneer_journals, pseudepigrapha, apocrypha, nag_hammadi, dead_sea_scrolls, bh_roberts, nibley, nauvoo_theology, jst
+scripture verses missing dense correlation JSON: 42046 / 42046
+
+Suggested ledger titles (handled by task_dispatch.py):
+  Corpus pipeline: run correlate_embeddings
+  Corpus pipeline: correlate_embeddings books   (notes: Genesis Exodus …)
+  Corpus maintenance: lint_source_paras
+  Corpus maintenance: add_para_ids_to_sources
+  Corpus audit: regenerate resource map
