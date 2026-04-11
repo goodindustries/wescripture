@@ -60,36 +60,13 @@
         <div id="continue-row" class="chip-row"></div>
     </section>
 
-    <section class="home-grid" aria-label="Scripture collections">
-        <div class="home-section-hdr">
-            <div class="home-section-title">Scriptures</div>
+    <section class="home-corpus" aria-label="Scripture library">
+        <div class="home-section-hdr corpus-hdr">
+            <div class="home-section-title">Scripture library</div>
+            <a class="corpus-toc-link" href="./index.html?open=scriptures" data-evt="home_open_scriptures">Table of contents</a>
         </div>
-        <div class="dest-grid">
-            <a class="dest-card" href="./index.html?open=scriptures" data-evt="home_open_scriptures">
-                <div class="dest-title">All scripture</div>
-                <div class="dest-meta">Browse the canon</div>
-            </a>
-            <a class="dest-card" href="./index.html?jump=Genesis%201" data-evt="home_open_ot">
-                <div class="dest-title">Old Testament</div>
-                <div class="dest-meta">Start at Genesis</div>
-            </a>
-            <a class="dest-card" href="./index.html?jump=Matthew%201" data-evt="home_open_nt">
-                <div class="dest-title">New Testament</div>
-                <div class="dest-meta">Start at Matthew</div>
-            </a>
-            <a class="dest-card" href="./index.html?jump=1%20Nephi%201" data-evt="home_open_bom">
-                <div class="dest-title">Book of Mormon</div>
-                <div class="dest-meta">Start at 1 Nephi</div>
-            </a>
-            <a class="dest-card" href="./index.html?jump=Doctrine%20and%20Covenants%201" data-evt="home_open_dc">
-                <div class="dest-title">Doctrine and Covenants</div>
-                <div class="dest-meta">Start at Section 1</div>
-            </a>
-            <a class="dest-card" href="./index.html?jump=Moses%201" data-evt="home_open_pgp">
-                <div class="dest-title">Pearl of Great Price</div>
-                <div class="dest-meta">Start at Moses 1</div>
-            </a>
-        </div>
+        <p class="corpus-lede">The full standard works — each cover opens that book in the reader.</p>
+        <div id="corpus-root" class="corpus-root" aria-live="polite" aria-busy="true"></div>
     </section>
 
     <section class="home-tools" aria-label="Study tools">
@@ -112,6 +89,10 @@
 <script>
 (function() {
     var STORAGE_KEY = 'lds';
+    var READER_HOME = (function() {
+        var p = document.documentElement.getAttribute('data-assets-prefix');
+        return p ? p.replace(/\/$/, '') + '/index.html' : './index.html';
+    })();
 
     function safeGtag() {
         if (typeof window.gtag !== 'function') return;
@@ -152,7 +133,7 @@
         var recents = readJson(STORAGE_KEY + '_recent_v1', { version: 1, items: [] });
         var items = [];
 
-        if (pos) items.push({ kind: 'position', label: 'Resume', href: './index.html?jump=' + encodeURIComponent(pos.replace(/_/g, ' ')) });
+        if (pos) items.push({ kind: 'position', label: 'Resume', href: READER_HOME + '?jump=' + encodeURIComponent(pos.replace(/_/g, ' ')) });
         (recents.items || []).slice(0, 3).forEach(function(it) {
             if (!it || !it.href || !it.label) return;
             if (items.some(function(x) { return x.href === it.href; })) return;
@@ -184,7 +165,7 @@
         var q = String(input.value || '').trim();
         if (!q) return;
 
-        pushUrl('./index.html?jump=' + encodeURIComponent(q), 'home_jump_submit', { kind: 'jump' });
+        pushUrl(READER_HOME + '?jump=' + encodeURIComponent(q), 'home_jump_submit', { kind: 'jump' });
     }
 
     var booksSuggest = [];
@@ -220,12 +201,83 @@
                         label: b.name || '',
                         abbr: (b.abbreviation || '').trim(),
                         slugM: slugM,
+                        slug: slug,
+                        testament: b.testament || '',
                         jump: chapterIdToJump(cid, b.name || '')
                     };
                 }).filter(function(x) { return x.label; });
             })
             .catch(function() { booksSuggest = []; });
         return booksLoadPromise;
+    }
+
+    function strHash(s) {
+        var h = 0;
+        var str = String(s || '');
+        for (var i = 0; i < str.length; i++) {
+            h = Math.imul(31, h) + str.charCodeAt(i) | 0;
+        }
+        return Math.abs(h);
+    }
+
+    function bookCoverGradient(slug, testament) {
+        var bases = { OT: 32, NT: 218, BOM: 172, DC: 278, PGP: 102 };
+        var base = bases[testament] != null ? bases[testament] : 35;
+        var hue = (base + (strHash(slug) % 26)) % 360;
+        var hue2 = (hue + 22) % 360;
+        return 'linear-gradient(148deg,hsl(' + hue + ',42%,36%) 0%,hsl(' + hue2 + ',36%,20%) 100%)';
+    }
+
+    function shortCoverLabel(b) {
+        var a = (b.abbr || '').trim();
+        if (a.length <= 9) return a || b.label.slice(0, 6);
+        return a.slice(0, 8) + '…';
+    }
+
+    function renderCorpusBooks() {
+        var root = document.getElementById('corpus-root');
+        if (!root) return;
+        if (!booksSuggest.length) {
+            root.innerHTML = '<p class="corpus-error">Couldn’t load scripture books. Try refreshing.</p>';
+            root.setAttribute('aria-busy', 'false');
+            return;
+        }
+        var order = ['OT', 'NT', 'BOM', 'DC', 'PGP'];
+        var labels = {
+            OT: 'Old Testament',
+            NT: 'New Testament',
+            BOM: 'Book of Mormon',
+            DC: 'Doctrine and Covenants',
+            PGP: 'Pearl of Great Price'
+        };
+        var by = {};
+        order.forEach(function(t) { by[t] = []; });
+        booksSuggest.forEach(function(b) {
+            var t = b.testament;
+            if (by[t]) by[t].push(b);
+        });
+        order.forEach(function(t) {
+            by[t].sort(function(a, b2) { return a.label.localeCompare(b2.label); });
+        });
+        var html = '';
+        order.forEach(function(t) {
+            var list = by[t];
+            if (!list.length) return;
+            var tid = 'corpus-' + t.toLowerCase();
+            html += '<section class="corpus-block" id="' + tid + '" aria-labelledby="' + tid + '-h">';
+            html += '<h2 class="corpus-block-title" id="' + tid + '-h">' + escapeHtml(labels[t]) + '</h2>';
+            html += '<div class="corpus-book-grid">';
+            list.forEach(function(b) {
+                var href = READER_HOME + '?jump=' + encodeURIComponent(b.jump);
+                var grad = bookCoverGradient(b.slug, b.testament);
+                html += '<a class="book-tile" href="' + escapeHtml(href) + '" data-evt="home_book_tile" data-book="' + escapeHtml(b.slug) + '">';
+                html += '<div class="book-tile-cover" style="background:' + grad + '"><span class="book-tile-abbr">' + escapeHtml(shortCoverLabel(b)) + '</span></div>';
+                html += '<div class="book-tile-name">' + escapeHtml(b.label) + '</div></a>';
+            });
+            html += '</div></section>';
+        });
+        root.innerHTML = html;
+        root.setAttribute('aria-busy', 'false');
     }
 
     /** Strip chapter/verse tails so "John 3:16" and "Gen 1" match books. */
@@ -475,6 +527,7 @@
     renderContinueReading();
     wireEvents();
     wireJumpAutocomplete();
+    loadBooksSuggest().then(function() { renderCorpusBooks(); });
 })();
 </script>
 
