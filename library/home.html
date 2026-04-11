@@ -48,9 +48,9 @@
 
     <section class="home-library" aria-label="Library">
         <h1 class="library-page-title">Library</h1>
-        <p class="library-lede">Pick a shelf — the reader below loads here and the sidebar table of contents updates to that collection (no extra “open TOC” step).</p>
+        <p class="library-lede">Pick a shelf — the reader below opens on the home dashboard; the browse panel drills down by volume, book, and chapter (or collection) without opening the sidebar TOC.</p>
         <div class="home-section-hdr library-shelf-hdr">
-            <a class="corpus-toc-link" href="./index.html?open=scriptures" data-evt="home_open_scriptures" id="home-open-scripture-toc">Scripture table of contents</a>
+            <a class="corpus-toc-link" href="./index.html?open=scriptures" data-evt="home_open_scriptures" id="home-open-scripture-toc">Open scripture browser on dashboard</a>
         </div>
         <div id="library-shelf" class="library-shelf" role="list" aria-busy="true" aria-label="Collections"></div>
         <details class="library-books-details" id="library-books-details">
@@ -383,9 +383,9 @@
             e.preventDefault();
             var col = a.getAttribute('data-collection');
             if (col === 'scriptures') {
-                postReader({ type: 'title-page-open-shelf', key: 'scriptures' });
+                postReader({ type: 'title-page-inline-shelf', key: 'scriptures' });
             } else {
-                postReader({ type: 'title-page-open-collection', collectionId: col });
+                postReader({ type: 'title-page-inline-collection', collectionId: col });
             }
             scrollReaderIntoView();
         });
@@ -409,7 +409,7 @@
         if (toc) {
             toc.addEventListener('click', function(e) {
                 e.preventDefault();
-                postReader({ type: 'title-page-open-shelf', key: 'scriptures' });
+                postReader({ type: 'title-page-inline-shelf', key: 'scriptures' });
                 scrollReaderIntoView();
             });
         }
@@ -417,7 +417,7 @@
         if (gc && gc.getAttribute('data-home-open-collection')) {
             gc.addEventListener('click', function(e) {
                 e.preventDefault();
-                postReader({ type: 'title-page-open-collection', collectionId: gc.getAttribute('data-home-open-collection') });
+                postReader({ type: 'title-page-inline-collection', collectionId: gc.getAttribute('data-home-open-collection') });
                 scrollReaderIntoView();
             });
         }
