@@ -36,7 +36,7 @@ TOC alignment (from library/source_toc.json — what each shelf *is*):
 
 - millennial_star — Longest-running LDS periodical (England, 1840–1970); European mission & doctrine.
   Visual: Victorian periodical / newspaper stack / letterpress — NOT Book of Mormon spine as stand-in.
-  File: millennial_star.jpg — currently a stand-in stack-of-volumes crop (shared look with JD) until a unique periodical photo is exported; do not use unrelated modern book covers.
+  File: millennial_star.jpg — interim: same Unsplash “reading room / books” export as gutenberg_lds.jpg until a dedicated Victorian periodical or newsprint image is added (keeps tiles distinct from JD stack).
 
 - pioneer_journals — First-person pioneer journals (e.g. Lucy Mack Smith); migration & frontier faith.
   Visual: handwritten diary, trail journal, leather-bound notebook.
