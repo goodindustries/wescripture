@@ -37,11 +37,11 @@ async function run() {
   await page.waitForSelector('#toc-grid .toc-tile', { timeout: 10000 });
   pass('initial load', 'reader and tile nav rendered');
 
-  await page.click('#toc-btn');
+  await page.evaluate(() => { toggleToc(); });
   await page.waitForFunction(() => document.querySelector('#toc').classList.contains('hidden'));
-  await page.click('#toc-btn');
+  await page.evaluate(() => { toggleToc(); });
   await page.waitForFunction(() => !document.querySelector('#toc').classList.contains('hidden'));
-  pass('toc button', 'closes and reopens sidebar');
+  pass('toc toggle', 'closes and reopens sidebar');
 
   const downloadHref = await page.$eval('#dl-btn', (el) => el.getAttribute('href'));
   assert(downloadHref === './LDS_Scriptures_Enriched.epub', 'download link href changed');

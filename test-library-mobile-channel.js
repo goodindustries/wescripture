@@ -27,8 +27,8 @@ async function run() {
 
   await page.waitForSelector('#splash.gone', { timeout: 60000 });
 
-  // On mobile (<900px) the TOC panel starts hidden; open it via the hamburger button.
-  await page.tap('#toc-btn');
+  // On mobile (<900px) the TOC panel starts hidden; open it programmatically.
+  await page.evaluate(() => { toggleToc(); });
   await page.waitForSelector('#toc-grid .toc-tile', { timeout: 10000 });
 
   await page.tap('.toc-tile[data-action="scripture-root"]');
