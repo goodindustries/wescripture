@@ -92,8 +92,11 @@ def ledger(args: list, capture=False) -> subprocess.CompletedProcess:
     )
 
 
-def claim_next(agent):
-    result = ledger(["next", "--agent", agent], capture=True)
+def claim_next(agent, backend: str = "dispatch"):
+    argv = ["next", "--agent", agent]
+    if backend == "dispatch":
+        argv += ["--exclude-title-prefix", "Donaldson —"]
+    result = ledger(argv, capture=True)
     if result.returncode != 0 or not result.stdout.strip():
         return None
     # stdout may include "[ledger] pushed to origin" before the JSON line
@@ -230,7 +233,7 @@ def main():
 
     # ── Claim next task ───────────────────────────────────────────────────────
     print(f"[{args.agent}] checking for pending tasks…", flush=True)
-    task = claim_next(args.agent)
+    task = claim_next(args.agent, backend=args.backend)
     if not task:
         print(f"[{args.agent}] no pending tasks — exiting.", flush=True)
         sys.exit(0)

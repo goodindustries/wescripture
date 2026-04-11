@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -14,6 +15,49 @@ sys.path.insert(0, str(REPO / "lds_pipeline"))
 from crew_swarm.events import append_claimed, append_completed, append_failed
 from crew_swarm.llm_config import build_crew_llm, kickoff_output_text
 from crew_swarm.tools import LAST_EXIT, LAST_HANDLED, LAST_SUMMARY, build_dispatch_tool
+
+
+def _ledger_task_id_from_notes(notes: str) -> str | None:
+    m = re.search(r"ledger_task_id:\s*(T-\d+)", notes or "")
+    return m.group(1) if m else None
+
+
+def _strip_ledger_ref_for_dispatch(notes: str) -> str:
+    """Remove ledger bridge line so try_dispatch sees original notes only."""
+    return re.sub(r"^ledger_task_id:\s*T-\d+\s*\n?", "", notes or "", count=1).strip()
+
+
+def _mirror_ledger_complete(ledger_tid: str, summary: str, commit: str) -> None:
+    argv = [
+        sys.executable,
+        str(REPO / "lds_pipeline" / "task_ledger.py"),
+        "complete",
+        "--task-id",
+        ledger_tid,
+        "--agent",
+        "CrewSwarm",
+        "--notes",
+        (summary or "")[:480],
+    ]
+    if commit:
+        argv += ["--commit", commit]
+    subprocess.run(argv, cwd=str(REPO), check=False)
+
+
+def _mirror_ledger_reopen(ledger_tid: str, notes: str) -> None:
+    subprocess.run(
+        [
+            sys.executable,
+            str(REPO / "lds_pipeline" / "task_ledger.py"),
+            "reopen",
+            "--task-id",
+            ledger_tid,
+            "--notes",
+            (notes or "")[:480],
+        ],
+        cwd=str(REPO),
+        check=False,
+    )
 
 
 def _git_short_head() -> str:
@@ -42,8 +86,10 @@ def run_swarm_on_task(task: dict[str, Any], verbose: bool = True) -> dict[str, A
     tid = task.get("task_id", "")
     title = task.get("title", "")
     notes = task.get("notes", "")
+    ledger_tid = _ledger_task_id_from_notes(notes)
+    notes_dispatch = _strip_ledger_ref_for_dispatch(notes)
     payload = json.dumps(
-        {"task_id": tid, "title": title, "notes": notes},
+        {"task_id": tid, "title": title, "notes": notes_dispatch},
         ensure_ascii=False,
     )
 
@@ -83,7 +129,7 @@ def run_swarm_on_task(task: dict[str, Any], verbose: bool = True) -> dict[str, A
             f"The next task is fixed — do not choose another.\n"
             f"task_id: {tid}\n"
             f"title: {title}\n"
-            f"notes: {notes}\n"
+            f"notes: {notes_dispatch}\n"
             f"Reply with one line: confirmed, ready for pipeline worker."
         ),
         expected_output="One line confirming readiness.",
@@ -119,6 +165,8 @@ def run_swarm_on_task(task: dict[str, Any], verbose: bool = True) -> dict[str, A
         narrative = kickoff_output_text(raw)
     except Exception as e:  # noqa: BLE001
         append_failed(tid, f"crew kickoff: {e!s}")
+        if ledger_tid:
+            _mirror_ledger_reopen(ledger_tid, f"crew kickoff failed: {e!s}")
         return {"ok": False, "error": str(e), "narrative": narrative}
 
     handled = LAST_HANDLED
@@ -128,6 +176,8 @@ def run_swarm_on_task(task: dict[str, Any], verbose: bool = True) -> dict[str, A
     if not handled:
         msg = f"dispatch: no handler or not handled — {summary}"
         append_failed(tid, msg)
+        if ledger_tid:
+            _mirror_ledger_reopen(ledger_tid, msg[:450])
         return {
             "ok": False,
             "task_id": tid,
@@ -140,13 +190,22 @@ def run_swarm_on_task(task: dict[str, Any], verbose: bool = True) -> dict[str, A
     commit = _git_short_head()
     ok_run = exit_code == 0
     line = f"dispatch: {summary}" + (f" (exit {exit_code})" if exit_code else "")
-    append_completed(tid, summary=line, commit=commit if ok_run else "", agent="CrewSwarm")
+    if ok_run:
+        append_completed(tid, summary=line, commit=commit, agent="CrewSwarm")
+        if ledger_tid:
+            _mirror_ledger_complete(ledger_tid, line, commit)
+    else:
+        fail_msg = f"dispatch exit {exit_code}: {summary}"
+        append_failed(tid, fail_msg)
+        if ledger_tid:
+            _mirror_ledger_reopen(ledger_tid, fail_msg[:450])
+
     return {
         "ok": ok_run,
         "task_id": tid,
         "handled": True,
         "exit_code": exit_code,
-        "commit": commit,
+        "commit": commit if ok_run else "",
         "narrative": narrative,
         "summary": summary,
     }

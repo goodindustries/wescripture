@@ -259,6 +259,12 @@ def cmd_next(args) -> None:
     ]
     # Exclude Source Scout candidate notes from autonomous work queue
     candidates = [t for t in candidates if not t["title"].startswith("Source Scout:")]
+    prefixes = getattr(args, "exclude_title_prefix", None) or []
+    for p in prefixes:
+        if not p:
+            continue
+        candidates = [t for t in candidates if not str(t.get("title") or "").startswith(p)]
+
     candidates.sort(key=lambda t: t["task_id"])
 
     if not candidates:
@@ -424,6 +430,14 @@ def main() -> None:
     # next
     p = sub.add_parser("next", help="Claim and return the next unclaimed pending task")
     p.add_argument("--agent", required=True)
+    p.add_argument(
+        "--exclude-title-prefix",
+        action="append",
+        default=[],
+        metavar="PREFIX",
+        help="Skip pending tasks whose title starts with this prefix (repeatable). "
+        'Example: --exclude-title-prefix "Donaldson —"',
+    )
     p.set_defaults(func=cmd_next)
 
     # complete
