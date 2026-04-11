@@ -164,22 +164,22 @@ a.home-nav-reader:hover { background: rgba(0,0,0,0.06); color: var(--text); }
 .chapter-block { margin-bottom: 3em; }
 #sentinel { height: 60px; }
 
-/* Book / chapter intro lede (fills space below title; data from books.json or Donaldson) */
-.scripture h2.book-title { margin-top: 0.35em; margin-bottom: 0.1em; }
-.scripture p.chapter-num {
-    margin: 0.35em 0 0.15em;
-    font-size: 2.6em;
-    line-height: 1.05;
-}
-.reader-chapter-lede {
-    margin: 0.5em auto 1em;
-    max-width: 38em;
+/* Scripture column: tighter gap below title (intro text lives in #channel) */
+.scripture h2.book-title { margin-top: 0.65em; margin-bottom: 0.08em; }
+.scripture p.chapter-num { margin: 0.45em 0 0.12em; }
+.scripture div.verse:first-of-type { margin-top: 0.65em; }
+
+/* Study panel: book/chapter intro + directions (desktop right column) */
+.panel-intro-wrap { padding: 20px 18px 24px; max-width: 100%; }
+.panel-chapter-intro {
+    margin: 0 auto 16px;
+    max-width: 22em;
     padding: 12px 14px 14px;
     border: 1px solid rgba(139, 115, 85, 0.22);
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.55);
 }
-.reader-chapter-lede-kicker {
+.panel-chapter-kicker {
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.12em;
@@ -189,16 +189,16 @@ a.home-nav-reader:hover { background: rgba(0,0,0,0.06); color: var(--text); }
     margin-bottom: 8px;
     font-family: 'Inter', -apple-system, sans-serif;
 }
-.reader-chapter-lede-body {
+.panel-chapter-body {
     font-family: 'EB Garamond', Georgia, serif;
-    font-size: 0.98em;
+    font-size: 15px;
     line-height: 1.55;
     font-style: italic;
     text-align: center;
     color: #4a3d32;
     margin: 0;
 }
-.reader-chapter-lede-cite {
+.panel-chapter-cite {
     margin: 10px 0 0;
     font-size: 10px;
     line-height: 1.4;
@@ -207,8 +207,17 @@ a.home-nav-reader:hover { background: rgba(0,0,0,0.06); color: var(--text); }
     font-style: normal;
     font-family: 'Inter', -apple-system, sans-serif;
 }
-.reader-chapter-lede--pending { min-height: 40px; }
-.scripture div.verse:first-of-type { margin-top: 0.35em; }
+.panel-chapter-intro--pending { min-height: 36px; font-size: 12px; color: var(--muted); text-align: center; padding-top: 8px; }
+.panel-intro-directions {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.55;
+    color: var(--muted);
+    text-align: center;
+    max-width: 20em;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /* ── Highlight tooltip ── */
 #hl-tip {
@@ -1934,6 +1943,11 @@ function jumpTo(chapterId, verseNum, opts) {
             target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
         if (window.innerWidth < 600) { tocOpen = false; document.getElementById('toc').classList.add('hidden'); }
+        if (!sourceMode && chapterMeta[chapterId]) {
+            var pbJump = document.getElementById('panel-body');
+            var pmJ = pbJump && pbJump.dataset.panelMode;
+            if (pbJump && (pmJ === 'intro' || !pmJ)) renderStudyPanelIntro(chapterId);
+        }
     });
 }
 
@@ -2238,6 +2252,7 @@ function openProfilePanel(entity, typeLabel, placeholderIcon, extraHtml) {
     html += extraHtml || '';
     var chList = document.getElementById('panel-body');
     chList.innerHTML = html;
+    chList.dataset.panelMode = 'entity';
     document.getElementById('ch-word').textContent = entity.name;
     document.getElementById('channel').classList.add('open');
     channelOpen = true;
@@ -2791,6 +2806,7 @@ function openSourceParaDiscovery(block, paraNode) {
 
     var panelBody = document.getElementById('panel-body');
     panelBody.innerHTML = html;
+    panelBody.dataset.panelMode = 'source';
     panelBody.scrollTop = 0;
     document.getElementById('channel').classList.add('open');
     channelOpen = true;
@@ -3052,56 +3068,60 @@ function chapterLedeFallbackLine(parsed) {
     return testamentLabelForLede(book.testament) + ' \u00b7 ' + book.name + ' \u00b7 Chapter ' + parsed.chapterNum;
 }
 
-function injectReaderChapterLede(block, chapterId) {
-    if (chapterId === 'title_page') return;
-    var scripture = block.querySelector('.scripture');
-    if (!scripture || scripture.querySelector('.reader-chapter-lede')) return;
-    var cn = scripture.querySelector('.chapter-num');
-    if (!cn) return;
+var STUDY_PANEL_DIRECTIONS_HTML = '<p class="panel-intro-directions">Tap any verse to study it.</p>';
+
+function wrapStudyPanelIntro(innerHtml) {
+    return '<div class="panel-intro-wrap">' + innerHtml + STUDY_PANEL_DIRECTIONS_HTML + '</div>';
+}
+
+function renderStudyPanelIntro(chapterId) {
+    var panelBody = document.getElementById('panel-body');
+    if (!panelBody || !chapterId || chapterId === 'title_page' || !chapterMeta[chapterId]) return;
     var parsed = parseChapterIdForLede(chapterId);
     if (!parsed) return;
     var book = bookBySlug[parsed.slug];
+    panelBody.dataset.panelMode = 'intro';
+    panelBody.dataset.introFor = chapterId;
 
     if (parsed.chapterNum === 1 && book) {
         var bl = buildBookLedeFromExcerpt(book);
         if (bl) {
             var vol = testamentLabelForLede(book.testament);
-            var html = '<div class="reader-chapter-lede reader-chapter-lede--book">'
-                + (vol ? '<div class="reader-chapter-lede-kicker">' + escapeHtml(vol) + '</div>' : '')
-                + '<p class="reader-chapter-lede-body">' + escapeHtml(bl.body) + '</p>'
-                + (bl.cite ? '<p class="reader-chapter-lede-cite">' + escapeHtml(bl.cite) + '</p>' : '')
+            var inner = '<div class="panel-chapter-intro">'
+                + (vol ? '<div class="panel-chapter-kicker">' + escapeHtml(vol) + '</div>' : '')
+                + '<p class="panel-chapter-body">' + escapeHtml(bl.body) + '</p>'
+                + (bl.cite ? '<p class="panel-chapter-cite">' + escapeHtml(bl.cite) + '</p>' : '')
                 + '</div>';
-            cn.insertAdjacentHTML('afterend', html);
+            panelBody.innerHTML = wrapStudyPanelIntro(inner);
             return;
         }
     }
 
-    var pendingId = 'lede-pending-' + String(chapterId).replace(/[^a-z0-9_-]/gi, '_');
-    cn.insertAdjacentHTML('afterend', '<div class="reader-chapter-lede reader-chapter-lede--pending" id="' + pendingId + '"></div>');
+    panelBody.innerHTML = wrapStudyPanelIntro('<div class="panel-chapter-intro panel-chapter-intro--pending">\u2026</div>');
 
     fetch('./donaldson/' + chapterId + '.json')
         .then(function(r) { return r.ok ? r.json() : null; })
         .then(function(dj) {
-            var el = document.getElementById(pendingId);
-            if (!el) return;
+            if (!panelBody.parentNode || panelBody.dataset.panelMode !== 'intro' || panelBody.dataset.introFor !== chapterId) return;
             var lede = extractDonaldsonVerseOneLede(dj);
             var fb = chapterLedeFallbackLine(parsed);
-            var html;
+            var inner;
             if (lede && lede.body) {
-                html = '<div class="reader-chapter-lede reader-chapter-lede--chapter">'
-                    + (lede.kicker ? '<div class="reader-chapter-lede-kicker">' + escapeHtml(lede.kicker) + '</div>' : '')
-                    + '<p class="reader-chapter-lede-body">' + escapeHtml(lede.body) + '</p>'
-                    + (lede.cite ? '<p class="reader-chapter-lede-cite">' + escapeHtml(lede.cite) + '</p>' : '')
+                inner = '<div class="panel-chapter-intro">'
+                    + (lede.kicker ? '<div class="panel-chapter-kicker">' + escapeHtml(lede.kicker) + '</div>' : '')
+                    + '<p class="panel-chapter-body">' + escapeHtml(lede.body) + '</p>'
+                    + (lede.cite ? '<p class="panel-chapter-cite">' + escapeHtml(lede.cite) + '</p>' : '')
                     + '</div>';
             } else {
-                html = '<div class="reader-chapter-lede reader-chapter-lede--chapter"><p class="reader-chapter-lede-body">' + escapeHtml(fb) + '</p></div>';
+                inner = '<div class="panel-chapter-intro"><p class="panel-chapter-body">' + escapeHtml(fb) + '</p></div>';
             }
-            el.outerHTML = html;
+            panelBody.innerHTML = wrapStudyPanelIntro(inner);
         })
         .catch(function() {
-            var el = document.getElementById(pendingId);
-            if (!el) return;
-            el.outerHTML = '<div class="reader-chapter-lede reader-chapter-lede--chapter"><p class="reader-chapter-lede-body">' + escapeHtml(chapterLedeFallbackLine(parsed)) + '</p></div>';
+            if (!panelBody.parentNode || panelBody.dataset.panelMode !== 'intro' || panelBody.dataset.introFor !== chapterId) return;
+            panelBody.innerHTML = wrapStudyPanelIntro(
+                '<div class="panel-chapter-intro"><p class="panel-chapter-body">' + escapeHtml(chapterLedeFallbackLine(parsed)) + '</p></div>'
+            );
         });
 }
 
@@ -3148,7 +3168,6 @@ function loadChapter(id, prepend) {
             setNextToLoad(id);
             markVerseDiscovery(block, id);
             annotateChapterEntities(block);
-            injectReaderChapterLede(block, id);
 
             // Start watching this block — notes load when it enters the viewport
             notesObserver.observe(block);
@@ -3232,13 +3251,24 @@ observer.observe(sentinel);
 // ── Track current chapter for TOC highlight + position save ──────────────
 var chObserver = new IntersectionObserver(entries => {
     entries.forEach(e => {
-        if (e.isIntersecting) {
-            var id = e.target.dataset.chapterId;
-            if (id && id !== currentChapter) {
-                currentChapter = id;
-                localStorage.setItem(SITE.storageKey + '_position', id);
-                updateLocationLabel(id);
-                updateActiveToc(id);
+        if (!e.isIntersecting) return;
+        var id = e.target.dataset.chapterId;
+        if (!id || !chapterMeta[id]) return;
+        if (id !== currentChapter) {
+            currentChapter = id;
+            localStorage.setItem(SITE.storageKey + '_position', id);
+            updateLocationLabel(id);
+            updateActiveToc(id);
+            if (!sourceMode) {
+                var pb = document.getElementById('panel-body');
+                var pm = pb && pb.dataset.panelMode;
+                if (pb && (pm === 'intro' || !pm)) renderStudyPanelIntro(id);
+            }
+        } else if (!sourceMode) {
+            var pb2 = document.getElementById('panel-body');
+            var pm2 = pb2 && pb2.dataset.panelMode;
+            if (pb2 && (pm2 === 'intro' || !pm2) && !pb2.querySelector('.panel-intro-wrap')) {
+                renderStudyPanelIntro(id);
             }
         }
     });
@@ -4404,8 +4434,9 @@ function openChannelEmpty(word) {
     channelMorsels = [];
     channelIdx     = 0;
     document.getElementById('ch-word').textContent = word;
-    document.getElementById('panel-body').innerHTML =
-        '<div class="ch-empty">No connections found for this word.</div>';
+    var pb = document.getElementById('panel-body');
+    pb.innerHTML = '<div class="ch-empty">No connections found for this word.</div>';
+    pb.dataset.panelMode = 'channel';
     document.getElementById('channel').classList.add('open');
     channelOpen = true;
 }
@@ -4445,6 +4476,7 @@ function renderChannelList() {
     });
     var list = document.getElementById('panel-body');
     list.innerHTML = html;
+    list.dataset.panelMode = 'channel';
 
     // Scroll current into view
     var cur = list.querySelector('.ch-current');
@@ -4491,9 +4523,17 @@ function closeChannel() {
     document.getElementById('channel').classList.remove('open');
     channelOpen = false;
     renderWordStudy('', []);
+    var chW = document.getElementById('ch-word');
+    if (chW) chW.style.display = 'none';
     if (channelActiveSpan) {
         channelActiveSpan.classList.remove('cw-active');
         channelActiveSpan = null;
+    }
+    if (!sourceMode && currentChapter && chapterMeta[currentChapter]) {
+        var pbClose = document.getElementById('panel-body');
+        if (pbClose && pbClose.dataset.panelMode !== 'intro') {
+            renderStudyPanelIntro(currentChapter);
+        }
     }
 }
 
