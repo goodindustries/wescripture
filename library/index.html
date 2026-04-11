@@ -660,6 +660,10 @@ a.home-nav-reader:hover { background: rgba(0,0,0,0.06); color: var(--text); }
 }
 .panel-empty-icon { font-size: 28px; margin-bottom: 16px; opacity: 0.35; }
 .panel-empty-text { font-size: 13px; line-height: 1.7; max-width: 240px; }
+.book-guide-intro { padding: 0 0 8px; }
+.book-guide-p { margin: 0 0 12px; line-height: 1.65; font-size: 14px; color: var(--text); }
+.panel-book-hint { padding: 16px 4px 8px; font-size: 12px; color: var(--muted); line-height: 1.5; }
+.bc-book-guide { cursor: pointer; }
 
 /* Panel header padding aligned with library/test.html prototype */
 .panel-header { padding: 24px 28px 18px; border-bottom: 1px solid var(--divider); flex-shrink: 0; }
@@ -1029,6 +1033,7 @@ var thingById   = {};      // thing_id → thing object
 var topicIndex  = {};      // lowercased name → topic_id
 var topicById   = {};      // topic_id → topic object
 var bookById    = {};      // book_id → book object
+var bookBySlug  = {};      // book slug (e.g. genesis) → book object
 
 var BOOK_SLUG_DISPLAY = {
     'doctrine_and_covenants': 'D&C',
@@ -1177,6 +1182,12 @@ function saveCurrentVerseToStudy() {
 })();
 
 // ── TOC toggle ───────────────────────────────────────────────────────────
+function closeTocPanel() {
+    tocOpen = false;
+    var tocEl = document.getElementById('toc');
+    if (tocEl) tocEl.classList.add('hidden');
+}
+
 function toggleToc() {
     tocOpen = !tocOpen;
     document.getElementById('toc').classList.toggle('hidden', !tocOpen);
@@ -1360,7 +1371,10 @@ Promise.all([
         thingIndex = results[8] || {};
         (results[9] || []).forEach(function(t) { thingById[t.id] = t; });
         (results[10] || []).forEach(function(t) { topicById[t.id] = t; Object.keys(topicById); });
-        (results[11] || []).forEach(function(b) { bookById[b.id] = b; });
+        (results[11] || []).forEach(function(b) {
+            bookById[b.id] = b;
+            if (b.slug) bookBySlug[b.slug] = b;
+        });
         tocData = data;
         sourceTocData = sourceData;
         tocTree = buildTocTree(data);
@@ -2458,6 +2472,32 @@ function dedupeVerseDiscoveryEntries(arr) {
     });
 }
 
+/** True if `word` appears as a whole token in verse text (Unicode-aware when supported). */
+function wordAppearsInVerseAsToken(word, verseText) {
+    if (!word || !verseText) return false;
+    var esc = String(word).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    try {
+        return new RegExp('(?<![\\p{L}\\p{N}])' + esc + '(?![\\p{L}\\p{N}])', 'iu').test(verseText);
+    } catch (e) {
+        return new RegExp('\\b' + esc + '\\b', 'i').test(verseText);
+    }
+}
+
+/** Keep Donaldson key words only when the headword appears in the verse (substring for multi-word). */
+function filterDonaWordsForVerse(words, verseText) {
+    if (!words || !words.length || !verseText) return [];
+    var vt = verseText.trim();
+    return words.filter(function(w) {
+        var label = (w.word || '').trim();
+        if (!label) return false;
+        if (/\s/.test(label)) {
+            var norm = label.replace(/\s+/g, ' ').toLowerCase();
+            return vt.toLowerCase().indexOf(norm) !== -1;
+        }
+        return wordAppearsInVerseAsToken(label, vt);
+    });
+}
+
 function openVerseDiscovery(ref) {
     // Parse chapterId and verse number from ref ("John 1:3" → chapter "john_1", verse "3")
     var vnum = ref.split(':')[1] || '';
@@ -2472,16 +2512,19 @@ function openVerseDiscovery(ref) {
 
     // Donaldson notes for this verse
     var donaEntry  = (donaldsonNotes[chapterId] && donaldsonNotes[chapterId][vnum]) || {};
-    var donaWords  = donaEntry.words  || [];
+    var donaWordsRaw = donaEntry.words  || [];
     var donaNotes  = donaEntry.notes  || [];
     var donaQuotes = donaEntry.quotes || [];
-
-    document.getElementById('ch-word').textContent = ref;
-    var html = '';
 
     // ── Verse text header ──
     var verseEl = document.getElementById('v' + vnum);
     var verseText = verseEl ? (verseEl.querySelector('.verse-text') || verseEl).textContent.trim() : '';
+    var donaWords = filterDonaWordsForVerse(donaWordsRaw, verseText);
+
+    var chW = document.getElementById('ch-word');
+    chW.textContent = ref;
+    chW.style.display = 'block';
+    var html = '';
     html += '<div class="panel-header">'
         + '<div class="panel-verse-ref">' + escapeHtml(ref) + '</div>'
         + (verseText ? '<div class="panel-verse-text">' + escapeHtml(verseText) + '</div>' : '')
@@ -2500,7 +2543,7 @@ function openVerseDiscovery(ref) {
         }
     }
 
-    // ── Key words: Donaldson (injection) → Strong's (scholarly source) ──
+    // ── Key words: Donaldson (injection, verse-matched) → Strong's (scholarly source) ──
     var strongsEntries = (strongsIndexCache[chapterId] || {})[vnum] || [];
     var showedKeyWords = false;
     if (donaWords.length) {
@@ -2532,7 +2575,7 @@ function openVerseDiscovery(ref) {
             var plain  = sn && strongsPlain[sn];
             var def    = plain || strongsReaderDef(entry);
             var root   = plain ? '' : strongsRoot(entry.dv || '');
-            var engLabel = strongsHeadwordEnglish(entry);
+            var engLabel = strongsKeyWordLabel(entry);
             var defShow = stripOriginalLanguageNotes(def + (root ? ' (from ' + root + ')' : ''));
             html += '<div class="word-card">'
                 + '<div class="word-english">' + escapeHtml(engLabel || sn) + '</div>'
@@ -2618,6 +2661,7 @@ function openVerseDiscovery(ref) {
 
     var panelBody = document.getElementById('panel-body');
     panelBody.innerHTML = html;
+    panelBody.dataset.panelMode = 'verse';
     panelBody.scrollTop = 0;
     document.getElementById('channel').classList.add('open');
     channelOpen = true;
@@ -3509,6 +3553,8 @@ var channelWord    = null;   // current stem
 var channelMorsels = [];     // current match list
 var channelIdx     = 0;      // which morsel is "current"
 var channelActiveSpan = null;
+/** book | verse | profile | word — only "book" panel auto-refreshes on chapter scroll */
+var channelPanelMode = 'book';
 var wordIndexCache = {};     // slug → loaded words JSON
 var wordIndexLoading = {};   // slug → promise
 var strongsIndexCache = {};  // chapter → loaded strongs JSON
@@ -3935,25 +3981,71 @@ function strongsRoot(dv) {
     return r === 'ὁ' ? '' : r;
 }
 
-/** KJV gloss headword for Key Words / study (skip Strong's "X" cross-ref lines). */
-function strongsHeadwordEnglish(entry) {
-    var kj = (entry && entry.kj) || '';
+/** Strong's numbers that need a stable English title (avoid KJV concordance noise). */
+var STRONGS_KEYWORD_LABEL_OVERRIDE = {
+    H430: 'God', H3068: 'Lord', H3069: 'Lord', H136: 'Lord',
+    H433: 'God', H410: 'God', H7225: 'Beginning',
+    G2316: 'God', G2962: 'Lord', G2424: 'Jesus', G5547: 'Christ'
+};
+
+/**
+ * English label for Key Words cards: lexicon gloss first, not the first KJV concordance token
+ * (which yields "angels" for Elohim, "air" for shamayim, etc.).
+ */
+function strongsKeyWordLabel(entry) {
+    if (!entry) return '';
+    var sn = String(entry.sn || '').toUpperCase();
+    if (STRONGS_KEYWORD_LABEL_OVERRIDE[sn]) return STRONGS_KEYWORD_LABEL_OVERRIDE[sn];
+
+    var gl = (entry.gl || '').trim();
+    if (gl) {
+        if (/\bsupreme God\b/i.test(gl)) return 'God';
+        var clause = gl.split(';')[0].trim();
+        while (/^\([^)]+\)\s*/.test(clause)) clause = clause.replace(/^\([^)]+\)\s*/, '').trim();
+        clause = clause.replace(/^\(absolutely\)\s*/i, '').replace(/^\(qualified\)\s*/i, '').trim();
+        var toVerb = clause.match(/^to\s+([\w'-]+)/i);
+        if (toVerb) {
+            var vb = toVerb[1];
+            return vb.charAt(0).toUpperCase() + vb.slice(1).toLowerCase();
+        }
+        var theNoun = clause.match(/^the\s+([\w'-]+)/i);
+        if (theNoun) {
+            var nw = theNoun[1].toLowerCase();
+            if (nw === 'sky' || nw === 'heavens' || nw === 'heaven') return 'Heaven';
+            if (nw === 'earth' || nw === 'land') return 'Earth';
+            return theNoun[1].charAt(0).toUpperCase() + theNoun[1].slice(1).toLowerCase();
+        }
+        if (!/^figuratively/i.test(clause)) {
+            var firstTok = clause.match(/^([\w'-]+)/);
+            if (firstTok) {
+                var ft = firstTok[1];
+                if (ft.toLowerCase() === 'gods' && /\bGod\b/i.test(gl)) return 'God';
+                return ft.charAt(0).toUpperCase() + ft.slice(1).toLowerCase();
+            }
+        }
+    }
+    var xl = (entry.xl || '').trim();
+    if (xl) {
+        var bit = xl.split(/\s+/)[0].replace(/^[^\w\u0590-\u05FF]+/, '');
+        if (bit) return bit;
+    }
+    var kj = (entry.kj || '');
     if (kj) {
         var parts = kj.split(',');
         for (var i = 0; i < parts.length; i++) {
             var p = parts[i].trim();
-            if (!p || /^X\s/i.test(p)) continue;
-            var w = p.replace(/\([^)]*\)/g, '').trim();
-            if (w) return w.split(/\s+/)[0];
+            if (!p || /^\[idiom\]/i.test(p) || /^X\s/i.test(p)) continue;
+            var w = p.replace(/\([^)]*\)/g, '').trim().split(/\s+/)[0];
+            if (!w || /^\[idiom\]/i.test(w)) continue;
+            return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase();
         }
     }
-    var gl = (entry && entry.gl) || '';
-    var gloss = gl.match(/^([^(,;]+)/);
-    if (gloss && gloss[1]) {
-        var t = gloss[1].trim();
-        if (t && !/^figuratively/i.test(t)) return t;
-    }
-    return ((entry && (entry.lm || entry.xl)) || (entry && entry.sn) || '').trim();
+    return ((entry.lm || entry.sn) || '').trim();
+}
+
+/** @deprecated Use strongsKeyWordLabel — kept for any legacy callers. */
+function strongsHeadwordEnglish(entry) {
+    return strongsKeyWordLabel(entry);
 }
 
 /** Strip Strong's parenthetical G-number refs from a definition clause. */
@@ -4051,7 +4143,11 @@ document.getElementById('content').addEventListener('click', function(e) {
 
     // Verse discovery dot
     var dot = e.target.closest('.verse-disc');
-    if (dot && dot.dataset.ref) { openVerseDiscovery(dot.dataset.ref); return; }
+    if (dot && dot.dataset.ref) {
+        closeTocPanel();
+        openVerseDiscovery(dot.dataset.ref);
+        return;
+    }
 
     // Source paragraph with verse back-links
     var para = e.target.closest('p.source-para-linked');
@@ -4062,6 +4158,7 @@ document.getElementById('content').addEventListener('click', function(e) {
 
     var verse = e.target.closest('div.verse');
     if (!verse) return;
+    closeTocPanel();
     focusVerse(verse, false);
     // Open study panel on every verse click
     var disc = verse.querySelector('.verse-disc[data-ref]');
