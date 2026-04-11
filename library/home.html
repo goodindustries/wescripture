@@ -48,9 +48,9 @@
 
     <section class="home-library" aria-label="Library">
         <h1 class="library-page-title">Library</h1>
-        <p class="library-lede">Scripture and study collections — open a shelf in the reader. Each tile is a collection (many documents inside).</p>
+        <p class="library-lede">Pick a shelf — the reader below loads here and the sidebar table of contents updates to that collection (no extra “open TOC” step).</p>
         <div class="home-section-hdr library-shelf-hdr">
-            <a class="corpus-toc-link" href="./index.html?open=scriptures" data-evt="home_open_scriptures">Scripture table of contents</a>
+            <a class="corpus-toc-link" href="./index.html?open=scriptures" data-evt="home_open_scriptures" id="home-open-scripture-toc">Scripture table of contents</a>
         </div>
         <div id="library-shelf" class="library-shelf" role="list" aria-busy="true" aria-label="Collections"></div>
         <details class="library-books-details" id="library-books-details">
@@ -60,14 +60,22 @@
         </details>
     </section>
 
+    <section class="home-reader-wrap" aria-label="Reader">
+        <div class="home-reader-toolbar">
+            <div class="home-section-title">Reader</div>
+            <a class="home-reader-full" href="./index.html" target="_blank" rel="noopener">Open full screen</a>
+        </div>
+        <iframe id="home-reader" class="home-reader" title="WeScripture reader" src="./index.html"></iframe>
+    </section>
+
     <section class="home-tools" aria-label="Study tools">
         <div class="home-section-hdr">
             <div class="home-section-title">Study tools</div>
         </div>
         <div class="tool-row">
-            <a class="tool-card" href="./index.html?open=general_conference" data-evt="home_tool_gc">
+            <a class="tool-card" href="./index.html?open=general_conference" data-evt="home_tool_gc" id="home-tool-gc" data-home-open-collection="general_conference">
                 <div class="tool-title">General Conference</div>
-                <div class="tool-meta">Open sources</div>
+                <div class="tool-meta">Open in reader</div>
             </a>
             <a class="tool-card" href="./source-dashboard.html" data-evt="home_tool_sources">
                 <div class="tool-title">Source dashboard</div>
