@@ -298,13 +298,13 @@
                 var html = '';
                 var scrSrc = dataFilePath('assets/corpus/scriptures.svg');
                 html += '<a class="shelf-tile" role="listitem" href="' + escapeHtml(READER_HOME + '?open=scriptures') + '" data-evt="home_shelf_open" data-collection="scriptures">';
-                html += '<div class="shelf-cover"><img class="shelf-cover-img" src="' + escapeHtml(scrSrc) + '" alt="" width="200" height="200" loading="eager" decoding="async"/>' + SHELF_STACK_SVG + '</div>';
+                html += '<div class="shelf-cover"><img class="shelf-cover-img" src="' + escapeHtml(scrSrc) + '" alt="" width="200" height="300" loading="eager" decoding="async"/>' + SHELF_STACK_SVG + '</div>';
                 html += '<span class="shelf-label">Scriptures</span></a>';
                 cols.forEach(function(c) {
                     var href = READER_HOME + '?open=' + encodeURIComponent(c.id);
                     var src = dataFilePath('assets/corpus/' + c.id + '.svg');
                     html += '<a class="shelf-tile" role="listitem" href="' + escapeHtml(href) + '" data-evt="home_shelf_open" data-collection="' + escapeHtml(c.id) + '">';
-                    html += '<div class="shelf-cover"><img class="shelf-cover-img" src="' + escapeHtml(src) + '" alt="" width="200" height="200" loading="lazy" decoding="async"/>' + SHELF_STACK_SVG + '</div>';
+                    html += '<div class="shelf-cover"><img class="shelf-cover-img" src="' + escapeHtml(src) + '" alt="" width="200" height="300" loading="lazy" decoding="async"/>' + SHELF_STACK_SVG + '</div>';
                     html += '<span class="shelf-label">' + escapeHtml(c.label) + '</span></a>';
                 });
                 shelf.innerHTML = html;

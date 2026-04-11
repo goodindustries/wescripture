@@ -168,24 +168,57 @@
   }
   .collection-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 14px;
   }
   .collection-card {
-    display: block;
-    padding: 14px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
     border-radius: 16px;
     background: #fcfaf6;
     border: 1px solid rgba(156,122,77,0.14);
     text-decoration: none;
     color: inherit;
     cursor: pointer;
+    overflow: hidden;
     transition: background 0.12s, border-color 0.12s, box-shadow 0.12s;
   }
   .collection-card:hover {
     background: rgba(156,122,77,0.07);
     border-color: rgba(156,122,77,0.30);
     box-shadow: 0 6px 14px rgba(0,0,0,0.04);
+  }
+  .collection-card-cover {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    background: #f0ebe3;
+    border-bottom: 1px solid rgba(156,122,77,0.12);
+    overflow: hidden;
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.2) inset,
+      0 6px 18px rgba(0, 0, 0, 0.08);
+  }
+  .collection-card-cover-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .collection-card-stack {
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+    display: flex;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+  }
+  .collection-card-body {
+    padding: 12px 14px 14px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
   }
   .collection-card-name {
     display: block;
@@ -386,9 +419,15 @@
 <div class="collection-category-label">Scripture</div>
 <div class="collection-grid">
 <a class="collection-card" data-open-shelf="scriptures" href="#">
+<div class="collection-card-cover">
+<img class="collection-card-cover-img" src="./assets/corpus/scriptures.svg" alt="" width="200" height="300" loading="lazy" decoding="async"/>
+<span class="collection-card-stack" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none"><rect x="3" y="10" width="14" height="11" rx="2" stroke="#fff" stroke-width="1.25" fill="rgba(0,0,0,0.2)"/><rect x="7" y="4" width="14" height="11" rx="2" stroke="#fff" stroke-width="1.25" fill="rgba(255,255,255,0.14)"/></svg></span>
+</div>
+<div class="collection-card-body">
 <span class="collection-card-name">The Holy Scriptures</span>
 <span class="collection-card-count">Standard Works</span>
 <span class="collection-card-desc">Old Testament, New Testament, Book of Mormon, Doctrine &amp; Covenants, Pearl of Great Price.</span>
+</div>
 </a>
 </div>
 </div>
@@ -396,19 +435,37 @@
 <div class="collection-category-label">Church History &amp; Documents</div>
 <div class="collection-grid">
 <a class="collection-card" data-open-shelf-collection="history_of_church" href="#">
+<div class="collection-card-cover">
+<img class="collection-card-cover-img" src="./assets/corpus/history_of_church.svg" alt="" width="200" height="300" loading="lazy" decoding="async"/>
+<span class="collection-card-stack" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none"><rect x="3" y="10" width="14" height="11" rx="2" stroke="#fff" stroke-width="1.25" fill="rgba(0,0,0,0.2)"/><rect x="7" y="4" width="14" height="11" rx="2" stroke="#fff" stroke-width="1.25" fill="rgba(255,255,255,0.14)"/></svg></span>
+</div>
+<div class="collection-card-body">
 <span class="collection-card-name">History of the Church</span>
 <span class="collection-card-count">7 volumes</span>
 <span class="collection-card-desc">Joseph Smith's official history of the early Church, compiled and edited by B.H. Roberts.</span>
+</div>
 </a>
 <a class="collection-card" data-open-shelf-collection="joseph_smith_papers" href="#">
+<div class="collection-card-cover">
+<img class="collection-card-cover-img" src="./assets/corpus/joseph_smith_papers.svg" alt="" width="200" height="300" loading="lazy" decoding="async"/>
+<span class="collection-card-stack" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none"><rect x="3" y="10" width="14" height="11" rx="2" stroke="#fff" stroke-width="1.25" fill="rgba(0,0,0,0.2)"/><rect x="7" y="4" width="14" height="11" rx="2" stroke="#fff" stroke-width="1.25" fill="rgba(255,255,255,0.14)"/></svg></span>
+</div>
+<div class="collection-card-body">
 <span class="collection-card-name">Joseph Smith Papers</span>
 <span class="collection-card-count">9 documents</span>
 <span class="collection-card-desc">Primary documents from the Joseph Smith Papers Project — journals, letters, and revelations.</span>
+</div>
 </a>
 <a class="collection-card" data-open-shelf-collection="times_and_seasons" href="#">
+<div class="collection-card-cover">
+<img class="collection-card-cover-img" src="./assets/corpus/times_and_seasons.svg" alt="" width="200" height="300" loading="lazy" decoding="async"/>
+<span class="collection-card-stack" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none"><rect x="3" y="10" width="14" height="11" rx="2" stroke="#fff" stroke-width="1.25" fill="rgba(0,0,0,0.2)"/><rect x="7" y="4" width="14" height="11" rx="2" stroke="#fff" stroke-width="1.25" fill="rgba(255,255,255,0.14)"/></svg></span>
+</div>
+<div class="collection-card-body">
 <span class="collection-card-name">Times and Seasons</span>
 <span class="collection-card-count">26 issues</span>
 <span class="collection-card-desc">The official Church newspaper published in Nauvoo, Illinois from 1839 to 1846.</span>
+</div>
 </a>
 </div>
 </div>
@@ -416,19 +473,37 @@
 <div class="collection-category-label">Periodicals &amp; Discourses</div>
 <div class="collection-grid">
 <a class="collection-card" data-open-shelf-collection="general_conference" href="#">
+<div class="collection-card-cover">
+<img class="collection-card-cover-img" src="./assets/corpus/general_conference.svg" alt="" width="200" height="300" loading="lazy" decoding="async"/>
+<span class="collection-card-stack" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none"><rect x="3" y="10" width="14" height="11" rx="2" stroke="#fff" stroke-width="1.25" fill="rgba(0,0,0,0.2)"/><rect x="7" y="4" width="14" height="11" rx="2" stroke="#fff" stroke-width="1.25" fill="rgba(255,255,255,0.14)"/></svg></span>
+</div>
+<div class="collection-card-body">
 <span class="collection-card-name">General Conference</span>
 <span class="collection-card-count">3,908 talks</span>
 <span class="collection-card-desc">Collected addresses from Church general conferences spanning over a century of teaching.</span>
+</div>
 </a>
 <a class="collection-card" data-open-shelf-collection="journal_of_discourses" href="#">
+<div class="collection-card-cover">
+<img class="collection-card-cover-img" src="./assets/corpus/journal_of_discourses.svg" alt="" width="200" height="300" loading="lazy" decoding="async"/>
+<span class="collection-card-stack" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none"><rect x="3" y="10" width="14" height="11" rx="2" stroke="#fff" stroke-width="1.25" fill="rgba(0,0,0,0.2)"/><rect x="7" y="4" width="14" height="11" rx="2" stroke="#fff" stroke-width="1.25" fill="rgba(255,255,255,0.14)"/></svg></span>
+</div>
+<div class="collection-card-body">
 <span class="collection-card-name">Journal of Discourses</span>
 <span class="collection-card-count">26 volumes</span>
 <span class="collection-card-desc">Sermons by Brigham Young and other early Church leaders, recorded verbatim 1851–1886.</span>
+</div>
 </a>
 <a class="collection-card" data-open-shelf-collection="millennial_star" href="#">
+<div class="collection-card-cover">
+<img class="collection-card-cover-img" src="./assets/corpus/millennial_star.svg" alt="" width="200" height="300" loading="lazy" decoding="async"/>
+<span class="collection-card-stack" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none"><rect x="3" y="10" width="14" height="11" rx="2" stroke="#fff" stroke-width="1.25" fill="rgba(0,0,0,0.2)"/><rect x="7" y="4" width="14" height="11" rx="2" stroke="#fff" stroke-width="1.25" fill="rgba(255,255,255,0.14)"/></svg></span>
+</div>
+<div class="collection-card-body">
 <span class="collection-card-name">Millennial Star</span>
 <span class="collection-card-count">162 issues</span>
 <span class="collection-card-desc">The Church's British periodical, published in Liverpool and London from 1840 to 1970.</span>
+</div>
 </a>
 </div>
 </div>
@@ -436,14 +511,26 @@
 <div class="collection-category-label">Journals &amp; Early Writings</div>
 <div class="collection-grid">
 <a class="collection-card" data-open-shelf-collection="pioneer_journals" href="#">
+<div class="collection-card-cover">
+<img class="collection-card-cover-img" src="./assets/corpus/pioneer_journals.svg" alt="" width="200" height="300" loading="lazy" decoding="async"/>
+<span class="collection-card-stack" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none"><rect x="3" y="10" width="14" height="11" rx="2" stroke="#fff" stroke-width="1.25" fill="rgba(0,0,0,0.2)"/><rect x="7" y="4" width="14" height="11" rx="2" stroke="#fff" stroke-width="1.25" fill="rgba(255,255,255,0.14)"/></svg></span>
+</div>
+<div class="collection-card-body">
 <span class="collection-card-name">Pioneer Journals</span>
 <span class="collection-card-count">2 journals</span>
 <span class="collection-card-desc">Personal accounts from early Latter-day Saint pioneers — firsthand records of faith and hardship.</span>
+</div>
 </a>
 <a class="collection-card" data-open-shelf-collection="gutenberg_lds" href="#">
+<div class="collection-card-cover">
+<img class="collection-card-cover-img" src="./assets/corpus/gutenberg_lds.svg" alt="" width="200" height="300" loading="lazy" decoding="async"/>
+<span class="collection-card-stack" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none"><rect x="3" y="10" width="14" height="11" rx="2" stroke="#fff" stroke-width="1.25" fill="rgba(0,0,0,0.2)"/><rect x="7" y="4" width="14" height="11" rx="2" stroke="#fff" stroke-width="1.25" fill="rgba(255,255,255,0.14)"/></svg></span>
+</div>
+<div class="collection-card-body">
 <span class="collection-card-name">Early LDS Writings</span>
 <span class="collection-card-count">4 works</span>
 <span class="collection-card-desc">Early Latter-day Saint texts preserved through Project Gutenberg and related archives.</span>
+</div>
 </a>
 </div>
 </div>
@@ -451,14 +538,26 @@
 <div class="collection-category-label">Ancient &amp; Patristic Texts</div>
 <div class="collection-grid">
 <a class="collection-card" data-open-shelf-collection="ancient_texts" href="#">
+<div class="collection-card-cover">
+<img class="collection-card-cover-img" src="./assets/corpus/ancient_texts.svg" alt="" width="200" height="300" loading="lazy" decoding="async"/>
+<span class="collection-card-stack" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none"><rect x="3" y="10" width="14" height="11" rx="2" stroke="#fff" stroke-width="1.25" fill="rgba(0,0,0,0.2)"/><rect x="7" y="4" width="14" height="11" rx="2" stroke="#fff" stroke-width="1.25" fill="rgba(255,255,255,0.14)"/></svg></span>
+</div>
+<div class="collection-card-body">
 <span class="collection-card-name">Ancient Texts</span>
 <span class="collection-card-count">6 works</span>
 <span class="collection-card-desc">Pseudepigrapha, apocrypha, and related ancient writings that illuminate the scriptural world.</span>
+</div>
 </a>
 <a class="collection-card" data-open-shelf-collection="church_fathers" href="#">
+<div class="collection-card-cover">
+<img class="collection-card-cover-img" src="./assets/corpus/church_fathers.svg" alt="" width="200" height="300" loading="lazy" decoding="async"/>
+<span class="collection-card-stack" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none"><rect x="3" y="10" width="14" height="11" rx="2" stroke="#fff" stroke-width="1.25" fill="rgba(0,0,0,0.2)"/><rect x="7" y="4" width="14" height="11" rx="2" stroke="#fff" stroke-width="1.25" fill="rgba(255,255,255,0.14)"/></svg></span>
+</div>
+<div class="collection-card-body">
 <span class="collection-card-name">Church Fathers</span>
 <span class="collection-card-count">6 works</span>
 <span class="collection-card-desc">Writings of early Christian theologians — Origen, Irenaeus, Clement, and others.</span>
+</div>
 </a>
 </div>
 </div>
