@@ -727,6 +727,12 @@ a.home-nav-reader:hover { background: rgba(0,0,0,0.06); color: var(--text); }
 }
 .word-card { padding: 16px 28px; border-bottom: 1px solid var(--divider); }
 .word-english  { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+.word-english.word-kw-in-verse {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--accent);
+}
 .word-original { font-size: 13px; font-family: 'EB Garamond', Georgia, serif; color: var(--muted); margin-bottom: 8px; }
 .word-meaning  { font-size: 14px; color: var(--text); line-height: 1.6; }
 .word-kw-block { margin-top: 10px; }
@@ -2581,6 +2587,95 @@ function wordAppearsInVerseAsToken(word, verseText) {
     }
 }
 
+function levenshtein(a, b) {
+    if (a === b) return 0;
+    var al = a.length, bl = b.length;
+    if (!al) return bl;
+    if (!bl) return al;
+    var i, j, prev, cur, row = [];
+    for (j = 0; j <= bl; j++) row[j] = j;
+    for (i = 1; i <= al; i++) {
+        prev = i - 1;
+        row[0] = i;
+        for (j = 1; j <= bl; j++) {
+            cur = row[j];
+            var cost = a.charAt(i - 1) === b.charAt(j - 1) ? 0 : 1;
+            row[j] = Math.min(row[j] + 1, row[j - 1] + 1, prev + cost);
+            prev = cur;
+        }
+    }
+    return row[bl];
+}
+
+/** True if a KJV gloss fragment aligns with a verse word (exact or close spelling). */
+function kjGlossMatchesVerseWord(kj, vw) {
+    if (!kj || !vw) return false;
+    vw = String(vw).toLowerCase();
+    if (vw.length < 2) return false;
+    var parts = kj.split(/[,;]/);
+    for (var p = 0; p < parts.length; p++) {
+        var tokens = parts[p].toLowerCase().trim().replace(/^x\s+/i, '').split(/\s+/);
+        for (var t = 0; t < tokens.length; t++) {
+            var tok = tokens[t].replace(/[^a-z']/g, '');
+            if (tok.length < 2) continue;
+            if (vw === tok) return true;
+            if (vw.length >= 4 && tok.length >= 4 && levenshtein(vw, tok) <= 1) return true;
+        }
+    }
+    return false;
+}
+
+/** Headword is visibly grounded in this verse (token or multi-word phrase). */
+function keywordVerifiedInVerse(headword, verseText) {
+    if (!headword || !verseText) return false;
+    var h = String(headword).trim();
+    if (!h) return false;
+    if (/\s/.test(h)) {
+        var norm = h.replace(/\s+/g, ' ').toLowerCase();
+        return verseText.toLowerCase().indexOf(norm) !== -1;
+    }
+    return wordAppearsInVerseAsToken(h, verseText);
+}
+
+/**
+ * Strong's row is relevant to this verse in English: surface label in verse, or KJV gloss matches a verse word.
+ */
+function strongsEntryMatchesVerse(entry, verseText) {
+    if (!entry || !verseText) return false;
+    var lab = strongsKeyWordLabel(entry);
+    if (keywordVerifiedInVerse(lab, verseText)) return true;
+    var kj = entry.kj || '';
+    if (!kj) return false;
+    var vwords = verseText.toLowerCase().match(/[a-z']+/g) || [];
+    for (var i = 0; i < vwords.length; i++) {
+        if (kjGlossMatchesVerseWord(kj, vwords[i])) return true;
+    }
+    return false;
+}
+
+/**
+ * Prefer a verse surface word for the card title when the lexicon label does not appear in the verse.
+ */
+function displayTitleForStrongsKeyWord(entry, verseText) {
+    var lab = strongsKeyWordLabel(entry) || 'Term';
+    if (!verseText) return lab;
+    if (keywordVerifiedInVerse(lab, verseText)) return lab;
+    var kj = entry.kj || '';
+    if (!kj) return lab;
+    var raw = verseText.match(/[a-zA-Z']+/g) || [];
+    var best = '';
+    for (var i = 0; i < raw.length; i++) {
+        var w = raw[i];
+        if (w.length < 2) continue;
+        if (!kjGlossMatchesVerseWord(kj, w.toLowerCase())) continue;
+        if (w.length > best.length) best = w;
+    }
+    if (best) {
+        return best.charAt(0).toUpperCase() + best.slice(1).toLowerCase();
+    }
+    return lab;
+}
+
 /** Keep Donaldson key words only when the headword appears in the verse (substring for multi-word). */
 function filterDonaWordsForVerse(words, verseText) {
     if (!words || !words.length || !verseText) return [];
@@ -2649,8 +2744,8 @@ function openVerseDiscovery(ref) {
         html += '<div class="panel-section">Key words</div>';
         html += '<div class="word-cards-wrap' + (mergedKw.length <= 2 ? ' expanded' : '') + '">';
         mergedKw.forEach(function(item) {
-            if (item.kind === 'dona') html += htmlKeyWordCardDona(item.w);
-            else html += htmlKeyWordCardStrongs(item.entry);
+            if (item.kind === 'dona') html += htmlKeyWordCardDona(item.w, verseText);
+            else html += htmlKeyWordCardStrongs(item.entry, verseText);
         });
         if (mergedKw.length > 2) {
             var extraK = mergedKw.length - 2;
@@ -3767,11 +3862,18 @@ function mergeKeyWordsForVerse(donaWords, strongsEntries, verseText) {
     var sList = (strongsEntries || []).filter(function(e) {
         return (e.lm || e.xl) && (strongsPlain[e.sn] || strongsCleanDef(e.gl, e.kj));
     });
+    if (verseText) {
+        sList = sList.filter(function(e) { return strongsEntryMatchesVerse(e, verseText); });
+    } else {
+        sList = [];
+    }
     sList.sort(function(a, b) {
         return scoreStrongsEntry(verseText, '', b) - scoreStrongsEntry(verseText, '', a);
     });
     sList.forEach(function(entry) {
-        var lab = strongsKeyWordLabel(entry);
+        var lab = verseText
+            ? displayTitleForStrongsKeyWord(entry, verseText)
+            : strongsKeyWordLabel(entry);
         if (!lab) return;
         if (has(lab)) return;
         mark(lab);
@@ -3789,13 +3891,14 @@ function renderKeyWordLayer(label, text) {
 }
 
 /** Lay-oriented card from Donaldson key-word row (no Strong's numbers in copy). */
-function htmlKeyWordCardDona(w) {
+function htmlKeyWordCardDona(w, verseText) {
     var title = (w.word || '').trim() || 'Key term';
     var raw = w.plain || w.meaning || '';
     var script = extractScriptFromNote(raw) || '';
     var sense = stripOriginalLanguageNotes(raw);
     if (!sense && script) sense = 'See original-language form above; nuance is developed in verse commentary.';
-    var inner = '<div class="word-english">' + escapeHtml(title) + '</div>';
+    var verified = verseText && keywordVerifiedInVerse(title, verseText);
+    var inner = '<div class="word-english' + (verified ? ' word-kw-in-verse' : '') + '">' + escapeHtml(title) + '</div>';
     if (script) inner += '<div class="word-original" lang="und" dir="auto">' + escapeHtml(script) + '</div>';
     inner += '<div class="word-kw-block"><span class="word-kw-label">Sense</span><div class="word-kw-text">'
         + makeExpandable(sense, 'note-preview', 'note-overflow', 'note-more') + '</div></div>';
@@ -3803,8 +3906,8 @@ function htmlKeyWordCardDona(w) {
 }
 
 /** Strong's-backed card: definitions only — lemma script optional, never show H/G numbers. */
-function htmlKeyWordCardStrongs(entry) {
-    var title = strongsKeyWordLabel(entry) || 'Term';
+function htmlKeyWordCardStrongs(entry, verseText) {
+    var title = displayTitleForStrongsKeyWord(entry, verseText) || 'Term';
     var script = ((entry.lm || entry.xl || '') + '').trim();
     var sense = stripOriginalLanguageNotes(strongsReaderDef(entry));
     var root = strongsRoot(entry.dv || '');
@@ -3837,7 +3940,9 @@ function htmlKeyWordCardStrongs(entry) {
             etym = dvLine;
         }
     }
-    var inner = '<div class="word-english">' + escapeHtml(title) + '</div>';
+    var verified = verseText && strongsEntryMatchesVerse(entry, verseText)
+        && keywordVerifiedInVerse(title, verseText);
+    var inner = '<div class="word-english' + (verified ? ' word-kw-in-verse' : '') + '">' + escapeHtml(title) + '</div>';
     if (script) inner += '<div class="word-original" lang="und" dir="auto">' + escapeHtml(script) + '</div>';
     inner += renderKeyWordLayer('Sense', sense);
     inner += renderKeyWordLayer('Etymology', etym);
