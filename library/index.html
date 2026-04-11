@@ -1274,6 +1274,23 @@ function buildTocTree(items) {
     return tree;
 }
 
+function sourceCollectionDocCount(collection) {
+    if (!collection) return 0;
+    if (typeof collection.docCount === 'number') return collection.docCount;
+    if (collection.groups && collection.groups.length) {
+        return collection.groups.reduce(function(sum, grp) {
+            return sum + ((grp.docs && grp.docs.length) || 0);
+        }, 0);
+    }
+    return (collection.docs && collection.docs.length) || 0;
+}
+
+function formatSourceCollectionTileMeta(collection) {
+    var n = sourceCollectionDocCount(collection);
+    if (n <= 0) return '';
+    return n + (n === 1 ? ' document' : ' documents');
+}
+
 function buildSourceTree(items) {
     return (items || []).map(function(collection) {
         var rawItems = collection.items || [];
@@ -1298,12 +1315,16 @@ function buildSourceTree(items) {
                 });
                 return { id: grp.id, label: grp.label, meta: grp.meta || '', docs: docs };
             });
+            var docCount = groups.reduce(function(sum, grp) {
+                return sum + ((grp.docs && grp.docs.length) || 0);
+            }, 0);
             return {
                 id: collection.id,
                 label: collection.label,
                 description: collection.description || '',
                 groups: groups,
-                docs: []
+                docs: [],
+                docCount: docCount
             };
         }
         var docs = rawItems.map(function(doc) {
@@ -1325,7 +1346,8 @@ function buildSourceTree(items) {
             label: collection.label,
             description: collection.description || '',
             groups: null,
-            docs: docs
+            docs: docs,
+            docCount: docs.length
         };
     });
 }
@@ -1554,7 +1576,7 @@ function renderTocView() {
         tocTree.sources.forEach(function(collection) {
             html += renderTocTile({
                 label: collection.label,
-                meta: collection.docs.length + ' documents',
+                meta: formatSourceCollectionTileMeta(collection),
                 attrs: `data-action="source-collection" data-collection="${escapeAttr(collection.id)}"`
             });
         });
