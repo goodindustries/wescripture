@@ -2537,6 +2537,20 @@ function discParseCard(entry) {
     return { author: author, work: '', badgeClass: '', badge: badge };
 }
 
+/** True when a graph ref label (e.g. "Genesis 1:6") targets the same book+chapter as chapterId (e.g. genesis_1). */
+function scriptureRefIsSameChapter(chapterId, refLabel) {
+    var m = String(chapterId || '').match(/^(.+)_(\d+)$/);
+    if (!m) return false;
+    var bookSlug = m[1];
+    var chStr = m[2];
+    var ref = String(refLabel || '').trim();
+    if (!ref) return false;
+    var bookPattern = bookSlug.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/_/g, '[\\s_]+');
+    var chPattern = chStr + '(?!\\d)';
+    var re = new RegExp('^' + bookPattern + '\\s+' + chPattern + '\\s*:', 'i');
+    return re.test(ref);
+}
+
 function chapterGraphEchoes(chapterId, vnum) {
     // Return [{ref, text, score}] of standard_works edges with w≥0.75 for this verse
     var graph = chapterGraphCache[chapterId];
@@ -2547,16 +2561,13 @@ function chapterGraphEchoes(chapterId, vnum) {
         if (n.t === 'v') verseMap[n.id] = n;
     });
     var results = [];
-    var chPrefix = chapterId.replace(/_(\d+)$/, function(_, n) {
-        return ' ' + parseInt(n, 10) + ':';
-    }).replace(/_/g, ' ');
     (graph.edges || []).forEach(function(edge) {
         if ((edge.w || 0) < 0.75) return;
         var vn = verseMap[edge.s], pn = nodeMap[edge.t];
         if (!vn || !pn || pn.src !== 'standard_works') return;
         if (String(vn.n) !== String(vnum)) return;
         var ref = (pn.lb || '').trim();
-        if (!ref || ref.startsWith(chPrefix)) return;
+        if (!ref || scriptureRefIsSameChapter(chapterId, ref)) return;
         if (!results.some(function(x){ return x.ref === ref; })) {
             results.push({ ref: ref, text: (pn.x || '').replace(/  +/g,' ').trim(), score: edge.w || 0 });
         }
