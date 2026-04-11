@@ -1,4 +1,12 @@
-"""Append-only JSONL queue for Crew swarm (separate from task-ledger.jsonl)."""
+"""
+Append-only JSONL queue for Crew swarm (separate from task-ledger.jsonl).
+
+**Producer (core agent / humans / scripts):** append `task_queued` via `enqueue_task()`
+or `python3 lds_pipeline/crew_swarm/queue_add.py`.
+
+**Consumer (local runner only):** `runner.py` reads `next_pending()` and runs
+`run_swarm_on_task()` — it does not invent backlog; it only drains the queue.
+"""
 
 from __future__ import annotations
 
@@ -78,20 +86,22 @@ def next_pending(events: list[dict] | None = None) -> dict[str, Any] | None:
     return pend[0]
 
 
-def enqueue_task(title: str, notes: str = "") -> str:
+def enqueue_task(title: str, notes: str = "", source: str | None = None) -> str:
+    """Queue one task for the local runner. ``source`` records who filed it (e.g. CoreAgent, Cursor)."""
     events = load_events()
     existing_ids = set(project_tasks(events).keys())
     nums = [int(t[2:]) for t in existing_ids if t.startswith("C-") and t[2:].isdigit()]
     nxt = (max(nums) + 1) if nums else 1
     task_id = f"C-{nxt:04d}"
-    _append(
-        {
-            "event": "task_queued",
-            "task_id": task_id,
-            "title": title,
-            "notes": notes,
-        }
-    )
+    row: dict = {
+        "event": "task_queued",
+        "task_id": task_id,
+        "title": title,
+        "notes": notes,
+    }
+    if source:
+        row["source"] = source
+    _append(row)
     return task_id
 
 

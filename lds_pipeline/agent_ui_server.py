@@ -6,7 +6,7 @@ Local-only HTTP UI for starting/stopping agents, Crew swarm, and viewing ledger 
   # open http://127.0.0.1:8765/
 
 Binds 127.0.0.1 only. Set AGENT_UI_PORT to change port.
-Crew swarm: pip install -r requirements-crew.txt; see lds_pipeline/crew_swarm/runner.py.
+Crew swarm: pip install -r requirements-crew.txt; POST /api/crew/queue JSON {title, notes?, source?} to enqueue.
 """
 
 from __future__ import annotations
@@ -392,7 +392,29 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self) -> None:
         path = urlparse(self.path).path
-        _read_body(self)
+        body = _read_body(self)
+
+        if path == "/api/crew/queue":
+            try:
+                from crew_swarm.events import enqueue_task
+
+                if not body.strip():
+                    self._json(400, {"ok": False, "error": "empty body"})
+                    return
+                data = json.loads(body.decode("utf-8"))
+                title = (data.get("title") or "").strip()
+                if not title:
+                    self._json(400, {"ok": False, "error": "title required"})
+                    return
+                notes = (data.get("notes") or "").strip()
+                src = (data.get("source") or "AgentUI").strip() or "AgentUI"
+                tid = enqueue_task(title, notes=notes, source=src)
+                self._json(200, {"ok": True, "task_id": tid})
+            except json.JSONDecodeError:
+                self._json(400, {"ok": False, "error": "invalid JSON"})
+            except Exception as e:  # noqa: BLE001
+                self._json(500, {"ok": False, "error": str(e)})
+            return
 
         if path == "/api/stop-crew":
             try:

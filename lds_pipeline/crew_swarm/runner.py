@@ -1,10 +1,16 @@
 #!/usr/bin/env python3
 """
-Run Crew swarm on the next pending task from diagnostics/crew_events.jsonl.
+**Local consumer only:** run Crew swarm on the next **pending** task from
+``diagnostics/crew_events.jsonl``.
+
+This process does **not** decide the backlog. The **core agent** (or human/scripts)
+**produces** work by appending ``task_queued`` — use ``queue_add.py``, ``--seed``, or
+``POST /api/crew/queue`` on the agent UI.
 
   python3 lds_pipeline/crew_swarm/runner.py --once
   python3 lds_pipeline/crew_swarm/runner.py --loop --sleep 30
   python3 lds_pipeline/crew_swarm/runner.py --seed "Ch genesis_1: add entity span annotations"
+  python3 lds_pipeline/crew_swarm/queue_add.py --title "..." --source Cursor
 
 Env:
   CREW_OLLAMA_BASE_URL   default http://127.0.0.1:11434 (Ollama root; /v1 stripped if present)
@@ -32,11 +38,16 @@ def main() -> None:
     ap.add_argument("--loop", action="store_true", help="Poll for pending tasks forever")
     ap.add_argument("--sleep", type=float, default=30.0, help="Seconds between loop iterations")
     ap.add_argument("--seed", type=str, default="", help="Enqueue one task with this title then exit")
+    ap.add_argument(
+        "--seed-source",
+        default="cli",
+        help="Producer id stored on task_queued when using --seed (default: cli)",
+    )
     ap.add_argument("--quiet", action="store_true", help="Less crew verbose logging")
     args = ap.parse_args()
 
     if args.seed:
-        tid = enqueue_task(args.seed, notes="")
+        tid = enqueue_task(args.seed, notes="", source=args.seed_source)
         print(f"queued {tid}", flush=True)
         return
 
