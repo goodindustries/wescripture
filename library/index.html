@@ -1447,8 +1447,15 @@ Promise.all([
         tocTree.sources = buildSourceTree(sourceData);
         chapterOrder = data.filter(t => t.type === 'chapter' || t.type === 'front').map(t => t.id);
         buildToc();
+        var routeParams = new URLSearchParams(window.location.search);
+        var openFromUrl = routeParams.get('open');
+        var jumpFromUrl = routeParams.get('jump');
         var last = localStorage.getItem(SITE.storageKey + '_position');
         var startId = (last && chapterOrder.includes(last)) ? last : 'title_page';
+        // Home shelf links use ?open=collection_id — don't restore last scripture chapter behind the TOC.
+        if (openFromUrl && !jumpFromUrl) {
+            startId = 'title_page';
+        }
         setTocPathForChapter(startId);
         loadChapter(startId, true).then(() => {
             document.getElementById('splash').classList.add('gone');
