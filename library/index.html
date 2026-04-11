@@ -1553,7 +1553,8 @@ Promise.all([
                         }
                     }
                     renderTitlePageInlineNav();
-                    var navEl = document.getElementById('title-inline-nav');
+                    var tpNav = document.getElementById('ch-title_page');
+                    var navEl = tpNav && tpNav.querySelector('#title-inline-nav');
                     if (navEl) navEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 }
 
@@ -1792,7 +1793,7 @@ function hydrateTitlePage() {
                 titlePageInlinePath = { level: 'source-root', volume: null, book: null, sourceCollection: null, sourceGroup: null };
             }
             renderTitlePageInlineNav();
-            var nav = document.getElementById('title-inline-nav');
+            var nav = root.querySelector('#title-inline-nav');
             if (nav) nav.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         });
     });
@@ -1810,8 +1811,8 @@ function hydrateTitlePage() {
                 titlePageInlinePath = { level: 'source-root', volume: null, book: null, sourceCollection: null, sourceGroup: null };
             }
             renderTitlePageInlineNav();
-            var nav = document.getElementById('title-inline-nav');
-            if (nav) nav.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            var nav2 = root.querySelector('#title-inline-nav');
+            if (nav2) nav2.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         });
     });
 
@@ -1826,36 +1827,39 @@ function hydrateTitlePage() {
             var tile = ev.target.closest('#title-inline-nav .title-inline-tile');
             if (!tile) return;
             ev.preventDefault();
-            var action = tile.dataset.inlineAction;
+            ev.stopPropagation();
+            var action = tile.getAttribute('data-action');
             if (action === 'volume') {
-                var volume = findVolume(tile.dataset.volume);
+                var volume = findVolume(tile.getAttribute('data-volume'));
                 if (!volume) return;
                 titlePageInlinePath = { level: 'volume', volume: volume, book: null, sourceCollection: null, sourceGroup: null };
                 renderTitlePageInlineNav();
             } else if (action === 'book') {
-                var volB = findVolume(tile.dataset.volume);
-                var book = findBook(volB, tile.dataset.book);
+                var volB = findVolume(tile.getAttribute('data-volume'));
+                var book = findBook(volB, tile.getAttribute('data-book'));
                 if (!volB || !book) return;
                 titlePageInlinePath = { level: 'book', volume: volB, book: book, sourceCollection: null, sourceGroup: null };
                 renderTitlePageInlineNav();
             } else if (action === 'source-collection') {
-                var coll = findSourceCollection(tile.dataset.collection);
+                var coll = findSourceCollection(tile.getAttribute('data-collection'));
                 if (!coll) return;
                 titlePageInlinePath = { level: 'source-collection', volume: null, book: null, sourceCollection: coll, sourceGroup: null };
                 renderTitlePageInlineNav();
             } else if (action === 'source-group') {
-                var collG = findSourceCollection(tile.dataset.collection);
+                var collG = findSourceCollection(tile.getAttribute('data-collection'));
                 var grp = collG && collG.groups &&
-                    collG.groups.find(function(g) { return g.id === tile.dataset.group; });
+                    collG.groups.find(function(g) { return g.id === tile.getAttribute('data-group'); });
                 if (!grp) return;
                 titlePageInlinePath = { level: 'source-group', volume: null, book: null, sourceCollection: collG, sourceGroup: grp };
                 renderTitlePageInlineNav();
             } else if (action === 'source-doc') {
-                var docMeta = sourceMeta[tile.dataset.doc];
+                var docId = tile.getAttribute('data-doc');
+                var docMeta = sourceMeta[docId];
                 if (!docMeta) return;
-                loadSourceDocument(tile.dataset.doc, docMeta.href);
+                loadSourceDocument(docId, docMeta.href);
             } else if (action === 'chapter') {
-                jumpTo(tile.dataset.id);
+                var chId = tile.getAttribute('data-chapter-id');
+                if (chId) jumpTo(chId);
             }
         });
     }
@@ -1896,11 +1900,12 @@ function titleInlineBack() {
 }
 
 function renderTitlePageInlineNav() {
-    var wrap = document.getElementById('title-inline-nav');
-    var grid = document.getElementById('title-inline-nav-grid');
-    var back = document.getElementById('title-inline-nav-back');
-    var titleEl = document.getElementById('title-inline-nav-title');
-    var subEl = document.getElementById('title-inline-nav-subtitle');
+    var tp = document.getElementById('ch-title_page');
+    if (!tp) return;
+    var grid = tp.querySelector('#title-inline-nav-grid');
+    var back = tp.querySelector('#title-inline-nav-back');
+    var titleEl = tp.querySelector('#title-inline-nav-title');
+    var subEl = tp.querySelector('#title-inline-nav-subtitle');
     if (!grid || !titleEl) return;
 
     var path = titlePageInlinePath;
@@ -1921,12 +1926,16 @@ function renderTitlePageInlineNav() {
         grid.className = 'title-inline-nav-grid';
         titleEl.textContent = 'Scriptures';
         subEl.textContent = 'The Holy Scriptures';
-        tocTree.volumes.forEach(function(volume) {
-            html += renderTitleInlineTile({
-                label: volume.label,
-                attrs: `data-inline-action="volume" data-volume="${escapeAttr(volume.label)}"`
+        if (!tocTree.volumes || !tocTree.volumes.length) {
+            html = '<p class="title-inline-placeholder">Standard works list is still loading. Try again in a moment.</p>';
+        } else {
+            tocTree.volumes.forEach(function(volume) {
+                html += renderTitleInlineTile({
+                    label: volume.label,
+                    attrs: `data-action="volume" data-volume="${escapeAttr(volume.label)}"`
+                });
             });
-        });
+        }
     } else if (path.level === 'source-root') {
         grid.className = 'title-inline-nav-grid';
         titleEl.textContent = 'Sources';
@@ -1935,7 +1944,7 @@ function renderTitlePageInlineNav() {
             html += renderTitleInlineTile({
                 label: collection.label,
                 meta: formatSourceCollectionTileMeta(collection),
-                attrs: `data-inline-action="source-collection" data-collection="${escapeAttr(collection.id)}"`
+                attrs: `data-action="source-collection" data-collection="${escapeAttr(collection.id)}"`
             });
         });
     } else if (path.level === 'volume' && path.volume) {
@@ -1947,7 +1956,7 @@ function renderTitlePageInlineNav() {
                 label: book.label,
                 book: true,
                 active: currentChapter && chapterMeta[currentChapter] && chapterMeta[currentChapter].book === book.label,
-                attrs: `data-inline-action="book" data-volume="${escapeAttr(path.volume.label)}" data-book="${escapeAttr(book.label)}"`
+                attrs: `data-action="book" data-volume="${escapeAttr(path.volume.label)}" data-book="${escapeAttr(book.label)}"`
             });
         });
     } else if (path.level === 'source-collection' && path.sourceCollection) {
@@ -1963,7 +1972,7 @@ function renderTitlePageInlineNav() {
                 html += renderTitleInlineTile({
                     label: grp.label,
                     meta: grp.meta,
-                    attrs: `data-inline-action="source-group" data-collection="${escapeAttr(coll.id)}" data-group="${escapeAttr(grp.id)}"`
+                    attrs: `data-action="source-group" data-collection="${escapeAttr(coll.id)}" data-group="${escapeAttr(grp.id)}"`
                 });
             });
         } else {
@@ -1972,7 +1981,7 @@ function renderTitlePageInlineNav() {
                     label: doc.label,
                     meta: doc.meta,
                     active: currentSourceDoc === doc.id,
-                    attrs: `data-inline-action="source-doc" data-doc="${escapeAttr(doc.id)}"`
+                    attrs: `data-action="source-doc" data-doc="${escapeAttr(doc.id)}"`
                 });
             });
         }
@@ -1985,7 +1994,7 @@ function renderTitlePageInlineNav() {
                 label: doc.label,
                 meta: doc.meta,
                 active: currentSourceDoc === doc.id,
-                attrs: `data-inline-action="source-doc" data-doc="${escapeAttr(doc.id)}"`
+                attrs: `data-action="source-doc" data-doc="${escapeAttr(doc.id)}"`
             });
         });
     } else if (path.level === 'book' && path.book) {
@@ -1997,7 +2006,7 @@ function renderTitlePageInlineNav() {
                 label: ch.label,
                 chapter: true,
                 active: currentChapter === ch.id,
-                attrs: `data-inline-action="chapter" data-id="${ch.id}"`
+                attrs: `data-action="chapter" data-chapter-id="${escapeAttr(ch.id)}"`
             });
         });
     } else {
@@ -2020,7 +2029,8 @@ function routeTitlePageInlineShelfFromHome(key) {
     }
     function finish() {
         renderTitlePageInlineNav();
-        var nav = document.getElementById('title-inline-nav');
+        var tpNav = document.getElementById('ch-title_page');
+        var nav = tpNav && tpNav.querySelector('#title-inline-nav');
         if (nav) nav.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
     if (currentChapter !== 'title_page') {
@@ -2039,7 +2049,8 @@ function routeTitlePageInlineCollectionFromHome(collectionId) {
     }
     function finish() {
         renderTitlePageInlineNav();
-        var nav = document.getElementById('title-inline-nav');
+        var tpNav = document.getElementById('ch-title_page');
+        var nav = tpNav && tpNav.querySelector('#title-inline-nav');
         if (nav) nav.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
     if (currentChapter !== 'title_page') {
