@@ -60,13 +60,18 @@
         <div id="continue-row" class="chip-row"></div>
     </section>
 
-    <section class="home-corpus" aria-label="Scripture library">
-        <div class="home-section-hdr corpus-hdr">
-            <div class="home-section-title">Scripture library</div>
-            <a class="corpus-toc-link" href="./index.html?open=scriptures" data-evt="home_open_scriptures">Table of contents</a>
+    <section class="home-library" aria-label="Library">
+        <h1 class="library-page-title">Library</h1>
+        <p class="library-lede">Scripture and study collections — open a shelf in the reader. Each tile is a collection (many documents inside).</p>
+        <div class="home-section-hdr library-shelf-hdr">
+            <a class="corpus-toc-link" href="./index.html?open=scriptures" data-evt="home_open_scriptures">Scripture table of contents</a>
         </div>
-        <p class="corpus-lede">The full standard works — each cover opens that book in the reader.</p>
-        <div id="corpus-root" class="corpus-root" aria-live="polite" aria-busy="true"></div>
+        <div id="library-shelf" class="library-shelf" role="list" aria-busy="true" aria-label="Collections"></div>
+        <details class="library-books-details" id="library-books-details">
+            <summary class="library-books-summary">Browse standard works by book</summary>
+            <p class="library-books-hint">Opens the list of all canon books with quick jumps.</p>
+            <div id="corpus-root" class="corpus-root corpus-root--nested" aria-live="polite"></div>
+        </details>
     </section>
 
     <section class="home-tools" aria-label="Study tools">
@@ -93,6 +98,13 @@
         var p = document.documentElement.getAttribute('data-assets-prefix');
         return p ? p.replace(/\/$/, '') + '/index.html' : './index.html';
     })();
+
+    function dataFilePath(rel) {
+        var p = document.documentElement.getAttribute('data-assets-prefix');
+        return (p ? p.replace(/\/$/, '') + '/' : './') + String(rel || '').replace(/^\.\//, '');
+    }
+
+    var SHELF_STACK_SVG = '<span class="shelf-stack" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none"><rect x="3" y="10" width="14" height="11" rx="2" stroke="#fff" stroke-width="1.25" fill="rgba(0,0,0,0.2)"/><rect x="7" y="4" width="14" height="11" rx="2" stroke="#fff" stroke-width="1.25" fill="rgba(255,255,255,0.14)"/></svg></span>';
 
     function safeGtag() {
         if (typeof window.gtag !== 'function') return;
@@ -278,6 +290,52 @@
         });
         root.innerHTML = html;
         root.setAttribute('aria-busy', 'false');
+    }
+
+    function renderLibraryShelf() {
+        var shelf = document.getElementById('library-shelf');
+        if (!shelf) return;
+        fetch(dataFilePath('source-dashboard.json'))
+            .then(function(r) { return r.ok ? r.json() : null; })
+            .then(function(dash) {
+                var cols = (dash && dash.collections) ? dash.collections.slice() : [];
+                cols.sort(function(a, b) {
+                    if (a.id === 'general_conference') return -1;
+                    if (b.id === 'general_conference') return 1;
+                    return String(a.label || '').localeCompare(String(b.label || ''));
+                });
+                var html = '';
+                var scrSrc = dataFilePath('assets/corpus/scriptures.svg');
+                html += '<a class="shelf-tile" role="listitem" href="' + escapeHtml(READER_HOME + '?open=scriptures') + '" data-evt="home_shelf_open" data-collection="scriptures">';
+                html += '<div class="shelf-cover"><img class="shelf-cover-img" src="' + escapeHtml(scrSrc) + '" alt="" width="200" height="200" loading="eager" decoding="async"/>' + SHELF_STACK_SVG + '</div>';
+                html += '<span class="shelf-label">Scriptures</span></a>';
+                cols.forEach(function(c) {
+                    var href = READER_HOME + '?open=' + encodeURIComponent(c.id);
+                    var src = dataFilePath('assets/corpus/' + c.id + '.svg');
+                    html += '<a class="shelf-tile" role="listitem" href="' + escapeHtml(href) + '" data-evt="home_shelf_open" data-collection="' + escapeHtml(c.id) + '">';
+                    html += '<div class="shelf-cover"><img class="shelf-cover-img" src="' + escapeHtml(src) + '" alt="" width="200" height="200" loading="lazy" decoding="async"/>' + SHELF_STACK_SVG + '</div>';
+                    html += '<span class="shelf-label">' + escapeHtml(c.label) + '</span></a>';
+                });
+                shelf.innerHTML = html;
+                shelf.setAttribute('aria-busy', 'false');
+            })
+            .catch(function() {
+                shelf.innerHTML = '<p class="corpus-error">Couldn’t load library collections.</p>';
+                shelf.setAttribute('aria-busy', 'false');
+            });
+    }
+
+    function wireLibraryBooksDetails() {
+        var det = document.getElementById('library-books-details');
+        if (!det) return;
+        var loaded = false;
+        det.addEventListener('toggle', function() {
+            if (!det.open || loaded) return;
+            loaded = true;
+            var root = document.getElementById('corpus-root');
+            if (root) root.setAttribute('aria-busy', 'true');
+            loadBooksSuggest().then(function() { renderCorpusBooks(); });
+        });
     }
 
     /** Strip chapter/verse tails so "John 3:16" and "Gen 1" match books. */
@@ -520,14 +578,17 @@
         document.addEventListener('click', function(e) {
             var a = e.target.closest('a[data-evt]');
             if (!a) return;
-            safeGtag('event', a.dataset.evt, { page: 'home' });
+            var payload = { page: 'home' };
+            if (a.dataset.collection) payload.collection = a.dataset.collection;
+            safeGtag('event', a.dataset.evt, payload);
         });
     }
 
     renderContinueReading();
     wireEvents();
     wireJumpAutocomplete();
-    loadBooksSuggest().then(function() { renderCorpusBooks(); });
+    renderLibraryShelf();
+    wireLibraryBooksDetails();
 })();
 </script>
 
