@@ -2320,9 +2320,11 @@ function openEntityProfile(entityId) {
 
     var extraHtml = '';
 
-    // Description + dates
+    // Description + dates (fallback to Wikipedia extract when no short desc)
     if (entity.desc) {
         extraHtml += '<div class="ep-desc">' + escapeHtml(entity.desc) + '</div>';
+    } else if (entity.wikipedia_summary) {
+        extraHtml += '<div class="ep-desc">' + escapeHtml(entity.wikipedia_summary) + '</div>';
     }
     var dates = [entity.born ? 'Born ' + entity.born : '', entity.died ? 'Died ' + entity.died : ''].filter(Boolean).join(' · ');
     if (dates) {

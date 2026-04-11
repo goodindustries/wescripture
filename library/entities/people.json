@@ -4894,12 +4894,19 @@
     "id": "person:d_kelly_ogden",
     "name": "D. Kelly Ogden",
     "variants": [
-      "D. Kelly Ogden"
+      "D. Kelly Ogden",
+      "Kelly Ogden"
     ],
-    "roles": [],
+    "roles": [
+      "Professor of Ancient Scripture (BYU)",
+      "Jerusalem Center field-study programs"
+    ],
     "doc_ids": [],
     "quote_count": 137,
-    "talk_count": 0
+    "talk_count": 0,
+    "desc": "American professor of religion; long-time BYU Ancient Scripture faculty (1980–2015) with graduate training in Middle East studies and Hebrew; led Holy Land field studies and contributed to LDS scripture study resources.",
+    "christ_connection": "Ogden’s teaching and writing on the Old Testament, the Holy Land, and LDS scripture help readers situate covenant history and see how ancient texts testify of the Savior.",
+    "wikipedia_summary": "D. Kelly Ogden is a retired professor of ancient scripture at Brigham Young University. He led BYU Jerusalem Center field-study programs and published widely on the Holy Land and Latter-day Saint scripture study (faculty directory: religion.byu.edu)."
   },
   {
     "id": "person:robert_l_millet",
@@ -11069,22 +11076,6 @@
     ],
     "quote_count": 1,
     "talk_count": 5
-  },
-  {
-    "id": "person:kelly_ogden",
-    "name": "Kelly Ogden",
-    "variants": [
-      "Kelly Ogden"
-    ],
-    "roles": [],
-    "doc_ids": [],
-    "quote_count": 6,
-    "talk_count": 0,
-    "desc": "American pop punk band",
-    "wikipedia_title": "Kelly Ogden",
-    "wikipedia_summary": "The Dollyrots are an American punk rock band formed in 2000, composed of Kelly Ogden and Luis Cabezas. They have released nine studio albums under Panic Button, Joan Jett's Blackheart Records, Little Steven's Wicked Cool Records, their own label, Arrested Youth Records and currently Wicked Cool Records.",
-    "wikipedia_thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/The_Dollyrots_2012.JPG/330px-The_Dollyrots_2012.JPG",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/The_Dollyrots"
   },
   {
     "id": "person:jfb_commentary",
