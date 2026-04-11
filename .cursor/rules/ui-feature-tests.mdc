@@ -1,0 +1,10 @@
+---
+description: Per-feature Puppeteer UI tests and when to add them
+globs: library/**/*.html,library/index.html,test-*.js
+---
+
+# UI feature tests
+
+- New or changed reader/home UI should include **`test-<feature-slug>.js`** at repo root (Puppeteer).
+- Follow **`AGENT_GUIDELINES.md`** → *Quality Gates* → *UI feature tests* for the review → infer → build → run loop and server URL notes.
+- Existing examples: `test-title-inline-nav.js`, `test-library-buttons.js`, `test-title-page-dashboard.js`.

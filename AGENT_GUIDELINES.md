@@ -284,6 +284,22 @@ Before pushing any library change:
 
 For pipeline changes: run with `--dry-run` first, inspect output, then run live.
 
+### UI feature tests (Puppeteer)
+
+**Policy:** New or materially changed UI in `library/` (HTML/JS in `library/index.html`, chapter templates, `library/home.html`, etc.) should ship with a **dedicated** root-level script: **`test-<feature-slug>.js`**, using the same stack as [`test-library-buttons.js`](test-library-buttons.js) / [`test-title-inline-nav.js`](test-title-inline-nav.js) (Puppeteer + local HTTP server).
+
+**Naming:** Mirror the feature (`test-title-inline-nav.js`, `test-home-iframe-inline-nav.js`, …).
+
+**Agent workflow (review → build → run):**
+
+1. **Review** — Map entry points (selectors, `data-*`, URLs, `postMessage` types) and the happy path.
+2. **Infer** — Define 3–8 assertions (initial DOM → primary interaction → outcome).
+3. **Build** — Add `test-<feature>.js`; document the base URL in the file header.
+4. **Run** — From repo root, serve static files so `library/index.html` is reachable (see script header). Example: `python3 -m http.server 4173` with cwd = repo root → `http://127.0.0.1:4173/library/index.html`. Or `cd library && python3 -m http.server 4173` → `http://127.0.0.1:4173/index.html` (adjust `BASE_URL` in the test).
+5. **Gate** — Before merge/deploy on UI changes, run the feature’s test and fix failures.
+
+Tests should assert **user-visible** behavior (navigation, panels, chapter IDs), not internal variables.
+
 ---
 
 ## 9. What Not to Do
