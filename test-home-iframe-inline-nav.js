@@ -1,10 +1,10 @@
 /**
- * Home page embeds index.html in #home-reader; shelf clicks postMessage → inline title nav.
+ * Home dashboard: shelf tile navigates to reader with ?open=…; title page inline nav appears (no iframe).
  *
  * Serve repo root: python3 -m http.server 4173
  *   node test-home-iframe-inline-nav.js
  *
- * TEST_BASE_URL default: http://127.0.0.1:4173/library/home.html
+ * TEST_HOME_URL default: http://127.0.0.1:4173/library/home.html
  */
 
 const fs = require('fs');
@@ -37,33 +37,29 @@ async function run() {
   await page.setViewport({ width: 1280, height: 1100, deviceScaleFactor: 1 });
 
   await page.goto(url, { waitUntil: 'networkidle0', timeout: 90000 });
+  await page.waitForSelector('#library-shelf a.shelf-tile[data-collection="scriptures"]', { timeout: 30000 });
 
-  await page.waitForSelector('#home-reader', { timeout: 30000 });
-  const frameEl = await page.$('#home-reader');
-  assert(frameEl, '#home-reader iframe missing');
-  const frame = await frameEl.contentFrame();
-  assert(frame, 'iframe contentFrame unavailable');
-  await frame.waitForFunction(() => document.getElementById('splash')?.classList.contains('gone'), {
-    timeout: 90000,
-  });
-  await frame.waitForSelector('#ch-title_page', { timeout: 30000 });
+  await Promise.all([
+    page.waitForNavigation({ waitUntil: 'networkidle0', timeout: 90000 }),
+    page.click('#library-shelf a.shelf-tile[data-collection="scriptures"]'),
+  ]);
 
-  await page.click('#library-shelf a.shelf-tile[data-collection="scriptures"]');
-
-  await frame.waitForFunction(
+  await page.waitForSelector('#splash.gone', { timeout: 90000 });
+  await page.waitForSelector('#ch-title_page', { timeout: 30000 });
+  await page.waitForFunction(
     () =>
       document.querySelectorAll('#ch-title_page #title-inline-nav-grid .title-inline-tile[data-action="volume"]')
         .length > 0,
     { timeout: 25000 }
   );
 
-  const iframeTocHidden = await frame.evaluate(() => {
+  const tocHidden = await page.evaluate(() => {
     const t = document.getElementById('toc');
     return t && t.classList.contains('hidden');
   });
-  assert(iframeTocHidden, 'expected reader #toc hidden in iframe after shelf click');
+  assert(tocHidden, 'expected #toc hidden after opening scriptures from home');
 
-  console.log(JSON.stringify({ ok: true, url, test: 'home-iframe-scriptures-inline-nav' }, null, 2));
+  console.log(JSON.stringify({ ok: true, url, test: 'home-shelf-to-reader-inline-nav' }, null, 2));
   await browser.close();
 }
 

@@ -48,7 +48,7 @@
 
     <section class="home-library" aria-label="Library">
         <h1 class="library-page-title">Library</h1>
-        <p class="library-lede">Pick a shelf — the reader below opens on the home dashboard; the browse panel drills down by volume, book, and chapter (or collection) without opening the sidebar TOC.</p>
+        <p class="library-lede">Pick a shelf to open the reader in full view — the browse panel drills down by volume, book, and chapter (or collection) without opening the sidebar TOC.</p>
         <div class="home-section-hdr library-shelf-hdr">
             <a class="corpus-toc-link" href="./index.html?open=scriptures" data-evt="home_open_scriptures" id="home-open-scripture-toc">Open scripture browser on dashboard</a>
         </div>
@@ -58,14 +58,6 @@
             <p class="library-books-hint">Opens the list of all canon books with quick jumps.</p>
             <div id="corpus-root" class="corpus-root corpus-root--nested" aria-live="polite"></div>
         </details>
-    </section>
-
-    <section class="home-reader-wrap" aria-label="Reader">
-        <div class="home-reader-toolbar">
-            <div class="home-section-title">Reader</div>
-            <a class="home-reader-full" href="./index.html" target="_blank" rel="noopener">Open full screen</a>
-        </div>
-        <iframe id="home-reader" class="home-reader" title="WeScripture reader" src="./index.html"></iframe>
     </section>
 
     <section class="home-tools" aria-label="Study tools">
@@ -128,37 +120,12 @@
         }
     }
 
-    function getReaderIframe() {
-        return document.getElementById('home-reader');
-    }
-
-    function postReader(msg) {
-        var iframe = getReaderIframe();
-        if (!iframe || !iframe.contentWindow) return;
-        try {
-            iframe.contentWindow.postMessage(msg, '*');
-        } catch (e) {}
-    }
-
-    function scrollReaderIntoView() {
-        var iframe = getReaderIframe();
-        if (!iframe) return;
-        try {
-            iframe.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        } catch (e) {}
-    }
-
     function navigateReaderTo(href) {
-        var iframe = getReaderIframe();
-        if (!iframe) {
-            window.location.href = href;
-            return;
-        }
         var resolved = href;
         try {
             resolved = new URL(href, window.location.href).href;
         } catch (e2) {}
-        iframe.src = resolved;
+        window.location.href = resolved;
     }
 
     function renderContinueReading() {
@@ -195,7 +162,6 @@
             var href = a.getAttribute('href');
             safeGtag('event', 'home_continue_reading', { page: 'home', target: a.textContent.trim().slice(0, 80) });
             navigateReaderTo(href);
-            scrollReaderIntoView();
         });
     }
 
@@ -335,7 +301,6 @@
             if (!a) return;
             e.preventDefault();
             navigateReaderTo(a.getAttribute('href'));
-            scrollReaderIntoView();
         });
     }
 
@@ -381,13 +346,7 @@
             var a = e.target.closest('a.shelf-tile');
             if (!a) return;
             e.preventDefault();
-            var col = a.getAttribute('data-collection');
-            if (col === 'scriptures') {
-                postReader({ type: 'title-page-inline-shelf', key: 'scriptures' });
-            } else {
-                postReader({ type: 'title-page-inline-collection', collectionId: col });
-            }
-            scrollReaderIntoView();
+            navigateReaderTo(a.getAttribute('href'));
         });
     }
 
@@ -409,16 +368,14 @@
         if (toc) {
             toc.addEventListener('click', function(e) {
                 e.preventDefault();
-                postReader({ type: 'title-page-inline-shelf', key: 'scriptures' });
-                scrollReaderIntoView();
+                navigateReaderTo(toc.getAttribute('href'));
             });
         }
         var gc = document.getElementById('home-tool-gc');
-        if (gc && gc.getAttribute('data-home-open-collection')) {
+        if (gc && gc.getAttribute('href')) {
             gc.addEventListener('click', function(e) {
                 e.preventDefault();
-                postReader({ type: 'title-page-inline-collection', collectionId: gc.getAttribute('data-home-open-collection') });
-                scrollReaderIntoView();
+                navigateReaderTo(gc.getAttribute('href'));
             });
         }
     }
