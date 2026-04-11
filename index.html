@@ -41,15 +41,15 @@
 <main class="home">
     <section class="home-jump" aria-label="Jump">
         <form id="jump-form" class="jump-form" autocomplete="off">
-            <label class="jump-label" for="jump-input">Go to scripture, topic, person, or verse</label>
+            <label class="jump-label" for="jump-input">Go to a book or verse</label>
             <div class="jump-row">
                 <div class="jump-combobox">
-                    <input id="jump-input" class="jump-input" type="search" inputmode="search" spellcheck="false" placeholder="e.g. John 3:16, Genesis 4, Alma 32, faith" aria-describedby="jump-help" role="combobox" aria-autocomplete="list" aria-controls="jump-suggest" aria-expanded="false" autocomplete="off">
+                    <input id="jump-input" class="jump-input" type="search" inputmode="search" spellcheck="false" placeholder="e.g. John 3:16, Genesis 4, Alma 32" aria-describedby="jump-help" role="combobox" aria-autocomplete="list" aria-controls="jump-suggest" aria-expanded="false" autocomplete="off">
                     <ul id="jump-suggest" class="jump-suggest" role="listbox" hidden aria-label="Suggestions"></ul>
                 </div>
                 <button class="jump-go" type="submit">Go</button>
             </div>
-            <div id="jump-help" class="jump-help">Enter a reference for a direct jump, or a word/phrase to search.</div>
+            <div id="jump-help" class="jump-help">Enter a book, chapter, or verse reference to open in the reader.</div>
         </form>
     </section>
 
@@ -97,10 +97,6 @@
             <div class="home-section-title">Study tools</div>
         </div>
         <div class="tool-row">
-            <a class="tool-card" href="./library/index.html?q=faith" data-evt="home_tool_search">
-                <div class="tool-title">Search</div>
-                <div class="tool-meta">Topics, people, keywords</div>
-            </a>
             <a class="tool-card" href="./library/index.html?open=general_conference" data-evt="home_tool_gc">
                 <div class="tool-title">General Conference</div>
                 <div class="tool-meta">Open sources</div>
@@ -181,12 +177,6 @@
         });
     }
 
-    function looksLikeDirectJump(q) {
-        var s = String(q || '').trim();
-        if (!s) return false;
-        return /(\d+:\d+)|\b\d+\b/.test(s);
-    }
-
     function onSubmitJump(e) {
         e.preventDefault();
         var input = document.getElementById('jump-input');
@@ -194,12 +184,7 @@
         var q = String(input.value || '').trim();
         if (!q) return;
 
-        var isJump = looksLikeDirectJump(q);
-        if (isJump) {
-            pushUrl('./library/index.html?jump=' + encodeURIComponent(q), 'home_jump_submit', { kind: 'jump' });
-        } else {
-            pushUrl('./library/index.html?q=' + encodeURIComponent(q), 'home_jump_submit', { kind: 'search' });
-        }
+        pushUrl('./library/index.html?jump=' + encodeURIComponent(q), 'home_jump_submit', { kind: 'jump' });
     }
 
     var booksSuggest = [];
