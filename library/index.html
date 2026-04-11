@@ -1959,7 +1959,9 @@ function jumpTo(chapterId, verseNum, opts) {
     if (opts.pushHistory !== false) {
         pushVisit(activeReaderTarget(), { type: 'scripture', chapterId: chapterId, verse: verseNum || null });
     }
-    setTocPathForChapter(chapterId);
+    if (!opts.skipTocPathUpdate) {
+        setTocPathForChapter(chapterId);
+    }
     // If the chapter is already loaded, focus the verse synchronously so
     // that callers (e.g. ref-link click handlers) can observe the focused
     // state without waiting for the Promise microtask queue to drain.
@@ -1975,7 +1977,7 @@ function jumpTo(chapterId, verseNum, opts) {
     }).then(() => {
         currentChapter = chapterId;
         updateLocationLabel(chapterId);
-        updateActiveToc(chapterId);
+        updateActiveToc(chapterId, { preserveTocPath: !!opts.skipTocPathUpdate });
         recordRecentScripture(chapterId, verseNum || null);
         var target;
         if (verseNum) {
@@ -1996,6 +1998,9 @@ function jumpTo(chapterId, verseNum, opts) {
             var pbJump = document.getElementById('panel-body');
             var pmJ = pbJump && pbJump.dataset.panelMode;
             if (pbJump && (pmJ === 'intro' || !pmJ)) renderStudyPanelIntro(chapterId);
+        }
+        if (typeof opts.onAfterNavigate === 'function') {
+            try { opts.onAfterNavigate(); } catch (e) {}
         }
     });
 }
@@ -3498,14 +3503,17 @@ function openTocAtBook(bookLabel) {
     }
 }
 
-function updateActiveToc(id) {
+function updateActiveToc(id, opts) {
+    opts = opts || {};
     if (sourceMode && currentSourceDoc) {
         setTocPathForSource(currentSourceDoc);
         var sourceActive = document.querySelector('.toc-tile.active');
         if (sourceActive) sourceActive.scrollIntoView({ block: 'nearest' });
         return;
     }
-    setTocPathForChapter(id);
+    if (!(opts.preserveTocPath && id === 'title_page')) {
+        setTocPathForChapter(id);
+    }
     var active = document.querySelector('.toc-tile.active');
     if (active) active.scrollIntoView({ block: 'nearest' });
 }
