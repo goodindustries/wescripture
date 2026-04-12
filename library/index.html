@@ -611,6 +611,8 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 #panel-body {
     flex: 1;
     min-height: 0;
+    /* Flex default min-width:auto uses content min-size; without 0, long tokens clip under #channel { overflow:hidden } */
+    min-width: 0;
     overflow-y: auto;
     overscroll-behavior: contain;
     -webkit-overflow-scrolling: touch;
@@ -871,7 +873,7 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     font-size: 16px; line-height: 1.8; color: var(--text); font-style: italic;
     padding-left: 16px; border-left: 2px solid rgba(156,122,77,0.3);
     white-space: pre-wrap;
-    overflow-wrap: break-word;
+    overflow-wrap: anywhere;
     word-break: break-word;
     min-width: 0;
 }
