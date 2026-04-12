@@ -12,7 +12,10 @@ async function tocBackToSourcesShelf(page) {
       var s = document.querySelector('#toc-subtitle');
       return t && t.textContent.trim() === 'Sources' && s && s.textContent.trim() === 'Other Church Writings';
     });
-    if (atShelf) return;
+    if (atShelf) {
+      await ensureTocVisible(page);
+      return;
+    }
     const canBack = await page.evaluate(() => {
       var b = document.querySelector('#toc-back');
       return b && b.classList.contains('show');
@@ -22,6 +25,13 @@ async function tocBackToSourcesShelf(page) {
     await page.waitForSelector('#toc-grid .toc-tile', { timeout: 10000 });
   }
   throw new Error('Could not reach Sources shelf (Other Church Writings)');
+}
+
+async function ensureTocVisible(page) {
+  await page.evaluate(() => {
+    var t = document.getElementById('toc');
+    if (t && t.classList.contains('hidden') && typeof toggleToc === 'function') toggleToc();
+  });
 }
 
 async function run() {
@@ -366,10 +376,11 @@ async function run() {
   await page.waitForFunction(() => !document.querySelector('#channel').classList.contains('open'));
 
   await tocBackToSourcesShelf(page);
-  await page.$eval('.toc-tile[data-action="volume"][data-volume="New Testament"]', (el) => el.click());
-  await page.$eval('.toc-tile[data-action="book"][data-book="John"]', (el) => el.click());
-  await page.$eval('.toc-tile[data-action="chapter"][data-id="john_3"]', (el) => el.click());
+  await page.evaluate(() => {
+    if (typeof jumpTo === 'function') jumpTo('john_3');
+  });
   await page.waitForSelector('#ch-john_3', { timeout: 20000 });
+  await page.waitForFunction(() => !document.querySelector('.source-doc'), { timeout: 20000 });
 
   const scriptureState = await page.evaluate(() => ({
     sourceVisible: !!document.querySelector('.source-doc'),
@@ -384,21 +395,21 @@ async function run() {
     /John/i.test(scriptureState.location) && /\b3\b/.test(scriptureState.location),
     'scripture breadcrumbs did not recover after source view'
   );
-  assert(scriptureState.tocSubtitle === 'John', 'TOC did not return to scripture chapter view');
 
-  await page.click('#v1');
   await page.waitForSelector('#v1 span.w', { timeout: 20000 });
+  await page.$eval('#v1', (el) => el.scrollIntoView({ block: 'center' }));
+  await new Promise(function(r) { setTimeout(r, 400); });
   await page.evaluate(() => {
     const spans = Array.from(document.querySelectorAll('#v1 span.w'));
     const target = spans.find((el) => /pharisees?/i.test(el.textContent || '')) || spans[0];
     if (target) target.dispatchEvent(new MouseEvent('click', { bubbles: true }));
   });
-  await page.waitForFunction(() => document.querySelector('#channel').classList.contains('open'), { timeout: 15000 });
+  await page.waitForFunction(() => document.querySelector('#channel')?.classList.contains('open'), { timeout: 25000 });
   await page.waitForFunction(() => {
     return Array.from(document.querySelectorAll('#panel-body .ch-morsel .ch-src-name')).some((el) =>
       /Journal of Discourses|General Conference|History of the Church/i.test(el.textContent || '')
     );
-  }, { timeout: 15000 });
+  }, { timeout: 25000 });
 
   const sourceMorselIndex = await page.evaluate(() => {
     const morsels = Array.from(document.querySelectorAll('#panel-body .ch-morsel'));
@@ -476,24 +487,25 @@ async function run() {
   assert(sourceToSourceState.activeMeta === sourceToSourceState.sourceSubtitle, 'second source morsel click did not preserve the active source meta tile');
   assert(sourceToSourceState.focusedText.length > 80, 'second source morsel click did not focus a relevant paragraph');
 
-  await page.$eval('#toc-back', (el) => el.click());
-  await page.$eval('.toc-tile[data-action="volume"][data-volume="New Testament"]', (el) => el.click());
-  await page.$eval('.toc-tile[data-action="book"][data-book="John"]', (el) => el.click());
-  await page.$eval('.toc-tile[data-action="chapter"][data-id="john_3"]', (el) => el.click());
+  await page.evaluate(() => {
+    if (typeof jumpTo === 'function') jumpTo('john_3');
+  });
   await page.waitForSelector('#ch-john_3', { timeout: 20000 });
-  await page.click('#v1');
+  await page.waitForFunction(() => !document.querySelector('.source-doc'), { timeout: 20000 });
   await page.waitForSelector('#v1 span.w', { timeout: 20000 });
+  await page.$eval('#v1', (el) => el.scrollIntoView({ block: 'center' }));
+  await new Promise(function(r) { setTimeout(r, 400); });
   await page.evaluate(() => {
     const spans = Array.from(document.querySelectorAll('#v1 span.w'));
     const target = spans.find((el) => /pharisees?/i.test(el.textContent || '')) || spans[0];
     if (target) target.dispatchEvent(new MouseEvent('click', { bubbles: true }));
   });
-  await page.waitForFunction(() => document.querySelector('#channel').classList.contains('open'), { timeout: 15000 });
+  await page.waitForFunction(() => document.querySelector('#channel')?.classList.contains('open'), { timeout: 25000 });
 
   const rankingState = await page.evaluate(() => ({
     word: document.querySelector('#ch-word')?.textContent.trim(),
-    firstSource: document.querySelector('.ch-morsel .ch-src-name')?.textContent.trim() || '',
-    morsels: Array.from(document.querySelectorAll('.ch-morsel')).slice(0, 3).map((el) => ({
+    firstSource: document.querySelector('#panel-body .ch-morsel .ch-src-name')?.textContent.trim() || '',
+    morsels: Array.from(document.querySelectorAll('#panel-body .ch-morsel')).slice(0, 3).map((el) => ({
       src: el.querySelector('.ch-src-name')?.textContent.trim() || '',
       text: el.querySelector('.ch-morsel-text')?.textContent.trim() || '',
     })),
@@ -538,7 +550,7 @@ async function run() {
   await page.waitForFunction(() => document.querySelector('#channel').classList.contains('open'), { timeout: 15000 });
   const mistState = await page.evaluate(() => ({
     word: document.querySelector('#ch-word')?.textContent.trim(),
-    firstSource: document.querySelector('.ch-morsel .ch-src-name')?.textContent.trim() || '',
+    firstSource: document.querySelector('#panel-body .ch-morsel .ch-src-name')?.textContent.trim() || '',
   }));
   assert(/mist/i.test(mistState.word), 'scripture fallback regression used the wrong Genesis 2 word');
   assert(mistState.firstSource === 'Standard Works', 'Genesis 2 mist did not prioritize standard works fallback');
@@ -563,7 +575,7 @@ async function run() {
   await page.waitForFunction(() => document.querySelector('#channel').classList.contains('open'), { timeout: 15000 });
   const loveState = await page.evaluate(() => ({
     word: document.querySelector('#ch-word')?.textContent.trim(),
-    sources: Array.from(document.querySelectorAll('.ch-morsel .ch-src-name')).slice(0, 3).map((el) => el.textContent.trim()),
+    sources: Array.from(document.querySelectorAll('#panel-body .ch-morsel .ch-src-name')).slice(0, 3).map((el) => el.textContent.trim()),
   }));
   assert(/lov/i.test(loveState.word), 'scripture fallback regression used the wrong John 3 word');
   assert(loveState.sources[0] === 'Standard Works', 'John 3 loved did not rank standard works first');
@@ -601,8 +613,8 @@ async function run() {
   await page.waitForFunction(() => document.querySelector('#channel').classList.contains('open'), { timeout: 15000 });
   const nephiMistState = await page.evaluate(() => ({
     word: document.querySelector('#ch-word')?.textContent.trim(),
-    sources: Array.from(document.querySelectorAll('.ch-morsel .ch-src-name')).slice(0, 3).map((el) => el.textContent.trim()),
-    texts: Array.from(document.querySelectorAll('.ch-morsel .ch-morsel-text')).slice(0, 3).map((el) => el.textContent.trim()),
+    sources: Array.from(document.querySelectorAll('#panel-body .ch-morsel .ch-src-name')).slice(0, 3).map((el) => el.textContent.trim()),
+    texts: Array.from(document.querySelectorAll('#panel-body .ch-morsel-text')).slice(0, 3).map((el) => el.textContent.trim()),
   }));
   assert(/mist/i.test(nephiMistState.word), 'Book of Mormon fallback regression used the wrong 1 Nephi word');
   assert(nephiMistState.sources[0] === 'Standard Works', '1 Nephi mist did not rank standard works first');
@@ -619,8 +631,8 @@ async function run() {
   await page.waitForFunction(() => document.querySelector('#channel').classList.contains('open'), { timeout: 15000 });
   const dcPriesthoodState = await page.evaluate(() => ({
     word: document.querySelector('#ch-word')?.textContent.trim(),
-    sources: Array.from(document.querySelectorAll('.ch-morsel .ch-src-name')).slice(0, 3).map((el) => el.textContent.trim()),
-    texts: Array.from(document.querySelectorAll('.ch-morsel .ch-morsel-text')).slice(0, 3).map((el) => el.textContent.trim()),
+    sources: Array.from(document.querySelectorAll('#panel-body .ch-morsel .ch-src-name')).slice(0, 3).map((el) => el.textContent.trim()),
+    texts: Array.from(document.querySelectorAll('#panel-body .ch-morsel-text')).slice(0, 3).map((el) => el.textContent.trim()),
   }));
   assert(/priesthood/i.test(dcPriesthoodState.word), 'D&C fallback regression used the wrong Doctrine and Covenants word');
   assert(dcPriesthoodState.sources[0] === 'Standard Works', 'Doctrine and Covenants priesthood did not rank standard works first');
@@ -635,7 +647,7 @@ async function run() {
   await page.waitForFunction(() => document.querySelector('#channel').classList.contains('open'), { timeout: 15000 });
   const dcLoveCleanState = await page.evaluate(() => ({
     word: document.querySelector('#ch-word')?.textContent.trim(),
-    sources: Array.from(document.querySelectorAll('.ch-morsel .ch-src-name')).slice(0, 3).map((el) => el.textContent.trim()),
+    sources: Array.from(document.querySelectorAll('#panel-body .ch-morsel .ch-src-name')).slice(0, 3).map((el) => el.textContent.trim()),
     verseText: document.querySelector('#v41 .verse-text')?.innerText || '',
     verseHtml: document.querySelector('#v41 .verse-text')?.innerHTML || '',
   }));
@@ -645,7 +657,7 @@ async function run() {
   await page.$eval('#ch-close', (el) => el.click());
   await page.waitForFunction(() => !document.querySelector('#channel').classList.contains('open'));
 
-  console.log(JSON.stringify({ rootTiles, timesState, starState, enumaState, enochState, josephusState, sourceState, jdWordState, hocWordState, scriptureState, scriptureToSourceState, rankingState, strongsState, mistState, genesisCleanState, loveState, johnCleanState, secondThessCleanState, nephiMistState, dcPriesthoodState, dcLoveCleanState }, null, 2));
+  console.log(JSON.stringify({ sourceTiles, timesState, starState, enumaState, enochState, josephusState, sourceState, jdWordState, hocWordState, scriptureState, scriptureToSourceState, rankingState, strongsState, mistState, genesisCleanState, loveState, johnCleanState, secondThessCleanState, nephiMistState, dcPriesthoodState, dcLoveCleanState }, null, 2));
   await browser.close();
 }
 

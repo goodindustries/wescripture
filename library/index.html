@@ -1133,7 +1133,6 @@ var sourceCitations = {};  // doc_id → { para_1based → [{ chapterId, v, ch, 
 var verseDiscovery = {};   // "Book Ch:V" → [{tradition_pair, source_label, source_text, ...}]
 var donaldsonNotes = {};   // chapterId → { "verseNum": [para, ...] }
 var chapterGraphCache = {}; // chapterId → parsed graph data
-var strongsPlain = {};     // sn → plain text (loaded once from strongs_plain.json)
 var entityIndex = {};      // lowercased name variant → person_id (longest-first sorted)
 var entityList  = [];      // full people.json array
 var entityById  = {};      // person_id → entity object
@@ -1505,9 +1504,6 @@ Promise.all([
         var sourceData = results[1] || [];
         sourceLinks    = results[2] || {};
         verseDiscovery = results[3] || {};
-        // Load strongs_plain in background — non-blocking, enriches word cards when ready
-        fetch('./strongs_plain.json').then(function(r) { return r.ok ? r.json() : {}; })
-            .then(function(d) { strongsPlain = d || {}; }).catch(function() {});
         fetch('./source_citations.json').then(function(r) { return r.ok ? r.json() : {}; })
             .then(function(d) { sourceCitations = d || {}; }).catch(function() {});
         entityIndex    = results[4] || {};
@@ -2431,7 +2427,7 @@ function registerChapterKeywordHeadwords(items, verseText) {
     (items || []).forEach(function(item) {
         var lab = item.kind === 'dona'
             ? String((item.w && item.w.word) || '').trim()
-            : (item.entry ? (displayTitleForStrongsKeyWord(item.entry, vt) || strongsKeyWordLabel(item.entry)) : '');
+            : (item.kind === 'graph' ? graphKeywordHeadword(item, vt) : '');
         var nk = normalizeKeywordKey(lab);
         if (nk) chapterKeywordSeenKeys[nk] = true;
     });
@@ -5088,6 +5084,39 @@ document.getElementById('content').addEventListener('click', function(e) {
                     return;
                 }
                 openChannel(label, raw);
+            });
+            return;
+        }
+    }
+
+    // Scripture: stemmed word span → semantic channel (chapter _words.json)
+    var wSpanVerse = e.target.closest('span.w[data-st]');
+    var verseForWord = wSpanVerse && wSpanVerse.closest('div.verse');
+    if (wSpanVerse && verseForWord && !sourceMode) {
+        var chBlock = verseForWord.closest('.chapter-block[data-chapter-id]');
+        var chId = chBlock && chBlock.dataset.chapterId;
+        var vnumW = String((verseForWord.id || '').replace(/^v/, '') || '');
+        if (chId && vnumW) {
+            closeTocPanel();
+            focusVerse(verseForWord, false);
+            var stemV = wSpanVerse.dataset.st || '';
+            var ctxV = verseForWord.querySelector('.verse-text') || verseForWord;
+            activeContextText = ctxV ? (ctxV.textContent || '') : '';
+            if (channelActiveSpan) {
+                channelActiveSpan.classList.remove('cw-active');
+            }
+            channelActiveSpan = wSpanVerse;
+            wSpanVerse.classList.add('cw-active');
+            loadChapterWordIndex(chId).then(function(idx) {
+                var pack = idx && idx[vnumW];
+                var wdata = pack && pack[stemV];
+                var raw = wdata && (wdata.matches || []);
+                var labelV = (wdata && wdata.forms && wdata.forms[0]) || (wSpanVerse.textContent || '').trim() || stemV;
+                if (!raw || !raw.length) {
+                    openChannelEmpty(labelV);
+                    return;
+                }
+                openChannel(labelV, raw);
             });
             return;
         }
