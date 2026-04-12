@@ -732,6 +732,14 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 .panel-header { padding: 24px 28px 18px; border-bottom: 1px solid var(--divider); flex-shrink: 0; }
 .panel-verse-ref { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
 .panel-verse-text { font-family: 'EB Garamond', Georgia, serif; font-size: 15px; line-height: 1.65; color: var(--text); font-style: italic; }
+.panel-verse-entities { padding: 0 28px 12px; border-bottom: 1px solid var(--divider); }
+.panel-verse-entities .ep-chip-row { padding: 6px 0 0; border-bottom: none; gap: 5px; }
+.panel-verse-entities .ep-chip { font-size: 11px; padding: 3px 9px; }
+#panel-body[data-panel-mode="verse"] .panel-header { padding: 18px 22px 12px; }
+#panel-body[data-panel-mode="verse"] .disc-section,
+#panel-body[data-panel-mode="verse"] .panel-section { padding: 10px 22px 8px; font-size: 10px; }
+#panel-body[data-panel-mode="verse"] .word-card { padding: 12px 22px; }
+#panel-body[data-panel-mode="verse"] .comm-text { font-size: 15px; line-height: 1.62; }
 
 .disc-section, .panel-section {
     font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
@@ -762,15 +770,24 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     font-family: 'Inter', -apple-system, sans-serif;
 }
 .word-kw-text { font-size: 14px; line-height: 1.6; color: var(--text); }
-/* Key words collapse/expand */
-.word-cards-wrap .word-card:nth-child(n+3) { display: none; }
-.word-cards-wrap.expanded .word-card { display: block; }
+/* Key words: max two cards; per-card definition collapse */
+.word-cards-wrap .word-more-btn { display: none !important; }
 .word-more-btn { display: block; width: 100%; text-align: left; padding: 12px 28px; font-size: 12px; font-weight: 600; color: var(--accent); background: none; border: none; border-bottom: 1px solid var(--divider); cursor: pointer; font-family: inherit; }
 .word-more-btn:hover { background: rgba(0,0,0,0.03); }
-.word-cards-wrap.expanded .word-more-btn { display: none; }
-/* Verse panel: Commentary + Cross References — show 3, then expand */
-.verse-panel-cards:not(.expanded) > .comm-card:nth-child(n+4),
-.verse-panel-cards:not(.expanded) > .scrip-card:nth-child(n+4) { display: none; }
+.word-card-head {
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    cursor: pointer; user-select: none; -webkit-user-select: none;
+    margin: 0 -8px 0 -8px; padding: 4px 8px; border-radius: 6px;
+}
+.word-card-head:hover { background: rgba(0,0,0,0.04); }
+.word-card-head .word-card-head-text { flex: 1; min-width: 0; }
+.word-card-chevron { font-size: 10px; color: var(--muted); flex-shrink: 0; transition: transform 0.15s ease; }
+.word-card--kw-collapsed .word-card-chevron { transform: rotate(-90deg); }
+.word-card--kw-collapsed .word-card-def { display: none; }
+.word-card-def { padding-top: 4px; }
+/* Verse panel: show 5 commentary / 4 cross-ref cards, then expand */
+.verse-panel-cards:not(.expanded) > .comm-card:nth-child(n+6),
+.verse-panel-cards:not(.expanded) > .scrip-card:nth-child(n+5) { display: none; }
 .verse-panel-cards.expanded > .comm-card,
 .verse-panel-cards.expanded > .scrip-card { display: block; }
 .verse-panel-cards.expanded .word-more-btn { display: none; }
@@ -2367,6 +2384,65 @@ function discIsRepeat(text) {
     return DISC_REPEAT_PREFIXES.some(function(p) { return t.indexOf(p) === 0; });
 }
 
+/** English headwords that are noise as keyword card titles (lowercase keys). */
+var KW_TITLE_STOPWORDS = {
+    a: 1, an: 1, and: 1, are: 1, as: 1, at: 1, be: 1, been: 1, being: 1, but: 1, by: 1,
+    did: 1, do: 1, does: 1, doing: 1, done: 1, for: 1, from: 1, had: 1, has: 1, have: 1, having: 1,
+    he: 1, her: 1, him: 1, his: 1, i: 1, if: 1, in: 1, into: 1, is: 1, it: 1, its: 1, me: 1,
+    my: 1, no: 1, not: 1, of: 1, on: 1, or: 1, our: 1, out: 1, s: 1, so: 1, such: 1, t: 1,
+    than: 1, that: 1, the: 1, their: 1, them: 1, then: 1, there: 1, these: 1, they: 1, this: 1,
+    those: 1, to: 1, too: 1, unto: 1, up: 1, upon: 1, us: 1, was: 1, we: 1, were: 1, what: 1,
+    when: 1, which: 1, who: 1, whom: 1, whose: 1, why: 1, will: 1, with: 1, would: 1, ye: 1,
+    you: 1, your: 1, yours: 1
+};
+
+function isJunkKeywordTitle(s) {
+    if (s == null) return true;
+    var t = String(s).trim();
+    if (!t) return true;
+    if (t.length < 2) return true;
+    if (t.length === 2 && /^[a-z]$/i.test(t.charAt(0)) && /^[a-z]$/i.test(t.charAt(1))) {
+        if (KW_TITLE_STOPWORDS[t.toLowerCase()]) return true;
+    }
+    if (!/\s/.test(t) && t.length <= 3 && KW_TITLE_STOPWORDS[t.toLowerCase()]) return true;
+    if (/^[a-z]$/i.test(t)) return true;
+    return false;
+}
+
+var chapterKeywordSeenChapterId = null;
+var chapterKeywordSeenKeys = null;
+
+function ensureChapterKeywordRegistry(chapterId) {
+    if (!chapterId) return;
+    if (chapterKeywordSeenChapterId !== chapterId) {
+        chapterKeywordSeenChapterId = chapterId;
+        chapterKeywordSeenKeys = Object.create(null);
+    }
+}
+
+function isChapterKeywordHeadwordConsumed(label) {
+    var nk = normalizeKeywordKey(label);
+    return !!(nk && chapterKeywordSeenKeys && chapterKeywordSeenKeys[nk]);
+}
+
+function registerChapterKeywordHeadwords(items, verseText) {
+    if (!chapterKeywordSeenKeys) return;
+    var vt = verseText || '';
+    (items || []).forEach(function(item) {
+        var lab = item.kind === 'dona'
+            ? String((item.w && item.w.word) || '').trim()
+            : (item.entry ? (displayTitleForStrongsKeyWord(item.entry, vt) || strongsKeyWordLabel(item.entry)) : '');
+        var nk = normalizeKeywordKey(lab);
+        if (nk) chapterKeywordSeenKeys[nk] = true;
+    });
+}
+
+function toggleVerseKwCard(btn) {
+    var card = btn && btn.closest && btn.closest('.word-card');
+    if (!card) return;
+    card.classList.toggle('word-card--kw-collapsed');
+}
+
 // ── Entity linking ────────────────────────────────────────────────────────
 
 function renderExcerpts(excerpts, maxCount) {
@@ -2514,6 +2590,28 @@ function renderChips(ids, type) {
     });
     html += '</div>';
     return html;
+}
+
+function renderVersePanelEntityChips(ents) {
+    if (!ents) return '';
+    var rows = [];
+    function addRow(ids, type) {
+        if (!ids || !ids.length) return;
+        ids.slice(0, 10).forEach(function(id) {
+            var obj = type === 'person' ? entityById[id]
+                    : type === 'place' ? placeById[id]
+                    : thingById[id];
+            var name = (obj && obj.name) ? obj.name : id.split(':')[1].replace(/_/g, ' ');
+            var cls = type === 'place' ? ' chip-place' : type === 'thing' ? ' chip-thing' : '';
+            rows.push('<span class="ep-chip' + cls + '" data-chip-type="' + type + '" data-chip-id="' + escapeHtml(id) + '">'
+                + escapeHtml(name) + '</span>');
+        });
+    }
+    addRow(ents.persons, 'person');
+    addRow(ents.places, 'place');
+    addRow(ents.things, 'thing');
+    if (!rows.length) return '';
+    return '<div class="panel-verse-entities"><div class="ep-chip-row">' + rows.join('') + '</div></div>';
 }
 
 function renderScriptureRefs(refs) {
@@ -2849,6 +2947,76 @@ function dedupeVerseDiscoveryEntries(arr) {
     });
 }
 
+function normalizeDiscoveryTextForDedupe(t) {
+    return String(t || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+function discoveryTokenBag(text) {
+    var stop = { the: 1, and: 1, that: 1, for: 1, are: 1, was: 1, were: 1, with: 1, from: 1, this: 1, have: 1, has: 1, had: 1, not: 1, but: 1, his: 1, her: 1, they: 1, them: 1, their: 1, unto: 1, thou: 1, thy: 1, thee: 1, shall: 1, will: 1, which: 1, when: 1, who: 1, all: 1, can: 1, may: 1, its: 1, also: 1, into: 1, than: 1, then: 1, been: 1, being: 1 };
+    var raw = normalizeDiscoveryTextForDedupe(text).split(/\s+/).filter(Boolean);
+    var o = Object.create(null);
+    for (var i = 0; i < raw.length; i++) {
+        var w = raw[i];
+        if (w.length < 2 || stop[w]) continue;
+        o[w] = (o[w] || 0) + 1;
+    }
+    return o;
+}
+
+function jaccardTokenBags(a, b) {
+    var inter = 0;
+    var union = 0;
+    for (var ka in a) {
+        if (!Object.prototype.hasOwnProperty.call(a, ka)) continue;
+        union += 1;
+        if (b[ka]) inter += 1;
+    }
+    for (var kb in b) {
+        if (!Object.prototype.hasOwnProperty.call(b, kb)) continue;
+        if (!a[kb]) union += 1;
+    }
+    return union ? inter / union : 0;
+}
+
+/** Near-duplicate source_text across different verse_discovery rows (Jaccard on tokens; conservative). */
+function semanticDedupeVerseDiscoveryEntries(arr) {
+    var list = arr || [];
+    var kept = [];
+    for (var i = 0; i < list.length; i++) {
+        var e = list[i];
+        var t = (e.source_text || '').replace(/\s+/g, ' ').trim();
+        if (t.length < 24) {
+            kept.push(e);
+            continue;
+        }
+        var norm = normalizeDiscoveryTextForDedupe(t).replace(/\s/g, '');
+        var bag = discoveryTokenBag(t);
+        var tokCount = 0;
+        for (var k in bag) { if (Object.prototype.hasOwnProperty.call(bag, k)) tokCount++; }
+        if (tokCount < 6) {
+            kept.push(e);
+            continue;
+        }
+        var dup = false;
+        for (var j = 0; j < kept.length; j++) {
+            var k0 = kept[j];
+            var t0 = (k0.source_text || '').replace(/\s+/g, ' ').trim();
+            if (t0.length < 24) continue;
+            var n0 = normalizeDiscoveryTextForDedupe(t0).replace(/\s/g, '');
+            if (norm.length > 30 && n0.length > 30 && norm === n0) {
+                dup = true;
+                break;
+            }
+            if (jaccardTokenBags(bag, discoveryTokenBag(t0)) >= 0.9) {
+                dup = true;
+                break;
+            }
+        }
+        if (!dup) kept.push(e);
+    }
+    return kept;
+}
+
 /** True if `word` appears as a whole token in verse text (Unicode-aware when supported). */
 function wordAppearsInVerseAsToken(word, verseText) {
     if (!word || !verseText) return false;
@@ -2931,10 +3099,10 @@ function strongsEntryMatchesVerse(entry, verseText) {
  */
 function displayTitleForStrongsKeyWord(entry, verseText) {
     var lab = strongsKeyWordLabel(entry) || 'Term';
-    if (!verseText) return lab;
-    if (keywordVerifiedInVerse(lab, verseText)) return lab;
+    if (!verseText) return isJunkKeywordTitle(lab) ? '' : lab;
+    if (keywordVerifiedInVerse(lab, verseText) && !isJunkKeywordTitle(lab)) return lab;
     var kj = entry.kj || '';
-    if (!kj) return lab;
+    if (!kj) return isJunkKeywordTitle(lab) ? '' : lab;
     var raw = verseText.match(/[a-zA-Z']+/g) || [];
     var best = '';
     for (var i = 0; i < raw.length; i++) {
@@ -2944,9 +3112,10 @@ function displayTitleForStrongsKeyWord(entry, verseText) {
         if (w.length > best.length) best = w;
     }
     if (best) {
-        return best.charAt(0).toUpperCase() + best.slice(1).toLowerCase();
+        var cap = best.charAt(0).toUpperCase() + best.slice(1).toLowerCase();
+        if (!isJunkKeywordTitle(cap)) return cap;
     }
-    return lab;
+    return isJunkKeywordTitle(lab) ? '' : lab;
 }
 
 /** Keep Donaldson key words only when the headword appears in the verse (substring for multi-word). */
@@ -4167,8 +4336,9 @@ function extractScriptFromNote(s) {
 /**
  * Merge Donaldson lemmas (priority) with ranked lexicon rows; hide duplicate headwords.
  * Concordance numbers stay internal — not shown in the UI.
+ * @param {string} [chapterId] — when registry is primed for this chapter, skip headwords already shown.
  */
-function mergeKeyWordsForVerse(donaWords, strongsEntries, verseText) {
+function mergeKeyWordsForVerse(donaWords, strongsEntries, verseText, chapterId) {
     var out = [];
     var seen = {};
     function mark(k) {
@@ -4178,8 +4348,13 @@ function mergeKeyWordsForVerse(donaWords, strongsEntries, verseText) {
     function has(k) {
         return !!seen[normalizeKeywordKey(k)];
     }
+    function consumedInChapter(label) {
+        return chapterId && chapterKeywordSeenChapterId === chapterId && isChapterKeywordHeadwordConsumed(label);
+    }
     (donaWords || []).forEach(function(w) {
         var t = (w.word || '').trim();
+        if (!t || isJunkKeywordTitle(t)) return;
+        if (consumedInChapter(t)) return;
         if (t) mark(t);
         out.push({ kind: 'dona', w: w });
     });
@@ -4198,12 +4373,19 @@ function mergeKeyWordsForVerse(donaWords, strongsEntries, verseText) {
         var lab = verseText
             ? displayTitleForStrongsKeyWord(entry, verseText)
             : strongsKeyWordLabel(entry);
-        if (!lab) return;
+        if (!lab || isJunkKeywordTitle(lab)) return;
+        if (consumedInChapter(lab)) return;
         if (has(lab)) return;
         mark(lab);
         out.push({ kind: 'strongs', entry: entry });
     });
-    return out.slice(0, 10);
+    out = out.filter(function(item) {
+        var lab = item.kind === 'dona'
+            ? String((item.w && item.w.word) || '').trim()
+            : (displayTitleForStrongsKeyWord(item.entry, verseText || '') || strongsKeyWordLabel(item.entry));
+        return lab && !isJunkKeywordTitle(lab);
+    });
+    return out.slice(0, 2);
 }
 
 /** Lay-oriented card from Donaldson key-word row (no Strong's numbers in copy). */
@@ -4214,11 +4396,13 @@ function htmlKeyWordCardDona(w, verseText) {
     var sense = stripOriginalLanguageNotes(raw);
     if (!sense && script) sense = 'See original-language form above; nuance is developed in verse commentary.';
     var verified = verseText && keywordVerifiedInVerse(title, verseText);
-    var inner = '<div class="word-english' + (verified ? ' word-kw-in-verse' : '') + '">' + escapeHtml(title) + '</div>';
-    if (script) inner += '<div class="word-original" lang="und" dir="auto">' + escapeHtml(script) + '</div>';
-    inner += '<div class="word-kw-block"><div class="word-kw-text">'
-        + makeExpandable(sense, 'note-preview', 'note-overflow', 'note-more') + '</div></div>';
-    return '<div class="word-card">' + inner + '</div>';
+    var head = '<div class="word-card-head" onclick="toggleVerseKwCard(this)"><div class="word-card-head-text">'
+        + '<div class="word-english' + (verified ? ' word-kw-in-verse' : '') + '">' + escapeHtml(title) + '</div>';
+    if (script) head += '<div class="word-original" lang="und" dir="auto">' + escapeHtml(script) + '</div>';
+    head += '</div><span class="word-card-chevron" aria-hidden="true">\u25bc</span></div>';
+    var def = '<div class="word-card-def"><div class="word-kw-block"><div class="word-kw-text">'
+        + makeExpandable(sense, 'note-preview', 'note-overflow', 'note-more') + '</div></div></div>';
+    return '<div class="word-card word-card--kw-collapsed">' + head + def + '</div>';
 }
 
 function verseSnippetForStudy(verseText) {
@@ -4273,11 +4457,13 @@ function htmlKeyWordCardStrongs(entry, verseText) {
     var para = strongsCompactWordStudy(entry, verseText);
     var verified = verseText && strongsEntryMatchesVerse(entry, verseText)
         && keywordVerifiedInVerse(title, verseText);
-    var inner = '<div class="word-english' + (verified ? ' word-kw-in-verse' : '') + '">' + escapeHtml(title) + '</div>';
-    if (script) inner += '<div class="word-original" lang="und" dir="auto">' + escapeHtml(script) + '</div>';
-    inner += '<div class="word-kw-block"><div class="word-kw-text">'
-        + makeExpandable(para, 'note-preview', 'note-overflow', 'note-more') + '</div></div>';
-    return '<div class="word-card">' + inner + '</div>';
+    var head = '<div class="word-card-head" onclick="toggleVerseKwCard(this)"><div class="word-card-head-text">'
+        + '<div class="word-english' + (verified ? ' word-kw-in-verse' : '') + '">' + escapeHtml(title) + '</div>';
+    if (script) head += '<div class="word-original" lang="und" dir="auto">' + escapeHtml(script) + '</div>';
+    head += '</div><span class="word-card-chevron" aria-hidden="true">\u25bc</span></div>';
+    var def = '<div class="word-card-def"><div class="word-kw-block"><div class="word-kw-text">'
+        + makeExpandable(para, 'note-preview', 'note-overflow', 'note-more') + '</div></div></div>';
+    return '<div class="word-card word-card--kw-collapsed">' + head + def + '</div>';
 }
 
 function escapeAttr(str) {
