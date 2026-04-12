@@ -3139,71 +3139,47 @@ function openVerseDiscovery(ref) {
     var chapterId = currentChapter || '';
 
     var rawEntries = verseDiscovery[ref] || [];
-    // Filter out chapter-level noise; dedupe by source doc + paragraph
-    var entries = dedupeVerseDiscoveryEntries(rawEntries.filter(function(e) {
+    var entries = semanticDedupeVerseDiscoveryEntries(dedupeVerseDiscoveryEntries(rawEntries.filter(function(e) {
         return !discIsRepeat(e.source_text);
-    }));
+    })));
 
-    // Donaldson notes for this verse
     var donaEntry  = (donaldsonNotes[chapterId] && donaldsonNotes[chapterId][vnum]) || {};
     var donaWordsRaw = donaEntry.words  || [];
     var donaNotes  = donaEntry.notes  || [];
     var donaQuotes = donaEntry.quotes || [];
 
-    // ── Verse text header ──
     var verseEl = document.getElementById('v' + vnum);
     var verseText = verseEl ? (verseEl.querySelector('.verse-text') || verseEl).textContent.trim() : '';
     var donaWords = filterDonaWordsForVerse(donaWordsRaw, verseText);
 
+    ensureChapterKeywordRegistry(chapterId);
+    var strongsEntries = (strongsIndexCache[chapterId] || {})[vnum] || [];
+    var mergedKw = mergeKeyWordsForVerse(donaWords, strongsEntries, verseText, chapterId);
+    registerChapterKeywordHeadwords(mergedKw, verseText);
+
     var chW = document.getElementById('ch-word');
     chW.textContent = ref;
     chW.style.display = 'block';
+    var entsInline = verseText ? scanVerseEntities(verseText) : { persons: [], places: [], things: [] };
+    var showedEntityChips = !!(entsInline.persons.length || entsInline.places.length || entsInline.things.length);
+
     var html = '';
     html += '<div class="panel-header">'
         + '<div class="panel-verse-ref">' + escapeHtml(ref) + '</div>'
-        + (verseText ? '<div class="panel-verse-text">' + escapeHtml(verseText) + '</div>' : '')
-        + '</div>';
-
-    // ── People · Places · Things in this verse ──
-    var showedEntityChips = false;
-    if (verseText) {
-        var ents = scanVerseEntities(verseText);
-        if (ents.persons.length || ents.places.length || ents.things.length) {
-            showedEntityChips = true;
-            html += '<div class="panel-section">People · Places · Things</div>';
-            html += renderChips(ents.persons, 'person');
-            html += renderChips(ents.places, 'place');
-            html += renderChips(ents.things, 'thing');
-        }
-    }
-
-    // ── Key words: Donaldson + Strong's (merged, deduped; Strong's numbers never shown) ──
-    var strongsEntries = (strongsIndexCache[chapterId] || {})[vnum] || [];
-    var mergedKw = mergeKeyWordsForVerse(donaWords, strongsEntries, verseText);
-    var showedKeyWords = mergedKw.length > 0;
-    if (showedKeyWords) {
-        html += '<div class="panel-section">Key words</div>';
-        html += '<div class="word-cards-wrap' + (mergedKw.length <= 2 ? ' expanded' : '') + '">';
-        mergedKw.forEach(function(item) {
-            if (item.kind === 'dona') html += htmlKeyWordCardDona(item.w, verseText);
-            else html += htmlKeyWordCardStrongs(item.entry, verseText);
-        });
-        if (mergedKw.length > 2) {
-            var extraK = mergedKw.length - 2;
-            html += '<button class="word-more-btn" onclick="expandWordCards(this)">Show ' + extraK + ' more word' + (extraK > 1 ? 's' : '') + ' \u2192</button>';
-        }
-        html += '</div>';
-    }
+        + (verseText ? '<div class="panel-verse-text">' + escapeHtml(verseText) + '</div>' : '');
+    if (showedEntityChips) html += renderVersePanelEntityChips(entsInline);
+    html += '</div>';
 
     var scriptureEdgesEarly = chapterGraphEchoes(chapterId, vnum);
+    var cm = chapterMeta[chapterId] || {};
+    var donaldsonWorkLine = (cm.book ? cm.book + ' · ' : '') + 'Commentary';
 
-    // ── Commentary: Donaldson notes + attributed quotes + cross-tradition voices (unified) ──
     var spoonNotes = (donaEntry.spoon && donaEntry.spoon.notes) || [];
     var allCommentary = [];
     donaNotes.forEach(function(para, i) {
         var paraText = (typeof para === 'string') ? para : (para.text || '');
         allCommentary.push({
-            author: 'Lee Donaldson', work: 'New Testament Commentary',
+            author: 'Lee Donaldson', work: donaldsonWorkLine,
             text: (spoonNotes[i]) || paraText, badge: 'Commentary', badgeClass: ''
         });
     });
@@ -3226,7 +3202,7 @@ function openVerseDiscovery(ref) {
     });
     if (allCommentary.length) {
         html += '<div class="panel-section">Commentary</div>';
-        html += '<div class="verse-panel-cards' + (allCommentary.length <= 3 ? ' expanded' : '') + '">';
+        html += '<div class="verse-panel-cards' + (allCommentary.length <= 5 ? ' expanded' : '') + '">';
         allCommentary.forEach(function(c) {
             html += '<div class="comm-card' + (c.hasLink ? ' has-link' : '') + '"'
                 + (c.entryIdx != null ? ' data-idx="' + c.entryIdx + '"' : '') + '>'
@@ -3235,17 +3211,27 @@ function openVerseDiscovery(ref) {
                 + (c.work ? '<div class="comm-work">' + escapeHtml(c.work) + '</div>' : '')
                 + '<div class="comm-text">' + escapeHtml(c.text || '') + '</div></div>';
         });
-        if (allCommentary.length > 3) {
-            html += '<button type="button" class="word-more-btn" onclick="expandWordCards(this)">Show ' + (allCommentary.length - 3) + ' more \u2192</button>';
+        if (allCommentary.length > 5) {
+            html += '<button type="button" class="word-more-btn" onclick="expandWordCards(this)">Show ' + (allCommentary.length - 5) + ' more \u2192</button>';
         }
         html += '</div>';
     }
 
-    // ── Scripture echoes from chapter graph (same cap + expand as commentary) ──
+    var showedKeyWords = mergedKw.length > 0;
+    if (showedKeyWords) {
+        html += '<div class="panel-section">Key words</div>';
+        html += '<div class="word-cards-wrap expanded">';
+        mergedKw.forEach(function(item) {
+            if (item.kind === 'dona') html += htmlKeyWordCardDona(item.w, verseText);
+            else html += htmlKeyWordCardStrongs(item.entry, verseText);
+        });
+        html += '</div>';
+    }
+
     var scriptureEdges = scriptureEdgesEarly;
     if (scriptureEdges.length) {
         html += '<div class="panel-section">Cross References</div>';
-        html += '<div class="verse-panel-cards' + (scriptureEdges.length <= 3 ? ' expanded' : '') + '">';
+        html += '<div class="verse-panel-cards verse-panel-cards--scrip' + (scriptureEdges.length <= 4 ? ' expanded' : '') + '">';
         scriptureEdges.forEach(function(s) {
             var jr = parseVerseRefForStudy(s.ref);
             html += '<div class="scrip-card' + (jr && chapterMeta[jr.chapterId] ? ' scrip-card--jump' : '') + '"'
@@ -3257,8 +3243,8 @@ function openVerseDiscovery(ref) {
                 + '<div class="scrip-text">' + escapeHtml(s.text) + '</div>'
                 + '</div>';
         });
-        if (scriptureEdges.length > 3) {
-            html += '<button type="button" class="word-more-btn" onclick="expandWordCards(this)">Show ' + (scriptureEdges.length - 3) + ' more \u2192</button>';
+        if (scriptureEdges.length > 4) {
+            html += '<button type="button" class="word-more-btn" onclick="expandWordCards(this)">Show ' + (scriptureEdges.length - 4) + ' more \u2192</button>';
         }
         html += '</div>';
     }
@@ -3276,6 +3262,7 @@ function openVerseDiscovery(ref) {
     panelBody.querySelectorAll('.comm-card.has-link').forEach(function(row) {
         row.addEventListener('click', function() {
             var e = entries[parseInt(row.dataset.idx, 10)];
+            if (!e) return;
             var meta = sourceMeta[e.source_doc_id];
             if (meta) {
                 loadSourceDocument(e.source_doc_id, meta.href, { focusPara: e.source_para });
