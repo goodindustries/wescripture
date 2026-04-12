@@ -18,6 +18,8 @@ Run standalone:
 Called from source_worker after new content is downloaded.
 """
 
+from __future__ import annotations
+
 import argparse
 import json
 import os
@@ -44,6 +46,15 @@ TOP_N      = 10
 SEARCH_K   = TOP_N + 5
 MIN_SCORE  = 0.30   # cosine similarity (dense embeddings score higher than TF-IDF)
 
+# Pilot “deep” books: more candidates written per verse (e.g. one Gospel).
+DEEP_TOP_N     = 28
+DEEP_SEARCH_K  = 40
+DEEP_MIN_SCORE = 0.22
+
+
+def _verse_book_slug(book: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "_", book.lower()).strip("_")
+
 
 # ── Source loaders (same as correlate.py) ────────────────────────────────────
 
@@ -62,6 +73,7 @@ def load_jd_corpus() -> list[dict]:
                 "source": "journal_of_discourses",
                 "label":  f"JD Vol {vol_num}",
                 "text":   para[:1500],
+                "collection": "journal_of_discourses",
             })
     return passages
 
@@ -144,11 +156,19 @@ def load_gc_corpus() -> list[dict]:
         speaker = meta.get("speaker", "")
         year    = meta.get("year", "")
         session = meta.get("session", "")
+        year_i = None
+        ys = str(year).strip() if year is not None else ""
+        if ys.isdigit():
+            year_i = int(ys)
         for para in paras:
             passages.append({
                 "source": "general_conference",
                 "label":  f"GC {year}/{session} — {speaker}",
                 "text":   para[:1500],
+                "collection": "general_conference",
+                "year": year_i,
+                "speaker": speaker or "",
+                "gc_session": session or "",
             })
     return passages
 
@@ -161,7 +181,14 @@ def _ocr_ok(text: str) -> bool:
     return non_ascii / max(len(text), 1) < 0.07
 
 
-def load_plaintext_dir_glob(dir_path: Path, source_name: str, label_prefix: str, glob: str) -> list[dict]:
+def load_plaintext_dir_glob(
+    dir_path: Path,
+    source_name: str,
+    label_prefix: str,
+    glob: str,
+    *,
+    collection: str | None = None,
+) -> list[dict]:
     """Load matching files from a directory using a specific glob pattern."""
     passages = []
     if not dir_path.exists():
@@ -175,15 +202,24 @@ def load_plaintext_dir_glob(dir_path: Path, source_name: str, label_prefix: str,
         for para in paras:
             if not _ocr_ok(para):
                 continue
-            passages.append({
+            row = {
                 "source": source_name,
                 "label":  label,
                 "text":   para[:1500],
-            })
+            }
+            if collection:
+                row["collection"] = collection
+            passages.append(row)
     return passages
 
 
-def load_plaintext_dir(dir_path: Path, source_name: str, label_prefix: str) -> list[dict]:
+def load_plaintext_dir(
+    dir_path: Path,
+    source_name: str,
+    label_prefix: str,
+    *,
+    collection: str | None = None,
+) -> list[dict]:
     """Generic loader for a directory of .txt files."""
     passages = []
     if not dir_path.exists():
@@ -197,11 +233,14 @@ def load_plaintext_dir(dir_path: Path, source_name: str, label_prefix: str) -> l
         for para in paras:
             if not _ocr_ok(para):
                 continue
-            passages.append({
+            row = {
                 "source": source_name,
                 "label":  label,
                 "text":   para[:1500],
-            })
+            }
+            if collection:
+                row["collection"] = collection
+            passages.append(row)
     return passages
 
 
@@ -244,23 +283,31 @@ def load_all_sources(catalog: list[dict]) -> list[dict]:
     print(f"  General Conference: {len(gc):,} passages")
     all_passages.extend(gc)
 
-    gutenberg_lds = load_plaintext_dir(CACHE_DIR / "gutenberg_lds", "gutenberg_lds", "LDS Historical")
+    gutenberg_lds = load_plaintext_dir(
+        CACHE_DIR / "gutenberg_lds", "gutenberg_lds", "LDS Historical", collection="gutenberg_lds"
+    )
     print(f"  Gutenberg LDS: {len(gutenberg_lds):,} passages")
     all_passages.extend(gutenberg_lds)
 
-    church_fathers = load_plaintext_dir(CACHE_DIR / "church_fathers", "church_fathers", "Church Fathers")
+    church_fathers = load_plaintext_dir(
+        CACHE_DIR / "church_fathers", "church_fathers", "Church Fathers", collection="church_fathers"
+    )
     print(f"  Church Fathers: {len(church_fathers):,} passages")
     all_passages.extend(church_fathers)
 
-    ancient_myths = load_plaintext_dir(CACHE_DIR / "ancient_myths", "ancient_myths", "Ancient Texts")
+    ancient_myths = load_plaintext_dir(
+        CACHE_DIR / "ancient_myths", "ancient_myths", "Ancient Texts", collection="ancient_texts"
+    )
     print(f"  Ancient Texts: {len(ancient_myths):,} passages")
     all_passages.extend(ancient_myths)
 
-    hoc = load_plaintext_dir(CACHE_DIR / "hoc", "history_of_church", "HoC")
+    hoc = load_plaintext_dir(CACHE_DIR / "hoc", "history_of_church", "HoC", collection="history_of_church")
     print(f"  History of Church: {len(hoc):,} passages")
     all_passages.extend(hoc)
 
-    jsp = load_plaintext_dir(CACHE_DIR / "joseph_smith_papers", "joseph_smith_papers", "JSP")
+    jsp = load_plaintext_dir(
+        CACHE_DIR / "joseph_smith_papers", "joseph_smith_papers", "JSP", collection="joseph_smith_papers"
+    )
     print(f"  Joseph Smith Papers: {len(jsp):,} passages")
     all_passages.extend(jsp)
 
@@ -272,32 +319,42 @@ def load_all_sources(catalog: list[dict]) -> list[dict]:
 
     ts_abbyy = CACHE_DIR / "times_and_seasons" / "times_and_seasons_abbyy.txt"
     ts_glob  = "times_and_seasons_abbyy.txt" if ts_abbyy.exists() else "*.txt"
-    ts = load_plaintext_dir_glob(CACHE_DIR / "times_and_seasons", "times_and_seasons", "Times & Seasons", ts_glob)
+    ts = load_plaintext_dir_glob(
+        CACHE_DIR / "times_and_seasons",
+        "times_and_seasons",
+        "Times & Seasons",
+        ts_glob,
+        collection="times_and_seasons",
+    )
     print(f"  Times and Seasons{'(ABBYY)' if ts_abbyy.exists() else ''}: {len(ts):,} passages")
     all_passages.extend(ts)
 
     ms_abbyy = CACHE_DIR / "millennial_star" / "millennial_star_abbyy.txt"
     ms_glob  = "millennial_star_abbyy.txt" if ms_abbyy.exists() else "*.txt"
-    ms = load_plaintext_dir_glob(CACHE_DIR / "millennial_star", "millennial_star", "Millennial Star", ms_glob)
+    ms = load_plaintext_dir_glob(
+        CACHE_DIR / "millennial_star", "millennial_star", "Millennial Star", ms_glob, collection="millennial_star"
+    )
     print(f"  Millennial Star{'(ABBYY)' if ms_abbyy.exists() else ''}: {len(ms):,} passages")
     all_passages.extend(ms)
 
-    pioneer = load_plaintext_dir(CACHE_DIR / "pioneer_journals", "pioneer_journals", "Pioneer Journals")
+    pioneer = load_plaintext_dir(
+        CACHE_DIR / "pioneer_journals", "pioneer_journals", "Pioneer Journals", collection="pioneer_journals"
+    )
     print(f"  Pioneer Journals: {len(pioneer):,} passages")
     all_passages.extend(pioneer)
 
     # ── Scholarly sources (sync_extra_sources.py) ──────────────────────────
-    for src_dir, src_key, src_label in [
-        ("pseudepigrapha",   "pseudepigrapha",   "Pseudepigrapha"),
-        ("apocrypha",        "apocrypha",        "LXX Apocrypha"),
-        ("nag_hammadi",      "nag_hammadi",      "Nag Hammadi"),
-        ("dead_sea_scrolls", "dead_sea_scrolls", "Dead Sea Scrolls"),
-        ("bh_roberts",       "bh_roberts",       "B.H. Roberts"),
-        ("nibley",           "nibley",           "Nibley"),
-        ("nauvoo_theology",  "nauvoo_theology",  "Nauvoo Theology"),
-        ("jst",              "jst",              "JST"),
+    for src_dir, src_key, src_label, coll in [
+        ("pseudepigrapha",   "pseudepigrapha",   "Pseudepigrapha",   "ancient_texts"),
+        ("apocrypha",        "apocrypha",        "LXX Apocrypha",    "ancient_texts"),
+        ("nag_hammadi",      "nag_hammadi",      "Nag Hammadi",      "ancient_texts"),
+        ("dead_sea_scrolls", "dead_sea_scrolls", "Dead Sea Scrolls", "ancient_texts"),
+        ("bh_roberts",       "bh_roberts",       "B.H. Roberts",     None),
+        ("nibley",           "nibley",           "Nibley",           None),
+        ("nauvoo_theology",  "nauvoo_theology",  "Nauvoo Theology",  None),
+        ("jst",              "jst",              "JST",              None),
     ]:
-        passages = load_plaintext_dir(CACHE_DIR / src_dir, src_key, src_label)
+        passages = load_plaintext_dir(CACHE_DIR / src_dir, src_key, src_label, collection=coll)
         if passages:
             print(f"  {src_label}: {len(passages):,} passages")
             all_passages.extend(passages)
@@ -373,9 +430,14 @@ def build_faiss_index(passage_vecs: np.ndarray):
 
 # ── Correlation ───────────────────────────────────────────────────────────────
 
-def correlate(verses: list[dict], passages: list[dict],
-              model, passage_vecs: np.ndarray,
-              books_filter: set = None) -> None:
+def correlate(
+    verses: list[dict],
+    passages: list[dict],
+    model,
+    passage_vecs: np.ndarray,
+    books_filter=None,
+    deep_books=None,
+) -> None:
     CORR_DIR.mkdir(parents=True, exist_ok=True)
 
     if books_filter:
@@ -383,20 +445,23 @@ def correlate(verses: list[dict], passages: list[dict],
     else:
         subset = verses
 
+    deep_set = {_verse_book_slug(b) for b in (deep_books or []) if b}
+    effective_k = max(SEARCH_K, DEEP_SEARCH_K) if deep_set else SEARCH_K
+
     print(f"  Encoding {len(subset):,} verses...")
     verse_texts = [v["text"] for v in subset]
     verse_vecs  = embed_texts(model, verse_texts, "verses")
 
     # numpy matmul search (avoids FAISS segfault on macOS/Python 3.9)
     # passage_vecs and verse_vecs are L2-normalized → dot product = cosine similarity
-    print(f"  Searching top-{SEARCH_K} for {len(subset):,} verses (numpy)...", flush=True)
+    print(f"  Searching top-{effective_k} for {len(subset):,} verses (numpy)...", flush=True)
     SEARCH_BATCH = 256
-    scores_all  = np.empty((len(subset), SEARCH_K), dtype=np.float32)
-    indices_all = np.empty((len(subset), SEARCH_K), dtype=np.int64)
+    scores_all  = np.empty((len(subset), effective_k), dtype=np.float32)
+    indices_all = np.empty((len(subset), effective_k), dtype=np.int64)
     for b_start in range(0, len(subset), SEARCH_BATCH):
         b_end   = min(b_start + SEARCH_BATCH, len(subset))
         sims    = verse_vecs[b_start:b_end] @ passage_vecs.T  # (batch, N_passages)
-        top_idx = np.argpartition(sims, -SEARCH_K, axis=1)[:, -SEARCH_K:]
+        top_idx = np.argpartition(sims, -effective_k, axis=1)[:, -effective_k:]
         for row in range(b_end - b_start):
             top = top_idx[row]
             order = np.argsort(sims[row, top])[::-1]
@@ -409,23 +474,32 @@ def correlate(verses: list[dict], passages: list[dict],
     for i, v in enumerate(subset):
         matches = []
         next_rank = 1
-        for rank in range(SEARCH_K):
+        vslug = _verse_book_slug(v["book"])
+        is_deep = vslug in deep_set
+        min_score = DEEP_MIN_SCORE if is_deep else MIN_SCORE
+        top_lim = DEEP_TOP_N if is_deep else TOP_N
+        for rank in range(effective_k):
             score = float(scores_all[i, rank])
-            if score < MIN_SCORE:
+            if score < min_score:
                 continue
             idx = int(indices_all[i, rank])
             p   = passages[idx]
             if p.get("_origin") == (v["book"], v["chapter"], v["verse"]):
                 continue
-            matches.append({
+            row = {
                 "rank":   next_rank,
                 "score":  round(score, 4),
                 "source": p["source"],
                 "label":  p["label"],
                 "text":   p["text"],
-            })
+            }
+            for ek in ("year", "speaker", "gc_session", "collection"):
+                val = p.get(ek)
+                if val is not None and val != "":
+                    row[ek] = val
+            matches.append(row)
             next_rank += 1
-            if len(matches) >= TOP_N:
+            if len(matches) >= top_lim:
                 break
 
         key      = f"{v['book']}_{v['chapter']}_{v['verse']}"
@@ -471,6 +545,13 @@ def main():
                         help="Force rebuild passage embeddings")
     parser.add_argument("--books", nargs="+",
                         help="Only correlate these books")
+    parser.add_argument(
+        "--deep-books",
+        nargs="+",
+        default=None,
+        metavar="BOOK",
+        help="Books (e.g. John) get lower score floor and higher top-N in correlation JSON",
+    )
     parser.add_argument("--query", nargs=3, metavar=("BOOK", "CH", "V"),
                         help="Query a single verse")
     args = parser.parse_args()
@@ -503,7 +584,7 @@ def main():
 
     print("\n═══ Correlating ═══")
     books_filter = set(args.books) if args.books else None
-    correlate(catalog, passages, model, passage_vecs, books_filter)
+    correlate(catalog, passages, model, passage_vecs, books_filter, args.deep_books)
 
     print("\nDone. Query with: python3 correlate_embeddings.py --query Genesis 1 1")
 

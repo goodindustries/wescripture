@@ -739,6 +739,32 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 #panel-body[data-panel-mode="verse"] .panel-section { padding: 10px 22px 8px; font-size: 10px; }
 #panel-body[data-panel-mode="verse"] .word-card { padding: 12px 22px; }
 #panel-body[data-panel-mode="verse"] .comm-text { font-size: 15px; line-height: 1.62; }
+.verse-disc-hint {
+    padding: 10px 22px 14px;
+    font-size: 12px;
+    line-height: 1.55;
+    color: var(--muted);
+    border-bottom: 1px solid var(--divider);
+}
+.verse-disc-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+    padding: 8px 22px 12px;
+    border-bottom: 1px solid var(--divider);
+    background: rgba(0,0,0,0.02);
+}
+.verse-disc-filters .vd-filter-label { font-size: 11px; color: var(--muted); }
+.verse-disc-filters select {
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid var(--divider);
+    background: #fff;
+    color: var(--text);
+    font-family: inherit;
+}
 
 .disc-section, .panel-section {
     font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
@@ -2899,6 +2925,54 @@ function discParseCard(entry) {
     return { author: author, work: '', badgeClass: '', badge: badge };
 }
 
+function verseDiscCollectionLabel(id) {
+    var L = {
+        general_conference: 'General Conference',
+        ancient_texts: 'Ancient texts',
+        journal_of_discourses: 'Journal of Discourses',
+        history_of_church: 'History of the Church',
+        joseph_smith_papers: 'Joseph Smith Papers',
+        gutenberg_lds: 'Gutenberg LDS',
+        church_fathers: 'Church Fathers',
+        millennial_star: 'Millennial Star',
+        times_and_seasons: 'Times and Seasons',
+        pioneer_journals: 'Pioneer journals',
+        pseudepigrapha: 'Pseudepigrapha',
+        apocrypha: 'Apocrypha',
+        nag_hammadi: 'Nag Hammadi',
+        dead_sea_scrolls: 'Dead Sea Scrolls',
+        ancient_myths: 'Ancient texts',
+        sefaria: 'Sefaria',
+        bh_roberts: 'B.H. Roberts',
+        nibley: 'Nibley',
+        nauvoo_theology: 'Nauvoo Theology',
+        jst: 'JST'
+    };
+    return L[id] || (id || '').replace(/_/g, ' ');
+}
+
+function wireVerseDiscoveryFilters(panelBody, entries) {
+    var collSel = panelBody.querySelector('.vd-filter-coll');
+    var yrSel = panelBody.querySelector('.vd-filter-year');
+    if (!collSel || !yrSel) return;
+    function applyFilters() {
+        var cv = collSel.value;
+        var yv = yrSel.value;
+        panelBody.querySelectorAll('.comm-card[data-vd-idx]').forEach(function(card) {
+            var idx = parseInt(card.getAttribute('data-vd-idx'), 10);
+            var e = entries[idx];
+            if (!e) return;
+            var ckey = e.collection || e.source || '';
+            var okC = cv === '__all__' || ckey === cv;
+            var yStr = e.year != null && e.year !== '' ? String(e.year) : '';
+            var okY = yv === '__all__' || (yv === '__none' && !yStr) || yStr === yv;
+            card.style.display = okC && okY ? '' : 'none';
+        });
+    }
+    collSel.addEventListener('change', applyFilters);
+    yrSel.addEventListener('change', applyFilters);
+}
+
 /** True when a graph ref label (e.g. "Genesis 1:6") targets the same book+chapter as chapterId (e.g. genesis_1). */
 function scriptureRefIsSameChapter(chapterId, refLabel) {
     var m = String(chapterId || '').match(/^(.+)_(\d+)$/);
@@ -3163,6 +3237,43 @@ function finishVerseDiscoveryPanel(payload) {
     if (showedEntityChips) html += renderVersePanelEntityChips(entsInline);
     html += '</div>';
 
+    if (entries.length) {
+        html += '<p class="verse-disc-hint">Similar passages across traditions and time, ranked by relevance to this verse.</p>';
+    }
+
+    var collOpts = [];
+    var yearOpts = [];
+    if (entries.length) {
+        var collSeen = {};
+        var yrSeen = {};
+        entries.forEach(function(e) {
+            var c = e.collection || e.source || '';
+            if (c) collSeen[c] = true;
+            if (e.year != null && e.year !== '') yrSeen[String(e.year)] = true;
+        });
+        collOpts = Object.keys(collSeen).sort();
+        yearOpts = Object.keys(yrSeen).sort(function(a, b) { return parseInt(b, 10) - parseInt(a, 10); });
+    }
+    if (collOpts.length > 1 || yearOpts.length) {
+        html += '<div class="verse-disc-filters" role="group" aria-label="Filter commentary">';
+        html += '<span class="vd-filter-label">Filter</span>';
+        html += '<select class="vd-filter-coll" aria-label="Collection">';
+        html += '<option value="__all__">All collections</option>';
+        collOpts.forEach(function(c) {
+            html += '<option value="' + escapeAttr(c) + '">' + escapeHtml(verseDiscCollectionLabel(c)) + '</option>';
+        });
+        html += '</select>';
+        html += '<select class="vd-filter-year" aria-label="Year">';
+        html += '<option value="__all__">All years</option>';
+        if (entries.some(function(e) { return e.year == null || e.year === ''; })) {
+            html += '<option value="__none">No year</option>';
+        }
+        yearOpts.forEach(function(y) {
+            html += '<option value="' + escapeAttr(y) + '">' + escapeHtml(y) + '</option>';
+        });
+        html += '</select></div>';
+    }
+
     var cm = chapterMeta[chapterId] || {};
     var donaldsonWorkLine = (cm.book ? cm.book + ' · ' : '') + 'Commentary';
 
@@ -3185,11 +3296,19 @@ function finishVerseDiscoveryPanel(payload) {
     entries.forEach(function(e, i) {
         var meta = discParseCard(e);
         var qt = (e.source_text || '').replace(/  +/g, ' ').replace(/\n\s*/g, ' ').trim();
+        var fc = e.collection || e.source || '';
+        var fy = null;
+        if (e.year != null && e.year !== '') {
+            var yn = parseInt(e.year, 10);
+            fy = isNaN(yn) ? null : yn;
+        }
         allCommentary.push({
             author: meta.author, work: meta.work, text: qt,
             badge: meta.badge, badgeClass: meta.badgeClass,
             hasLink: !!(e.source_doc_id && e.source_para != null && sourceMeta[e.source_doc_id]),
-            entryIdx: i
+            entryIdx: i,
+            filterColl: fc,
+            filterYear: fy
         });
     });
     if (allCommentary.length) {

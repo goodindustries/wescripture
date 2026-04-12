@@ -39,6 +39,7 @@ SOURCE_TOC  = LIBRARY / "source_toc.json"
 
 MIN_SCORE   = 0.25
 MAX_MATCHES = 5   # top N matches per verse to include
+DEEP_MAX_MATCHES = 12  # pilot chapters (e.g. John) when --deep-books is set
 
 # Truncate passage text for the graph (shown in hover/popover)
 MAX_TEXT_LEN = 400
@@ -335,7 +336,13 @@ def resolve_source_target(src: str, label: str, excerpt: str) -> Optional[dict]:
     return target
 
 
-def build_chapter_graph(book: str, chapter: int, verse_files: list[Path], min_score: float = MIN_SCORE) -> dict:
+def build_chapter_graph(
+    book: str,
+    chapter: int,
+    verse_files: list[Path],
+    min_score: float = MIN_SCORE,
+    max_matches: int = MAX_MATCHES,
+) -> dict:
     """Build graph dict for one chapter from its verse correlation files."""
     nodes = []
     edges = []
@@ -369,7 +376,7 @@ def build_chapter_graph(book: str, chapter: int, verse_files: list[Path], min_sc
             score = m.get('score', 0)
             if score < min_score:
                 break
-            if count >= MAX_MATCHES:
+            if count >= max_matches:
                 break
 
             src   = m.get('source', '')
@@ -386,6 +393,12 @@ def build_chapter_graph(book: str, chapter: int, verse_files: list[Path], min_sc
                     'lb':  label,
                     'x':   truncate(m.get('text', ''), MAX_TEXT_LEN),
                 }
+                if m.get('year') is not None:
+                    node['yr'] = m['year']
+                if m.get('speaker'):
+                    node['sp'] = m['speaker']
+                if m.get('collection'):
+                    node['coll'] = m['collection']
                 target = resolve_source_target(src, label, m.get('text', ''))
                 if target:
                     node.update(target)
@@ -430,9 +443,17 @@ def main():
     parser = argparse.ArgumentParser(description='Build per-chapter graph JSON')
     parser.add_argument('--books',     nargs='+', help='process only these book prefixes')
     parser.add_argument('--min-score', type=float, default=MIN_SCORE)
+    parser.add_argument(
+        '--deep-books',
+        nargs='*',
+        default=[],
+        metavar='BOOK',
+        help='Book slugs (e.g. john) get a higher per-verse passage cap from correlations',
+    )
     args = parser.parse_args()
 
     min_score = args.min_score
+    deep_slugs = {book_to_slug_prefix(b) for b in (args.deep_books or []) if b}
 
     # Group correlation files by (book, chapter)
     by_chapter: dict[tuple, list[Path]] = defaultdict(list)
@@ -493,7 +514,8 @@ def main():
         cslug  = chapter_slug(book, chapter)
         outpath = CHAPTERS / f'{cslug}_graph.json'
 
-        graph = build_chapter_graph(book, chapter, files, min_score)
+        max_m = DEEP_MAX_MATCHES if book_to_slug_prefix(book) in deep_slugs else MAX_MATCHES
+        graph = build_chapter_graph(book, chapter, files, min_score, max_matches=max_m)
 
         if not graph['nodes']:
             skipped += 1

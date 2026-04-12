@@ -36,5 +36,9 @@ jobs:
           python3 audit_search_quality.py
           python3 lds_pipeline/audit_corpus_integrity.py
 
+      - name: Embedding loader gaps (strict, when verse catalog is in tree)
+        if: ${{ hashFiles('lds_pipeline/cache/verse_catalog.json') != '' || hashFiles('lds_pipeline/cache/standard_works/verse_catalog.json') != '' }}
+        run: python3 lds_pipeline/audit_embedding_corpus_gaps.py --strict
+
       - name: UI regressions (Puppeteer)
         run: bash tools/run_ui_regressions.sh

@@ -1,0 +1,679 @@
+{
+"_meta": {
+"slug": "genesis_3",
+"prompt_version": "lex-v1",
+"ollama": true
+},
+"1": {
+"serpent": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “serpent”) in this verse; the study stays in English. “serpent” in “Now the serpent was more subtil than any beast of the field which the LORD God had made. And he said unto the woman , Yea, hath God said, Ye shall not eat of every tree of the garden ?…” should be read in context for what it contributes to the line. Standard Works: And he said unto the woman: Yea, hath God said—Ye shall not eat of every tree of the garden? (And he spake by the mouth of the serpent.) Standard Works: And the woman said unto the serpent, We may eat of the fruit of the trees of the garden:",
+"matches": [
+"Standard Works: And he said unto the woman: Yea, hath God said—Ye shall not eat of every tree of the garden? (And he spake by the mouth of the serpent.)",
+"Standard Works: And the woman said unto the serpent, We may eat of the fruit of the trees of the garden:"
+]
+},
+"eat": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “eat”) in this verse; the study stays in English. “eat” in “Now the serpent was more subtil than any beast of the field which the LORD God had made. And he said unto the woman , Yea, hath God said, Ye shall not eat of every tree of the garden ?…” should be read in context for what it contributes to the line. Standard Works: And he said unto the woman: Yea, hath God said—Ye shall not eat of every tree of the garden? (And he spake by the mouth of the serpent.) Standard Works: And the woman said unto the serpent: We may eat of the fruit of the trees of the garden;",
+"matches": [
+"Standard Works: And he said unto the woman: Yea, hath God said—Ye shall not eat of every tree of the garden? (And he spake by the mouth of the serpent.)",
+"Standard Works: And the woman said unto the serpent: We may eat of the fruit of the trees of the garden;"
+]
+}
+},
+"2": {
+"woman": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “woman”) in this verse; the study stays in English. “woman” in “And the woman said unto the serpent , We may eat of the fruit of the trees of the garden :…” should be read in context for what it contributes to the line. Standard Works: And the woman said unto the serpent: We may eat of the fruit of the trees of the garden; Standard Works: And he said unto the woman: Yea, hath God said—Ye shall not eat of every tree of the garden? (And he spake by the mouth of the serpent.)",
+"matches": [
+"Standard Works: And the woman said unto the serpent: We may eat of the fruit of the trees of the garden;",
+"Standard Works: And he said unto the woman: Yea, hath God said—Ye shall not eat of every tree of the garden? (And he spake by the mouth of the serpent.)"
+]
+},
+"serpent": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “serpent”) in this verse; the study stays in English. “serpent” in “And the woman said unto the serpent , We may eat of the fruit of the trees of the garden :…” should be read in context for what it contributes to the line. Standard Works: And the woman said unto the serpent: We may eat of the fruit of the trees of the garden; Standard Works: And he said unto the woman: Yea, hath God said—Ye shall not eat of every tree of the garden? (And he spake by the mouth of the serpent.)",
+"matches": [
+"Standard Works: And the woman said unto the serpent: We may eat of the fruit of the trees of the garden;",
+"Standard Works: And he said unto the woman: Yea, hath God said—Ye shall not eat of every tree of the garden? (And he spake by the mouth of the serpent.)"
+]
+}
+},
+"3": {
+"fruit": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “fruit”) in this verse; the study stays in English. “fruit” in “But of the fruit of the tree which is in the midst of the garden , God hath said, Ye shall not eat of it, neither shall ye touch it, lest ye die .…” should be read in context for what it contributes to the line. Standard Works: But of the fruit of the tree which thou beholdest in the midst of the garden, God hath said—Ye shall not eat of it, neither shall ye touch it, lest ye die. Standard Works: What does the scripture mean, which saith that God placed cherubim and a flaming sword on the east of the garden of Eden, lest our first parents should enter and partake of the fruit of the tree of…",
+"matches": [
+"Standard Works: But of the fruit of the tree which thou beholdest in the midst of the garden, God hath said—Ye shall not eat of it, neither shall ye touch it, lest ye die.",
+"Standard Works: What does the scripture mean, which saith that God placed cherubim and a flaming sword on the east of the garden of Eden, lest our first parents should enter and partake of the fruit of the tree of…"
+]
+},
+"tree": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “tree”) in this verse; the study stays in English. “tree” in “But of the fruit of the tree which is in the midst of the garden , God hath said, Ye shall not eat of it, neither shall ye touch it, lest ye die .…” should be read in context for what it contributes to the line. Standard Works: But of the fruit of the tree which thou beholdest in the midst of the garden, God hath said—Ye shall not eat of it, neither shall ye touch it, lest ye die. Standard Works: What does the scripture mean, which saith that God placed cherubim and a flaming sword on the east of the garden of Eden, lest our first parents should enter and partake of the fruit of the tree of…",
+"matches": [
+"Standard Works: But of the fruit of the tree which thou beholdest in the midst of the garden, God hath said—Ye shall not eat of it, neither shall ye touch it, lest ye die.",
+"Standard Works: What does the scripture mean, which saith that God placed cherubim and a flaming sword on the east of the garden of Eden, lest our first parents should enter and partake of the fruit of the tree of…"
+]
+}
+},
+"4": {
+"woman": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “woman”) in this verse; the study stays in English. “woman” in “And the serpent said unto the woman , Ye shall not surely die :…” should be read in context for what it contributes to the line. Standard Works: And the serpent said unto the woman: Ye shall not surely die; Standard Works: And the Lord God said unto the woman, What is this that thou hast done? And the woman said, The serpent beguiled me, and I did eat.",
+"matches": [
+"Standard Works: And the serpent said unto the woman: Ye shall not surely die;",
+"Standard Works: And the Lord God said unto the woman, What is this that thou hast done? And the woman said, The serpent beguiled me, and I did eat."
+]
+},
+"serpent": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “serpent”) in this verse; the study stays in English. “serpent” in “And the serpent said unto the woman , Ye shall not surely die :…” should be read in context for what it contributes to the line. Standard Works: And the serpent said unto the woman: Ye shall not surely die; Standard Works: And the Lord God said unto the woman, What is this that thou hast done? And the woman said, The serpent beguiled me, and I did eat.",
+"matches": [
+"Standard Works: And the serpent said unto the woman: Ye shall not surely die;",
+"Standard Works: And the Lord God said unto the woman, What is this that thou hast done? And the woman said, The serpent beguiled me, and I did eat."
+]
+}
+},
+"5": {
+"eat": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “eat”) in this verse; the study stays in English. “eat” in “For God doth know that in the day ye eat thereof, then your eyes shall be opened , and ye shall be as gods , knowing good and evil .…” should be read in context for what it contributes to the line. Standard Works: For God doth know that in the day ye eat thereof, then your eyes shall be opened, and ye shall be as gods, knowing good and evil. Standard Works: ¶ And the Lord God said, Behold, the man is become as one of us, to know good and evil: and now, lest he put forth his hand, and take also of the tree of life, and eat, and live for ever:",
+"matches": [
+"Standard Works: For God doth know that in the day ye eat thereof, then your eyes shall be opened, and ye shall be as gods, knowing good and evil.",
+"Standard Works: ¶ And the Lord God said, Behold, the man is become as one of us, to know good and evil: and now, lest he put forth his hand, and take also of the tree of life, and eat, and live for ever:"
+]
+},
+"open": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “open”) in this verse; the study stays in English. “opened” in “For God doth know that in the day ye eat thereof, then your eyes shall be opened , and ye shall be as gods , knowing good and evil .…” should be read in context for what it contributes to the line. Standard Works: For God doth know that in the day ye eat thereof, then your eyes shall be opened, and ye shall be as gods, knowing good and evil. Standard Works: Let him that is ignorant learn wisdom by humbling himself and calling upon the Lord his God, that his eyes may be opened that he may see, and his ears opened that he may hear;",
+"matches": [
+"Standard Works: For God doth know that in the day ye eat thereof, then your eyes shall be opened, and ye shall be as gods, knowing good and evil.",
+"Standard Works: Let him that is ignorant learn wisdom by humbling himself and calling upon the Lord his God, that his eyes may be opened that he may see, and his ears opened that he may hear;"
+]
+}
+},
+"6": {
+"tree": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “tree”) in this verse; the study stays in English. “tree” in “And when the woman saw that the tree was good for food , and that it was pleasant to the eyes , and a tree to be desired to make one wise , she took of the fruit thereof, and did eat , and gave also u…” should be read in context for what it contributes to the line. Standard Works: And when the woman saw that the tree was good for food, and that it became pleasant to the eyes, and a tree to be desired to make her wise, she took of the fruit thereof, and did eat, and also gave unto her husband wi… Standard Works: And the man said: The woman thou gavest me, and commandest that she should remain with me, she gave me of the fruit of the tree and I did eat.",
+"matches": [
+"Standard Works: And when the woman saw that the tree was good for food, and that it became pleasant to the eyes, and a tree to be desired to make her wise, she took of the fruit thereof, and did eat, and also gave unto her husband wi…",
+"Standard Works: And the man said: The woman thou gavest me, and commandest that she should remain with me, she gave me of the fruit of the tree and I did eat."
+]
+},
+"eat": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “eat”) in this verse; the study stays in English. “eat” in “And when the woman saw that the tree was good for food , and that it was pleasant to the eyes , and a tree to be desired to make one wise , she took of the fruit thereof, and did eat , and gave also u…” should be read in context for what it contributes to the line. Standard Works: And when the woman saw that the tree was good for food, and that it became pleasant to the eyes, and a tree to be desired to make her wise, she took of the fruit thereof, and did eat, and also gave unto her husband wi… Standard Works: And the man said: The woman thou gavest me, and commandest that she should remain with me, she gave me of the fruit of the tree and I did eat.",
+"matches": [
+"Standard Works: And when the woman saw that the tree was good for food, and that it became pleasant to the eyes, and a tree to be desired to make her wise, she took of the fruit thereof, and did eat, and also gave unto her husband wi…",
+"Standard Works: And the man said: The woman thou gavest me, and commandest that she should remain with me, she gave me of the fruit of the tree and I did eat."
+]
+}
+},
+"7": {
+"eyes": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “eyes”) in this verse; the study stays in English. “eyes” in “And the eyes of them both were opened , and they knew that they were naked ; and they sewed fig leaves together , and made themselves aprons .…” should be read in context for what it contributes to the line. Standard Works: And the eyes of them both were opened, and they knew that they had been naked. And they sewed fig leaves together and made themselves aprons. Standard Works: Ye look and behold the fig trees, and ye see them with your eyes, and ye say when they begin to shoot forth, and their leaves are yet tender, that summer is now nigh at hand;",
+"matches": [
+"Standard Works: And the eyes of them both were opened, and they knew that they had been naked. And they sewed fig leaves together and made themselves aprons.",
+"Standard Works: Ye look and behold the fig trees, and ye see them with your eyes, and ye say when they begin to shoot forth, and their leaves are yet tender, that summer is now nigh at hand;"
+]
+},
+"fig": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “fig”) in this verse; the study stays in English. “fig” in “And the eyes of them both were opened , and they knew that they were naked ; and they sewed fig leaves together , and made themselves aprons .…” should be read in context for what it contributes to the line. Standard Works: And the eyes of them both were opened, and they knew that they had been naked. And they sewed fig leaves together and made themselves aprons. Standard Works: Ye look and behold the fig trees, and ye see them with your eyes, and ye say when they begin to shoot forth, and their leaves are yet tender, that summer is now nigh at hand;",
+"matches": [
+"Standard Works: And the eyes of them both were opened, and they knew that they had been naked. And they sewed fig leaves together and made themselves aprons.",
+"Standard Works: Ye look and behold the fig trees, and ye see them with your eyes, and ye say when they begin to shoot forth, and their leaves are yet tender, that summer is now nigh at hand;"
+]
+}
+},
+"8": {
+"garden": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “garden”) in this verse; the study stays in English. “garden” in “And they heard the voice of the LORD God walking in the garden in the cool of the day: and Adam and his wife hid themselves from the presence of the LORD God amongst the trees of the garden .…” should be read in context for what it contributes to the line. Standard Works: And they heard the voice of the Lord God, as they were walking in the garden, in the cool of the day; and Adam and his wife went to hide themselves from the presence of the Lord God amongst the trees of the garden. Standard Works: And Adam and Eve, his wife, called upon the name of the Lord, and they heard the voice of the Lord from the way toward the Garden of Eden, speaking unto ",
+"matches": [
+"Standard Works: And they heard the voice of the Lord God, as they were walking in the garden, in the cool of the day; and Adam and his wife went to hide themselves from the presence of the Lord God amongst the trees of the garden.",
+"Standard Works: And Adam and Eve, his wife, called upon the name of the Lord, and they heard the voice of the Lord from the way toward the Garden of Eden, speaking unto them, and they saw him not; for they were shut out from his pres…"
+]
+},
+"adam": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “adam”) in this verse; the study stays in English. “Adam” in “And they heard the voice of the LORD God walking in the garden in the cool of the day: and Adam and his wife hid themselves from the presence of the LORD God amongst the trees of the garden .…” should be read in context for what it contributes to the line. Standard Works: And they heard the voice of the Lord God, as they were walking in the garden, in the cool of the day; and Adam and his wife went to hide themselves from the presence of the Lord God amongst the trees of the garden. Standard Works: And unto Adam, I, the Lord God, said: Because thou hast hearkened unto the voice of thy wife, and hast eaten of the fruit of the tree of which I commande",
+"matches": [
+"Standard Works: And they heard the voice of the Lord God, as they were walking in the garden, in the cool of the day; and Adam and his wife went to hide themselves from the presence of the Lord God amongst the trees of the garden.",
+"Standard Works: And unto Adam, I, the Lord God, said: Because thou hast hearkened unto the voice of thy wife, and hast eaten of the fruit of the tree of which I commanded thee, saying—Thou shalt not eat of it,…"
+]
+}
+},
+"9": {
+"adam": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “adam”) in this verse; the study stays in English. “Adam” in “And the LORD God called unto Adam , and said unto him, Where art thou?…” should be read in context for what it contributes to the line. Standard Works: And I, the Lord God, called unto Adam, and said unto him: Where goest thou? Standard Works: And Adam hearkened unto the voice of God, and called upon his sons to repent.",
+"matches": [
+"Standard Works: And I, the Lord God, called unto Adam, and said unto him: Where goest thou?",
+"Standard Works: And Adam hearkened unto the voice of God, and called upon his sons to repent."
+]
+},
+"god": {
+"lang": "hbo",
+"lemma": "430",
+"surface_gr": "",
+"surface_he": "אֱלֹהִ֖ים",
+"morph": "HNcmpa",
+"confidence": "high",
+"study": "Here “God” aligns to Hebrew wording tagged in the Westminster Leningrad tradition (lemma field 430; surface “אֱלֹהִ֖ים”). In “And the LORD God called unto Adam , and said unto him, Where art thou?…”, the construction colors how creation, covenant, or command is being declared. Standard Works: And I, the Lord God, called unto Adam, and said unto him: Where goest thou? Standard Works: And Adam hearkened unto the voice of God, and called upon his sons to repent.",
+"matches": [
+"Standard Works: And I, the Lord God, called unto Adam, and said unto him: Where goest thou?",
+"Standard Works: And Adam hearkened unto the voice of God, and called upon his sons to repent."
+]
+}
+},
+"10": {
+"heard": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “heard”) in this verse; the study stays in English. “heard” in “And he said, I heard thy voice in the garden , and I was afraid , because I was naked ; and I hid myself .…” should be read in context for what it contributes to the line. Standard Works: And he said: I heard thy voice in the garden, and I was afraid, because I beheld that I was naked, and I hid myself. Standard Works: And they heard the voice of the Lord God walking in the garden in the cool of the day: and Adam and his wife hid themselves from the presence of the Lord God amongst the trees of the garden.",
+"matches": [
+"Standard Works: And he said: I heard thy voice in the garden, and I was afraid, because I beheld that I was naked, and I hid myself.",
+"Standard Works: And they heard the voice of the Lord God walking in the garden in the cool of the day: and Adam and his wife hid themselves from the presence of the Lord God amongst the trees of the garden."
+]
+},
+"voice": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “voice”) in this verse; the study stays in English. “voice” in “And he said, I heard thy voice in the garden , and I was afraid , because I was naked ; and I hid myself .…” should be read in context for what it contributes to the line. Standard Works: And he said: I heard thy voice in the garden, and I was afraid, because I beheld that I was naked, and I hid myself. Standard Works: And they heard the voice of the Lord God walking in the garden in the cool of the day: and Adam and his wife hid themselves from the presence of the Lord God amongst the trees of the garden.",
+"matches": [
+"Standard Works: And he said: I heard thy voice in the garden, and I was afraid, because I beheld that I was naked, and I hid myself.",
+"Standard Works: And they heard the voice of the Lord God walking in the garden in the cool of the day: and Adam and his wife hid themselves from the presence of the Lord God amongst the trees of the garden."
+]
+}
+},
+"11": {
+"tree": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “tree”) in this verse; the study stays in English. “tree” in “And he said, Who told thee that thou wast naked ? Hast thou eaten of the tree , whereof I commanded thee that thou shouldest not eat ?…” should be read in context for what it contributes to the line. Standard Works: And I, the Lord God, said unto Adam: Who told thee thou wast naked? Hast thou eaten of the tree whereof I commanded thee that thou shouldst not eat, if so thou shouldst surely die? Standard Works: And I, the Lord God, commanded the man, saying: Of every tree of the garden thou mayest freely eat,",
+"matches": [
+"Standard Works: And I, the Lord God, said unto Adam: Who told thee thou wast naked? Hast thou eaten of the tree whereof I commanded thee that thou shouldst not eat, if so thou shouldst surely die?",
+"Standard Works: And I, the Lord God, commanded the man, saying: Of every tree of the garden thou mayest freely eat,"
+]
+},
+"eat": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “eat”) in this verse; the study stays in English. “eat” in “And he said, Who told thee that thou wast naked ? Hast thou eaten of the tree , whereof I commanded thee that thou shouldest not eat ?…” should be read in context for what it contributes to the line. Standard Works: And I, the Lord God, said unto Adam: Who told thee thou wast naked? Hast thou eaten of the tree whereof I commanded thee that thou shouldst not eat, if so thou shouldst surely die? Standard Works: And I, the Lord God, commanded the man, saying: Of every tree of the garden thou mayest freely eat,",
+"matches": [
+"Standard Works: And I, the Lord God, said unto Adam: Who told thee thou wast naked? Hast thou eaten of the tree whereof I commanded thee that thou shouldst not eat, if so thou shouldst surely die?",
+"Standard Works: And I, the Lord God, commanded the man, saying: Of every tree of the garden thou mayest freely eat,"
+]
+}
+},
+"12": {
+"tree": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “tree”) in this verse; the study stays in English. “tree” in “And the man said, The woman whom thou gavest to be with me, she gave me of the tree , and I did eat .…” should be read in context for what it contributes to the line. Standard Works: And the man said: The woman thou gavest me, and commandest that she should remain with me, she gave me of the fruit of the tree and I did eat. Standard Works: And when the woman saw that the tree was good for food, and that it was pleasant to the eyes, and a tree to be desired to make one wise, she took of the fruit thereof, and did eat, and gave also unto her husband with …",
+"matches": [
+"Standard Works: And the man said: The woman thou gavest me, and commandest that she should remain with me, she gave me of the fruit of the tree and I did eat.",
+"Standard Works: And when the woman saw that the tree was good for food, and that it was pleasant to the eyes, and a tree to be desired to make one wise, she took of the fruit thereof, and did eat, and gave also unto her husband with …"
+]
+},
+"eat": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “eat”) in this verse; the study stays in English. “eat” in “And the man said, The woman whom thou gavest to be with me, she gave me of the tree , and I did eat .…” should be read in context for what it contributes to the line. Standard Works: And the man said: The woman thou gavest me, and commandest that she should remain with me, she gave me of the fruit of the tree and I did eat. Standard Works: And when the woman saw that the tree was good for food, and that it was pleasant to the eyes, and a tree to be desired to make one wise, she took of the fruit thereof, and did eat, and gave also unto her husband with …",
+"matches": [
+"Standard Works: And the man said: The woman thou gavest me, and commandest that she should remain with me, she gave me of the fruit of the tree and I did eat.",
+"Standard Works: And when the woman saw that the tree was good for food, and that it was pleasant to the eyes, and a tree to be desired to make one wise, she took of the fruit thereof, and did eat, and gave also unto her husband with …"
+]
+}
+},
+"13": {
+"serpent": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “serpent”) in this verse; the study stays in English. “serpent” in “And the LORD God said unto the woman , What is this that thou hast done ? And the woman said, The serpent beguiled me, and I did eat .…” should be read in context for what it contributes to the line. Standard Works: And I, the Lord God, said unto the woman: What is this thing which thou hast done? And the woman said: The serpent beguiled me, and I did eat. Standard Works: And the Lord God said unto the serpent, Because thou hast done this, thou art cursed above all cattle, and above every beast of the field; upon thy belly shalt thou go, and dust shalt thou eat all…",
+"matches": [
+"Standard Works: And I, the Lord God, said unto the woman: What is this thing which thou hast done? And the woman said: The serpent beguiled me, and I did eat.",
+"Standard Works: And the Lord God said unto the serpent, Because thou hast done this, thou art cursed above all cattle, and above every beast of the field; upon thy belly shalt thou go, and dust shalt thou eat all…"
+]
+},
+"eat": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “eat”) in this verse; the study stays in English. “eat” in “And the LORD God said unto the woman , What is this that thou hast done ? And the woman said, The serpent beguiled me, and I did eat .…” should be read in context for what it contributes to the line. Standard Works: And I, the Lord God, said unto the woman: What is this thing which thou hast done? And the woman said: The serpent beguiled me, and I did eat. Standard Works: And the Lord God said unto the serpent, Because thou hast done this, thou art cursed above all cattle, and above every beast of the field; upon thy belly shalt thou go, and dust shalt thou eat all…",
+"matches": [
+"Standard Works: And I, the Lord God, said unto the woman: What is this thing which thou hast done? And the woman said: The serpent beguiled me, and I did eat.",
+"Standard Works: And the Lord God said unto the serpent, Because thou hast done this, thou art cursed above all cattle, and above every beast of the field; upon thy belly shalt thou go, and dust shalt thou eat all…"
+]
+}
+},
+"14": {
+"serpent": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “serpent”) in this verse; the study stays in English. “serpent” in “And the LORD God said unto the serpent , Because thou hast done this, thou art cursed above all cattle , and above every beast of the field ; upon thy belly shalt thou go, and dust shalt thou eat all…” should be read in context for what it contributes to the line. Standard Works: And I, the Lord God, said unto the serpent: Because thou hast done this thou shalt be cursed above all cattle, and above every beast of the field; upon thy belly shalt thou go, and dust shalt thou eat all the days of … Standard Works: They shall lick the dust like a serpent, they shall move out of their holes like worms of the earth: they shall be afraid of the Lord our God, and sh",
+"matches": [
+"Standard Works: And I, the Lord God, said unto the serpent: Because thou hast done this thou shalt be cursed above all cattle, and above every beast of the field; upon thy belly shalt thou go, and dust shalt thou eat all the days of …",
+"Standard Works: They shall lick the dust like a serpent, they shall move out of their holes like worms of the earth: they shall be afraid of the Lord our God, and shall fear because of thee."
+]
+},
+"eat": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “eat”) in this verse; the study stays in English. “eat” in “And the LORD God said unto the serpent , Because thou hast done this, thou art cursed above all cattle , and above every beast of the field ; upon thy belly shalt thou go, and dust shalt thou eat all…” should be read in context for what it contributes to the line. Standard Works: And I, the Lord God, said unto the serpent: Because thou hast done this thou shalt be cursed above all cattle, and above every beast of the field; upon thy belly shalt thou go, and dust shalt thou eat all the days of … Standard Works: Now the serpent was more subtil than any beast of the field which the Lord God had made. And he said unto the woman, Yea, hath God said, Ye shall not",
+"matches": [
+"Standard Works: And I, the Lord God, said unto the serpent: Because thou hast done this thou shalt be cursed above all cattle, and above every beast of the field; upon thy belly shalt thou go, and dust shalt thou eat all the days of …",
+"Standard Works: Now the serpent was more subtil than any beast of the field which the Lord God had made. And he said unto the woman, Yea, hath God said, Ye shall not eat of every tree of the garden?"
+]
+}
+},
+"15": {
+"seed": {
+"lang": "hbo",
+"lemma": "2233",
+"surface_gr": "",
+"surface_he": "זַרְעֲ/ךָ֖",
+"morph": "HNcmsc/Sp2ms",
+"confidence": "high",
+"study": "Here “seed” aligns to Hebrew wording tagged in the Westminster Leningrad tradition (lemma field 2233; surface “זַרְעֲ/ךָ֖”). In “And I will put enmity between thee and the woman , and between thy seed and her seed ; it shall bruise thy head , and thou shalt bruise his heel .…”, the construction colors how creation, covenant, or command is being declared. Standard Works: And I will put enmity between thee and the woman, between thy seed and her seed; and he shall bruise thy head, and thou shalt bruise his heel. Standard Works: And again: I will set a mark upon him that fighteth against thee and thy seed.",
+"matches": [
+"Standard Works: And I will put enmity between thee and the woman, between thy seed and her seed; and he shall bruise thy head, and thou shalt bruise his heel.",
+"Standard Works: And again: I will set a mark upon him that fighteth against thee and thy seed."
+]
+},
+"woman": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “woman”) in this verse; the study stays in English. “woman” in “And I will put enmity between thee and the woman , and between thy seed and her seed ; it shall bruise thy head , and thou shalt bruise his heel .…” should be read in context for what it contributes to the line. Standard Works: And I will put enmity between thee and the woman, between thy seed and her seed; and he shall bruise thy head, and thou shalt bruise his heel. Standard Works: For this cause ought the woman to have power on her head because of the angels.",
+"matches": [
+"Standard Works: And I will put enmity between thee and the woman, between thy seed and her seed; and he shall bruise thy head, and thou shalt bruise his heel.",
+"Standard Works: For this cause ought the woman to have power on her head because of the angels."
+]
+}
+},
+"16": {
+"woman": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “woman”) in this verse; the study stays in English. “woman” in “Unto the woman he said, I will greatly multiply thy sorrow and thy conception ; in sorrow thou shalt bring forth children ; and thy desire shall be to thy husband , and he shall rule over thee.…” should be read in context for what it contributes to the line. Standard Works: Unto the woman, I, the Lord God, said: I will greatly multiply thy sorrow and thy conception. In sorrow thou shalt bring forth children, and thy desire shall be to thy husband, and he shall rule over thee. Standard Works: And now cometh the day of their calamity, even the days of sorrow, like a woman that is taken in travail; and their sorrow shall be great unless they speedily rep",
+"matches": [
+"Standard Works: Unto the woman, I, the Lord God, said: I will greatly multiply thy sorrow and thy conception. In sorrow thou shalt bring forth children, and thy desire shall be to thy husband, and he shall rule over thee.",
+"Standard Works: And now cometh the day of their calamity, even the days of sorrow, like a woman that is taken in travail; and their sorrow shall be great unless they speedily repent, yea, very speedily."
+]
+},
+"multip": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “multip”) in this verse; the study stays in English. “multiply” in “Unto the woman he said, I will greatly multiply thy sorrow and thy conception ; in sorrow thou shalt bring forth children ; and thy desire shall be to thy husband , and he shall rule over thee.…” should be read in context for what it contributes to the line. Standard Works: Unto the woman, I, the Lord God, said: I will greatly multiply thy sorrow and thy conception. In sorrow thou shalt bring forth children, and thy desire shall be to thy husband, and he shall rule over thee. Standard Works: And the Lord thy God will bring thee into the land which thy fathers possessed, and thou shalt possess it; and he will do thee good, and multiply thee above thy f",
+"matches": [
+"Standard Works: Unto the woman, I, the Lord God, said: I will greatly multiply thy sorrow and thy conception. In sorrow thou shalt bring forth children, and thy desire shall be to thy husband, and he shall rule over thee.",
+"Standard Works: And the Lord thy God will bring thee into the land which thy fathers possessed, and thou shalt possess it; and he will do thee good, and multiply thee above thy fathers."
+]
+}
+},
+"17": {
+"tree": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “tree”) in this verse; the study stays in English. “tree” in “And unto Adam he said, Because thou hast hearkened unto the voice of thy wife , and hast eaten of the tree , of which I commanded thee, saying, Thou shalt not eat of it: cursed is the ground for thy s…” should be read in context for what it contributes to the line. Standard Works: And unto Adam, I, the Lord God, said: Because thou hast hearkened unto the voice of thy wife, and hast eaten of the fruit of the tree of which I commanded thee, saying—Thou shalt not eat of it, cursed shall be the gro… Standard Works: And I, the Lord God, said unto Adam: Who told thee thou wast naked? Hast thou eaten of the tree whereof I commanded thee that thou shouldst not eat, ",
+"matches": [
+"Standard Works: And unto Adam, I, the Lord God, said: Because thou hast hearkened unto the voice of thy wife, and hast eaten of the fruit of the tree of which I commanded thee, saying—Thou shalt not eat of it, cursed shall be the gro…",
+"Standard Works: And I, the Lord God, said unto Adam: Who told thee thou wast naked? Hast thou eaten of the tree whereof I commanded thee that thou shouldst not eat, if so thou shouldst surely die?"
+]
+},
+"eat": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “eat”) in this verse; the study stays in English. “eat” in “And unto Adam he said, Because thou hast hearkened unto the voice of thy wife , and hast eaten of the tree , of which I commanded thee, saying, Thou shalt not eat of it: cursed is the ground for thy s…” should be read in context for what it contributes to the line. Standard Works: And unto Adam, I, the Lord God, said: Because thou hast hearkened unto the voice of thy wife, and hast eaten of the fruit of the tree of which I commanded thee, saying—Thou shalt not eat of it, cursed shall be the gro… Standard Works: And I, the Lord God, said unto Adam: Who told thee thou wast naked? Hast thou eaten of the tree whereof I commanded thee that thou shouldst not eat, ",
+"matches": [
+"Standard Works: And unto Adam, I, the Lord God, said: Because thou hast hearkened unto the voice of thy wife, and hast eaten of the fruit of the tree of which I commanded thee, saying—Thou shalt not eat of it, cursed shall be the gro…",
+"Standard Works: And I, the Lord God, said unto Adam: Who told thee thou wast naked? Hast thou eaten of the tree whereof I commanded thee that thou shouldst not eat, if so thou shouldst surely die?"
+]
+}
+},
+"18": {
+"eat": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “eat”) in this verse; the study stays in English. “eat” in “Thorns also and thistles shall it bring forth to thee; and thou shalt eat the herb of the field ;…” should be read in context for what it contributes to the line. Standard Works: Thorns also, and thistles shall it bring forth to thee, and thou shalt eat the herb of the field. Standard Works: And they shall drive thee from men, and thy dwelling shall be with the beasts of the field: they shall make thee to eat grass as oxen, and seven times shall pass over thee, until thou know that the most High ruleth in…",
+"matches": [
+"Standard Works: Thorns also, and thistles shall it bring forth to thee, and thou shalt eat the herb of the field.",
+"Standard Works: And they shall drive thee from men, and thy dwelling shall be with the beasts of the field: they shall make thee to eat grass as oxen, and seven times shall pass over thee, until thou know that the most High ruleth in…"
+]
+},
+"field": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “field”) in this verse; the study stays in English. “field” in “Thorns also and thistles shall it bring forth to thee; and thou shalt eat the herb of the field ;…” should be read in context for what it contributes to the line. Standard Works: Thorns also, and thistles shall it bring forth to thee, and thou shalt eat the herb of the field. Standard Works: And they shall drive thee from men, and thy dwelling shall be with the beasts of the field: they shall make thee to eat grass as oxen, and seven times shall pass over thee, until thou know that the most High ruleth in…",
+"matches": [
+"Standard Works: Thorns also, and thistles shall it bring forth to thee, and thou shalt eat the herb of the field.",
+"Standard Works: And they shall drive thee from men, and thy dwelling shall be with the beasts of the field: they shall make thee to eat grass as oxen, and seven times shall pass over thee, until thou know that the most High ruleth in…"
+]
+}
+},
+"19": {
+"eat": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “eat”) in this verse; the study stays in English. “eat” in “In the sweat of thy face shalt thou eat bread , till thou return unto the ground ; for out of it wast thou taken: for dust thou art, and unto dust shalt thou return .…” should be read in context for what it contributes to the line. Standard Works: By the sweat of thy face shalt thou eat bread, until thou shalt return unto the ground—for thou shalt surely die—for out of it wast thou taken: for dust thou wast, and unto dust shalt thou return. Standard Works: And it came to pass that after I, the Lord God, had driven them out, that Adam began to till the earth, and to have dominion over all the beasts of the field, and to eat h",
+"matches": [
+"Standard Works: By the sweat of thy face shalt thou eat bread, until thou shalt return unto the ground—for thou shalt surely die—for out of it wast thou taken: for dust thou wast, and unto dust shalt thou return.",
+"Standard Works: And it came to pass that after I, the Lord God, had driven them out, that Adam began to till the earth, and to have dominion over all the beasts of the field, and to eat his bread by the sweat of his…"
+]
+},
+"dust": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “dust”) in this verse; the study stays in English. “dust” in “In the sweat of thy face shalt thou eat bread , till thou return unto the ground ; for out of it wast thou taken: for dust thou art, and unto dust shalt thou return .…” should be read in context for what it contributes to the line. Standard Works: By the sweat of thy face shalt thou eat bread, until thou shalt return unto the ground—for thou shalt surely die—for out of it wast thou taken: for dust thou wast, and unto dust shalt thou return. Standard Works: The Lord shall make the rain of thy land powder and dust: from heaven shall it come down upon thee, until thou be destroyed.",
+"matches": [
+"Standard Works: By the sweat of thy face shalt thou eat bread, until thou shalt return unto the ground—for thou shalt surely die—for out of it wast thou taken: for dust thou wast, and unto dust shalt thou return.",
+"Standard Works: The Lord shall make the rain of thy land powder and dust: from heaven shall it come down upon thee, until thou be destroyed."
+]
+}
+},
+"20": {
+"adam": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “adam”) in this verse; the study stays in English. “Adam” in “And Adam called his wife's name Eve ; because she was the mother of all living .…” should be read in context for what it contributes to the line. Standard Works: And Adam called his wife’s name Eve, because she was the mother of all living; for thus have I, the Lord God, called the first of all women, which are many. Standard Works: And Adam knew his wife again, and she bare a son, and he called his name Seth. And Adam glorified the name of God; for he said: God hath appointed me another seed, instead of Abel, whom Cain slew.",
+"matches": [
+"Standard Works: And Adam called his wife’s name Eve, because she was the mother of all living; for thus have I, the Lord God, called the first of all women, which are many.",
+"Standard Works: And Adam knew his wife again, and she bare a son, and he called his name Seth. And Adam glorified the name of God; for he said: God hath appointed me another seed, instead of Abel, whom Cain slew."
+]
+},
+"eve": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “eve”) in this verse; the study stays in English. “Eve” in “And Adam called his wife's name Eve ; because she was the mother of all living .…” should be read in context for what it contributes to the line. Standard Works: And Adam called his wife’s name Eve, because she was the mother of all living; for thus have I, the Lord God, called the first of all women, which are many. Standard Works: And Adam and Eve blessed the name of God, and they made all things known unto their sons and their daughters.",
+"matches": [
+"Standard Works: And Adam called his wife’s name Eve, because she was the mother of all living; for thus have I, the Lord God, called the first of all women, which are many.",
+"Standard Works: And Adam and Eve blessed the name of God, and they made all things known unto their sons and their daughters."
+]
+}
+},
+"21": {
+"adam": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “adam”) in this verse; the study stays in English. “Adam” in “Unto Adam also and to his wife did the LORD God make coats of skins , and clothed them.…” should be read in context for what it contributes to the line. Standard Works: Unto Adam, and also unto his wife, did I, the Lord God, make coats of skins, and clothed them. Standard Works: And they heard the voice of the Lord God walking in the garden in the cool of the day: and Adam and his wife hid themselves from the presence of the Lord God amongst the trees of the garden.",
+"matches": [
+"Standard Works: Unto Adam, and also unto his wife, did I, the Lord God, make coats of skins, and clothed them.",
+"Standard Works: And they heard the voice of the Lord God walking in the garden in the cool of the day: and Adam and his wife hid themselves from the presence of the Lord God amongst the trees of the garden."
+]
+},
+"skin": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “skin”) in this verse; the study stays in English. “skins” in “Unto Adam also and to his wife did the LORD God make coats of skins , and clothed them.…” should be read in context for what it contributes to the line. Standard Works: Unto Adam, and also unto his wife, did I, the Lord God, make coats of skins, and clothed them. Standard Works: O my brethren, I fear that unless ye shall repent of your sins that their skins will be whiter than yours, when ye shall be brought with them before the throne of God.",
+"matches": [
+"Standard Works: Unto Adam, and also unto his wife, did I, the Lord God, make coats of skins, and clothed them.",
+"Standard Works: O my brethren, I fear that unless ye shall repent of your sins that their skins will be whiter than yours, when ye shall be brought with them before the throne of God."
+]
+}
+},
+"22": {
+"tree": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “tree”) in this verse; the study stays in English. “tree” in “And the LORD God said, Behold , the man is become as one of us, to know good and evil : and now, lest he put forth his hand , and take also of the tree of life , and eat , and live for ever :…” should be read in context for what it contributes to the line. Standard Works: Now, we see that the man had become as God, knowing good and evil; and lest he should put forth his hand, and take also of the tree of life, and eat and live forever, the Lord God placed cherubim and… Standard Works: And I, the Lord God, said unto mine Only Begotten: Behold, the man is become as one of us to know good and evil; and now lest he put forth his hand and partake also of",
+"matches": [
+"Standard Works: Now, we see that the man had become as God, knowing good and evil; and lest he should put forth his hand, and take also of the tree of life, and eat and live forever, the Lord God placed cherubim and…",
+"Standard Works: And I, the Lord God, said unto mine Only Begotten: Behold, the man is become as one of us to know good and evil; and now lest he put forth his hand and partake also of the tree of life, and eat and live forever,"
+]
+},
+"eat": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “eat”) in this verse; the study stays in English. “eat” in “And the LORD God said, Behold , the man is become as one of us, to know good and evil : and now, lest he put forth his hand , and take also of the tree of life , and eat , and live for ever :…” should be read in context for what it contributes to the line. Standard Works: Now, we see that the man had become as God, knowing good and evil; and lest he should put forth his hand, and take also of the tree of life, and eat and live forever, the Lord God placed cherubim and… Standard Works: ¶ Behold that which I have seen: it is good and comely for one to eat and to drink, and to enjoy the good of all his labour that he taketh under the sun all the days o",
+"matches": [
+"Standard Works: Now, we see that the man had become as God, knowing good and evil; and lest he should put forth his hand, and take also of the tree of life, and eat and live forever, the Lord God placed cherubim and…",
+"Standard Works: ¶ Behold that which I have seen: it is good and comely for one to eat and to drink, and to enjoy the good of all his labour that he taketh under the sun all the days of his life, which God giveth…"
+]
+}
+},
+"23": {
+"garden": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “garden”) in this verse; the study stays in English. “garden” in “Therefore the LORD God sent him forth from the garden of Eden , to till the ground from whence he was taken.…” should be read in context for what it contributes to the line. Standard Works: Therefore I, the Lord God, will send him forth from the Garden of Eden, to till the ground from whence he was taken; Standard Works: Now behold, my son, I will explain this thing unto thee. For behold, after the Lord God sent our first parents forth from the garden of Eden, to till the ground, from whence they were taken—yea, he…",
+"matches": [
+"Standard Works: Therefore I, the Lord God, will send him forth from the Garden of Eden, to till the ground from whence he was taken;",
+"Standard Works: Now behold, my son, I will explain this thing unto thee. For behold, after the Lord God sent our first parents forth from the garden of Eden, to till the ground, from whence they were taken—yea, he…"
+]
+},
+"eden": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “eden”) in this verse; the study stays in English. “Eden” in “Therefore the LORD God sent him forth from the garden of Eden , to till the ground from whence he was taken.…” should be read in context for what it contributes to the line. Standard Works: Therefore I, the Lord God, will send him forth from the Garden of Eden, to till the ground from whence he was taken; Standard Works: Now behold, my son, I will explain this thing unto thee. For behold, after the Lord God sent our first parents forth from the garden of Eden, to till the ground, from whence they were taken—yea, he…",
+"matches": [
+"Standard Works: Therefore I, the Lord God, will send him forth from the Garden of Eden, to till the ground from whence he was taken;",
+"Standard Works: Now behold, my son, I will explain this thing unto thee. For behold, after the Lord God sent our first parents forth from the garden of Eden, to till the ground, from whence they were taken—yea, he…"
+]
+}
+},
+"24": {
+"tree": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “tree”) in this verse; the study stays in English. “tree” in “So he drove out the man ; and he placed at the east of the garden of Eden Cherubims , and a flaming sword which turned every way, to keep the way of the tree of life .…” should be read in context for what it contributes to the line. Standard Works: So I drove out the man, and I placed at the east of the Garden of Eden, cherubim and a flaming sword, which turned every way to keep the way of the tree of life. Standard Works: What does the scripture mean, which saith that God placed cherubim and a flaming sword on the east of the garden of Eden, lest our first parents should enter and partake of the fruit of the tree of…",
+"matches": [
+"Standard Works: So I drove out the man, and I placed at the east of the Garden of Eden, cherubim and a flaming sword, which turned every way to keep the way of the tree of life.",
+"Standard Works: What does the scripture mean, which saith that God placed cherubim and a flaming sword on the east of the garden of Eden, lest our first parents should enter and partake of the fruit of the tree of…"
+]
+},
+"garden": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No confident open-licensed morphology row matched this English keyword (stem “garden”) in this verse; the study stays in English. “garden” in “So he drove out the man ; and he placed at the east of the garden of Eden Cherubims , and a flaming sword which turned every way, to keep the way of the tree of life .…” should be read in context for what it contributes to the line. Standard Works: So I drove out the man, and I placed at the east of the Garden of Eden, cherubim and a flaming sword, which turned every way to keep the way of the tree of life. Standard Works: What does the scripture mean, which saith that God placed cherubim and a flaming sword on the east of the garden of Eden, lest our first parents should enter and partake of the fruit of the tree of…",
+"matches": [
+"Standard Works: So I drove out the man, and I placed at the east of the Garden of Eden, cherubim and a flaming sword, which turned every way to keep the way of the tree of life.",
+"Standard Works: What does the scripture mean, which saith that God placed cherubim and a flaming sword on the east of the garden of Eden, lest our first parents should enter and partake of the fruit of the tree of…"
+]
+}
+}
+}

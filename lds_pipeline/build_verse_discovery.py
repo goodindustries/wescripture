@@ -212,7 +212,7 @@ def main():
                 continue
             seen_pairs.add(pair_key)
 
-            index[verse_ref].append({
+            entry = {
                 "score":          score,
                 "source":         src,
                 "source_label":   pnode.get("lb", ""),
@@ -220,7 +220,14 @@ def main():
                 "source_doc_id":  pnode.get("d", ""),
                 "source_para":    pnode.get("p"),
                 "tradition_pair": pair_label,
-            })
+            }
+            if pnode.get("yr") is not None:
+                entry["year"] = pnode["yr"]
+            if pnode.get("sp"):
+                entry["speaker"] = pnode["sp"]
+            if pnode.get("coll"):
+                entry["collection"] = pnode["coll"]
+            index[verse_ref].append(entry)
 
     # Sort each verse's entries by score, keep top MAX_PER_VERSE
     output = {}

@@ -2,7 +2,7 @@
 "_meta": {
 "slug": "john_3",
 "prompt_version": "lex-v1",
-"ollama": false
+"ollama": true
 },
 "1": {
 "rul": {
