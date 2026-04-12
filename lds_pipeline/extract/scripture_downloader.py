@@ -62,6 +62,15 @@ def download_volume_json(vol_name: str, no_net: bool = False) -> Optional[dict]:
         return None
 
 
+def _heading_from_chapter_dict(ch_data: dict) -> str:
+    """Use explicit heading fields from upstream JSON when present (bcbooks may omit)."""
+    for key in ("heading", "studySummary", "study_summary", "summary", "intro"):
+        v = ch_data.get(key)
+        if isinstance(v, str) and v.strip():
+            return v.strip()
+    return ""
+
+
 def parse_json_volume(vol_name: str, data: dict) -> Volume:
     """
     Parse bcbooks JSON format into Volume object.
@@ -106,7 +115,10 @@ def parse_json_volume(vol_name: str, data: dict) -> Volume:
             book = Book(name=book_name, volume=vol_name)
             for ch_data in book_data.get("chapters", []):
                 ch_num  = ch_data.get("chapter", 0)
-                chapter = Chapter(book=book_name, number=ch_num, volume=vol_name, heading="")
+                chapter = Chapter(
+                    book=book_name, number=ch_num, volume=vol_name,
+                    heading=_heading_from_chapter_dict(ch_data),
+                )
                 for v_data in ch_data.get("verses", []):
                     chapter.verses.append(_make_verse(book_name, ch_num, v_data))
                 book.chapters.append(chapter)
@@ -117,8 +129,10 @@ def parse_json_volume(vol_name: str, data: dict) -> Volume:
         book = Book(name="Doctrine and Covenants", volume=vol_name)
         for sec_data in data["sections"]:
             ch_num  = sec_data.get("section", 0)
-            chapter = Chapter(book="Doctrine and Covenants", number=ch_num,
-                              volume=vol_name, heading="")
+            chapter = Chapter(
+                book="Doctrine and Covenants", number=ch_num,
+                volume=vol_name, heading=_heading_from_chapter_dict(sec_data),
+            )
             for v_data in sec_data.get("verses", []):
                 chapter.verses.append(_make_verse("Doctrine and Covenants", ch_num, v_data))
             book.chapters.append(chapter)

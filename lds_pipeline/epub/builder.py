@@ -15,6 +15,7 @@ import os
 import re
 import sys
 import html
+from dataclasses import replace
 from pathlib import Path
 from ebooklib import epub
 
@@ -251,8 +252,18 @@ def init_web(volumes, config, output_dir: str) -> list:
     return all_slugs
 
 
+def _load_chapter_headings_json(output_dir: str) -> dict:
+    p = Path(output_dir) / "chapter_headings.json"
+    if not p.exists():
+        return {}
+    try:
+        return json.loads(p.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+
 def write_book_chapters(bk, enrichment: dict, config, output_dir: str,
-                        all_slugs: list) -> int:
+                        all_slugs: list, chapter_headings: dict | None = None) -> int:
     """
     Render and write all chapters for one book. Call after enriching each book.
     Produces two files per chapter:
@@ -261,13 +272,17 @@ def write_book_chapters(bk, enrichment: dict, config, output_dir: str,
     Returns the number of chapters written.
     """
     out = Path(output_dir)
+    if chapter_headings is None:
+        chapter_headings = _load_chapter_headings_json(output_dir)
     written = 0
     for ch in bk.chapters:
         slug = _slug(f"{bk.name}_{ch.number}")
         idx  = all_slugs.index(slug) if slug in all_slugs else -1
         prev = all_slugs[idx - 1] if idx > 0 else None
         nxt  = all_slugs[idx + 1] if idx >= 0 and idx < len(all_slugs) - 1 else None
-        text_html, notes_html = _render_chapter_split(slug, prev, nxt, ch, enrichment)
+        merged = (ch.heading or "").strip() or (chapter_headings.get(slug) or "").strip()
+        ch_use = replace(ch, heading=merged) if merged else ch
+        text_html, notes_html = _render_chapter_split(slug, prev, nxt, ch_use, enrichment)
         (out / "chapters" / f"{slug}.html").write_text(text_html, encoding="utf-8")
         if notes_html:
             (out / "chapters" / f"{slug}_notes.html").write_text(notes_html, encoding="utf-8")

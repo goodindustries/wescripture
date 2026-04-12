@@ -3610,6 +3610,22 @@ function renderStudyPanelIntro(chapterId) {
     panelBody.dataset.panelMode = 'intro';
     panelBody.dataset.introFor = chapterId;
 
+    var chapterBlock = document.getElementById('ch-' + chapterId);
+    var headingFromSource = '';
+    if (chapterBlock) {
+        var hEl = chapterBlock.querySelector('.chapter-heading');
+        if (hEl) headingFromSource = (hEl.textContent || '').replace(/\s+/g, ' ').trim();
+    }
+    if (headingFromSource) {
+        var volH = book ? testamentLabelForLede(book.testament) : '';
+        var innerH = '<div class="panel-chapter-intro">'
+            + (volH ? '<div class="panel-chapter-kicker">' + escapeHtml(volH) + '</div>' : '')
+            + '<p class="panel-chapter-body">' + escapeHtml(headingFromSource) + '</p>'
+            + '</div>';
+        panelBody.innerHTML = wrapStudyPanelIntro(innerH);
+        return;
+    }
+
     if (parsed.chapterNum === 1 && book) {
         var bl = buildBookLedeFromExcerpt(book);
         if (bl) {

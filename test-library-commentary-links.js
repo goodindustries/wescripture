@@ -1,15 +1,11 @@
-const puppeteer = require('puppeteer');
+const { launchBrowser } = require('./tools/puppeteer_launch.js');
 
 function assert(condition, message) {
   if (!condition) throw new Error(message);
 }
 
 async function run() {
-  const browser = await puppeteer.launch({
-    headless: 'new',
-    executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
-    args: ['--no-sandbox'],
-  });
+  const browser = await launchBrowser();
 
   const page = await browser.newPage();
   await page.setViewport({ width: 1440, height: 1100, deviceScaleFactor: 1 });
