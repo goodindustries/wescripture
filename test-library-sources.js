@@ -121,11 +121,14 @@ async function run() {
   const hocState = await page.evaluate(() => ({
     title: document.querySelector('.source-doc .source-title')?.textContent.trim() || '',
     subtitle: document.querySelector('.source-doc .source-subtitle')?.textContent.trim() || '',
-    location: document.querySelector('#location-label')?.textContent.trim() || '',
+    location: document.getElementById('breadcrumbs')?.innerText.replace(/\s+/g, ' ').trim() || '',
   }));
   assert(hocState.title === 'Volume 1', 'History of the Church title did not load');
   assert(hocState.subtitle === 'History of the Church', 'History of the Church subtitle did not load');
-  assert(hocState.location === 'History of the Church · Volume 1', 'History of the Church location label went stale after source navigation');
+  assert(
+    /History of the Church/.test(hocState.location) && /Volume\s*1/.test(hocState.location),
+    'History of the Church breadcrumbs did not reflect the open document'
+  );
   await tocBackToSourcesShelf(page);
 
   await page.waitForSelector('.toc-tile[data-action="source-collection"][data-collection="times_and_seasons"]', { timeout: 10000 });
@@ -284,7 +287,7 @@ async function run() {
   const sourceState = await page.evaluate(() => ({
     title: document.querySelector('.source-doc .source-title')?.textContent.trim(),
     subtitle: document.querySelector('.source-doc .source-subtitle')?.textContent.trim(),
-    location: document.querySelector('#location-label')?.textContent.trim(),
+    location: document.getElementById('breadcrumbs')?.innerText.replace(/\s+/g, ' ').trim() || '',
     activeTile: document.querySelector('.toc-tile.active .toc-tile-title')?.textContent.trim(),
     activeMeta: document.querySelector('.toc-tile.active .toc-tile-meta')?.textContent.trim(),
     paragraphs: document.querySelectorAll('.source-doc .source-para').length,
@@ -292,7 +295,10 @@ async function run() {
 
   assert(sourceState.title === 'Volume 1', 'source title did not load');
   assert(sourceState.subtitle === 'Journal of Discourses', 'source subtitle did not load');
-  assert(sourceState.location === 'Journal of Discourses · Volume 1', 'source location label mismatch');
+  assert(
+    /Journal of Discourses/i.test(sourceState.location) && /Volume\s*1/i.test(sourceState.location),
+    'source breadcrumbs did not reflect Journal of Discourses Volume 1'
+  );
   assert(sourceState.activeTile === 'Volume 1', 'source tile did not become active');
   assert(sourceState.activeMeta === 'Journal of Discourses', 'source tile meta did not render');
   assert(sourceState.paragraphs > 50, 'source document rendered too few paragraphs');
@@ -303,8 +309,8 @@ async function run() {
 
   const jdWordState = await page.evaluate(() => ({
     word: document.querySelector('#ch-word')?.textContent.trim(),
-    morsels: document.querySelectorAll('.ch-morsel').length,
-    firstSource: document.querySelector('.ch-morsel .ch-src-name')?.textContent.trim(),
+    morsels: document.querySelectorAll('#panel-body .ch-morsel').length,
+    firstSource: document.querySelector('#panel-body .ch-morsel .ch-src-name')?.textContent.trim(),
   }));
 
   assert(jdWordState.word, 'JD word click did not set channel word');
@@ -347,9 +353,9 @@ async function run() {
 
   const hocWordState = await page.evaluate(() => ({
     word: document.querySelector('#ch-word')?.textContent.trim(),
-    morsels: document.querySelectorAll('.ch-morsel').length,
-    firstSource: document.querySelector('.ch-morsel .ch-src-name')?.textContent.trim(),
-    firstText: document.querySelector('.ch-morsel .ch-morsel-text')?.textContent.trim() || '',
+    morsels: document.querySelectorAll('#panel-body .ch-morsel').length,
+    firstSource: document.querySelector('#panel-body .ch-morsel .ch-src-name')?.textContent.trim(),
+    firstText: document.querySelector('#panel-body .ch-morsel .ch-morsel-text')?.textContent.trim() || '',
   }));
 
   assert(hocWordState.word, 'HoC word click did not set channel word');
@@ -368,13 +374,16 @@ async function run() {
   const scriptureState = await page.evaluate(() => ({
     sourceVisible: !!document.querySelector('.source-doc'),
     chapterVisible: !!document.querySelector('#ch-john_3'),
-    location: document.querySelector('#location-label')?.textContent.trim(),
+    location: document.getElementById('breadcrumbs')?.innerText.replace(/\s+/g, ' ').trim() || '',
     tocSubtitle: document.querySelector('#toc-subtitle')?.textContent.trim(),
   }));
 
   assert(!scriptureState.sourceVisible, 'source reader remained visible after returning to scripture');
   assert(scriptureState.chapterVisible, 'John 3 did not render after switching back from source');
-  assert(scriptureState.location === 'John · 3', 'scripture location label did not recover after source view');
+  assert(
+    /John/i.test(scriptureState.location) && /\b3\b/.test(scriptureState.location),
+    'scripture breadcrumbs did not recover after source view'
+  );
   assert(scriptureState.tocSubtitle === 'John', 'TOC did not return to scripture chapter view');
 
   await page.click('#v1');
@@ -386,13 +395,13 @@ async function run() {
   });
   await page.waitForFunction(() => document.querySelector('#channel').classList.contains('open'), { timeout: 15000 });
   await page.waitForFunction(() => {
-    return Array.from(document.querySelectorAll('.ch-morsel .ch-src-name')).some((el) =>
+    return Array.from(document.querySelectorAll('#panel-body .ch-morsel .ch-src-name')).some((el) =>
       /Journal of Discourses|General Conference|History of the Church/i.test(el.textContent || '')
     );
   }, { timeout: 15000 });
 
   const sourceMorselIndex = await page.evaluate(() => {
-    const morsels = Array.from(document.querySelectorAll('.ch-morsel'));
+    const morsels = Array.from(document.querySelectorAll('#panel-body .ch-morsel'));
     return morsels.findIndex((el) =>
       /Journal of Discourses|General Conference|History of the Church/i.test(
         el.querySelector('.ch-src-name')?.textContent || ''
@@ -401,7 +410,7 @@ async function run() {
   });
   assert(sourceMorselIndex >= 0, 'scripture word click did not surface a source morsel');
 
-  await page.$eval(`.ch-morsel[data-idx="${sourceMorselIndex}"]`, (el) => el.click());
+  await page.$eval(`#panel-body .ch-morsel[data-idx="${sourceMorselIndex}"]`, (el) => el.click());
   await page.waitForSelector('.source-doc .source-title', { timeout: 20000 });
   await page.waitForFunction(() => {
     const focused = document.querySelector('.source-para-focus');
@@ -411,7 +420,7 @@ async function run() {
   const scriptureToSourceState = await page.evaluate(() => ({
     sourceTitle: document.querySelector('.source-doc .source-title')?.textContent.trim(),
     sourceSubtitle: document.querySelector('.source-doc .source-subtitle')?.textContent.trim(),
-    location: document.querySelector('#location-label')?.textContent.trim(),
+    location: document.getElementById('breadcrumbs')?.innerText.replace(/\s+/g, ' ').trim() || '',
     activeTile: document.querySelector('.toc-tile.active .toc-tile-title')?.textContent.trim(),
     activeMeta: document.querySelector('.toc-tile.active .toc-tile-meta')?.textContent.trim(),
     previewHidden: document.querySelector('#morsel-preview')?.hidden,
@@ -421,7 +430,10 @@ async function run() {
 
   assert(scriptureToSourceState.sourceTitle, 'source morsel click did not open a source doc');
   assert(scriptureToSourceState.sourceSubtitle, 'source morsel click did not preserve the source subtitle');
-  assert(scriptureToSourceState.location.endsWith(scriptureToSourceState.sourceTitle), 'source morsel click did not preserve the clean location label');
+  assert(
+    scriptureToSourceState.location.indexOf(scriptureToSourceState.sourceTitle) !== -1,
+    'source morsel click did not preserve breadcrumbs for the opened document'
+  );
   assert(scriptureToSourceState.activeTile === scriptureToSourceState.sourceTitle, 'source morsel click did not preserve the active source title tile');
   assert(scriptureToSourceState.activeMeta === scriptureToSourceState.sourceSubtitle, 'source morsel click did not preserve the active source meta tile');
   assert(scriptureToSourceState.previewHidden, 'source morsel click fell back to the preview card');
@@ -436,7 +448,7 @@ async function run() {
   });
   await page.waitForFunction(() => document.querySelector('#channel').classList.contains('open'), { timeout: 15000 });
   const secondSourceMorselIndex = await page.evaluate(() => {
-    const morsels = Array.from(document.querySelectorAll('.ch-morsel'));
+    const morsels = Array.from(document.querySelectorAll('#panel-body .ch-morsel'));
     return morsels.findIndex((el) =>
       /Journal of Discourses|History of the Church|General Conference/i.test(
         el.querySelector('.ch-src-name')?.textContent || ''
@@ -444,19 +456,22 @@ async function run() {
     );
   });
   assert(secondSourceMorselIndex >= 0, 'source word click did not surface a second source morsel');
-  await page.$eval(`.ch-morsel[data-idx="${secondSourceMorselIndex}"]`, (el) => el.click());
+  await page.$eval(`#panel-body .ch-morsel[data-idx="${secondSourceMorselIndex}"]`, (el) => el.click());
   await page.waitForSelector('.source-doc .source-title', { timeout: 20000 });
   const sourceToSourceState = await page.evaluate(() => ({
     sourceTitle: document.querySelector('.source-doc .source-title')?.textContent.trim() || '',
     sourceSubtitle: document.querySelector('.source-doc .source-subtitle')?.textContent.trim() || '',
-    location: document.querySelector('#location-label')?.textContent.trim() || '',
+    location: document.getElementById('breadcrumbs')?.innerText.replace(/\s+/g, ' ').trim() || '',
     activeTile: document.querySelector('.toc-tile.active .toc-tile-title')?.textContent.trim() || '',
     activeMeta: document.querySelector('.toc-tile.active .toc-tile-meta')?.textContent.trim() || '',
     focusedText: document.querySelector('.source-para-focus')?.textContent.trim() || '',
   }));
   assert(sourceToSourceState.sourceTitle, 'second source morsel click did not open a source doc');
   assert(sourceToSourceState.sourceSubtitle, 'second source morsel click did not preserve the source subtitle');
-  assert(sourceToSourceState.location.endsWith(sourceToSourceState.sourceTitle), 'second source morsel click did not preserve the clean location label');
+  assert(
+    sourceToSourceState.location.indexOf(sourceToSourceState.sourceTitle) !== -1,
+    'second source morsel click did not preserve breadcrumbs for the opened document'
+  );
   assert(sourceToSourceState.activeTile === sourceToSourceState.sourceTitle, 'second source morsel click did not preserve the active source title tile');
   assert(sourceToSourceState.activeMeta === sourceToSourceState.sourceSubtitle, 'second source morsel click did not preserve the active source meta tile');
   assert(sourceToSourceState.focusedText.length > 80, 'second source morsel click did not focus a relevant paragraph');

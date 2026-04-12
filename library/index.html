@@ -5062,6 +5062,37 @@ document.getElementById('content').addEventListener('click', function(e) {
         if (block) { openSourceParaDiscovery(block, para); return; }
     }
 
+    // Source reader: clickable word → semantic channel (words JSON)
+    var wSpanSrc = e.target.closest('span.w[data-st]');
+    if (wSpanSrc && !wSpanSrc.closest('div.verse')) {
+        var srcBlock = wSpanSrc.closest('.chapter-block[data-source-doc-id]');
+        if (srcBlock) {
+            closeTocPanel();
+            var srcDocId = srcBlock.dataset.sourceDocId;
+            var srcParaIdx = String(wSpanSrc.dataset.v || '1');
+            var srcStem = wSpanSrc.dataset.st || '';
+            var ctxEl = wSpanSrc.closest('p.source-para') || srcBlock;
+            activeContextText = ctxEl ? (ctxEl.textContent || '') : '';
+            if (channelActiveSpan) {
+                channelActiveSpan.classList.remove('cw-active');
+            }
+            channelActiveSpan = wSpanSrc;
+            wSpanSrc.classList.add('cw-active');
+            loadSourceWordIndex(srcDocId).then(function(idx) {
+                var pack = idx && (idx[srcParaIdx] || idx[String(parseInt(srcParaIdx, 10) || 1)]);
+                var wdata = pack && pack[srcStem];
+                var raw = wdata && (wdata.matches || []);
+                var label = (wdata && wdata.forms && wdata.forms[0]) || (wSpanSrc.textContent || '').trim() || srcStem;
+                if (!raw || !raw.length) {
+                    openChannelEmpty(label);
+                    return;
+                }
+                openChannel(label, raw);
+            });
+            return;
+        }
+    }
+
     var verse = e.target.closest('div.verse');
     if (!verse) return;
     closeTocPanel();
@@ -5145,7 +5176,9 @@ function openChannelEmpty(word) {
     channelWord    = word;
     channelMorsels = [];
     channelIdx     = 0;
-    document.getElementById('ch-word').textContent = word;
+    var chW0 = document.getElementById('ch-word');
+    chW0.textContent = word;
+    chW0.style.display = 'block';
     var pb = document.getElementById('panel-body');
     pb.innerHTML = '<div class="ch-empty">No connections found for this word.</div>';
     pb.dataset.panelMode = 'channel';
@@ -5159,7 +5192,9 @@ function openChannel(word, matches) {
     channelIdx     = 0;
     channelOpen    = true;
 
-    document.getElementById('ch-word').textContent = word;
+    var chW1 = document.getElementById('ch-word');
+    chW1.textContent = word;
+    chW1.style.display = 'block';
     document.getElementById('channel').classList.add('open');
     renderChannelList();
 }
