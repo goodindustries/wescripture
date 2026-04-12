@@ -51,6 +51,9 @@ def canonicalize(text: str) -> str:
 
 
 def load_catalog() -> dict[str, dict[str, str]]:
+    # Pipeline cache is not committed; CI and shallow clones skip catalog-backed truncation checks.
+    if not VERSE_CATALOG.exists():
+        return {}
     catalog = json.loads(VERSE_CATALOG.read_text(encoding="utf-8"))
     out: dict[str, dict[str, str]] = defaultdict(dict)
     for row in catalog:

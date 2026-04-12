@@ -22,11 +22,14 @@ jobs:
           node-version: "20"
           cache: npm
 
+      - name: Install Python dependencies (corpus audit)
+        run: pip install "beautifulsoup4>=4.12"
+
       - name: Install Node dependencies (Puppeteer)
         run: npm ci
 
-      - name: Install Chromium for Puppeteer
-        run: npx puppeteer browsers install chrome
+      - name: Install Chromium for Puppeteer (incl. Linux system libs)
+        run: sudo env "PATH=$PATH" npx puppeteer browsers install chrome --install-deps
 
       - name: Python corpus + search audits
         run: |
