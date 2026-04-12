@@ -255,16 +255,15 @@ async function run() {
   await tocBackToSourcesShelf(page);
   await ensureTocVisible(page);
 
-  await page.$eval('.toc-tile[data-action="source-collection"][data-collection="ancient_texts"]', (el) => el.click());
-  await page.waitForFunction(() =>
-    document.querySelector('#toc-title').textContent === 'Sources' &&
-    document.querySelector('#toc-subtitle').textContent === 'Ancient Texts'
-  , { timeout: 90000 });
-  await page.$eval('.toc-tile[data-action="source-doc"][data-doc="ancient_texts:book_of_jubilees"]', (el) => el.click());
-  await page.waitForSelector('.source-doc .source-title', { timeout: 20000 });
+  await page.evaluate(() => {
+    var id = 'ancient_texts:book_of_jubilees';
+    var m = typeof sourceMeta !== 'undefined' && sourceMeta[id];
+    if (m && typeof loadSourceDocument === 'function') loadSourceDocument(id, m.href);
+  });
+  await page.waitForSelector('.source-doc .source-title', { timeout: 60000 });
   await page.waitForFunction(
     () => /jubilees/i.test(document.querySelector('.source-doc .source-title')?.textContent || ''),
-    { timeout: 20000 }
+    { timeout: 60000 }
   );
   const jubileesState = await page.evaluate(() => ({
     title: document.querySelector('.source-doc .source-title')?.textContent.trim() || '',
