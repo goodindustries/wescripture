@@ -1,6 +1,6 @@
 {
-  "name": "LDS Scriptures — Enriched Edition",
-  "short_name": "LDS Scriptures",
+  "name": "WeScripture",
+  "short_name": "WeScripture",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#F5F2EC",
