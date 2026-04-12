@@ -179,6 +179,8 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 #sentinel { height: 60px; }
 
 /* Scripture column: tighter gap below title (intro text lives in #channel) */
+/* Summary stays in DOM for renderStudyPanelIntro but is shown only in the right panel */
+#content .chapter-block h3.chapter-heading { display: none !important; }
 .scripture h2.book-title { margin-top: 0.65em; margin-bottom: 0.08em; }
 .scripture p.chapter-num { margin: 0.45em 0 0.12em; }
 .scripture div.verse:first-of-type { margin-top: 0.65em; }
@@ -187,7 +189,7 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 .panel-intro-wrap { padding: 20px 18px 24px; max-width: 100%; }
 .panel-chapter-intro {
     margin: 0 auto 16px;
-    max-width: 22em;
+    max-width: 28em;
     padding: 12px 14px 14px;
     border: 1px solid rgba(139, 115, 85, 0.22);
     border-radius: 12px;
@@ -205,8 +207,8 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 }
 .panel-chapter-body {
     font-family: 'EB Garamond', Georgia, serif;
-    font-size: 15px;
-    line-height: 1.55;
+    font-size: 18px;
+    line-height: 1.58;
     font-style: italic;
     text-align: center;
     color: #4a3d32;
