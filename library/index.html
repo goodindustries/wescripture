@@ -3233,7 +3233,7 @@ function openVerseDiscovery(ref) {
         entries: entries, entsInline: entsInline, scriptureEdgesEarly: scriptureEdgesEarly
     };
 
-    loadChapterWordIndex(chapterId).then(function(wordIdx) {
+    return loadChapterWordIndex(chapterId).then(function(wordIdx) {
         var verseData = wordIdx && wordIdx[vnum] ? wordIdx[vnum] : {};
         var mergedKw = mergeKeyWordsForVerse(donaWords, verseData, verseText, chapterId);
         registerChapterKeywordHeadwords(mergedKw, verseText);

@@ -52,7 +52,7 @@ async function run() {
   await page.click('.toc-tile[data-action="chapter"][data-id="genesis_1"]');
 
   await page.waitForSelector('#ch-genesis_1', { timeout: 20000 });
-  await page.click('#ch-genesis_1 .verse[id="v1"]');
+  await page.click('#ch-genesis_1 .verse[id="v1"] .verse-num');
   await page.waitForSelector('#channel.open', { timeout: 15000 });
   await page.waitForSelector('#panel-body[data-panel-mode="verse"]', { timeout: 15000 });
 

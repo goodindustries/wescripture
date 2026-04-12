@@ -42,9 +42,8 @@ async function run() {
   await page.$eval('#ch-genesis_1', (el) => el.scrollIntoView({ block: 'start' }));
   await page.waitForSelector('#ch-genesis_1 .verse[id="v1"]', { timeout: 15000 });
 
-  await page.evaluate(() => {
-    if (typeof openVerseDiscovery === 'function') openVerseDiscovery('Genesis 1:1');
-  });
+  // Use verse number as click target so we do not hit span.w (word channel) inside .verse-text.
+  await page.click('#ch-genesis_1 .verse[id="v1"] .verse-num');
   await page.waitForSelector('#panel-body[data-panel-mode="verse"]', { timeout: 20000 });
 
   const state = await page.evaluate(() => {
