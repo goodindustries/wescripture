@@ -567,16 +567,6 @@ def _render_verse(verse, enr: dict) -> list[str]:
             f'</div>'
         ))
 
-    # ── Strong's (from enrichment) ────────────────────────────────────────
-    if enr.get("etymology"):
-        blocks.append((
-            0.85,
-            f'<div class="etymology-block">'
-            f'<span class="etym-label">Strong\'s Concordance</span>'
-            + ''.join(enr["etymology"]) +
-            f'</div>'
-        ))
-
     # ── Donaldson commentary ──────────────────────────────────────────────
     dona_file = _DONA_DIR / f"{verse.book}_{verse.chapter}_{verse.verse}.json"
     if dona_file.exists():

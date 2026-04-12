@@ -27,9 +27,6 @@ SOURCES = {
     # ── Donaldson inline commentary (extracted from the compilation itself) ──
     "donaldson_commentary":    True,   # Lee Donaldson's per-verse notes (embedded in source PDF)
 
-    # ── Word study ──────────────────────────────────────────────────────────
-    "strongs_etymology":       True,   # Hebrew/Greek word roots (Strong's concordance)
-
     # ── Rabbinical / Jewish ─────────────────────────────────────────────────
     "sefaria_rashi":           True,   # Rashi commentary (Torah + Prophets)
     "sefaria_talmud":          True,   # Talmud cross-references (Sefaria API)
@@ -84,7 +81,6 @@ SOURCES = {
 INCLUDE_BOOKS = None  # None = all; e.g. ["Genesis", "Exodus"] to limit
 
 # ── Commentary density ────────────────────────────────────────────────────────
-MAX_STRONGS_WORDS_PER_VERSE    = 5
 MAX_RASHI_COMMENTS_PER_VERSE   = 2
 MAX_TALMUD_REFS_PER_VERSE      = 2
 MAX_MIDRASH_REFS_PER_VERSE     = 1

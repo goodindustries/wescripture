@@ -603,40 +603,6 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     font-family: 'EB Garamond', Georgia, serif; letter-spacing: -0.02em;
     line-height: 1.2;
 }
-#ch-study {
-    margin-top: 10px;
-    padding: 10px 12px;
-    border: 1px solid rgba(156,122,77,0.16);
-    border-radius: 12px;
-    background: #fffdf9;
-}
-#ch-study[hidden] { display: none; }
-.ch-study-title {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 8px;
-}
-.ch-study-entry + .ch-study-entry {
-    margin-top: 8px;
-    padding-top: 8px;
-    border-top: 1px solid rgba(0,0,0,0.05);
-}
-.ch-study-line {
-    font-size: 13px;
-    line-height: 1.45;
-    color: var(--text);
-}
-.ch-study-num { font-weight: 700; color: var(--accent); }
-.ch-study-lemma { font-weight: 600; }
-.ch-study-def {
-    margin-top: 4px;
-    font-size: 12px;
-    line-height: 1.55;
-    color: #52493f;
-}
 #ch-close {
     background: none; border: none; cursor: pointer; padding: 4px;
     border-radius: 5px; color: var(--muted); flex-shrink: 0; display: flex;
@@ -3024,44 +2990,6 @@ function wordAppearsInVerseAsToken(word, verseText) {
     }
 }
 
-function levenshtein(a, b) {
-    if (a === b) return 0;
-    var al = a.length, bl = b.length;
-    if (!al) return bl;
-    if (!bl) return al;
-    var i, j, prev, cur, row = [];
-    for (j = 0; j <= bl; j++) row[j] = j;
-    for (i = 1; i <= al; i++) {
-        prev = i - 1;
-        row[0] = i;
-        for (j = 1; j <= bl; j++) {
-            cur = row[j];
-            var cost = a.charAt(i - 1) === b.charAt(j - 1) ? 0 : 1;
-            row[j] = Math.min(row[j] + 1, row[j - 1] + 1, prev + cost);
-            prev = cur;
-        }
-    }
-    return row[bl];
-}
-
-/** True if a KJV gloss fragment aligns with a verse word (exact or close spelling). */
-function kjGlossMatchesVerseWord(kj, vw) {
-    if (!kj || !vw) return false;
-    vw = String(vw).toLowerCase();
-    if (vw.length < 2) return false;
-    var parts = kj.split(/[,;]/);
-    for (var p = 0; p < parts.length; p++) {
-        var tokens = parts[p].toLowerCase().trim().replace(/^x\s+/i, '').split(/\s+/);
-        for (var t = 0; t < tokens.length; t++) {
-            var tok = tokens[t].replace(/[^a-z']/g, '');
-            if (tok.length < 2) continue;
-            if (vw === tok) return true;
-            if (vw.length >= 4 && tok.length >= 4 && levenshtein(vw, tok) <= 1) return true;
-        }
-    }
-    return false;
-}
-
 /** Headword is visibly grounded in this verse (token or multi-word phrase). */
 function keywordVerifiedInVerse(headword, verseText) {
     if (!headword || !verseText) return false;
@@ -3074,44 +3002,54 @@ function keywordVerifiedInVerse(headword, verseText) {
     return wordAppearsInVerseAsToken(h, verseText);
 }
 
-/**
- * Lexicon row is relevant to this verse in English: surface label in verse, or KJV gloss matches a verse word.
- */
-function strongsEntryMatchesVerse(entry, verseText) {
+/** Stems too generic for “Key words” (aligned with build_word_index stop stems). */
+var GRAPH_KW_STEM_STOPS = {
+    the: 1, a: 1, an: 1, and: 1, or: 1, but: 1, in: 1, on: 1, of: 1, to: 1, for: 1, with: 1, by: 1, from: 1, at: 1, as: 1,
+    is: 1, was: 1, are: 1, were: 1, be: 1, been: 1, being: 1, have: 1, has: 1, had: 1, do: 1, does: 1, did: 1,
+    it: 1, its: 1, he: 1, him: 1, his: 1, she: 1, her: 1, they: 1, them: 1, their: 1, we: 1, us: 1, our: 1, you: 1, your: 1,
+    i: 1, me: 1, my: 1, not: 1, no: 1, so: 1, if: 1, that: 1, this: 1, these: 1, those: 1, which: 1, who: 1, whom: 1, what: 1,
+    when: 1, where: 1, why: 1, how: 1, all: 1, any: 1, some: 1, such: 1, than: 1, then: 1, there: 1, thus: 1, unto: 1, into: 1,
+    shall: 1, should: 1, will: 1, would: 1, may: 1, might: 1, must: 1, can: 1, could: 1,
+    ye: 1, thee: 1, thou: 1, thy: 1, thine: 1, hath: 1, doth: 1, saith: 1, also: 1, even: 1, only: 1, very: 1
+};
+
+function graphFormInVerse(form, verseText) {
+    if (!form || !verseText) return false;
+    var f = String(form).trim();
+    if (!f) return false;
+    if (/\s/.test(f)) {
+        var norm = f.replace(/\s+/g, ' ').toLowerCase();
+        return verseText.toLowerCase().indexOf(norm) !== -1;
+    }
+    return wordAppearsInVerseAsToken(f, verseText);
+}
+
+function graphStemAppearsInVerse(entry, verseText) {
     if (!entry || !verseText) return false;
-    var lab = strongsKeyWordLabel(entry);
-    if (keywordVerifiedInVerse(lab, verseText)) return true;
-    var kj = entry.kj || '';
-    if (!kj) return false;
-    var vwords = verseText.toLowerCase().match(/[a-z']+/g) || [];
-    for (var i = 0; i < vwords.length; i++) {
-        if (kjGlossMatchesVerseWord(kj, vwords[i])) return true;
+    var forms = entry.forms || [];
+    for (var i = 0; i < forms.length; i++) {
+        if (graphFormInVerse(forms[i], verseText)) return true;
     }
     return false;
 }
 
-/**
- * Prefer a verse surface word for the card title when the lexicon label does not appear in the verse.
- */
-function displayTitleForStrongsKeyWord(entry, verseText) {
-    var lab = strongsKeyWordLabel(entry) || 'Term';
-    if (!verseText) return isJunkKeywordTitle(lab) ? '' : lab;
-    if (keywordVerifiedInVerse(lab, verseText) && !isJunkKeywordTitle(lab)) return lab;
-    var kj = entry.kj || '';
-    if (!kj) return isJunkKeywordTitle(lab) ? '' : lab;
-    var raw = verseText.match(/[a-zA-Z']+/g) || [];
+function pickDisplayFormForStem(forms, stem, verseText) {
+    var vt = (verseText || '').toLowerCase();
     var best = '';
-    for (var i = 0; i < raw.length; i++) {
-        var w = raw[i];
-        if (w.length < 2) continue;
-        if (!kjGlossMatchesVerseWord(kj, w.toLowerCase())) continue;
-        if (w.length > best.length) best = w;
-    }
-    if (best) {
-        var cap = best.charAt(0).toUpperCase() + best.slice(1).toLowerCase();
-        if (!isJunkKeywordTitle(cap)) return cap;
-    }
-    return isJunkKeywordTitle(lab) ? '' : lab;
+    (forms || []).forEach(function(f) {
+        var s = String(f || '').trim();
+        if (!s) return;
+        if (vt.indexOf(s.toLowerCase()) === -1) return;
+        if (s.length > best.length) best = s;
+    });
+    if (best) return best.charAt(0).toUpperCase() + best.slice(1).toLowerCase();
+    if (stem && String(stem).length) return String(stem).charAt(0).toUpperCase() + String(stem).slice(1);
+    return '';
+}
+
+function graphKeywordHeadword(item, verseText) {
+    if (!item || item.kind !== 'graph') return '';
+    return pickDisplayFormForStem(item.entry && item.entry.forms, item.stem, verseText) || String(item.stem || '').trim();
 }
 
 /** Keep Donaldson key words only when the headword appears in the verse (substring for multi-word). */
@@ -3129,34 +3067,19 @@ function filterDonaWordsForVerse(words, verseText) {
     });
 }
 
-function openVerseDiscovery(ref) {
-    // Parse chapterId and verse number from ref ("John 1:3" → chapter "john_1", verse "3")
-    var vnum = ref.split(':')[1] || '';
-    var chapterId = currentChapter || '';
+function finishVerseDiscoveryPanel(payload) {
+    var ref = payload.ref;
+    var chapterId = payload.chapterId;
+    var vnum = payload.vnum;
+    var verseText = payload.verseText;
+    var mergedKw = payload.mergedKw;
+    var donaEntry = payload.donaEntry;
+    var donaNotes = payload.donaNotes || [];
+    var donaQuotes = payload.donaQuotes || [];
+    var entries = payload.entries;
+    var entsInline = payload.entsInline;
+    var scriptureEdgesEarly = payload.scriptureEdgesEarly;
 
-    var rawEntries = verseDiscovery[ref] || [];
-    var entries = semanticDedupeVerseDiscoveryEntries(dedupeVerseDiscoveryEntries(rawEntries.filter(function(e) {
-        return !discIsRepeat(e.source_text);
-    })));
-
-    var donaEntry  = (donaldsonNotes[chapterId] && donaldsonNotes[chapterId][vnum]) || {};
-    var donaWordsRaw = donaEntry.words  || [];
-    var donaNotes  = donaEntry.notes  || [];
-    var donaQuotes = donaEntry.quotes || [];
-
-    var verseEl = document.getElementById('v' + vnum);
-    var verseText = verseEl ? (verseEl.querySelector('.verse-text') || verseEl).textContent.trim() : '';
-    var donaWords = filterDonaWordsForVerse(donaWordsRaw, verseText);
-
-    ensureChapterKeywordRegistry(chapterId);
-    var strongsEntries = (strongsIndexCache[chapterId] || {})[vnum] || [];
-    var mergedKw = mergeKeyWordsForVerse(donaWords, strongsEntries, verseText, chapterId);
-    registerChapterKeywordHeadwords(mergedKw, verseText);
-
-    var chW = document.getElementById('ch-word');
-    chW.textContent = ref;
-    chW.style.display = 'block';
-    var entsInline = verseText ? scanVerseEntities(verseText) : { persons: [], places: [], things: [] };
     var showedEntityChips = !!(entsInline.persons.length || entsInline.places.length || entsInline.things.length);
 
     var html = '';
@@ -3166,7 +3089,6 @@ function openVerseDiscovery(ref) {
     if (showedEntityChips) html += renderVersePanelEntityChips(entsInline);
     html += '</div>';
 
-    var scriptureEdgesEarly = chapterGraphEchoes(chapterId, vnum);
     var cm = chapterMeta[chapterId] || {};
     var donaldsonWorkLine = (cm.book ? cm.book + ' · ' : '') + 'Commentary';
 
@@ -3219,7 +3141,7 @@ function openVerseDiscovery(ref) {
         html += '<div class="word-cards-wrap expanded">';
         mergedKw.forEach(function(item) {
             if (item.kind === 'dona') html += htmlKeyWordCardDona(item.w, verseText);
-            else html += htmlKeyWordCardStrongs(item.entry, verseText);
+            else if (item.kind === 'graph') html += htmlKeyWordCardGraph(item, verseText);
         });
         html += '</div>';
     }
@@ -3274,6 +3196,46 @@ function openVerseDiscovery(ref) {
             channelOpen = false;
             jumpTo(cid, v);
         });
+    });
+}
+
+function openVerseDiscovery(ref) {
+    var vnum = ref.split(':')[1] || '';
+    var chapterId = currentChapter || '';
+
+    var rawEntries = verseDiscovery[ref] || [];
+    var entries = semanticDedupeVerseDiscoveryEntries(dedupeVerseDiscoveryEntries(rawEntries.filter(function(e) {
+        return !discIsRepeat(e.source_text);
+    })));
+
+    var donaEntry  = (donaldsonNotes[chapterId] && donaldsonNotes[chapterId][vnum]) || {};
+    var donaWordsRaw = donaEntry.words  || [];
+    var donaNotes  = donaEntry.notes  || [];
+    var donaQuotes = donaEntry.quotes || [];
+
+    var verseEl = document.getElementById('v' + vnum);
+    var verseText = verseEl ? (verseEl.querySelector('.verse-text') || verseEl).textContent.trim() : '';
+    var donaWords = filterDonaWordsForVerse(donaWordsRaw, verseText);
+
+    ensureChapterKeywordRegistry(chapterId);
+
+    var chW = document.getElementById('ch-word');
+    chW.textContent = ref;
+    chW.style.display = 'block';
+    var entsInline = verseText ? scanVerseEntities(verseText) : { persons: [], places: [], things: [] };
+    var scriptureEdgesEarly = chapterGraphEchoes(chapterId, vnum);
+
+    var payloadBase = {
+        ref: ref, chapterId: chapterId, vnum: vnum, verseText: verseText,
+        donaEntry: donaEntry, donaNotes: donaNotes, donaQuotes: donaQuotes,
+        entries: entries, entsInline: entsInline, scriptureEdgesEarly: scriptureEdgesEarly
+    };
+
+    loadChapterWordIndex(chapterId).then(function(wordIdx) {
+        var verseData = wordIdx && wordIdx[vnum] ? wordIdx[vnum] : {};
+        var mergedKw = mergeKeyWordsForVerse(donaWords, verseData, verseText, chapterId);
+        registerChapterKeywordHeadwords(mergedKw, verseText);
+        finishVerseDiscoveryPanel(Object.assign({}, payloadBase, { mergedKw: mergedKw }));
     });
 }
 
@@ -3778,9 +3740,8 @@ function injectNotes(id, block) {
             .then(function(data) { if (data) donaldsonNotes[id] = data; })
             .catch(function() {});
     }
-    // Pre-warm Strong's index so verse-click study panel has it ready
-    if (id !== 'title_page' && !strongsIndexCache[id]) {
-        loadStrongsIndex(id);
+    if (id !== 'title_page' && !wordIndexCache['chapter:' + id]) {
+        loadChapterWordIndex(id);
     }
     // Pre-warm chapter graph for scripture echoes
     if (id !== 'title_page' && !chapterGraphCache[id]) {
@@ -4317,11 +4278,10 @@ function extractScriptFromNote(s) {
 }
 
 /**
- * Merge Donaldson lemmas (priority) with ranked lexicon rows; hide duplicate headwords.
- * Concordance numbers stay internal — not shown in the UI.
+ * Merge Donaldson lemmas (priority) with high-signal stems from chapter *_words.json (graph index).
  * @param {string} [chapterId] — when registry is primed for this chapter, skip headwords already shown.
  */
-function mergeKeyWordsForVerse(donaWords, strongsEntries, verseText, chapterId) {
+function mergeKeyWordsForVerse(donaWords, verseWordData, verseText, chapterId) {
     var out = [];
     var seen = {};
     function mark(k) {
@@ -4341,37 +4301,43 @@ function mergeKeyWordsForVerse(donaWords, strongsEntries, verseText, chapterId) 
         if (t) mark(t);
         out.push({ kind: 'dona', w: w });
     });
-    var sList = (strongsEntries || []).filter(function(e) {
-        return (e.lm || e.xl) && (strongsPlain[e.sn] || strongsCleanDef(e.gl, e.kj));
-    });
-    if (verseText) {
-        sList = sList.filter(function(e) { return strongsEntryMatchesVerse(e, verseText); });
-    } else {
-        sList = [];
+
+    var cand = [];
+    if (verseText && verseWordData && typeof verseWordData === 'object') {
+        Object.keys(verseWordData).forEach(function(stem) {
+            if (!stem || GRAPH_KW_STEM_STOPS[stem]) return;
+            var entry = verseWordData[stem];
+            if (!entry || typeof entry !== 'object') return;
+            if ((entry.score || 0) < 0.12) return;
+            if (!graphStemAppearsInVerse(entry, verseText)) return;
+            var lab = pickDisplayFormForStem(entry.forms, stem, verseText);
+            if (!lab || isJunkKeywordTitle(lab)) return;
+            if (consumedInChapter(lab)) return;
+            if (has(lab)) return;
+            cand.push({ stem: stem, entry: entry, score: entry.score || 0 });
+        });
     }
-    sList.sort(function(a, b) {
-        return scoreStrongsEntry(verseText, '', b) - scoreStrongsEntry(verseText, '', a);
-    });
-    sList.forEach(function(entry) {
-        var lab = verseText
-            ? displayTitleForStrongsKeyWord(entry, verseText)
-            : strongsKeyWordLabel(entry);
-        if (!lab || isJunkKeywordTitle(lab)) return;
-        if (consumedInChapter(lab)) return;
-        if (has(lab)) return;
-        mark(lab);
-        out.push({ kind: 'strongs', entry: entry });
-    });
+    cand.sort(function(a, b) { return b.score - a.score; });
+    for (var ci = 0; ci < cand.length && out.length < 2; ci++) {
+        var c = cand[ci];
+        var lab2 = pickDisplayFormForStem(c.entry.forms, c.stem, verseText);
+        if (!lab2 || isJunkKeywordTitle(lab2)) continue;
+        if (consumedInChapter(lab2)) continue;
+        if (has(lab2)) continue;
+        mark(lab2);
+        out.push({ kind: 'graph', stem: c.stem, entry: c.entry });
+    }
+
     out = out.filter(function(item) {
         var lab = item.kind === 'dona'
             ? String((item.w && item.w.word) || '').trim()
-            : (displayTitleForStrongsKeyWord(item.entry, verseText || '') || strongsKeyWordLabel(item.entry));
+            : graphKeywordHeadword(item, verseText || '');
         return lab && !isJunkKeywordTitle(lab);
     });
     return out.slice(0, 2);
 }
 
-/** Lay-oriented card from Donaldson key-word row (no Strong's numbers in copy). */
+/** Lay-oriented card from Donaldson key-word row. */
 function htmlKeyWordCardDona(w, verseText) {
     var title = (w.word || '').trim() || 'Key term';
     var raw = w.plain || w.meaning || '';
@@ -4388,65 +4354,31 @@ function htmlKeyWordCardDona(w, verseText) {
     return '<div class="word-card word-card--kw-collapsed">' + head + def + '</div>';
 }
 
-function verseSnippetForStudy(verseText) {
-    if (!verseText) return '';
-    var t = String(verseText).replace(/\s+/g, ' ').trim();
-    if (t.length <= 180) return t;
-    return t.slice(0, 177).trim() + '\u2026';
-}
-
-/**
- * One paragraph word study (no H/G numbers in prose): sense, roots where helpful,
- * figurative register, and how the term sits in this verse's wording.
- */
-function strongsCompactWordStudy(entry, verseText) {
-    if (!entry) return '';
-    var sn = String(entry.sn || '');
-    var core = stripOriginalLanguageNotes(strongsReaderDef(entry));
-    if (!core) core = stripOriginalLanguageNotes(strongsCleanDef(entry.gl || '', entry.kj || ''));
-    var hasPlain = !!(sn && strongsPlain[sn]);
-    var parts = [];
-    if (core) parts.push(core);
-
-    if (!hasPlain) {
-        var root = strongsRoot(entry.dv || '');
-        if (root && (!core || core.toLowerCase().indexOf(String(root).toLowerCase()) === -1)) {
-            parts.push('The underlying form clusters around \u201c' + root + '\u201d in the original.');
-        }
-        var gl = entry.gl || '';
-        if (gl && /figuratively/i.test(gl)) {
-            var fm = gl.match(/figuratively[^;]+/i);
-            if (fm) {
-                var fig = stripOriginalLanguageNotes(fm[0]).replace(/^figuratively,?\s*/i, '').trim();
-                if (fig && (!core || core.toLowerCase().indexOf(fig.slice(0, Math.min(20, fig.length)).toLowerCase()) === -1)) {
-                    parts.push('Extended biblical English sometimes leans the same lemma toward: ' + fig + '.');
-                }
-            }
-        }
+/** Keyword card from chapter *_words.json stem: top semantic match excerpts (not a lexicon definition). */
+function htmlKeyWordCardGraph(item, verseText) {
+    var title = graphKeywordHeadword(item, verseText) || 'Key term';
+    var entry = item.entry || {};
+    var matches = sortMatches(entry.matches || []).slice(0, 2);
+    var lines = [];
+    for (var mi = 0; mi < matches.length; mi++) {
+        var m = matches[mi];
+        var src = srcLabel(m.s);
+        var tx = stripOriginalLanguageNotes(String(m.x || '').replace(/\s+/g, ' ').trim());
+        if (tx.length > 220) tx = tx.slice(0, 217) + '\u2026';
+        if (src && tx) lines.push(src + ': ' + tx);
     }
-
-    var snip = verseSnippetForStudy(verseText);
-    if (snip && (!core || core.length < 420) && (!core || core.indexOf(snip.slice(0, Math.min(24, snip.length))) === -1)) {
-        parts.push('In this line\u2014\u201c' + snip + '\u201d\u2014that is the immediate register the word has to carry.');
+    var sense = lines.join(' ').trim();
+    if (!sense) {
+        sense = 'Semantic connections for this stem load in the word channel when you tap a highlighted word in the verse.';
     }
-
-    return parts.join(' ').replace(/\s+/g, ' ').trim();
-}
-
-/** Lexicon-backed keyword card: one paragraph word study; lemma line in body; no H/G in copy. */
-function htmlKeyWordCardStrongs(entry, verseText) {
-    var title = displayTitleForStrongsKeyWord(entry, verseText) || 'Term';
-    var script = ((entry.lm || entry.xl || '') + '').trim();
-    var para = strongsCompactWordStudy(entry, verseText);
-    var verified = verseText && strongsEntryMatchesVerse(entry, verseText)
-        && keywordVerifiedInVerse(title, verseText);
+    var verified = verseText && keywordVerifiedInVerse(title, verseText);
     var head = '<div class="word-card-head" onclick="toggleVerseKwCard(this)"><div class="word-card-head-text">'
-        + '<div class="word-english' + (verified ? ' word-kw-in-verse' : '') + '">' + escapeHtml(title) + '</div>';
-    if (script) head += '<div class="word-original" lang="und" dir="auto">' + escapeHtml(script) + '</div>';
-    head += '</div><span class="word-card-chevron" aria-hidden="true">\u25bc</span></div>';
+        + '<div class="word-english' + (verified ? ' word-kw-in-verse' : '') + '">' + escapeHtml(title) + '</div>'
+        + '</div><span class="word-card-chevron" aria-hidden="true">\u25bc</span></div>';
     var def = '<div class="word-card-def"><div class="word-kw-block"><div class="word-kw-text">'
-        + makeExpandable(para, 'note-preview', 'note-overflow', 'note-more') + '</div></div></div>';
-    return '<div class="word-card word-card--kw-collapsed">' + head + def + '</div>';
+        + makeExpandable(sense, 'note-preview', 'note-overflow', 'note-more') + '</div></div></div>';
+    return '<div class="word-card word-card--kw-collapsed" role="article" aria-label="Keyword: ' + escapeAttr(title) + '">'
+        + head + def + '</div>';
 }
 
 function escapeAttr(str) {
@@ -4463,8 +4395,6 @@ var channelActiveSpan = null;
 var channelPanelMode = 'book';
 var wordIndexCache = {};     // slug → loaded words JSON
 var wordIndexLoading = {};   // slug → promise
-var strongsIndexCache = {};  // chapter → loaded strongs JSON
-var strongsIndexLoading = {}; // chapter → promise
 
 var SRC_COLORS = {
     standard_works:        '#8B5E3C',
@@ -4822,210 +4752,6 @@ function loadSourceWordIndex(docId) {
     return loadWordIndex('source:' + docId, wordsHref);
 }
 
-function loadStrongsIndex(chapterId) {
-    if (!chapterId) return Promise.resolve({});
-    if (strongsIndexCache[chapterId]) return Promise.resolve(strongsIndexCache[chapterId]);
-    if (strongsIndexLoading[chapterId]) return strongsIndexLoading[chapterId];
-    strongsIndexLoading[chapterId] = fetch('./chapters/' + chapterId + '_strongs.json')
-        .then(function(r) { return r.ok ? r.json() : {}; })
-        .then(function(data) {
-            strongsIndexCache[chapterId] = data || {};
-            return strongsIndexCache[chapterId];
-        })
-        .catch(function() { strongsIndexCache[chapterId] = {}; return {}; });
-    return strongsIndexLoading[chapterId];
-}
-
-function scoreStrongsEntry(wordText, stem, entry) {
-    var word = normalizeExcerpt(wordText || '');
-    var targetStem = normalizeExcerpt(stem || '');
-    var hay = normalizeExcerpt([
-        entry.sn || '', entry.lm || '', entry.xl || '', entry.pr || '', entry.gl || '', entry.kj || '', entry.dv || ''
-    ].join(' '));
-    if (!hay) return 0;
-    var score = 0;
-    if (word && hay.indexOf(word) !== -1) score += 3;
-    if (targetStem && hay.indexOf(targetStem) !== -1) score += 2;
-    if (entry.gl && normalizeExcerpt(entry.gl).indexOf(word) !== -1) score += 2;
-    return score;
-}
-
-function pickStrongsEntries(wordText, stem, entries) {
-    var ranked = (entries || []).slice().map(function(entry) {
-        return { entry: entry, score: scoreStrongsEntry(wordText, stem, entry) };
-    }).sort(function(a, b) {
-        if (b.score !== a.score) return b.score - a.score;
-        return String(a.entry.sn || '').localeCompare(String(b.entry.sn || ''));
-    }).map(function(row) { return row.entry; });
-    return ranked.slice(0, 3);
-}
-
-function strongsCleanDef(gl, kj) {
-    // Take the first plain-English clause from gl, strip technical cross-refs
-    if (gl) {
-        var cleaned = gl.replace(/\([^)]*[A-Z]\d{3,}[^)]*\)/g, '').trim();
-        var first = cleaned.split(';')[0].trim();
-        if (first.length > 6) return first;
-    }
-    // Fall back to first 2 non-abbreviation KJV glosses
-    if (kj) {
-        return kj.split(',')
-            .map(function(s){ return s.trim(); })
-            .filter(function(s){ return s && !s.startsWith('X ') && s.length > 1; })
-            .slice(0, 3).join(', ');
-    }
-    return '';
-}
-
-function strongsRoot(dv) {
-    if (!dv) return '';
-    // Lemma after "G1234 (…)" — skip G3588 (article ὁ) so we don't show "from ὁ"
-    var m = dv.match(/G(?!3588)(\d{3,})\s*\(([^\u0000-\u007F][^)]*)\)/);
-    if (m) return m[2];
-    m = dv.match(/\(([^\u0000-\u007F][^)]*)\)/);
-    var r = m ? m[1] : '';
-    return r === 'ὁ' ? '' : r;
-}
-
-/** Strong's numbers that need a stable English title (avoid KJV concordance noise). */
-var STRONGS_KEYWORD_LABEL_OVERRIDE = {
-    H430: 'God', H3068: 'Lord', H3069: 'Lord', H136: 'Lord',
-    H433: 'God', H410: 'God', H7225: 'Beginning',
-    G2316: 'God', G2962: 'Lord', G2424: 'Jesus', G5547: 'Christ'
-};
-
-/**
- * English label for Key Words cards: lexicon gloss first, not the first KJV concordance token
- * (which yields "angels" for Elohim, "air" for shamayim, etc.).
- */
-function strongsKeyWordLabel(entry) {
-    if (!entry) return '';
-    var sn = String(entry.sn || '').toUpperCase();
-    if (STRONGS_KEYWORD_LABEL_OVERRIDE[sn]) return STRONGS_KEYWORD_LABEL_OVERRIDE[sn];
-
-    var gl = (entry.gl || '').trim();
-    if (gl) {
-        if (/\bsupreme God\b/i.test(gl)) return 'God';
-        var clause = gl.split(';')[0].trim();
-        while (/^\([^)]+\)\s*/.test(clause)) clause = clause.replace(/^\([^)]+\)\s*/, '').trim();
-        clause = clause.replace(/^\(absolutely\)\s*/i, '').replace(/^\(qualified\)\s*/i, '').trim();
-        var toVerb = clause.match(/^to\s+([\w'-]+)/i);
-        if (toVerb) {
-            var vb = toVerb[1];
-            return vb.charAt(0).toUpperCase() + vb.slice(1).toLowerCase();
-        }
-        var theNoun = clause.match(/^the\s+([\w'-]+)/i);
-        if (theNoun) {
-            var nw = theNoun[1].toLowerCase();
-            if (nw === 'sky' || nw === 'heavens' || nw === 'heaven') return 'Heaven';
-            if (nw === 'earth' || nw === 'land') return 'Earth';
-            return theNoun[1].charAt(0).toUpperCase() + theNoun[1].slice(1).toLowerCase();
-        }
-        if (!/^figuratively/i.test(clause)) {
-            var firstTok = clause.match(/^([\w'-]+)/);
-            if (firstTok) {
-                var ft = firstTok[1];
-                if (ft.toLowerCase() === 'gods' && /\bGod\b/i.test(gl)) return 'God';
-                return ft.charAt(0).toUpperCase() + ft.slice(1).toLowerCase();
-            }
-        }
-    }
-    var xl = (entry.xl || '').trim();
-    if (xl) {
-        var bit = xl.split(/\s+/)[0].replace(/^[^\w\u0590-\u05FF]+/, '');
-        if (bit) return bit;
-    }
-    var kj = (entry.kj || '');
-    if (kj) {
-        var parts = kj.split(',');
-        for (var i = 0; i < parts.length; i++) {
-            var p = parts[i].trim();
-            if (!p || /^\[idiom\]/i.test(p) || /^X\s/i.test(p)) continue;
-            var w = p.replace(/\([^)]*\)/g, '').trim().split(/\s+/)[0];
-            if (!w || /^\[idiom\]/i.test(w)) continue;
-            return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase();
-        }
-    }
-    return ((entry.lm || entry.sn) || '').trim();
-}
-
-/** @deprecated Use strongsKeyWordLabel — kept for any legacy callers. */
-function strongsHeadwordEnglish(entry) {
-    return strongsKeyWordLabel(entry);
-}
-
-/** Strip parenthetical G-number refs from a definition clause. */
-function strongsStripGRefs(s) {
-    if (!s) return '';
-    var out = s;
-    var prev;
-    do {
-        prev = out;
-        out = out.replace(/\([^)]*G\d{3,}[^)]*\)/g, '');
-    } while (out !== prev);
-    return out.replace(/\s+/g, ' ').trim();
-}
-
-/** Prefer plain-English sense: skip "figuratively…" gloss lead-ins; fall back to dv. */
-function strongsReaderDef(entry) {
-    if (!entry) return '';
-    var sn = entry.sn || '';
-    if (sn && strongsPlain[sn]) return strongsPlain[sn];
-    var gl = entry.gl || '';
-    var kj = entry.kj || '';
-    var dv = entry.dv || '';
-
-    if (gl) {
-        var cleaned = gl.replace(/\([^)]*[A-Z]\d{3,}[^)]*\)/g, '').trim();
-        var clauses = cleaned.split(';').map(function(s) { return s.trim(); }).filter(Boolean);
-        for (var i = 0; i < clauses.length; i++) {
-            var c = clauses[i];
-            if (/^figuratively/i.test(c)) continue;
-            if (/^by Hebraism/i.test(c)) continue;
-            if (c.length > 8) return c;
-        }
-    }
-    if (dv) {
-        var dcs = dv.split(';').map(function(s) { return s.trim(); }).filter(Boolean);
-        for (var j = 0; j < dcs.length; j++) {
-            var d = strongsStripGRefs(dcs[j]);
-            if (/^of uncertain affinity$/i.test(d)) continue;
-            if (/^from /i.test(d) && d.length < 52) continue;
-            if (d.length > 12) return d;
-        }
-        for (var j2 = 0; j2 < dcs.length; j2++) {
-            var d2 = strongsStripGRefs(dcs[j2]);
-            if (d2.length > 10) return d2;
-        }
-    }
-    return strongsCleanDef(gl, kj);
-}
-
-function renderWordStudy(wordText, entries, verseText) {
-    var host = document.getElementById('ch-study');
-    if (!host) return;
-    if (!entries || !entries.length) {
-        host.hidden = true;
-        host.innerHTML = '';
-        return;
-    }
-    host.hidden = false;
-    var vt = verseText || '';
-    host.innerHTML =
-        '<div class="ch-study-title">Word study</div>' +
-        entries.map(function(entry) {
-            var script = entry.lm || entry.xl || '';
-            var body = strongsCompactWordStudy(entry, vt);
-
-            var html = '<div class="ch-study-entry">';
-            if (script) html += '<div style="font-size:22px;font-weight:500;margin-bottom:4px;font-family:serif">'
-                + escapeHtml(script) + '</div>';
-            if (body) html += '<div class="ch-study-def" style="font-size:13px;font-weight:500;color:var(--text)">' + escapeHtml(body) + '</div>';
-            html += '</div>';
-            return html;
-        }).join('');
-}
-
 // ── Verse expand/collapse ─────────────────────────────────────────────────
 var focusedVerseEl = null;
 
@@ -5298,7 +5024,6 @@ function renderChannelList() {
 function closeChannel() {
     document.getElementById('channel').classList.remove('open');
     channelOpen = false;
-    renderWordStudy('', [], '');
     var chW = document.getElementById('ch-word');
     if (chW) chW.style.display = 'none';
     if (channelActiveSpan) {

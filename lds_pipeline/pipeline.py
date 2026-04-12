@@ -36,7 +36,7 @@ from extract.catalog           import save_catalog, load_catalog, catalog_to_vol
 from epub.builder           import build_epub, build_web, init_web, write_book_chapters, build_backlinks
 
 # Sources
-from sources import strongs, sefaria
+from sources import sefaria
 from sources import journal_discourses  as jd
 from sources import history_church      as hoc
 from sources import joseph_smith_papers as jsp
@@ -218,11 +218,6 @@ def main():
             cf_docs = church_fathers.download_all()
             cf_index = church_fathers.build_index(cf_docs)
 
-        if cfg.SOURCES.get("strongs_etymology"):
-            print("\n  → Strong's Concordance (Hebrew + Greek)")
-            strongs.load_hebrew()
-            strongs.load_greek()
-
         if any(cfg.SOURCES.get(k) for k in ["sefaria_rashi","sefaria_talmud","sefaria_midrash","sefaria_targum","sefaria_zohar"]):
             print("\n  → Sefaria API (Rashi, Talmud, Midrash, Targum, Zohar) — on-demand per verse")
 
@@ -269,25 +264,6 @@ def main():
                     paras = getattr(verse, 'donaldson', [])
                     if paras:
                         enr["donaldson"] = paras
-
-                # Etymology — verse-accurate Strong's via OSHB tagged text
-                if cfg.SOURCES.get("strongs_etymology"):
-                    is_ot = verse.book.upper() in strongs.OT_BOOKS
-                    if is_ot:
-                        entries = strongs.get_verse_strongs(
-                            verse.book, verse.chapter, verse.verse,
-                            max_words=cfg.MAX_STRONGS_WORDS_PER_VERSE,
-                        )
-                    else:
-                        entries = strongs.get_verse_strongs_nt(
-                            verse.book, verse.chapter, verse.verse,
-                            verse_text=verse.text,
-                            max_words=cfg.MAX_STRONGS_WORDS_PER_VERSE,
-                        )
-                    etym_html = [strongs.format_etymology_html(e) for e in entries]
-                    etym_html = [h for h in etym_html if h]
-                    if etym_html:
-                        enr["etymology"] = etym_html
 
                 # Rashi (OT only, network)
                 if cfg.SOURCES.get("sefaria_rashi") and not args.no_net:
