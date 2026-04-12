@@ -1,5 +1,5 @@
 /**
- * Reader home: title page "Scriptures" opens inline browse (volume tiles on title page).
+ * Title page: "Scriptures" opens the left Contents sidebar (standard works volumes).
  *
  * Serve repo root: python3 -m http.server 4173
  *   node test-home-iframe-inline-nav.js
@@ -43,10 +43,7 @@ async function run() {
 
   await page.click('#ch-title_page a[data-open-shelf="scriptures"]');
   await page.waitForFunction(
-    () => {
-      const el = document.querySelector('#title-inline-nav-title');
-      return el && el.textContent === 'Scriptures';
-    },
+    () => document.getElementById('toc-title')?.textContent?.trim() === 'Scriptures',
     { timeout: 20000 }
   );
 
@@ -54,10 +51,10 @@ async function run() {
     const t = document.getElementById('toc');
     return t && !t.classList.contains('hidden');
   });
-  assert(tocVisible, 'expected #toc visible on reader home');
-  await page.waitForSelector('#title-inline-nav-grid .title-inline-tile[data-action="volume"]', { timeout: 25000 });
+  assert(tocVisible, 'expected #toc visible after opening Scriptures');
+  await page.waitForSelector('#toc-grid .toc-tile[data-action="volume"]', { timeout: 25000 });
 
-  console.log(JSON.stringify({ ok: true, url, test: 'title-page-scriptures-inline-nav' }, null, 2));
+  console.log(JSON.stringify({ ok: true, url, test: 'title-page-scriptures-opens-toc' }, null, 2));
   await browser.close();
 }
 

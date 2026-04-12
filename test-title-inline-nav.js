@@ -1,5 +1,5 @@
 /**
- * Sidebar TOC on index (primary navigation) + ?open= deep-link smoke.
+ * Left Contents sidebar + ?open= deep-link smoke (title page starts with TOC collapsed).
  *
  * Serve repo root: python3 -m http.server 4173
  *   node test-title-inline-nav.js
@@ -39,16 +39,14 @@ async function run() {
   await page.goto(baseUrl, { waitUntil: 'networkidle0', timeout: 90000 });
   await page.waitForSelector('#splash.gone', { timeout: 90000 });
 
-  const tocVisible = await page.evaluate(() => {
-    const t = document.getElementById('toc');
-    return t && !t.classList.contains('hidden');
-  });
-  assert(tocVisible, 'expected #toc visible on load (sidebar TOC default)');
-
   await page.waitForSelector('#ch-title_page', { timeout: 30000 });
-  await page.waitForSelector('#toc-grid .toc-tile[data-action="scripture-root"]', { timeout: 15000 });
+  const tocHidden = await page.evaluate(() => {
+    const t = document.getElementById('toc');
+    return t && t.classList.contains('hidden');
+  });
+  assert(tocHidden, 'expected #toc collapsed on title page load');
 
-  await page.click('#toc-grid .toc-tile[data-action="scripture-root"]');
+  await page.click('#ch-title_page a[data-open-shelf="scriptures"]');
   await page.waitForFunction(() => document.querySelector('#toc-title').textContent === 'Scriptures', {
     timeout: 15000,
   });

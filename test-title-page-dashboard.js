@@ -27,33 +27,23 @@ async function run() {
 
   const idle = await page.evaluate(() => ({
     title: document.querySelector('#ch-title_page .dashboard-title')?.textContent?.trim(),
-    browseHidden: document.querySelector('#ch-title_page #title-inline-nav')?.hidden,
-    dashLink: !!document.querySelector('#ch-title_page .title-links a[href*="source-dashboard"]'),
+    tocHidden: document.getElementById('toc')?.classList.contains('hidden'),
+    inlineNav: document.querySelector('#ch-title_page #title-inline-nav'),
   }));
 
   assert(idle.title && /WeScripture/i.test(idle.title), 'title page hero missing');
-  assert(idle.browseHidden === true, 'expected idle title page to hide inline browse panel');
-  assert(idle.dashLink === false, 'did not expect coverage dashboard link on title page');
+  assert(idle.tocHidden === true, 'expected title page to start with Contents sidebar collapsed');
+  assert(!idle.inlineNav, 'title page should not embed duplicate inline browse panel');
 
   await page.click('#ch-title_page a[data-open-shelf="scriptures"]');
   await page.waitForFunction(
     () =>
-      document.querySelector('#ch-title_page #title-inline-nav')?.hidden === false &&
-      document.querySelector('#ch-title_page #title-inline-nav-title')?.textContent === 'Scriptures',
+      !document.getElementById('toc')?.classList.contains('hidden') &&
+      document.getElementById('toc-title')?.textContent?.trim() === 'Scriptures',
     { timeout: 15000 },
   );
-  const volTiles = await page.$$eval(
-    '#ch-title_page #title-inline-nav-grid .title-inline-tile[data-action="volume"]',
-    (els) => els.length,
-  );
-  assert(volTiles >= 2, 'expected scripture volume tiles on title page');
-
-  const dash = await page.evaluate(async () => {
-    const r = await fetch('./source-dashboard.json');
-    if (!r.ok) return null;
-    return r.json();
-  });
-  assert(dash && dash.totals && typeof dash.totals.docs === 'number', 'source-dashboard.json totals missing');
+  const volTiles = await page.$$eval('#toc-grid .toc-tile[data-action="volume"]', (els) => els.length);
+  assert(volTiles >= 2, 'expected scripture volume tiles in left TOC');
 
   await page.evaluate(() => {
     jumpTo('genesis_1');
@@ -61,7 +51,7 @@ async function run() {
   await page.waitForSelector('#ch-genesis_1', { timeout: 25000 });
   await page.click('#site-home');
   await page.waitForFunction(
-    () => document.querySelector('#ch-title_page #title-inline-nav')?.hidden === true,
+    () => document.getElementById('toc')?.classList.contains('hidden') === true,
     { timeout: 20000 },
   );
 
@@ -69,9 +59,8 @@ async function run() {
     JSON.stringify(
       {
         ok: true,
-        idleBrowseHidden: idle.browseHidden,
+        idleTocHidden: idle.tocHidden,
         volumeTiles: volTiles,
-        docsMetric: dash.totals.docs,
       },
       null,
       2,
