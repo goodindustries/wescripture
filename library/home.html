@@ -217,11 +217,11 @@
 
     function bookCoverBackground(slug, testament) {
         var imgs = {
-            OT: 'assets/corpus/covers/kjv1611.jpg',
-            NT: 'assets/corpus/covers/kjv1611.jpg',
-            BOM: 'assets/corpus/covers/bom.jpg',
-            DC: 'assets/corpus/covers/dc_132.png',
-            PGP: 'assets/corpus/covers/abraham_f1.png'
+            OT: 'assets/corpus/covers/church_ot.jpg',
+            NT: 'assets/corpus/covers/church_nt.jpg',
+            BOM: 'assets/corpus/covers/church_bom.jpg',
+            DC: 'assets/corpus/covers/church_dc.jpg',
+            PGP: 'assets/corpus/covers/church_pgp.jpg'
         };
         var img = imgs[testament] || imgs.OT;
         var vol = {
@@ -235,7 +235,7 @@
         var n = strHash(slug) % (v.span + 1);
         var h1 = (v.h + n) % 360;
         var h2 = (v.h + 11 + (n % 9)) % 360;
-        var grad = 'linear-gradient(152deg,hsla(' + h1 + ',46%,14%,.88) 0%,hsla(' + h2 + ',42%,7%,.93) 100%)';
+        var grad = 'linear-gradient(152deg,hsla(' + h1 + ',38%,12%,.78) 0%,hsla(' + h2 + ',36%,6%,.85) 100%)';
         var u = dataFilePath(img).replace(/\\/g, '/');
         return 'background-image:' + grad + ",url('" + u + "');background-size:cover,cover;background-position:center,center;";
     }

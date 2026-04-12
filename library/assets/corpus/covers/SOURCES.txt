@@ -7,3 +7,13 @@ dc_132.png — File:Doctrine_and_Covenants_132.png (1891 Liverpool D&C p.463; PD
 abraham_f1.png — File:Abraham_Facsimile_1.png (Book of Abraham facsimile; PD)
 
 OT and NT tiles reuse kjv1611.jpg with different color overlays.
+
+Church study hub mirrors (official tile art from https://www.churchofjesuschrist.org/study/scriptures?lang=eng).
+Re-fetch with: python3 lds_pipeline/fetch_scripture_hub_covers.py
+See https://www.churchofjesuschrist.org/legal/intellectual-property for Church IP / terms.
+
+church_ot.jpg — Church /imgs service; asset g5gickahk6wnygbo4y5t2sgqv5590yxhjzs9oyvj (Old Testament tile)
+church_nt.jpg — asset 5lrvp4tmkx1kgj2zqi1rkjaayjmj6d3dwtibly7t (New Testament tile)
+church_bom.jpg — asset pezq51mqdlsfg6znj28seegave1osc6jg4d48ewb (Book of Mormon tile)
+church_dc.jpg — asset lbphummygbskmauexvxd46t16oc434dcpdzbdxzn (Doctrine and Covenants tile)
+church_pgp.jpg — asset cxfe5k79jt3p7u4m79ccka8ovn4609hkwzs0y1iw (Pearl of Great Price tile)
