@@ -1,0 +1,22 @@
+# Morphology and lemma sources (WeScripture)
+
+## New Testament — MorphGNT (SBLGNT morphology)
+
+- **Project:** morphgnt/sblgnt (tab-separated morphology aligned to SBL Greek New Testament)
+- **URL:** https://github.com/morphgnt/sblgnt
+- **License:** Morphological analysis is CC BY-SA; SBLGNT text is subject to the SBLGNT EULA. This repo uses morphology fields (lemma, parsing) plus Greek word forms to align English reader stems — not redistributing full SBLGNT text.
+- **Files used:** `61-Mt-morphgnt.txt` … `87-Re-morphgnt.txt` (downloaded on demand into `lds_pipeline/cache/morphology/`).
+
+## Old Testament — Open Scriptures Hebrew Bible (WLC / OSHB)
+
+- **Project:** openscriptures/morphhb
+- **URL:** https://github.com/openscriptures/morphhb
+- **License:** Creative Commons Attribution 4.0 (see `wlc/*.xml` work metadata).
+- **Files used:** Per-book `wlc/Gen.xml`, etc., fetched into cache when building OT chapters.
+
+## English stem → lemma hints (local)
+
+- **File:** `lemma_hints.json` (this directory)
+- **Purpose:** Disambiguate which Greek/Hebrew token in a verse matches an English **stem** when one-to-one word order differs between LDS English and the source language text.
+
+Retrieval date for automated fetches is recorded in script stdout when `lds_pipeline/fetch_morphology_sources.py` runs.
