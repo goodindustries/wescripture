@@ -17,6 +17,7 @@ import sys
 import html
 from dataclasses import replace
 from pathlib import Path
+from typing import Optional
 from ebooklib import epub
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -263,7 +264,7 @@ def _load_chapter_headings_json(output_dir: str) -> dict:
 
 
 def write_book_chapters(bk, enrichment: dict, config, output_dir: str,
-                        all_slugs: list, chapter_headings: dict | None = None) -> int:
+                        all_slugs: list, chapter_headings: Optional[dict] = None) -> int:
     """
     Render and write all chapters for one book. Call after enriching each book.
     Produces two files per chapter:

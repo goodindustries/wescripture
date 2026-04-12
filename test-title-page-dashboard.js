@@ -35,6 +35,11 @@ async function run() {
   assert(idle.navTitle === 'Library browser', 'expected idle inline nav title');
   assert(idle.placeholder && idle.placeholder.length > 10, 'expected idle inline nav placeholder');
 
+  const dashLink = await page.evaluate(
+    () => !!document.querySelector('#ch-title_page .title-links a[href*="source-dashboard"]'),
+  );
+  assert(dashLink, 'expected coverage dashboard link on title page');
+
   await page.click('#ch-title_page a[data-open-shelf="scriptures"]');
   await page.waitForFunction(
     () => document.querySelector('#ch-title_page #title-inline-nav-title')?.textContent === 'Scriptures',

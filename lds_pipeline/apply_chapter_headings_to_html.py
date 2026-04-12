@@ -33,7 +33,9 @@ def main() -> None:
         text = path.read_text(encoding="utf-8")
         if "chapter-heading" in text:
             continue
-        m = re.search(r'<meta[^>]+name="chapter-id"[^>]+content="([^"]+)"', text)
+        m = re.search(r'<meta[^>]*\bcontent="([^"]+)"[^>]*\bname="chapter-id"', text)
+        if not m:
+            m = re.search(r'<meta[^>]*\bname="chapter-id"[^>]*\bcontent="([^"]+)"', text)
         if not m:
             continue
         ch_id = m.group(1)

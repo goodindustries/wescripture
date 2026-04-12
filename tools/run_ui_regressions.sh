@@ -43,6 +43,7 @@ TESTS=(
   test-library-mobile-channel.js
   test-search-quality.js
   test-title-inline-nav.js
+  test-study-panel-heading.js
   test-nav-fixed.js
   test-library-sources.js
   test-home-iframe-inline-nav.js
