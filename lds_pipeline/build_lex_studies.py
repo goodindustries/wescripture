@@ -254,6 +254,7 @@ def _ollama_generate(model: str, user_prompt: str) -> str:
 def _fallback_study(
     verse_text: str,
     surface_en: str,
+    stem: str,
     bundle: dict[str, Any],
     match_lines: list[str],
     vol: str,
@@ -278,9 +279,15 @@ def _fallback_study(
             f"or command is being declared. "
             f"{ml if ml else 'Let the verse’s own parallelism and repetition guide how narrow or broad the sense should be taken.'}"
         )
+    if vol in ("bofm", "dc", "pgp", "other"):
+        return (
+            f"No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. "
+            f"“{surface_en}” in “{snip}…” should be read for what it does rhetorically and theologically in its immediate sentence. "
+            f"{ml if ml else 'Use the semantic channel (tap the underlined word) for curated parallels across standard works and commentary.'}"
+        )
     return (
-        f"No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. "
-        f"“{surface_en}” in “{snip}…” should be read for what it does rhetorically and theologically in its immediate sentence. "
+        f"No confident open-licensed morphology row matched this English keyword (stem “{stem}”) in this verse; "
+        f"the study stays in English. “{surface_en}” in “{snip}…” should be read in context for what it contributes to the line. "
         f"{ml if ml else 'Use the semantic channel (tap the underlined word) for curated parallels across standard works and commentary.'}"
     )
 
@@ -363,9 +370,9 @@ def build_chapter(slug: str, use_ollama: bool, model: str, force: bool) -> dict[
             _cache_key(slug, vnum, stem, bundle)  # reserved for future incremental rebuilds
             up = _user_prompt(verse_text, surface, stem, bundle, match_lines)
             if use_ollama:
-                study = _ollama_generate(model, up) or _fallback_study(verse_text, surface, bundle, match_lines, vol)
+                study = _ollama_generate(model, up) or _fallback_study(verse_text, surface, stem, bundle, match_lines, vol)
             else:
-                study = _fallback_study(verse_text, surface, bundle, match_lines, vol)
+                study = _fallback_study(verse_text, surface, stem, bundle, match_lines, vol)
             verse_out[stem] = {
                 "lang": bundle.get("lang"),
                 "lemma": bundle.get("lemma") or "",
