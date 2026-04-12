@@ -1,22 +1,26 @@
 /**
  * Corpus “Browse standard works” tiles use Church hub cover JPEGs (per testament).
  *
+ * Targets the **repo-root** landing page (repo `index.html`), which embeds
+ * `#corpus-root` under `#library-books-details`. This is not deployed on Netlify
+ * (`publish = library` only); run locally or in CI with repo-root `http.server`.
+ *
  * Serve repo root: python3 -m http.server 4173
  *   node test-corpus-book-covers.js
  *
- * TEST_HOME_URL default: http://127.0.0.1:4173/library/home.html
+ * Override: TEST_HOME_URL=http://127.0.0.1:PORT/index.html node test-corpus-book-covers.js
  */
 
 const { launchBrowser } = require('./tools/puppeteer_launch.js');
 
-const DEFAULT_HOME = 'http://127.0.0.1:4173/library/home.html';
+const DEFAULT_LANDING = 'http://127.0.0.1:4173/index.html';
 
 function assert(cond, msg) {
   if (!cond) throw new Error(msg);
 }
 
 async function run() {
-  const url = process.env.TEST_HOME_URL || DEFAULT_HOME;
+  const url = process.env.TEST_HOME_URL || DEFAULT_LANDING;
   const browser = await launchBrowser();
   const page = await browser.newPage();
   await page.setViewport({ width: 1100, height: 1400, deviceScaleFactor: 1 });

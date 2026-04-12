@@ -1,10 +1,10 @@
 /**
- * Home dashboard: shelf tile navigates to reader with ?open=…; sidebar TOC shows scriptures (no iframe).
+ * Reader home: title page "Scriptures" opens inline browse (volume tiles on title page).
  *
  * Serve repo root: python3 -m http.server 4173
  *   node test-home-iframe-inline-nav.js
  *
- * TEST_HOME_URL default: http://127.0.0.1:4173/library/home.html
+ * TEST_HOME_URL default: http://127.0.0.1:4173/library/index.html
  */
 
 const fs = require('fs');
@@ -14,7 +14,7 @@ function assert(condition, message) {
   if (!condition) throw new Error(message);
 }
 
-const DEFAULT_HOME = 'http://127.0.0.1:4173/library/home.html';
+const DEFAULT_HOME = 'http://127.0.0.1:4173/library/index.html';
 
 function launchBrowser() {
   const opts = {
@@ -37,23 +37,27 @@ async function run() {
   await page.setViewport({ width: 1280, height: 1100, deviceScaleFactor: 1 });
 
   await page.goto(url, { waitUntil: 'networkidle0', timeout: 90000 });
-  await page.waitForSelector('#library-shelf a.shelf-tile[data-collection="scriptures"]', { timeout: 30000 });
-
-  await Promise.all([
-    page.waitForNavigation({ waitUntil: 'networkidle0', timeout: 90000 }),
-    page.click('#library-shelf a.shelf-tile[data-collection="scriptures"]'),
-  ]);
-
   await page.waitForSelector('#splash.gone', { timeout: 90000 });
   await page.waitForSelector('#ch-title_page', { timeout: 30000 });
+  await page.waitForSelector('#ch-title_page a[data-open-shelf="scriptures"]', { timeout: 15000 });
+
+  await page.click('#ch-title_page a[data-open-shelf="scriptures"]');
+  await page.waitForFunction(
+    () => {
+      const el = document.querySelector('#title-inline-nav-title');
+      return el && el.textContent === 'Scriptures';
+    },
+    { timeout: 20000 }
+  );
+
   const tocVisible = await page.evaluate(() => {
     const t = document.getElementById('toc');
     return t && !t.classList.contains('hidden');
   });
-  assert(tocVisible, 'expected #toc visible after opening scriptures from home');
-  await page.waitForSelector('#toc-grid .toc-tile[data-action="volume"]', { timeout: 25000 });
+  assert(tocVisible, 'expected #toc visible on reader home');
+  await page.waitForSelector('#title-inline-nav-grid .title-inline-tile[data-action="volume"]', { timeout: 25000 });
 
-  console.log(JSON.stringify({ ok: true, url, test: 'home-shelf-to-reader-toc' }, null, 2));
+  console.log(JSON.stringify({ ok: true, url, test: 'title-page-scriptures-inline-nav' }, null, 2));
   await browser.close();
 }
 

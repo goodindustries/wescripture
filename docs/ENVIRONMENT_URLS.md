@@ -7,13 +7,13 @@ The deployed site root **is** the `library/` folder. Paths are:
 | Path | File |
 |------|------|
 | `/` | [`library/index.html`](../library/index.html) (scripture reader) |
-| `/index.html` | same reader |
-| `/home.html` | [`library/home.html`](../library/home.html) (landing / jump UI) |
+| `/index.html` | same reader (canonical **home**) |
+| `/home.html` | redirects (302) to `/index.html`; stub file in repo for non-Netlify hosts |
 | `/toc.json`, `/chapters/…`, `/entities/…` | under `library/` |
 
 **Do not** assume `/library/index.html` exists on Netlify (that would be `library/library/index.html` in the repo).
 
-Reader **Home** uses `SITE.homeUrl` → `./home.html`.
+Reader **Home** uses `SITE.homeUrl` → `./index.html` (same reader).
 
 ## VPS / Docker ([`Caddyfile`](../Caddyfile), [`DEPLOYMENT.md`](../DEPLOYMENT.md))
 
