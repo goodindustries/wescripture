@@ -17,3 +17,5 @@ church_nt.jpg — asset 5lrvp4tmkx1kgj2zqi1rkjaayjmj6d3dwtibly7t (New Testament 
 church_bom.jpg — asset pezq51mqdlsfg6znj28seegave1osc6jg4d48ewb (Book of Mormon tile)
 church_dc.jpg — asset lbphummygbskmauexvxd46t16oc434dcpdzbdxzn (Doctrine and Covenants tile)
 church_pgp.jpg — asset cxfe5k79jt3p7u4m79ccka8ovn4609hkwzs0y1iw (Pearl of Great Price tile)
+
+Reader TOC (Scriptures → five standard works) uses these same church_*.jpg files — see tocVolumeCoverUrl in library/index.html.

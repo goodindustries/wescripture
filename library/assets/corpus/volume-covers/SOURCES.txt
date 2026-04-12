@@ -2,4 +2,5 @@ Volume cover art
 ------------------
 old-testament.png — provided for WeScripture; black/gold “Old Testament” style consistent with Church scripture cover treatments (see ChurchofJesusChrist.org scripture materials).
 
-new-testament.svg, book-of-mormon.svg, doctrine-and-covenants.svg, pearl-of-great-price.svg — project SVGs matching the same visual language (black field, gold type, footer attribution) for sidebar TOC tiles.
+new-testament.svg, book-of-mormon.svg, doctrine-and-covenants.svg, pearl-of-great-price.svg — project SVGs (legacy); the reader TOC now uses Church hub JPEGs in ../covers/church_*.jpg instead.
+

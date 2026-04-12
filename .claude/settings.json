@@ -2,9 +2,6 @@
   "model": "sonnet",
   "ignorePatterns": [
     "library/sources/**",
-    "library/strongs_plain.json",
-    "library/strongs_hebrew.json",
-    "library/strongs_greek.json",
     "library/para_verse_map.json",
     "diagnostics/**",
     "assets/tmp_*",

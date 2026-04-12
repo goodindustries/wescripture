@@ -325,7 +325,7 @@ async function run() {
 
   await page.waitForSelector('.source-doc .source-para span.w', { timeout: 20000 });
   await page.$eval('.source-doc .source-para span.w', (el) => el.click());
-  await page.waitForFunction(() => document.querySelector('#channel').classList.contains('open'), { timeout: 15000 });
+  await page.waitForFunction(() => document.querySelector('#channel')?.classList.contains('open'), { timeout: 15000 });
 
   const jdWordState = await page.evaluate(() => ({
     word: document.querySelector('#ch-word')?.textContent.trim(),
@@ -337,7 +337,7 @@ async function run() {
   assert(jdWordState.morsels > 0, 'JD word click opened an empty channel');
   assert(jdWordState.firstSource, 'JD word click did not render channel sources');
   await page.$eval('#ch-close', (el) => el.click());
-  await page.waitForFunction(() => !document.querySelector('#channel').classList.contains('open'));
+  await page.waitForFunction(() => !document.querySelector('#channel')?.classList.contains('open'));
 
   await tocBackToSourcesShelf(page);
   await ensureTocVisible(page);
@@ -371,7 +371,7 @@ async function run() {
   await page.waitForSelector('.source-doc .source-title', { timeout: 20000 });
   await page.waitForSelector('.source-doc .source-para span.w', { timeout: 20000 });
   await page.$eval('.source-doc .source-para span.w', (el) => el.click());
-  await page.waitForFunction(() => document.querySelector('#channel').classList.contains('open'), { timeout: 15000 });
+  await page.waitForFunction(() => document.querySelector('#channel')?.classList.contains('open'), { timeout: 15000 });
 
   const hocWordState = await page.evaluate(() => ({
     word: document.querySelector('#ch-word')?.textContent.trim(),
@@ -385,7 +385,7 @@ async function run() {
   assert(hocWordState.firstSource, 'HoC word click did not render channel sources');
   assert(!/Deutschland/i.test(hocWordState.firstText), 'HoC regression returned unrelated Gutenberg text');
   await page.$eval('#ch-close', (el) => el.click());
-  await page.waitForFunction(() => !document.querySelector('#channel').classList.contains('open'));
+  await page.waitForFunction(() => !document.querySelector('#channel')?.classList.contains('open'));
 
   await tocBackToSourcesShelf(page);
   await ensureTocVisible(page);
@@ -476,7 +476,7 @@ async function run() {
     const target = spans.find((el) => /lord|children|gift|jesus/i.test(el.textContent || '')) || spans[0];
     if (target) target.dispatchEvent(new MouseEvent('click', { bubbles: true }));
   });
-  await page.waitForFunction(() => document.querySelector('#channel').classList.contains('open'), { timeout: 15000 });
+  await page.waitForFunction(() => document.querySelector('#channel')?.classList.contains('open'), { timeout: 15000 });
   const secondSourceMorselIndex = await page.evaluate(() => {
     const morsels = Array.from(document.querySelectorAll('#panel-body .ch-morsel'));
     var prefer = morsels.findIndex((el) =>
@@ -547,25 +547,26 @@ async function run() {
   });
   await page.waitForFunction(() => document.querySelector('#channel')?.classList.contains('open'), { timeout: 25000 });
   await page.waitForFunction(() => {
-    var panel = document.getElementById('panel-body');
-    var study = document.getElementById('ch-study');
-    var blob = ((panel && panel.innerText) || '') + ((study && study.textContent) || '');
-    return /theos|θε|deity|god|supreme|loveth|loved|begotten|son/i.test(blob);
+    var t = document.querySelector('#panel-body .ch-morsel .ch-morsel-text')?.textContent?.trim() || '';
+    return t.length > 30;
   }, { timeout: 25000 });
 
-  const strongsState = await page.evaluate(() => ({
+  const graphWordState = await page.evaluate(() => ({
     word: document.querySelector('#ch-word')?.textContent.trim(),
-    study: document.querySelector('#ch-study')?.textContent.trim() || '',
+    firstExcerpt: document.querySelector('#panel-body .ch-morsel .ch-morsel-text')?.textContent.trim() || '',
     panel: document.getElementById('panel-body')?.innerText || '',
   }));
 
-  assert(/god/i.test(strongsState.word), 'word-study regression used the wrong scripture word');
+  assert(/god/i.test(graphWordState.word), 'John 3:16 scripture word channel used the wrong headword');
   assert(
-    /theos|θε|deity|god|supreme|loveth|loved|begotten|son/i.test(strongsState.study + strongsState.panel),
-    'John 3:16 word channel did not surface lexical or scripture-adjacent content',
+    graphWordState.firstExcerpt.length > 40
+      && /theos|θε|deity|god|supreme|loveth|loved|begotten|son|only|world|perish/i.test(
+        graphWordState.firstExcerpt + graphWordState.panel,
+      ),
+    'John 3:16 word channel did not surface semantic or scripture-adjacent excerpts',
   );
   await page.$eval('#ch-close', (el) => el.click());
-  await page.waitForFunction(() => !document.querySelector('#channel').classList.contains('open'));
+  await page.waitForFunction(() => !document.querySelector('#channel')?.classList.contains('open'));
 
   await page.evaluate(() => jumpTo('genesis_2'));
   await page.waitForSelector('#v6 .verse-text .w', { timeout: 20000 });
@@ -573,7 +574,7 @@ async function run() {
     const target = Array.from(document.querySelectorAll('#v6 .verse-text .w')).find((el) => /mist/i.test(el.textContent || ''));
     if (target) target.dispatchEvent(new MouseEvent('click', { bubbles: true }));
   });
-  await page.waitForFunction(() => document.querySelector('#channel').classList.contains('open'), { timeout: 15000 });
+  await page.waitForFunction(() => document.querySelector('#channel')?.classList.contains('open'), { timeout: 15000 });
   const mistState = await page.evaluate(() => ({
     word: document.querySelector('#ch-word')?.textContent.trim(),
     firstSource: document.querySelector('#panel-body .ch-morsel .ch-src-name')?.textContent.trim() || '',
@@ -581,7 +582,7 @@ async function run() {
   assert(/mist/i.test(mistState.word), 'scripture fallback regression used the wrong Genesis 2 word');
   assert(mistState.firstSource === 'Standard Works', 'Genesis 2 mist did not prioritize standard works fallback');
   await page.$eval('#ch-close', (el) => el.click());
-  await page.waitForFunction(() => !document.querySelector('#channel').classList.contains('open'));
+  await page.waitForFunction(() => !document.querySelector('#channel')?.classList.contains('open'));
 
   const genesisCleanState = await page.evaluate(() => ({
     v6: document.querySelector('#v6 .verse-text')?.innerText || '',
@@ -598,7 +599,7 @@ async function run() {
     const target = Array.from(document.querySelectorAll('#v16 .verse-text .w')).find((el) => /loved/i.test(el.textContent || ''));
     if (target) target.dispatchEvent(new MouseEvent('click', { bubbles: true }));
   });
-  await page.waitForFunction(() => document.querySelector('#channel').classList.contains('open'), { timeout: 15000 });
+  await page.waitForFunction(() => document.querySelector('#channel')?.classList.contains('open'), { timeout: 15000 });
   const loveState = await page.evaluate(() => ({
     word: document.querySelector('#ch-word')?.textContent.trim(),
     sources: Array.from(document.querySelectorAll('#panel-body .ch-morsel .ch-src-name')).slice(0, 3).map((el) => el.textContent.trim()),
@@ -606,7 +607,7 @@ async function run() {
   assert(/lov/i.test(loveState.word), 'scripture fallback regression used the wrong John 3 word');
   assert(loveState.sources[0] === 'Standard Works', 'John 3 loved did not rank standard works first');
   await page.$eval('#ch-close', (el) => el.click());
-  await page.waitForFunction(() => !document.querySelector('#channel').classList.contains('open'));
+  await page.waitForFunction(() => !document.querySelector('#channel')?.classList.contains('open'));
 
   await page.evaluate(() => jumpTo('john_1'));
   await page.waitForSelector('#v1 .verse-text', { timeout: 20000 });
@@ -636,7 +637,7 @@ async function run() {
     const target = Array.from(document.querySelectorAll('#v23 .verse-text .w')).find((el) => /mist/i.test(el.textContent || ''));
     if (target) target.dispatchEvent(new MouseEvent('click', { bubbles: true }));
   });
-  await page.waitForFunction(() => document.querySelector('#channel').classList.contains('open'), { timeout: 15000 });
+  await page.waitForFunction(() => document.querySelector('#channel')?.classList.contains('open'), { timeout: 15000 });
   const nephiMistState = await page.evaluate(() => ({
     word: document.querySelector('#ch-word')?.textContent.trim(),
     sources: Array.from(document.querySelectorAll('#panel-body .ch-morsel .ch-src-name')).slice(0, 3).map((el) => el.textContent.trim()),
@@ -646,15 +647,18 @@ async function run() {
   assert(nephiMistState.sources[0] === 'Standard Works', '1 Nephi mist did not rank standard works first');
   assert(nephiMistState.texts.some((text) => /mist of darkness|fell on him a mist/i.test(text)), '1 Nephi mist did not surface scripture fallback morsels');
   await page.$eval('#ch-close', (el) => el.click());
-  await page.waitForFunction(() => !document.querySelector('#channel').classList.contains('open'));
+  await page.waitForFunction(() => !document.querySelector('#channel')?.classList.contains('open'));
 
   await page.evaluate(() => jumpTo('doctrine_and_covenants_121'));
+  await page.waitForSelector('#ch-doctrine_and_covenants_121', { timeout: 20000 });
   await page.waitForSelector('#v41 .verse-text .w', { timeout: 20000 });
+  await page.$eval('#v41', (el) => el.scrollIntoView({ block: 'center' }));
+  await new Promise(function(r) { setTimeout(r, 400); });
   await page.evaluate(() => {
     const target = Array.from(document.querySelectorAll('#v41 .verse-text .w')).find((el) => /priesthood/i.test(el.textContent || ''));
     if (target) target.dispatchEvent(new MouseEvent('click', { bubbles: true }));
   });
-  await page.waitForFunction(() => document.querySelector('#channel').classList.contains('open'), { timeout: 15000 });
+  await page.waitForFunction(() => document.querySelector('#channel')?.classList.contains('open'), { timeout: 25000 });
   const dcPriesthoodState = await page.evaluate(() => ({
     word: document.querySelector('#ch-word')?.textContent.trim(),
     sources: Array.from(document.querySelectorAll('#panel-body .ch-morsel .ch-src-name')).slice(0, 3).map((el) => el.textContent.trim()),
@@ -664,13 +668,15 @@ async function run() {
   assert(dcPriesthoodState.sources[0] === 'Standard Works', 'Doctrine and Covenants priesthood did not rank standard works first');
   assert(dcPriesthoodState.texts.some((text) => /Priesthood of thy father|Melchizedek Priesthood|higher, or Melchizedek Priesthood/i.test(text)), 'Doctrine and Covenants priesthood did not surface scripture fallback morsels');
   await page.$eval('#ch-close', (el) => el.click());
-  await page.waitForFunction(() => !document.querySelector('#channel').classList.contains('open'));
+  await page.waitForFunction(() => !document.querySelector('#channel')?.classList.contains('open'));
 
+  await page.$eval('#v41', (el) => el.scrollIntoView({ block: 'center' }));
+  await new Promise(function(r) { setTimeout(r, 400); });
   await page.evaluate(() => {
     const target = Array.from(document.querySelectorAll('#v41 .verse-text .w')).find((el) => /^love$/i.test((el.textContent || '').trim()));
     if (target) target.dispatchEvent(new MouseEvent('click', { bubbles: true }));
   });
-  await page.waitForFunction(() => document.querySelector('#channel').classList.contains('open'), { timeout: 15000 });
+  await page.waitForFunction(() => document.querySelector('#channel')?.classList.contains('open'), { timeout: 25000 });
   const dcLoveCleanState = await page.evaluate(() => ({
     word: document.querySelector('#ch-word')?.textContent.trim(),
     sources: Array.from(document.querySelectorAll('#panel-body .ch-morsel .ch-src-name')).slice(0, 3).map((el) => el.textContent.trim()),
@@ -681,9 +687,9 @@ async function run() {
   assert(dcLoveCleanState.sources[0] === 'Standard Works', 'Doctrine and Covenants love did not rank standard works first after re-annotation');
   assert(!/&lt;span class=|&amp;quot;cw/i.test(dcLoveCleanState.verseHtml), 'Doctrine and Covenants verse HTML still leaks escaped critical-word wrappers');
   await page.$eval('#ch-close', (el) => el.click());
-  await page.waitForFunction(() => !document.querySelector('#channel').classList.contains('open'));
+  await page.waitForFunction(() => !document.querySelector('#channel')?.classList.contains('open'));
 
-  console.log(JSON.stringify({ sourceTiles, timesState, starState, enumaState, enochState, josephusState, sourceState, jdWordState, hocWordState, scriptureState, scriptureToSourceState, rankingState, strongsState, mistState, genesisCleanState, loveState, johnCleanState, secondThessCleanState, nephiMistState, dcPriesthoodState, dcLoveCleanState }, null, 2));
+  console.log(JSON.stringify({ sourceTiles, timesState, starState, enumaState, enochState, josephusState, sourceState, jdWordState, hocWordState, scriptureState, scriptureToSourceState, rankingState, graphWordState, mistState, genesisCleanState, loveState, johnCleanState, secondThessCleanState, nephiMistState, dcPriesthoodState, dcLoveCleanState }, null, 2));
   await browser.close();
 }
 

@@ -1853,13 +1853,13 @@ function hydrateTitlePage() {
 }
 
 function tocVolumeCoverUrl(volumeLabel) {
-    var base = './assets/corpus/volume-covers/';
+    var base = './assets/corpus/covers/';
     var map = {
-        'Old Testament': base + 'old-testament.png',
-        'New Testament': base + 'new-testament.svg',
-        'Book of Mormon': base + 'book-of-mormon.svg',
-        'Doctrine and Covenants': base + 'doctrine-and-covenants.svg',
-        'Pearl of Great Price': base + 'pearl-of-great-price.svg'
+        'Old Testament': base + 'church_ot.jpg',
+        'New Testament': base + 'church_nt.jpg',
+        'Book of Mormon': base + 'church_bom.jpg',
+        'Doctrine and Covenants': base + 'church_dc.jpg',
+        'Pearl of Great Price': base + 'church_pgp.jpg'
     };
     return map[volumeLabel] || '';
 }
