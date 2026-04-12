@@ -1,0 +1,2623 @@
+{
+  "summary": {
+    "skipped": false,
+    "reason": "",
+    "toc_leaf_docs": 4163,
+    "embedding_passage_total": 42902,
+    "embedding_passage_by_source": {
+      "ancient_myths": 1204,
+      "standard_works": 41698
+    },
+    "collections_with_toc_but_zero_passages": [
+      "church_fathers",
+      "general_conference",
+      "gutenberg_lds",
+      "history_of_church",
+      "joseph_smith_papers",
+      "journal_of_discourses",
+      "millennial_star",
+      "pioneer_journals",
+      "times_and_seasons"
+    ],
+    "general_conference_missing_cache_txt": 3908
+  },
+  "collections": [
+    {
+      "collection_id": "ancient_texts",
+      "toc_paragraphs": 5565,
+      "embedding_passages": 1204,
+      "embedding_source_keys": [
+        "ancient_myths",
+        "pseudepigrapha",
+        "apocrypha",
+        "nag_hammadi",
+        "dead_sea_scrolls"
+      ],
+      "collection_no_passages": false
+    },
+    {
+      "collection_id": "church_fathers",
+      "toc_paragraphs": 5890,
+      "embedding_passages": 0,
+      "embedding_source_keys": [
+        "church_fathers"
+      ],
+      "collection_no_passages": true
+    },
+    {
+      "collection_id": "general_conference",
+      "toc_paragraphs": 3983,
+      "embedding_passages": 0,
+      "embedding_source_keys": [
+        "general_conference"
+      ],
+      "collection_no_passages": true
+    },
+    {
+      "collection_id": "gutenberg_lds",
+      "toc_paragraphs": 7279,
+      "embedding_passages": 0,
+      "embedding_source_keys": [
+        "gutenberg_lds"
+      ],
+      "collection_no_passages": true
+    },
+    {
+      "collection_id": "history_of_church",
+      "toc_paragraphs": 7896,
+      "embedding_passages": 0,
+      "embedding_source_keys": [
+        "history_of_church"
+      ],
+      "collection_no_passages": true
+    },
+    {
+      "collection_id": "joseph_smith_papers",
+      "toc_paragraphs": 1059,
+      "embedding_passages": 0,
+      "embedding_source_keys": [
+        "joseph_smith_papers"
+      ],
+      "collection_no_passages": true
+    },
+    {
+      "collection_id": "journal_of_discourses",
+      "toc_paragraphs": 22432,
+      "embedding_passages": 0,
+      "embedding_source_keys": [
+        "journal_of_discourses"
+      ],
+      "collection_no_passages": true
+    },
+    {
+      "collection_id": "millennial_star",
+      "toc_paragraphs": 81519,
+      "embedding_passages": 0,
+      "embedding_source_keys": [
+        "millennial_star"
+      ],
+      "collection_no_passages": true
+    },
+    {
+      "collection_id": "pioneer_journals",
+      "toc_paragraphs": 4307,
+      "embedding_passages": 0,
+      "embedding_source_keys": [
+        "pioneer_journals"
+      ],
+      "collection_no_passages": true
+    },
+    {
+      "collection_id": "times_and_seasons",
+      "toc_paragraphs": 20915,
+      "embedding_passages": 0,
+      "embedding_source_keys": [
+        "times_and_seasons"
+      ],
+      "collection_no_passages": true
+    }
+  ],
+  "missing_gc_cache_txt": [
+    {
+      "doc_id": "general_conference:general_conference_2025_04_12larson",
+      "href": "sources/general_conference/general_conference_2025_04_12larson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_12larson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_13holland",
+      "href": "sources/general_conference/general_conference_2025_04_13holland.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_13holland.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_14johnson",
+      "href": "sources/general_conference/general_conference_2025_04_14johnson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_14johnson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_15rasband",
+      "href": "sources/general_conference/general_conference_2025_04_15rasband.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_15rasband.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_16cook",
+      "href": "sources/general_conference/general_conference_2025_04_16cook.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_16cook.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_17gimenez",
+      "href": "sources/general_conference/general_conference_2025_04_17gimenez.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_17gimenez.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_18eyring",
+      "href": "sources/general_conference/general_conference_2025_04_18eyring.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_18eyring.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_21andersen",
+      "href": "sources/general_conference/general_conference_2025_04_21andersen.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_21andersen.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_22lund",
+      "href": "sources/general_conference/general_conference_2025_04_22lund.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_22lund.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_23palmer",
+      "href": "sources/general_conference/general_conference_2025_04_23palmer.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_23palmer.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_24roman",
+      "href": "sources/general_conference/general_conference_2025_04_24roman.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_24roman.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_25renlund",
+      "href": "sources/general_conference/general_conference_2025_04_25renlund.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_25renlund.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_26boom",
+      "href": "sources/general_conference/general_conference_2025_04_26boom.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_26boom.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_27uchtdorf",
+      "href": "sources/general_conference/general_conference_2025_04_27uchtdorf.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_27uchtdorf.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_31stevenson",
+      "href": "sources/general_conference/general_conference_2025_04_31stevenson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_31stevenson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_32wright",
+      "href": "sources/general_conference/general_conference_2025_04_32wright.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_32wright.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_33rasband",
+      "href": "sources/general_conference/general_conference_2025_04_33rasband.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_33rasband.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_34vargas",
+      "href": "sources/general_conference/general_conference_2025_04_34vargas.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_34vargas.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_35christofferson",
+      "href": "sources/general_conference/general_conference_2025_04_35christofferson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_35christofferson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_41bednar",
+      "href": "sources/general_conference/general_conference_2025_04_41bednar.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_41bednar.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_42shumway",
+      "href": "sources/general_conference/general_conference_2025_04_42shumway.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_42shumway.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_43runia",
+      "href": "sources/general_conference/general_conference_2025_04_43runia.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_43runia.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_44causse",
+      "href": "sources/general_conference/general_conference_2025_04_44causse.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_44causse.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_45gong",
+      "href": "sources/general_conference/general_conference_2025_04_45gong.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_45gong.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_46mccune",
+      "href": "sources/general_conference/general_conference_2025_04_46mccune.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_46mccune.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_47oaks",
+      "href": "sources/general_conference/general_conference_2025_04_47oaks.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_47oaks.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_51soares",
+      "href": "sources/general_conference/general_conference_2025_04_51soares.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_51soares.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_52strong",
+      "href": "sources/general_conference/general_conference_2025_04_52strong.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_52strong.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_53whiting",
+      "href": "sources/general_conference/general_conference_2025_04_53whiting.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_53whiting.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_54kim",
+      "href": "sources/general_conference/general_conference_2025_04_54kim.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_54kim.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_55kearon",
+      "href": "sources/general_conference/general_conference_2025_04_55kearon.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_55kearon.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_56tai",
+      "href": "sources/general_conference/general_conference_2025_04_56tai.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_56tai.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_04_57nelson",
+      "href": "sources/general_conference/general_conference_2025_04_57nelson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_04_57nelson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_12stevenson",
+      "href": "sources/general_conference/general_conference_2025_10_12stevenson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_12stevenson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_13browning",
+      "href": "sources/general_conference/general_conference_2025_10_13browning.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_13browning.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_14barcellos",
+      "href": "sources/general_conference/general_conference_2025_10_14barcellos.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_14barcellos.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_15eyre",
+      "href": "sources/general_conference/general_conference_2025_10_15eyre.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_15eyre.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_16uchtdorf",
+      "href": "sources/general_conference/general_conference_2025_10_16uchtdorf.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_16uchtdorf.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_17johnson",
+      "href": "sources/general_conference/general_conference_2025_10_17johnson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_17johnson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_19oaks",
+      "href": "sources/general_conference/general_conference_2025_10_19oaks.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_19oaks.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_21rasband",
+      "href": "sources/general_conference/general_conference_2025_10_21rasband.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_21rasband.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_22webb",
+      "href": "sources/general_conference/general_conference_2025_10_22webb.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_22webb.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_23jaggi",
+      "href": "sources/general_conference/general_conference_2025_10_23jaggi.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_23jaggi.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_24brown",
+      "href": "sources/general_conference/general_conference_2025_10_24brown.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_24brown.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_25gong",
+      "href": "sources/general_conference/general_conference_2025_10_25gong.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_25gong.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_26cziesla",
+      "href": "sources/general_conference/general_conference_2025_10_26cziesla.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_26cziesla.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_27cook",
+      "href": "sources/general_conference/general_conference_2025_10_27cook.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_27cook.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_31kearon",
+      "href": "sources/general_conference/general_conference_2025_10_31kearon.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_31kearon.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_32dennis",
+      "href": "sources/general_conference/general_conference_2025_10_32dennis.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_32dennis.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_33barlow",
+      "href": "sources/general_conference/general_conference_2025_10_33barlow.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_33barlow.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_34jackson",
+      "href": "sources/general_conference/general_conference_2025_10_34jackson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_34jackson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_35andersen",
+      "href": "sources/general_conference/general_conference_2025_10_35andersen.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_35andersen.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_41holland",
+      "href": "sources/general_conference/general_conference_2025_10_41holland.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_41holland.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_42evanson",
+      "href": "sources/general_conference/general_conference_2025_10_42evanson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_42evanson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_43soares",
+      "href": "sources/general_conference/general_conference_2025_10_43soares.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_43soares.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_44johnson",
+      "href": "sources/general_conference/general_conference_2025_10_44johnson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_44johnson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_45christofferson",
+      "href": "sources/general_conference/general_conference_2025_10_45christofferson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_45christofferson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_46spannaus",
+      "href": "sources/general_conference/general_conference_2025_10_46spannaus.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_46spannaus.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_47eyring",
+      "href": "sources/general_conference/general_conference_2025_10_47eyring.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_47eyring.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_51bednar",
+      "href": "sources/general_conference/general_conference_2025_10_51bednar.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_51bednar.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_52cuvelier",
+      "href": "sources/general_conference/general_conference_2025_10_52cuvelier.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_52cuvelier.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_53holland",
+      "href": "sources/general_conference/general_conference_2025_10_53holland.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_53holland.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_54godoy",
+      "href": "sources/general_conference/general_conference_2025_10_54godoy.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_54godoy.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_55renlund",
+      "href": "sources/general_conference/general_conference_2025_10_55renlund.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_55renlund.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_56amos",
+      "href": "sources/general_conference/general_conference_2025_10_56amos.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_56amos.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_57farias",
+      "href": "sources/general_conference/general_conference_2025_10_57farias.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_57farias.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2025_10_58oaks",
+      "href": "sources/general_conference/general_conference_2025_10_58oaks.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2025_10_58oaks.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_11oaks",
+      "href": "sources/general_conference/general_conference_2024_04_11oaks.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_11oaks.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_12larson",
+      "href": "sources/general_conference/general_conference_2024_04_12larson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_12larson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_13holland",
+      "href": "sources/general_conference/general_conference_2024_04_13holland.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_13holland.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_14dennis",
+      "href": "sources/general_conference/general_conference_2024_04_14dennis.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_14dennis.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_15dushku",
+      "href": "sources/general_conference/general_conference_2024_04_15dushku.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_15dushku.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_16soares",
+      "href": "sources/general_conference/general_conference_2024_04_16soares.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_16soares.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_17gerard",
+      "href": "sources/general_conference/general_conference_2024_04_17gerard.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_17gerard.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_18eyring",
+      "href": "sources/general_conference/general_conference_2024_04_18eyring.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_18eyring.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_21bednar",
+      "href": "sources/general_conference/general_conference_2024_04_21bednar.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_21bednar.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_22de_feo",
+      "href": "sources/general_conference/general_conference_2024_04_22de_feo.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_22de_feo.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_23nielson",
+      "href": "sources/general_conference/general_conference_2024_04_23nielson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_23nielson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_24alonso",
+      "href": "sources/general_conference/general_conference_2024_04_24alonso.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_24alonso.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_25gong",
+      "href": "sources/general_conference/general_conference_2024_04_25gong.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_25gong.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_26nelson",
+      "href": "sources/general_conference/general_conference_2024_04_26nelson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_26nelson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_27cook",
+      "href": "sources/general_conference/general_conference_2024_04_27cook.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_27cook.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_31bowen",
+      "href": "sources/general_conference/general_conference_2024_04_31bowen.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_31bowen.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_32bangerter",
+      "href": "sources/general_conference/general_conference_2024_04_32bangerter.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_32bangerter.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_33spannaus",
+      "href": "sources/general_conference/general_conference_2024_04_33spannaus.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_33spannaus.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_34carpenter",
+      "href": "sources/general_conference/general_conference_2024_04_34carpenter.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_34carpenter.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_35uchtdorf",
+      "href": "sources/general_conference/general_conference_2024_04_35uchtdorf.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_35uchtdorf.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_41rasband",
+      "href": "sources/general_conference/general_conference_2024_04_41rasband.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_41rasband.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_42porter",
+      "href": "sources/general_conference/general_conference_2024_04_42porter.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_42porter.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_43renlund",
+      "href": "sources/general_conference/general_conference_2024_04_43renlund.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_43renlund.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_44pieper",
+      "href": "sources/general_conference/general_conference_2024_04_44pieper.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_44pieper.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_45kearon",
+      "href": "sources/general_conference/general_conference_2024_04_45kearon.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_45kearon.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_46taylor",
+      "href": "sources/general_conference/general_conference_2024_04_46taylor.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_46taylor.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_47oaks",
+      "href": "sources/general_conference/general_conference_2024_04_47oaks.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_47oaks.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_51christofferson",
+      "href": "sources/general_conference/general_conference_2024_04_51christofferson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_51christofferson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_52godoy",
+      "href": "sources/general_conference/general_conference_2024_04_52godoy.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_52godoy.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_53stevenson",
+      "href": "sources/general_conference/general_conference_2024_04_53stevenson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_53stevenson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_54held",
+      "href": "sources/general_conference/general_conference_2024_04_54held.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_54held.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_55andersen",
+      "href": "sources/general_conference/general_conference_2024_04_55andersen.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_55andersen.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_56pace",
+      "href": "sources/general_conference/general_conference_2024_04_56pace.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_56pace.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_04_57nelson",
+      "href": "sources/general_conference/general_conference_2024_04_57nelson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_04_57nelson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_11eyring",
+      "href": "sources/general_conference/general_conference_2024_10_11eyring.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_11eyring.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_12andersen",
+      "href": "sources/general_conference/general_conference_2024_10_12andersen.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_12andersen.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_13freeman",
+      "href": "sources/general_conference/general_conference_2024_10_13freeman.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_13freeman.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_14hirst",
+      "href": "sources/general_conference/general_conference_2024_10_14hirst.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_14hirst.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_15renlund",
+      "href": "sources/general_conference/general_conference_2024_10_15renlund.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_15renlund.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_16homer",
+      "href": "sources/general_conference/general_conference_2024_10_16homer.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_16homer.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_17casillas",
+      "href": "sources/general_conference/general_conference_2024_10_17casillas.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_17casillas.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_18oaks",
+      "href": "sources/general_conference/general_conference_2024_10_18oaks.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_18oaks.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_21christofferson",
+      "href": "sources/general_conference/general_conference_2024_10_21christofferson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_21christofferson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_22teixeira",
+      "href": "sources/general_conference/general_conference_2024_10_22teixeira.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_22teixeira.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_23villar",
+      "href": "sources/general_conference/general_conference_2024_10_23villar.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_23villar.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_24kearon",
+      "href": "sources/general_conference/general_conference_2024_10_24kearon.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_24kearon.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_25buckner",
+      "href": "sources/general_conference/general_conference_2024_10_25buckner.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_25buckner.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_26goury",
+      "href": "sources/general_conference/general_conference_2024_10_26goury.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_26goury.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_27cavalcante",
+      "href": "sources/general_conference/general_conference_2024_10_27cavalcante.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_27cavalcante.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_28soares",
+      "href": "sources/general_conference/general_conference_2024_10_28soares.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_28soares.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_31gong",
+      "href": "sources/general_conference/general_conference_2024_10_31gong.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_31gong.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_32yee",
+      "href": "sources/general_conference/general_conference_2024_10_32yee.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_32yee.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_33mckay",
+      "href": "sources/general_conference/general_conference_2024_10_33mckay.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_33mckay.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_34alvarado",
+      "href": "sources/general_conference/general_conference_2024_10_34alvarado.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_34alvarado.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_35bednar",
+      "href": "sources/general_conference/general_conference_2024_10_35bednar.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_35bednar.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_41holland",
+      "href": "sources/general_conference/general_conference_2024_10_41holland.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_41holland.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_42browning",
+      "href": "sources/general_conference/general_conference_2024_10_42browning.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_42browning.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_43hales",
+      "href": "sources/general_conference/general_conference_2024_10_43hales.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_43hales.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_44stevenson",
+      "href": "sources/general_conference/general_conference_2024_10_44stevenson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_44stevenson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_45budge",
+      "href": "sources/general_conference/general_conference_2024_10_45budge.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_45budge.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_46wilcox",
+      "href": "sources/general_conference/general_conference_2024_10_46wilcox.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_46wilcox.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_47eyring",
+      "href": "sources/general_conference/general_conference_2024_10_47eyring.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_47eyring.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_51uchtdorf",
+      "href": "sources/general_conference/general_conference_2024_10_51uchtdorf.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_51uchtdorf.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_52wada",
+      "href": "sources/general_conference/general_conference_2024_10_52wada.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_52wada.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_53rasband",
+      "href": "sources/general_conference/general_conference_2024_10_53rasband.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_53rasband.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_54cook",
+      "href": "sources/general_conference/general_conference_2024_10_54cook.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_54cook.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_55alliaud",
+      "href": "sources/general_conference/general_conference_2024_10_55alliaud.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_55alliaud.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_56egbo",
+      "href": "sources/general_conference/general_conference_2024_10_56egbo.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_56egbo.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2024_10_57nelson",
+      "href": "sources/general_conference/general_conference_2024_10_57nelson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2024_10_57nelson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_11nelson",
+      "href": "sources/general_conference/general_conference_2020_04_11nelson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_11nelson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_12ballard",
+      "href": "sources/general_conference/general_conference_2020_04_12ballard.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_12ballard.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_13rasband",
+      "href": "sources/general_conference/general_conference_2020_04_13rasband.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_13rasband.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_14jones",
+      "href": "sources/general_conference/general_conference_2020_04_14jones.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_14jones.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_15andersen",
+      "href": "sources/general_conference/general_conference_2020_04_15andersen.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_15andersen.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_16holmes",
+      "href": "sources/general_conference/general_conference_2020_04_16holmes.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_16holmes.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_17eyring",
+      "href": "sources/general_conference/general_conference_2020_04_17eyring.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_17eyring.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_21oaks",
+      "href": "sources/general_conference/general_conference_2020_04_21oaks.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_21oaks.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_22jergensen",
+      "href": "sources/general_conference/general_conference_2020_04_22jergensen.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_22jergensen.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_23soares",
+      "href": "sources/general_conference/general_conference_2020_04_23soares.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_23soares.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_24mccune",
+      "href": "sources/general_conference/general_conference_2020_04_24mccune.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_24mccune.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_25causse",
+      "href": "sources/general_conference/general_conference_2020_04_25causse.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_25causse.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_26renlund",
+      "href": "sources/general_conference/general_conference_2020_04_26renlund.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_26renlund.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_27tai",
+      "href": "sources/general_conference/general_conference_2020_04_27tai.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_27tai.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_28stevenson",
+      "href": "sources/general_conference/general_conference_2020_04_28stevenson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_28stevenson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_31gong",
+      "href": "sources/general_conference/general_conference_2020_04_31gong.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_31gong.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_32alvarez",
+      "href": "sources/general_conference/general_conference_2020_04_32alvarez.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_32alvarez.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_33petelo",
+      "href": "sources/general_conference/general_conference_2020_04_33petelo.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_33petelo.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_34bingham",
+      "href": "sources/general_conference/general_conference_2020_04_34bingham.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_34bingham.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_35eyring",
+      "href": "sources/general_conference/general_conference_2020_04_35eyring.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_35eyring.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_36oaks",
+      "href": "sources/general_conference/general_conference_2020_04_36oaks.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_36oaks.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_37nelson",
+      "href": "sources/general_conference/general_conference_2020_04_37nelson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_37nelson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_41rasband",
+      "href": "sources/general_conference/general_conference_2020_04_41rasband.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_41rasband.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_42cordon",
+      "href": "sources/general_conference/general_conference_2020_04_42cordon.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_42cordon.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_43holland",
+      "href": "sources/general_conference/general_conference_2020_04_43holland.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_43holland.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_44bednar",
+      "href": "sources/general_conference/general_conference_2020_04_44bednar.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_44bednar.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_45nelson",
+      "href": "sources/general_conference/general_conference_2020_04_45nelson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_45nelson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_46nelson",
+      "href": "sources/general_conference/general_conference_2020_04_46nelson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_46nelson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_51oaks",
+      "href": "sources/general_conference/general_conference_2020_04_51oaks.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_51oaks.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_52cook",
+      "href": "sources/general_conference/general_conference_2020_04_52cook.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_52cook.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_53gimenez",
+      "href": "sources/general_conference/general_conference_2020_04_53gimenez.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_53gimenez.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_54uchtdorf",
+      "href": "sources/general_conference/general_conference_2020_04_54uchtdorf.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_54uchtdorf.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_55clayton",
+      "href": "sources/general_conference/general_conference_2020_04_55clayton.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_55clayton.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_56christofferson",
+      "href": "sources/general_conference/general_conference_2020_04_56christofferson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_56christofferson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_04_57nelson",
+      "href": "sources/general_conference/general_conference_2020_04_57nelson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_04_57nelson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_11nelson",
+      "href": "sources/general_conference/general_conference_2020_10_11nelson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_11nelson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_12bednar",
+      "href": "sources/general_conference/general_conference_2020_10_12bednar.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_12bednar.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_13whiting",
+      "href": "sources/general_conference/general_conference_2020_10_13whiting.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_13whiting.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_14craig",
+      "href": "sources/general_conference/general_conference_2020_10_14craig.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_14craig.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_15cook",
+      "href": "sources/general_conference/general_conference_2020_10_15cook.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_15cook.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_16rasband",
+      "href": "sources/general_conference/general_conference_2020_10_16rasband.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_16rasband.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_17oaks",
+      "href": "sources/general_conference/general_conference_2020_10_17oaks.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_17oaks.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_21eyring",
+      "href": "sources/general_conference/general_conference_2020_10_21eyring.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_21eyring.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_22christofferson",
+      "href": "sources/general_conference/general_conference_2020_10_22christofferson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_22christofferson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_23lund",
+      "href": "sources/general_conference/general_conference_2020_10_23lund.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_23lund.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_24gong",
+      "href": "sources/general_conference/general_conference_2020_10_24gong.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_24gong.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_25waddell",
+      "href": "sources/general_conference/general_conference_2020_10_25waddell.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_25waddell.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_26holland",
+      "href": "sources/general_conference/general_conference_2020_10_26holland.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_26holland.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_27jackson",
+      "href": "sources/general_conference/general_conference_2020_10_27jackson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_27jackson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_28uchtdorf",
+      "href": "sources/general_conference/general_conference_2020_10_28uchtdorf.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_28uchtdorf.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_31eubank",
+      "href": "sources/general_conference/general_conference_2020_10_31eubank.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_31eubank.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_32craven",
+      "href": "sources/general_conference/general_conference_2020_10_32craven.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_32craven.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_34franco",
+      "href": "sources/general_conference/general_conference_2020_10_34franco.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_34franco.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_35eyring",
+      "href": "sources/general_conference/general_conference_2020_10_35eyring.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_35eyring.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_36oaks",
+      "href": "sources/general_conference/general_conference_2020_10_36oaks.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_36oaks.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_37nelson",
+      "href": "sources/general_conference/general_conference_2020_10_37nelson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_37nelson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_41ballard",
+      "href": "sources/general_conference/general_conference_2020_10_41ballard.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_41ballard.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_42harkness",
+      "href": "sources/general_conference/general_conference_2020_10_42harkness.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_42harkness.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_43soares",
+      "href": "sources/general_conference/general_conference_2020_10_43soares.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_43soares.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_44godoy",
+      "href": "sources/general_conference/general_conference_2020_10_44godoy.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_44godoy.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_45andersen",
+      "href": "sources/general_conference/general_conference_2020_10_45andersen.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_45andersen.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_46nelson",
+      "href": "sources/general_conference/general_conference_2020_10_46nelson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_46nelson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_51eyring",
+      "href": "sources/general_conference/general_conference_2020_10_51eyring.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_51eyring.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_52jaggi",
+      "href": "sources/general_conference/general_conference_2020_10_52jaggi.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_52jaggi.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_53stevenson",
+      "href": "sources/general_conference/general_conference_2020_10_53stevenson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_53stevenson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_54camargo",
+      "href": "sources/general_conference/general_conference_2020_10_54camargo.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_54camargo.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_55renlund",
+      "href": "sources/general_conference/general_conference_2020_10_55renlund.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_55renlund.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_56johnson",
+      "href": "sources/general_conference/general_conference_2020_10_56johnson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_56johnson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_57holland",
+      "href": "sources/general_conference/general_conference_2020_10_57holland.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_57holland.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2020_10_58nelson",
+      "href": "sources/general_conference/general_conference_2020_10_58nelson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2020_10_58nelson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_11soares",
+      "href": "sources/general_conference/general_conference_2019_04_11soares.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_11soares.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_12craven",
+      "href": "sources/general_conference/general_conference_2019_04_12craven.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_12craven.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_13hales",
+      "href": "sources/general_conference/general_conference_2019_04_13hales.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_13hales.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_14uchtdorf",
+      "href": "sources/general_conference/general_conference_2019_04_14uchtdorf.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_14uchtdorf.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_15waddell",
+      "href": "sources/general_conference/general_conference_2019_04_15waddell.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_15waddell.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_16eyring",
+      "href": "sources/general_conference/general_conference_2019_04_16eyring.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_16eyring.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_21oaks",
+      "href": "sources/general_conference/general_conference_2019_04_21oaks.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_21oaks.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_22jergensen",
+      "href": "sources/general_conference/general_conference_2019_04_22jergensen.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_22jergensen.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_23ballard",
+      "href": "sources/general_conference/general_conference_2019_04_23ballard.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_23ballard.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_24held",
+      "href": "sources/general_conference/general_conference_2019_04_24held.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_24held.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_25andersen",
+      "href": "sources/general_conference/general_conference_2019_04_25andersen.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_25andersen.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_26wada",
+      "href": "sources/general_conference/general_conference_2019_04_26wada.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_26wada.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_27homer",
+      "href": "sources/general_conference/general_conference_2019_04_27homer.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_27homer.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_28holland",
+      "href": "sources/general_conference/general_conference_2019_04_28holland.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_28holland.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_31stevenson",
+      "href": "sources/general_conference/general_conference_2019_04_31stevenson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_31stevenson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_32cook",
+      "href": "sources/general_conference/general_conference_2019_04_32cook.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_32cook.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_33clark",
+      "href": "sources/general_conference/general_conference_2019_04_33clark.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_33clark.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_34eyring",
+      "href": "sources/general_conference/general_conference_2019_04_34eyring.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_34eyring.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_35oaks",
+      "href": "sources/general_conference/general_conference_2019_04_35oaks.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_35oaks.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_36nelson",
+      "href": "sources/general_conference/general_conference_2019_04_36nelson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_36nelson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_41renlund",
+      "href": "sources/general_conference/general_conference_2019_04_41renlund.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_41renlund.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_42eubank",
+      "href": "sources/general_conference/general_conference_2019_04_42eubank.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_42eubank.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_43cook",
+      "href": "sources/general_conference/general_conference_2019_04_43cook.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_43cook.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_44christofferson",
+      "href": "sources/general_conference/general_conference_2019_04_44christofferson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_44christofferson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_45callister",
+      "href": "sources/general_conference/general_conference_2019_04_45callister.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_45callister.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_46nelson",
+      "href": "sources/general_conference/general_conference_2019_04_46nelson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_46nelson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_51oaks",
+      "href": "sources/general_conference/general_conference_2019_04_51oaks.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_51oaks.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_52villar",
+      "href": "sources/general_conference/general_conference_2019_04_52villar.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_52villar.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_53gong",
+      "href": "sources/general_conference/general_conference_2019_04_53gong.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_53gong.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_54bednar",
+      "href": "sources/general_conference/general_conference_2019_04_54bednar.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_54bednar.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_55mckay",
+      "href": "sources/general_conference/general_conference_2019_04_55mckay.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_55mckay.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_56rasband",
+      "href": "sources/general_conference/general_conference_2019_04_56rasband.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_56rasband.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_04_57nelson",
+      "href": "sources/general_conference/general_conference_2019_04_57nelson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_04_57nelson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_11holland",
+      "href": "sources/general_conference/general_conference_2019_10_11holland.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_11holland.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_12vinson",
+      "href": "sources/general_conference/general_conference_2019_10_12vinson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_12vinson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_13owen",
+      "href": "sources/general_conference/general_conference_2019_10_13owen.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_13owen.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_14christofferson",
+      "href": "sources/general_conference/general_conference_2019_10_14christofferson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_14christofferson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_15craig",
+      "href": "sources/general_conference/general_conference_2019_10_15craig.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_15craig.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_16renlund",
+      "href": "sources/general_conference/general_conference_2019_10_16renlund.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_16renlund.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_17oaks",
+      "href": "sources/general_conference/general_conference_2019_10_17oaks.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_17oaks.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_21eyring",
+      "href": "sources/general_conference/general_conference_2019_10_21eyring.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_21eyring.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_22bednar",
+      "href": "sources/general_conference/general_conference_2019_10_22bednar.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_22bednar.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_23alliaud",
+      "href": "sources/general_conference/general_conference_2019_10_23alliaud.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_23alliaud.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_24nelson",
+      "href": "sources/general_conference/general_conference_2019_10_24nelson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_24nelson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_25cook",
+      "href": "sources/general_conference/general_conference_2019_10_25cook.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_25cook.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_26pace",
+      "href": "sources/general_conference/general_conference_2019_10_26pace.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_26pace.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_27budge",
+      "href": "sources/general_conference/general_conference_2019_10_27budge.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_27budge.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_28alvarado",
+      "href": "sources/general_conference/general_conference_2019_10_28alvarado.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_28alvarado.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_29rasband",
+      "href": "sources/general_conference/general_conference_2019_10_29rasband.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_29rasband.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_31aburto",
+      "href": "sources/general_conference/general_conference_2019_10_31aburto.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_31aburto.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_32harkness",
+      "href": "sources/general_conference/general_conference_2019_10_32harkness.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_32harkness.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_33cordon",
+      "href": "sources/general_conference/general_conference_2019_10_33cordon.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_33cordon.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_34eyring",
+      "href": "sources/general_conference/general_conference_2019_10_34eyring.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_34eyring.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_35oaks",
+      "href": "sources/general_conference/general_conference_2019_10_35oaks.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_35oaks.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_36nelson",
+      "href": "sources/general_conference/general_conference_2019_10_36nelson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_36nelson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_41gong",
+      "href": "sources/general_conference/general_conference_2019_10_41gong.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_41gong.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_42franco",
+      "href": "sources/general_conference/general_conference_2019_10_42franco.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_42franco.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_43uchtdorf",
+      "href": "sources/general_conference/general_conference_2019_10_43uchtdorf.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_43uchtdorf.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_44gonzalez",
+      "href": "sources/general_conference/general_conference_2019_10_44gonzalez.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_44gonzalez.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_45stevenson",
+      "href": "sources/general_conference/general_conference_2019_10_45stevenson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_45stevenson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_46nelson",
+      "href": "sources/general_conference/general_conference_2019_10_46nelson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_46nelson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_51eyring",
+      "href": "sources/general_conference/general_conference_2019_10_51eyring.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_51eyring.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_52boom",
+      "href": "sources/general_conference/general_conference_2019_10_52boom.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_52boom.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_53ballard",
+      "href": "sources/general_conference/general_conference_2019_10_53ballard.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_53ballard.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_54johnson",
+      "href": "sources/general_conference/general_conference_2019_10_54johnson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_54johnson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_55soares",
+      "href": "sources/general_conference/general_conference_2019_10_55soares.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_55soares.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_56andersen",
+      "href": "sources/general_conference/general_conference_2019_10_56andersen.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_56andersen.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2019_10_57nelson",
+      "href": "sources/general_conference/general_conference_2019_10_57nelson.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2019_10_57nelson.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_am_i_a_child_of_god",
+      "href": "sources/general_conference/general_conference_2018_04_am_i_a_child_of_god.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_am_i_a_child_of_god.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_be_with_and_strengthen_them",
+      "href": "sources/general_conference/general_conference_2018_04_be_with_and_strengthen_them.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_be_with_and_strengthen_them.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_behold_a_royal_army",
+      "href": "sources/general_conference/general_conference_2018_04_behold_a_royal_army.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_behold_a_royal_army.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_behold_the_man",
+      "href": "sources/general_conference/general_conference_2018_04_behold_the_man.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_behold_the_man.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_christ_the_lord_is_risen_today",
+      "href": "sources/general_conference/general_conference_2018_04_christ_the_lord_is_risen_today.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_christ_the_lord_is_risen_today.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_church_auditing_department_report_2017",
+      "href": "sources/general_conference/general_conference_2018_04_church_auditing_department_report_2017.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_church_auditing_department_report_2017.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_even_as_christ_forgives_you_so_also_do_ye",
+      "href": "sources/general_conference/general_conference_2018_04_even_as_christ_forgives_you_so_also_do_ye.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_even_as_christ_forgives_you_so_also_do_ye.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_family_history_and_temple_work_sealing_and_healing",
+      "href": "sources/general_conference/general_conference_2018_04_family_history_and_temple_work_sealing_and_healing.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_family_history_and_temple_work_sealing_and_healing.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_he_that_shall_endure_unto_the_end_the_same_shall_be_saved",
+      "href": "sources/general_conference/general_conference_2018_04_he_that_shall_endure_unto_the_end_the_same_shall_be_saved.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_he_that_shall_endure_unto_the_end_the_same_shall_be_saved.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_his_spirit_to_be_with_you",
+      "href": "sources/general_conference/general_conference_2018_04_his_spirit_to_be_with_you.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_his_spirit_to_be_with_you.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_inspired_ministering",
+      "href": "sources/general_conference/general_conference_2018_04_inspired_ministering.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_inspired_ministering.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_introductory_remarks",
+      "href": "sources/general_conference/general_conference_2018_04_introductory_remarks.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_introductory_remarks.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_it_is_all_about_people",
+      "href": "sources/general_conference/general_conference_2018_04_it_is_all_about_people.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_it_is_all_about_people.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_let_us_all_press_on",
+      "href": "sources/general_conference/general_conference_2018_04_let_us_all_press_on.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_let_us_all_press_on.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_meek_and_lowly_of_heart",
+      "href": "sources/general_conference/general_conference_2018_04_meek_and_lowly_of_heart.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_meek_and_lowly_of_heart.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_ministering",
+      "href": "sources/general_conference/general_conference_2018_04_ministering.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_ministering.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_ministering_as_the_savior_does",
+      "href": "sources/general_conference/general_conference_2018_04_ministering_as_the_savior_does.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_ministering_as_the_savior_does.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_ministering_with_the_power_and_authority_of_god",
+      "href": "sources/general_conference/general_conference_2018_04_ministering_with_the_power_and_authority_of_god.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_ministering_with_the_power_and_authority_of_god.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_one_more_day",
+      "href": "sources/general_conference/general_conference_2018_04_one_more_day.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_one_more_day.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_precious_gifts_from_god",
+      "href": "sources/general_conference/general_conference_2018_04_precious_gifts_from_god.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_precious_gifts_from_god.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_prepare_to_meet_god",
+      "href": "sources/general_conference/general_conference_2018_04_prepare_to_meet_god.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_prepare_to_meet_god.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_prophets_speak_by_the_power_of_the_holy_spirit",
+      "href": "sources/general_conference/general_conference_2018_04_prophets_speak_by_the_power_of_the_holy_spirit.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_prophets_speak_by_the_power_of_the_holy_spirit.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_pure_love_the_true_sign_of_every_true_disciple_of_jesus_christ",
+      "href": "sources/general_conference/general_conference_2018_04_pure_love_the_true_sign_of_every_true_disciple_of_jesus_christ.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_pure_love_the_true_sign_of_every_true_disciple_of_jesus_christ.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_revelation_for_the_church_revelation_for_our_lives",
+      "href": "sources/general_conference/general_conference_2018_04_revelation_for_the_church_revelation_for_our_lives.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_revelation_for_the_church_revelation_for_our_lives.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_saving_ordinances_will_bring_us_marvelous_light",
+      "href": "sources/general_conference/general_conference_2018_04_saving_ordinances_will_bring_us_marvelous_light.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_saving_ordinances_will_bring_us_marvelous_light.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_small_and_simple_things",
+      "href": "sources/general_conference/general_conference_2018_04_small_and_simple_things.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_small_and_simple_things.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_solemn_assembly",
+      "href": "sources/general_conference/general_conference_2018_04_solemn_assembly.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_solemn_assembly.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_take_the_holy_spirit_as_your_guide",
+      "href": "sources/general_conference/general_conference_2018_04_take_the_holy_spirit_as_your_guide.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_take_the_holy_spirit_as_your_guide.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_teaching_in_the_home_a_joyful_and_sacred_responsibility",
+      "href": "sources/general_conference/general_conference_2018_04_teaching_in_the_home_a_joyful_and_sacred_responsibility.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_teaching_in_the_home_a_joyful_and_sacred_responsibility.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_the_elders_quorum",
+      "href": "sources/general_conference/general_conference_2018_04_the_elders_quorum.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_the_elders_quorum.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_the_heart_of_a_prophet",
+      "href": "sources/general_conference/general_conference_2018_04_the_heart_of_a_prophet.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_the_heart_of_a_prophet.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_the_powers_of_the_priesthood",
+      "href": "sources/general_conference/general_conference_2018_04_the_powers_of_the_priesthood.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_the_powers_of_the_priesthood.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_the_prophet_of_god",
+      "href": "sources/general_conference/general_conference_2018_04_the_prophet_of_god.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_the_prophet_of_god.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_until_seventy_times_seven",
+      "href": "sources/general_conference/general_conference_2018_04_until_seventy_times_seven.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_until_seventy_times_seven.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_what_every_aaronic_priesthood_holder_needs_to_understand",
+      "href": "sources/general_conference/general_conference_2018_04_what_every_aaronic_priesthood_holder_needs_to_understand.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_what_every_aaronic_priesthood_holder_needs_to_understand.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_with_one_accord",
+      "href": "sources/general_conference/general_conference_2018_04_with_one_accord.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_with_one_accord.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_04_young_women_in_the_work",
+      "href": "sources/general_conference/general_conference_2018_04_young_women_in_the_work.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_04_young_women_in_the_work.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_all_must_take_upon_them_the_name_given_of_the_father",
+      "href": "sources/general_conference/general_conference_2018_10_all_must_take_upon_them_the_name_given_of_the_father.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_all_must_take_upon_them_the_name_given_of_the_father.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_be_not_troubled",
+      "href": "sources/general_conference/general_conference_2018_10_be_not_troubled.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_be_not_troubled.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_becoming_a_shepherd",
+      "href": "sources/general_conference/general_conference_2018_10_becoming_a_shepherd.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_becoming_a_shepherd.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_becoming_exemplary_latter_day_saints",
+      "href": "sources/general_conference/general_conference_2018_10_becoming_exemplary_latter_day_saints.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_becoming_exemplary_latter_day_saints.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_believe_love_do",
+      "href": "sources/general_conference/general_conference_2018_10_believe_love_do.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_believe_love_do.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_choose_you_this_day",
+      "href": "sources/general_conference/general_conference_2018_10_choose_you_this_day.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_choose_you_this_day.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_come_listen_to_a_prophets_voice",
+      "href": "sources/general_conference/general_conference_2018_10_come_listen_to_a_prophets_voice.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_come_listen_to_a_prophets_voice.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_deep_and_lasting_conversion_to_heavenly_father_and_the_lord_jesus_christ",
+      "href": "sources/general_conference/general_conference_2018_10_deep_and_lasting_conversion_to_heavenly_father_and_the_lord_jesus_christ.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_deep_and_lasting_conversion_to_heavenly_father_and_the_lord_jesus_christ.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_divine_discontent",
+      "href": "sources/general_conference/general_conference_2018_10_divine_discontent.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_divine_discontent.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_firm_and_steadfast_in_the_faith_of_christ",
+      "href": "sources/general_conference/general_conference_2018_10_firm_and_steadfast_in_the_faith_of_christ.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_firm_and_steadfast_in_the_faith_of_christ.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_for_him",
+      "href": "sources/general_conference/general_conference_2018_10_for_him.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_for_him.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_gather_together_in_one_all_things_in_christ",
+      "href": "sources/general_conference/general_conference_2018_10_gather_together_in_one_all_things_in_christ.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_gather_together_in_one_all_things_in_christ.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_laying_the_foundation_of_a_great_work",
+      "href": "sources/general_conference/general_conference_2018_10_laying_the_foundation_of_a_great_work.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_laying_the_foundation_of_a_great_work.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_lift_up_your_head_and_rejoice",
+      "href": "sources/general_conference/general_conference_2018_10_lift_up_your_head_and_rejoice.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_lift_up_your_head_and_rejoice.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_now_is_the_time",
+      "href": "sources/general_conference/general_conference_2018_10_now_is_the_time.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_now_is_the_time.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_one_in_christ",
+      "href": "sources/general_conference/general_conference_2018_10_one_in_christ.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_one_in_christ.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_opening_remarks",
+      "href": "sources/general_conference/general_conference_2018_10_opening_remarks.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_opening_remarks.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_our_campfire_of_faith",
+      "href": "sources/general_conference/general_conference_2018_10_our_campfire_of_faith.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_our_campfire_of_faith.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_parents_and_children",
+      "href": "sources/general_conference/general_conference_2018_10_parents_and_children.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_parents_and_children.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_shepherding_souls",
+      "href": "sources/general_conference/general_conference_2018_10_shepherding_souls.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_shepherding_souls.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_sisters_participation_in_the_gathering_of_israel",
+      "href": "sources/general_conference/general_conference_2018_10_sisters_participation_in_the_gathering_of_israel.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_sisters_participation_in_the_gathering_of_israel.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_taking_upon_ourselves_the_name_of_jesus_christ",
+      "href": "sources/general_conference/general_conference_2018_10_taking_upon_ourselves_the_name_of_jesus_christ.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_taking_upon_ourselves_the_name_of_jesus_christ.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_the_correct_name_of_the_church",
+      "href": "sources/general_conference/general_conference_2018_10_the_correct_name_of_the_church.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_the_correct_name_of_the_church.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_the_father",
+      "href": "sources/general_conference/general_conference_2018_10_the_father.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_the_father.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_the_joy_of_unselfish_service",
+      "href": "sources/general_conference/general_conference_2018_10_the_joy_of_unselfish_service.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_the_joy_of_unselfish_service.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_the_ministry_of_reconciliation",
+      "href": "sources/general_conference/general_conference_2018_10_the_ministry_of_reconciliation.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_the_ministry_of_reconciliation.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_the_role_of_the_book_of_mormon_in_conversion",
+      "href": "sources/general_conference/general_conference_2018_10_the_role_of_the_book_of_mormon_in_conversion.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_the_role_of_the_book_of_mormon_in_conversion.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_the_vision_of_the_redemption_of_the_dead",
+      "href": "sources/general_conference/general_conference_2018_10_the_vision_of_the_redemption_of_the_dead.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_the_vision_of_the_redemption_of_the_dead.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_truth_and_the_plan",
+      "href": "sources/general_conference/general_conference_2018_10_truth_and_the_plan.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_truth_and_the_plan.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_try_try_try",
+      "href": "sources/general_conference/general_conference_2018_10_try_try_try.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_try_try_try.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_wilt_thou_be_made_whole",
+      "href": "sources/general_conference/general_conference_2018_10_wilt_thou_be_made_whole.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_wilt_thou_be_made_whole.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_women_and_gospel_learning_in_the_home",
+      "href": "sources/general_conference/general_conference_2018_10_women_and_gospel_learning_in_the_home.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_women_and_gospel_learning_in_the_home.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2018_10_wounded",
+      "href": "sources/general_conference/general_conference_2018_10_wounded.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2018_10_wounded.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_a_sin_resistant_generation",
+      "href": "sources/general_conference/general_conference_2017_04_a_sin_resistant_generation.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_a_sin_resistant_generation.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_and_this_is_life_eternal",
+      "href": "sources/general_conference/general_conference_2017_04_and_this_is_life_eternal.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_and_this_is_life_eternal.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_becoming_a_disciple_of_our_lord_jesus_christ",
+      "href": "sources/general_conference/general_conference_2017_04_becoming_a_disciple_of_our_lord_jesus_christ.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_becoming_a_disciple_of_our_lord_jesus_christ.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_brighter_and_brighter_until_the_perfect_day",
+      "href": "sources/general_conference/general_conference_2017_04_brighter_and_brighter_until_the_perfect_day.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_brighter_and_brighter_until_the_perfect_day.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_called_to_the_work",
+      "href": "sources/general_conference/general_conference_2017_04_called_to_the_work.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_called_to_the_work.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_certain_women",
+      "href": "sources/general_conference/general_conference_2017_04_certain_women.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_certain_women.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_church_auditing_department_report_2016",
+      "href": "sources/general_conference/general_conference_2017_04_church_auditing_department_report_2016.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_church_auditing_department_report_2016.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_confide_in_god_unwaveringly",
+      "href": "sources/general_conference/general_conference_2017_04_confide_in_god_unwaveringly.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_confide_in_god_unwaveringly.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_dont_look_around_look_up",
+      "href": "sources/general_conference/general_conference_2017_04_dont_look_around_look_up.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_dont_look_around_look_up.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_drawing_the_power_of_jesus_christ_into_our_lives",
+      "href": "sources/general_conference/general_conference_2017_04_drawing_the_power_of_jesus_christ_into_our_lives.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_drawing_the_power_of_jesus_christ_into_our_lives.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_foundations_of_faith",
+      "href": "sources/general_conference/general_conference_2017_04_foundations_of_faith.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_foundations_of_faith.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_gathering_the_family_of_god",
+      "href": "sources/general_conference/general_conference_2017_04_gathering_the_family_of_god.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_gathering_the_family_of_god.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_his_daily_guiding_hand",
+      "href": "sources/general_conference/general_conference_2017_04_his_daily_guiding_hand.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_his_daily_guiding_hand.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_how_does_the_holy_ghost_help_you",
+      "href": "sources/general_conference/general_conference_2017_04_how_does_the_holy_ghost_help_you.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_how_does_the_holy_ghost_help_you.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_kindness_charity_and_love",
+      "href": "sources/general_conference/general_conference_2017_04_kindness_charity_and_love.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_kindness_charity_and_love.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_let_the_holy_spirit_guide",
+      "href": "sources/general_conference/general_conference_2017_04_let_the_holy_spirit_guide.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_let_the_holy_spirit_guide.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_my_peace_i_leave_with_you",
+      "href": "sources/general_conference/general_conference_2017_04_my_peace_i_leave_with_you.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_my_peace_i_leave_with_you.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_our_fathers_glorious_plan",
+      "href": "sources/general_conference/general_conference_2017_04_our_fathers_glorious_plan.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_our_fathers_glorious_plan.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_our_good_shepherd",
+      "href": "sources/general_conference/general_conference_2017_04_our_good_shepherd.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_our_good_shepherd.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_overcoming_the_world",
+      "href": "sources/general_conference/general_conference_2017_04_overcoming_the_world.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_overcoming_the_world.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_perfect_love_casteth_out_fear",
+      "href": "sources/general_conference/general_conference_2017_04_perfect_love_casteth_out_fear.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_perfect_love_casteth_out_fear.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_prepare_the_way",
+      "href": "sources/general_conference/general_conference_2017_04_prepare_the_way.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_prepare_the_way.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_return_and_receive",
+      "href": "sources/general_conference/general_conference_2017_04_return_and_receive.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_return_and_receive.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_songs_sung_and_unsung",
+      "href": "sources/general_conference/general_conference_2017_04_songs_sung_and_unsung.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_songs_sung_and_unsung.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_stand_up_inside_and_be_all_in",
+      "href": "sources/general_conference/general_conference_2017_04_stand_up_inside_and_be_all_in.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_stand_up_inside_and_be_all_in.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_statistical_report_2016",
+      "href": "sources/general_conference/general_conference_2017_04_statistical_report_2016.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_statistical_report_2016.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_that_our_light_may_be_a_standard_for_the_nations",
+      "href": "sources/general_conference/general_conference_2017_04_that_our_light_may_be_a_standard_for_the_nations.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_that_our_light_may_be_a_standard_for_the_nations.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_the_beauty_of_holiness",
+      "href": "sources/general_conference/general_conference_2017_04_the_beauty_of_holiness.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_the_beauty_of_holiness.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_the_godhead_and_the_plan_of_salvation",
+      "href": "sources/general_conference/general_conference_2017_04_the_godhead_and_the_plan_of_salvation.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_the_godhead_and_the_plan_of_salvation.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_the_greatest_among_you",
+      "href": "sources/general_conference/general_conference_2017_04_the_greatest_among_you.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_the_greatest_among_you.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_the_language_of_the_gospel",
+      "href": "sources/general_conference/general_conference_2017_04_the_language_of_the_gospel.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_the_language_of_the_gospel.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_the_power_of_the_book_of_mormon",
+      "href": "sources/general_conference/general_conference_2017_04_the_power_of_the_book_of_mormon.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_the_power_of_the_book_of_mormon.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_the_voice_of_warning",
+      "href": "sources/general_conference/general_conference_2017_04_the_voice_of_warning.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_the_voice_of_warning.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_then_jesus_beholding_him_loved_him",
+      "href": "sources/general_conference/general_conference_2017_04_then_jesus_beholding_him_loved_him.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_then_jesus_beholding_him_loved_him.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_to_the_friends_and_investigators_of_the_church",
+      "href": "sources/general_conference/general_conference_2017_04_to_the_friends_and_investigators_of_the_church.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_to_the_friends_and_investigators_of_the_church.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_trust_in_the_lord_and_lean_not",
+      "href": "sources/general_conference/general_conference_2017_04_trust_in_the_lord_and_lean_not.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_trust_in_the_lord_and_lean_not.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_walk_with_me",
+      "href": "sources/general_conference/general_conference_2017_04_walk_with_me.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_walk_with_me.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_04_whatsoever_he_saith_unto_you_do_it",
+      "href": "sources/general_conference/general_conference_2017_04_whatsoever_he_saith_unto_you_do_it.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_04_whatsoever_he_saith_unto_you_do_it.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_a_yearning_for_home",
+      "href": "sources/general_conference/general_conference_2017_10_a_yearning_for_home.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_a_yearning_for_home.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_abiding_in_god_and_repairing_the_breach",
+      "href": "sources/general_conference/general_conference_2017_10_abiding_in_god_and_repairing_the_breach.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_abiding_in_god_and_repairing_the_breach.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_apart_but_still_one",
+      "href": "sources/general_conference/general_conference_2017_10_apart_but_still_one.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_apart_but_still_one.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_be_ye_therefore_perfect_eventually",
+      "href": "sources/general_conference/general_conference_2017_10_be_ye_therefore_perfect_eventually.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_be_ye_therefore_perfect_eventually.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_bearers_of_heavenly_light",
+      "href": "sources/general_conference/general_conference_2017_10_bearers_of_heavenly_light.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_bearers_of_heavenly_light.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_by_divine_design",
+      "href": "sources/general_conference/general_conference_2017_10_by_divine_design.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_by_divine_design.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_do_we_trust_him_hard_is_good",
+      "href": "sources/general_conference/general_conference_2017_10_do_we_trust_him_hard_is_good.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_do_we_trust_him_hard_is_good.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_earning_the_trust_of_the_lord_and_your_family",
+      "href": "sources/general_conference/general_conference_2017_10_earning_the_trust_of_the_lord_and_your_family.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_earning_the_trust_of_the_lord_and_your_family.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_essential_truths_our_need_to_act",
+      "href": "sources/general_conference/general_conference_2017_10_essential_truths_our_need_to_act.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_essential_truths_our_need_to_act.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_exceeding_great_and_precious_promises",
+      "href": "sources/general_conference/general_conference_2017_10_exceeding_great_and_precious_promises.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_exceeding_great_and_precious_promises.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_fear_not_to_do_good",
+      "href": "sources/general_conference/general_conference_2017_10_fear_not_to_do_good.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_fear_not_to_do_good.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_gods_compelling_witness_the_book_of_mormon",
+      "href": "sources/general_conference/general_conference_2017_10_gods_compelling_witness_the_book_of_mormon.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_gods_compelling_witness_the_book_of_mormon.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_has_the_day_of_miracles_ceased",
+      "href": "sources/general_conference/general_conference_2017_10_has_the_day_of_miracles_ceased.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_has_the_day_of_miracles_ceased.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_i_have_a_work_for_thee",
+      "href": "sources/general_conference/general_conference_2017_10_i_have_a_work_for_thee.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_i_have_a_work_for_thee.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_lord_wilt_thou_cause_that_my_eyes_may_be_opened",
+      "href": "sources/general_conference/general_conference_2017_10_lord_wilt_thou_cause_that_my_eyes_may_be_opened.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_lord_wilt_thou_cause_that_my_eyes_may_be_opened.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_love_one_another_as_he_has_loved_us",
+      "href": "sources/general_conference/general_conference_2017_10_love_one_another_as_he_has_loved_us.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_love_one_another_as_he_has_loved_us.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_repentance_is_always_positive",
+      "href": "sources/general_conference/general_conference_2017_10_repentance_is_always_positive.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_repentance_is_always_positive.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_seek_ye_out_of_the_best_books",
+      "href": "sources/general_conference/general_conference_2017_10_seek_ye_out_of_the_best_books.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_seek_ye_out_of_the_best_books.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_spiritual_eclipse",
+      "href": "sources/general_conference/general_conference_2017_10_spiritual_eclipse.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_spiritual_eclipse.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_that_your_joy_might_be_full",
+      "href": "sources/general_conference/general_conference_2017_10_that_your_joy_might_be_full.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_that_your_joy_might_be_full.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_the_book_of_mormon_what_would_your_life_be_like_without_it",
+      "href": "sources/general_conference/general_conference_2017_10_the_book_of_mormon_what_would_your_life_be_like_without_it.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_the_book_of_mormon_what_would_your_life_be_like_without_it.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_the_eternal_everyday",
+      "href": "sources/general_conference/general_conference_2017_10_the_eternal_everyday.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_the_eternal_everyday.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_the_heart_of_the_widow",
+      "href": "sources/general_conference/general_conference_2017_10_the_heart_of_the_widow.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_the_heart_of_the_widow.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_the_living_bread_which_came_down_from_heaven",
+      "href": "sources/general_conference/general_conference_2017_10_the_living_bread_which_came_down_from_heaven.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_the_living_bread_which_came_down_from_heaven.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_the_lord_leads_his_church",
+      "href": "sources/general_conference/general_conference_2017_10_the_lord_leads_his_church.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_the_lord_leads_his_church.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_the_needs_before_us",
+      "href": "sources/general_conference/general_conference_2017_10_the_needs_before_us.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_the_needs_before_us.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_the_plan_and_the_proclamation",
+      "href": "sources/general_conference/general_conference_2017_10_the_plan_and_the_proclamation.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_the_plan_and_the_proclamation.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_the_priesthood_and_the_saviors_atoning_power",
+      "href": "sources/general_conference/general_conference_2017_10_the_priesthood_and_the_saviors_atoning_power.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_the_priesthood_and_the_saviors_atoning_power.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_the_trek_continues",
+      "href": "sources/general_conference/general_conference_2017_10_the_trek_continues.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_the_trek_continues.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_the_truth_of_all_things",
+      "href": "sources/general_conference/general_conference_2017_10_the_truth_of_all_things.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_the_truth_of_all_things.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_the_voice_of_the_lord",
+      "href": "sources/general_conference/general_conference_2017_10_the_voice_of_the_lord.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_the_voice_of_the_lord.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_three_sisters",
+      "href": "sources/general_conference/general_conference_2017_10_three_sisters.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_three_sisters.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_turn_on_your_light",
+      "href": "sources/general_conference/general_conference_2017_10_turn_on_your_light.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_turn_on_your_light.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_turn_to_the_lord",
+      "href": "sources/general_conference/general_conference_2017_10_turn_to_the_lord.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_turn_to_the_lord.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2017_10_value_beyond_measure",
+      "href": "sources/general_conference/general_conference_2017_10_value_beyond_measure.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2017_10_value_beyond_measure.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_a_childs_guiding_gift",
+      "href": "sources/general_conference/general_conference_2016_04_a_childs_guiding_gift.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_a_childs_guiding_gift.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_a_pattern_for_peace",
+      "href": "sources/general_conference/general_conference_2016_04_a_pattern_for_peace.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_a_pattern_for_peace.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_a_sacred_trust",
+      "href": "sources/general_conference/general_conference_2016_04_a_sacred_trust.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_a_sacred_trust.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_always_remember_him",
+      "href": "sources/general_conference/general_conference_2016_04_always_remember_him.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_always_remember_him.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_always_retain_a_remission_of_your_sins",
+      "href": "sources/general_conference/general_conference_2016_04_always_retain_a_remission_of_your_sins.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_always_retain_a_remission_of_your_sins.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_and_there_shall_be_no_more_death",
+      "href": "sources/general_conference/general_conference_2016_04_and_there_shall_be_no_more_death.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_and_there_shall_be_no_more_death.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_be_thou_humble",
+      "href": "sources/general_conference/general_conference_2016_04_be_thou_humble.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_be_thou_humble.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_choices",
+      "href": "sources/general_conference/general_conference_2016_04_choices.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_choices.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_church_auditing_department_report_2015",
+      "href": "sources/general_conference/general_conference_2016_04_church_auditing_department_report_2015.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_church_auditing_department_report_2015.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_do_i_believe",
+      "href": "sources/general_conference/general_conference_2016_04_do_i_believe.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_do_i_believe.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_eternal_families",
+      "href": "sources/general_conference/general_conference_2016_04_eternal_families.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_eternal_families.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_family_councils",
+      "href": "sources/general_conference/general_conference_2016_04_family_councils.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_family_councils.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_fathers",
+      "href": "sources/general_conference/general_conference_2016_04_fathers.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_fathers.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_he_asks_us_to_be_his_hands",
+      "href": "sources/general_conference/general_conference_2016_04_he_asks_us_to_be_his_hands.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_he_asks_us_to_be_his_hands.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_he_will_place_you_on_his_shoulders_and_carry_you_home",
+      "href": "sources/general_conference/general_conference_2016_04_he_will_place_you_on_his_shoulders_and_carry_you_home.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_he_will_place_you_on_his_shoulders_and_carry_you_home.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_i_am_a_child_of_god",
+      "href": "sources/general_conference/general_conference_2016_04_i_am_a_child_of_god.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_i_am_a_child_of_god.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_i_was_a_stranger",
+      "href": "sources/general_conference/general_conference_2016_04_i_was_a_stranger.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_i_was_a_stranger.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_in_praise_of_those_who_save",
+      "href": "sources/general_conference/general_conference_2016_04_in_praise_of_those_who_save.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_in_praise_of_those_who_save.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_opposition_in_all_things",
+      "href": "sources/general_conference/general_conference_2016_04_opposition_in_all_things.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_opposition_in_all_things.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_refuge_from_the_storm",
+      "href": "sources/general_conference/general_conference_2016_04_refuge_from_the_storm.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_refuge_from_the_storm.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_see_yourself_in_the_temple",
+      "href": "sources/general_conference/general_conference_2016_04_see_yourself_in_the_temple.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_see_yourself_in_the_temple.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_standing_with_the_leaders_of_the_church",
+      "href": "sources/general_conference/general_conference_2016_04_standing_with_the_leaders_of_the_church.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_standing_with_the_leaders_of_the_church.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_statistical_report_2015",
+      "href": "sources/general_conference/general_conference_2016_04_statistical_report_2015.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_statistical_report_2015.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_that_i_might_draw_all_men_unto_me",
+      "href": "sources/general_conference/general_conference_2016_04_that_i_might_draw_all_men_unto_me.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_that_i_might_draw_all_men_unto_me.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_the_greatest_leaders_are_the_greatest_followers",
+      "href": "sources/general_conference/general_conference_2016_04_the_greatest_leaders_are_the_greatest_followers.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_the_greatest_leaders_are_the_greatest_followers.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_the_healing_ointment_of_forgiveness",
+      "href": "sources/general_conference/general_conference_2016_04_the_healing_ointment_of_forgiveness.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_the_healing_ointment_of_forgiveness.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_the_holy_ghost",
+      "href": "sources/general_conference/general_conference_2016_04_the_holy_ghost.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_the_holy_ghost.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_the_power_of_godliness",
+      "href": "sources/general_conference/general_conference_2016_04_the_power_of_godliness.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_the_power_of_godliness.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_the_price_of_priesthood_power",
+      "href": "sources/general_conference/general_conference_2016_04_the_price_of_priesthood_power.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_the_price_of_priesthood_power.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_the_sacred_place_of_restoration",
+      "href": "sources/general_conference/general_conference_2016_04_the_sacred_place_of_restoration.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_the_sacred_place_of_restoration.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_to_the_rescue_we_can_do_it",
+      "href": "sources/general_conference/general_conference_2016_04_to_the_rescue_we_can_do_it.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_to_the_rescue_we_can_do_it.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_tomorrow_the_lord_will_do_wonders_among_you",
+      "href": "sources/general_conference/general_conference_2016_04_tomorrow_the_lord_will_do_wonders_among_you.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_tomorrow_the_lord_will_do_wonders_among_you.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_trust_in_that_spirit_which_leadeth_to_do_good",
+      "href": "sources/general_conference/general_conference_2016_04_trust_in_that_spirit_which_leadeth_to_do_good.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_trust_in_that_spirit_which_leadeth_to_do_good.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_what_shall_we_do",
+      "href": "sources/general_conference/general_conference_2016_04_what_shall_we_do.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_what_shall_we_do.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_where_are_the_keys_and_authority_of_the_priesthood",
+      "href": "sources/general_conference/general_conference_2016_04_where_are_the_keys_and_authority_of_the_priesthood.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_where_are_the_keys_and_authority_of_the_priesthood.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_where_two_or_three_are_gathered",
+      "href": "sources/general_conference/general_conference_2016_04_where_two_or_three_are_gathered.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_where_two_or_three_are_gathered.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_04_whoso_receiveth_them_receiveth_me",
+      "href": "sources/general_conference/general_conference_2016_04_whoso_receiveth_them_receiveth_me.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_04_whoso_receiveth_them_receiveth_me.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_a_choice_seer_will_i_raise_up",
+      "href": "sources/general_conference/general_conference_2016_10_a_choice_seer_will_i_raise_up.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_a_choice_seer_will_i_raise_up.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_a_witness_of_god",
+      "href": "sources/general_conference/general_conference_2016_10_a_witness_of_god.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_a_witness_of_god.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_abide_in_my_love",
+      "href": "sources/general_conference/general_conference_2016_10_abide_in_my_love.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_abide_in_my_love.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_am_i_good_enough_will_i_make_it",
+      "href": "sources/general_conference/general_conference_2016_10_am_i_good_enough_will_i_make_it.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_am_i_good_enough_will_i_make_it.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_be_ambitious_for_christ",
+      "href": "sources/general_conference/general_conference_2016_10_be_ambitious_for_christ.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_be_ambitious_for_christ.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_come_follow_me_by_practicing_christian_love_and_service",
+      "href": "sources/general_conference/general_conference_2016_10_come_follow_me_by_practicing_christian_love_and_service.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_come_follow_me_by_practicing_christian_love_and_service.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_emissaries_to_the_church",
+      "href": "sources/general_conference/general_conference_2016_10_emissaries_to_the_church.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_emissaries_to_the_church.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_for_our_spiritual_development_and_learning",
+      "href": "sources/general_conference/general_conference_2016_10_for_our_spiritual_development_and_learning.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_for_our_spiritual_development_and_learning.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_fourth_floor_last_door",
+      "href": "sources/general_conference/general_conference_2016_10_fourth_floor_last_door.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_fourth_floor_last_door.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_god_shall_wipe_away_all_tears",
+      "href": "sources/general_conference/general_conference_2016_10_god_shall_wipe_away_all_tears.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_god_shall_wipe_away_all_tears.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_gratitude_on_the_sabbath_day",
+      "href": "sources/general_conference/general_conference_2016_10_gratitude_on_the_sabbath_day.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_gratitude_on_the_sabbath_day.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_i_will_bring_the_light_of_the_gospel_into_my_home",
+      "href": "sources/general_conference/general_conference_2016_10_i_will_bring_the_light_of_the_gospel_into_my_home.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_i_will_bring_the_light_of_the_gospel_into_my_home.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_if_ye_had_known_me",
+      "href": "sources/general_conference/general_conference_2016_10_if_ye_had_known_me.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_if_ye_had_known_me.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_joy_and_spiritual_survival",
+      "href": "sources/general_conference/general_conference_2016_10_joy_and_spiritual_survival.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_joy_and_spiritual_survival.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_learn_from_alma_and_amulek",
+      "href": "sources/general_conference/general_conference_2016_10_learn_from_alma_and_amulek.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_learn_from_alma_and_amulek.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_lest_thou_forget",
+      "href": "sources/general_conference/general_conference_2016_10_lest_thou_forget.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_lest_thou_forget.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_look_to_the_book_look_to_the_lord",
+      "href": "sources/general_conference/general_conference_2016_10_look_to_the_book_look_to_the_lord.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_look_to_the_book_look_to_the_lord.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_no_greater_joy_than_to_know_that_they_know",
+      "href": "sources/general_conference/general_conference_2016_10_no_greater_joy_than_to_know_that_they_know.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_no_greater_joy_than_to_know_that_they_know.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_o_how_great_the_plan_of_our_god",
+      "href": "sources/general_conference/general_conference_2016_10_o_how_great_the_plan_of_our_god.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_o_how_great_the_plan_of_our_god.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_principles_and_promises",
+      "href": "sources/general_conference/general_conference_2016_10_principles_and_promises.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_principles_and_promises.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_repentance_a_joyful_choice",
+      "href": "sources/general_conference/general_conference_2016_10_repentance_a_joyful_choice.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_repentance_a_joyful_choice.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_rise_up_in_strength_sisters_in_zion",
+      "href": "sources/general_conference/general_conference_2016_10_rise_up_in_strength_sisters_in_zion.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_rise_up_in_strength_sisters_in_zion.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_serve",
+      "href": "sources/general_conference/general_conference_2016_10_serve.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_serve.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_sharing_the_restored_gospel",
+      "href": "sources/general_conference/general_conference_2016_10_sharing_the_restored_gospel.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_sharing_the_restored_gospel.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_that_he_may_become_strong_also",
+      "href": "sources/general_conference/general_conference_2016_10_that_he_may_become_strong_also.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_that_he_may_become_strong_also.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_the_blessings_of_worship",
+      "href": "sources/general_conference/general_conference_2016_10_the_blessings_of_worship.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_the_blessings_of_worship.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_the_doctrine_of_christ",
+      "href": "sources/general_conference/general_conference_2016_10_the_doctrine_of_christ.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_the_doctrine_of_christ.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_the_great_plan_of_redemption",
+      "href": "sources/general_conference/general_conference_2016_10_the_great_plan_of_redemption.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_the_great_plan_of_redemption.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_the_lord_jesus_christ_teaches_us_to_pray",
+      "href": "sources/general_conference/general_conference_2016_10_the_lord_jesus_christ_teaches_us_to_pray.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_the_lord_jesus_christ_teaches_us_to_pray.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_the_master_healer",
+      "href": "sources/general_conference/general_conference_2016_10_the_master_healer.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_the_master_healer.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_the_perfect_path_to_happiness",
+      "href": "sources/general_conference/general_conference_2016_10_the_perfect_path_to_happiness.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_the_perfect_path_to_happiness.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_the_righteous_judge",
+      "href": "sources/general_conference/general_conference_2016_10_the_righteous_judge.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_the_righteous_judge.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_the_sacrament_can_help_us_become_holy",
+      "href": "sources/general_conference/general_conference_2016_10_the_sacrament_can_help_us_become_holy.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_the_sacrament_can_help_us_become_holy.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_the_souls_sincere_desire",
+      "href": "sources/general_conference/general_conference_2016_10_the_souls_sincere_desire.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_the_souls_sincere_desire.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_there_is_power_in_the_book",
+      "href": "sources/general_conference/general_conference_2016_10_there_is_power_in_the_book.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_there_is_power_in_the_book.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_to_whom_shall_we_go",
+      "href": "sources/general_conference/general_conference_2016_10_to_whom_shall_we_go.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_to_whom_shall_we_go.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2016_10_valiant_in_the_testimony_of_jesus",
+      "href": "sources/general_conference/general_conference_2016_10_valiant_in_the_testimony_of_jesus.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2016_10_valiant_in_the_testimony_of_jesus.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2015_04_be_fruitful_multiply_and_subdue_the_earth",
+      "href": "sources/general_conference/general_conference_2015_04_be_fruitful_multiply_and_subdue_the_earth.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2015_04_be_fruitful_multiply_and_subdue_the_earth.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2015_04_blessings_of_the_temple",
+      "href": "sources/general_conference/general_conference_2015_04_blessings_of_the_temple.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2015_04_blessings_of_the_temple.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2015_04_choose_to_believe",
+      "href": "sources/general_conference/general_conference_2015_04_choose_to_believe.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2015_04_choose_to_believe.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2015_04_church_auditing_department_report_2014",
+      "href": "sources/general_conference/general_conference_2015_04_church_auditing_department_report_2014.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2015_04_church_auditing_department_report_2014.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2015_04_defenders_of_the_family_proclamation",
+      "href": "sources/general_conference/general_conference_2015_04_defenders_of_the_family_proclamation.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2015_04_defenders_of_the_family_proclamation.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2015_04_fatherhood_our_eternal_destiny",
+      "href": "sources/general_conference/general_conference_2015_04_fatherhood_our_eternal_destiny.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2015_04_fatherhood_our_eternal_destiny.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2015_04_filling_our_homes_with_light_and_truth",
+      "href": "sources/general_conference/general_conference_2015_04_filling_our_homes_with_light_and_truth.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2015_04_filling_our_homes_with_light_and_truth.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2015_04_if_you_will_be_responsible",
+      "href": "sources/general_conference/general_conference_2015_04_if_you_will_be_responsible.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2015_04_if_you_will_be_responsible.txt"
+    },
+    {
+      "doc_id": "general_conference:general_conference_2015_04_is_it_still_wonderful_to_you",
+      "href": "sources/general_conference/general_conference_2015_04_is_it_still_wonderful_to_you.html",
+      "expected_txt": "lds_pipeline/cache/general_conference/general_conference_2015_04_is_it_still_wonderful_to_you.txt"
+    }
+  ],
+  "missing_gc_cache_txt_truncated": true
+}
