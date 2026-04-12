@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Regenerate downstream indexes after graph or source corpus changes.
+# Full verse-centric pipeline (when correlations change): correlate_embeddings → build_graph → this script.
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"

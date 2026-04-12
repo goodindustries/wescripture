@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LDS Scriptures — The Good Project</title>
+    <title>WeScripture</title>
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
     <link rel="manifest" href="./manifest.json">
@@ -35,7 +35,8 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     display: flex; align-items: center; padding: 0 14px; gap: 10px; z-index: 200;
 }
 #topbar .logo { font-weight: 600; font-size: 14px; letter-spacing: -0.04em;
-    color: var(--accent); text-decoration: none; }
+    color: var(--accent); text-decoration: none; flex-shrink: 0; }
+#topbar .logo:hover { color: var(--accent-hover); }
 #back-btn { background: none; border: none; cursor: pointer; padding: 6px; border-radius: 6px;
     color: var(--muted); display: none; align-items: center; flex-shrink: 0; }
 #back-btn.show { display: flex; }
@@ -1012,6 +1013,7 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 <div id="splash"><div class="spin"></div><p>Loading…</p></div>
 
 <div id="topbar">
+    <a id="site-home" class="logo" href="./index.html">WeScripture</a>
     <button id="back-btn" onclick="quickBack()" title="Go back">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="10 3 5 8 10 13"></polyline>
@@ -1128,13 +1130,13 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 <script>
 // ── Site config (override to white-label) ────────────────────────────────
 var SITE = {
-    name:       'The Good Project',
-    // Netlify (publish=library): reader is / or /index.html → home at ./home.html
-    // VPS/Caddy: reader under /library/ → repo-root home at ../index.html
+    name:       'WeScripture',
+    // Netlify (publish=library): reader home is / or /index.html
+    // VPS/Caddy: reader under /library/ → repo-root landing at ../index.html
     homeUrl:    (function() {
         var p = location.pathname || '';
         if (p.indexOf('/library/') === 0) return '../index.html';
-        return './home.html';
+        return './index.html';
     })(),
     storageKey: 'lds',          // localStorage prefix
 };
@@ -3315,8 +3317,13 @@ function finishVerseDiscoveryPanel(payload) {
         html += '<div class="panel-section">Commentary</div>';
         html += '<div class="verse-panel-cards' + (allCommentary.length <= 5 ? ' expanded' : '') + '">';
         allCommentary.forEach(function(c) {
-            html += '<div class="comm-card' + (c.hasLink ? ' has-link' : '') + '"'
-                + (c.entryIdx != null ? ' data-idx="' + c.entryIdx + '"' : '') + '>'
+            var vdAttrs = '';
+            if (c.entryIdx != null) {
+                vdAttrs = ' data-idx="' + c.entryIdx + '" data-vd-idx="' + c.entryIdx + '"'
+                    + (c.filterColl ? ' data-coll="' + escapeAttr(c.filterColl) + '"' : '')
+                    + (c.filterYear != null ? ' data-yr="' + c.filterYear + '"' : '');
+            }
+            html += '<div class="comm-card' + (c.hasLink ? ' has-link' : '') + '"' + vdAttrs + '>'
                 + (c.badge ? '<div class="hist-badge ' + escapeHtml(c.badgeClass || '') + '">' + escapeHtml(c.badge) + '</div>' : '')
                 + (c.author ? '<div class="comm-author">' + linkifyName(c.author) + '</div>' : '')
                 + (c.work ? '<div class="comm-work">' + escapeHtml(c.work) + '</div>' : '')
@@ -3370,6 +3377,8 @@ function finishVerseDiscoveryPanel(payload) {
     panelBody.scrollTop = 0;
     document.getElementById('channel').classList.add('open');
     channelOpen = true;
+    wireVerseDiscoveryFilters(panelBody, entries);
+
     panelBody.querySelectorAll('.comm-card.has-link').forEach(function(row) {
         row.addEventListener('click', function() {
             var e = entries[parseInt(row.dataset.idx, 10)];

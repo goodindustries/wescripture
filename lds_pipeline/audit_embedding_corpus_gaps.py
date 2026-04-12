@@ -3,7 +3,7 @@
 Compare shipped source_toc documents to passages produced by correlate_embeddings.load_all_sources().
 
 - Layer A: collections with TOC paragraphs > 0 but zero passages for that source key.
-- Layer B (General Conference): each leaf doc's HTML stem must have a matching .txt in cache.
+- Layer B: flat per-doc shelves (GC, JD, HoC, JSP, …): each TOC leaf's HTML stem must have a matching .txt in cache (ancient_texts tries several subdirs).
 
 Run from repo root after cache sync + verse catalog exist:
   python3 lds_pipeline/audit_embedding_corpus_gaps.py
