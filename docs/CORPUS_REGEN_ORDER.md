@@ -30,3 +30,11 @@ After cache sync / before correlating, audit whether shipped `source_toc` docs a
 `python3 lds_pipeline/audit_embedding_corpus_gaps.py` → [`diagnostics/embedding_loader_gaps.json`](../diagnostics/embedding_loader_gaps.json) (use `--strict` to fail on gaps).
 
 **Documented regen order (verse-centric recall):** export paragraphs (optional) → `correlate_embeddings` → `build_graph` → `build_verse_discovery` → deploy.
+
+**Wall-clock (important):** A full `export_library_sources_to_embedding_cache.py --apply` can greatly increase `load_all_sources()` passage counts (e.g. many per-issue periodical `.txt` files). The next `correlate_embeddings` run usually **re-embeds all passages** on CPU (often **1–3+ hours**). Run it with `nohup … >> diagnostics/correlate-regen.out 2>&1 &` or overnight, then run `regen_corpus_indexes.sh` (after updating graphs from the new correlations). Example one-liner after export:
+
+```bash
+nohup python3 lds_pipeline/correlate_embeddings.py --rebuild --deep-books John >> diagnostics/correlate-regen.out 2>&1 &
+# when finished:
+bash lds_pipeline/regen_corpus_indexes.sh
+```
