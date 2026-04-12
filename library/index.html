@@ -3910,9 +3910,14 @@ function updateLocationLabel(id) {
     var backBtn  = document.getElementById('back-btn');
     if (backBtn) backBtn.classList.toggle('show', visitStack.length > 0);
 
+    var homeLead =
+        '<a href="' + escapeAttr(SITE.homeUrl) + '" class="bc-crumb">' + escapeHtml('Home') + '</a>'
+        + '<span class="bc-sep">›</span>';
+
     if (sourceMeta[id]) {
         crumbsEl.innerHTML =
-            '<span class="bc-crumb">' + escapeHtml(sourceMeta[id].collection) + '</span>'
+            homeLead
+            + '<span class="bc-crumb">' + escapeHtml(sourceMeta[id].collection) + '</span>'
             + '<span class="bc-sep">›</span>'
             + '<span class="bc-crumb bc-last">' + escapeHtml(sourceMeta[id].label) + '</span>';
         return;
@@ -3922,7 +3927,8 @@ function updateLocationLabel(id) {
     var vol = meta.volume.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
     var bk  = meta.book.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
     crumbsEl.innerHTML =
-        '<span class="bc-crumb" onclick="openTocAtVolume(\'' + vol + '\')">' + escapeHtml(meta.volume) + '</span>'
+        homeLead
+        + '<span class="bc-crumb" onclick="openTocAtVolume(\'' + vol + '\')">' + escapeHtml(meta.volume) + '</span>'
         + '<span class="bc-sep">›</span>'
         + '<span class="bc-crumb" onclick="openTocAtBook(\'' + bk + '\')">' + escapeHtml(meta.book) + '</span>'
         + '<span class="bc-sep">›</span>'
