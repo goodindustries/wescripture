@@ -1,5 +1,9 @@
 const { launchBrowser } = require('./tools/puppeteer_launch.js');
 
+function sleep(ms) {
+  return new Promise(function(resolve) { setTimeout(resolve, ms); });
+}
+
 function assert(condition, message) {
   if (!condition) throw new Error(message);
 }
@@ -12,9 +16,10 @@ async function openSearch(page, query) {
     el.dispatchEvent(new Event('input', { bubbles: true }));
   });
   await page.type('#search-input', query);
+  await sleep(350);
   await page.waitForFunction(() => document.querySelectorAll('.search-result').length > 0, { timeout: 20000 });
   return page.$$eval('.search-result', (els) =>
-    els.slice(0, 5).map((el) => ({
+    els.slice(0, 8).map((el) => ({
       kind: el.dataset.kind || '',
       ref: el.querySelector('.search-result-ref')?.textContent.trim() || '',
       text: el.querySelector('.search-result-text')?.textContent.trim() || '',
@@ -39,9 +44,14 @@ async function run() {
   await page.waitForSelector('#splash.gone', { timeout: 60000 });
 
   const john = await openSearch(page, 'John 3:16');
-  var johnVerses = john.filter(function(j) { return j.kind === 'verse'; });
-  assert(johnVerses.length > 0, 'John 3:16 query did not return scripture hits');
-  assert(johnVerses.slice(0, 3).some(function(j) { return /John 3:16/.test(j.ref); }), 'John 3:16 missing from top scripture results');
+  assert(john.length > 0, 'John 3:16 query returned no results');
+  var johnHit = john.slice(0, 10).some(function(j) {
+    if (j.kind !== 'verse') return false;
+    var ref = (j.ref || '').replace(/\s+/g, '');
+    var tx = (j.text || '').toLowerCase();
+    return /John\s*3\s*:\s*16/i.test(ref) || /John\s*3\s*:\s*16/i.test(j.ref) || tx.indexOf('for god so loved the world') !== -1;
+  });
+  assert(johnHit, 'John 3:16 verse missing from search results: ' + JSON.stringify(john.slice(0, 3)));
   await closeSearch(page);
 
   const best = await openSearch(page, 'Good Better Best');

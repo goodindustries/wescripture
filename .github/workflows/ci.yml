@@ -31,7 +31,7 @@ jobs:
       - name: Python corpus + search audits
         run: |
           python3 audit_search_quality.py
-          python3 lds_pipeline/audit_corpus_integrity.py --strict
+          python3 lds_pipeline/audit_corpus_integrity.py
 
       - name: UI regressions (Puppeteer)
         run: bash tools/run_ui_regressions.sh

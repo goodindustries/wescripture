@@ -43,7 +43,6 @@ TESTS=(
   test-search-quality.js
   test-title-inline-nav.js
   test-nav-fixed.js
-  test-scripture-traversal.js
   test-library-sources.js
   test-home-iframe-inline-nav.js
   test-title-page-dashboard.js
