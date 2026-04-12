@@ -14,6 +14,10 @@
     }
 
     # Static site: serve repo-root `index.html` at /, and `library/` at /library/.
+    handle /library/home.html {
+        redir /library/index.html 302
+    }
+
     handle /library/* {
         root * /srv/static
         try_files {path} {path}/ /library/index.html

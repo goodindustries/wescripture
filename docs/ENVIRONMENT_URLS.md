@@ -9,7 +9,8 @@ The deployed site root **is the repository root** (same URL layout as the Docker
 | `/` | [`index.html`](../index.html) (landing / home) |
 | `/library/index.html` | [`library/index.html`](../library/index.html) (scripture reader) |
 | `/library/toc.json`, `/library/chapters/…`, `/library/entities/…` | under [`library/`](../library/) |
-| `/home.html` | redirects (302) to `/index.html`; stub in repo for non-Netlify hosts |
+| `/home.html` | redirects (302) to `/index.html` (Netlify; landing at repo root) |
+| `/library/home.html` | redirects (302) to `/library/index.html` (legacy bookmark) |
 
 Reader **Home** uses `SITE.homeUrl` → `../index.html` when the pathname starts with `/library/` (same as VPS).
 

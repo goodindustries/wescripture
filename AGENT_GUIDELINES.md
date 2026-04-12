@@ -286,7 +286,7 @@ For pipeline changes: run with `--dry-run` first, inspect output, then run live.
 
 ### UI feature tests (Puppeteer)
 
-**Policy:** New or materially changed UI in `library/` (HTML/JS in `library/index.html`, chapter templates, `library/home.html`, etc.) should ship with a **dedicated** root-level script: **`test-<feature-slug>.js`**, using the same stack as [`test-library-buttons.js`](test-library-buttons.js) / [`test-title-inline-nav.js`](test-title-inline-nav.js) (Puppeteer + local HTTP server).
+**Policy:** New or materially changed UI in `library/` (HTML/JS in `library/index.html`, chapter templates, etc.) should ship with a **dedicated** root-level script: **`test-<feature-slug>.js`**, using the same stack as [`test-library-buttons.js`](test-library-buttons.js) / [`test-title-inline-nav.js`](test-title-inline-nav.js) (Puppeteer + local HTTP server).
 
 **Naming:** Mirror the feature (`test-title-inline-nav.js`, `test-home-iframe-inline-nav.js`, …).
 
