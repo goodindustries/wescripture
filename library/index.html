@@ -36,11 +36,6 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 }
 #topbar .logo { font-weight: 600; font-size: 14px; letter-spacing: -0.04em;
     color: var(--accent); text-decoration: none; }
-a.home-nav-reader {
-    font-size: 12px; font-weight: 600; color: var(--accent); text-decoration: none;
-    padding: 6px 8px; border-radius: 8px; white-space: nowrap;
-}
-a.home-nav-reader:hover { background: rgba(0,0,0,0.06); color: var(--text); }
 #back-btn { background: none; border: none; cursor: pointer; padding: 6px; border-radius: 6px;
     color: var(--muted); display: none; align-items: center; flex-shrink: 0; }
 #back-btn.show { display: flex; }
@@ -130,6 +125,25 @@ a.home-nav-reader:hover { background: rgba(0,0,0,0.06); color: var(--text); }
 .toc-tile.book-tile .toc-tile-title { font-size: 12.5px; }
 .toc-tile.chapter-tile .toc-tile-title { font-size: 14px; }
 .toc-tile.wide { grid-column: 1 / -1; }
+.toc-tile.toc-tile--cover {
+    padding: 0;
+    min-height: 0;
+    aspect-ratio: 177 / 284;
+    border-radius: 10px;
+    overflow: hidden;
+    align-items: stretch;
+}
+.toc-tile.toc-tile--cover:hover { box-shadow: 0 10px 28px rgba(0,0,0,0.18); }
+.toc-tile-cover-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+.toc-tile.toc-tile--cover.active {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--accent);
+}
 .toc-note {
     grid-column: 1 / -1;
     border: 1px solid rgba(156,122,77,0.14);
@@ -951,7 +965,6 @@ a.home-nav-reader:hover { background: rgba(0,0,0,0.06); color: var(--text); }
 <div id="splash"><div class="spin"></div><p>Loading…</p></div>
 
 <div id="topbar">
-    <a id="home-nav-btn" class="home-nav-reader" href="#" title="WeScripture home">Home</a>
     <button id="back-btn" onclick="quickBack()" title="Go back">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="10 3 5 8 10 13"></polyline>
@@ -1090,14 +1103,6 @@ function safeGtag() {
 (function() {
     var el = document.getElementById('site-home');
     if (el) { el.textContent = SITE.name; el.href = SITE.homeUrl; }
-    var hn = document.getElementById('home-nav-btn');
-    if (hn) {
-        hn.href = SITE.homeUrl;
-        hn.addEventListener('click', function(e) {
-            e.preventDefault();
-            window.location.href = SITE.homeUrl;
-        });
-    }
 })();
 
 // ── State ────────────────────────────────────────────────────────────────
@@ -1658,9 +1663,11 @@ function renderTocView() {
         subtitle.textContent = 'The Holy Scriptures';
         back.classList.add('show');
         tocTree.volumes.forEach(function(volume) {
+            var cover = tocVolumeCoverUrl(volume.label);
             html += renderTocTile({
                 label: volume.label,
-                attrs: `data-action="volume" data-volume="${escapeAttr(volume.label)}"`
+                cover: cover,
+                attrs: 'data-action="volume" data-volume="' + escapeAttr(volume.label) + '"'
             });
         });
     } else if (tocPath.level === 'source-root') {
@@ -1866,11 +1873,30 @@ function hydrateTitlePage() {
     renderTitlePageInlineNav();
 }
 
+function tocVolumeCoverUrl(volumeLabel) {
+    var base = './assets/corpus/volume-covers/';
+    var map = {
+        'Old Testament': base + 'old-testament.png',
+        'New Testament': base + 'new-testament.svg',
+        'Book of Mormon': base + 'book-of-mormon.svg',
+        'Doctrine and Covenants': base + 'doctrine-and-covenants.svg',
+        'Pearl of Great Price': base + 'pearl-of-great-price.svg'
+    };
+    return map[volumeLabel] || '';
+}
+
 function renderTocTile(opts) {
-    return `<button class="toc-tile${opts.chapter ? ' chapter-tile' : ''}${opts.book ? ' book-tile' : ''}${opts.wide ? ' wide' : ''}${opts.active ? ' active' : ''}" ${opts.attrs || ''}>`
-        + `<span class="toc-tile-title">${opts.label}</span>`
-        + (opts.meta ? `<span class="toc-tile-meta">${opts.meta}</span>` : '')
-        + `</button>`;
+    var cls = 'toc-tile' + (opts.chapter ? ' chapter-tile' : '') + (opts.book ? ' book-tile' : '') + (opts.wide ? ' wide' : '') + (opts.active ? ' active' : '');
+    if (opts.cover) cls += ' toc-tile--cover';
+    if (opts.cover) {
+        return '<button type="button" class="' + cls + '" ' + (opts.attrs || '') + ' aria-label="' + escapeHtml(opts.label) + '">'
+            + '<img class="toc-tile-cover-img" src="' + escapeAttr(opts.cover) + '" alt="" width="177" height="284" loading="lazy" decoding="async"/>'
+            + '</button>';
+    }
+    return '<button type="button" class="' + cls + '" ' + (opts.attrs || '') + '>'
+        + '<span class="toc-tile-title">' + opts.label + '</span>'
+        + (opts.meta ? '<span class="toc-tile-meta">' + opts.meta + '</span>' : '')
+        + '</button>';
 }
 
 function renderTitleInlineTile(opts) {

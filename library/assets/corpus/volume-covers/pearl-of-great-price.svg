@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="177" height="284" viewBox="0 0 177 284">
+  <rect width="177" height="284" fill="#0a0a0a"/>
+  <line x1="24" y1="72" x2="153" y2="72" stroke="#c5a059" stroke-width="1"/>
+  <text x="88.5" y="96" fill="#c5a059" font-family="Georgia,serif" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="0.06em">PEARL OF GREAT</text>
+  <text x="88.5" y="116" fill="#c5a059" font-family="Georgia,serif" font-size="14" font-weight="700" text-anchor="middle" letter-spacing="0.08em">PRICE</text>
+  <line x1="24" y1="128" x2="153" y2="128" stroke="#c5a059" stroke-width="1"/>
+  <text x="88.5" y="248" fill="#c5a059" font-family="Georgia,serif" font-size="7" text-anchor="middle">THE CHURCH OF</text>
+  <text x="88.5" y="262" fill="#c5a059" font-family="Georgia,serif" font-size="11" font-weight="700" text-anchor="middle">JESUS CHRIST</text>
+  <text x="88.5" y="274" fill="#c5a059" font-family="Georgia,serif" font-size="6.5" text-anchor="middle">OF LATTER-DAY SAINTS</text>
+</svg>
