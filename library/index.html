@@ -48,12 +48,6 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 .bc-crumb:hover { color: var(--text); background: rgba(0,0,0,0.05); }
 .bc-crumb.bc-last { color: var(--text); font-weight: 500; cursor: default; }
 .bc-crumb.bc-last:hover { background: none; }
-a.bc-crumb {
-    color: var(--muted);
-    text-decoration: none;
-    cursor: pointer;
-}
-a.bc-crumb:hover { color: var(--text); background: rgba(0,0,0,0.05); }
 .bc-sep { font-size: 11px; color: var(--divider); flex-shrink: 0; user-select: none; }
 #location-label { display: none; }
 /* ── Search button ── */
@@ -3905,13 +3899,24 @@ var mutObs = new MutationObserver(mutations => {
 });
 mutObs.observe(document.getElementById('content'), { childList: true });
 
+function breadcrumbGoReaderHome() {
+    closeTocPanel();
+    closeChannel();
+    jumpTo('title_page', null, {});
+}
+
 function updateLocationLabel(id) {
     var crumbsEl = document.getElementById('breadcrumbs');
     var backBtn  = document.getElementById('back-btn');
     if (backBtn) backBtn.classList.toggle('show', visitStack.length > 0);
 
+    if (id === 'title_page') {
+        crumbsEl.innerHTML = '<span class="bc-crumb bc-last">' + escapeHtml('Home') + '</span>';
+        return;
+    }
+
     var homeLead =
-        '<a href="' + escapeAttr(SITE.homeUrl) + '" class="bc-crumb">' + escapeHtml('Home') + '</a>'
+        '<span class="bc-crumb" role="link" tabindex="0" onclick="breadcrumbGoReaderHome()">' + escapeHtml('Home') + '</span>'
         + '<span class="bc-sep">›</span>';
 
     if (sourceMeta[id]) {
