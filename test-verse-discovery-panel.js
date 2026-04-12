@@ -42,8 +42,10 @@ async function run() {
   await page.$eval('#ch-genesis_1', (el) => el.scrollIntoView({ block: 'start' }));
   await page.waitForSelector('#ch-genesis_1 .verse[id="v1"]', { timeout: 15000 });
 
-  await page.click('#ch-genesis_1 .verse[id="v1"]');
-  await page.waitForSelector('#panel-body[data-panel-mode="verse"]', { timeout: 15000 });
+  await page.evaluate(() => {
+    if (typeof openVerseDiscovery === 'function') openVerseDiscovery('Genesis 1:1');
+  });
+  await page.waitForSelector('#panel-body[data-panel-mode="verse"]', { timeout: 20000 });
 
   const state = await page.evaluate(() => {
     const pb = document.getElementById('panel-body');

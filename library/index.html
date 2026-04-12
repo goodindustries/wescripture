@@ -1858,6 +1858,8 @@ function tocVolumeCoverUrl(volumeLabel) {
         'Old Testament': base + 'church_ot.jpg',
         'New Testament': base + 'church_nt.jpg',
         'Book of Mormon': base + 'church_bom.jpg',
+        // toc.json uses an ampersand for the volume label; keep "and" for callers that use the long form.
+        'Doctrine & Covenants': base + 'church_dc.jpg',
         'Doctrine and Covenants': base + 'church_dc.jpg',
         'Pearl of Great Price': base + 'church_pgp.jpg'
     };

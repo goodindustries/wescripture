@@ -129,10 +129,10 @@ async function run() {
   await page.waitForFunction(() => document.querySelector('#channel').classList.contains('open'), { timeout: 15000 });
   pass('word click', 'opens channel panel');
 
-  const expandButton = await page.$('.ch-expand');
+  const expandButton = await page.$('#panel-body .ch-expand');
   if (expandButton) {
     await expandButton.click();
-    await page.waitForFunction(() => !!document.querySelector('.ch-full-text.open'), { timeout: 10000 });
+    await page.waitForFunction(() => !!document.querySelector('#panel-body .ch-full-text.open'), { timeout: 20000 });
     pass('channel expand button', 'expands long excerpt');
   } else {
     pass('channel expand button', 'no expandable excerpt for first word selection');

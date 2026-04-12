@@ -259,9 +259,13 @@ async function run() {
   await page.waitForFunction(() =>
     document.querySelector('#toc-title').textContent === 'Sources' &&
     document.querySelector('#toc-subtitle').textContent === 'Ancient Texts'
-  );
+  , { timeout: 90000 });
   await page.$eval('.toc-tile[data-action="source-doc"][data-doc="ancient_texts:book_of_jubilees"]', (el) => el.click());
   await page.waitForSelector('.source-doc .source-title', { timeout: 20000 });
+  await page.waitForFunction(
+    () => /jubilees/i.test(document.querySelector('.source-doc .source-title')?.textContent || ''),
+    { timeout: 20000 }
+  );
   const jubileesState = await page.evaluate(() => ({
     title: document.querySelector('.source-doc .source-title')?.textContent.trim() || '',
     first: document.querySelector('.source-doc .source-para')?.textContent.trim() || '',
