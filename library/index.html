@@ -48,6 +48,12 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 .bc-crumb:hover { color: var(--text); background: rgba(0,0,0,0.05); }
 .bc-crumb.bc-last { color: var(--text); font-weight: 500; cursor: default; }
 .bc-crumb.bc-last:hover { background: none; }
+a.bc-crumb {
+    color: var(--muted);
+    text-decoration: none;
+    cursor: pointer;
+}
+a.bc-crumb:hover { color: var(--text); background: rgba(0,0,0,0.05); }
 .bc-sep { font-size: 11px; color: var(--divider); flex-shrink: 0; user-select: none; }
 #location-label { display: none; }
 /* ── Search button ── */
