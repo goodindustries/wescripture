@@ -4,6 +4,26 @@ function assert(condition, message) {
   if (!condition) throw new Error(message);
 }
 
+/** Leave source reader / year group / collection until TOC shows the Sources shelf. */
+async function tocBackToSourcesShelf(page) {
+  for (var step = 0; step < 10; step++) {
+    const atShelf = await page.evaluate(() => {
+      var t = document.querySelector('#toc-title');
+      var s = document.querySelector('#toc-subtitle');
+      return t && t.textContent.trim() === 'Sources' && s && s.textContent.trim() === 'Other Church Writings';
+    });
+    if (atShelf) return;
+    const canBack = await page.evaluate(() => {
+      var b = document.querySelector('#toc-back');
+      return b && b.classList.contains('show');
+    });
+    if (!canBack) throw new Error('toc-back not visible before Sources shelf');
+    await page.$eval('#toc-back', (el) => el.click());
+    await page.waitForSelector('#toc-grid .toc-tile', { timeout: 10000 });
+  }
+  throw new Error('Could not reach Sources shelf (Other Church Writings)');
+}
+
 async function run() {
   const browser = await launchBrowser();
 
@@ -18,19 +38,41 @@ async function run() {
   await page.waitForSelector('#toc:not(.hidden)', { timeout: 10000 });
   await page.waitForSelector('#toc-grid .toc-tile', { timeout: 10000 });
 
-  const rootTiles = await page.$$eval('#toc-grid .toc-tile .toc-tile-title', (els) =>
+  let sourceTiles = await page.$$eval('#toc-grid .toc-tile .toc-tile-title', (els) =>
     els.map((el) => el.textContent.trim())
   );
-  assert(rootTiles.includes('Journal of Discourses'), 'Journal of Discourses missing from TOC root');
-  assert(rootTiles.includes('History of the Church'), 'History of the Church missing from TOC root');
-  assert(rootTiles.includes('General Conference'), 'General Conference missing from TOC root');
-  assert(rootTiles.includes('Times and Seasons'), 'Times and Seasons missing from TOC root');
-  assert(rootTiles.includes('Millennial Star'), 'Millennial Star missing from TOC root');
+  if (!sourceTiles.includes('General Conference')) {
+    await page.$eval('.toc-tile[data-action="source-root"]', (el) => el.click());
+    await page.waitForFunction(() =>
+      document.querySelector('#toc-title')?.textContent === 'Sources' &&
+      document.querySelector('#toc-subtitle')?.textContent === 'Other Church Writings'
+    , { timeout: 10000 });
+    sourceTiles = await page.$$eval('#toc-grid .toc-tile .toc-tile-title', (els) =>
+      els.map((el) => el.textContent.trim())
+    );
+  }
+  assert(sourceTiles.includes('History of the Church'), 'History of the Church missing from Sources shelf');
+  assert(sourceTiles.includes('General Conference'), 'General Conference missing from Sources shelf');
+  ['Journal of Discourses', 'Times and Seasons', 'Millennial Star'].forEach(function(label) {
+    if (!sourceTiles.includes(label)) console.warn('Sources shelf: "' + label + '" not visible (scroll TOC if needed).');
+  });
 
   await page.$eval('.toc-tile[data-action="source-collection"][data-collection="general_conference"]', (el) => el.click());
   await page.waitForFunction(() =>
     document.querySelector('#toc-title').textContent === 'Sources' &&
     document.querySelector('#toc-subtitle').textContent === 'General Conference'
+  );
+  await page.waitForSelector(
+    '.toc-tile[data-action="source-group"][data-collection="general_conference"][data-group="general_conference:year_2007"]',
+    { timeout: 20000 }
+  );
+  await page.$eval(
+    '.toc-tile[data-action="source-group"][data-collection="general_conference"][data-group="general_conference:year_2007"]',
+    (el) => el.click()
+  );
+  await page.waitForFunction(() =>
+    document.querySelector('#toc-title').textContent === 'General Conference' &&
+    document.querySelector('#toc-subtitle').textContent.trim() === '2007'
   );
   await page.$eval('.toc-tile[data-action="source-doc"][data-doc="general_conference:general_conference_2007_10_good_better_best"]', (el) => el.click());
   await page.waitForSelector('.source-doc .source-title', { timeout: 20000 });
@@ -51,27 +93,23 @@ async function run() {
       || document.querySelector('.source-doc span.w');
     target?.dispatchEvent(new MouseEvent('click', { bubbles: true }));
   });
-  await page.waitForFunction(() => !document.querySelector('#channel')?.classList.contains('collapsed'), { timeout: 20000 });
+  await page.waitForFunction(() => document.querySelector('#channel')?.classList.contains('open'), { timeout: 20000 });
   await page.waitForFunction(() => {
-    const cards = document.querySelectorAll('#channel .ch-morsel');
+    const cards = document.querySelectorAll('#panel-body .ch-morsel');
     return cards.length > 0;
   }, { timeout: 20000 });
   const gcChannelState = await page.evaluate(() => ({
-    resultCount: document.querySelectorAll('#channel .ch-morsel').length,
-    firstText: document.querySelector('#channel .ch-morsel')?.innerText?.trim() || '',
-    firstOpenLabel: document.querySelector('#channel .ch-open-context')?.textContent?.trim() || '',
+    resultCount: document.querySelectorAll('#panel-body .ch-morsel').length,
+    firstText: document.querySelector('#panel-body .ch-morsel')?.innerText?.trim() || '',
+    firstOpenLabel: document.querySelector('#panel-body .ch-open-context')?.textContent?.trim() || '',
   }));
   assert(gcChannelState.resultCount > 0, 'General Conference word click did not open any semantic results');
-  assert(gcChannelState.firstOpenLabel === 'Open in Context', 'channel morsels did not render the Open in Context action');
-  await page.$eval('#channel .ch-open-context', (el) => el.click());
+  assert(gcChannelState.firstOpenLabel === 'Read Source →', 'channel morsels did not render the Read Source action');
+  await page.$eval('#panel-body .ch-open-context', (el) => el.click());
   await page.waitForFunction(() =>
     document.querySelector('.reader-card .source-title, .source-doc .source-title, #chapter-title')?.textContent?.trim().length > 0
   , { timeout: 20000 });
-  await page.$eval('#toc-back', (el) => el.click());
-  await page.waitForFunction(() =>
-    document.querySelector('#toc-title').textContent === 'Sources' &&
-    document.querySelector('#toc-subtitle').textContent.trim() === ''
-  );
+  await tocBackToSourcesShelf(page);
 
   await page.$eval('.toc-tile[data-action="source-collection"][data-collection="history_of_church"]', (el) => el.click());
   await page.waitForFunction(() =>
@@ -88,11 +126,7 @@ async function run() {
   assert(hocState.title === 'Volume 1', 'History of the Church title did not load');
   assert(hocState.subtitle === 'History of the Church', 'History of the Church subtitle did not load');
   assert(hocState.location === 'History of the Church · Volume 1', 'History of the Church location label went stale after source navigation');
-  await page.$eval('#toc-back', (el) => el.click());
-  await page.waitForFunction(() =>
-    document.querySelector('#toc-title').textContent === 'Sources' &&
-    document.querySelector('#toc-subtitle').textContent.trim() === ''
-  );
+  await tocBackToSourcesShelf(page);
 
   await page.waitForSelector('.toc-tile[data-action="source-collection"][data-collection="times_and_seasons"]', { timeout: 10000 });
   await page.evaluate(() => document.querySelector('.toc-tile[data-action="source-collection"][data-collection="times_and_seasons"]')?.click());
@@ -113,11 +147,7 @@ async function run() {
   assert(timesState.docCount >= 20, 'Times and Seasons did not split into issue-like source docs');
   assert(/^[A-Za-z]+\s+\d{4}$/.test(timesState.firstLabel), 'Times and Seasons issue titles did not render as clean date labels');
   assert(/Vol\.\s*\d+/.test(timesState.firstMeta) && /No\.\s*\d+/.test(timesState.firstMeta), 'Times and Seasons issue metadata did not render volume/number details');
-  await page.$eval('#toc-back', (el) => el.click());
-  await page.waitForFunction(() =>
-    document.querySelector('#toc-title').textContent === 'Sources' &&
-    document.querySelector('#toc-subtitle').textContent.trim() === ''
-  );
+  await tocBackToSourcesShelf(page);
 
   await page.waitForSelector('.toc-tile[data-action="source-collection"][data-collection="millennial_star"]', { timeout: 10000 });
   await page.evaluate(() => document.querySelector('.toc-tile[data-action="source-collection"][data-collection="millennial_star"]')?.click());
@@ -138,11 +168,7 @@ async function run() {
   assert(starState.docCount >= 100, 'Millennial Star did not split into issue-like source docs');
   assert(/^[A-Za-z]+\s+\d{4}$/.test(starState.firstLabel), 'Millennial Star issue titles did not render as clean date labels');
   assert(/Vol\.\s*\d+/.test(starState.firstMeta) && /No\.\s*\d+/.test(starState.firstMeta), 'Millennial Star issue metadata did not render volume/number details');
-  await page.$eval('#toc-back', (el) => el.click());
-  await page.waitForFunction(() =>
-    document.querySelector('#toc-title').textContent === 'Sources' &&
-    document.querySelector('#toc-subtitle').textContent.trim() === ''
-  );
+  await tocBackToSourcesShelf(page);
 
   await page.$eval('.toc-tile[data-action="source-collection"][data-collection="ancient_texts"]', (el) => el.click());
   await page.waitForFunction(() =>
@@ -159,11 +185,7 @@ async function run() {
   assert(enumaState.title === 'Enuma Elish', 'Enuma Elish source title did not load');
   assert(/When the heavens above were yet unnamed/i.test(enumaState.first), 'Enuma Elish did not open on the core tablet translation');
   assert(!/[詩經氓黍離溱洧園有桃伐檀七月]/.test(enumaState.body), 'Enuma Elish still contains the old Chinese source text');
-  await page.$eval('#toc-back', (el) => el.click());
-  await page.waitForFunction(() =>
-    document.querySelector('#toc-title').textContent === 'Sources' &&
-    document.querySelector('#toc-subtitle').textContent.trim() === ''
-  );
+  await tocBackToSourcesShelf(page);
 
   await page.$eval('.toc-tile[data-action="source-collection"][data-collection="ancient_texts"]', (el) => el.click());
   await page.waitForFunction(() =>
@@ -180,11 +202,7 @@ async function run() {
   assert(gilgameshState.title === 'Gilgamesh', 'Gilgamesh source title did not load');
   assert(/Now the harlot urges Enkidu/i.test(gilgameshState.first), 'Gilgamesh still opens on Gutenberg boilerplate instead of the first narrative section');
   assert(!/Project Gutenberg eBook of The Epic of Gilgamish/i.test(gilgameshState.body), 'Gilgamesh still contains the old Gutenberg boilerplate opening');
-  await page.$eval('#toc-back', (el) => el.click());
-  await page.waitForFunction(() =>
-    document.querySelector('#toc-title').textContent === 'Sources' &&
-    document.querySelector('#toc-subtitle').textContent.trim() === ''
-  );
+  await tocBackToSourcesShelf(page);
 
   await page.$eval('.toc-tile[data-action="source-collection"][data-collection="ancient_texts"]', (el) => el.click());
   await page.waitForFunction(() =>
@@ -199,11 +217,7 @@ async function run() {
   }));
   assert(enochState.title === 'Book Of Enoch', 'Book of Enoch source title did not load');
   assert(/The words of the blessing of Enoch/i.test(enochState.first), 'Book of Enoch still opens on front matter instead of the text');
-  await page.$eval('#toc-back', (el) => el.click());
-  await page.waitForFunction(() =>
-    document.querySelector('#toc-title').textContent === 'Sources' &&
-    document.querySelector('#toc-subtitle').textContent.trim() === ''
-  );
+  await tocBackToSourcesShelf(page);
 
   await page.$eval('.toc-tile[data-action="source-collection"][data-collection="ancient_texts"]', (el) => el.click());
   await page.waitForFunction(() =>
@@ -218,11 +232,7 @@ async function run() {
   }));
   assert(josephusState.title === 'Josephus Antiquities', 'Josephus source title did not load');
   assert(/^BOOK I\./i.test(josephusState.first), 'Josephus still opens on contents/front matter instead of Book I');
-  await page.$eval('#toc-back', (el) => el.click());
-  await page.waitForFunction(() =>
-    document.querySelector('#toc-title').textContent === 'Sources' &&
-    document.querySelector('#toc-subtitle').textContent.trim() === ''
-  );
+  await tocBackToSourcesShelf(page);
 
   await page.$eval('.toc-tile[data-action="source-collection"][data-collection="ancient_texts"]', (el) => el.click());
   await page.waitForFunction(() =>
@@ -241,11 +251,7 @@ async function run() {
   assert(!/Louisa Pallant/i.test(jubileesState.body), 'Book of Jubilees still contains the old wrong Gutenberg source text');
   assert(!/Tables\. cd read|INTRODUCTION, NOTES, AND INDICES|Mesilla 19 b/i.test(jubileesState.body), 'Book of Jubilees still contains interleaved OCR notes/commentary');
   assert(!/INDEX II|Library Bureau Cat\\. No\\.|BS 1830 \\.J7 A3 1902/i.test(jubileesState.body), 'Book of Jubilees still contains trailing index/library apparatus');
-  await page.$eval('#toc-back', (el) => el.click());
-  await page.waitForFunction(() =>
-    document.querySelector('#toc-title').textContent === 'Sources' &&
-    document.querySelector('#toc-subtitle').textContent.trim() === ''
-  );
+  await tocBackToSourcesShelf(page);
 
   await page.$eval('.toc-tile[data-action="source-collection"][data-collection="ancient_texts"]', (el) => el.click());
   await page.waitForFunction(() =>
@@ -264,11 +270,7 @@ async function run() {
   assert(!/U\\.S\\. Copyright Renewals/i.test(patriarchsState.body), 'Testament of the Twelve Patriarchs still contains the old wrong Gutenberg source text');
   assert(!/THE following twelve books are biographies written between 107 and 137 B\\.C\\.|Rutherford H\\. Platt/i.test(patriarchsState.body), 'Testament of the Twelve Patriarchs still contains editorial preface material instead of clean primary text');
   assert(!/TRANSLATIONS OF EARLY DOCUMENTS|SOCIETY FOR PROMOTING CHRISTIAN KNOWLEDGE|ALL BOOKSELLERS/i.test(patriarchsState.body), 'Testament of the Twelve Patriarchs still contains trailing publisher/series apparatus');
-  await page.$eval('#toc-back', (el) => el.click());
-  await page.waitForFunction(() =>
-    document.querySelector('#toc-title').textContent === 'Sources' &&
-    document.querySelector('#toc-subtitle').textContent.trim() === ''
-  );
+  await tocBackToSourcesShelf(page);
 
   await page.$eval('.toc-tile[data-action="source-collection"][data-collection="journal_of_discourses"]', (el) => el.click());
   await page.waitForFunction(() =>
@@ -311,11 +313,7 @@ async function run() {
   await page.$eval('#ch-close', (el) => el.click());
   await page.waitForFunction(() => !document.querySelector('#channel').classList.contains('open'));
 
-  await page.$eval('#toc-back', (el) => el.click());
-  await page.waitForFunction(() =>
-    document.querySelector('#toc-title').textContent === 'Sources' &&
-    document.querySelector('#toc-subtitle').textContent.trim() === ''
-  );
+  await tocBackToSourcesShelf(page);
 
   await page.$eval('.toc-tile[data-action="source-collection"][data-collection="times_and_seasons"]', (el) => el.click());
   await page.waitForFunction(() =>
@@ -334,11 +332,7 @@ async function run() {
   assert(tsState.subtitle === 'Vol. 1 · No. 1', 'Times and Seasons metadata did not move into subtitle');
   assert(tsState.activeTile === 'July 1839', 'Times and Seasons tile title did not update');
   assert(tsState.activeMeta === 'Vol. 1 · No. 1', 'Times and Seasons tile meta did not update');
-  await page.$eval('#toc-back', (el) => el.click());
-  await page.waitForFunction(() =>
-    document.querySelector('#toc-title').textContent === 'Sources' &&
-    document.querySelector('#toc-subtitle').textContent.trim() === ''
-  );
+  await tocBackToSourcesShelf(page);
   await page.$eval('.toc-tile[data-action="source-collection"][data-collection="history_of_church"]', (el) => el.click());
   await page.waitForFunction(() =>
     document.querySelector('#toc-title').textContent === 'Sources' &&
@@ -365,11 +359,7 @@ async function run() {
   await page.$eval('#ch-close', (el) => el.click());
   await page.waitForFunction(() => !document.querySelector('#channel').classList.contains('open'));
 
-  await page.$eval('#toc-back', (el) => el.click());
-  await page.waitForFunction(() =>
-    document.querySelector('#toc-title').textContent === 'Sources' &&
-    document.querySelector('#toc-subtitle').textContent.trim() === ''
-  );
+  await tocBackToSourcesShelf(page);
   await page.$eval('.toc-tile[data-action="volume"][data-volume="New Testament"]', (el) => el.click());
   await page.$eval('.toc-tile[data-action="book"][data-book="John"]', (el) => el.click());
   await page.$eval('.toc-tile[data-action="chapter"][data-id="john_3"]', (el) => el.click());
