@@ -348,6 +348,12 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     grid-template-columns: 34px minmax(0, 1fr);
     column-gap: 14px;
     align-items: start;
+    border-radius: 8px;
+    transition: background .12s ease, box-shadow .12s ease;
+}
+.scripture div.verse:hover {
+    cursor: pointer;
+    background: rgba(156,122,77,0.05);
 }
 .scripture span.verse-num {
     display: block;
@@ -472,6 +478,9 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     background: rgba(156,122,77,0.06);
     box-shadow: inset 3px 0 0 var(--accent);
     border-radius: 8px;
+}
+.scripture div.verse.verse-focus:hover {
+    background: rgba(156,122,77,0.09);
 }
 #morsel-preview {
     max-width: var(--reader-max);
