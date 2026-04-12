@@ -137,6 +137,49 @@ _ATTRIBUTION_RE = re.compile(
 # Hebrew word study: word [transliteration meaning]
 _WORD_STUDY_RE = re.compile(r'\b([a-zA-Z\-\']{3,})\s+\[([^\]]+)\]')
 
+# Commentary split across PDF/page breaks: next para continues with these words only
+_MERGE_NEXT_START_RE = re.compile(
+    r'^(by|and|or|but|nor|does|did|is|are|was|were|which|who|whom|whose|as)\b',
+    re.I,
+)
+
+
+def _commentary_para_looks_complete(p: str) -> bool:
+    s = p.rstrip()
+    if not s:
+        return True
+    # Closing paren usually ends an attribution or parenthetical
+    if s.endswith(')'):
+        return True
+    return bool(re.search(r'[.!?…]["\'»)]*\s*$', s))
+
+
+def _should_merge_commentary_continuation(prev: str, nxt: str) -> bool:
+    p, n = prev.rstrip(), nxt.lstrip()
+    if not p or not n:
+        return False
+    if _commentary_para_looks_complete(p):
+        return False
+    if not n[0].islower():
+        return False
+    return bool(_MERGE_NEXT_START_RE.match(n))
+
+
+def _merge_wrapped_commentary_fragments(paras: list[str]) -> list[str]:
+    """Join PDF-wrapped fragments (e.g. '...by which God' + 'does work.')."""
+    if len(paras) < 2:
+        return paras
+    out: list[str] = []
+    buf = paras[0]
+    for nxt in paras[1:]:
+        if _should_merge_commentary_continuation(buf, nxt):
+            buf = buf.rstrip() + ' ' + nxt.lstrip()
+        else:
+            out.append(buf)
+            buf = nxt
+    out.append(buf)
+    return out
+
 
 def _canonical_book(raw: str) -> str:
     u = raw.strip().upper()
@@ -269,6 +312,8 @@ def _parse_verse_block(verse_num: int, block_lines: list[str],
         # Otherwise it's Donaldson commentary
         if para:
             commentary_paras.append(para)
+
+    commentary_paras = _merge_wrapped_commentary_fragments(commentary_paras)
 
     # Extract structured word studies and attributed items from commentary
     combined = ' '.join(commentary_paras)

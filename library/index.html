@@ -3071,6 +3071,39 @@ function filterDonaWordsForVerse(words, verseText) {
     });
 }
 
+/** Merge Donaldson note objects/strings split at PDF line breaks (see donaldson_parser._merge_wrapped). */
+function mergeDonaNoteFragments(notes) {
+    if (!notes || notes.length < 2) return notes || [];
+    var mergeNextRe = /^(by|and|or|but|nor|does|did|is|are|was|were|which|who|whom|whose|as)\b/i;
+    function textOf(x) { return (typeof x === 'string') ? x : (x && x.text) || ''; }
+    function looksComplete(p) {
+        var s = (p || '').replace(/\s+$/, '');
+        if (!s) return true;
+        if (s.slice(-1) === ')') return true;
+        return /[.!?…]["'»]*\s*$/.test(s);
+    }
+    var out = [];
+    var buf = notes[0];
+    var bt = textOf(buf);
+    for (var i = 1; i < notes.length; i++) {
+        var n = notes[i];
+        var nt = textOf(n);
+        var ch0 = nt.charAt(0);
+        var should = !looksComplete(bt) && nt && ch0 >= 'a' && ch0 <= 'z' && mergeNextRe.test(nt);
+        if (should) {
+            var joined = bt.replace(/\s+$/, '') + ' ' + nt.replace(/^\s+/, '');
+            buf = (typeof buf === 'object' && buf) ? Object.assign({}, buf, { text: joined }) : joined;
+            bt = joined;
+        } else {
+            out.push(buf);
+            buf = n;
+            bt = textOf(buf);
+        }
+    }
+    out.push(buf);
+    return out;
+}
+
 function finishVerseDiscoveryPanel(payload) {
     var ref = payload.ref;
     var chapterId = payload.chapterId;
@@ -3078,7 +3111,7 @@ function finishVerseDiscoveryPanel(payload) {
     var verseText = payload.verseText;
     var mergedKw = payload.mergedKw;
     var donaEntry = payload.donaEntry;
-    var donaNotes = payload.donaNotes || [];
+    var donaNotes = mergeDonaNoteFragments(payload.donaNotes || []);
     var donaQuotes = payload.donaQuotes || [];
     var entries = payload.entries;
     var entsInline = payload.entsInline;
