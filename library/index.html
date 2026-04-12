@@ -757,7 +757,10 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     margin-bottom: 4px;
     font-family: 'Inter', -apple-system, sans-serif;
 }
-.word-kw-text { font-size: 14px; line-height: 1.6; color: var(--text); }
+.word-kw-text {
+    font-size: 14px; line-height: 1.6; color: var(--text);
+    min-width: 0; overflow-wrap: anywhere; word-break: break-word;
+}
 /* Key words: max two cards; per-card definition collapse */
 .word-cards-wrap .word-more-btn { display: none !important; }
 .word-more-btn { display: block; width: 100%; text-align: left; padding: 12px 28px; font-size: 12px; font-weight: 600; color: var(--accent); background: none; border: none; border-bottom: 1px solid var(--divider); cursor: pointer; font-family: inherit; }
