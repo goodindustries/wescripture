@@ -412,11 +412,11 @@ async function run() {
     'scripture breadcrumbs did not recover after source view'
   );
 
-  await page.waitForSelector('#v1 span.w', { timeout: 20000 });
-  await page.$eval('#v1', (el) => el.scrollIntoView({ block: 'center' }));
+  await page.waitForSelector('#ch-john_3 #v1 span.w', { timeout: 20000 });
+  await page.$eval('#ch-john_3 #v1', (el) => el.scrollIntoView({ block: 'center' }));
   await new Promise(function(r) { setTimeout(r, 400); });
   await page.evaluate(() => {
-    const spans = Array.from(document.querySelectorAll('#v1 span.w'));
+    const spans = Array.from(document.querySelectorAll('#ch-john_3 #v1 span.w'));
     const target = spans.find((el) => /pharisees?/i.test(el.textContent || '')) || spans[0];
     if (target) target.dispatchEvent(new MouseEvent('click', { bubbles: true }));
   });
@@ -518,11 +518,11 @@ async function run() {
   });
   await page.waitForSelector('#ch-john_3', { timeout: 20000 });
   await page.waitForFunction(() => !document.querySelector('.source-doc'), { timeout: 20000 });
-  await page.waitForSelector('#v1 span.w', { timeout: 20000 });
-  await page.$eval('#v1', (el) => el.scrollIntoView({ block: 'center' }));
+  await page.waitForSelector('#ch-john_3 #v1 span.w', { timeout: 20000 });
+  await page.$eval('#ch-john_3 #v1', (el) => el.scrollIntoView({ block: 'center' }));
   await new Promise(function(r) { setTimeout(r, 400); });
   await page.evaluate(() => {
-    const spans = Array.from(document.querySelectorAll('#v1 span.w'));
+    const spans = Array.from(document.querySelectorAll('#ch-john_3 #v1 span.w'));
     const target = spans.find((el) => /pharisees?/i.test(el.textContent || '')) || spans[0];
     if (target) target.dispatchEvent(new MouseEvent('click', { bubbles: true }));
   });
@@ -542,10 +542,10 @@ async function run() {
   assert(rankingState.morsels.every((m) => m.src === 'Standard Works'), 'scripture-first ranking no longer pins the first scripture tranche');
 
   await page.$eval('#ch-close', (el) => el.click());
-  await page.click('#v16');
-  await page.waitForSelector('#v16 span.w', { timeout: 20000 });
+  await page.click('#ch-john_3 #v16');
+  await page.waitForSelector('#ch-john_3 #v16 span.w', { timeout: 20000 });
   await page.evaluate(() => {
-    const target = Array.from(document.querySelectorAll('#v16 span.w')).find((el) => /god/i.test(el.textContent || ''));
+    const target = Array.from(document.querySelectorAll('#ch-john_3 #v16 span.w')).find((el) => /god/i.test(el.textContent || ''));
     if (target) target.dispatchEvent(new MouseEvent('click', { bubbles: true }));
   });
   await page.waitForFunction(() => document.querySelector('#channel')?.classList.contains('open'), { timeout: 25000 });
@@ -572,9 +572,10 @@ async function run() {
   await page.waitForFunction(() => !document.querySelector('#channel')?.classList.contains('open'));
 
   await page.evaluate(() => jumpTo('genesis_2'));
-  await page.waitForSelector('#v6 .verse-text .w', { timeout: 20000 });
+  await page.waitForSelector('#ch-genesis_2', { timeout: 20000 });
+  await page.waitForSelector('#ch-genesis_2 #v6 .verse-text .w', { timeout: 20000 });
   await page.evaluate(() => {
-    const target = Array.from(document.querySelectorAll('#v6 .verse-text .w')).find((el) => /mist/i.test(el.textContent || ''));
+    const target = Array.from(document.querySelectorAll('#ch-genesis_2 #v6 .verse-text .w')).find((el) => /mist/i.test(el.textContent || ''));
     if (target) target.dispatchEvent(new MouseEvent('click', { bubbles: true }));
   });
   await page.waitForFunction(() => document.querySelector('#channel')?.classList.contains('open'), { timeout: 15000 });
@@ -588,18 +589,19 @@ async function run() {
   await page.waitForFunction(() => !document.querySelector('#channel')?.classList.contains('open'));
 
   const genesisCleanState = await page.evaluate(() => ({
-    v6: document.querySelector('#v6 .verse-text')?.innerText || '',
-    v7: document.querySelector('#v7 .verse-text')?.innerText || '',
-    v7Html: document.querySelector('#v7 .verse-text')?.innerHTML || '',
+    v6: document.querySelector('#ch-genesis_2 #v6 .verse-text')?.innerText || '',
+    v7: document.querySelector('#ch-genesis_2 #v7 .verse-text')?.innerText || '',
+    v7Html: document.querySelector('#ch-genesis_2 #v7 .verse-text')?.innerHTML || '',
   }));
   assert(/there went up a mist from the earth/i.test(genesisCleanState.v6), 'Genesis 2:6 did not restore full canonical verse text');
   assert(/breath of life; and man became a living soul/i.test(genesisCleanState.v7), 'Genesis 2:7 did not restore full canonical verse text');
   assert(!/&lt;span class=|&amp;quot;cw/i.test(genesisCleanState.v7Html), 'Genesis 2 still leaks escaped critical-word wrappers');
 
   await page.evaluate(() => jumpTo('john_3'));
-  await page.waitForSelector('#v16 .verse-text .w', { timeout: 20000 });
+  await page.waitForSelector('#ch-john_3', { timeout: 20000 });
+  await page.waitForSelector('#ch-john_3 #v16 .verse-text .w', { timeout: 20000 });
   await page.evaluate(() => {
-    const target = Array.from(document.querySelectorAll('#v16 .verse-text .w')).find((el) => /loved/i.test(el.textContent || ''));
+    const target = Array.from(document.querySelectorAll('#ch-john_3 #v16 .verse-text .w')).find((el) => /loved/i.test(el.textContent || ''));
     if (target) target.dispatchEvent(new MouseEvent('click', { bubbles: true }));
   });
   await page.waitForFunction(() => document.querySelector('#channel')?.classList.contains('open'), { timeout: 15000 });
@@ -613,31 +615,34 @@ async function run() {
   await page.waitForFunction(() => !document.querySelector('#channel')?.classList.contains('open'));
 
   await page.evaluate(() => jumpTo('john_1'));
-  await page.waitForSelector('#v1 .verse-text', { timeout: 20000 });
+  await page.waitForSelector('#ch-john_1', { timeout: 20000 });
+  await page.waitForSelector('#ch-john_1 #v1 .verse-text', { timeout: 20000 });
   const johnCleanState = await page.evaluate(() => ({
-    v1: document.querySelector('#v1 .verse-text')?.innerText || '',
-    v17: document.querySelector('#v17 .verse-text')?.innerText || '',
-    v1Html: document.querySelector('#v1 .verse-text')?.innerHTML || '',
+    v1: document.querySelector('#ch-john_1 #v1 .verse-text')?.innerText || '',
+    v17: document.querySelector('#ch-john_1 #v17 .verse-text')?.innerText || '',
+    v1Html: document.querySelector('#ch-john_1 #v1 .verse-text')?.innerHTML || '',
   }));
   assert(/In the beginning was the Word/i.test(johnCleanState.v1), 'John 1:1 did not restore full canonical verse text');
   assert(/grace and truth came by Jesus Christ/i.test(johnCleanState.v17), 'John 1:17 did not restore full canonical verse text');
   assert(!/&lt;span class=|&amp;quot;cw/i.test(johnCleanState.v1Html), 'John 1 still leaks escaped critical-word wrappers');
 
   await page.evaluate(() => jumpTo('2_thessalonians_2'));
-  await page.waitForSelector('#v1 .verse-text', { timeout: 20000 });
+  await page.waitForSelector('#ch-2_thessalonians_2', { timeout: 20000 });
+  await page.waitForSelector('#ch-2_thessalonians_2 #v1 .verse-text', { timeout: 20000 });
   const secondThessCleanState = await page.evaluate(() => ({
-    v1: document.querySelector('#v1 .verse-text')?.innerText || '',
-    v3: document.querySelector('#v3 .verse-text')?.innerText || '',
-    v3Html: document.querySelector('#v3 .verse-text')?.innerHTML || '',
+    v1: document.querySelector('#ch-2_thessalonians_2 #v1 .verse-text')?.innerText || '',
+    v3: document.querySelector('#ch-2_thessalonians_2 #v3 .verse-text')?.innerText || '',
+    v3Html: document.querySelector('#ch-2_thessalonians_2 #v3 .verse-text')?.innerHTML || '',
   }));
   assert(/Now we beseech you, brethren/i.test(secondThessCleanState.v1), '2 Thessalonians 2:1 did not restore full canonical verse text');
   assert(/that man of sin be revealed, the son of perdition/i.test(secondThessCleanState.v3), '2 Thessalonians 2:3 did not restore full canonical verse text');
   assert(!/&lt;span class=|&amp;quot;cw/i.test(secondThessCleanState.v3Html), '2 Thessalonians still leaks escaped critical-word wrappers');
 
   await page.evaluate(() => jumpTo('1_nephi_8'));
-  await page.waitForSelector('#v23 .verse-text .w', { timeout: 20000 });
+  await page.waitForSelector('#ch-1_nephi_8', { timeout: 20000 });
+  await page.waitForSelector('#ch-1_nephi_8 #v23 .verse-text .w', { timeout: 20000 });
   await page.evaluate(() => {
-    const target = Array.from(document.querySelectorAll('#v23 .verse-text .w')).find((el) => /mist/i.test(el.textContent || ''));
+    const target = Array.from(document.querySelectorAll('#ch-1_nephi_8 #v23 .verse-text .w')).find((el) => /mist/i.test(el.textContent || ''));
     if (target) target.dispatchEvent(new MouseEvent('click', { bubbles: true }));
   });
   await page.waitForFunction(() => document.querySelector('#channel')?.classList.contains('open'), { timeout: 15000 });
@@ -654,11 +659,11 @@ async function run() {
 
   await page.evaluate(() => jumpTo('doctrine_and_covenants_121'));
   await page.waitForSelector('#ch-doctrine_and_covenants_121', { timeout: 20000 });
-  await page.waitForSelector('#v41 .verse-text .w', { timeout: 20000 });
-  await page.$eval('#v41', (el) => el.scrollIntoView({ block: 'center' }));
+  await page.waitForSelector('#ch-doctrine_and_covenants_121 #v41 .verse-text .w', { timeout: 20000 });
+  await page.$eval('#ch-doctrine_and_covenants_121 #v41', (el) => el.scrollIntoView({ block: 'center' }));
   await new Promise(function(r) { setTimeout(r, 400); });
   await page.evaluate(() => {
-    const target = Array.from(document.querySelectorAll('#v41 .verse-text .w')).find((el) => /priesthood/i.test(el.textContent || ''));
+    const target = Array.from(document.querySelectorAll('#ch-doctrine_and_covenants_121 #v41 .verse-text .w')).find((el) => /priesthood/i.test(el.textContent || ''));
     if (target) target.dispatchEvent(new MouseEvent('click', { bubbles: true }));
   });
   await page.waitForFunction(() => document.querySelector('#channel')?.classList.contains('open'), { timeout: 25000 });
@@ -673,18 +678,18 @@ async function run() {
   await page.$eval('#ch-close', (el) => el.click());
   await page.waitForFunction(() => !document.querySelector('#channel')?.classList.contains('open'));
 
-  await page.$eval('#v41', (el) => el.scrollIntoView({ block: 'center' }));
+  await page.$eval('#ch-doctrine_and_covenants_121 #v41', (el) => el.scrollIntoView({ block: 'center' }));
   await new Promise(function(r) { setTimeout(r, 400); });
   await page.evaluate(() => {
-    const target = Array.from(document.querySelectorAll('#v41 .verse-text .w')).find((el) => /^love$/i.test((el.textContent || '').trim()));
+    const target = Array.from(document.querySelectorAll('#ch-doctrine_and_covenants_121 #v41 .verse-text .w')).find((el) => /^love$/i.test((el.textContent || '').trim()));
     if (target) target.dispatchEvent(new MouseEvent('click', { bubbles: true }));
   });
   await page.waitForFunction(() => document.querySelector('#channel')?.classList.contains('open'), { timeout: 25000 });
   const dcLoveCleanState = await page.evaluate(() => ({
     word: document.querySelector('#ch-word')?.textContent.trim(),
     sources: Array.from(document.querySelectorAll('#panel-body .ch-morsel .ch-src-name')).slice(0, 3).map((el) => el.textContent.trim()),
-    verseText: document.querySelector('#v41 .verse-text')?.innerText || '',
-    verseHtml: document.querySelector('#v41 .verse-text')?.innerHTML || '',
+    verseText: document.querySelector('#ch-doctrine_and_covenants_121 #v41 .verse-text')?.innerText || '',
+    verseHtml: document.querySelector('#ch-doctrine_and_covenants_121 #v41 .verse-text')?.innerHTML || '',
   }));
   assert(/love/i.test(dcLoveCleanState.word), 'D&C clean re-annotation did not make love clickable');
   assert(dcLoveCleanState.sources[0] === 'Standard Works', 'Doctrine and Covenants love did not rank standard works first after re-annotation');
