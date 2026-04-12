@@ -1007,7 +1007,7 @@ a.home-nav-reader:hover { background: rgba(0,0,0,0.06); color: var(--text); }
 </div>
 
 <div id="shell">
-    <div id="toc" class="hidden">
+    <div id="toc">
         <div id="toc-head">
             <button id="toc-back" onclick="tocBack()" aria-label="Back">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1143,7 +1143,7 @@ var loadedNotes = new Set();    // ids whose notes have been fetched
 var currentChapter = null;
 var currentSourceDoc = null;
 var sourceMode = false;
-var tocOpen = false;
+var tocOpen = true;
 var nextToLoad = 0;             // index into chapterOrder for infinite scroll
 var loading = false;
 var visitStack = [];
@@ -1529,33 +1529,32 @@ Promise.all([
         setTocPathForChapter(startId);
         loadChapter(startId, true).then(() => {
             document.getElementById('splash').classList.add('gone');
-            // Home is a routing surface; keep TOC closed by default.
-            tocOpen = false;
-            document.getElementById('toc').classList.add('hidden');
+            // Default: sidebar table of contents open (primary navigation).
+            tocOpen = true;
+            document.getElementById('toc').classList.remove('hidden');
 
             // Handle URL routing params from home (and other deep links).
             (function handleUrlParams() {
                 var params = new URLSearchParams(window.location.search);
                 var didConsume = false;
 
-                // 1) Open shelf views (kept for collection routing)
+                // 1) Deep-link shelf views → sidebar TOC (not duplicate inline browser)
                 var openParam = params.get('open');
                 if (openParam) {
                     didConsume = true;
+                    titlePageInlinePath = { level: 'idle', volume: null, book: null, sourceCollection: null, sourceGroup: null };
                     if (openParam === 'scriptures') {
-                        titlePageInlinePath = { level: 'scripture-root', volume: null, book: null, sourceCollection: null, sourceGroup: null };
+                        tocPath = { level: 'scripture-root', volume: null, book: null, sourceCollection: null };
                     } else {
                         var collOpen = findSourceCollection(openParam);
                         if (collOpen) {
-                            titlePageInlinePath = { level: 'source-collection', volume: null, book: null, sourceCollection: collOpen, sourceGroup: null };
+                            tocPath = { level: 'source-collection', volume: null, book: null, sourceCollection: collOpen, sourceGroup: null };
                         } else {
-                            titlePageInlinePath = { level: 'source-root', volume: null, book: null, sourceCollection: null, sourceGroup: null };
+                            tocPath = { level: 'source-root', volume: null, book: null, sourceCollection: null };
                         }
                     }
+                    renderTocView();
                     renderTitlePageInlineNav();
-                    var tpNav = document.getElementById('ch-title_page');
-                    var navEl = tpNav && tpNav.querySelector('#title-inline-nav');
-                    if (navEl) navEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 }
 
                 // 2) Direct scripture jump by reference text, chapterId, or verse ref.

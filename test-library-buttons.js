@@ -28,7 +28,7 @@ async function run() {
   const pass = (name, details = '') => results.push({ name, ok: true, details });
 
   await page.waitForSelector('#splash.gone', { timeout: 60000 });
-  // Default UX: sidebar TOC starts closed; open it for sidebar tile tests.
+  // Ensure sidebar TOC is open for tile tests (default is open; toggle if closed).
   await page.evaluate(() => {
     const toc = document.getElementById('toc');
     if (toc && toc.classList.contains('hidden') && typeof toggleToc === 'function') toggleToc();

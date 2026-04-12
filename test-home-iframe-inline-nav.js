@@ -1,5 +1,5 @@
 /**
- * Home dashboard: shelf tile navigates to reader with ?open=…; title page inline nav appears (no iframe).
+ * Home dashboard: shelf tile navigates to reader with ?open=…; sidebar TOC shows scriptures (no iframe).
  *
  * Serve repo root: python3 -m http.server 4173
  *   node test-home-iframe-inline-nav.js
@@ -46,20 +46,14 @@ async function run() {
 
   await page.waitForSelector('#splash.gone', { timeout: 90000 });
   await page.waitForSelector('#ch-title_page', { timeout: 30000 });
-  await page.waitForFunction(
-    () =>
-      document.querySelectorAll('#ch-title_page #title-inline-nav-grid .title-inline-tile[data-action="volume"]')
-        .length > 0,
-    { timeout: 25000 }
-  );
-
-  const tocHidden = await page.evaluate(() => {
+  const tocVisible = await page.evaluate(() => {
     const t = document.getElementById('toc');
-    return t && t.classList.contains('hidden');
+    return t && !t.classList.contains('hidden');
   });
-  assert(tocHidden, 'expected #toc hidden after opening scriptures from home');
+  assert(tocVisible, 'expected #toc visible after opening scriptures from home');
+  await page.waitForSelector('#toc-grid .toc-tile[data-action="volume"]', { timeout: 25000 });
 
-  console.log(JSON.stringify({ ok: true, url, test: 'home-shelf-to-reader-inline-nav' }, null, 2));
+  console.log(JSON.stringify({ ok: true, url, test: 'home-shelf-to-reader-toc' }, null, 2));
   await browser.close();
 }
 

@@ -1,16 +1,10 @@
 /**
- * Title-page inline browse panel (scriptures + sources smoke).
+ * Sidebar TOC on index (primary navigation) + ?open= deep-link smoke.
  *
- * Serve the repo root so /library/index.html is available:
- *   cd /path/to/wescripture && python3 -m http.server 4173
- *
- * Then:
+ * Serve repo root: python3 -m http.server 4173
  *   node test-title-inline-nav.js
  *
- * Override URL: TEST_BASE_URL=http://127.0.0.1:4173/index.html node test-title-inline-nav.js
- * (if you serve only `library/` as docroot, use that origin + /index.html)
- *
- * Chrome: set PUPPETEER_EXECUTABLE_PATH if not using bundled Chromium.
+ * Override: TEST_BASE_URL=http://127.0.0.1:4173/index.html node test-title-inline-nav.js
  */
 
 const fs = require('fs');
@@ -45,69 +39,60 @@ async function run() {
   await page.goto(baseUrl, { waitUntil: 'networkidle0', timeout: 90000 });
   await page.waitForSelector('#splash.gone', { timeout: 90000 });
 
-  const tocHidden = await page.evaluate(() => {
+  const tocVisible = await page.evaluate(() => {
     const t = document.getElementById('toc');
-    return t && t.classList.contains('hidden');
+    return t && !t.classList.contains('hidden');
   });
-  assert(tocHidden, 'expected #toc hidden on load (sidebar not auto-open)');
+  assert(tocVisible, 'expected #toc visible on load (sidebar TOC default)');
 
   await page.waitForSelector('#ch-title_page', { timeout: 30000 });
+  await page.waitForSelector('#toc-grid .toc-tile[data-action="scripture-root"]', { timeout: 15000 });
 
-  await page.click('#ch-title_page [data-open-shelf="scriptures"]');
+  await page.click('#toc-grid .toc-tile[data-action="scripture-root"]');
+  await page.waitForFunction(() => document.querySelector('#toc-title').textContent === 'Scriptures', {
+    timeout: 15000,
+  });
+
+  await page.click('#toc-grid .toc-tile[data-action="volume"][data-volume="Old Testament"]');
+  await page.waitForFunction(() => document.querySelector('#toc-title').textContent === 'Books', { timeout: 15000 });
+
+  await page.click('#toc-grid .toc-tile[data-action="book"][data-book="Genesis"]');
   await page.waitForFunction(
     () =>
-      document.querySelectorAll('#ch-title_page #title-inline-nav-grid .title-inline-tile[data-action="volume"]')
-        .length > 0,
-    { timeout: 20000 }
-  );
-
-  await page.click(
-    '#ch-title_page #title-inline-nav-grid .title-inline-tile[data-action="volume"][data-volume="Old Testament"]'
-  );
-  await page.waitForFunction(
-    () =>
-      document.querySelectorAll('#ch-title_page #title-inline-nav-grid .title-inline-tile[data-action="book"]')
-        .length > 0,
+      document.querySelector('#toc-title').textContent === 'Chapters' &&
+      document.querySelector('#toc-subtitle').textContent === 'Genesis',
     { timeout: 15000 }
   );
 
-  await page.click(
-    '#ch-title_page #title-inline-nav-grid .title-inline-tile[data-action="book"][data-book="Genesis"]'
-  );
-  await page.waitForFunction(
-    () =>
-      document.querySelectorAll('#ch-title_page #title-inline-nav-grid .title-inline-tile[data-action="chapter"]')
-        .length > 0,
-    { timeout: 15000 }
-  );
-
-  await page.click(
-    '#ch-title_page #title-inline-nav-grid .title-inline-tile[data-action="chapter"][data-chapter-id="genesis_1"]'
-  );
+  await page.click('#toc-grid .toc-tile[data-action="chapter"][data-id="genesis_1"]');
   await page.waitForSelector('#ch-genesis_1', { timeout: 25000 });
 
-  await page.click('#ch-title_page #title-inline-nav-back');
-  await page.waitForFunction(
-    () => document.querySelector('#ch-title_page #title-inline-nav-title').textContent.trim() === 'Books',
-    { timeout: 10000 }
-  );
+  await page.evaluate(() => {
+    setTocPathForChapter('genesis_1');
+    tocBack();
+    tocOpen = true;
+    document.getElementById('toc').classList.remove('hidden');
+  });
+  await page.waitForFunction(() => document.querySelector('#toc-title').textContent === 'Books', { timeout: 10000 });
 
   const sourcesUrl = new URL(baseUrl);
   sourcesUrl.searchParams.set('open', 'general_conference');
   await page.goto(sourcesUrl.href, { waitUntil: 'networkidle0', timeout: 90000 });
   await page.waitForSelector('#splash.gone', { timeout: 90000 });
+
+  const tocStillVisible = await page.evaluate(() => {
+    const t = document.getElementById('toc');
+    return t && !t.classList.contains('hidden');
+  });
+  assert(tocStillVisible, 'expected #toc visible after ?open=general_conference');
   await page.waitForFunction(
-    () =>
-      document.querySelectorAll('#ch-title_page #title-inline-nav-grid .title-inline-tile').length > 0,
+    () => document.querySelector('#toc-grid') && document.querySelectorAll('#toc-grid .toc-tile').length > 0,
     { timeout: 20000 }
   );
-  const tocStillClosed = await page.evaluate(() => {
-    const t = document.getElementById('toc');
-    return t && t.classList.contains('hidden');
-  });
-  assert(tocStillClosed, 'expected #toc still hidden after ?open=general_conference');
 
-  console.log(JSON.stringify({ ok: true, baseUrl, tests: ['inline-scriptures-drill', 'back-button', 'sources-open-smoke'] }, null, 2));
+  console.log(
+    JSON.stringify({ ok: true, baseUrl, tests: ['sidebar-toc-drill', 'toc-back', 'open-param-sources-smoke'] }, null, 2)
+  );
   await browser.close();
 }
 
