@@ -869,6 +869,14 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 /* Place chips use blue; things use purple */
 .verse-text span.w[data-place] { border-bottom-color: #4a7090; }
 .verse-text span.w[data-thing] { border-bottom-color: #6a4a8c; }
+/* Stems in word index: show affordance (HTML has span.w; entity/place/thing keep rules above) */
+.scripture .verse-text span.w[data-st]:not([data-entity]):not([data-place]):not([data-thing]) {
+    border-bottom: 1px dotted rgba(156, 122, 77, 0.5);
+    cursor: pointer;
+}
+.scripture .verse-text span.w[data-st]:not([data-entity]):not([data-place]):not([data-thing]):hover {
+    background: rgba(156, 122, 77, 0.08);
+}
 /* Entity profile panel */
 .ep-header { display: flex; gap: 12px; align-items: flex-start; padding: 16px 16px 12px; border-bottom: 1px solid var(--divider); }
 .ep-image { width: 72px; height: 72px; border-radius: 8px; object-fit: cover; flex-shrink: 0; background: var(--divider); }
