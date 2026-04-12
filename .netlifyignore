@@ -1,0 +1,26 @@
+# Keep Netlify uploads aligned with Docker static mounts (index.html, home.css, assets/, library/)
+# and exclude dev/backend bulk.
+node_modules/
+.git/
+.venv/
+lds_pipeline/
+agents/
+model/
+diagnostics/
+.cursor/
+tools/
+.netlify/
+library/sources/
+__pycache__/
+*.pyc
+*.py
+package.json
+package-lock.json
+docker-compose.yml
+docker-compose.*.yml
+Dockerfile*
+Caddyfile
+.env
+.env.*
+*.log
+test-*.js

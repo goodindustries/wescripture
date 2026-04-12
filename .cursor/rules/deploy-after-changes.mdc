@@ -18,4 +18,4 @@ After making any edits to this project, always:
 
    Requires a linked site (`netlify link`) and CLI auth. Primary production is often the Docker/Caddy stack (`DEPLOYMENT.md` at repo root); Netlify is static fallback. Do not assume git push alone updates Netlify unless Git integration is configured.
 
-No separate “build” step: `publish = "."` in `netlify.toml`; the deploy uploads the repo root (landing at `/`, reader under `/library/`).
+No separate “build” step: `publish = "."` in `netlify.toml`; the deploy uploads the repo root (landing at `/`, reader under `/library/`). Bulk dev dirs are excluded by [`.netlifyignore`](../../.netlifyignore) so the bundle matches the Docker static mounts (`index.html`, `home.css`, `assets/`, `library/`).

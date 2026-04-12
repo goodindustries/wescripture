@@ -33,4 +33,4 @@ Reader **Home** uses `SITE.homeUrl` → `../index.html` when the pathname starts
 npx netlify-cli deploy --prod --dir .
 ```
 
-This uploads the repo root; Netlify does not run a separate build command (`command = ""` in `netlify.toml`). Primary production is typically the VM/Docker stack—see [`DEPLOYMENT.md`](../DEPLOYMENT.md).
+This uploads the repo root; Netlify does not run a separate build command (`command = ""` in `netlify.toml`). [`.netlifyignore`](../.netlifyignore) keeps the upload small (same surface as Docker: `index.html`, `home.css`, `assets/`, `library/`). Primary production is typically the VM/Docker stack—see [`DEPLOYMENT.md`](../DEPLOYMENT.md).
