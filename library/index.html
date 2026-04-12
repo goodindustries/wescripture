@@ -4473,30 +4473,15 @@ function htmlKeyWordCardDona(w, verseText) {
     return '<div class="word-card word-card--kw-collapsed">' + head + def + '</div>';
 }
 
-/** Keyword card: pre-generated lex study when present; else *_words.json match excerpts. */
+/** Keyword card: pre-generated *_lexstudies.json `study` only (no corpus excerpt composite). */
 function htmlKeyWordCardGraph(item, verseText, lexByStem) {
     lexByStem = lexByStem || {};
     var title = graphKeywordHeadword(item, verseText) || 'Key term';
-    var entry = item.entry || {};
     var lx = lexByStem[item.stem];
-    var matches = sortMatches(entry.matches || []).slice(0, 2);
-    var lines = [];
-    for (var mi = 0; mi < matches.length; mi++) {
-        var m = matches[mi];
-        var src = srcLabel(m.s);
-        var tx = stripOriginalLanguageNotes(String(m.x || '').replace(/\s+/g, ' ').trim());
-        if (tx.length > 220) tx = tx.slice(0, 217) + '\u2026';
-        if (src && tx) lines.push(src + ': ' + tx);
-    }
-    var sense = '';
-    if (lx && lx.study) {
-        sense = String(lx.study).trim();
-    } else {
-        sense = lines.join(' ').trim();
-        if (!sense) {
-            sense = 'Semantic connections for this stem load in the word channel when you tap a highlighted word in the verse.';
-        }
-    }
+    var rawStudy = lx && lx.study ? String(lx.study).trim() : '';
+    var sense = rawStudy
+        ? rawStudy
+        : 'A compact word study for this keyword is not in the index yet for this verse. Tap the underlined word in the verse to open the word channel and browse corpus parallels.';
     var verified = verseText && keywordVerifiedInVerse(title, verseText);
     var head = '<div class="word-card-head" onclick="toggleVerseKwCard(this)"><div class="word-card-head-text">'
         + '<div class="word-english' + (verified ? ' word-kw-in-verse' : '') + '">' + escapeHtml(title) + '</div>';

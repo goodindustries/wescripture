@@ -44,6 +44,22 @@ TOC_TO_PASSAGE_SOURCES: dict[str, list[str]] = {
     ],
 }
 
+# source_toc collection id -> lds_pipeline/cache subdirectory (flat *.txt per doc stem)
+TOC_TO_CACHE_DIR: dict[str, str] = {
+    "general_conference": "general_conference",
+    "journal_of_discourses": "jd",
+    "history_of_church": "hoc",
+    "joseph_smith_papers": "joseph_smith_papers",
+    "gutenberg_lds": "gutenberg_lds",
+    "church_fathers": "church_fathers",
+    "millennial_star": "millennial_star",
+    "times_and_seasons": "times_and_seasons",
+    "pioneer_journals": "pioneer_journals",
+}
+
+# For ancient_texts leaves, try these cache dirs for {stem}.txt (first hit counts as present)
+ANCIENT_TEXTS_CACHE_DIRS = ("ancient_myths", "pseudepigrapha", "apocrypha", "nag_hammadi", "dead_sea_scrolls")
+
 
 def passage_count_for_toc_collection(collection_id: str, by_source: Counter) -> int:
     keys = TOC_TO_PASSAGE_SOURCES.get(collection_id, [collection_id])
@@ -89,19 +105,58 @@ def import_load_all_sources():
     return mod.load_all_sources
 
 
-def gc_missing_cache_txt(leaves: list[dict]) -> list[dict]:
-    gc_dir = CACHE / "general_conference"
-    missing = []
+def _monolithic_periodical_skip(cache_dir: Path) -> bool:
+    """Skip per-doc Layer B when only a single ABBYY-style dump exists."""
+    if not cache_dir.is_dir():
+        return False
+    txts = [
+        x for x in cache_dir.glob("*.txt")
+        if x.is_file() and "scripture_index" not in x.name and "talk_index" not in x.name
+    ]
+    if len(txts) != 1:
+        return False
+    return "abbyy" in txts[0].name.lower()
+
+
+def flat_cache_txt_missing(leaves: list[dict]) -> list[dict]:
+    """Layer B: TOC leaf href stem must exist as {stem}.txt under the matching cache dir."""
+    missing: list[dict] = []
     for row in leaves:
-        if row["collection_id"] != "general_conference":
-            continue
+        cid = row["collection_id"]
         href = row.get("href") or ""
         if not href.endswith(".html"):
             continue
         stem = Path(href).stem
-        txt = gc_dir / f"{stem}.txt"
+
+        if cid == "ancient_texts":
+            found = False
+            hit_path = ""
+            for sub in ANCIENT_TEXTS_CACHE_DIRS:
+                p = CACHE / sub / f"{stem}.txt"
+                if p.is_file():
+                    found = True
+                    hit_path = str(p.relative_to(REPO))
+                    break
+            if not found:
+                missing.append({
+                    "collection_id": cid,
+                    "doc_id": row["doc_id"],
+                    "href": href,
+                    "expected_txt_any": [str((CACHE / s / f"{stem}.txt").relative_to(REPO)) for s in ANCIENT_TEXTS_CACHE_DIRS],
+                })
+            continue
+
+        cache_key = TOC_TO_CACHE_DIR.get(cid)
+        if not cache_key:
+            continue
+        cache_sub = CACHE / cache_key
+        if cid in ("millennial_star", "times_and_seasons") and cache_sub.exists():
+            if _monolithic_periodical_skip(cache_sub):
+                continue
+        txt = cache_sub / f"{stem}.txt"
         if not txt.is_file():
             missing.append({
+                "collection_id": cid,
                 "doc_id": row["doc_id"],
                 "href": href,
                 "expected_txt": str(txt.relative_to(REPO)),
@@ -114,7 +169,7 @@ def main() -> int:
     parser.add_argument(
         "--strict",
         action="store_true",
-        help="Exit 1 if any collection has zero passages or any GC doc is missing cache .txt",
+        help="Exit 1 if Layer A (zero passages) or Layer B (missing per-doc cache .txt where applicable)",
     )
     parser.add_argument(
         "--out",
@@ -179,7 +234,7 @@ def main() -> int:
         if row["collection_no_passages"]:
             collection_no_passages.append(cid)
 
-    gc_missing = gc_missing_cache_txt(leaves)
+    cache_txt_missing = flat_cache_txt_missing(leaves)
 
     summary.update({
         "skipped": bool(summary.get("skipped")),
@@ -187,16 +242,16 @@ def main() -> int:
         "embedding_passage_total": len(passages),
         "embedding_passage_by_source": dict(sorted(by_source.items())),
         "collections_with_toc_but_zero_passages": collection_no_passages,
-        "general_conference_missing_cache_txt": len(gc_missing),
+        "missing_cache_txt_docs": len(cache_txt_missing),
     })
     if load_err:
         summary["load_error"] = load_err
 
     report["summary"] = summary
     report["collections"] = collection_rows
-    report["missing_gc_cache_txt"] = gc_missing[:500]
-    if len(gc_missing) > 500:
-        report["missing_gc_cache_txt_truncated"] = True
+    report["missing_cache_txt"] = cache_txt_missing[:800]
+    if len(cache_txt_missing) > 800:
+        report["missing_cache_txt_truncated"] = True
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")
@@ -206,11 +261,11 @@ def main() -> int:
     print(f"  Embedding passages: {len(passages)}")
     if collection_no_passages:
         print(f"  WARN collections (TOC paras > 0, zero passages): {', '.join(collection_no_passages)}")
-    if gc_missing:
-        print(f"  WARN GC docs missing cache .txt: {len(gc_missing)} (first 5 in JSON)")
+    if cache_txt_missing:
+        print(f"  WARN TOC docs missing expected cache .txt: {len(cache_txt_missing)} (see JSON)")
 
     if args.strict and not summary.get("skipped"):
-        if collection_no_passages or gc_missing:
+        if collection_no_passages or cache_txt_missing:
             return 1
     return 0
 

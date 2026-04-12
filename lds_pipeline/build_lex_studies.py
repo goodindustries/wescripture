@@ -4,8 +4,8 @@ Build library/chapters/{slug}_lexstudies.json — pre-generated morphology-backe
 word-study paragraphs for graph keyword stems (same selection cap as reader).
 
 Uses lemma alignment from morphology_align.py. Text generation:
-  --ollama   call local Ollama (LEX_STUDIES_MODEL, default gemma4:e2b)
-  (default)  deterministic fallback paragraph from facts + matches
+  --ollama   call local Ollama (LEX_STUDIES_MODEL, default gemma4:e2b); preferred for shipped `study` prose
+  (default)  deterministic fallback paragraph from facts + matches (reader does not show match excerpts)
 
 Run from repo root:
   python3 lds_pipeline/fetch_morphology_sources.py
@@ -65,6 +65,7 @@ MIN_SCORE = 0.12
 sys.path.insert(0, str(REPO / "lds_pipeline"))
 import morphology_align as morph  # noqa: E402
 
+# Sync with product “$definition” rubric for verse keyword cards (reader shows this text only).
 DEFINITION_SYSTEM = (
     "You write compact original-language word studies for Latter-day Saint readers. "
     "When given facts (English surface form, verse wording, optional Hebrew/Greek lemma and gloss, "
