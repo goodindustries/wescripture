@@ -1,0 +1,26 @@
+/Users/reify/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+═══ Loading catalog ═══
+  42,046 verses from verse_catalog.json
+
+═══ Loading source corpora ═══
+  Standard Works: 42,046 passages
+  JD: 22,396 passages
+  Sefaria: 0 passages
+  General Conference: 3,921 passages
+  Gutenberg LDS: 6,959 passages
+  Church Fathers: 4,806 passages
+  Ancient Texts: 5,217 passages
+  History of Church: 7,250 passages
+  Joseph Smith Papers: 1,057 passages
+  Times and Seasons: 18,648 passages
+  Millennial Star: 72,740 passages
+  Pioneer Journals: 4,084 passages
+  Deduped: removed 1,536 duplicate passages
+  Total: 187,588 passages
+
+═══ Embedding ═══
+  Loading model all-MiniLM-L6-v2 (CPU)...
+  Encoding 187,588 source passages...
+Batches:   0%|          | 0/733 [00:00<?, ?it/s]Batches:   0%|          | 1/733 [00:06<1:19:11,  6.49s/it]Batches:   0%|          | 2/733 [00:13<1:22:49,  6.80s/it]Batches:   0%|          | 3/733 [00:22<1:37:25,  8.01s/it]Batches:   1%|          | 4/733 [00:32<1:43:27,  8.52s/it]Batches:   1%|          | 5/733 [00:41<1:47:16,  8.84s/it]Batches:   1%|          | 6/733 [00:54<2:03:08, 10.16s/it]Batches:   1%|          | 7/733 [01:06<2:11:43, 10.89s/it]Batches:   1%|          | 8/733 [01:19<2:19:10, 11.52s/it]Batches:   1%|          | 9/733 [01:31<2:21:04, 11.69s/it]Batches:   1%|▏         | 10/733 [01:41<2:13:07, 11.05s/it]Batches:   2%|▏         | 11/733 [01:50<2:06:35, 10.52s/it]Batches:   2%|▏         | 12/733 [01:59<2:01:38, 10.12s/it]Batches:   2%|▏         | 13/733 [02:09<1:58:33,  9.88s/it]Batches:   2%|▏         | 14/733 [02:19<1:58:31,  9.89s/it]Batches:   2%|▏         | 15/733 [02:29<2:00:28, 10.07s/it]Batches:   2%|▏         | 16/733 [02:40<2:03:40, 10.35s/it]Batches:   2%|▏         | 17/733 [02:53<2:11:06, 10.99s/it]Batches:   2%|▏         | 18/733 [03:03<2:09:06, 10.83s/it]Batches:   3%|▎         | 19/733 [03:13<2:07:37, 10.73s/it]Batches:   3%|▎         | 20/733 [03:23<2:03:17, 10.37s/it]
