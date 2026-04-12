@@ -3081,6 +3081,7 @@ function finishVerseDiscoveryPanel(payload) {
     var entries = payload.entries;
     var entsInline = payload.entsInline;
     var scriptureEdgesEarly = payload.scriptureEdgesEarly;
+    var lexByStem = payload.lexByStem || {};
 
     var showedEntityChips = !!(entsInline.persons.length || entsInline.places.length || entsInline.things.length);
 
@@ -3143,7 +3144,7 @@ function finishVerseDiscoveryPanel(payload) {
         html += '<div class="word-cards-wrap expanded">';
         mergedKw.forEach(function(item) {
             if (item.kind === 'dona') html += htmlKeyWordCardDona(item.w, verseText);
-            else if (item.kind === 'graph') html += htmlKeyWordCardGraph(item, verseText);
+            else if (item.kind === 'graph') html += htmlKeyWordCardGraph(item, verseText, lexByStem);
         });
         html += '</div>';
     }
@@ -3233,11 +3234,20 @@ function openVerseDiscovery(ref) {
         entries: entries, entsInline: entsInline, scriptureEdgesEarly: scriptureEdgesEarly
     };
 
-    return loadChapterWordIndex(chapterId).then(function(wordIdx) {
+    return Promise.all([
+        loadChapterWordIndex(chapterId),
+        loadChapterLexStudies(chapterId)
+    ]).then(function(results) {
+        var wordIdx = results[0];
+        var lexRoot = results[1] || {};
         var verseData = wordIdx && wordIdx[vnum] ? wordIdx[vnum] : {};
+        var lexByStem = lexRoot && lexRoot[vnum] ? lexRoot[vnum] : {};
         var mergedKw = mergeKeyWordsForVerse(donaWords, verseData, verseText, chapterId);
         registerChapterKeywordHeadwords(mergedKw, verseText);
-        finishVerseDiscoveryPanel(Object.assign({}, payloadBase, { mergedKw: mergedKw }));
+        finishVerseDiscoveryPanel(Object.assign({}, payloadBase, {
+            mergedKw: mergedKw,
+            lexByStem: lexByStem
+        }));
     });
 }
 
@@ -3760,6 +3770,9 @@ function injectNotes(id, block) {
     }
     if (id !== 'title_page' && !wordIndexCache['chapter:' + id]) {
         loadChapterWordIndex(id);
+    }
+    if (id !== 'title_page' && !lexStudiesCache['lex:' + id]) {
+        loadChapterLexStudies(id);
     }
     // Pre-warm chapter graph for scripture echoes
     if (id !== 'title_page' && !chapterGraphCache[id]) {
@@ -4372,10 +4385,12 @@ function htmlKeyWordCardDona(w, verseText) {
     return '<div class="word-card word-card--kw-collapsed">' + head + def + '</div>';
 }
 
-/** Keyword card from chapter *_words.json stem: top semantic match excerpts (not a lexicon definition). */
-function htmlKeyWordCardGraph(item, verseText) {
+/** Keyword card: pre-generated lex study when present; else *_words.json match excerpts. */
+function htmlKeyWordCardGraph(item, verseText, lexByStem) {
+    lexByStem = lexByStem || {};
     var title = graphKeywordHeadword(item, verseText) || 'Key term';
     var entry = item.entry || {};
+    var lx = lexByStem[item.stem];
     var matches = sortMatches(entry.matches || []).slice(0, 2);
     var lines = [];
     for (var mi = 0; mi < matches.length; mi++) {
@@ -4385,14 +4400,26 @@ function htmlKeyWordCardGraph(item, verseText) {
         if (tx.length > 220) tx = tx.slice(0, 217) + '\u2026';
         if (src && tx) lines.push(src + ': ' + tx);
     }
-    var sense = lines.join(' ').trim();
-    if (!sense) {
-        sense = 'Semantic connections for this stem load in the word channel when you tap a highlighted word in the verse.';
+    var sense = '';
+    if (lx && lx.study) {
+        sense = String(lx.study).trim();
+    } else {
+        sense = lines.join(' ').trim();
+        if (!sense) {
+            sense = 'Semantic connections for this stem load in the word channel when you tap a highlighted word in the verse.';
+        }
     }
     var verified = verseText && keywordVerifiedInVerse(title, verseText);
     var head = '<div class="word-card-head" onclick="toggleVerseKwCard(this)"><div class="word-card-head-text">'
-        + '<div class="word-english' + (verified ? ' word-kw-in-verse' : '') + '">' + escapeHtml(title) + '</div>'
-        + '</div><span class="word-card-chevron" aria-hidden="true">\u25bc</span></div>';
+        + '<div class="word-english' + (verified ? ' word-kw-in-verse' : '') + '">' + escapeHtml(title) + '</div>';
+    if (lx && lx.confidence === 'high' && lx.lemma) {
+        if (lx.lang === 'grc' && (lx.surface_gr || lx.lemma)) {
+            head += '<div class="word-original" lang="el" dir="auto">' + escapeHtml(lx.surface_gr || lx.lemma) + '</div>';
+        } else if (lx.lang === 'hbo' && (lx.surface_he || lx.lemma)) {
+            head += '<div class="word-original" lang="he" dir="rtl">' + escapeHtml(lx.surface_he || lx.lemma) + '</div>';
+        }
+    }
+    head += '</div><span class="word-card-chevron" aria-hidden="true">\u25bc</span></div>';
     var def = '<div class="word-card-def"><div class="word-kw-block"><div class="word-kw-text">'
         + makeExpandable(sense, 'note-preview', 'note-overflow', 'note-more') + '</div></div></div>';
     return '<div class="word-card word-card--kw-collapsed" role="article" aria-label="Keyword: ' + escapeAttr(title) + '">'
@@ -4413,6 +4440,8 @@ var channelActiveSpan = null;
 var channelPanelMode = 'book';
 var wordIndexCache = {};     // slug → loaded words JSON
 var wordIndexLoading = {};   // slug → promise
+var lexStudiesCache = {};    // lex:slug → { vnum: { stem: {...} } } (no _meta)
+var lexStudiesLoading = {};  // lex:slug → promise
 
 var SRC_COLORS = {
     standard_works:        '#8B5E3C',
@@ -4761,6 +4790,28 @@ function loadWordIndex(pathKey, href) {
 
 function loadChapterWordIndex(slug) {
     return loadWordIndex('chapter:' + slug, './chapters/' + slug + '_words.json');
+}
+
+function loadChapterLexStudies(slug) {
+    if (!slug) return Promise.resolve({});
+    var pathKey = 'lex:' + slug;
+    if (lexStudiesCache[pathKey]) return Promise.resolve(lexStudiesCache[pathKey]);
+    if (lexStudiesLoading[pathKey]) return lexStudiesLoading[pathKey];
+    lexStudiesLoading[pathKey] = fetch('./chapters/' + slug + '_lexstudies.json')
+        .then(function(r) { if (r.ok) return r.json(); return null; })
+        .then(function(data) {
+            var out = {};
+            if (data && typeof data === 'object') {
+                Object.keys(data).forEach(function(k) {
+                    if (k === '_meta') return;
+                    out[k] = data[k];
+                });
+            }
+            lexStudiesCache[pathKey] = out;
+            return lexStudiesCache[pathKey];
+        })
+        .catch(function() { lexStudiesCache[pathKey] = {}; return {}; });
+    return lexStudiesLoading[pathKey];
 }
 
 function loadSourceWordIndex(docId) {

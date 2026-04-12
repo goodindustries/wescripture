@@ -1,0 +1,875 @@
+{
+"_meta": {
+"slug": "genesis_1",
+"prompt_version": "lex-v1",
+"ollama": false
+},
+"1": {
+"heaven": {
+"lang": "hbo",
+"lemma": "d/8064",
+"surface_gr": "",
+"surface_he": "הַ/שָּׁמַ֖יִם",
+"morph": "HTd/Ncmpa",
+"confidence": "high",
+"study": "Here “heaven” aligns to Hebrew wording tagged in the Westminster Leningrad tradition (lemma field d/8064; surface “הַ/שָּׁמַ֖יִם”). In “In the beginning God created the heaven and the earth .…”, the construction colors how creation, covenant, or command is being declared. Standard Works: And it came to pass that the Lord spake unto Moses, saying: Behold, I reveal unto you concerning this heaven, and this earth; write the words which I speak. I am the Beginning and the End, the Almighty God; by mine On… Standard Works: My help cometh from the Lord, which made heaven and earth.",
+"matches": [
+"Standard Works: And it came to pass that the Lord spake unto Moses, saying: Behold, I reveal unto you concerning this heaven, and this earth; write the words which I speak. I am the Beginning and the End, the Almighty God; by mine On…",
+"Standard Works: My help cometh from the Lord, which made heaven and earth."
+]
+},
+"creat": {
+"lang": "hbo",
+"lemma": "1254 a",
+"surface_gr": "",
+"surface_he": "בָּרָ֣א",
+"morph": "HVqp3ms",
+"confidence": "high",
+"study": "Here “created” aligns to Hebrew wording tagged in the Westminster Leningrad tradition (lemma field 1254 a; surface “בָּרָ֣א”). In “In the beginning God created the heaven and the earth .…”, the construction colors how creation, covenant, or command is being declared. Standard Works: Behold, I am Jesus Christ the Son of God. I created the heavens and the earth, and all things that in them are. I was with the Father from the beginning. I am in the Father, and the Father in me; and… Standard Works: And it came to pass that the Lord spake unto Moses, saying: Behold, I reveal unto you concerning this heaven, and this earth; write the words which I speak. I am the B",
+"matches": [
+"Standard Works: Behold, I am Jesus Christ the Son of God. I created the heavens and the earth, and all things that in them are. I was with the Father from the beginning. I am in the Father, and the Father in me; and…",
+"Standard Works: And it came to pass that the Lord spake unto Moses, saying: Behold, I reveal unto you concerning this heaven, and this earth; write the words which I speak. I am the Beginning and the End, the Almighty God; by mine On…"
+]
+}
+},
+"2": {
+"form": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “form” in “And the earth was without form , and void ; and darkness was upon the face of the deep . And the Spirit of God moved upon the face of the waters .…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And the earth was without form, and void; and I caused darkness to come up upon the face of the deep; and my Spirit moved upon the face of the water; for I am God. Standard Works: And the earth, after it was formed, was empty and desolate, because they had not formed anything but the earth; and darkness reigned upon the face of the deep, and the Spirit of the Gods was brooding upon",
+"matches": [
+"Standard Works: And the earth was without form, and void; and I caused darkness to come up upon the face of the deep; and my Spirit moved upon the face of the water; for I am God.",
+"Standard Works: And the earth, after it was formed, was empty and desolate, because they had not formed anything but the earth; and darkness reigned upon the face of the deep, and the Spirit of the Gods was brooding upon the face of …"
+]
+},
+"face": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “face” in “And the earth was without form , and void ; and darkness was upon the face of the deep . And the Spirit of God moved upon the face of the waters .…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And the earth was without form, and void; and I caused darkness to come up upon the face of the deep; and my Spirit moved upon the face of the water; for I am God. Standard Works: And the earth, after it was formed, was empty and desolate, because they had not formed anything but the earth; and darkness reigned upon the face of the deep, and the Spirit of the Gods was brooding upon",
+"matches": [
+"Standard Works: And the earth was without form, and void; and I caused darkness to come up upon the face of the deep; and my Spirit moved upon the face of the water; for I am God.",
+"Standard Works: And the earth, after it was formed, was empty and desolate, because they had not formed anything but the earth; and darkness reigned upon the face of the deep, and the Spirit of the Gods was brooding upon the face of …"
+]
+}
+},
+"3": {
+"light": {
+"lang": "hbo",
+"lemma": "216",
+"surface_gr": "",
+"surface_he": "א֑וֹר",
+"morph": "HNcbsa",
+"confidence": "high",
+"study": "Here “light” aligns to Hebrew wording tagged in the Westminster Leningrad tradition (lemma field 216; surface “א֑וֹר”). In “And God said, Let there be light : and there was light .…”, the construction colors how creation, covenant, or command is being declared. Standard Works: And I, God, said: Let there be light; and there was light. Standard Works: And they (the Gods) said: Let there be light; and there was light.",
+"matches": [
+"Standard Works: And I, God, said: Let there be light; and there was light.",
+"Standard Works: And they (the Gods) said: Let there be light; and there was light."
+]
+},
+"god": {
+"lang": "hbo",
+"lemma": "430",
+"surface_gr": "",
+"surface_he": "אֱלֹהִ֖ים",
+"morph": "HNcmpa",
+"confidence": "high",
+"study": "Here “God” aligns to Hebrew wording tagged in the Westminster Leningrad tradition (lemma field 430; surface “אֱלֹהִ֖ים”). In “And God said, Let there be light : and there was light .…”, the construction colors how creation, covenant, or command is being declared. Standard Works: And I, God, said: Let there be light; and there was light. Standard Works: And they (the Gods) said: Let there be light; and there was light.",
+"matches": [
+"Standard Works: And I, God, said: Let there be light; and there was light.",
+"Standard Works: And they (the Gods) said: Let there be light; and there was light."
+]
+}
+},
+"4": {
+"light": {
+"lang": "hbo",
+"lemma": "d/216",
+"surface_gr": "",
+"surface_he": "הָ/א֖וֹר",
+"morph": "HTd/Ncbsa",
+"confidence": "high",
+"study": "Here “light” aligns to Hebrew wording tagged in the Westminster Leningrad tradition (lemma field d/216; surface “הָ/א֖וֹר”). In “And God saw the light , that it was good : and God divided the light from the darkness .…”, the construction colors how creation, covenant, or command is being declared. Standard Works: And I, God, saw the light; and that light was good. And I, God, divided the light from the darkness. Standard Works: And they (the Gods) comprehended the light, for it was bright; and they divided the light, or caused it to be divided, from the darkness.",
+"matches": [
+"Standard Works: And I, God, saw the light; and that light was good. And I, God, divided the light from the darkness.",
+"Standard Works: And they (the Gods) comprehended the light, for it was bright; and they divided the light, or caused it to be divided, from the darkness."
+]
+},
+"dark": {
+"lang": "hbo",
+"lemma": "d/2822",
+"surface_gr": "",
+"surface_he": "הַ/חֹֽשֶׁךְ",
+"morph": "HTd/Ncmsa",
+"confidence": "high",
+"study": "Here “darkness” aligns to Hebrew wording tagged in the Westminster Leningrad tradition (lemma field d/2822; surface “הַ/חֹֽשֶׁךְ”). In “And God saw the light , that it was good : and God divided the light from the darkness .…”, the construction colors how creation, covenant, or command is being declared. Standard Works: And I, God, saw the light; and that light was good. And I, God, divided the light from the darkness. Standard Works: And they (the Gods) comprehended the light, for it was bright; and they divided the light, or caused it to be divided, from the darkness.",
+"matches": [
+"Standard Works: And I, God, saw the light; and that light was good. And I, God, divided the light from the darkness.",
+"Standard Works: And they (the Gods) comprehended the light, for it was bright; and they divided the light, or caused it to be divided, from the darkness."
+]
+}
+},
+"5": {
+"dark": {
+"lang": "hbo",
+"lemma": "c/l/2822",
+"surface_gr": "",
+"surface_he": "וְ/לַ/חֹ֖שֶׁךְ",
+"morph": "HC/Rd/Ncmsa",
+"confidence": "high",
+"study": "Here “darkness” aligns to Hebrew wording tagged in the Westminster Leningrad tradition (lemma field c/l/2822; surface “וְ/לַ/חֹ֖שֶׁךְ”). In “And God called the light Day, and the darkness he called Night . And the evening and the morning were the first day.…”, the construction colors how creation, covenant, or command is being declared. Standard Works: And the Gods called the light Day, and the darkness they called Night. And it came to pass that from the evening until morning they called night; and from the morning until the evening they called day; and this was th… Standard Works: And I, God, called the light Day; and the darkness, I called Night; and this I did by the word of my power, and it was done as I spake; and the eveni",
+"matches": [
+"Standard Works: And the Gods called the light Day, and the darkness they called Night. And it came to pass that from the evening until morning they called night; and from the morning until the evening they called day; and this was th…",
+"Standard Works: And I, God, called the light Day; and the darkness, I called Night; and this I did by the word of my power, and it was done as I spake; and the evening and the morning were the first day."
+]
+},
+"night": {
+"lang": "hbo",
+"lemma": "3915",
+"surface_gr": "",
+"surface_he": "לָ֑יְלָה",
+"morph": "HNcmsa",
+"confidence": "high",
+"study": "Here “Night” aligns to Hebrew wording tagged in the Westminster Leningrad tradition (lemma field 3915; surface “לָ֑יְלָה”). In “And God called the light Day, and the darkness he called Night . And the evening and the morning were the first day.…”, the construction colors how creation, covenant, or command is being declared. Standard Works: And the Gods called the light Day, and the darkness they called Night. And it came to pass that from the evening until morning they called night; and from the morning until the evening they called day; and this was th… Standard Works: And I, God, called the light Day; and the darkness, I called Night; and this I did by the word of my power, and it was done as I spake; and the eveni",
+"matches": [
+"Standard Works: And the Gods called the light Day, and the darkness they called Night. And it came to pass that from the evening until morning they called night; and from the morning until the evening they called day; and this was th…",
+"Standard Works: And I, God, called the light Day; and the darkness, I called Night; and this I did by the word of my power, and it was done as I spake; and the evening and the morning were the first day."
+]
+}
+},
+"6": {
+"water": {
+"lang": "hbo",
+"lemma": "d/4325",
+"surface_gr": "",
+"surface_he": "הַ/מָּ֑יִם",
+"morph": "HTd/Ncmpa",
+"confidence": "high",
+"study": "Here “waters” aligns to Hebrew wording tagged in the Westminster Leningrad tradition (lemma field d/4325; surface “הַ/מָּ֑יִם”). In “And God said, Let there be a firmament in the midst of the waters , and let it divide the waters from the waters .…”, the construction colors how creation, covenant, or command is being declared. Standard Works: And the Gods also said: Let there be an expanse in the midst of the waters, and it shall divide the waters from the waters. Standard Works: And again, I, God, said: Let there be a firmament in the midst of the water, and it was so, even as I spake; and I said: Let it divide the waters from the waters; and it was done;",
+"matches": [
+"Standard Works: And the Gods also said: Let there be an expanse in the midst of the waters, and it shall divide the waters from the waters.",
+"Standard Works: And again, I, God, said: Let there be a firmament in the midst of the water, and it was so, even as I spake; and I said: Let it divide the waters from the waters; and it was done;"
+]
+},
+"divide": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “divide” in “And God said, Let there be a firmament in the midst of the waters , and let it divide the waters from the waters .…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And the Gods also said: Let there be an expanse in the midst of the waters, and it shall divide the waters from the waters. Standard Works: And again, I, God, said: Let there be a firmament in the midst of the water, and it was so, even as I spake; and I said: Let it divide the waters from the waters; and it was done;",
+"matches": [
+"Standard Works: And the Gods also said: Let there be an expanse in the midst of the waters, and it shall divide the waters from the waters.",
+"Standard Works: And again, I, God, said: Let there be a firmament in the midst of the water, and it was so, even as I spake; and I said: Let it divide the waters from the waters; and it was done;"
+]
+}
+},
+"7": {
+"firma": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “firmament” in “And God made the firmament , and divided the waters which were under the firmament from the waters which were above the firmament : and it was so.…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And I, God, made the firmament and divided the waters, yea, the great waters under the firmament from the waters which were above the firmament, and it was so even as I spake. Standard Works: ¶ And God said, Let there be a firmament in the midst of the waters, and let it divide the waters from the waters.",
+"matches": [
+"Standard Works: And I, God, made the firmament and divided the waters, yea, the great waters under the firmament from the waters which were above the firmament, and it was so even as I spake.",
+"Standard Works: ¶ And God said, Let there be a firmament in the midst of the waters, and let it divide the waters from the waters."
+]
+},
+"water": {
+"lang": "hbo",
+"lemma": "d/4325",
+"surface_gr": "",
+"surface_he": "הַ/מַּ֨יִם֙",
+"morph": "HTd/Ncmpa",
+"confidence": "high",
+"study": "Here “waters” aligns to Hebrew wording tagged in the Westminster Leningrad tradition (lemma field d/4325; surface “הַ/מַּ֨יִם֙”). In “And God made the firmament , and divided the waters which were under the firmament from the waters which were above the firmament : and it was so.…”, the construction colors how creation, covenant, or command is being declared. Standard Works: And I, God, made the firmament and divided the waters, yea, the great waters under the firmament from the waters which were above the firmament, and it was so even as I spake. Standard Works: ¶ And God said, Let there be a firmament in the midst of the waters, and let it divide the waters from the waters.",
+"matches": [
+"Standard Works: And I, God, made the firmament and divided the waters, yea, the great waters under the firmament from the waters which were above the firmament, and it was so even as I spake.",
+"Standard Works: ¶ And God said, Let there be a firmament in the midst of the waters, and let it divide the waters from the waters."
+]
+}
+},
+"8": {
+"morn": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “morning” in “And God called the firmament Heaven . And the evening and the morning were the second day.…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And I, God, called the firmament Heaven; and the evening and the morning were the second day. Standard Works: And God called the light Day, and the darkness he called Night. And the evening and the morning were the first day.",
+"matches": [
+"Standard Works: And I, God, called the firmament Heaven; and the evening and the morning were the second day.",
+"Standard Works: And God called the light Day, and the darkness he called Night. And the evening and the morning were the first day."
+]
+},
+"heaven": {
+"lang": "hbo",
+"lemma": "8064",
+"surface_gr": "",
+"surface_he": "שָׁמָ֑יִם",
+"morph": "HNcmpa",
+"confidence": "high",
+"study": "Here “Heaven” aligns to Hebrew wording tagged in the Westminster Leningrad tradition (lemma field 8064; surface “שָׁמָ֑יִם”). In “And God called the firmament Heaven . And the evening and the morning were the second day.…”, the construction colors how creation, covenant, or command is being declared. Standard Works: And I, God, called the firmament Heaven; and the evening and the morning were the second day. Standard Works: And the Gods called the expanse, Heaven. And it came to pass that it was from evening until morning that they called night; and it came to pass that it was from morning until evening that they called day; and this was…",
+"matches": [
+"Standard Works: And I, God, called the firmament Heaven; and the evening and the morning were the second day.",
+"Standard Works: And the Gods called the expanse, Heaven. And it came to pass that it was from evening until morning that they called night; and it came to pass that it was from morning until evening that they called day; and this was…"
+]
+}
+},
+"9": {
+"water": {
+"lang": "hbo",
+"lemma": "d/4325",
+"surface_gr": "",
+"surface_he": "הַ/מַּ֜יִם",
+"morph": "HTd/Ncmpa",
+"confidence": "high",
+"study": "Here “waters” aligns to Hebrew wording tagged in the Westminster Leningrad tradition (lemma field d/4325; surface “הַ/מַּ֜יִם”). In “And God said, Let the waters under the heaven be gathered together unto one place, and let the dry land appear : and it was so.…”, the construction colors how creation, covenant, or command is being declared. Standard Works: And I, God, said: Let the waters under the heaven be gathered together unto one place, and it was so; and I, God, said: Let there be dry land; and it was so. Standard Works: And I, God, called the dry land Earth; and the gathering together of the waters, called I the Sea; and I, God, saw that all things which I had made were good.",
+"matches": [
+"Standard Works: And I, God, said: Let the waters under the heaven be gathered together unto one place, and it was so; and I, God, said: Let there be dry land; and it was so.",
+"Standard Works: And I, God, called the dry land Earth; and the gathering together of the waters, called I the Sea; and I, God, saw that all things which I had made were good."
+]
+},
+"dry": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “dry” in “And God said, Let the waters under the heaven be gathered together unto one place, and let the dry land appear : and it was so.…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And I, God, said: Let the waters under the heaven be gathered together unto one place, and it was so; and I, God, said: Let there be dry land; and it was so. Standard Works: And I, God, called the dry land Earth; and the gathering together of the waters, called I the Sea; and I, God, saw that all things which I had made were good.",
+"matches": [
+"Standard Works: And I, God, said: Let the waters under the heaven be gathered together unto one place, and it was so; and I, God, said: Let there be dry land; and it was so.",
+"Standard Works: And I, God, called the dry land Earth; and the gathering together of the waters, called I the Sea; and I, God, saw that all things which I had made were good."
+]
+}
+},
+"10": {
+"water": {
+"lang": "hbo",
+"lemma": "d/4325",
+"surface_gr": "",
+"surface_he": "הַ/מַּ֖יִם",
+"morph": "HTd/Ncmpa",
+"confidence": "high",
+"study": "Here “waters” aligns to Hebrew wording tagged in the Westminster Leningrad tradition (lemma field d/4325; surface “הַ/מַּ֖יִם”). In “And God called the dry land Earth ; and the gathering together of the waters called he Seas : and God saw that it was good .…”, the construction colors how creation, covenant, or command is being declared. Standard Works: And I, God, called the dry land Earth; and the gathering together of the waters, called I the Sea; and I, God, saw that all things which I had made were good. Standard Works: And the Gods ordered, saying: Let the waters under the heaven be gathered together unto one place, and let the earth come up dry; and it was so as they ordered;",
+"matches": [
+"Standard Works: And I, God, called the dry land Earth; and the gathering together of the waters, called I the Sea; and I, God, saw that all things which I had made were good.",
+"Standard Works: And the Gods ordered, saying: Let the waters under the heaven be gathered together unto one place, and let the earth come up dry; and it was so as they ordered;"
+]
+},
+"togeth": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “togeth” in “And God called the dry land Earth ; and the gathering together of the waters called he Seas : and God saw that it was good .…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And I, God, called the dry land Earth; and the gathering together of the waters, called I the Sea; and I, God, saw that all things which I had made were good. Standard Works: And after he was slain I saw the multitudes of the earth, that they were gathered together to fight against the apostles of the Lamb; for thus were the twelve called by the angel of the Lord.",
+"matches": [
+"Standard Works: And I, God, called the dry land Earth; and the gathering together of the waters, called I the Sea; and I, God, saw that all things which I had made were good.",
+"Standard Works: And after he was slain I saw the multitudes of the earth, that they were gathered together to fight against the apostles of the Lamb; for thus were the twelve called by the angel of the Lord."
+]
+}
+},
+"11": {
+"herb": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “herb” in “And God said, Let the earth bring forth grass , the herb yielding seed , and the fruit tree yielding fruit after his kind, whose seed is in itself, upon the earth : and it was so.…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And the Gods said: Let us prepare the earth to bring forth grass; the herb yielding seed; the fruit tree yielding fruit, after his kind, whose seed in itself yieldeth its own likeness upon the earth; and it was so, ev… Standard Works: And I, God, said: Let the earth bring forth grass, the herb yielding seed, the fruit tree yielding fruit, after his kind, and the tree yielding fruit",
+"matches": [
+"Standard Works: And the Gods said: Let us prepare the earth to bring forth grass; the herb yielding seed; the fruit tree yielding fruit, after his kind, whose seed in itself yieldeth its own likeness upon the earth; and it was so, ev…",
+"Standard Works: And I, God, said: Let the earth bring forth grass, the herb yielding seed, the fruit tree yielding fruit, after his kind, and the tree yielding fruit, whose seed should be in itself upon the earth, and it was so even …"
+]
+},
+"yield": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “yielding” in “And God said, Let the earth bring forth grass , the herb yielding seed , and the fruit tree yielding fruit after his kind, whose seed is in itself, upon the earth : and it was so.…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And the Gods said: Let us prepare the earth to bring forth grass; the herb yielding seed; the fruit tree yielding fruit, after his kind, whose seed in itself yieldeth its own likeness upon the earth; and it was so, ev… Standard Works: And I, God, said: Let the earth bring forth grass, the herb yielding seed, the fruit tree yielding fruit, after his kind, and the tree yielding fruit",
+"matches": [
+"Standard Works: And the Gods said: Let us prepare the earth to bring forth grass; the herb yielding seed; the fruit tree yielding fruit, after his kind, whose seed in itself yieldeth its own likeness upon the earth; and it was so, ev…",
+"Standard Works: And I, God, said: Let the earth bring forth grass, the herb yielding seed, the fruit tree yielding fruit, after his kind, and the tree yielding fruit, whose seed should be in itself upon the earth, and it was so even …"
+]
+}
+},
+"12": {
+"herb": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “herb” in “And the earth brought forth grass , and herb yielding seed after his kind, and the tree yielding fruit , whose seed was in itself, after his kind: and God saw that it was good .…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And the earth brought forth grass, every herb yielding seed after his kind, and the tree yielding fruit, whose seed should be in itself, after his kind; and I, God, saw that all things which I had made were good; Standard Works: And God said, Let the earth bring forth grass, the herb yielding seed, and the fruit tree yielding fruit after his kind, whose seed is in itself, upon the ",
+"matches": [
+"Standard Works: And the earth brought forth grass, every herb yielding seed after his kind, and the tree yielding fruit, whose seed should be in itself, after his kind; and I, God, saw that all things which I had made were good;",
+"Standard Works: And God said, Let the earth bring forth grass, the herb yielding seed, and the fruit tree yielding fruit after his kind, whose seed is in itself, upon the earth: and it was so."
+]
+},
+"yield": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “yielding” in “And the earth brought forth grass , and herb yielding seed after his kind, and the tree yielding fruit , whose seed was in itself, after his kind: and God saw that it was good .…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And the earth brought forth grass, every herb yielding seed after his kind, and the tree yielding fruit, whose seed should be in itself, after his kind; and I, God, saw that all things which I had made were good; Standard Works: And God said, Let the earth bring forth grass, the herb yielding seed, and the fruit tree yielding fruit after his kind, whose seed is in itself, upon the ",
+"matches": [
+"Standard Works: And the earth brought forth grass, every herb yielding seed after his kind, and the tree yielding fruit, whose seed should be in itself, after his kind; and I, God, saw that all things which I had made were good;",
+"Standard Works: And God said, Let the earth bring forth grass, the herb yielding seed, and the fruit tree yielding fruit after his kind, whose seed is in itself, upon the earth: and it was so."
+]
+}
+},
+"13": {
+"morn": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “morning” in “And the evening and the morning were the third day.…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And the evening and the morning were the fourth day. Standard Works: And the evening and the morning were the fifth day.",
+"matches": [
+"Standard Works: And the evening and the morning were the fourth day.",
+"Standard Works: And the evening and the morning were the fifth day."
+]
+},
+"third": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “third” in “And the evening and the morning were the third day.…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And it came to pass that they numbered the days; from the evening until the morning they called night; and it came to pass, from the morning until the evening they called day; and it was the third time. Standard Works: But it came to pass that they did not pursue us far before they halted; and it was in the morning of the third day of the seventh month.",
+"matches": [
+"Standard Works: And it came to pass that they numbered the days; from the evening until the morning they called night; and it came to pass, from the morning until the evening they called day; and it was the third time.",
+"Standard Works: But it came to pass that they did not pursue us far before they halted; and it was in the morning of the third day of the seventh month."
+]
+}
+},
+"14": {
+"heaven": {
+"lang": "hbo",
+"lemma": "d/8064",
+"surface_gr": "",
+"surface_he": "הַ/שָּׁמַ֔יִם",
+"morph": "HTd/Ncmpa",
+"confidence": "high",
+"study": "Here “heaven” aligns to Hebrew wording tagged in the Westminster Leningrad tradition (lemma field d/8064; surface “הַ/שָּׁמַ֔יִם”). In “And God said, Let there be lights in the firmament of the heaven to divide the day from the night ; and let them be for signs , and for seasons , and for days, and years :…”, the construction colors how creation, covenant, or command is being declared. Standard Works: And I, God, said: Let there be lights in the firmament of the heaven, to divide the day from the night, and let them be for signs, and for seasons, and for days, and for years; Standard Works: And the Gods organized the lights in the expanse of the heaven, and caused them to divide the day from the night; and organized them to be for signs and for seasons, and for days and for year",
+"matches": [
+"Standard Works: And I, God, said: Let there be lights in the firmament of the heaven, to divide the day from the night, and let them be for signs, and for seasons, and for days, and for years;",
+"Standard Works: And the Gods organized the lights in the expanse of the heaven, and caused them to divide the day from the night; and organized them to be for signs and for seasons, and for days and for years;"
+]
+},
+"night": {
+"lang": "hbo",
+"lemma": "d/3915",
+"surface_gr": "",
+"surface_he": "הַ/לָּ֑יְלָה",
+"morph": "HTd/Ncmsa",
+"confidence": "high",
+"study": "Here “night” aligns to Hebrew wording tagged in the Westminster Leningrad tradition (lemma field d/3915; surface “הַ/לָּ֑יְלָה”). In “And God said, Let there be lights in the firmament of the heaven to divide the day from the night ; and let them be for signs , and for seasons , and for days, and years :…”, the construction colors how creation, covenant, or command is being declared. Standard Works: And I, God, said: Let there be lights in the firmament of the heaven, to divide the day from the night, and let them be for signs, and for seasons, and for days, and for years; Standard Works: And the Gods organized the lights in the expanse of the heaven, and caused them to divide the day from the night; and organized them to be for signs and for seasons, and for days and for year",
+"matches": [
+"Standard Works: And I, God, said: Let there be lights in the firmament of the heaven, to divide the day from the night, and let them be for signs, and for seasons, and for days, and for years;",
+"Standard Works: And the Gods organized the lights in the expanse of the heaven, and caused them to divide the day from the night; and organized them to be for signs and for seasons, and for days and for years;"
+]
+}
+},
+"15": {
+"light": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “lights” in “And let them be for lights in the firmament of the heaven to give light upon the earth : and it was so.…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And let them be for lights in the firmament of the heaven to give light upon the earth; and it was so. Standard Works: And God set them in the firmament of the heaven to give light upon the earth,",
+"matches": [
+"Standard Works: And let them be for lights in the firmament of the heaven to give light upon the earth; and it was so.",
+"Standard Works: And God set them in the firmament of the heaven to give light upon the earth,"
+]
+},
+"heaven": {
+"lang": "hbo",
+"lemma": "d/8064",
+"surface_gr": "",
+"surface_he": "הַ/שָּׁמַ֔יִם",
+"morph": "HTd/Ncmpa",
+"confidence": "high",
+"study": "Here “heaven” aligns to Hebrew wording tagged in the Westminster Leningrad tradition (lemma field d/8064; surface “הַ/שָּׁמַ֔יִם”). In “And let them be for lights in the firmament of the heaven to give light upon the earth : and it was so.…”, the construction colors how creation, covenant, or command is being declared. Standard Works: And let them be for lights in the firmament of the heaven to give light upon the earth; and it was so. Standard Works: And God set them in the firmament of the heaven to give light upon the earth,",
+"matches": [
+"Standard Works: And let them be for lights in the firmament of the heaven to give light upon the earth; and it was so.",
+"Standard Works: And God set them in the firmament of the heaven to give light upon the earth,"
+]
+}
+},
+"16": {
+"night": {
+"lang": "hbo",
+"lemma": "d/3915",
+"surface_gr": "",
+"surface_he": "הַ/לַּ֔יְלָה",
+"morph": "HTd/Ncmsa",
+"confidence": "high",
+"study": "Here “night” aligns to Hebrew wording tagged in the Westminster Leningrad tradition (lemma field d/3915; surface “הַ/לַּ֔יְלָה”). In “And God made two great lights ; the greater light to rule the day, and the lesser light to rule the night : he made the stars also.…”, the construction colors how creation, covenant, or command is being declared. Standard Works: And I, God, made two great lights; the greater light to rule the day, and the lesser light to rule the night, and the greater light was the sun, and the lesser light was the moon; and the stars also were made even acc… Standard Works: And the Gods organized the two great lights, the greater light to rule the day, and the lesser light to rule the night; with the lesser light they se",
+"matches": [
+"Standard Works: And I, God, made two great lights; the greater light to rule the day, and the lesser light to rule the night, and the greater light was the sun, and the lesser light was the moon; and the stars also were made even acc…",
+"Standard Works: And the Gods organized the two great lights, the greater light to rule the day, and the lesser light to rule the night; with the lesser light they set the stars also;"
+]
+},
+"light": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “lights” in “And God made two great lights ; the greater light to rule the day, and the lesser light to rule the night : he made the stars also.…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And I, God, made two great lights; the greater light to rule the day, and the lesser light to rule the night, and the greater light was the sun, and the lesser light was the moon; and the stars also were made even acc… Standard Works: And the Gods organized the two great lights, the greater light to rule the day, and the lesser light to rule the night; with the lesser light they se",
+"matches": [
+"Standard Works: And I, God, made two great lights; the greater light to rule the day, and the lesser light to rule the night, and the greater light was the sun, and the lesser light was the moon; and the stars also were made even acc…",
+"Standard Works: And the Gods organized the two great lights, the greater light to rule the day, and the lesser light to rule the night; with the lesser light they set the stars also;"
+]
+}
+},
+"17": {
+"heaven": {
+"lang": "hbo",
+"lemma": "d/8064",
+"surface_gr": "",
+"surface_he": "הַ/שָּׁמָ֑יִם",
+"morph": "HTd/Ncmpa",
+"confidence": "high",
+"study": "Here “heaven” aligns to Hebrew wording tagged in the Westminster Leningrad tradition (lemma field d/8064; surface “הַ/שָּׁמָ֑יִם”). In “And God set them in the firmament of the heaven to give light upon the earth ,…”, the construction colors how creation, covenant, or command is being declared. Standard Works: And I, God, set them in the firmament of the heaven to give light upon the earth, Standard Works: And let them be for lights in the firmament of the heaven to give light upon the earth; and it was so.",
+"matches": [
+"Standard Works: And I, God, set them in the firmament of the heaven to give light upon the earth,",
+"Standard Works: And let them be for lights in the firmament of the heaven to give light upon the earth; and it was so."
+]
+},
+"light": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “light” in “And God set them in the firmament of the heaven to give light upon the earth ,…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And I, God, set them in the firmament of the heaven to give light upon the earth, Standard Works: And let them be for lights in the firmament of the heaven to give light upon the earth; and it was so.",
+"matches": [
+"Standard Works: And I, God, set them in the firmament of the heaven to give light upon the earth,",
+"Standard Works: And let them be for lights in the firmament of the heaven to give light upon the earth; and it was so."
+]
+}
+},
+"18": {
+"light": {
+"lang": "hbo",
+"lemma": "d/216",
+"surface_gr": "",
+"surface_he": "הָ/א֖וֹר",
+"morph": "HTd/Ncbsa",
+"confidence": "high",
+"study": "Here “light” aligns to Hebrew wording tagged in the Westminster Leningrad tradition (lemma field d/216; surface “הָ/א֖וֹר”). In “And to rule over the day and over the night , and to divide the light from the darkness : and God saw that it was good .…”, the construction colors how creation, covenant, or command is being declared. Standard Works: And the sun to rule over the day, and the moon to rule over the night, and to divide the light from the darkness; and I, God, saw that all things which I had made were good; Standard Works: And God saw the light, that it was good: and God divided the light from the darkness.",
+"matches": [
+"Standard Works: And the sun to rule over the day, and the moon to rule over the night, and to divide the light from the darkness; and I, God, saw that all things which I had made were good;",
+"Standard Works: And God saw the light, that it was good: and God divided the light from the darkness."
+]
+},
+"divide": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “divide” in “And to rule over the day and over the night , and to divide the light from the darkness : and God saw that it was good .…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And the sun to rule over the day, and the moon to rule over the night, and to divide the light from the darkness; and I, God, saw that all things which I had made were good; Standard Works: And God saw the light, that it was good: and God divided the light from the darkness.",
+"matches": [
+"Standard Works: And the sun to rule over the day, and the moon to rule over the night, and to divide the light from the darkness; and I, God, saw that all things which I had made were good;",
+"Standard Works: And God saw the light, that it was good: and God divided the light from the darkness."
+]
+}
+},
+"19": {
+"morn": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “morning” in “And the evening and the morning were the fourth day.…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And the evening and the morning were the third day. Standard Works: And the evening and the morning were the fifth day.",
+"matches": [
+"Standard Works: And the evening and the morning were the third day.",
+"Standard Works: And the evening and the morning were the fifth day."
+]
+},
+"fourth": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “fourth” in “And the evening and the morning were the fourth day.…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And it came to pass that it was from evening until morning that it was night; and it came to pass that it was from morning until evening that it was day; and it was the fourth time. Standard Works: ¶ And it came to pass on the fourth day, when they arose early in the morning, that he rose up to depart: and the damsel’s father said unto his son in law, Comfort thine heart with a mor",
+"matches": [
+"Standard Works: And it came to pass that it was from evening until morning that it was night; and it came to pass that it was from morning until evening that it was day; and it was the fourth time.",
+"Standard Works: ¶ And it came to pass on the fourth day, when they arose early in the morning, that he rose up to depart: and the damsel’s father said unto his son in law, Comfort thine heart with a morsel of bread,…"
+]
+}
+},
+"20": {
+"heaven": {
+"lang": "hbo",
+"lemma": "d/8064",
+"surface_gr": "",
+"surface_he": "הַ/שָּׁמָֽיִם",
+"morph": "HTd/Ncmpa",
+"confidence": "high",
+"study": "Here “heaven” aligns to Hebrew wording tagged in the Westminster Leningrad tradition (lemma field d/8064; surface “הַ/שָּׁמָֽיִם”). In “And God said, Let the waters bring forth abundantly the moving creature that hath life , and fowl that may fly above the earth in the open firmament of heaven .…”, the construction colors how creation, covenant, or command is being declared. Standard Works: And I, God, said: Let the waters bring forth abundantly the moving creature that hath life, and fowl which may fly above the earth in the open firmament of heaven. Standard Works: And the Gods said: Let us prepare the waters to bring forth abundantly the moving creatures that have life; and the fowl, that they may fly above the earth in the open expanse of heaven.",
+"matches": [
+"Standard Works: And I, God, said: Let the waters bring forth abundantly the moving creature that hath life, and fowl which may fly above the earth in the open firmament of heaven.",
+"Standard Works: And the Gods said: Let us prepare the waters to bring forth abundantly the moving creatures that have life; and the fowl, that they may fly above the earth in the open expanse of heaven."
+]
+},
+"water": {
+"lang": "hbo",
+"lemma": "d/4325",
+"surface_gr": "",
+"surface_he": "הַ/מַּ֔יִם",
+"morph": "HTd/Ncmpa",
+"confidence": "high",
+"study": "Here “waters” aligns to Hebrew wording tagged in the Westminster Leningrad tradition (lemma field d/4325; surface “הַ/מַּ֔יִם”). In “And God said, Let the waters bring forth abundantly the moving creature that hath life , and fowl that may fly above the earth in the open firmament of heaven .…”, the construction colors how creation, covenant, or command is being declared. Standard Works: And I, God, said: Let the waters bring forth abundantly the moving creature that hath life, and fowl which may fly above the earth in the open firmament of heaven. Standard Works: And the Gods said: Let us prepare the waters to bring forth abundantly the moving creatures that have life; and the fowl, that they may fly above the earth in the open expanse of heaven.",
+"matches": [
+"Standard Works: And I, God, said: Let the waters bring forth abundantly the moving creature that hath life, and fowl which may fly above the earth in the open firmament of heaven.",
+"Standard Works: And the Gods said: Let us prepare the waters to bring forth abundantly the moving creatures that have life; and the fowl, that they may fly above the earth in the open expanse of heaven."
+]
+}
+},
+"21": {
+"creature": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “creature” in “And God created great whales , and every living creature that moveth , which the waters brought forth abundantly , after their kind, and every winged fowl after his kind: and God saw that it was good…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And I, God, created great whales, and every living creature that moveth, which the waters brought forth abundantly, after their kind, and every winged fowl after his kind; and I, God, saw that all things which I had c… Standard Works: And the Gods prepared the waters that they might bring forth great whales, and every living creature that moveth, which the waters were to bring fort",
+"matches": [
+"Standard Works: And I, God, created great whales, and every living creature that moveth, which the waters brought forth abundantly, after their kind, and every winged fowl after his kind; and I, God, saw that all things which I had c…",
+"Standard Works: And the Gods prepared the waters that they might bring forth great whales, and every living creature that moveth, which the waters were to bring forth abundantly after their kind; and every winged fowl after their kin…"
+]
+},
+"water": {
+"lang": "hbo",
+"lemma": "d/4325",
+"surface_gr": "",
+"surface_he": "הַ/מַּ֜יִם",
+"morph": "HTd/Ncmpa",
+"confidence": "high",
+"study": "Here “waters” aligns to Hebrew wording tagged in the Westminster Leningrad tradition (lemma field d/4325; surface “הַ/מַּ֜יִם”). In “And God created great whales , and every living creature that moveth , which the waters brought forth abundantly , after their kind, and every winged fowl after his kind: and God saw that it was good…”, the construction colors how creation, covenant, or command is being declared. Standard Works: And I, God, created great whales, and every living creature that moveth, which the waters brought forth abundantly, after their kind, and every winged fowl after his kind; and I, God, saw that all things which I had c… Standard Works: And the Gods prepared the waters that they might bring forth great whales, and every living creature that moveth, which the waters were to bring fort",
+"matches": [
+"Standard Works: And I, God, created great whales, and every living creature that moveth, which the waters brought forth abundantly, after their kind, and every winged fowl after his kind; and I, God, saw that all things which I had c…",
+"Standard Works: And the Gods prepared the waters that they might bring forth great whales, and every living creature that moveth, which the waters were to bring forth abundantly after their kind; and every winged fowl after their kin…"
+]
+}
+},
+"22": {
+"fruit": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “fruitful” in “And God blessed them, saying, Be fruitful , and multiply , and fill the waters in the seas , and let fowl multiply in the earth .…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And I, God, blessed them, saying: Be fruitful, and multiply, and fill the waters in the sea; and let fowl multiply in the earth; Standard Works: And the Gods said: We will bless them, and cause them to be fruitful and multiply, and fill the waters in the seas or great waters; and cause the fowl to multiply in the earth.",
+"matches": [
+"Standard Works: And I, God, blessed them, saying: Be fruitful, and multiply, and fill the waters in the sea; and let fowl multiply in the earth;",
+"Standard Works: And the Gods said: We will bless them, and cause them to be fruitful and multiply, and fill the waters in the seas or great waters; and cause the fowl to multiply in the earth."
+]
+},
+"multip": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “multiply” in “And God blessed them, saying, Be fruitful , and multiply , and fill the waters in the seas , and let fowl multiply in the earth .…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And I, God, blessed them, saying: Be fruitful, and multiply, and fill the waters in the sea; and let fowl multiply in the earth; Standard Works: And the Gods said: We will bless them, and cause them to be fruitful and multiply, and fill the waters in the seas or great waters; and cause the fowl to multiply in the earth.",
+"matches": [
+"Standard Works: And I, God, blessed them, saying: Be fruitful, and multiply, and fill the waters in the sea; and let fowl multiply in the earth;",
+"Standard Works: And the Gods said: We will bless them, and cause them to be fruitful and multiply, and fill the waters in the seas or great waters; and cause the fowl to multiply in the earth."
+]
+}
+},
+"23": {
+"morn": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “morning” in “And the evening and the morning were the fifth day.…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And the evening and the morning were the fourth day. Standard Works: And it came to pass that it was from evening until morning that they called night; and it came to pass that it was from morning until evening that they called day; and it was the fifth time.",
+"matches": [
+"Standard Works: And the evening and the morning were the fourth day.",
+"Standard Works: And it came to pass that it was from evening until morning that they called night; and it came to pass that it was from morning until evening that they called day; and it was the fifth time."
+]
+},
+"fifth": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “fifth” in “And the evening and the morning were the fifth day.…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And it came to pass that it was from evening until morning that they called night; and it came to pass that it was from morning until evening that they called day; and it was the fifth time. Standard Works: And he arose early in the morning on the fifth day to depart: and the damsel’s father said, Comfort thine heart, I pray thee. And they tarried until afternoon, and they did eat ",
+"matches": [
+"Standard Works: And it came to pass that it was from evening until morning that they called night; and it came to pass that it was from morning until evening that they called day; and it was the fifth time.",
+"Standard Works: And he arose early in the morning on the fifth day to depart: and the damsel’s father said, Comfort thine heart, I pray thee. And they tarried until afternoon, and they did eat both of them."
+]
+}
+},
+"24": {
+"cattle": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “cattle” in “And God said, Let the earth bring forth the living creature after his kind, cattle , and creeping thing, and beast of the earth after his kind: and it was so.…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And I, God, said: Let the earth bring forth the living creature after his kind, cattle, and creeping things, and beasts of the earth after their kind, and it was so; Standard Works: And the Gods prepared the earth to bring forth the living creature after his kind, cattle and creeping things, and beasts of the earth after their kind; and it was so, as they had said.",
+"matches": [
+"Standard Works: And I, God, said: Let the earth bring forth the living creature after his kind, cattle, and creeping things, and beasts of the earth after their kind, and it was so;",
+"Standard Works: And the Gods prepared the earth to bring forth the living creature after his kind, cattle and creeping things, and beasts of the earth after their kind; and it was so, as they had said."
+]
+},
+"beast": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “beast” in “And God said, Let the earth bring forth the living creature after his kind, cattle , and creeping thing, and beast of the earth after his kind: and it was so.…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And I, God, said: Let the earth bring forth the living creature after his kind, cattle, and creeping things, and beasts of the earth after their kind, and it was so; Standard Works: And the Gods prepared the earth to bring forth the living creature after his kind, cattle and creeping things, and beasts of the earth after their kind; and it was so, as they had said.",
+"matches": [
+"Standard Works: And I, God, said: Let the earth bring forth the living creature after his kind, cattle, and creeping things, and beasts of the earth after their kind, and it was so;",
+"Standard Works: And the Gods prepared the earth to bring forth the living creature after his kind, cattle and creeping things, and beasts of the earth after their kind; and it was so, as they had said."
+]
+}
+},
+"25": {
+"beast": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “beast” in “And God made the beast of the earth after his kind, and cattle after their kind, and every thing that creepeth upon the earth after his kind: and God saw that it was good .…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And I, God, made the beasts of the earth after their kind, and cattle after their kind, and everything which creepeth upon the earth after his kind; and I, God, saw that all these things were good. Standard Works: And the Gods prepared the earth to bring forth the living creature after his kind, cattle and creeping things, and beasts of the earth after their kind; and it was so, as",
+"matches": [
+"Standard Works: And I, God, made the beasts of the earth after their kind, and cattle after their kind, and everything which creepeth upon the earth after his kind; and I, God, saw that all these things were good.",
+"Standard Works: And the Gods prepared the earth to bring forth the living creature after his kind, cattle and creeping things, and beasts of the earth after their kind; and it was so, as they had said."
+]
+},
+"cattle": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “cattle” in “And God made the beast of the earth after his kind, and cattle after their kind, and every thing that creepeth upon the earth after his kind: and God saw that it was good .…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And I, God, made the beasts of the earth after their kind, and cattle after their kind, and everything which creepeth upon the earth after his kind; and I, God, saw that all these things were good. Standard Works: And the Gods prepared the earth to bring forth the living creature after his kind, cattle and creeping things, and beasts of the earth after their kind; and it was so, as",
+"matches": [
+"Standard Works: And I, God, made the beasts of the earth after their kind, and cattle after their kind, and everything which creepeth upon the earth after his kind; and I, God, saw that all these things were good.",
+"Standard Works: And the Gods prepared the earth to bring forth the living creature after his kind, cattle and creeping things, and beasts of the earth after their kind; and it was so, as they had said."
+]
+}
+},
+"26": {
+"fish": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “fish” in “And God said, Let us make man in our image , after our likeness : and let them have dominion over the fish of the sea , and over the fowl of the air , and over the cattle , and over all the earth , an…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And the Gods took counsel among themselves and said: Let us go down and form man in our image, after our likeness; and we will give them dominion over the fish of the sea, and over the fowl of the air, and over the ca… Standard Works: And God blessed them, and God said unto them, Be fruitful, and multiply, and replenish the earth, and subdue it: and have dominion over the fish of t",
+"matches": [
+"Standard Works: And the Gods took counsel among themselves and said: Let us go down and form man in our image, after our likeness; and we will give them dominion over the fish of the sea, and over the fowl of the air, and over the ca…",
+"Standard Works: And God blessed them, and God said unto them, Be fruitful, and multiply, and replenish the earth, and subdue it: and have dominion over the fish of the sea, and over the fowl of the air, and over…"
+]
+},
+"sea": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “sea” in “And God said, Let us make man in our image , after our likeness : and let them have dominion over the fish of the sea , and over the fowl of the air , and over the cattle , and over all the earth , an…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And the Gods took counsel among themselves and said: Let us go down and form man in our image, after our likeness; and we will give them dominion over the fish of the sea, and over the fowl of the air, and over the ca… Standard Works: And God blessed them, and God said unto them, Be fruitful, and multiply, and replenish the earth, and subdue it: and have dominion over the fish of t",
+"matches": [
+"Standard Works: And the Gods took counsel among themselves and said: Let us go down and form man in our image, after our likeness; and we will give them dominion over the fish of the sea, and over the fowl of the air, and over the ca…",
+"Standard Works: And God blessed them, and God said unto them, Be fruitful, and multiply, and replenish the earth, and subdue it: and have dominion over the fish of the sea, and over the fowl of the air, and over…"
+]
+}
+},
+"27": {
+"male": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “male” in “So God created man in his own image , in the image of God created he him; male and female created he them.…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And that he created man, male and female, after his own image and in his own likeness, created he them; Standard Works: And I, God, created man in mine own image, in the image of mine Only Begotten created I him; male and female created I them.",
+"matches": [
+"Standard Works: And that he created man, male and female, after his own image and in his own likeness, created he them;",
+"Standard Works: And I, God, created man in mine own image, in the image of mine Only Begotten created I him; male and female created I them."
+]
+},
+"female": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “female” in “So God created man in his own image , in the image of God created he him; male and female created he them.…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And that he created man, male and female, after his own image and in his own likeness, created he them; Standard Works: And I, God, created man in mine own image, in the image of mine Only Begotten created I him; male and female created I them.",
+"matches": [
+"Standard Works: And that he created man, male and female, after his own image and in his own likeness, created he them;",
+"Standard Works: And I, God, created man in mine own image, in the image of mine Only Begotten created I him; male and female created I them."
+]
+}
+},
+"28": {
+"sea": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “sea” in “And God blessed them, and God said unto them, Be fruitful , and multiply , and replenish the earth , and subdue it: and have dominion over the fish of the sea , and over the fowl of the air , and over…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And I, God, blessed them, and said unto them: Be fruitful, and multiply, and replenish the earth, and subdue it, and have dominion over the fish of the sea, and over the fowl of the air, and over every living thing th… Standard Works: And the Gods said: We will bless them. And the Gods said: We will cause them to be fruitful and multiply, and replenish the earth, and subdue it, and",
+"matches": [
+"Standard Works: And I, God, blessed them, and said unto them: Be fruitful, and multiply, and replenish the earth, and subdue it, and have dominion over the fish of the sea, and over the fowl of the air, and over every living thing th…",
+"Standard Works: And the Gods said: We will bless them. And the Gods said: We will cause them to be fruitful and multiply, and replenish the earth, and subdue it, and to have dominion over the fish of the sea, and over the fowl of the…"
+]
+},
+"fowl": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “fowl” in “And God blessed them, and God said unto them, Be fruitful , and multiply , and replenish the earth , and subdue it: and have dominion over the fish of the sea , and over the fowl of the air , and over…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And I, God, blessed them, and said unto them: Be fruitful, and multiply, and replenish the earth, and subdue it, and have dominion over the fish of the sea, and over the fowl of the air, and over every living thing th… Standard Works: And the Gods said: We will bless them. And the Gods said: We will cause them to be fruitful and multiply, and replenish the earth, and subdue it, and",
+"matches": [
+"Standard Works: And I, God, blessed them, and said unto them: Be fruitful, and multiply, and replenish the earth, and subdue it, and have dominion over the fish of the sea, and over the fowl of the air, and over every living thing th…",
+"Standard Works: And the Gods said: We will bless them. And the Gods said: We will cause them to be fruitful and multiply, and replenish the earth, and subdue it, and to have dominion over the fish of the sea, and over the fowl of the…"
+]
+}
+},
+"29": {
+"herb": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “herb” in “And God said, Behold , I have given you every herb bearing seed , which is upon the face of all the earth , and every tree , in the which is the fruit of a tree yielding seed ; to you it shall be for…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And I, God, said unto man: Behold, I have given you every herb bearing seed, which is upon the face of all the earth, and every tree in the which shall be the fruit of a tree yielding seed; to you it shall be for meat. Standard Works: And the Gods said: Behold, we will give them every herb bearing seed that shall come upon the face of all the earth, and every tree which shall have ",
+"matches": [
+"Standard Works: And I, God, said unto man: Behold, I have given you every herb bearing seed, which is upon the face of all the earth, and every tree in the which shall be the fruit of a tree yielding seed; to you it shall be for meat.",
+"Standard Works: And the Gods said: Behold, we will give them every herb bearing seed that shall come upon the face of all the earth, and every tree which shall have fruit upon it; yea, the fruit of the tree yielding seed to them we w…"
+]
+},
+"seed": {
+"lang": "hbo",
+"lemma": "2233",
+"surface_gr": "",
+"surface_he": "זֶ֗רַע",
+"morph": "HNcmsa",
+"confidence": "high",
+"study": "Here “seed” aligns to Hebrew wording tagged in the Westminster Leningrad tradition (lemma field 2233; surface “זֶ֗רַע”). In “And God said, Behold , I have given you every herb bearing seed , which is upon the face of all the earth , and every tree , in the which is the fruit of a tree yielding seed ; to you it shall be for…”, the construction colors how creation, covenant, or command is being declared. Standard Works: And I, God, said unto man: Behold, I have given you every herb bearing seed, which is upon the face of all the earth, and every tree in the which shall be the fruit of a tree yielding seed; to you it shall be for meat. Standard Works: And the Gods said: Behold, we will give them every herb bearing seed that shall come upon the face of all the earth, and every tree which shall have ",
+"matches": [
+"Standard Works: And I, God, said unto man: Behold, I have given you every herb bearing seed, which is upon the face of all the earth, and every tree in the which shall be the fruit of a tree yielding seed; to you it shall be for meat.",
+"Standard Works: And the Gods said: Behold, we will give them every herb bearing seed that shall come upon the face of all the earth, and every tree which shall have fruit upon it; yea, the fruit of the tree yielding seed to them we w…"
+]
+}
+},
+"30": {
+"meat": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “meat” in “And to every beast of the earth , and to every fowl of the air , and to every thing that creepeth upon the earth , wherein there is life , I have given every green herb for meat : and it was so.…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And to every beast of the earth, and to every fowl of the air, and to everything that creepeth upon the earth, wherein I grant life, there shall be given every clean herb for meat; and it was so, even as I spake. Standard Works: Every moving thing that liveth shall be meat for you; even as the green herb have I given you all things.",
+"matches": [
+"Standard Works: And to every beast of the earth, and to every fowl of the air, and to everything that creepeth upon the earth, wherein I grant life, there shall be given every clean herb for meat; and it was so, even as I spake.",
+"Standard Works: Every moving thing that liveth shall be meat for you; even as the green herb have I given you all things."
+]
+},
+"herb": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “herb” in “And to every beast of the earth , and to every fowl of the air , and to every thing that creepeth upon the earth , wherein there is life , I have given every green herb for meat : and it was so.…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And to every beast of the earth, and to every fowl of the air, and to everything that creepeth upon the earth, wherein I grant life, there shall be given every clean herb for meat; and it was so, even as I spake. Standard Works: Every moving thing that liveth shall be meat for you; even as the green herb have I given you all things.",
+"matches": [
+"Standard Works: And to every beast of the earth, and to every fowl of the air, and to everything that creepeth upon the earth, wherein I grant life, there shall be given every clean herb for meat; and it was so, even as I spake.",
+"Standard Works: Every moving thing that liveth shall be meat for you; even as the green herb have I given you all things."
+]
+}
+},
+"31": {
+"morn": {
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"confidence": "none",
+"study": "No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. “morning” in “And God saw every thing that he had made, and, behold , it was very good . And the evening and the morning were the sixth day.…” should be read for what it does rhetorically and theologically in its immediate sentence. Standard Works: And I, God, saw everything that I had made, and, behold, all things which I had made were very good; and the evening and the morning were the sixth day. Standard Works: And the Gods said: We will do everything that we have said, and organize them; and behold, they shall be very obedient. And it came to pass that it was from evening until morning they called night; and it came to pa",
+"matches": [
+"Standard Works: And I, God, saw everything that I had made, and, behold, all things which I had made were very good; and the evening and the morning were the sixth day.",
+"Standard Works: And the Gods said: We will do everything that we have said, and organize them; and behold, they shall be very obedient. And it came to pass that it was from evening until morning they called night; and it came to pass…"
+]
+},
+"god": {
+"lang": "hbo",
+"lemma": "430",
+"surface_gr": "",
+"surface_he": "אֱלֹהִים֙",
+"morph": "HNcmpa",
+"confidence": "high",
+"study": "Here “God” aligns to Hebrew wording tagged in the Westminster Leningrad tradition (lemma field 430; surface “אֱלֹהִים֙”). In “And God saw every thing that he had made, and, behold , it was very good . And the evening and the morning were the sixth day.…”, the construction colors how creation, covenant, or command is being declared. Standard Works: And I, God, saw everything that I had made, and, behold, all things which I had made were very good; and the evening and the morning were the sixth day. Standard Works: And the Gods said: We will do everything that we have said, and organize them; and behold, they shall be very obedient. And it came to pass that it was from evening until morning they called night; and it came to pa",
+"matches": [
+"Standard Works: And I, God, saw everything that I had made, and, behold, all things which I had made were very good; and the evening and the morning were the sixth day.",
+"Standard Works: And the Gods said: We will do everything that we have said, and organize them; and behold, they shall be very obedient. And it came to pass that it was from evening until morning they called night; and it came to pass…"
+]
+}
+}
+}
