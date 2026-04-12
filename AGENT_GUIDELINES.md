@@ -98,11 +98,11 @@ Selected verse: `box-shadow: inset 3px 0 0 var(--accent), 0 0 0 1px rgba(156,122
 1. Verse text header (verse ref + full text)
 2. People · Places · Things chips (entity scan of verse text)
 3. Commentary cards from the corpus (talks, books)
-4. Key Words — English headword as printed in the verse + plain-English gloss (no interlinear Greek/Hebrew display in the panel)
+4. Key Words — English headword as printed in the verse + compact original-language word study (lemma line optional; no concordance numbers in copy)
 
 **Entity chip / annotated word click** → opens entity profile panel before word study
 
-**Word click (span.w)** → word study panel (frequency, scripture cross-refs, definition)
+**Word click (span.w)** → word study panel (frequency, scripture cross-refs, compact lexical/spiritual note where available)
 
 **TOC tile click** → loads chapter HTML into #reader via `loadChapter(id)`
 

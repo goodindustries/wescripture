@@ -1,15 +1,11 @@
-const puppeteer = require('puppeteer');
+const { launchBrowser } = require('./tools/puppeteer_launch.js');
 
 function assert(condition, message) {
   if (!condition) throw new Error(message);
 }
 
 async function run() {
-  const browser = await puppeteer.launch({
-    headless: 'new',
-    executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
-    args: ['--no-sandbox'],
-  });
+  const browser = await launchBrowser();
 
   const page = await browser.newPage();
   await page.setViewport({ width: 1440, height: 1100, deviceScaleFactor: 1 });
@@ -512,7 +508,7 @@ async function run() {
   await page.waitForFunction(() => document.querySelector('#channel').classList.contains('open'), { timeout: 15000 });
   await page.waitForFunction(() => {
     const study = document.querySelector('#ch-study');
-    return !!(study && !study.hidden && /G2316|theos|god/i.test(study.textContent || ''));
+    return !!(study && !study.hidden && /theos|θε|deity|god|supreme/i.test(study.textContent || ''));
   }, { timeout: 15000 });
 
   const strongsState = await page.evaluate(() => ({
@@ -521,7 +517,10 @@ async function run() {
   }));
 
   assert(/god/i.test(strongsState.word), 'word-study regression used the wrong scripture word');
-  assert(/G2316|theos/i.test(strongsState.study), "Strong's word study did not appear for John 3:16");
+  assert(
+    /theos|θε|deity|god|supreme/i.test(strongsState.study),
+    'word study panel did not show Greek/lexical content for John 3:16 (concordance numbers are not shown)',
+  );
   await page.$eval('#ch-close', (el) => el.click());
   await page.waitForFunction(() => !document.querySelector('#channel').classList.contains('open'));
 

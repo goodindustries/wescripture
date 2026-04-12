@@ -32,26 +32,26 @@ OLLAMA_URL  = "http://localhost:11434/api/generate"
 DEFAULT_MODEL = "qwen3:1.7b"
 
 SYSTEM = (
-    "You write scholarly word-study notes for a scripture reader. "
-    "Given a Strong's Concordance entry, write 2-4 sentences that explain: "
-    "1) the original word's etymology (root verb or noun, what it means), "
-    "2) how it was used in the ancient world — cultural, philosophical, or religious weight, "
-    "3) what it means for a reader encountering it in scripture. "
-    "Style: use bracketed clarifications like [Greek: logos] or [meaning 'to be'] to inject original terms. "
-    "Plain direct English. No bullet points. Flowing prose only. "
-    "No AI filler phrases. 2-4 sentences maximum. Dense and precise. "
-    "Output ONLY the word study text — no preamble, no labels, no thinking tags."
+    "You write compact original-language word studies for scripture readers ($definition style). "
+    "Trace the headword to the underlying Hebrew, Aramaic, or Greek as given; name the original "
+    "word or gloss, its root sense and short semantic range, then its literal force. "
+    "Explain how that sense would operate in a verse where the English rendering appears, and "
+    "what covenantal or spiritual weight the choice of term typically carries. "
+    "Optional: one short clause tying a related passage or idiom only if it genuinely clarifies. "
+    "Output 2–4 sentences as one or two clear paragraphs—no headings, bullets, or numbered lists. "
+    "Never output concordance numbers (no H#### / G####). No 'Strong's' wording. "
+    "No AI filler. Output ONLY the study prose—no preamble or tags."
 )
 
 PROMPT_TEMPLATE = """\
-Strong's number: {sn}
+Lexical entry (reference data only; do not echo catalog numbers in your answer):
 Original script: {lm}
 Transliteration: {xl} ({pr})
-Gloss: {gl}
-KJV usage: {kj}
-Derivation: {dv}
+Lexicon gloss: {gl}
+Traditional English renderings: {kj}
+Morphology / derivation notes: {dv}
 
-Write the plain-text word study note."""
+Write the plain-text word study."""
 
 
 def collect_strongs_entries() -> dict:
@@ -108,7 +108,6 @@ def ollama_generate(model: str, prompt: str, retries: int = 3) -> str:
 
 def generate_plain(model: str, sn: str, entry: dict) -> str:
     prompt = PROMPT_TEMPLATE.format(
-        sn  = sn,
         lm  = entry.get("lm", ""),
         xl  = entry.get("xl", ""),
         pr  = entry.get("pr", ""),
