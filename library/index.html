@@ -1139,8 +1139,8 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 // ── Site config (override to white-label) ────────────────────────────────
 var SITE = {
     name:       'WeScripture',
-    // Netlify (publish=library): reader home is / or /index.html
-    // VPS/Caddy: reader under /library/ → repo-root landing at ../index.html
+    // Netlify (publish=.): landing at /; reader at /library/… → home ../index.html
+    // VPS/Caddy: same — reader under /library/ → repo-root landing at ../index.html
     homeUrl:    (function() {
         var p = location.pathname || '';
         if (p.indexOf('/library/') === 0) return '../index.html';
@@ -1982,6 +1982,7 @@ function titleInlineBack() {
 function renderTitlePageInlineNav() {
     var tp = document.getElementById('ch-title_page');
     if (!tp) return;
+    var nav = tp.querySelector('#title-inline-nav');
     var grid = tp.querySelector('#title-inline-nav-grid');
     var back = tp.querySelector('#title-inline-nav-back');
     var titleEl = tp.querySelector('#title-inline-nav-title');
@@ -1992,14 +1993,16 @@ function renderTitlePageInlineNav() {
     var html = '';
 
     if (path.level === 'idle') {
+        if (nav) nav.hidden = true;
         if (back) back.hidden = true;
-        titleEl.textContent = 'Library browser';
-        subEl.textContent = 'Choose Scriptures, Other Writings, or a collection below.';
+        titleEl.textContent = '';
+        if (subEl) subEl.textContent = '';
         grid.className = 'title-inline-nav-grid';
-        grid.innerHTML = '<p class="title-inline-placeholder">Use the links above or open Scriptures or Other writings.</p>';
+        grid.innerHTML = '';
         return;
     }
 
+    if (nav) nav.hidden = false;
     if (back) back.hidden = false;
 
     if (path.level === 'scripture-root') {
@@ -2297,6 +2300,19 @@ function jumpTo(chapterId, verseNum, opts) {
         }
     });
 }
+
+(function wireSiteHomeToTitlePage() {
+    var el = document.getElementById('site-home');
+    if (!el) return;
+    el.addEventListener('click', function(ev) {
+        if (ev.defaultPrevented) return;
+        if (ev.button !== 0) return;
+        if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey) return;
+        ev.preventDefault();
+        titlePageInlinePath = { level: 'idle', volume: null, book: null, sourceCollection: null, sourceGroup: null };
+        jumpTo('title_page', null, { pushHistory: true });
+    });
+})();
 
 function resetReaderContent() {
     document.getElementById('content').innerHTML = '';
@@ -3887,6 +3903,7 @@ function renderStudyPanelIntro(chapterId) {
 
 function loadChapter(id, prepend) {
     if (loadedChapters.has(id)) {
+        if (id === 'title_page') hydrateTitlePage();
         return Promise.resolve();
     }
     return fetch(`./chapters/${id}.html`)

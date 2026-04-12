@@ -27,22 +27,19 @@ async function run() {
 
   const idle = await page.evaluate(() => ({
     title: document.querySelector('#ch-title_page .dashboard-title')?.textContent?.trim(),
-    navTitle: document.querySelector('#ch-title_page #title-inline-nav-title')?.textContent?.trim(),
-    placeholder: document.querySelector('#ch-title_page #title-inline-nav-grid .title-inline-placeholder')?.textContent?.trim(),
+    browseHidden: document.querySelector('#ch-title_page #title-inline-nav')?.hidden,
+    dashLink: !!document.querySelector('#ch-title_page .title-links a[href*="source-dashboard"]'),
   }));
 
   assert(idle.title && /WeScripture/i.test(idle.title), 'title page hero missing');
-  assert(idle.navTitle === 'Library browser', 'expected idle inline nav title');
-  assert(idle.placeholder && idle.placeholder.length > 10, 'expected idle inline nav placeholder');
-
-  const dashLink = await page.evaluate(
-    () => !!document.querySelector('#ch-title_page .title-links a[href*="source-dashboard"]'),
-  );
-  assert(dashLink, 'expected coverage dashboard link on title page');
+  assert(idle.browseHidden === true, 'expected idle title page to hide inline browse panel');
+  assert(idle.dashLink === false, 'did not expect coverage dashboard link on title page');
 
   await page.click('#ch-title_page a[data-open-shelf="scriptures"]');
   await page.waitForFunction(
-    () => document.querySelector('#ch-title_page #title-inline-nav-title')?.textContent === 'Scriptures',
+    () =>
+      document.querySelector('#ch-title_page #title-inline-nav')?.hidden === false &&
+      document.querySelector('#ch-title_page #title-inline-nav-title')?.textContent === 'Scriptures',
     { timeout: 15000 },
   );
   const volTiles = await page.$$eval(
@@ -58,11 +55,21 @@ async function run() {
   });
   assert(dash && dash.totals && typeof dash.totals.docs === 'number', 'source-dashboard.json totals missing');
 
+  await page.evaluate(() => {
+    jumpTo('genesis_1');
+  });
+  await page.waitForSelector('#ch-genesis_1', { timeout: 25000 });
+  await page.click('#site-home');
+  await page.waitForFunction(
+    () => document.querySelector('#ch-title_page #title-inline-nav')?.hidden === true,
+    { timeout: 20000 },
+  );
+
   console.log(
     JSON.stringify(
       {
         ok: true,
-        idleNavTitle: idle.navTitle,
+        idleBrowseHidden: idle.browseHidden,
         volumeTiles: volTiles,
         docsMetric: dash.totals.docs,
       },
