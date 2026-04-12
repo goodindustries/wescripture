@@ -1,19 +1,17 @@
 # URL map: Netlify vs VPS (Docker + Caddy)
 
-## Netlify (`publish = library` in [`netlify.toml`](../netlify.toml))
+## Netlify (`publish = "."` in [`netlify.toml`](../netlify.toml))
 
-The deployed site root **is** the `library/` folder. Paths are:
+The deployed site root **is the repository root** (same URL layout as the Docker static mount). Paths are:
 
 | Path | File |
 |------|------|
-| `/` | [`library/index.html`](../library/index.html) (scripture reader) |
-| `/index.html` | same reader (canonical **home**) |
-| `/home.html` | redirects (302) to `/index.html`; stub file in repo for non-Netlify hosts |
-| `/toc.json`, `/chapters/…`, `/entities/…` | under `library/` |
+| `/` | [`index.html`](../index.html) (landing / home) |
+| `/library/index.html` | [`library/index.html`](../library/index.html) (scripture reader) |
+| `/library/toc.json`, `/library/chapters/…`, `/library/entities/…` | under [`library/`](../library/) |
+| `/home.html` | redirects (302) to `/index.html`; stub in repo for non-Netlify hosts |
 
-**Do not** assume `/library/index.html` exists on Netlify (that would be `library/library/index.html` in the repo).
-
-Reader **Home** uses `SITE.homeUrl` → `./index.html` (same reader).
+Reader **Home** uses `SITE.homeUrl` → `../index.html` when the pathname starts with `/library/` (same as VPS).
 
 ## VPS / Docker ([`Caddyfile`](../Caddyfile), [`DEPLOYMENT.md`](../DEPLOYMENT.md))
 
@@ -29,10 +27,10 @@ Reader **Home** uses `SITE.homeUrl` → `../index.html` when the pathname starts
 
 ## Prebuilt deploy (save Netlify build minutes)
 
-**Canonical production deploy:** from repo root, with the site linked (`netlify link`) and CLI logged in:
+**Netlify static fallback:** from repo root, with the site linked (`netlify link`) and CLI logged in:
 
 ```bash
-npx netlify-cli deploy --prod --dir library
+npx netlify-cli deploy --prod --dir .
 ```
 
-This uploads the existing `library/` tree; Netlify does not run a separate build command (`command = ""` in `netlify.toml`). Use this after merges or local changes—do not rely on an implicit Netlify Git build unless you have that wired up separately.
+This uploads the repo root; Netlify does not run a separate build command (`command = ""` in `netlify.toml`). Primary production is typically the VM/Docker stack—see [`DEPLOYMENT.md`](../DEPLOYMENT.md).

@@ -2,8 +2,8 @@
  * Corpus “Browse standard works” tiles use Church hub cover JPEGs (per testament).
  *
  * Targets the **repo-root** landing page (repo `index.html`), which embeds
- * `#corpus-root` under `#library-books-details`. This is not deployed on Netlify
- * (`publish = library` only); run locally or in CI with repo-root `http.server`.
+ * `#corpus-root` under `#library-books-details`. Netlify uses `publish = "."`
+ * (same layout as Docker); run locally or in CI with repo-root `http.server`.
  *
  * Serve repo root: python3 -m http.server 4173
  *   node test-corpus-book-covers.js

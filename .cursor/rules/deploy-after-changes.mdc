@@ -1,5 +1,5 @@
 ---
-description: Commit, push, and deploy via Netlify CLI (prebuilt library/)
+description: Commit, push, and deploy via Netlify CLI (repo root publish)
 alwaysApply: true
 ---
 
@@ -13,9 +13,9 @@ After making any edits to this project, always:
 4. From repo root, **production deploy with Netlify CLI** (prebuilt static; no Netlify build step):
 
    ```bash
-   npx netlify-cli deploy --prod --dir library
+   npx netlify-cli deploy --prod --dir .
    ```
 
-   Requires a linked site (`netlify link`) and CLI auth. This is the canonical way this repo goes live; do not assume git push alone updates Netlify unless that integration is explicitly configured.
+   Requires a linked site (`netlify link`) and CLI auth. Primary production is often the Docker/Caddy stack (`DEPLOYMENT.md` at repo root); Netlify is static fallback. Do not assume git push alone updates Netlify unless Git integration is configured.
 
-No separate “build” step: `publish = library` in `netlify.toml`; the deploy uploads the existing `library/` tree.
+No separate “build” step: `publish = "."` in `netlify.toml`; the deploy uploads the repo root (landing at `/`, reader under `/library/`).

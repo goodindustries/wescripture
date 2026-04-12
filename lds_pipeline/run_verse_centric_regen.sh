@@ -23,4 +23,4 @@ python3 lds_pipeline/build_verse_coverage.py --quiet 2>/dev/null || true
 echo "== 5. Strict embedding / TOC gate =="
 python3 lds_pipeline/audit_embedding_corpus_gaps.py --strict || true
 
-echo "Done. Deploy library: git add library && git commit && git push && npx netlify-cli deploy --prod --dir library"
+echo "Done. Ship: git add -A && git commit && git push && npx netlify-cli deploy --prod --dir ."

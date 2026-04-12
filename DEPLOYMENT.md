@@ -76,7 +76,7 @@ Operational requirement: do at least one restore drill after initial setup, and 
 - **staging (recommended)**: same as production, separate hostname + DB.
 
 ## Netlify (temporary fallback)
-`netlify.toml` exists for fallback static hosting, but the primary deployment path is now the VM/VPS Docker stack so iteration is not gated by Netlify build minutes.
+`netlify.toml` exists for fallback static hosting (`publish = "."`, same paths as Docker: `/` landing, `/library/…` reader), but the primary deployment path is now the VM/VPS Docker stack so iteration is not gated by Netlify build minutes.
 
-URL layout for the static reader vs landing differs between Netlify (`publish = library`) and VPS (repo root at `/`, reader under `/library/`). See [`docs/ENVIRONMENT_URLS.md`](docs/ENVIRONMENT_URLS.md).
+Netlify and VPS now share the same URL layout. See [`docs/ENVIRONMENT_URLS.md`](docs/ENVIRONMENT_URLS.md).
 
