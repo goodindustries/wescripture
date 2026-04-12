@@ -39,6 +39,7 @@ TESTS=(
   test-verse-discovery-panel.js
   test-library-commentary-links.js
   test-library-buttons.js
+  test-toc-volume-covers.js
   test-library-mobile-channel.js
   test-search-quality.js
   test-title-inline-nav.js
