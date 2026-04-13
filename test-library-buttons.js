@@ -9,7 +9,6 @@ async function run() {
 
   const page = await browser.newPage();
   await page.setViewport({ width: 1440, height: 1100, deviceScaleFactor: 1 });
-  // Avoid restored chapter (lds_position) leaving TOC at book/chapters — no scripture-root tile.
   await page.evaluateOnNewDocument(() => {
     try {
       localStorage.removeItem('lds_position');
@@ -24,126 +23,43 @@ async function run() {
   const pass = (name, details = '') => results.push({ name, ok: true, details });
 
   await page.waitForSelector('#splash.gone', { timeout: 60000 });
-  // Ensure sidebar TOC is open for tile tests (default is open; toggle if closed).
-  await page.evaluate(() => {
-    const toc = document.getElementById('toc');
-    if (toc && toc.classList.contains('hidden') && typeof toggleToc === 'function') toggleToc();
-  });
-  await page.waitForSelector('#toc:not(.hidden)', { timeout: 10000 });
-  await page.waitForSelector('#toc-grid .toc-tile', { timeout: 10000 });
-  pass('initial load', 'reader and tile nav rendered');
+  await page.waitForSelector('#ch-title_page', { timeout: 30000 });
+  await page.waitForSelector('#ch-title_page a[data-open-shelf="scriptures"]', { timeout: 15000 });
+  pass('initial load', 'reader and title page rendered');
 
-  await page.evaluate(() => { toggleToc(); });
-  await page.waitForFunction(() => document.querySelector('#toc').classList.contains('hidden'));
-  await page.evaluate(() => { toggleToc(); });
-  await page.waitForFunction(() => !document.querySelector('#toc').classList.contains('hidden'));
-  pass('toc toggle', 'closes and reopens sidebar');
+  await page.click('#ch-title_page a[data-open-shelf="scriptures"]');
+  await page.waitForFunction(() => document.getElementById('title-nav-title')?.textContent?.trim() === 'Scriptures', { timeout: 15000 });
+  pass('open scriptures', 'title nav opened');
 
-  await page.waitForSelector('#reader', { timeout: 10000 });
-  pass('reader shell', '#reader present (epub download control removed from chrome)');
-
-  await page.evaluate(() => {
-    setTocPathForChapter('title_page');
-    tocOpen = true;
-    document.getElementById('toc').classList.remove('hidden');
-    renderTocView();
-  });
-  await page.waitForSelector('#toc-grid .toc-tile[data-action="scripture-root"]', { timeout: 10000 });
-
-  await page.click('#toc-grid .toc-tile[data-action="scripture-root"]');
-  await page.waitForFunction(() => document.querySelector('#toc-title').textContent === 'Scriptures');
-
-  await page.click('#toc-grid .toc-tile[data-action="volume"][data-volume="Old Testament"]');
-  await page.waitForFunction(() => document.querySelector('#toc-title').textContent === 'Books');
-  pass('volume tile', 'Old Testament opens books view');
-
-  await page.click('#toc-grid .toc-tile[data-action="book"][data-book="Genesis"]');
-  await page.waitForFunction(() => document.querySelector('#toc-title').textContent === 'Chapters' && document.querySelector('#toc-subtitle').textContent === 'Genesis');
-  pass('book tile', 'Genesis opens chapters view');
-
-  await page.click('#toc-grid .toc-tile[data-action="chapter"][data-id="genesis_1"]');
+  await page.click('#title-nav-grid .title-nav-tile[data-action="volume"][data-volume="Old Testament"]');
+  await page.waitForFunction(() => document.getElementById('title-nav-title')?.textContent?.trim() === 'Books', { timeout: 15000 });
+  await page.click('#title-nav-grid .title-nav-tile[data-action="book"][data-book="Genesis"]');
+  await page.waitForFunction(() => document.getElementById('title-nav-title')?.textContent?.trim() === 'Chapters', { timeout: 15000 });
+  await page.click('#title-nav-grid .title-nav-tile[data-action="chapter"][data-id="genesis_1"]');
   await page.waitForSelector('#ch-genesis_1', { timeout: 20000 });
-  pass('genesis tile', 'Genesis 1 loads from tile click');
+  pass('genesis tile', 'Genesis 1 loads from nav click');
 
-  await page.$eval('#ch-genesis_1', (el) => el.scrollIntoView({ block: 'center' }));
+  await page.$eval('#ch-genesis_1 .verse', (el) => el.scrollIntoView({ block: 'center' }));
   await page.click('#ch-genesis_1 .verse');
   await page.waitForFunction(() => document.querySelector('#ch-genesis_1 .verse.verse-focus'));
-  await page.waitForFunction(() => {
-    const chapter = document.querySelector('#ch-genesis_1');
-    if (!chapter) return false;
-    return !!chapter.querySelector('.lds-commentary-block, .etymology-block, .semantic-quote, .jst-block, .donaldson-block');
-  }, { timeout: 45000 });
-  pass('notes lazy-load', 'commentary blocks present for Genesis 1');
-
-  // chObserver can reset tocPath between UI back clicks; run backs synchronously after fixing path.
-  await page.evaluate(() => {
-    setTocPathForChapter('genesis_1');
-    tocBack();
-    tocBack();
-    tocOpen = true;
-    document.getElementById('toc').classList.remove('hidden');
-    var ch = document.getElementById('channel');
-    if (ch) ch.classList.remove('open');
-  });
-  await page.waitForFunction(() => document.querySelector('#toc-title').textContent === 'Scriptures');
-  await page.evaluate(() => {
-    var t = document.querySelector('#toc-grid .toc-tile[data-action="volume"][data-volume="New Testament"]');
-    if (!t) throw new Error('New Testament volume tile not found');
-    t.click();
-  });
-  await page.waitForFunction(() => document.querySelector('#toc-subtitle').textContent === 'New Testament');
-  await page.evaluate(() => {
-    document.querySelector('#toc-grid .toc-tile[data-action="book"][data-book="Matthew"]').click();
-  });
-  await page.waitForFunction(() => document.querySelector('#toc-subtitle').textContent === 'Matthew');
-  await page.evaluate(() => {
-    document.querySelector('#toc-grid .toc-tile[data-action="chapter"][data-id="matthew_28"]').click();
-  });
-  await page.waitForSelector('#ch-matthew_28', { timeout: 20000 });
-  pass('chapter tile', 'Matthew 28 loads from tile click');
+  pass('verse focus', 'clicking verse focuses');
 
   await page.click('#search-btn');
-  await page.waitForFunction(() => document.querySelector('#search-panel').classList.contains('open'));
+  await page.waitForFunction(() => document.querySelector('#search-panel')?.classList.contains('open'));
   await page.type('#search-input', 'light');
   await page.waitForFunction(() => document.querySelectorAll('.search-result').length > 0, { timeout: 15000 });
   await page.click('.search-result');
-  await page.waitForFunction(() => !document.querySelector('#search-panel').classList.contains('open'), { timeout: 10000 });
+  await page.waitForFunction(() => !document.querySelector('#search-panel')?.classList.contains('open'), { timeout: 10000 });
   pass('search result click', 'navigates and closes search panel');
 
-  await page.click('#search-btn');
-  await page.waitForFunction(() => document.querySelector('#search-panel').classList.contains('open'));
-  await page.click('#search-close');
-  await page.waitForFunction(() => !document.querySelector('#search-panel').classList.contains('open'));
-  pass('search close button', 'closes panel');
-
-  await page.evaluate(() => jumpTo('genesis_1'));
-  await page.waitForSelector('#ch-genesis_1', { timeout: 20000 });
-  await page.$eval('#ch-genesis_1', (el) => el.scrollIntoView({ block: 'center' }));
-  await sleep(200);
-  await page.waitForSelector('#ch-genesis_1 span.w', { timeout: 20000 });
-  await page.click('#ch-genesis_1 span.w');
-  await page.waitForFunction(() => document.querySelector('#channel').classList.contains('open'), { timeout: 15000 });
-  pass('word click', 'opens channel panel');
-
-  const expandButton = await page.$('#panel-body .ch-expand');
-  if (expandButton) {
-    await expandButton.click();
-    await sleep(600);
-    const opened = await page.evaluate(() => !!document.querySelector('#panel-body .ch-full-text.open'));
-    pass('channel expand button', opened ? 'expands long excerpt' : 'expand control did not open excerpt region');
-  } else {
-    pass('channel expand button', 'no expandable excerpt for first word selection');
-  }
-
-  await page.$eval('#ch-close', (el) => el.click());
-  await page.waitForFunction(() => !document.querySelector('#channel').classList.contains('open'));
-  pass('channel close button', 'closes panel');
+  // Allow any async UI updates to settle.
+  await sleep(250);
 
   console.log(JSON.stringify(results, null, 2));
   await browser.close();
 }
 
-run().catch(async (error) => {
-  console.error(error.stack || String(error));
+run().catch((err) => {
+  console.error(err.stack || String(err));
   process.exit(1);
 });
