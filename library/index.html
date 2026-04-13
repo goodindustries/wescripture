@@ -819,11 +819,11 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 .verse-text span.w[data-thing] { border-bottom-color: #6a4a8c; }
 /* Stems in word index: show affordance (HTML has span.w; entity/place/thing keep rules above) */
 .scripture .verse-text span.w[data-st]:not([data-entity]):not([data-place]):not([data-thing]) {
-    border-bottom: 1px dotted rgba(156, 122, 77, 0.5);
-    cursor: pointer;
+    border-bottom: none;
+    cursor: default;
 }
 .scripture .verse-text span.w[data-st]:not([data-entity]):not([data-place]):not([data-thing]):hover {
-    background: rgba(156, 122, 77, 0.08);
+    background: transparent;
 }
 /* Entity profile panel */
 .ep-header { display: flex; gap: 12px; align-items: flex-start; padding: 16px 16px 12px; border-bottom: 1px solid var(--divider); }
@@ -5517,6 +5517,8 @@ document.getElementById('content').addEventListener('click', function(e) {
     var wSpanVerse = e.target.closest('span.w[data-st]');
     var verseForWord = wSpanVerse && wSpanVerse.closest('div.verse');
     if (wSpanVerse && verseForWord && !sourceMode) {
+        // Main verses should not show clickable underlines; keep keyword interaction in right pane.
+        return;
         var chBlock = verseForWord.closest('.chapter-block[data-chapter-id]');
         var chId = chBlock && chBlock.dataset.chapterId;
         var vnumW = String((verseForWord.id || '').replace(/^v/, '') || '');
