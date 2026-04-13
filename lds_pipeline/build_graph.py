@@ -38,8 +38,8 @@ LIBRARY     = REPO / "library"
 SOURCE_TOC  = LIBRARY / "source_toc.json"
 
 MIN_SCORE   = 0.25
-MAX_MATCHES = 5   # top N matches per verse to include
-DEEP_MAX_MATCHES = 12  # pilot chapters (e.g. John) when --deep-books is set
+MAX_MATCHES = 12   # top N matches per verse to include (UI shows 5 + "show 5 more")
+DEEP_MAX_MATCHES = 16  # pilot chapters (e.g. John) when --deep-books is set
 
 # Truncate passage text for the graph (shown in hover/popover)
 MAX_TEXT_LEN = 400
@@ -372,6 +372,9 @@ def build_chapter_graph(
         )
 
         count = 0
+        # Keep the “web” broad without letting one shelf dominate.
+        per_source_cap = max(2, max_matches // 3)  # e.g. 12 -> 4
+        per_source_counts: dict[str, int] = {}
         for m in matches:
             score = m.get('score', 0)
             if score < min_score:
@@ -380,6 +383,8 @@ def build_chapter_graph(
                 break
 
             src   = m.get('source', '')
+            if src and per_source_counts.get(src, 0) >= per_source_cap:
+                continue
             label = m.get('label', src)
             pkey  = f'{src}\x00{label}'
 
@@ -407,6 +412,8 @@ def build_chapter_graph(
                 pid = passage_index[pkey]
 
             edges.append({'s': vid, 't': pid, 'w': round(score, 3)})
+            if src:
+                per_source_counts[src] = per_source_counts.get(src, 0) + 1
             count += 1
 
     return {'nodes': nodes, 'edges': edges}

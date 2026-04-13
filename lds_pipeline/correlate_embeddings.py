@@ -181,6 +181,16 @@ def _ocr_ok(text: str) -> bool:
     return non_ascii / max(len(text), 1) < 0.07
 
 
+def _clean_ocr_text(text: str) -> str:
+    """Deterministic cleanup for common OCR artifacts (safe, no guessing)."""
+    t = (text or "").replace("\r", "\n")
+    t = t.replace("\u00ad\n", "")
+    t = re.sub(r"([A-Za-z])-\n([A-Za-z])", r"\1\2", t)
+    t = re.sub(r"(?<!\n)\n(?!\n)", " ", t)
+    t = re.sub(r"\s+", " ", t).strip()
+    return t
+
+
 def load_plaintext_dir_glob(
     dir_path: Path,
     source_name: str,
@@ -200,8 +210,8 @@ def load_plaintext_dir_glob(
         paras = [p.strip() for p in re.split(r'\n{2,}', text) if len(p.strip()) > 80]
         label = f"{label_prefix}: {txt_file.stem}"
         for para in paras:
-            if not _ocr_ok(para):
-                continue
+            garbled = not _ocr_ok(para)
+            para = _clean_ocr_text(para)
             row = {
                 "source": source_name,
                 "label":  label,
@@ -209,6 +219,8 @@ def load_plaintext_dir_glob(
             }
             if collection:
                 row["collection"] = collection
+            if garbled:
+                row["ocr_garbled"] = True
             passages.append(row)
     return passages
 
@@ -231,8 +243,8 @@ def load_plaintext_dir(
         paras = [p.strip() for p in re.split(r'\n{2,}', text) if len(p.strip()) > 80]
         label = f"{label_prefix}: {txt_file.stem}"
         for para in paras:
-            if not _ocr_ok(para):
-                continue
+            garbled = not _ocr_ok(para)
+            para = _clean_ocr_text(para)
             row = {
                 "source": source_name,
                 "label":  label,
@@ -240,6 +252,8 @@ def load_plaintext_dir(
             }
             if collection:
                 row["collection"] = collection
+            if garbled:
+                row["ocr_garbled"] = True
             passages.append(row)
     return passages
 

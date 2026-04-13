@@ -4939,6 +4939,14 @@ var wordIndexLoading = {};   // slug → promise
 var lexStudiesCache = {};    // lex:slug → { vnum: { stem: {...} } } (no _meta)
 var lexStudiesLoading = {};  // lex:slug → promise
 
+function closeTocPanel() {
+    var toc = document.getElementById('toc');
+    if (toc && toc.classList) toc.classList.add('hidden');
+    if (typeof window.tocOpen !== 'undefined') {
+        try { window.tocOpen = false; } catch (e) {}
+    }
+}
+
 var SRC_COLORS = {
     standard_works:        '#8B5E3C',
     donaldson:            '#D97706',
