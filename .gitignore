@@ -1,3 +1,5 @@
+supabase/.temp/
+
 .DS_Store
 .idea/
 .venv/
