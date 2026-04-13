@@ -1,0 +1,13 @@
+{
+  "graph_min_score_default": 0.25,
+  "verse_discovery_min_score_default": 0.4,
+  "notes": [
+    "Graph edges are filtered in lds_pipeline/build_graph.py by --min-score (default 0.25).",
+    "Verse discovery further filters graph edges in lds_pipeline/build_verse_discovery.py by --min-score (default 0.40).",
+    "These published tables are counts; they do not include per-link score values."
+  ],
+  "outputs": {
+    "verse_connection_counts_tsv": "library/published/verse_connection_counts.tsv",
+    "morsel_connection_counts_tsv": "library/published/morsel_connection_counts.tsv"
+  }
+}
