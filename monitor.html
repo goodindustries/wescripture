@@ -87,6 +87,37 @@
         <table aria-label="Top morsels"><thead><tr><th>Morsel</th><th class="n">Verses</th></tr></thead><tbody id="topMorsels"><tr><td colspan="2" class="small">Loading…</td></tr></tbody></table>
       </div>
     </div>
+
+    <div class="card" style="margin-top:10px">
+      <h2 class="chart-title">Browse full tables</h2>
+      <div class="small">Smart filtering: search + min connections + sort + pagination.</div>
+      <div class="controls" style="margin-top:8px">
+        <select id="browseKind" style="padding:10px 12px;border-radius:12px;border:1px solid rgba(0,0,0,.12);background:#fffdf9;color:var(--text);font-weight:700">
+          <option value="verses">Verses</option>
+          <option value="morsels">Morsels</option>
+        </select>
+        <input id="browseQ" type="search" placeholder="Filter (e.g. 'John 3' or 'history_of_church')" style="flex:1;min-width:220px;padding:10px 12px;border-radius:12px;border:1px solid rgba(0,0,0,.12);background:#fffdf9" />
+        <input id="browseMin" type="number" min="0" step="1" value="0" style="width:120px;padding:10px 12px;border-radius:12px;border:1px solid rgba(0,0,0,.12);background:#fffdf9" />
+        <select id="browseSort" style="padding:10px 12px;border-radius:12px;border:1px solid rgba(0,0,0,.12);background:#fffdf9;color:var(--text);font-weight:700">
+          <option value="desc">Most first</option>
+          <option value="asc">Least first</option>
+        </select>
+      </div>
+      <div class="controls" style="margin-top:6px">
+        <button id="browsePrev" type="button">Prev</button>
+        <button id="browseNext" type="button">Next</button>
+        <span class="status" id="browseMeta"></span>
+      </div>
+      <table aria-label="Browse results" style="margin-top:6px">
+        <thead><tr><th id="browseColA">Item</th><th class="n" id="browseColB">Count</th></tr></thead>
+        <tbody id="browseBody"><tr><td colspan="2" class="small">Loading…</td></tr></tbody>
+      </table>
+      <div class="mini-links">
+        <a href="/library/published/verse_connection_counts.tsv">Download verses TSV</a>
+        <a href="/library/published/morsel_connection_counts.tsv">Download morsels TSV</a>
+        <a href="/library/published/connection_thresholds.json">Thresholds JSON</a>
+      </div>
+    </div>
   </main>
 
   <script>
@@ -187,12 +218,93 @@
         const mRows = parseTsvCounts(mTxt).sort((a,b)=>b[1]-a[1]);
         renderTopTable('topVerses', vRows);
         renderTopTable('topMorsels', mRows, (safe)=>`<span style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">${safe}</span>`);
+
+        // Cache for browser table
+        window.__PUBLISHED = {
+          verses: vRows,
+          morsels: mRows,
+          thresholds: thTxt || null,
+        };
+        initBrowseTable();
       }catch(e){
         const v = document.getElementById('topVerses');
         const m = document.getElementById('topMorsels');
         if(v) v.innerHTML = `<tr><td colspan="2" class="small">Error loading published tables.</td></tr>`;
         if(m) m.innerHTML = `<tr><td colspan="2" class="small">Error loading published tables.</td></tr>`;
       }
+    }
+
+    function initBrowseTable(){
+      const state = window.__BROWSE_STATE || { kind:'verses', q:'', min:0, sort:'desc', page:0, pageSize:200, rows:[] };
+      window.__BROWSE_STATE = state;
+
+      const elKind = document.getElementById('browseKind');
+      const elQ = document.getElementById('browseQ');
+      const elMin = document.getElementById('browseMin');
+      const elSort = document.getElementById('browseSort');
+      const elPrev = document.getElementById('browsePrev');
+      const elNext = document.getElementById('browseNext');
+
+      function applyFromInputs(resetPage){
+        state.kind = (elKind && elKind.value) || state.kind;
+        state.q = (elQ && elQ.value) ? String(elQ.value).trim().toLowerCase() : '';
+        state.min = Number(elMin && elMin.value) || 0;
+        state.sort = (elSort && elSort.value) || state.sort;
+        if(resetPage) state.page = 0;
+        renderBrowse();
+      }
+
+      if(elKind) elKind.addEventListener('change', ()=>applyFromInputs(true));
+      if(elQ) elQ.addEventListener('input', ()=>applyFromInputs(true));
+      if(elMin) elMin.addEventListener('input', ()=>applyFromInputs(true));
+      if(elSort) elSort.addEventListener('change', ()=>applyFromInputs(true));
+      if(elPrev) elPrev.addEventListener('click', ()=>{ state.page = Math.max(0, state.page-1); renderBrowse(); });
+      if(elNext) elNext.addEventListener('click', ()=>{ state.page = state.page+1; renderBrowse(); });
+
+      applyFromInputs(true);
+    }
+
+    function renderBrowse(){
+      const pub = window.__PUBLISHED || {};
+      const state = window.__BROWSE_STATE;
+      const rows = (state.kind === 'morsels') ? (pub.morsels || []) : (pub.verses || []);
+
+      const q = state.q || '';
+      const min = state.min || 0;
+
+      let filtered = rows;
+      if(min > 0) filtered = filtered.filter(r => (r && r[1] >= min));
+      if(q) filtered = filtered.filter(r => String(r[0]||'').toLowerCase().includes(q));
+      filtered = filtered.slice().sort((a,b)=> state.sort === 'asc' ? (a[1]-b[1]) : (b[1]-a[1]));
+
+      const total = filtered.length;
+      const pageSize = state.pageSize;
+      const page = Math.max(0, state.page || 0);
+      const start = page * pageSize;
+      const end = Math.min(total, start + pageSize);
+      if(start >= total && page > 0){ state.page = 0; return renderBrowse(); }
+
+      const tb = document.getElementById('browseBody');
+      const meta = document.getElementById('browseMeta');
+      const colA = document.getElementById('browseColA');
+      const colB = document.getElementById('browseColB');
+      if(colA) colA.textContent = state.kind === 'morsels' ? 'Morsel' : 'Verse';
+      if(colB) colB.textContent = state.kind === 'morsels' ? 'Verses' : 'Links';
+
+      if(meta) meta.textContent = `${fmt(total)} match${total===1?'':'es'} · showing ${fmt(start+1)}–${fmt(end)} (page ${page+1})`;
+      if(!tb) return;
+
+      const view = filtered.slice(start, end);
+      if(!view.length){ tb.innerHTML = `<tr><td colspan="2" class="small">No matches.</td></tr>`; return; }
+
+      // Render small pages synchronously; avoid building huge DOM.
+      tb.innerHTML = view.map(([name, n]) => {
+        const safe = String(name||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        const a = state.kind === 'morsels'
+          ? `<span style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">${safe}</span>`
+          : safe;
+        return `<tr><td>${a}</td><td class="n">${fmt(n)}</td></tr>`;
+      }).join('');
     }
 
     async function fetchServerHistory(){
