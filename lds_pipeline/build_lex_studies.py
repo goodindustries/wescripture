@@ -23,6 +23,7 @@ import json
 import re
 import sys
 import time
+import unicodedata
 import urllib.error
 import urllib.request
 from pathlib import Path
@@ -67,17 +68,53 @@ import morphology_align as morph  # noqa: E402
 
 # Sync with product “$definition” rubric for verse keyword cards (reader shows this text only).
 DEFINITION_SYSTEM = (
-    "You write compact original-language word studies for Latter-day Saint readers. "
-    "When given facts (English surface form, verse wording, optional Hebrew/Greek lemma and gloss, "
-    "and short corpus excerpts), trace the key term to the underlying language when facts provide it; "
-    "identify the lemma and its root sense, explain literal sense and semantic range briefly, then show "
-    "how it functions in this scriptural context and what covenantal or spiritual weight it carries. "
-    "Keep ONE clear paragraph (no bullet lists). Focus on details that deepen understanding. "
-    "If facts say there is no public lemma alignment for this English token, do NOT invent Greek or Hebrew; "
-    "write an English discourse study grounded in the verse and excerpts only, and say plainly that "
-    "original-language alignment is unavailable for this volume. "
-    "Do not cite Strong's numbers. No filler."
+    "You write compact, plain-English word studies for Latter-day Saint readers. "
+    "The reader has no background in Greek or Hebrew and may not be able to read non-Latin scripts. "
+    "You may use provided original-language facts internally, but your OUTPUT must contain ONLY plain English "
+    "(ASCII/Latin characters only; do not output Greek/Hebrew characters or transliterations). "
+    "Start with the core idea of the word, then briefly explain its semantic range, then show how it functions "
+    "in this verse and why it matters spiritually/covenantally. "
+    "Keep ONE clear paragraph (no bullet lists), 2–4 sentences. No filler, no citations, no Strong's numbers. "
+    "If original-language alignment is unavailable, say so plainly and stay grounded in the verse/context provided."
 )
+
+_PLAIN_ENGLISH_BAD = re.compile(r"\b(Hebrew|Greek|lemma|surface|morph|Westminster|Leningrad|transliteration)\b", re.I)
+
+
+def _is_plain_english(text: str) -> bool:
+    if not text:
+        return False
+    if any(ord(c) > 127 for c in text):
+        return False
+    if _PLAIN_ENGLISH_BAD.search(text):
+        return False
+    return True
+
+
+def _repair_prompt(bad_text: str) -> str:
+    return (
+        "Rewrite the following word study into 2–4 plain-English sentences for a general reader.\n"
+        "Hard rules:\n"
+        "- Output ASCII/Latin characters only (no Greek/Hebrew characters).\n"
+        "- Do NOT mention Hebrew, Greek, lemma, surface forms, morphology tags, or manuscript traditions.\n"
+        "- Keep the meaning and verse relevance.\n\n"
+        "Text to rewrite:\n"
+        f"{bad_text.strip()}\n"
+    )
+
+
+def _ascii_public(s: str) -> str:
+    """Reader-facing ASCII: smart quotes, ellipsis, and strip remaining non-Latin."""
+    t = (s or "").replace("\u2026", "...").replace("\u2013", "-").replace("\u2014", "-")
+    for a, b in (
+        ("\u201c", '"'),
+        ("\u201d", '"'),
+        ("\u2018", "'"),
+        ("\u2019", "'"),
+    ):
+        t = t.replace(a, b)
+    t = unicodedata.normalize("NFKD", t)
+    return t.encode("ascii", "ignore").decode("ascii")
 
 
 def _slug_chapter_num(slug: str) -> int:
@@ -109,6 +146,31 @@ def _graph_stem_in_verse(entry: dict[str, Any], verse_text: str) -> bool:
 
 def _normalize_kw(s: str) -> str:
     return re.sub(r"[^a-z0-9\u0590-\u05ff\u0370-\u03ff\u1f00-\u1fff]+", "", (s or "").lower())[:40]
+
+
+def _dona_context_lines(slug: str, vnum: int, max_lines: int = 6, max_each: int = 320) -> list[str]:
+    """Plain/meaning snippets from Donaldson for this verse (Ollama context; lex + Donaldson)."""
+    path = DONALDSON / f"{slug}.json"
+    if not path.exists():
+        return []
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return []
+    block = data.get(str(vnum)) or {}
+    out: list[str] = []
+    for w in block.get("words") or []:
+        lab = (w.get("word") or "").strip()
+        if not lab or _is_junk_keyword(lab):
+            continue
+        note = (w.get("plain") or w.get("meaning") or "").strip()
+        if not note:
+            continue
+        note = re.sub(r"\s+", " ", note)[:max_each].strip()
+        out.append(f"{lab}: {note}")
+        if len(out) >= max_lines:
+            break
+    return out
 
 
 def _dona_headwords_for_verse(slug: str, vnum: int) -> set[str]:
@@ -209,9 +271,9 @@ def _top_matches(entry: dict[str, Any], n: int = 2) -> list[str]:
         src = (m.get("s") or "").replace("_", " ").title()
         x = re.sub(r"\s+", " ", (m.get("x") or "")).strip()
         if len(x) > 220:
-            x = x[:217] + "…"
+            x = x[:217] + "..."
         if src and x:
-            lines.append(f"{src}: {x}")
+            lines.append(_ascii_public(f"{src}: {x}"))
     return lines
 
 
@@ -226,15 +288,18 @@ def _cache_key(slug: str, v: int, stem: str, bundle: dict[str, Any]) -> str:
 
 
 def _ollama_generate(model: str, user_prompt: str) -> str:
-    payload = json.dumps(
-        {
-            "model": model,
-            "prompt": f"{DEFINITION_SYSTEM}\n\n{user_prompt}",
-            "stream": False,
-            "options": {"temperature": 0.35, "num_predict": 380},
-        }
-    ).encode()
-    for attempt in range(2):
+    def _payload(prompt: str) -> bytes:
+        return json.dumps(
+            {
+                "model": model,
+                "prompt": prompt,
+                "stream": False,
+                "options": {"temperature": 0.2, "num_predict": 180},
+            }
+        ).encode()
+
+    payload = _payload(f"{DEFINITION_SYSTEM}\n\n{user_prompt}")
+    for attempt in range(3):
         try:
             req = urllib.request.Request(
                 OLLAMA_URL,
@@ -246,7 +311,9 @@ def _ollama_generate(model: str, user_prompt: str) -> str:
                 result = json.loads(resp.read())
             text = (result.get("response") or "").strip()
             text = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL).strip()
-            return text
+            if _is_plain_english(text):
+                return text
+            payload = _payload(_repair_prompt(text))
         except (urllib.error.URLError, TimeoutError, OSError):
             time.sleep(1.5)
     return ""
@@ -262,42 +329,47 @@ def _fallback_study(
 ) -> str:
     snip = re.sub(r"\s+", " ", verse_text)[:200].strip()
     ml = " ".join(match_lines)[:400]
+    ml_grc = ml or "Corpus parallels in this app's index show how similar wording is used elsewhere."
+    ml_hbo = ml or "Let the verse's own parallelism and repetition guide how narrow or broad the sense should be taken."
     if bundle.get("confidence") == "high" and bundle.get("lang") == "grc":
-        gr = bundle.get("surface_gr") or ""
-        lem = bundle.get("lemma") or ""
         return (
-            f"In this line, “{surface_en}” sits over Greek {lem} (surface form “{gr}”), the wording behind "
-            f"our English in the Greek New Testament tradition used for alignment. Read in context — “{snip}…” — "
-            f"the term carries its usual semantic range while doing specific work in the sentence’s argument. "
-            f"{ml if ml else 'Corpus parallels in this app’s index underline how early readers heard the same lemma in similar settings.'}"
+            f"\"{surface_en}\" carries a focused sense in context: \"{snip}...\". "
+            f"Read the surrounding sentence to see what it is doing (promise, warning, contrast, cause). "
+            f"{ml_grc}"
         )
     if bundle.get("confidence") == "high" and bundle.get("lang") == "hbo":
-        he = bundle.get("surface_he") or ""
-        lem = bundle.get("lemma") or ""
         return (
-            f"Here “{surface_en}” aligns to Hebrew wording tagged in the Westminster Leningrad tradition "
-            f"(lemma field {lem}; surface “{he}”). In “{snip}…”, the construction colors how creation, covenant, "
-            f"or command is being declared. "
-            f"{ml if ml else 'Let the verse’s own parallelism and repetition guide how narrow or broad the sense should be taken.'}"
+            f"\"{surface_en}\" helps frame the verse's meaning in a creation-and-order register: \"{snip}...\". "
+            f"Read it as a statement about what God does and what that sets in motion for everything that follows. "
+            f"{ml_hbo}"
         )
     if vol in ("bofm", "dc", "pgp", "other"):
         return (
-            f"No public verse-token Hebrew/Greek alignment is shipped for this Restoration-era volume; the study stays in English. "
-            f"“{surface_en}” in “{snip}…” should be read for what it does rhetorically and theologically in its immediate sentence. "
-            f"{ml if ml else 'Use the semantic channel (tap the underlined word) for curated parallels across standard works and commentary.'}"
+            f"No public verse-token original-language alignment is shipped for this Restoration-era volume; the study stays in English. "
+            f"\"{surface_en}\" in \"{snip}...\" should be read for what it does rhetorically and theologically in its immediate sentence. "
+            f"{ml if ml else 'Use the semantic channel for curated parallels across standard works and commentary.'}"
         )
     return (
-        f"No confident open-licensed morphology row matched this English keyword (stem “{stem}”) in this verse; "
-        f"the study stays in English. “{surface_en}” in “{snip}…” should be read in context for what it contributes to the line. "
-        f"{ml if ml else 'Use the semantic channel (tap the underlined word) for curated parallels across standard works and commentary.'}"
+        f"No confident open-licensed morphology row matched this English keyword (stem \"{stem}\") in this verse; "
+        f"the study stays in English. \"{surface_en}\" in \"{snip}...\" should be read in context for what it contributes to the line. "
+        f"{ml if ml else 'Use the semantic channel for curated parallels across standard works and commentary.'}"
     )
 
 
-def _user_prompt(verse_text: str, surface_en: str, stem: str, bundle: dict[str, Any], match_lines: list[str]) -> str:
+def _user_prompt(
+    verse_text: str,
+    surface_en: str,
+    stem: str,
+    bundle: dict[str, Any],
+    match_lines: list[str],
+    dona_lines: list[str],
+) -> str:
+    vt = _ascii_public(verse_text)
+    se = _ascii_public(surface_en)
     lines = [
         "Facts (do not invent beyond these):",
-        f"- Verse (English): {verse_text}",
-        f"- Keyword stem: {stem}; surface in verse: {surface_en}",
+        f"- Verse (English): {vt}",
+        f"- Keyword stem: {stem}; surface in verse: {se}",
         f"- Volume class: {bundle.get('volume', '')}",
         f"- Alignment confidence: {bundle.get('confidence', '')}",
         f"- Language tag: {bundle.get('lang', '')}",
@@ -308,6 +380,9 @@ def _user_prompt(verse_text: str, surface_en: str, stem: str, bundle: dict[str, 
         "- Top corpus excerpts:",
     ]
     lines.extend(f"  • {m}" for m in match_lines[:3])
+    if dona_lines:
+        lines.append("- Donaldson word-study notes for this verse (prefer this substance; rewrite in your own plain English):")
+        lines.extend(f"  • {_ascii_public(x)}" for x in dona_lines[:6])
     lines.append("Write the study paragraph now.")
     return "\n".join(lines)
 
@@ -349,10 +424,18 @@ def build_chapter(slug: str, use_ollama: bool, model: str, force: bool) -> dict[
     book_title = morph.book_title_from_slug(slug)
 
     out: dict[str, Any] = {}
+    max_verses = 0
+    try:
+        max_verses = int(os.environ.get("LEX_STUDIES_MAX_VERSES", "0") or "0")
+    except ValueError:
+        max_verses = 0
+    done_verses = 0
 
     for vkey, verse_word_data in words_data.items():
         if not str(vkey).isdigit():
             continue
+        if max_verses and done_verses >= max_verses:
+            break
         vnum = int(vkey)
         verse_text = _verse_plain_text(html, vnum)
         dona_norm = _dona_headwords_for_verse(slug, vnum)
@@ -361,6 +444,7 @@ def build_chapter(slug: str, use_ollama: bool, model: str, force: bool) -> dict[
             continue
         nt_toks = morph.nt_tokens_for_verse(book_title, ch_num, vnum) if vol == "nt" else []
         ot_toks = morph.ot_tokens_for_verse(slug, ch_num, vnum) if vol == "ot" else []
+        dona_ctx = _dona_context_lines(slug, vnum)
         verse_out: dict[str, Any] = {}
         for stem, entry, _lab in picks:
             surface = _surface_for_stem(html, vnum, stem)
@@ -369,11 +453,13 @@ def build_chapter(slug: str, use_ollama: bool, model: str, force: bool) -> dict[
                 bundle = morph.english_only_bundle(vol, stem, surface)
             match_lines = _top_matches(entry, 2)
             _cache_key(slug, vnum, stem, bundle)  # reserved for future incremental rebuilds
-            up = _user_prompt(verse_text, surface, stem, bundle, match_lines)
+            up = _user_prompt(verse_text, surface, stem, bundle, match_lines, dona_ctx)
             if use_ollama:
                 study = _ollama_generate(model, up) or _fallback_study(verse_text, surface, stem, bundle, match_lines, vol)
             else:
                 study = _fallback_study(verse_text, surface, stem, bundle, match_lines, vol)
+            study = _ascii_public(study)
+            match_lines = [_ascii_public(m) for m in match_lines]
             verse_out[stem] = {
                 "lang": bundle.get("lang"),
                 "lemma": bundle.get("lemma") or "",
@@ -386,6 +472,7 @@ def build_chapter(slug: str, use_ollama: bool, model: str, force: bool) -> dict[
             }
         if verse_out:
             out[str(vnum)] = verse_out
+            done_verses += 1
 
     if not out:
         print(f"  {slug}: no graph stems to export", flush=True)
@@ -414,6 +501,7 @@ def main() -> None:
     ap.add_argument("--ollama", action="store_true")
     ap.add_argument("--model", default=os.environ.get("LEX_STUDIES_MODEL", DEFAULT_MODEL))
     ap.add_argument("--force", action="store_true")
+    ap.add_argument("--max-verses", type=int, default=0, help="Limit verses processed per chapter (0 = all)")
     args = ap.parse_args()
 
     if args.all:
@@ -425,6 +513,10 @@ def main() -> None:
 
     model = args.model or DEFAULT_MODEL
     for slug in slugs:
+        if args.max_verses and args.max_verses > 0:
+            os.environ["LEX_STUDIES_MAX_VERSES"] = str(args.max_verses)
+        else:
+            os.environ.pop("LEX_STUDIES_MAX_VERSES", None)
         build_chapter(slug, args.ollama, model, args.force)
 
 

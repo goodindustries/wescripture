@@ -24,7 +24,11 @@ When **chapter graphs**, **source HTML**, or **correlation JSON** change, rebuil
 5. **Coverage / metrics** (optional):  
    [`lds_pipeline/build_verse_coverage.py`](../lds_pipeline/build_verse_coverage.py)
 
-Wrapper script: [`lds_pipeline/regen_corpus_indexes.sh`](../lds_pipeline/regen_corpus_indexes.sh)
+6. **Reader keyword cards** (`library/chapters/*_lexstudies.json`, optional):  
+   [`lds_pipeline/build_lex_studies.py`](../lds_pipeline/build_lex_studies.py) — deterministic fallback by default; for plain-English Ollama prose run `ollama serve` then e.g. `python3 lds_pipeline/build_lex_studies.py --all --ollama`.  
+   Or: `REGEN_LEX_STUDIES=1 REGEN_LEX_STUDIES_FLAGS='--ollama' bash lds_pipeline/regen_corpus_indexes.sh`
+
+Wrapper script: [`lds_pipeline/regen_corpus_indexes.sh`](../lds_pipeline/regen_corpus_indexes.sh) (lex step runs only when `REGEN_LEX_STUDIES=1`)
 
 After cache sync / before correlating, audit whether shipped `source_toc` docs are represented in `load_all_sources()` (and flat per-doc `.txt` where Layer B applies):  
 `python3 lds_pipeline/audit_embedding_corpus_gaps.py` → [`diagnostics/embedding_loader_gaps.json`](../diagnostics/embedding_loader_gaps.json) (use `--strict` to fail on gaps).

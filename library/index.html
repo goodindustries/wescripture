@@ -60,6 +60,28 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 #acct-btn { background: none; border: none; cursor: pointer; padding: 6px; border-radius: 6px;
     color: var(--muted); display: flex; align-items: center; flex-shrink: 0; }
 #acct-btn:hover { background: rgba(0,0,0,0.06); color: var(--text); }
+
+/* Floating shortcut (bottom-right) */
+.monitor-fab {
+    position: fixed;
+    right: 14px;
+    bottom: 14px;
+    z-index: 999;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(156, 122, 77, 0.28);
+    background: rgba(254, 252, 248, 0.96);
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10);
+    backdrop-filter: blur(10px);
+}
+.monitor-fab:hover { background: rgba(156, 122, 77, 0.08); }
 .acct-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(0,0,0,0.18); margin-left: 6px; }
 .acct-dot.on { background: #2E8B57; }
 
@@ -5175,17 +5197,10 @@ function htmlKeyWordCardGraph(item, verseText, lexByStem) {
     var rawStudy = lx && lx.study ? String(lx.study).trim() : '';
     var sense = rawStudy
         ? rawStudy
-        : 'A compact word study for this keyword is not in the index yet for this verse. Tap the underlined word in the verse to open the word channel and browse corpus parallels.';
+        : 'A compact word study for this keyword is not in the index yet for this verse.';
     var verified = verseText && keywordVerifiedInVerse(title, verseText);
     var head = '<div class="word-card-head" onclick="toggleVerseKwCard(this)"><div class="word-card-head-text">'
         + '<div class="word-english' + (verified ? ' word-kw-in-verse' : '') + '">' + escapeHtml(title) + '</div>';
-    if (lx && lx.confidence === 'high' && lx.lemma) {
-        if (lx.lang === 'grc' && (lx.surface_gr || lx.lemma)) {
-            head += '<div class="word-original" lang="el" dir="auto">' + escapeHtml(lx.surface_gr || lx.lemma) + '</div>';
-        } else if (lx.lang === 'hbo' && (lx.surface_he || lx.lemma)) {
-            head += '<div class="word-original" lang="he" dir="rtl">' + escapeHtml(lx.surface_he || lx.lemma) + '</div>';
-        }
-    }
     head += '</div><span class="word-card-chevron" aria-hidden="true">\u25bc</span></div>';
     var def = '<div class="word-card-def"><div class="word-kw-block"><div class="word-kw-text">'
         + makeExpandable(sense, 'note-preview', 'note-overflow', 'note-more') + '</div></div></div>';
@@ -6160,6 +6175,8 @@ if ('serviceWorker' in navigator) {
     window.addEventListener('offline', updateBadge);
 })();
 </script>
+
+<a class="monitor-fab" href="/monitor.html" aria-label="Open Monitor">Monitor</a>
 
 </body>
 </html>
