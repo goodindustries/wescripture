@@ -1,11 +1,6 @@
 /**
- * Regression: reader sidebar Scripture volume tiles must load Church hub JPEGs.
+ * Regression: title-page Scripture volume tiles must load Church hub JPEGs.
  * Covers toc.json label "Doctrine & Covenants" vs map key "Doctrine and Covenants".
- *
- * Serve repo root: python3 -m http.server 4173
- *   node test-toc-volume-covers.js
- *
- * TEST_LIBRARY_URL default: http://127.0.0.1:4173/library/index.html
  */
 
 const { launchBrowser } = require('./tools/puppeteer_launch.js');
@@ -37,34 +32,23 @@ async function run() {
 
   await page.goto(url, { waitUntil: 'networkidle0', timeout: 90000 });
   await page.waitForSelector('#splash.gone', { timeout: 60000 });
+  await page.waitForSelector('#ch-title_page', { timeout: 30000 });
 
-  await page.evaluate(() => {
-    if (typeof setTocPathForChapter !== 'function' || typeof renderTocView !== 'function') {
-      throw new Error('reader TOC API missing');
-    }
-    setTocPathForChapter('title_page');
-    if (typeof tocOpen !== 'undefined') tocOpen = true;
-    const toc = document.getElementById('toc');
-    if (toc) toc.classList.remove('hidden');
-    renderTocView();
-  });
-
-  await page.waitForSelector('#toc-grid .toc-tile[data-action="scripture-root"]', { timeout: 15000 });
-  await page.click('#toc-grid .toc-tile[data-action="scripture-root"]');
+  await page.click('#ch-title_page a[data-open-shelf="scriptures"]');
   await page.waitForFunction(
-    () => document.querySelector('#toc-title') && document.querySelector('#toc-title').textContent === 'Scriptures',
-    { timeout: 15000 }
+    () => document.querySelector('#title-nav-title') && document.querySelector('#title-nav-title').textContent.trim() === 'Scriptures',
+    { timeout: 15000 },
   );
 
   const rows = await page.evaluate(() => {
-    return Array.from(document.querySelectorAll('#toc-grid button.toc-tile--cover[data-action="volume"]')).map(
+    return Array.from(document.querySelectorAll('#title-nav-grid button.title-nav-tile--cover[data-action="volume"]')).map(
       (btn) => {
-        const img = btn.querySelector('img.toc-tile-cover-img');
+        const img = btn.querySelector('img.title-nav-tile-cover-img');
         return {
           volume: btn.getAttribute('data-volume') || '',
           src: img ? img.getAttribute('src') || '' : '',
         };
-      }
+      },
     );
   });
 
@@ -73,13 +57,10 @@ async function run() {
   for (const [volLabel, file] of EXPECTED) {
     const row = rows.find((r) => r.volume === volLabel);
     assert(row, `missing volume tile for "${volLabel}"`);
-    assert(
-      row.src.includes(file),
-      `volume "${volLabel}" img src should include ${file}, got: ${row.src}`
-    );
+    assert(row.src.includes(file), `volume "${volLabel}" img src should include ${file}, got: ${row.src}`);
   }
 
-  console.log(JSON.stringify({ ok: true, url, test: 'toc-volume-covers' }, null, 2));
+  console.log(JSON.stringify({ ok: true, url, test: 'title-nav-volume-covers' }, null, 2));
   await browser.close();
 }
 
