@@ -33,7 +33,8 @@
   #title-nav-back { flex-shrink: 0; margin-top: 1px; padding: 6px 10px; font-size: .88rem; font-weight: 600; color: #9C7A4D; background: #fcfaf6; border: 1px solid rgba(156,122,77,0.28); border-radius: 10px; cursor: pointer; }
   #title-nav-back:hover { background: rgba(156,122,77,0.08); border-color: rgba(156,122,77,0.45); }
   #title-nav-back[hidden] { display: none !important; }
-  .title-nav-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  /* Browse grid: dense tiles on wide screens so cover art is not half-viewport wide */
+  .title-nav-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(148px, 1fr)); gap: 8px; }
   .title-nav-grid.chapter-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .title-nav-tile { border: 1px solid rgba(156,122,77,0.14); border-radius: 12px; background: rgba(255,255,255,0.82); padding: 12px 10px; min-height: 78px; cursor: pointer; transition: transform .12s, border-color .12s, background .12s, box-shadow .12s; display: flex; flex-direction: column; justify-content: space-between; gap: 8px; font: inherit; text-align: left; color: inherit; }
   .title-nav-tile:hover { transform: translateY(-1px); border-color: rgba(156,122,77,0.34); background: rgba(156,122,77,0.08); box-shadow: 0 8px 18px rgba(0,0,0,0.04); }
@@ -50,14 +51,23 @@
   .title-nav-tile.chapter-tile { min-height: 0; aspect-ratio: 1 / 1; padding: 0; align-items: center; justify-content: center; text-align: center; }
   .title-nav-tile.chapter-tile .title-nav-tile-title { font-size: 14px; }
   .title-nav-tile.wide { grid-column: 1 / -1; }
-  .title-nav-tile.title-nav-tile--cover { padding: 0; min-height: 0; aspect-ratio: 177 / 284; border-radius: 10px; overflow: hidden; align-items: stretch; }
+  /* Cover tiles: fixed max height so 2-column layout does not create skyscraper cards */
+  .title-nav-tile.title-nav-tile--cover {
+    padding: 0;
+    min-height: 0;
+    height: clamp(120px, 26vh, 220px);
+    max-height: 220px;
+    border-radius: 10px;
+    overflow: hidden;
+    align-items: stretch;
+  }
   .title-nav-tile.title-nav-tile--cover:hover { box-shadow: 0 10px 28px rgba(0,0,0,0.18); }
   .title-nav-tile-cover-img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
   .title-nav-tile.title-nav-tile--cover.active { box-shadow: 0 0 0 2px #fff, 0 0 0 4px #9C7A4D; }
 
   @media (max-width: 760px) {
     .title-shell { padding: 0 14px 36px; }
-    .title-nav-grid { grid-template-columns: 1fr; }
+    .title-nav-grid:not(.chapter-grid) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .title-nav-grid.chapter-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   }
 </style>
