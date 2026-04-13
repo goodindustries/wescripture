@@ -1200,6 +1200,8 @@ function slugToBookName(slug) {
 var tocPath = { level: 'root', volume: null, book: null, sourceCollection: null };
 var chapterOrder = [];          // ordered array of chapter ids
 var loadedChapters = new Set(); // ids already in DOM
+/** Coalesce concurrent `loadChapter(id)` fetches (avoids duplicate #ch-title_page blocks). */
+var chapterLoadPromises = Object.create(null);
 var loadedNotes = new Set();    // ids whose notes have been fetched
 var currentChapter = null;
 var currentSourceDoc = null;
@@ -3691,9 +3693,23 @@ function loadChapter(id, prepend) {
         if (id === 'title_page') hydrateTitlePage();
         return Promise.resolve();
     }
-    return fetch(`./chapters/${id}.html`)
-        .then(r => r.text())
-        .then(html => {
+    if (chapterLoadPromises[id]) {
+        return chapterLoadPromises[id];
+    }
+    chapterLoadPromises[id] = fetch(`./chapters/${id}.html`)
+        .then(function(r) { return r.text(); })
+        .then(function(html) {
+            if (loadedChapters.has(id)) {
+                if (id === 'title_page') hydrateTitlePage();
+                return;
+            }
+            var content = document.getElementById('content');
+            Array.from(content.querySelectorAll('.chapter-block[data-chapter-id="' + id + '"]')).forEach(function(el) {
+                try { notesObserver.unobserve(el); } catch (e) {}
+                el.remove();
+            });
+            loadedChapters.delete(id);
+
             var parser = new DOMParser();
             var doc = parser.parseFromString(html, 'text/html');
             var body = doc.body;
@@ -3714,7 +3730,6 @@ function loadChapter(id, prepend) {
             block.innerHTML = body.innerHTML;
             sanitizeEscapedConnectionMarkup(block);
 
-            var content = document.getElementById('content');
             if (prepend) {
                 content.insertBefore(block, content.firstChild);
             } else {
@@ -3733,7 +3748,11 @@ function loadChapter(id, prepend) {
 
             // Start watching this block — notes load when it enters the viewport
             notesObserver.observe(block);
+        })
+        .finally(function() {
+            delete chapterLoadPromises[id];
         });
+    return chapterLoadPromises[id];
 }
 
 // ── Lazy-load commentary notes ────────────────────────────────────────────
