@@ -175,3 +175,28 @@ select
 from public.activity_events e
 left join public.profiles p on p.id = e.actor_id;
 
+-- ── Monitor samples (shared metrics history) ───────────────────────────────
+-- Public read; service-role writes (service role bypasses RLS).
+
+create table if not exists public.monitor_samples (
+  ts timestamptz primary key,
+  links bigint not null,
+  paragraphs bigint not null,
+  sources bigint not null,
+  verses_with_any bigint not null default 0,
+  created_at timestamptz not null default now()
+);
+
+alter table public.monitor_samples enable row level security;
+
+create policy "monitor_samples_public_read"
+  on public.monitor_samples
+  for select
+  using (true);
+
+create policy "monitor_samples_no_write"
+  on public.monitor_samples
+  for all
+  using (false)
+  with check (false);
+
