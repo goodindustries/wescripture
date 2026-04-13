@@ -35,9 +35,8 @@ async function run() {
   assert(idle.title && /WeScripture/i.test(idle.title), 'title page hero missing');
   assert(idle.tocPresent === false, 'did not expect left TOC in 2-pane mode');
   assert(idle.history === true, 'expected title page history container');
-  assert(idle.navHidden === true, 'expected title nav hidden until a shelf is chosen');
+  assert(idle.navHidden === false, 'expected title nav visible by default');
 
-  await page.click('#ch-title_page a[data-open-shelf="scriptures"]');
   await page.waitForFunction(
     () =>
       document.querySelector('#ch-title_page #title-nav')?.hidden === false &&

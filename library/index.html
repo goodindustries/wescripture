@@ -1691,7 +1691,7 @@ var loading = false;
 var visitStack = [];
 var activeContextText = '';
 /** Title-page navigation path (2-pane: no left TOC). */
-var titleNavPath = { level: 'idle', volume: null, book: null, sourceCollection: null, sourceGroup: null };
+var titleNavPath = { level: 'scripture-root', volume: null, book: null, sourceCollection: null, sourceGroup: null };
 
 // Highlights: { chapterId: [{start,end,color,text,note}] }
 var highlights = JSON.parse(localStorage.getItem(SITE.storageKey + '_highlights') || '{}');
@@ -1704,6 +1704,17 @@ var studyState = (function() {
     } catch (e) {}
     return { version: 1, username: '', saves: [] };
 })();
+
+// Supabase corpus DB is optional; keep source reader working without it.
+function corpusDbReady() {
+    try {
+        return initSupabaseOnce().then(function() {
+            return !!(SUPA && SUPA.client);
+        }).catch(function() { return false; });
+    } catch (e) {
+        return Promise.resolve(false);
+    }
+}
 function persistStudyState() {
     try {
         localStorage.setItem(SITE.storageKey + '_study_v1', JSON.stringify(studyState));
@@ -2189,6 +2200,19 @@ function renderTitleNav() {
                 label: volume.label,
                 cover: tocVolumeCoverUrl(volume.label),
                 attrs: 'data-action="volume" data-volume="' + escapeAttr(volume.label) + '"'
+            });
+        });
+        // Default experience: volumes first, then books grouped underneath.
+        (tocTree.volumes || []).forEach(function(volume) {
+            if (!volume || !volume.books || volume.books.length === 0) return;
+            html += '<div class="title-nav-section">' + escapeHtml(volume.label) + '</div>';
+            volume.books.forEach(function(book) {
+                html += renderTitleNavTile({
+                    label: book.label,
+                    book: true,
+                    active: currentChapter && chapterMeta[currentChapter] && chapterMeta[currentChapter].book === book.label,
+                    attrs: 'data-action="book" data-volume="' + escapeAttr(volume.label) + '" data-book="' + escapeAttr(book.label) + '"'
+                });
             });
         });
     } else if (path.level === 'volume' && path.volume) {
