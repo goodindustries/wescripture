@@ -15,15 +15,11 @@ async function run() {
   });
 
   await page.waitForSelector('#splash.gone', { timeout: 60000 });
-  await page.waitForSelector('#toc-grid .toc-tile', { timeout: 10000 });
-
-  await page.click('.toc-tile[data-action="scripture-root"]');
-  await page.waitForFunction(() => document.querySelector('#toc-subtitle')?.textContent === 'The Holy Scriptures');
-  await page.click('.toc-tile[data-action="volume"][data-volume="Old Testament"]');
-  await page.waitForFunction(() => document.querySelector('#toc-subtitle')?.textContent === 'Old Testament');
-  await page.click('.toc-tile[data-action="book"][data-book="Genesis"]');
-  await page.waitForFunction(() => document.querySelector('#toc-subtitle')?.textContent === 'Genesis');
-  await page.click('.toc-tile[data-action="chapter"][data-id="genesis_1"]');
+  // Navigate by URL param to avoid coupling to sidebar TOC markup.
+  await page.goto('http://127.0.0.1:4173/library/index.html?jump=Genesis%201:1', {
+    waitUntil: 'networkidle0',
+    timeout: 60000,
+  });
 
   await page.waitForSelector('#ch-genesis_1', { timeout: 20000 });
   await page.$eval('#ch-genesis_1', (el) => el.scrollIntoView({ block: 'start' }));

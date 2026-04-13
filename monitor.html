@@ -32,6 +32,15 @@
     canvas{width:100%;height:180px}
     .chart-title{margin:0 0 8px;font:700 18px/1.15 "EB Garamond",Georgia,serif}
     .small{font-size:12px;color:var(--muted)}
+    .tables{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px}
+    @media(max-width:900px){.tables{grid-template-columns:1fr}}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:8px 8px;border-top:1px solid rgba(0,0,0,.08);font-size:13px;vertical-align:top}
+    th{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);text-align:left}
+    td.n{white-space:nowrap;text-align:right;color:var(--accent);font-weight:700}
+    .mini-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+    .mini-links a{color:var(--accent);text-decoration:none;font-weight:700}
+    .mini-links a:hover{text-decoration:underline}
   </style>
 </head>
 <body>
@@ -58,6 +67,25 @@
       <div class="card"><h2 class="chart-title">Links over time</h2><canvas id="cLinks" width="900" height="360"></canvas><div class="small" id="cLinksHint"></div></div>
       <div class="card"><h2 class="chart-title">Paragraphs over time</h2><canvas id="cParas" width="900" height="360"></canvas><div class="small" id="cParasHint"></div></div>
       <div class="card"><h2 class="chart-title">Sources over time</h2><canvas id="cSources" width="900" height="360"></canvas><div class="small" id="cSourcesHint"></div></div>
+    </div>
+
+    <div class="tables">
+      <div class="card">
+        <h2 class="chart-title">Top verses by connections</h2>
+        <div class="small" id="thresh"></div>
+        <div class="mini-links">
+          <a href="/library/published/verse_connection_counts.tsv">Download all verses (TSV)</a>
+        </div>
+        <table aria-label="Top verses"><thead><tr><th>Verse</th><th class="n">Links</th></tr></thead><tbody id="topVerses"><tr><td colspan="2" class="small">Loading…</td></tr></tbody></table>
+      </div>
+      <div class="card">
+        <h2 class="chart-title">Top morsels by verses</h2>
+        <div class="small">Morsel = (doc_id, para_idx)</div>
+        <div class="mini-links">
+          <a href="/library/published/morsel_connection_counts.tsv">Download all morsels (TSV)</a>
+        </div>
+        <table aria-label="Top morsels"><thead><tr><th>Morsel</th><th class="n">Verses</th></tr></thead><tbody id="topMorsels"><tr><td colspan="2" class="small">Loading…</td></tr></tbody></table>
+      </div>
     </div>
   </main>
 
@@ -110,6 +138,61 @@
       drawSeries('cLinks','cLinksHint',arr,'links');
       drawSeries('cParas','cParasHint',arr,'paragraphs');
       drawSeries('cSources','cSourcesHint',arr,'sources');
+    }
+
+    async function fetchText(url){
+      const r = await fetch(url, { cache:'no-store' });
+      if(!r.ok) throw new Error('HTTP ' + r.status);
+      return await r.text();
+    }
+    function parseTsvCounts(text){
+      const out = [];
+      String(text||'').split('\n').forEach(line => {
+        const s = (line||'').trim();
+        if(!s || s.startsWith('#')) return;
+        const parts = s.split('\t');
+        if(parts.length < 2) return;
+        const name = parts[0];
+        const n = Number(parts[1]) || 0;
+        out.push([name, n]);
+      });
+      return out;
+    }
+    function renderTopTable(tbodyId, rows, labelFmt){
+      const tb = document.getElementById(tbodyId);
+      if(!tb) return;
+      const top = (rows||[]).slice(0, 25);
+      if(!top.length){ tb.innerHTML = `<tr><td colspan="2" class="small">No data.</td></tr>`; return; }
+      tb.innerHTML = top.map(([name, n]) => {
+        const safe = String(name||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        return `<tr><td>${labelFmt ? labelFmt(safe) : safe}</td><td class="n">${fmt(n)}</td></tr>`;
+      }).join('');
+    }
+    async function loadPublishedCounts(){
+      try{
+        const [thTxt, vTxt, mTxt] = await Promise.all([
+          fetch('/library/published/connection_thresholds.json', { cache:'no-store' }).then(r=>r.ok?r.json():null).catch(()=>null),
+          fetchText('/library/published/verse_connection_counts.tsv'),
+          fetchText('/library/published/morsel_connection_counts.tsv'),
+        ]);
+
+        const tEl = document.getElementById('thresh');
+        if(tEl && thTxt && thTxt.graph_min_score_default != null){
+          tEl.textContent = `Linked if score ≥ ${thTxt.graph_min_score_default} (graph). Verse-discovery UI uses ≥ ${thTxt.verse_discovery_min_score_default}.`;
+        } else if (tEl) {
+          tEl.textContent = 'Linked if score ≥ 0.25 (graph). Verse-discovery UI uses ≥ 0.40.';
+        }
+
+        const vRows = parseTsvCounts(vTxt).sort((a,b)=>b[1]-a[1]);
+        const mRows = parseTsvCounts(mTxt).sort((a,b)=>b[1]-a[1]);
+        renderTopTable('topVerses', vRows);
+        renderTopTable('topMorsels', mRows, (safe)=>`<span style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">${safe}</span>`);
+      }catch(e){
+        const v = document.getElementById('topVerses');
+        const m = document.getElementById('topMorsels');
+        if(v) v.innerHTML = `<tr><td colspan="2" class="small">Error loading published tables.</td></tr>`;
+        if(m) m.innerHTML = `<tr><td colspan="2" class="small">Error loading published tables.</td></tr>`;
+      }
     }
 
     async function fetchServerHistory(){
@@ -167,6 +250,8 @@
       const today = new Date().toISOString().slice(0,10);
       if(lastDay !== today) runNow();
     })();
+
+    loadPublishedCounts();
   </script>
 </body>
 </html>
