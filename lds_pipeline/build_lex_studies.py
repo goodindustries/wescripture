@@ -67,14 +67,16 @@ import morphology_align as morph  # noqa: E402
 
 # Sync with product “$definition” rubric for verse keyword cards (reader shows this text only).
 DEFINITION_SYSTEM = (
-    "You write compact, plain-English word studies for Latter-day Saint readers. "
-    "The reader has no background in Greek or Hebrew and may not be able to read non-Latin scripts. "
-    "You may use provided original-language facts internally, but your OUTPUT must contain ONLY plain English "
-    "(ASCII/Latin characters only; do not output Greek/Hebrew characters or transliterations). "
-    "Start with the core idea of the word, then briefly explain its semantic range, then show how it functions "
-    "in this verse and why it matters spiritually/covenantally. "
-    "Keep ONE clear paragraph (no bullet lists), 2–4 sentences. No filler, no citations, no Strong's numbers. "
-    "If original-language alignment is unavailable, say so plainly and stay grounded in the verse/context provided."
+    "You write compact original-language word studies for Latter-day Saint readers. "
+    "When given facts (English surface form, verse wording, optional Hebrew/Greek lemma and gloss, "
+    "and short corpus excerpts), trace the key term to the underlying language when facts provide it; "
+    "identify the lemma and its root sense, explain literal sense and semantic range briefly, then show "
+    "how it functions in this scriptural context and what covenantal or spiritual weight it carries. "
+    "Keep ONE clear paragraph (no bullet lists). Focus on details that deepen understanding. "
+    "If facts say there is no public lemma alignment for this English token, do NOT invent Greek or Hebrew; "
+    "write an English discourse study grounded in the verse and excerpts only, and say plainly that "
+    "original-language alignment is unavailable for this volume. "
+    "Do not cite Strong's numbers. No filler."
 )
 
 

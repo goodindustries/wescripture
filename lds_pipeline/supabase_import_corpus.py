@@ -98,6 +98,7 @@ def import_sources(base_url: str, key: str, *, limit_collections: set[str] | Non
 
     collections: list[dict] = []
     sources: list[dict] = []
+    paragraphs: list[dict] = []
 
     for c_idx, coll in enumerate(toc):
         coll_id = str(coll.get("id") or "")
@@ -146,38 +147,22 @@ def import_sources(base_url: str, key: str, *, limit_collections: set[str] | Non
                     }
                 )
 
+                if skip_paragraphs or ingest_mode == "link_only":
+                    continue
+                if href and href.endswith(".html"):
+                    fp = LIB / href
+                    if not fp.exists():
+                        continue
+                    paras = read_source_paragraphs(fp)
+                    for idx, t in enumerate(paras, start=1):
+                        paragraphs.append({"source_id": did, "para_idx": idx, "text": t, "text_hash": text_hash(t)})
+                    if len(paragraphs) >= 1500:
+                        upsert_rows(base_url, key, "corpus_paragraphs", paragraphs, on_conflict="source_id,para_idx")
+                        print(f"upsert corpus_paragraphs: +{len(paragraphs)}")
+                        paragraphs = []
+
     upsert_rows(base_url, key, "corpus_collections", collections, on_conflict="id")
     upsert_rows(base_url, key, "corpus_sources", sources, on_conflict="id")
-
-    if skip_paragraphs:
-        return
-
-    # Second pass: paragraphs (requires sources already present for FK).
-    paragraphs: list[dict] = []
-    for coll in toc:
-        coll_id = str(coll.get("id") or "")
-        if limit_collections and coll_id not in limit_collections:
-            continue
-        for it in coll.get("items") or []:
-            docs = it.get("items") if it.get("type") == "group" else [it]
-            for d in docs or []:
-                did = str(d.get("id") or "")
-                href = str(d.get("href") or "")
-                if not did or not href or not href.endswith(".html"):
-                    continue
-                external = str(d.get("external_url") or "")
-                if external:
-                    continue  # link_only
-                fp = LIB / href
-                if not fp.exists():
-                    continue
-                paras = read_source_paragraphs(fp)
-                for idx, t in enumerate(paras, start=1):
-                    paragraphs.append({"source_id": did, "para_idx": idx, "text": t, "text_hash": text_hash(t)})
-                if len(paragraphs) >= 1500:
-                    upsert_rows(base_url, key, "corpus_paragraphs", paragraphs, on_conflict="source_id,para_idx")
-                    print(f"upsert corpus_paragraphs: +{len(paragraphs)}")
-                    paragraphs = []
     if paragraphs:
         upsert_rows(base_url, key, "corpus_paragraphs", paragraphs, on_conflict="source_id,para_idx")
         print(f"upsert corpus_paragraphs: +{len(paragraphs)}")

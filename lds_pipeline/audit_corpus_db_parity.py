@@ -32,25 +32,6 @@ def _get(url: str, key: str) -> object:
     return json.loads(raw)
 
 
-def _count(url: str, key: str) -> int:
-    # PostgREST row count via Content-Range (requires Prefer: count=exact).
-    h = {
-        "apikey": key,
-        "authorization": f"Bearer {key}",
-        "accept": "application/json",
-        "prefer": "count=exact",
-        "range": "0-0",
-    }
-    r = urllib.request.Request(url, headers=h, method="GET")
-    with urllib.request.urlopen(r, timeout=60) as resp:
-        cr = (resp.headers.get("content-range") or "").strip()
-        # Format: "0-0/123" or "*/123"
-        m = re.search(r"/(\d+)$", cr)
-        if not m:
-            return 0
-        return int(m.group(1))
-
-
 _TAG_RE = re.compile(r"<[^>]+>")
 _PARA_RE = re.compile(r'<p[^>]*class="[^"]*source-para[^"]*"[^>]*>(.*?)</p>', re.I | re.S)
 
@@ -89,8 +70,11 @@ def main() -> int:
                 if d.get("id") and d.get("href"):
                     leaf_docs.append({"id": d["id"], "href": d["href"]})
 
-    sources_n = _count(base + "/rest/v1/corpus_sources?select=id", key)
-    paras_n = _count(base + "/rest/v1/corpus_paragraphs?select=source_id", key)
+    db_sources = _get(base + "/rest/v1/corpus_sources?select=id", key)
+    db_paras = _get(base + "/rest/v1/corpus_paragraphs?select=source_id", key)
+
+    sources_n = len(db_sources) if isinstance(db_sources, list) else 0
+    paras_n = len(db_paras) if isinstance(db_paras, list) else 0
 
     mismatches = []
     for row in leaf_docs[: max(1, args.sample_docs)]:

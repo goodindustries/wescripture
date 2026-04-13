@@ -1031,26 +1031,6 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     </div>
 </div>
 
-<div id="hl-overlay" onclick="if (event.target === this) closeHighlightModal()" role="dialog" aria-modal="true" aria-label="Highlight">
-    <div class="hl-modal" onclick="event.stopPropagation()">
-        <div class="hl-modal-hdr">
-            <strong>Highlight</strong>
-            <button type="button" id="hl-close" onclick="closeHighlightModal()" style="background:none;border:none;cursor:pointer;color:var(--muted)">✕</button>
-        </div>
-        <div class="hl-modal-body">
-            <div id="hl-target" style="font-size:12px;color:var(--muted);line-height:1.4"></div>
-            <label style="margin-top:12px">Color</label>
-            <div id="hl-colors" class="hl-color-row"></div>
-            <label>Insight</label>
-            <textarea id="hl-note" class="hl-note" placeholder="Add an insight…"></textarea>
-            <div class="hl-actions">
-                <button type="button" id="hl-cancel" onclick="closeHighlightModal()">Cancel</button>
-                <button type="button" id="hl-save" class="hl-primary" onclick="commitHighlightModal()">Save</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 <div id="acct-overlay" class="acct-overlay" onclick="if (event.target === this) closeAccountPanel()">
     <div class="acct-modal" onclick="event.stopPropagation()">
         <div class="acct-hdr">
@@ -5035,10 +5015,17 @@ function htmlKeyWordCardGraph(item, verseText, lexByStem) {
     var rawStudy = lx && lx.study ? String(lx.study).trim() : '';
     var sense = rawStudy
         ? rawStudy
-        : 'A compact word study for this keyword is not in the index yet for this verse.';
+        : 'A compact word study for this keyword is not in the index yet for this verse. Tap the underlined word in the verse to open the word channel and browse corpus parallels.';
     var verified = verseText && keywordVerifiedInVerse(title, verseText);
     var head = '<div class="word-card-head" onclick="toggleVerseKwCard(this)"><div class="word-card-head-text">'
         + '<div class="word-english' + (verified ? ' word-kw-in-verse' : '') + '">' + escapeHtml(title) + '</div>';
+    if (lx && lx.confidence === 'high' && lx.lemma) {
+        if (lx.lang === 'grc' && (lx.surface_gr || lx.lemma)) {
+            head += '<div class="word-original" lang="el" dir="auto">' + escapeHtml(lx.surface_gr || lx.lemma) + '</div>';
+        } else if (lx.lang === 'hbo' && (lx.surface_he || lx.lemma)) {
+            head += '<div class="word-original" lang="he" dir="rtl">' + escapeHtml(lx.surface_he || lx.lemma) + '</div>';
+        }
+    }
     head += '</div><span class="word-card-chevron" aria-hidden="true">\u25bc</span></div>';
     var def = '<div class="word-card-def"><div class="word-kw-block"><div class="word-kw-text">'
         + makeExpandable(sense, 'note-preview', 'note-overflow', 'note-more') + '</div></div></div>';
