@@ -835,6 +835,10 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 .verse-text span.w[data-entity],
 .verse-text span.w[data-place],
 .verse-text span.w[data-thing] { border-bottom: 1px dotted var(--accent); }
+/* Main scripture column: no keyword-style underline on people/places/things (still clickable). */
+.scripture .verse-text span.w[data-entity],
+.scripture .verse-text span.w[data-place],
+.scripture .verse-text span.w[data-thing] { border-bottom: none; cursor: pointer; }
 .verse-text span.ent-link { font-size: inherit; font-family: inherit; }
 /* Place chips use blue; things use purple */
 .verse-text span.w[data-place] { border-bottom-color: #4a7090; }
@@ -3819,7 +3823,7 @@ function openVerseDiscovery(ref) {
         var lexRoot = results[1] || {};
         var verseData = wordIdx && wordIdx[vnum] ? wordIdx[vnum] : {};
         var lexByStem = lexRoot && lexRoot[vnum] ? lexRoot[vnum] : {};
-        var mergedKw = mergeKeyWordsForVerse(donaWords, verseData, verseText, chapterId);
+        var mergedKw = mergeKeyWordsForVerse(donaWords, verseData, verseText, chapterId, verseEl);
         registerChapterKeywordHeadwords(mergedKw, verseText);
         finishVerseDiscoveryPanel(Object.assign({}, payloadBase, {
             mergedKw: mergedKw,
@@ -5137,10 +5141,34 @@ function extractScriptFromNote(s) {
 /**
  * Merge Donaldson lemmas (priority) with high-signal stems from chapter *_words.json (graph index).
  * @param {string} [chapterId] — when registry is primed for this chapter, skip headwords already shown.
+ * @param {Element|null} [verseEl] — when set, drop graph/Donaldson rows tied to person/place/thing spans.
  */
-function mergeKeyWordsForVerse(donaWords, verseWordData, verseText, chapterId) {
+function entityPlaceThingStemSkipSet(verseEl) {
+    var skip = {};
+    if (!verseEl || !verseEl.querySelectorAll) return skip;
+    verseEl.querySelectorAll('.verse-text span.w[data-st]').forEach(function(sp) {
+        if ((sp.dataset.entity || sp.dataset.place || sp.dataset.thing) && sp.dataset.st) {
+            skip[String(sp.dataset.st)] = true;
+        }
+    });
+    return skip;
+}
+
+function entityPlaceThingSurfaceKeySet(verseEl) {
+    var keys = {};
+    if (!verseEl || !verseEl.querySelectorAll) return keys;
+    verseEl.querySelectorAll('.verse-text span.w[data-entity], .verse-text span.w[data-place], .verse-text span.w[data-thing]').forEach(function(sp) {
+        var nk = normalizeKeywordKey(sp.textContent || '');
+        if (nk) keys[nk] = true;
+    });
+    return keys;
+}
+
+function mergeKeyWordsForVerse(donaWords, verseWordData, verseText, chapterId, verseEl) {
     var out = [];
     var seen = {};
+    var skipStem = entityPlaceThingStemSkipSet(verseEl || null);
+    var skipSurfaceKey = entityPlaceThingSurfaceKeySet(verseEl || null);
     function mark(k) {
         var nk = normalizeKeywordKey(k);
         if (nk) seen[nk] = true;
@@ -5154,6 +5182,7 @@ function mergeKeyWordsForVerse(donaWords, verseWordData, verseText, chapterId) {
     (donaWords || []).forEach(function(w) {
         var t = (w.word || '').trim();
         if (!t || isJunkKeywordTitle(t)) return;
+        if (skipSurfaceKey[normalizeKeywordKey(t)]) return;
         if (consumedInChapter(t)) return;
         if (t) mark(t);
         out.push({ kind: 'dona', w: w });
@@ -5163,6 +5192,7 @@ function mergeKeyWordsForVerse(donaWords, verseWordData, verseText, chapterId) {
     if (verseText && verseWordData && typeof verseWordData === 'object') {
         Object.keys(verseWordData).forEach(function(stem) {
             if (!stem || GRAPH_KW_STEM_STOPS[stem]) return;
+            if (skipStem[stem]) return;
             var entry = verseWordData[stem];
             if (!entry || typeof entry !== 'object') return;
             if ((entry.score || 0) < 0.12) return;
@@ -5714,7 +5744,15 @@ document.getElementById('content').addEventListener('click', function(e) {
     var wSpanVerse = e.target.closest('span.w[data-st]');
     var verseForWord = wSpanVerse && wSpanVerse.closest('div.verse');
     if (wSpanVerse && verseForWord && !sourceMode) {
-        // Main verses should not show clickable underlines; keep keyword interaction in right pane.
+        if (wSpanVerse.dataset.entity || wSpanVerse.dataset.place || wSpanVerse.dataset.thing) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (wSpanVerse.dataset.entity) openEntityProfile(wSpanVerse.dataset.entity);
+            else if (wSpanVerse.dataset.place) openPlaceProfile(wSpanVerse.dataset.place);
+            else if (wSpanVerse.dataset.thing) openThingProfile(wSpanVerse.dataset.thing);
+            return;
+        }
+        // Main verses should not open the semantic channel from inline stems; use Key words in the verse panel.
         return;
         var chBlock = verseForWord.closest('.chapter-block[data-chapter-id]');
         var chId = chBlock && chBlock.dataset.chapterId;
