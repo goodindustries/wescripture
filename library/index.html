@@ -12,6 +12,7 @@
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PCMWDK746H');</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -22,7 +23,6 @@
     --accent-hover: #7a5e38;
     --divider: rgba(0,0,0,0.09);
     --nav-h: 52px;
-    --toc-w: 340px;
     --reader-max: 760px;
 }
 html, body { height: 100%; background: var(--bg); color: var(--text);
@@ -56,102 +56,39 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     color: var(--muted); display: flex; align-items: center; }
 #search-btn:hover { background: rgba(0,0,0,0.06); color: var(--text); }
 
+/* ── Account ── */
+#acct-btn { background: none; border: none; cursor: pointer; padding: 6px; border-radius: 6px;
+    color: var(--muted); display: flex; align-items: center; flex-shrink: 0; }
+#acct-btn:hover { background: rgba(0,0,0,0.06); color: var(--text); }
+.acct-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(0,0,0,0.18); margin-left: 6px; }
+.acct-dot.on { background: #2E8B57; }
+
+.acct-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.35); z-index: 300; display: none; }
+.acct-overlay.open { display: block; }
+.acct-modal { position: absolute; top: 72px; right: 14px; width: 360px; max-width: calc(100vw - 28px);
+    border: 1px solid var(--divider); border-radius: 14px; background: rgba(255,255,255,0.96);
+    box-shadow: 0 14px 40px rgba(0,0,0,0.18); overflow: hidden; }
+.acct-hdr { display:flex; align-items:center; justify-content:space-between; padding: 12px 14px; border-bottom: 1px solid var(--divider); }
+.acct-hdr strong { font-size: 13px; }
+.acct-body { padding: 12px 14px 14px; }
+.acct-body label { display:block; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 10px 0 6px; }
+.acct-body input, .acct-body textarea { width: 100%; padding: 9px 10px; border-radius: 10px; border: 1px solid var(--divider); background: #fff; font-family: inherit; font-size: 13px; }
+.acct-row { display:flex; gap: 8px; align-items:center; }
+.acct-row button { flex-shrink: 0; padding: 9px 10px; border-radius: 10px; border: 1px solid rgba(156,122,77,0.22);
+    background: rgba(156,122,77,0.08); color: var(--accent); font-weight: 600; cursor: pointer; font-family: inherit; }
+.acct-row button:hover { background: rgba(156,122,77,0.14); }
+.acct-muted { color: var(--muted); font-size: 12px; line-height: 1.55; margin-top: 8px; }
+.acct-list { margin-top: 10px; max-height: 220px; overflow:auto; border: 1px solid var(--divider); border-radius: 12px; background: #fff; }
+.acct-item { padding: 10px 12px; border-bottom: 1px solid var(--divider); font-size: 13px; display:flex; align-items:center; justify-content:space-between; gap: 10px; }
+.acct-item:last-child { border-bottom: none; }
+.acct-chip { font-size: 11px; color: var(--muted); }
+.acct-tabs { display:flex; gap: 6px; padding: 10px 14px; border-bottom: 1px solid var(--divider); background: rgba(0,0,0,0.02); }
+.acct-tab { border: 1px solid var(--divider); background:#fff; border-radius: 999px; padding: 5px 10px; font-size: 12px; cursor:pointer; }
+.acct-tab.on { background: rgba(156,122,77,0.12); border-color: rgba(156,122,77,0.28); color: var(--accent); font-weight: 600; }
+
 /* ── Shell ── */
 #shell { position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0; display: flex; }
 
-/* ── TOC ── */
-#toc {
-    width: var(--toc-w); min-width: var(--toc-w); background: #FEFCF8;
-    border-right: 1px solid var(--divider); display: flex; flex-direction: column;
-    transition: width .2s, min-width .2s; overflow: hidden;
-}
-#toc.hidden { width: 0; min-width: 0; pointer-events: none; }
-#toc-head {
-    padding: 12px 14px 10px; border-bottom: 1px solid var(--divider);
-    flex-shrink: 0; display: flex; align-items: flex-start; gap: 8px;
-}
-#toc-back {
-    border: 1px solid rgba(156,122,77,0.18); background: rgba(255,255,255,0.82);
-    color: var(--accent); border-radius: 8px; width: 30px; height: 30px; cursor: pointer;
-    display: none; align-items: center; justify-content: center; flex-shrink: 0;
-}
-#toc-back.show { display: flex; }
-#toc-back:hover { background: rgba(156,122,77,0.08); }
-#toc-head-copy { min-width: 0; flex: 1; }
-#toc-title { font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
-#toc-subtitle { margin-top: 4px; font-size: 12px; color: var(--text); line-height: 1.25; }
-#toc-subtitle:empty { display: none; }
-#toc-scroll { flex: 1; overflow-y: auto; padding: 12px; }
-#toc-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
-}
-#toc-grid.chapter-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-.toc-tile {
-    border: 1px solid rgba(156,122,77,0.14); border-radius: 12px;
-    background: rgba(255,255,255,0.82); padding: 12px 10px; min-height: 78px;
-    cursor: pointer; transition: transform .12s, border-color .12s, background .12s, box-shadow .12s;
-    display: flex; flex-direction: column; justify-content: space-between; gap: 8px;
-}
-.toc-tile:hover {
-    transform: translateY(-1px); border-color: rgba(156,122,77,0.34);
-    background: rgba(156,122,77,0.08); box-shadow: 0 8px 18px rgba(0,0,0,0.04);
-}
-.toc-tile.active {
-    background: var(--accent); border-color: var(--accent); color: #fff;
-}
-.toc-tile-title { font-size: 13px; line-height: 1.2; font-weight: 600; color: var(--text); }
-.toc-tile.active .toc-tile-title { color: #fff; }
-.toc-tile-meta { font-size: 10px; line-height: 1.2; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
-.toc-tile.active .toc-tile-meta { color: rgba(255,255,255,0.82); }
-.toc-provenance { font-size: 11px; line-height: 1.55; color: var(--muted); padding: 2px 4px 12px; grid-column: 1 / -1; }
-.toc-tile.chapter-tile {
-    min-height: 0;
-    aspect-ratio: 1 / 1;
-    padding: 0;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-.toc-tile.book-tile {
-    min-height: 58px;
-    padding: 10px 8px;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-.toc-tile.book-tile .toc-tile-title { font-size: 12.5px; }
-.toc-tile.chapter-tile .toc-tile-title { font-size: 14px; }
-.toc-tile.wide { grid-column: 1 / -1; }
-.toc-tile.toc-tile--cover {
-    padding: 0;
-    min-height: 0;
-    aspect-ratio: 177 / 284;
-    border-radius: 10px;
-    overflow: hidden;
-    align-items: stretch;
-}
-.toc-tile.toc-tile--cover:hover { box-shadow: 0 10px 28px rgba(0,0,0,0.18); }
-.toc-tile-cover-img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-}
-.toc-tile.toc-tile--cover.active {
-    box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--accent);
-}
-.toc-note {
-    grid-column: 1 / -1;
-    border: 1px solid rgba(156,122,77,0.14);
-    border-radius: 12px;
-    background: rgba(255,255,255,0.82);
-    padding: 12px 12px 13px;
-}
 .toc-note-label {
     display: block;
     margin-bottom: 6px;
@@ -253,7 +190,7 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 /* ── Search panel ── */
 #search-panel {
     position: fixed; top: var(--nav-h); left: 0;
-    width: var(--toc-w); bottom: 0; background: #FEFCF8;
+    width: min(420px, 92vw); bottom: 0; background: #FEFCF8;
     border-right: 1px solid var(--divider); display: flex; flex-direction: column;
     z-index: 160; transform: translateX(-100%); transition: transform .2s;
 }
@@ -332,12 +269,8 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 #splash p { font-size: 13px; color: var(--muted); }
 
 @media (max-width: 600px) {
-    :root { --toc-w: 300px; }
-    #toc { position: fixed; top: var(--nav-h); left: 0; bottom: 0; z-index: 150; }
     #search-panel { z-index: 162; }
     #content { padding: 24px 18px 80px; }
-    #toc-grid { grid-template-columns: 1fr; }
-    #toc-grid.chapter-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 
 /* ── Offline badge ── */
@@ -373,6 +306,19 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 .scripture div.verse.expanded span.verse-num::after {
     content: '';
 }
+.scripture .verse-friends {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    margin-left: 6px;
+    background: rgba(46,139,87,0.18);
+    border: 1px solid rgba(46,139,87,0.35);
+    vertical-align: middle;
+    transform: translateY(-1px);
+    opacity: 0;
+}
+.scripture .verse-friends.on { opacity: 1; }
 .scripture span.verse-text {
     display: block;
     font-size: 1.12rem;
@@ -1039,6 +985,13 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
             <circle cx="8" cy="8" r="5"/><line x1="12" y1="12" x2="16" y2="16"/>
         </svg>
     </button>
+    <button id="acct-btn" onclick="openAccountPanel()" title="Account">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 16v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1"></path>
+            <circle cx="9" cy="6.5" r="3"></circle>
+        </svg>
+        <span id="acct-dot" class="acct-dot" aria-hidden="true"></span>
+    </button>
     <span id="offline-badge">Offline</span>
 </div>
 
@@ -1076,21 +1029,67 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     </div>
 </div>
 
-<div id="shell">
-    <div id="toc">
-        <div id="toc-head">
-            <button id="toc-back" onclick="tocBack()" aria-label="Back">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="9 2 4 7 9 12"></polyline>
-                </svg>
-            </button>
-            <div id="toc-head-copy">
-                <div id="toc-title">Contents</div>
-                <div id="toc-subtitle">Choose a standard work</div>
+<div id="acct-overlay" class="acct-overlay" onclick="if (event.target === this) closeAccountPanel()">
+    <div class="acct-modal" onclick="event.stopPropagation()">
+        <div class="acct-hdr">
+            <strong id="acct-title">Account</strong>
+            <button type="button" onclick="closeAccountPanel()" style="background:none;border:none;cursor:pointer;color:var(--muted)">✕</button>
+        </div>
+        <div class="acct-tabs">
+            <button type="button" class="acct-tab on" data-tab="account" onclick="setAcctTab('account')">Account</button>
+            <button type="button" class="acct-tab" data-tab="friends" onclick="setAcctTab('friends')">Friends</button>
+            <button type="button" class="acct-tab" data-tab="feed" onclick="setAcctTab('feed')">Feed</button>
+            <button type="button" class="acct-tab" data-tab="history" onclick="setAcctTab('history')">History</button>
+        </div>
+        <div class="acct-body">
+            <div class="acct-pane" data-pane="account">
+                <div id="acct-status" class="acct-muted">Loading…</div>
+                <label for="acct-email">Email</label>
+                <div class="acct-row">
+                    <input id="acct-email" type="email" placeholder="you@example.com" autocomplete="email">
+                    <button type="button" onclick="sendMagicLink()">Send link</button>
+                </div>
+                <div class="acct-muted" id="acct-email-hint">We’ll email you a sign-in link.</div>
+
+                <div id="acct-handle-wrap" hidden>
+                    <label for="acct-handle">@handle</label>
+                    <div class="acct-row">
+                        <input id="acct-handle" type="text" placeholder="yourname" autocomplete="username" maxlength="24">
+                        <button type="button" onclick="saveHandle()">Save</button>
+                    </div>
+                    <div class="acct-muted">Public identity in feeds and your public history.</div>
+                </div>
+
+                <div class="acct-row" style="margin-top:12px;justify-content:space-between">
+                    <button type="button" onclick="refreshAccount()">Refresh</button>
+                    <button type="button" onclick="signOut()">Sign out</button>
+                </div>
+            </div>
+
+            <div class="acct-pane" data-pane="friends" hidden>
+                <div class="acct-muted">Following is public for now. Add a friend by handle.</div>
+                <label for="friend-handle">Add friend</label>
+                <div class="acct-row">
+                    <input id="friend-handle" type="text" placeholder="@friend" autocomplete="off" maxlength="32">
+                    <button type="button" onclick="addFriendByHandle()">Add</button>
+                </div>
+                <div class="acct-list" id="friends-list"></div>
+            </div>
+
+            <div class="acct-pane" data-pane="feed" hidden>
+                <div class="acct-muted">Global public feed.</div>
+                <div class="acct-list" id="feed-list"></div>
+            </div>
+
+            <div class="acct-pane" data-pane="history" hidden>
+                <div class="acct-muted">Your history is public to everyone.</div>
+                <div class="acct-list" id="history-list"></div>
             </div>
         </div>
-        <div id="toc-scroll"><div id="toc-grid"></div></div>
     </div>
+</div>
+
+<div id="shell">
     <div id="reader">
         <div id="content"></div>
         <div id="morsel-preview" hidden></div>
@@ -1156,6 +1155,483 @@ function safeGtag() {
     try { window.gtag.apply(null, arguments); } catch (e) {}
 }
 
+// ── Supabase (public activity; tighten later) ───────────────────────────────
+var SUPA = {
+    client: null,
+    cfg: null,
+    session: null,
+    profile: null,
+    friends: [], // [{id, handle}]
+};
+
+function _qs(sel, root) { return (root || document).querySelector(sel); }
+function _qsa(sel, root) { return Array.from((root || document).querySelectorAll(sel)); }
+
+function openAccountPanel() {
+    var o = document.getElementById('acct-overlay');
+    if (o) o.classList.add('open');
+    refreshAccount();
+}
+function closeAccountPanel() {
+    var o = document.getElementById('acct-overlay');
+    if (o) o.classList.remove('open');
+}
+function setAcctTab(tab) {
+    _qsa('.acct-tab').forEach(function(b) { b.classList.toggle('on', b.dataset.tab === tab); });
+    _qsa('.acct-pane').forEach(function(p) { p.hidden = p.dataset.pane !== tab; });
+    if (tab === 'friends') refreshFriends();
+    if (tab === 'feed') refreshFeed();
+    if (tab === 'history') refreshHistory();
+}
+
+function _setAcctStatus(msg) {
+    var el = document.getElementById('acct-status');
+    if (el) el.textContent = msg || '';
+}
+function _setAuthedDot(on) {
+    var d = document.getElementById('acct-dot');
+    if (!d) return;
+    d.classList.toggle('on', !!on);
+}
+
+function _normalizeHandle(h) {
+    h = String(h || '').trim();
+    if (h.charAt(0) === '@') h = h.slice(1);
+    h = h.toLowerCase().replace(/[^a-z0-9_]/g, '').slice(0, 24);
+    return h;
+}
+
+function supaReady() {
+    return SUPA && SUPA.client && SUPA.cfg && SUPA.cfg.SUPABASE_URL && SUPA.cfg.SUPABASE_ANON_KEY;
+}
+
+function supaGetUserId() {
+    return (SUPA.session && SUPA.session.user && SUPA.session.user.id) ? SUPA.session.user.id : null;
+}
+
+function supaVerseRefFromPayload(payload) {
+    return (payload && payload.ref) ? String(payload.ref) : verseRefFromUi();
+}
+
+function supaHumanEvent(e) {
+    var t = e.type || '';
+    if (t === 'annotated') return 'annotated';
+    if (t === 'morsel_saved') return 'saved';
+    return t || 'did something';
+}
+
+function formatAgo(ts) {
+    var t = (typeof ts === 'string') ? Date.parse(ts) : ts;
+    if (!t) return '';
+    var s = Math.floor((Date.now() - t) / 1000);
+    if (s < 60) return 'just now';
+    var m = Math.floor(s / 60);
+    if (m < 60) return m + 'm';
+    var h = Math.floor(m / 60);
+    if (h < 48) return h + 'h';
+    var d = Math.floor(h / 24);
+    return d + 'd';
+}
+
+async function loadSupaConfig() {
+    if (SUPA.cfg) return SUPA.cfg;
+    try {
+        var r = await fetch('/.netlify/functions/config', { cache: 'no-store' });
+        var j = await r.json();
+        SUPA.cfg = j || {};
+    } catch (e) {
+        SUPA.cfg = {};
+    }
+    return SUPA.cfg;
+}
+
+async function initSupabaseOnce() {
+    if (SUPA.client) return SUPA.client;
+    await loadSupaConfig();
+    if (!window.supabase || typeof window.supabase.createClient !== 'function') return null;
+    if (!SUPA.cfg || !SUPA.cfg.SUPABASE_URL || !SUPA.cfg.SUPABASE_ANON_KEY) return null;
+    SUPA.client = window.supabase.createClient(SUPA.cfg.SUPABASE_URL, SUPA.cfg.SUPABASE_ANON_KEY);
+
+    try {
+        var sess = await SUPA.client.auth.getSession();
+        SUPA.session = (sess && sess.data && sess.data.session) || null;
+    } catch (e) {
+        SUPA.session = null;
+    }
+    _setAuthedDot(!!SUPA.session);
+    try {
+        SUPA.client.auth.onAuthStateChange(function(_event, session) {
+            SUPA.session = session || null;
+            _setAuthedDot(!!SUPA.session);
+            refreshAccount();
+        });
+    } catch (e) {}
+    return SUPA.client;
+}
+
+async function refreshAccount() {
+    await initSupabaseOnce();
+    if (!supaReady()) {
+        _setAcctStatus('Server config missing. Set SUPABASE_URL + SUPABASE_ANON_KEY in Netlify env.');
+        return;
+    }
+    var uid = supaGetUserId();
+    if (!uid) {
+        _setAcctStatus('Not signed in.');
+        document.getElementById('acct-handle-wrap').hidden = true;
+        return;
+    }
+    _setAcctStatus('Signed in.');
+    await ensureProfile();
+    await refreshFriends(true);
+}
+
+async function sendMagicLink() {
+    await initSupabaseOnce();
+    if (!supaReady()) return;
+    var email = (document.getElementById('acct-email').value || '').trim();
+    if (!email || email.indexOf('@') === -1) { _setAcctStatus('Enter a valid email.'); return; }
+    _setAcctStatus('Sending magic link…');
+    var redirectTo = location.origin + location.pathname + location.search;
+    var res = await SUPA.client.auth.signInWithOtp({ email: email, options: { emailRedirectTo: redirectTo } });
+    if (res && res.error) _setAcctStatus('Error: ' + res.error.message);
+    else _setAcctStatus('Check your email for a sign-in link.');
+}
+
+async function signOut() {
+    await initSupabaseOnce();
+    if (!supaReady()) return;
+    await SUPA.client.auth.signOut();
+    SUPA.profile = null;
+    SUPA.friends = [];
+    _setAcctStatus('Signed out.');
+}
+
+async function ensureProfile() {
+    var uid = supaGetUserId();
+    if (!uid || !supaReady()) return null;
+    var { data, error } = await SUPA.client.from('profiles').select('id,handle,display_name').eq('id', uid).maybeSingle();
+    if (error) return null;
+    SUPA.profile = data || null;
+    var wrap = document.getElementById('acct-handle-wrap');
+    if (!SUPA.profile || !SUPA.profile.handle) {
+        if (wrap) wrap.hidden = false;
+    } else {
+        if (wrap) wrap.hidden = true;
+        var t = document.getElementById('acct-title');
+        if (t) t.textContent = '@' + SUPA.profile.handle;
+    }
+    return SUPA.profile;
+}
+
+async function saveHandle() {
+    await initSupabaseOnce();
+    if (!supaReady()) return;
+    var uid = supaGetUserId();
+    if (!uid) { _setAcctStatus('Sign in first.'); return; }
+    var h = _normalizeHandle(document.getElementById('acct-handle').value || '');
+    if (!h || h.length < 3) { _setAcctStatus('Handle must be 3+ chars (a–z, 0–9, _).'); return; }
+    _setAcctStatus('Saving handle…');
+    var res = await SUPA.client.from('profiles').upsert({ id: uid, handle: h, updated_at: new Date().toISOString() }, { onConflict: 'id' });
+    if (res && res.error) { _setAcctStatus('Error: ' + res.error.message); return; }
+    await ensureProfile();
+    _setAcctStatus('Saved.');
+}
+
+async function refreshFriends(silent) {
+    await initSupabaseOnce();
+    if (!supaReady()) return;
+    var uid = supaGetUserId();
+    if (!uid) return;
+    var r = await SUPA.client.from('friendships').select('friend_id,status').eq('user_id', uid);
+    if (r && r.error) return;
+    var ids = (r.data || []).map(function(x) { return x.friend_id; });
+    if (!ids.length) {
+        SUPA.friends = [];
+        renderFriendsList();
+        return;
+    }
+    var pr = await SUPA.client.from('profiles').select('id,handle,display_name').in('id', ids);
+    if (pr && pr.error) return;
+    SUPA.friends = (pr.data || []).filter(function(p) { return p && p.id; }).sort(function(a, b) { return String(a.handle||'').localeCompare(String(b.handle||'')); });
+    renderFriendsList();
+    if (currentChapter) scheduleRefreshVerseFriendIcons(currentChapter);
+    if (!silent) _setAcctStatus('Friends updated.');
+}
+
+function renderFriendsList() {
+    var box = document.getElementById('friends-list');
+    if (!box) return;
+    if (!SUPA.friends.length) {
+        box.innerHTML = '<div class="acct-item" style="justify-content:flex-start;color:var(--muted)">No friends yet.</div>';
+        return;
+    }
+    box.innerHTML = SUPA.friends.map(function(p) {
+        var h = p.handle ? ('@' + p.handle) : (p.id || '').slice(0, 8);
+        return '<div class="acct-item"><span>' + escapeHtml(h) + '</span>'
+            + '<button type="button" style="padding:6px 8px;border-radius:10px;border:1px solid var(--divider);background:#fff;cursor:pointer"'
+            + " onclick=\"removeFriend('" + escapeAttr(p.id) + "')\">Remove</button></div>";
+    }).join('');
+}
+
+async function addFriendByHandle() {
+    await initSupabaseOnce();
+    if (!supaReady()) return;
+    var uid = supaGetUserId();
+    if (!uid) { _setAcctStatus('Sign in first.'); return; }
+    var raw = (document.getElementById('friend-handle').value || '').trim();
+    var h = _normalizeHandle(raw);
+    if (!h) { _setAcctStatus('Enter a @handle.'); return; }
+    var pr = await SUPA.client.from('profiles').select('id,handle').eq('handle', h).maybeSingle();
+    if (pr && pr.error) { _setAcctStatus('Error: ' + pr.error.message); return; }
+    if (!pr.data || !pr.data.id) { _setAcctStatus('No such user.'); return; }
+    if (pr.data.id === uid) { _setAcctStatus('That’s you.'); return; }
+    var ins = await SUPA.client.from('friendships').upsert({ user_id: uid, friend_id: pr.data.id, status: 'accepted', updated_at: new Date().toISOString() });
+    if (ins && ins.error) { _setAcctStatus('Error: ' + ins.error.message); return; }
+    document.getElementById('friend-handle').value = '';
+    await refreshFriends();
+}
+
+async function removeFriend(fid) {
+    await initSupabaseOnce();
+    if (!supaReady()) return;
+    var uid = supaGetUserId();
+    if (!uid) return;
+    await SUPA.client.from('friendships').delete().eq('user_id', uid).eq('friend_id', fid);
+    await refreshFriends();
+}
+
+async function writeActivity(type, verseRef, objTable, objId, payload) {
+    if (!supaReady()) return;
+    var uid = supaGetUserId();
+    if (!uid) return;
+    await SUPA.client.from('activity_events').insert({
+        actor_id: uid,
+        type: type,
+        verse_ref: verseRef || null,
+        object_table: objTable || null,
+        object_id: objId || null,
+        payload: payload || {},
+    });
+}
+
+async function saveVerseAnnotation(verseRef, body) {
+    await initSupabaseOnce();
+    if (!supaReady()) return { ok: false, error: 'No server config.' };
+    var uid = supaGetUserId();
+    if (!uid) return { ok: false, error: 'Sign in first.' };
+    if (!body) body = '';
+    var existing = await SUPA.client.from('verse_annotations').select('id').eq('user_id', uid).eq('verse_ref', verseRef).limit(1);
+    var rowId = (existing && existing.data && existing.data[0] && existing.data[0].id) || null;
+    var nowIso = new Date().toISOString();
+    if (rowId) {
+        var up = await SUPA.client.from('verse_annotations').update({ body: body, updated_at: nowIso }).eq('id', rowId);
+        if (up && up.error) return { ok: false, error: up.error.message };
+        await writeActivity('annotated', verseRef, 'verse_annotations', rowId, { preview: body.slice(0, 180) });
+        return { ok: true, id: rowId };
+    }
+    var ins = await SUPA.client.from('verse_annotations').insert({ user_id: uid, verse_ref: verseRef, body: body, updated_at: nowIso }).select('id').single();
+    if (ins && ins.error) return { ok: false, error: ins.error.message };
+    var nid = ins && ins.data ? ins.data.id : null;
+    await writeActivity('annotated', verseRef, 'verse_annotations', nid, { preview: body.slice(0, 180) });
+    return { ok: true, id: nid };
+}
+
+async function getMyAnnotation(verseRef) {
+    await initSupabaseOnce();
+    if (!supaReady()) return null;
+    var uid = supaGetUserId();
+    if (!uid) return null;
+    var r = await SUPA.client.from('verse_annotations').select('id,body,updated_at').eq('user_id', uid).eq('verse_ref', verseRef).maybeSingle();
+    if (r && r.error) return null;
+    return r.data || null;
+}
+
+async function saveMorsel(verseRef, text) {
+    await initSupabaseOnce();
+    if (!supaReady()) return { ok: false, error: 'No server config.' };
+    var uid = supaGetUserId();
+    if (!uid) return { ok: false, error: 'Sign in first.' };
+    var nowIso = new Date().toISOString();
+    var ins = await SUPA.client.from('morsels').insert({
+        user_id: uid,
+        kind: 'note',
+        payload: { text: text || '' },
+        verse_ref: verseRef || null,
+        updated_at: nowIso,
+    }).select('id').single();
+    if (ins && ins.error) return { ok: false, error: ins.error.message };
+    var mid = ins && ins.data ? ins.data.id : null;
+    await writeActivity('morsel_saved', verseRef, 'morsels', mid, { preview: String(text || '').slice(0, 180) });
+    return { ok: true, id: mid };
+}
+
+async function saveVerseNoteFromPanel(verseRef) {
+    var ta = document.getElementById('verse-note');
+    var status = document.getElementById('verse-social-status');
+    if (!ta) return;
+    if (status) status.textContent = 'Saving…';
+    var res = await saveVerseAnnotation(verseRef, (ta.value || '').trim());
+    if (!res.ok) {
+        if (status) status.textContent = res.error || 'Error saving.';
+        return;
+    }
+    if (status) status.textContent = 'Saved.';
+    refreshHistory();
+}
+
+async function saveMorselFromPanel(verseRef) {
+    var text = prompt('Save morsel (any text):', '');
+    if (text == null) return;
+    var status = document.getElementById('verse-social-status');
+    if (status) status.textContent = 'Saving morsel…';
+    var res = await saveMorsel(verseRef, String(text || '').trim());
+    if (!res.ok) {
+        if (status) status.textContent = res.error || 'Error saving morsel.';
+        return;
+    }
+    if (status) status.textContent = 'Morsel saved.';
+    refreshHistory();
+}
+
+async function hydrateVerseSocial(verseRef) {
+    await initSupabaseOnce();
+    var status = document.getElementById('verse-social-status');
+    var ta = document.getElementById('verse-note');
+    if (status) {
+        if (!supaReady()) status.textContent = 'Server config missing. Set SUPABASE_URL + SUPABASE_ANON_KEY.';
+        else if (!supaGetUserId()) status.textContent = 'Sign in to annotate and save morsels. Activity is public for now.';
+        else status.textContent = 'Signed in. Your activity is public for now.';
+    }
+    if (ta) {
+        var mine = await getMyAnnotation(verseRef);
+        ta.value = (mine && mine.body) ? mine.body : '';
+    }
+    if (SUPA.friends && SUPA.friends.length) {
+        var n = await friendsAnnotatedCount(verseRef);
+        var b = document.getElementById('friends-anno-badge');
+        if (b) b.textContent = n ? (n + ' friend' + (n === 1 ? '' : 's') + ' annotated') : '';
+    }
+}
+
+async function refreshFeed() {
+    await initSupabaseOnce();
+    if (!supaReady()) return;
+    var box = document.getElementById('feed-list');
+    if (!box) return;
+    box.innerHTML = '<div class="acct-item" style="justify-content:flex-start;color:var(--muted)">Loading…</div>';
+    var r = await SUPA.client.from('activity_feed').select('id,created_at,type,verse_ref,handle,display_name,payload').order('created_at', { ascending: false }).limit(60);
+    if (r && r.error) {
+        box.innerHTML = '<div class="acct-item" style="justify-content:flex-start;color:var(--muted)">Error: ' + escapeHtml(r.error.message) + '</div>';
+        return;
+    }
+    var rows = r.data || [];
+    if (!rows.length) {
+        box.innerHTML = '<div class="acct-item" style="justify-content:flex-start;color:var(--muted)">No activity yet.</div>';
+        return;
+    }
+    box.innerHTML = rows.map(function(e) {
+        var who = e.handle ? ('@' + e.handle) : 'someone';
+        var what = supaHumanEvent(e);
+        var where = e.verse_ref ? (' · ' + e.verse_ref) : '';
+        var ago = formatAgo(e.created_at);
+        var preview = (e.payload && e.payload.preview) ? ('<div class="acct-chip">' + escapeHtml(String(e.payload.preview)) + '</div>') : '';
+        return '<div class="acct-item" style="flex-direction:column;align-items:flex-start">'
+            + '<div><strong>' + escapeHtml(who) + '</strong> ' + escapeHtml(what) + '<span class="acct-chip">' + escapeHtml(where) + '</span>'
+            + '<span class="acct-chip" style="float:right;margin-left:8px">' + escapeHtml(ago) + '</span></div>'
+            + preview
+            + '</div>';
+    }).join('');
+}
+
+async function refreshHistory() {
+    await initSupabaseOnce();
+    if (!supaReady()) return;
+    var uid = supaGetUserId();
+    var box = document.getElementById('history-list');
+    if (!box) return;
+    if (!uid) {
+        box.innerHTML = '<div class="acct-item" style="justify-content:flex-start;color:var(--muted)">Sign in to see your history.</div>';
+        return;
+    }
+    box.innerHTML = '<div class="acct-item" style="justify-content:flex-start;color:var(--muted)">Loading…</div>';
+    var r = await SUPA.client.from('activity_feed').select('id,created_at,type,verse_ref,handle,payload').eq('actor_id', uid).order('created_at', { ascending: false }).limit(80);
+    if (r && r.error) {
+        box.innerHTML = '<div class="acct-item" style="justify-content:flex-start;color:var(--muted)">Error: ' + escapeHtml(r.error.message) + '</div>';
+        return;
+    }
+    var rows = r.data || [];
+    if (!rows.length) {
+        box.innerHTML = '<div class="acct-item" style="justify-content:flex-start;color:var(--muted)">No history yet.</div>';
+        return;
+    }
+    box.innerHTML = rows.map(function(e) {
+        var what = supaHumanEvent(e);
+        var where = e.verse_ref ? (' · ' + e.verse_ref) : '';
+        var ago = formatAgo(e.created_at);
+        return '<div class="acct-item"><span>' + escapeHtml(what + where) + '</span><span class="acct-chip">' + escapeHtml(ago) + '</span></div>';
+    }).join('');
+}
+
+async function friendsAnnotatedCount(verseRef) {
+    await initSupabaseOnce();
+    if (!supaReady()) return 0;
+    if (!SUPA.friends || !SUPA.friends.length) return 0;
+    var ids = SUPA.friends.map(function(p) { return p.id; }).filter(Boolean);
+    if (!ids.length) return 0;
+    var r = await SUPA.client.from('verse_annotations').select('id', { count: 'exact', head: true }).eq('verse_ref', verseRef).in('user_id', ids);
+    if (r && r.error) return 0;
+    return r.count || 0;
+}
+
+var _friendsIconTimers = {};
+function scheduleRefreshVerseFriendIcons(chapterId) {
+    if (!chapterId) return;
+    if (_friendsIconTimers[chapterId]) clearTimeout(_friendsIconTimers[chapterId]);
+    _friendsIconTimers[chapterId] = setTimeout(function() {
+        refreshVerseFriendIconsForChapter(chapterId);
+    }, 250);
+}
+
+async function refreshVerseFriendIconsForChapter(chapterId) {
+    await initSupabaseOnce();
+    if (!supaReady()) return;
+    if (!SUPA.friends || !SUPA.friends.length) return;
+    var block = document.getElementById('ch-' + chapterId);
+    if (!block) return;
+    var m = String(chapterId).match(/^(.+)_(\d+)$/);
+    if (!m) return;
+    var bookName = slugToBookName(m[1]);
+    var chNum = m[2];
+    var verseEls = Array.from(block.querySelectorAll('.verse[id]'));
+    if (!verseEls.length) return;
+    var refs = verseEls.map(function(verseEl) {
+        var vNum = String(verseEl.id || '').replace('v', '');
+        return bookName + ' ' + chNum + ':' + vNum;
+    });
+    refs = refs.slice(0, 220);
+    var ids = SUPA.friends.map(function(p) { return p.id; }).filter(Boolean);
+    if (!ids.length) return;
+    var r = await SUPA.client.from('verse_annotations').select('verse_ref,user_id').in('verse_ref', refs).in('user_id', ids).limit(5000);
+    if (r && r.error) return;
+    var rows = r.data || [];
+    var counts = {};
+    rows.forEach(function(row) {
+        var vr = row.verse_ref;
+        if (!vr) return;
+        counts[vr] = (counts[vr] || 0) + 1;
+    });
+    verseEls.forEach(function(verseEl) {
+        var vNum = String(verseEl.id || '').replace('v', '');
+        var vr = bookName + ' ' + chNum + ':' + vNum;
+        var n = counts[vr] || 0;
+        var dot = verseEl.querySelector('.verse-num .verse-friends');
+        if (!dot) return;
+        dot.classList.toggle('on', n > 0);
+        dot.title = n ? (n + ' friend' + (n === 1 ? '' : 's') + ' annotated') : '';
+    });
+}
+
 // Apply site config to DOM
 (function() {
     var el = document.getElementById('site-home');
@@ -1197,7 +1673,6 @@ function slugToBookName(slug) {
     if (BOOK_SLUG_DISPLAY[slug]) return BOOK_SLUG_DISPLAY[slug];
     return slug.replace(/_/g, ' ').replace(/\b\w/g, function(c) { return c.toUpperCase(); });
 }
-var tocPath = { level: 'root', volume: null, book: null, sourceCollection: null };
 var chapterOrder = [];          // ordered array of chapter ids
 var loadedChapters = new Set(); // ids already in DOM
 /** Coalesce concurrent `loadChapter(id)` fetches (avoids duplicate #ch-title_page blocks). */
@@ -1206,13 +1681,12 @@ var loadedNotes = new Set();    // ids whose notes have been fetched
 var currentChapter = null;
 var currentSourceDoc = null;
 var sourceMode = false;
-var tocOpen = true;
 var nextToLoad = 0;             // index into chapterOrder for infinite scroll
 var loading = false;
 var visitStack = [];
 var activeContextText = '';
-/** Shelf / deep-link path for title page — synced into left TOC (no duplicate inline browser). */
-var titlePageInlinePath = { level: 'idle', volume: null, book: null, sourceCollection: null, sourceGroup: null };
+/** Title-page navigation path (2-pane: no left TOC). */
+var titleNavPath = { level: 'idle', volume: null, book: null, sourceCollection: null, sourceGroup: null };
 
 // Highlights: { chapterId: [{start,end,color,text,note}] }
 var highlights = JSON.parse(localStorage.getItem(SITE.storageKey + '_highlights') || '{}');
@@ -1354,18 +1828,6 @@ function saveCurrentVerseToStudy() {
         });
     }
 })();
-
-// ── TOC toggle ───────────────────────────────────────────────────────────
-function closeTocPanel() {
-    tocOpen = false;
-    var tocEl = document.getElementById('toc');
-    if (tocEl) tocEl.classList.add('hidden');
-}
-
-function toggleToc() {
-    tocOpen = !tocOpen;
-    document.getElementById('toc').classList.toggle('hidden', !tocOpen);
-}
 
 function activeReaderTarget() {
     var readerEl = document.getElementById('reader');
@@ -1575,47 +2037,33 @@ Promise.all([
         tocTree = buildTocTree(data);
         tocTree.sources = buildSourceTree(sourceData);
         chapterOrder = data.filter(t => t.type === 'chapter' || t.type === 'front').map(t => t.id);
-        buildToc();
         var routeParams = new URLSearchParams(window.location.search);
         var openFromUrl = routeParams.get('open');
         var jumpFromUrl = routeParams.get('jump');
-        var last = localStorage.getItem(SITE.storageKey + '_position');
-        var startId = (last && chapterOrder.includes(last)) ? last : 'title_page';
-        // Home shelf links use ?open=collection_id — don't restore last scripture chapter behind the TOC.
-        if (openFromUrl && !jumpFromUrl) {
-            startId = 'title_page';
-        }
-        setTocPathForChapter(startId);
+        var startId = 'title_page';
         loadChapter(startId, true).then(() => {
             document.getElementById('splash').classList.add('gone');
-            if (startId === 'title_page') {
-                tocOpen = false;
-                document.getElementById('toc').classList.add('hidden');
-            } else {
-                tocOpen = true;
-                document.getElementById('toc').classList.remove('hidden');
-            }
 
             // Handle URL routing params from home (and other deep links).
             (function handleUrlParams() {
                 var params = new URLSearchParams(window.location.search);
                 var didConsume = false;
 
-                // 1) Deep-link shelf views → sidebar TOC (not duplicate inline browser)
+                // 1) Deep-link shelf views → title page nav
                 var openParam = params.get('open');
                 if (openParam) {
                     didConsume = true;
                     if (openParam === 'scriptures') {
-                        titlePageInlinePath = { level: 'scripture-root', volume: null, book: null, sourceCollection: null, sourceGroup: null };
+                        titleNavPath = { level: 'scripture-root', volume: null, book: null, sourceCollection: null, sourceGroup: null };
                     } else {
                         var collOpen = findSourceCollection(openParam);
                         if (collOpen) {
-                            titlePageInlinePath = { level: 'source-collection', volume: null, book: null, sourceCollection: collOpen, sourceGroup: null };
+                            titleNavPath = { level: 'source-collection', volume: null, book: null, sourceCollection: collOpen, sourceGroup: null };
                         } else {
-                            titlePageInlinePath = { level: 'source-root', volume: null, book: null, sourceCollection: null, sourceGroup: null };
+                            titleNavPath = { level: 'source-root', volume: null, book: null, sourceCollection: null, sourceGroup: null };
                         }
                     }
-                    renderTitlePageInlineNav();
+                    renderTitleNav();
                 }
 
                 // 2) Direct scripture jump by reference text, chapterId, or verse ref.
@@ -1664,179 +2112,319 @@ Promise.all([
         });
     });
 
-// ── Build TOC sidebar ────────────────────────────────────────────────────
-function buildToc() {
-    renderTocView();
+// ── Title page navigation (2‑pane) ───────────────────────────────────────
+function titleNavBack() {
+    var p = titleNavPath;
+    if (p.level === 'book' && p.volume) {
+        titleNavPath = { level: 'volume', volume: p.volume, book: null, sourceCollection: null, sourceGroup: null };
+    } else if (p.level === 'volume') {
+        titleNavPath = { level: 'scripture-root', volume: null, book: null, sourceCollection: null, sourceGroup: null };
+    } else if (p.level === 'source-group') {
+        titleNavPath = { level: 'source-collection', volume: null, book: null, sourceCollection: p.sourceCollection, sourceGroup: null };
+    } else if (p.level === 'source-collection') {
+        titleNavPath = { level: 'source-root', volume: null, book: null, sourceCollection: null, sourceGroup: null };
+    } else if (p.level === 'scripture-root' || p.level === 'source-root') {
+        titleNavPath = { level: 'idle', volume: null, book: null, sourceCollection: null, sourceGroup: null };
+    } else {
+        titleNavPath = { level: 'idle', volume: null, book: null, sourceCollection: null, sourceGroup: null };
+    }
+    renderTitleNav();
 }
 
-window.addEventListener('message', function(event) {
-    var data = event && event.data;
-    if (!data) return;
-    if (data.type === 'title-page-inline-shelf' || data.type === 'title-page-open-shelf') {
-        if (!data.key) return;
-        routeTitlePageInlineShelfFromHome(data.key);
-        return;
+function renderTitleNavTile(opts) {
+    var cls = 'title-nav-tile'
+        + (opts.chapter ? ' chapter-tile' : '')
+        + (opts.book ? ' book-tile' : '')
+        + (opts.wide ? ' wide' : '')
+        + (opts.active ? ' active' : '')
+        + (opts.cover ? ' title-nav-tile--cover' : '');
+    if (opts.cover) {
+        return '<button type="button" class="' + cls + '" ' + (opts.attrs || '') + ' aria-label="' + escapeHtml(opts.label) + '">'
+            + '<img class="title-nav-tile-cover-img" src="' + escapeAttr(opts.cover) + '" alt="" width="177" height="284" loading="lazy" decoding="async"/>'
+            + '</button>';
     }
-    if (data.type === 'title-page-inline-collection' || data.type === 'title-page-open-collection') {
-        if (!data.collectionId) return;
-        routeTitlePageInlineCollectionFromHome(data.collectionId);
-    }
-});
+    return '<button type="button" class="' + cls + '" ' + (opts.attrs || '') + '>'
+        + '<span class="title-nav-tile-title">' + escapeHtml(opts.label) + '</span>'
+        + (opts.meta ? '<span class="title-nav-tile-meta">' + escapeHtml(opts.meta) + '</span>' : '')
+        + '</button>';
+}
 
-function renderTocView() {
-    var grid = document.getElementById('toc-grid');
-    var back = document.getElementById('toc-back');
-    var title = document.getElementById('toc-title');
-    var subtitle = document.getElementById('toc-subtitle');
+function renderTitleNav() {
+    var tp = document.getElementById('ch-title_page');
+    if (!tp) return;
+    var nav = tp.querySelector('#title-nav');
+    var grid = tp.querySelector('#title-nav-grid');
+    var back = tp.querySelector('#title-nav-back');
+    var titleEl = tp.querySelector('#title-nav-title');
+    var subEl = tp.querySelector('#title-nav-subtitle');
+    if (!nav || !grid || !titleEl) return;
+
+    var path = titleNavPath;
     var html = '';
 
-    if (tocPath.level === 'root') {
-        grid.className = 'toc-grid';
-        title.textContent = 'Contents';
-        subtitle.textContent = '';
-        back.classList.remove('show');
-        html += renderTocTile({
-            label: 'The Holy Scriptures',
-            wide: true,
-            attrs: 'data-action="scripture-root"'
-        });
-        html += renderTocTile({
-            label: 'Other Church Writings',
-            wide: true,
-            attrs: 'data-action="source-root"'
-        });
-    } else if (tocPath.level === 'scripture-root') {
-        grid.className = 'toc-grid';
-        title.textContent = 'Scriptures';
-        subtitle.textContent = 'The Holy Scriptures';
-        back.classList.add('show');
-        tocTree.volumes.forEach(function(volume) {
-            var cover = tocVolumeCoverUrl(volume.label);
-            html += renderTocTile({
+    if (path.level === 'idle') {
+        nav.hidden = true;
+        if (back) back.hidden = true;
+        titleEl.textContent = '';
+        if (subEl) subEl.textContent = '';
+        grid.className = 'title-nav-grid';
+        grid.innerHTML = '';
+        return;
+    }
+
+    nav.hidden = false;
+    if (back) back.hidden = false;
+
+    if (path.level === 'scripture-root') {
+        grid.className = 'title-nav-grid';
+        titleEl.textContent = 'Scriptures';
+        if (subEl) subEl.textContent = 'The Holy Scriptures';
+        (tocTree.volumes || []).forEach(function(volume) {
+            html += renderTitleNavTile({
                 label: volume.label,
-                cover: cover,
+                cover: tocVolumeCoverUrl(volume.label),
                 attrs: 'data-action="volume" data-volume="' + escapeAttr(volume.label) + '"'
             });
         });
-    } else if (tocPath.level === 'source-root') {
-        grid.className = 'toc-grid';
-        title.textContent = 'Sources';
-        subtitle.textContent = 'Other Church Writings';
-        back.classList.add('show');
-        tocTree.sources.forEach(function(collection) {
-            html += renderTocTile({
-                label: collection.label,
-                meta: formatSourceCollectionTileMeta(collection),
-                attrs: `data-action="source-collection" data-collection="${escapeAttr(collection.id)}"`
-            });
-        });
-    } else if (tocPath.level === 'volume' && tocPath.volume) {
-        grid.className = 'toc-grid';
-        title.textContent = 'Books';
-        subtitle.textContent = tocPath.volume.label;
-        back.classList.add('show');
-        tocPath.volume.books.forEach(function(book) {
-            html += renderTocTile({
+    } else if (path.level === 'volume' && path.volume) {
+        grid.className = 'title-nav-grid';
+        titleEl.textContent = 'Books';
+        if (subEl) subEl.textContent = path.volume.label;
+        path.volume.books.forEach(function(book) {
+            html += renderTitleNavTile({
                 label: book.label,
                 book: true,
                 active: currentChapter && chapterMeta[currentChapter] && chapterMeta[currentChapter].book === book.label,
-                attrs: `data-action="book" data-volume="${escapeAttr(tocPath.volume.label)}" data-book="${escapeAttr(book.label)}"`
+                attrs: 'data-action="book" data-volume="' + escapeAttr(path.volume.label) + '" data-book="' + escapeAttr(book.label) + '"'
             });
         });
-    } else if (tocPath.level === 'source-collection' && tocPath.sourceCollection) {
-        grid.className = 'toc-grid';
-        title.textContent = 'Sources';
-        var coll = tocPath.sourceCollection;
-        subtitle.textContent = coll.label;
-        back.classList.add('show');
+    } else if (path.level === 'book' && path.book) {
+        grid.className = 'title-nav-grid chapter-grid';
+        titleEl.textContent = 'Chapters';
+        if (subEl) subEl.textContent = path.book.label;
+        path.book.chapters.forEach(function(ch) {
+            html += renderTitleNavTile({
+                label: ch.label,
+                chapter: true,
+                active: currentChapter === ch.id,
+                attrs: 'data-action="chapter" data-id="' + escapeAttr(ch.id) + '"'
+            });
+        });
+    } else if (path.level === 'source-root') {
+        grid.className = 'title-nav-grid';
+        titleEl.textContent = 'Sources';
+        if (subEl) subEl.textContent = 'Other Church Writings';
+        (tocTree.sources || []).forEach(function(collection) {
+            html += renderTitleNavTile({
+                label: collection.label,
+                meta: formatSourceCollectionTileMeta(collection),
+                attrs: 'data-action="source-collection" data-collection="' + escapeAttr(collection.id) + '"'
+            });
+        });
+    } else if (path.level === 'source-collection' && path.sourceCollection) {
+        grid.className = 'title-nav-grid';
+        titleEl.textContent = 'Sources';
+        var coll = path.sourceCollection;
+        if (subEl) subEl.textContent = coll.label;
         if (coll.description) {
-            html += `<div class="toc-provenance">${escapeHtml(coll.description)}</div>`;
+            html += '<div class="title-nav-provenance">' + escapeHtml(coll.description) + '</div>';
         }
         if (coll.groups && coll.groups.length > 0) {
             coll.groups.forEach(function(grp) {
-                html += renderTocTile({
+                html += renderTitleNavTile({
                     label: grp.label,
                     meta: grp.meta,
-                    attrs: `data-action="source-group" data-collection="${escapeAttr(coll.id)}" data-group="${escapeAttr(grp.id)}"`
+                    attrs: 'data-action="source-group" data-collection="' + escapeAttr(coll.id) + '" data-group="' + escapeAttr(grp.id) + '"'
                 });
             });
         } else {
             coll.docs.forEach(function(doc) {
-                html += renderTocTile({
+                html += renderTitleNavTile({
                     label: doc.label,
                     meta: doc.meta,
                     active: currentSourceDoc === doc.id,
-                    attrs: `data-action="source-doc" data-doc="${escapeAttr(doc.id)}"`
+                    attrs: 'data-action="source-doc" data-doc="' + escapeAttr(doc.id) + '"'
                 });
             });
         }
-    } else if (tocPath.level === 'source-group' && tocPath.sourceGroup) {
-        grid.className = 'toc-grid';
-        title.textContent = tocPath.sourceCollection ? tocPath.sourceCollection.label : 'Sources';
-        subtitle.textContent = tocPath.sourceGroup.label;
-        back.classList.add('show');
-        tocPath.sourceGroup.docs.forEach(function(doc) {
-            html += renderTocTile({
+    } else if (path.level === 'source-group' && path.sourceGroup) {
+        grid.className = 'title-nav-grid';
+        titleEl.textContent = path.sourceCollection ? path.sourceCollection.label : 'Sources';
+        if (subEl) subEl.textContent = path.sourceGroup.label;
+        path.sourceGroup.docs.forEach(function(doc) {
+            html += renderTitleNavTile({
                 label: doc.label,
                 meta: doc.meta,
                 active: currentSourceDoc === doc.id,
-                attrs: `data-action="source-doc" data-doc="${escapeAttr(doc.id)}"`
+                attrs: 'data-action="source-doc" data-doc="' + escapeAttr(doc.id) + '"'
             });
         });
     } else {
-        grid.className = 'toc-grid chapter-grid';
-        title.textContent = 'Chapters';
-        subtitle.textContent = tocPath.book.label;
-        back.classList.add('show');
-        tocPath.book.chapters.forEach(function(ch) {
-            html += renderTocTile({
-                label: ch.label,
-                chapter: true,
-                active: currentChapter === ch.id,
-                attrs: `data-action="chapter" data-id="${ch.id}"`
-            });
-        });
+        grid.className = 'title-nav-grid';
+        titleEl.textContent = 'Browse';
+        if (subEl) subEl.textContent = '';
+        html += '<p class="title-nav-placeholder">Nothing to show.</p>';
     }
 
     grid.innerHTML = html;
 }
 
+function renderTitleHistory() {
+    var root = document.getElementById('ch-title_page');
+    if (!root) return;
+    var resumeBtn = root.querySelector('[data-resume]');
+    var resumeMeta = root.querySelector('#title-resume-meta');
+    var recentsEl = root.querySelector('#title-recents');
+    var savesEl = root.querySelector('#title-saves');
+    var emptyEl = root.querySelector('#title-history-empty');
+
+    function formatChapterRef(chapterId) {
+        var meta = chapterMeta[chapterId];
+        if (!meta || !meta.book) return chapterId;
+        var m = String(chapterId).match(/_(\d+)$/);
+        if (!m) return meta.book;
+        return meta.book + ' ' + parseInt(m[1], 10);
+    }
+
+    var last = null;
+    try { last = localStorage.getItem(SITE.storageKey + '_position'); } catch (e) {}
+    if (resumeBtn) resumeBtn.disabled = !last;
+    if (resumeMeta) resumeMeta.textContent = last ? formatChapterRef(last) : '—';
+
+    var recents = (recentState && recentState.items) ? recentState.items.slice(0, 5) : [];
+    if (recentsEl) {
+        recentsEl.innerHTML = recents.map(function(it) {
+            if (!it || !it.label) return '';
+            return '<button type="button" class="history-btn" data-jump="' + escapeAttr(it.label) + '">'
+                + '<div class="history-label">' + escapeHtml(it.label) + '</div>'
+                + '<div class="history-meta">Recent</div>'
+                + '</button>';
+        }).join('');
+    }
+
+    var saves = (studyState && studyState.saves) ? studyState.saves.slice(-5).reverse() : [];
+    if (savesEl) {
+        savesEl.innerHTML = saves.map(function(s) {
+            if (!s || !s.ref) return '';
+            return '<button type="button" class="history-btn" data-jump="' + escapeAttr(s.ref) + '">'
+                + '<div class="history-label">' + escapeHtml(s.ref) + '</div>'
+                + '<div class="history-meta">Saved</div>'
+                + '</button>';
+        }).join('');
+    }
+
+    var hasAny = !!(last || (recents && recents.length) || (saves && saves.length));
+    if (emptyEl) emptyEl.hidden = hasAny;
+}
+
 function hydrateTitlePage() {
     var root = document.getElementById('ch-title_page');
     if (!root) return;
+    if (root.dataset.boundTitlePage === '1') {
+        renderTitleHistory();
+        renderTitleNav();
+        return;
+    }
+    root.dataset.boundTitlePage = '1';
 
-    root.querySelectorAll('[data-open-shelf]').forEach(function(link) {
-        if (link.dataset.boundShelfClick === '1') return;
-        link.dataset.boundShelfClick = '1';
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-            var key = link.getAttribute('data-open-shelf');
+    function navToJumpText(jumpText) {
+        var t = String(jumpText || '').trim();
+        if (!t) return;
+        var exact = resolveScriptureRef(t);
+        if (exact && exact.chapterId) {
+            jumpTo(exact.chapterId, exact.verse);
+            return;
+        }
+        var ch = resolveScriptureChapter(t);
+        if (ch && ch.book && ch.chapter) {
+            var bookRec = findBookRecord(ch.book);
+            if (bookRec && bookRec.firstChapter) {
+                var prefix = bookRec.firstChapter.replace(/_1$/, '');
+                jumpTo(prefix + '_' + parseInt(ch.chapter, 10));
+                return;
+            }
+        }
+    }
+
+    root.addEventListener('click', function(ev) {
+        var backBtn = ev.target.closest && ev.target.closest('#title-nav-back');
+        if (backBtn) {
+            ev.preventDefault();
+            titleNavBack();
+            return;
+        }
+
+        var shelfLink = ev.target.closest && ev.target.closest('[data-open-shelf]');
+        if (shelfLink) {
+            ev.preventDefault();
+            var key = shelfLink.getAttribute('data-open-shelf');
             if (key === 'scriptures') {
-                titlePageInlinePath = { level: 'scripture-root', volume: null, book: null, sourceCollection: null, sourceGroup: null };
+                titleNavPath = { level: 'scripture-root', volume: null, book: null, sourceCollection: null, sourceGroup: null };
             } else if (key === 'sources') {
-                titlePageInlinePath = { level: 'source-root', volume: null, book: null, sourceCollection: null, sourceGroup: null };
-            }
-            renderTitlePageInlineNav();
-        });
-    });
-
-    root.querySelectorAll('[data-open-shelf-collection]').forEach(function(link) {
-        if (link.dataset.boundCollectionClick === '1') return;
-        link.dataset.boundCollectionClick = '1';
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-            var collectionId = link.getAttribute('data-open-shelf-collection');
-            var collection = findSourceCollection(collectionId);
-            if (collection) {
-                titlePageInlinePath = { level: 'source-collection', volume: null, book: null, sourceCollection: collection, sourceGroup: null };
+                titleNavPath = { level: 'source-root', volume: null, book: null, sourceCollection: null, sourceGroup: null };
             } else {
-                titlePageInlinePath = { level: 'source-root', volume: null, book: null, sourceCollection: null, sourceGroup: null };
+                return;
             }
-            renderTitlePageInlineNav();
-        });
+            renderTitleNav();
+            var nav = root.querySelector('#title-nav');
+            if (nav) nav.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            return;
+        }
+
+        var jumpBtn = ev.target.closest && ev.target.closest('[data-jump]');
+        if (jumpBtn) {
+            ev.preventDefault();
+            navToJumpText(jumpBtn.getAttribute('data-jump'));
+            return;
+        }
+
+        var resumeBtn = ev.target.closest && ev.target.closest('[data-resume]');
+        if (resumeBtn) {
+            ev.preventDefault();
+            var last = localStorage.getItem(SITE.storageKey + '_position');
+            if (last) jumpTo(last, null);
+            return;
+        }
+
+        var tile = ev.target.closest && ev.target.closest('.title-nav-tile');
+        if (!tile) return;
+        ev.preventDefault();
+        var action = tile.getAttribute('data-action');
+        if (action === 'volume') {
+            var volume = findVolume(tile.getAttribute('data-volume'));
+            if (!volume) return;
+            titleNavPath = { level: 'volume', volume: volume, book: null, sourceCollection: null, sourceGroup: null };
+            renderTitleNav();
+        } else if (action === 'book') {
+            var v = findVolume(tile.getAttribute('data-volume'));
+            var b = v && findBook(v, tile.getAttribute('data-book'));
+            if (!v || !b) return;
+            titleNavPath = { level: 'book', volume: v, book: b, sourceCollection: null, sourceGroup: null };
+            renderTitleNav();
+        } else if (action === 'chapter') {
+            var chId = tile.getAttribute('data-id');
+            if (chId) jumpTo(chId);
+        } else if (action === 'source-collection') {
+            var coll = findSourceCollection(tile.getAttribute('data-collection'));
+            if (!coll) return;
+            titleNavPath = { level: 'source-collection', volume: null, book: null, sourceCollection: coll, sourceGroup: null };
+            renderTitleNav();
+        } else if (action === 'source-group') {
+            var collG = findSourceCollection(tile.getAttribute('data-collection'));
+            var grp = collG && collG.groups && collG.groups.find(function(g) { return g.id === tile.getAttribute('data-group'); });
+            if (!collG || !grp) return;
+            titleNavPath = { level: 'source-group', volume: null, book: null, sourceCollection: collG, sourceGroup: grp };
+            renderTitleNav();
+        } else if (action === 'source-doc') {
+            var docId = tile.getAttribute('data-doc');
+            var docMeta = docId && sourceMeta[docId];
+            if (!docId || !docMeta) return;
+            loadSourceDocument(docId, docMeta.href);
+        }
     });
 
-    renderTitlePageInlineNav();
+    renderTitleHistory();
+    renderTitleNav();
 }
 
 function tocVolumeCoverUrl(volumeLabel) {
@@ -1853,83 +2441,6 @@ function tocVolumeCoverUrl(volumeLabel) {
     return map[volumeLabel] || '';
 }
 
-function renderTocTile(opts) {
-    var cls = 'toc-tile' + (opts.chapter ? ' chapter-tile' : '') + (opts.book ? ' book-tile' : '') + (opts.wide ? ' wide' : '') + (opts.active ? ' active' : '');
-    if (opts.cover) cls += ' toc-tile--cover';
-    if (opts.cover) {
-        return '<button type="button" class="' + cls + '" ' + (opts.attrs || '') + ' aria-label="' + escapeHtml(opts.label) + '">'
-            + '<img class="toc-tile-cover-img" src="' + escapeAttr(opts.cover) + '" alt="" width="177" height="284" loading="lazy" decoding="async"/>'
-            + '</button>';
-    }
-    return '<button type="button" class="' + cls + '" ' + (opts.attrs || '') + '>'
-        + '<span class="toc-tile-title">' + opts.label + '</span>'
-        + (opts.meta ? '<span class="toc-tile-meta">' + opts.meta + '</span>' : '')
-        + '</button>';
-}
-
-function renderTitlePageInlineNav() {
-    var path = titlePageInlinePath;
-    var tocEl = document.getElementById('toc');
-    if (path.level === 'idle') {
-        tocOpen = false;
-        if (tocEl) tocEl.classList.add('hidden');
-        return;
-    }
-    if (path.level === 'scripture-root') {
-        tocPath = { level: 'scripture-root', volume: null, book: null, sourceCollection: null };
-    } else if (path.level === 'source-root') {
-        tocPath = { level: 'source-root', volume: null, book: null, sourceCollection: null };
-    } else if (path.level === 'volume' && path.volume) {
-        tocPath = { level: 'volume', volume: path.volume, book: null, sourceCollection: null };
-    } else if (path.level === 'book' && path.volume && path.book) {
-        tocPath = { level: 'book', volume: path.volume, book: path.book, sourceCollection: null };
-    } else if (path.level === 'source-collection' && path.sourceCollection) {
-        tocPath = { level: 'source-collection', volume: null, book: null, sourceCollection: path.sourceCollection, sourceGroup: null };
-    } else if (path.level === 'source-group' && path.sourceCollection && path.sourceGroup) {
-        tocPath = { level: 'source-group', volume: null, book: null, sourceCollection: path.sourceCollection, sourceGroup: path.sourceGroup };
-    } else {
-        tocPath = { level: 'root', volume: null, book: null, sourceCollection: null };
-    }
-    renderTocView();
-    tocOpen = true;
-    if (tocEl) tocEl.classList.remove('hidden');
-}
-
-function routeTitlePageInlineShelfFromHome(key) {
-    if (key === 'scriptures') {
-        titlePageInlinePath = { level: 'scripture-root', volume: null, book: null, sourceCollection: null, sourceGroup: null };
-    } else if (key === 'sources') {
-        titlePageInlinePath = { level: 'source-root', volume: null, book: null, sourceCollection: null, sourceGroup: null };
-    } else {
-        return;
-    }
-    function finish() {
-        renderTitlePageInlineNav();
-    }
-    if (currentChapter !== 'title_page') {
-        jumpTo('title_page', null, { skipTocPathUpdate: true, pushHistory: false, onAfterNavigate: finish });
-    } else {
-        finish();
-    }
-}
-
-function routeTitlePageInlineCollectionFromHome(collectionId) {
-    var collection = findSourceCollection(collectionId);
-    if (collection) {
-        titlePageInlinePath = { level: 'source-collection', volume: null, book: null, sourceCollection: collection, sourceGroup: null };
-    } else {
-        titlePageInlinePath = { level: 'source-root', volume: null, book: null, sourceCollection: null, sourceGroup: null };
-    }
-    function finish() {
-        renderTitlePageInlineNav();
-    }
-    if (currentChapter !== 'title_page') {
-        jumpTo('title_page', null, { skipTocPathUpdate: true, pushHistory: false, onAfterNavigate: finish });
-    } else {
-        finish();
-    }
-}
-
 function findVolume(label) {
     return tocTree.volumes.find(function(volume) { return volume.label === label; }) || null;
 }
@@ -1938,100 +2449,9 @@ function findBook(volume, label) {
     return volume && volume.books.find(function(book) { return book.label === label; }) || null;
 }
 
-function setTocPathForChapter(chapterId) {
-    if (chapterId === 'title_page' || !chapterMeta[chapterId]) {
-        tocPath = { level: 'root', volume: null, book: null, sourceCollection: null };
-        renderTocView();
-        return;
-    }
-    var meta = chapterMeta[chapterId];
-    var volume = findVolume(meta.volume);
-    var book = findBook(volume, meta.book);
-    if (!volume || !book) return;
-    tocPath = { level: 'book', volume: volume, book: book, sourceCollection: null };
-    renderTocView();
-}
-
 function findSourceCollection(id) {
     return tocTree.sources.find(function(collection) { return collection.id === id; }) || null;
 }
-
-function setTocPathForSource(docId) {
-    var meta = sourceMeta[docId];
-    if (!meta) return;
-    var collection = tocTree.sources.find(function(entry) { return entry.id === meta.collectionId || entry.label === meta.collection; });
-    if (!collection) return;
-    if (meta.groupId && collection.groups) {
-        var group = collection.groups.find(function(g) { return g.id === meta.groupId; });
-        if (group) {
-            tocPath = { level: 'source-group', volume: null, book: null, sourceCollection: collection, sourceGroup: group };
-            renderTocView();
-            return;
-        }
-    }
-    tocPath = { level: 'source-collection', volume: null, book: null, sourceCollection: collection };
-    renderTocView();
-}
-
-function tocBack() {
-    if (tocPath.level === 'book' && tocPath.volume) {
-        tocPath = { level: 'volume', volume: tocPath.volume, book: null, sourceCollection: null };
-    } else if (tocPath.level === 'volume') {
-        tocPath = { level: 'scripture-root', volume: null, book: null, sourceCollection: null };
-    } else if (tocPath.level === 'source-group') {
-        tocPath = { level: 'source-collection', volume: null, book: null, sourceCollection: tocPath.sourceCollection, sourceGroup: null };
-    } else if (tocPath.level === 'source-collection') {
-        tocPath = { level: 'source-root', volume: null, book: null, sourceCollection: null };
-    } else {
-        tocPath = { level: 'root', volume: null, book: null, sourceCollection: null };
-    }
-    renderTocView();
-}
-
-document.getElementById('toc-grid').addEventListener('click', function(e) {
-    var tile = e.target.closest('.toc-tile');
-    if (!tile) return;
-    var action = tile.dataset.action;
-    if (action === 'scripture-root') {
-        tocPath = { level: 'scripture-root', volume: null, book: null, sourceCollection: null };
-        renderTocView();
-    } else if (action === 'source-root') {
-        tocPath = { level: 'source-root', volume: null, book: null, sourceCollection: null };
-        renderTocView();
-    } else if (action === 'volume') {
-        var volume = findVolume(tile.dataset.volume);
-        if (!volume) return;
-        tocPath = { level: 'volume', volume: volume, book: null, sourceCollection: null };
-        renderTocView();
-    } else if (action === 'book') {
-        var volume = findVolume(tile.dataset.volume);
-        var book = findBook(volume, tile.dataset.book);
-        if (!volume || !book) return;
-        tocPath = { level: 'book', volume: volume, book: book, sourceCollection: null };
-        renderTocView();
-    } else if (action === 'source-collection') {
-        var collection = findSourceCollection(tile.dataset.collection);
-        if (!collection) return;
-        tocPath = { level: 'source-collection', volume: null, book: null, sourceCollection: collection };
-        renderTocView();
-    } else if (action === 'source-group') {
-        var collection = findSourceCollection(tile.dataset.collection);
-        var group = collection && collection.groups &&
-                    collection.groups.find(function(g) { return g.id === tile.dataset.group; });
-        if (!group) return;
-        tocPath = { level: 'source-group', volume: null, book: null, sourceCollection: collection, sourceGroup: group };
-        renderTocView();
-    } else if (action === 'source-doc') {
-        var docMeta = sourceMeta[tile.dataset.doc];
-        if (!docMeta) return;
-        loadSourceDocument(tile.dataset.doc, docMeta.href);
-        tocOpen = false; document.getElementById('toc').classList.add('hidden');
-    } else if (action === 'chapter') {
-        jumpTo(tile.dataset.id);
-        // Close TOC after selection
-        tocOpen = false; document.getElementById('toc').classList.add('hidden');
-    }
-});
 
 function escapeAttr(str) {
     return String(str).replace(/"/g, '&quot;');
@@ -2041,9 +2461,6 @@ function jumpTo(chapterId, verseNum, opts) {
     opts = opts || {};
     if (opts.pushHistory !== false) {
         pushVisit(activeReaderTarget(), { type: 'scripture', chapterId: chapterId, verse: verseNum || null });
-    }
-    if (!opts.skipTocPathUpdate) {
-        setTocPathForChapter(chapterId);
     }
     // If the chapter is already loaded, focus the verse synchronously so
     // that callers (e.g. ref-link click handlers) can observe the focused
@@ -2060,7 +2477,6 @@ function jumpTo(chapterId, verseNum, opts) {
     }).then(() => {
         currentChapter = chapterId;
         updateLocationLabel(chapterId);
-        updateActiveToc(chapterId, { preserveTocPath: !!opts.skipTocPathUpdate });
         recordRecentScripture(chapterId, verseNum || null);
         var target;
         if (verseNum) {
@@ -2076,7 +2492,6 @@ function jumpTo(chapterId, verseNum, opts) {
         } else if (target) {
             target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-        if (window.innerWidth < 600) { tocOpen = false; document.getElementById('toc').classList.add('hidden'); }
         if (!sourceMode && chapterMeta[chapterId]) {
             var pbJump = document.getElementById('panel-body');
             var pmJ = pbJump && pbJump.dataset.panelMode;
@@ -2096,7 +2511,7 @@ function jumpTo(chapterId, verseNum, opts) {
         if (ev.button !== 0) return;
         if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey) return;
         ev.preventDefault();
-        titlePageInlinePath = { level: 'idle', volume: null, book: null, sourceCollection: null, sourceGroup: null };
+        titleNavPath = { level: 'idle', volume: null, book: null, sourceCollection: null, sourceGroup: null };
         jumpTo('title_page', null, { pushHistory: true });
     });
 })();
@@ -2211,6 +2626,12 @@ function markVerseDiscovery(block, chapterId) {
         if (donaParas.length) traditions.unshift('Donaldson Commentary');
         dot.title = traditions.join(' · ') || 'Commentary';
         numSpan.appendChild(dot);
+
+        var f = document.createElement('span');
+        f.className = 'verse-friends';
+        f.dataset.ref = ref;
+        f.title = '';
+        numSpan.appendChild(f);
     });
 }
 
@@ -3087,25 +3508,40 @@ function finishVerseDiscoveryPanel(payload) {
         html += '</select></div>';
     }
 
+    html += '<div class="panel-section">Your activity</div>';
+    html += '<div style="padding:12px 22px 14px;border-bottom:1px solid var(--divider);">';
+    html += '<div id="verse-social-status" style="font-size:12px;color:var(--muted);line-height:1.55;margin-bottom:10px">Sign in to annotate and save morsels. Activity is public for now.</div>';
+    html += '<label style="display:block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px">Annotation (public)</label>';
+    html += '<textarea id="verse-note" rows="4" placeholder="Write your note for this verse…" style="width:100%;padding:10px 11px;border-radius:12px;border:1px solid var(--divider);background:#fff;font-family:inherit;font-size:13px"></textarea>';
+    html += '<div style="display:flex;gap:8px;align-items:center;margin-top:10px">';
+    html += "<button type=\"button\" class=\"acct-tab on\" style=\"border-radius:10px\" onclick=\"saveVerseNoteFromPanel('" + escapeAttr(ref) + "')\">Save note</button>";
+    html += "<button type=\"button\" class=\"acct-tab\" style=\"border-radius:10px\" onclick=\"saveMorselFromPanel('" + escapeAttr(ref) + "')\">Save morsel</button>";
+    html += '<div id="friends-anno-badge" style="margin-left:auto;font-size:12px;color:var(--muted)"></div>';
+    html += '</div></div>';
+
     var cm = chapterMeta[chapterId] || {};
     var donaldsonWorkLine = (cm.book ? cm.book + ' · ' : '') + 'Commentary';
 
+    // Donaldson is first-class in this project: always render it as its own section.
     var spoonNotes = (donaEntry.spoon && donaEntry.spoon.notes) || [];
-    var allCommentary = [];
+    var donaldsonCards = [];
     donaNotes.forEach(function(para, i) {
         var paraText = (typeof para === 'string') ? para : (para.text || '');
-        allCommentary.push({
+        donaldsonCards.push({
             author: 'Lee Donaldson', work: donaldsonWorkLine,
-            text: (spoonNotes[i]) || paraText, badge: 'Commentary', badgeClass: ''
+            text: (spoonNotes[i]) || paraText, badge: 'Donaldson', badgeClass: ''
         });
     });
     donaQuotes.forEach(function(q) {
-        allCommentary.push({
+        donaldsonCards.push({
             author: q.speaker || q.attr || '',
             work: [q.source, q.date, q.ref].filter(Boolean).join(' · '),
-            text: q.text || '', badge: 'Attributed Quote', badgeClass: ''
+            text: q.text || '', badge: 'Donaldson', badgeClass: ''
         });
     });
+
+    // External corpus “web” connections (from verse_discovery.json)
+    var connections = [];
     entries.forEach(function(e, i) {
         var meta = discParseCard(e);
         var qt = (e.source_text || '').replace(/  +/g, ' ').replace(/\n\s*/g, ' ').trim();
@@ -3115,7 +3551,7 @@ function finishVerseDiscoveryPanel(payload) {
             var yn = parseInt(e.year, 10);
             fy = isNaN(yn) ? null : yn;
         }
-        allCommentary.push({
+        connections.push({
             author: meta.author, work: meta.work, text: qt,
             badge: meta.badge, badgeClass: meta.badgeClass,
             hasLink: !!(e.source_doc_id && e.source_para != null && sourceMeta[e.source_doc_id]),
@@ -3124,10 +3560,28 @@ function finishVerseDiscoveryPanel(payload) {
             filterYear: fy
         });
     });
-    if (allCommentary.length) {
-        html += '<div class="panel-section">Commentary</div>';
-        html += '<div class="verse-panel-cards' + (allCommentary.length <= 5 ? ' expanded' : '') + '">';
-        allCommentary.forEach(function(c) {
+
+    if (donaldsonCards.length) {
+        html += '<div class="panel-section">Donaldson</div>';
+        html += '<div class="verse-panel-cards expanded">';
+        donaldsonCards.forEach(function(c) {
+            html += '<div class="comm-card">'
+                + (c.badge ? '<div class="hist-badge ' + escapeHtml(c.badgeClass || '') + '">' + escapeHtml(c.badge) + '</div>' : '')
+                + (c.author ? '<div class="comm-author">' + linkifyName(c.author) + '</div>' : '')
+                + (c.work ? '<div class="comm-work">' + escapeHtml(c.work) + '</div>' : '')
+                + '<div class="comm-text">' + escapeHtml(c.text || '') + '</div></div>';
+        });
+        html += '</div>';
+    }
+
+    // Show top 5, with optional +5 more (10 total) to preserve scanability.
+    var connShowMax = 10;
+    var connInitial = 5;
+    var connList = connections.slice(0, connShowMax);
+    if (connList.length) {
+        html += '<div class="panel-section">Connections</div>';
+        html += '<div class="verse-panel-cards">';
+        connList.forEach(function(c, idx) {
             var vdAttrs = '';
             if (c.entryIdx != null) {
                 vdAttrs = ' data-idx="' + c.entryIdx + '" data-vd-idx="' + c.entryIdx + '"'
@@ -3140,8 +3594,9 @@ function finishVerseDiscoveryPanel(payload) {
                 + (c.work ? '<div class="comm-work">' + escapeHtml(c.work) + '</div>' : '')
                 + '<div class="comm-text">' + escapeHtml(c.text || '') + '</div></div>';
         });
-        if (allCommentary.length > 5) {
-            html += '<button type="button" class="word-more-btn" onclick="expandWordCards(this)">Show ' + (allCommentary.length - 5) + ' more \u2192</button>';
+        if (connList.length > connInitial) {
+            var more = Math.min(5, connList.length - connInitial);
+            html += '<button type="button" class="word-more-btn" onclick="expandVerseConnections(this)">Show ' + more + ' more \u2192</button>';
         }
         html += '</div>';
     }
@@ -3178,7 +3633,7 @@ function finishVerseDiscoveryPanel(payload) {
         html += '</div>';
     }
 
-    if (!allCommentary.length && !scriptureEdges.length && !showedKeyWords && !showedEntityChips) {
+    if (!donaldsonCards.length && !connList.length && !scriptureEdges.length && !showedKeyWords && !showedEntityChips) {
         html += '<div style="padding:28px;color:var(--muted);font-size:13px">No commentary found for this verse.</div>';
     }
 
@@ -3189,6 +3644,7 @@ function finishVerseDiscoveryPanel(payload) {
     document.getElementById('channel').classList.add('open');
     channelOpen = true;
     wireVerseDiscoveryFilters(panelBody, entries);
+    hydrateVerseSocial(ref);
 
     panelBody.querySelectorAll('.comm-card.has-link').forEach(function(row) {
         row.addEventListener('click', function() {
@@ -3210,6 +3666,13 @@ function finishVerseDiscoveryPanel(payload) {
             jumpTo(cid, v);
         });
     });
+}
+
+function expandVerseConnections(btn) {
+    var wrap = btn && btn.closest && btn.closest('.verse-panel-cards');
+    if (!wrap) return;
+    wrap.classList.add('expanded');
+    btn.remove();
 }
 
 function openVerseDiscovery(ref) {
@@ -3411,7 +3874,6 @@ function loadSourceDocument(docId, href, opts) {
                 annotateSourceBlock(block, idx || {});
                 markLinkedSourceParas(block, docId);
                 injectSourceCitationLinks(block, docId);
-                renderTocView();
                 updateLocationLabel(docId);
                 var para = null;
                 if (typeof opts.focusPara === 'number') {
@@ -3428,7 +3890,6 @@ function loadSourceDocument(docId, href, opts) {
                 } else {
                     block.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
-                if (window.innerWidth < 600) { tocOpen = false; document.getElementById('toc').classList.add('hidden'); }
             });
         });
 }
@@ -3745,6 +4206,7 @@ function loadChapter(id, prepend) {
             setNextToLoad(id);
             markVerseDiscovery(block, id);
             annotateChapterEntities(block);
+            if (SUPA && SUPA.friends && SUPA.friends.length) scheduleRefreshVerseFriendIcons(id);
 
             // Start watching this block — notes load when it enters the viewport
             notesObserver.observe(block);
@@ -3868,7 +4330,6 @@ var mutObs = new MutationObserver(mutations => {
 mutObs.observe(document.getElementById('content'), { childList: true });
 
 function breadcrumbGoReaderHome() {
-    closeTocPanel();
     closeChannel();
     jumpTo('title_page', null, {});
 }
@@ -3901,49 +4362,54 @@ function updateLocationLabel(id) {
     var bk  = meta.book.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
     crumbsEl.innerHTML =
         homeLead
-        + '<span class="bc-crumb" onclick="openTocAtVolume(\'' + vol + '\')">' + escapeHtml(meta.volume) + '</span>'
+        + '<span class="bc-crumb" onclick="openTitleNavAtVolume(\'' + vol + '\')">' + escapeHtml(meta.volume) + '</span>'
         + '<span class="bc-sep">›</span>'
-        + '<span class="bc-crumb" onclick="openTocAtBook(\'' + bk + '\')">' + escapeHtml(meta.book) + '</span>'
+        + '<span class="bc-crumb" onclick="openTitleNavAtBook(\'' + bk + '\')">' + escapeHtml(meta.book) + '</span>'
         + '<span class="bc-sep">›</span>'
         + '<span class="bc-crumb bc-last">' + escapeHtml(meta.label) + '</span>';
 }
 
-function openTocAtVolume(volumeLabel) {
-    var vol = tocTree.volumes.find(function(v) { return v.label === volumeLabel; });
+function openTitleNavAtVolume(volumeLabel) {
+    var vol = findVolume(volumeLabel);
     if (!vol) return;
-    tocPath = { level: 'volume', volume: vol, book: null, sourceCollection: null };
-    renderTocView();
-    tocOpen = true; document.getElementById('toc').classList.remove('hidden');
+    titleNavPath = { level: 'volume', volume: vol, book: null, sourceCollection: null, sourceGroup: null };
+    function finish() {
+        renderTitleNav();
+        var tp = document.getElementById('ch-title_page');
+        var nav = tp && tp.querySelector('#title-nav');
+        if (nav) nav.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+    if (currentChapter !== 'title_page') {
+        jumpTo('title_page', null, { pushHistory: true, onAfterNavigate: finish });
+    } else {
+        finish();
+    }
 }
 
-function openTocAtBook(bookLabel) {
+function openTitleNavAtBook(bookLabel) {
     for (var vi = 0; vi < tocTree.volumes.length; vi++) {
         var vol = tocTree.volumes[vi];
         for (var bi = 0; bi < vol.books.length; bi++) {
             if (vol.books[bi].label === bookLabel) {
-                tocPath = { level: 'book', volume: vol, book: vol.books[bi], sourceCollection: null };
-                renderTocView();
-                tocOpen = true; document.getElementById('toc').classList.remove('hidden');
+                titleNavPath = { level: 'book', volume: vol, book: vol.books[bi], sourceCollection: null, sourceGroup: null };
+                function finish() {
+                    renderTitleNav();
+                    var tp = document.getElementById('ch-title_page');
+                    var nav = tp && tp.querySelector('#title-nav');
+                    if (nav) nav.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+                if (currentChapter !== 'title_page') {
+                    jumpTo('title_page', null, { pushHistory: true, onAfterNavigate: finish });
+                } else {
+                    finish();
+                }
                 return;
             }
         }
     }
 }
 
-function updateActiveToc(id, opts) {
-    opts = opts || {};
-    if (sourceMode && currentSourceDoc) {
-        setTocPathForSource(currentSourceDoc);
-        var sourceActive = document.querySelector('.toc-tile.active');
-        if (sourceActive) sourceActive.scrollIntoView({ block: 'nearest' });
-        return;
-    }
-    if (!(opts.preserveTocPath && id === 'title_page')) {
-        setTocPathForChapter(id);
-    }
-    var active = document.querySelector('.toc-tile.active');
-    if (active) active.scrollIntoView({ block: 'nearest' });
-}
+function updateActiveToc() {}
 
 // ── Highlighting ─────────────────────────────────────────────────────────
 var tip = document.getElementById('hl-tip');
