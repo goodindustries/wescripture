@@ -3905,6 +3905,12 @@ function loadSourceDocument(docId, href, opts) {
                     annotateSourceBlock(block, idx || {});
                     markLinkedSourceParas(block, docId);
                     injectSourceCitationLinks(block, docId);
+                    Array.from(block.querySelectorAll('p.source-para')).forEach(function(p) {
+                        p.addEventListener('click', function(ev) {
+                            if (ev && ev.target && ev.target.closest && ev.target.closest('.source-cite-link')) return;
+                            openSourceMorselPanel(block, p);
+                        });
+                    });
                     updateLocationLabel(docId);
                     var para = null;
                     if (typeof opts.focusPara === 'number') {
@@ -3942,6 +3948,12 @@ function loadSourceDocument(docId, href, opts) {
                     annotateSourceBlock(block, idx || {});
                     markLinkedSourceParas(block, docId);
                     injectSourceCitationLinks(block, docId);
+                    Array.from(block.querySelectorAll('p.source-para')).forEach(function(p) {
+                        p.addEventListener('click', function(ev) {
+                            if (ev && ev.target && ev.target.closest && ev.target.closest('.source-cite-link')) return;
+                            openSourceMorselPanel(block, p);
+                        });
+                    });
                     updateLocationLabel(docId);
                     var para = null;
                     if (typeof opts.focusPara === 'number') {
