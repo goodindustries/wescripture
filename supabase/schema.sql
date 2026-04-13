@@ -276,16 +276,20 @@ create table if not exists public.monitor_samples (
 
 alter table public.monitor_samples enable row level security;
 
-create policy "monitor_samples_public_read"
-  on public.monitor_samples
-  for select
-  using (true);
+do $$ begin
+  create policy "monitor_samples_public_read"
+    on public.monitor_samples
+    for select
+    using (true);
+exception when duplicate_object then null; end $$;
 
-create policy "monitor_samples_no_write"
-  on public.monitor_samples
-  for all
-  using (false)
-  with check (false);
+do $$ begin
+  create policy "monitor_samples_no_write"
+    on public.monitor_samples
+    for all
+    using (false)
+    with check (false);
+exception when duplicate_object then null; end $$;
 
 -- ── Corpus (Supabase source-of-truth) ───────────────────────────────────────
 -- Public read, service-role-only writes (service role bypasses RLS).
@@ -300,15 +304,19 @@ create table if not exists public.corpus_collections (
 );
 
 alter table public.corpus_collections enable row level security;
-create policy "corpus_collections_public_read"
-  on public.corpus_collections
-  for select
-  using (true);
-create policy "corpus_collections_no_write"
-  on public.corpus_collections
-  for all
-  using (false)
-  with check (false);
+do $$ begin
+  create policy "corpus_collections_public_read"
+    on public.corpus_collections
+    for select
+    using (true);
+exception when duplicate_object then null; end $$;
+do $$ begin
+  create policy "corpus_collections_no_write"
+    on public.corpus_collections
+    for all
+    using (false)
+    with check (false);
+exception when duplicate_object then null; end $$;
 
 create table if not exists public.corpus_sources (
   id text primary key,
@@ -334,15 +342,19 @@ create index if not exists corpus_sources_collection_idx on public.corpus_source
 create index if not exists corpus_sources_group_idx on public.corpus_sources (collection_id, group_id);
 
 alter table public.corpus_sources enable row level security;
-create policy "corpus_sources_public_read"
-  on public.corpus_sources
-  for select
-  using (true);
-create policy "corpus_sources_no_write"
-  on public.corpus_sources
-  for all
-  using (false)
-  with check (false);
+do $$ begin
+  create policy "corpus_sources_public_read"
+    on public.corpus_sources
+    for select
+    using (true);
+exception when duplicate_object then null; end $$;
+do $$ begin
+  create policy "corpus_sources_no_write"
+    on public.corpus_sources
+    for all
+    using (false)
+    with check (false);
+exception when duplicate_object then null; end $$;
 
 create table if not exists public.corpus_paragraphs (
   source_id text not null references public.corpus_sources(id) on delete cascade,
@@ -358,15 +370,19 @@ create table if not exists public.corpus_paragraphs (
 create index if not exists corpus_paragraphs_source_idx on public.corpus_paragraphs (source_id, para_idx);
 
 alter table public.corpus_paragraphs enable row level security;
-create policy "corpus_paragraphs_public_read"
-  on public.corpus_paragraphs
-  for select
-  using (true);
-create policy "corpus_paragraphs_no_write"
-  on public.corpus_paragraphs
-  for all
-  using (false)
-  with check (false);
+do $$ begin
+  create policy "corpus_paragraphs_public_read"
+    on public.corpus_paragraphs
+    for select
+    using (true);
+exception when duplicate_object then null; end $$;
+do $$ begin
+  create policy "corpus_paragraphs_no_write"
+    on public.corpus_paragraphs
+    for all
+    using (false)
+    with check (false);
+exception when duplicate_object then null; end $$;
 
 create table if not exists public.corpus_verse_catalog (
   verse_key text primary key,
@@ -382,15 +398,19 @@ create table if not exists public.corpus_verse_catalog (
 create index if not exists corpus_verse_catalog_book_idx on public.corpus_verse_catalog (book, chapter, verse);
 
 alter table public.corpus_verse_catalog enable row level security;
-create policy "corpus_verse_catalog_public_read"
-  on public.corpus_verse_catalog
-  for select
-  using (true);
-create policy "corpus_verse_catalog_no_write"
-  on public.corpus_verse_catalog
-  for all
-  using (false)
-  with check (false);
+do $$ begin
+  create policy "corpus_verse_catalog_public_read"
+    on public.corpus_verse_catalog
+    for select
+    using (true);
+exception when duplicate_object then null; end $$;
+do $$ begin
+  create policy "corpus_verse_catalog_no_write"
+    on public.corpus_verse_catalog
+    for all
+    using (false)
+    with check (false);
+exception when duplicate_object then null; end $$;
 
 create table if not exists public.corpus_correlations (
   verse_key text not null references public.corpus_verse_catalog(verse_key) on delete cascade,
@@ -401,15 +421,19 @@ create table if not exists public.corpus_correlations (
 );
 
 alter table public.corpus_correlations enable row level security;
-create policy "corpus_correlations_public_read"
-  on public.corpus_correlations
-  for select
-  using (true);
-create policy "corpus_correlations_no_write"
-  on public.corpus_correlations
-  for all
-  using (false)
-  with check (false);
+do $$ begin
+  create policy "corpus_correlations_public_read"
+    on public.corpus_correlations
+    for select
+    using (true);
+exception when duplicate_object then null; end $$;
+do $$ begin
+  create policy "corpus_correlations_no_write"
+    on public.corpus_correlations
+    for all
+    using (false)
+    with check (false);
+exception when duplicate_object then null; end $$;
 
 create table if not exists public.corpus_chapter_graphs (
   chapter_id text primary key,
@@ -418,15 +442,19 @@ create table if not exists public.corpus_chapter_graphs (
 );
 
 alter table public.corpus_chapter_graphs enable row level security;
-create policy "corpus_chapter_graphs_public_read"
-  on public.corpus_chapter_graphs
-  for select
-  using (true);
-create policy "corpus_chapter_graphs_no_write"
-  on public.corpus_chapter_graphs
-  for all
-  using (false)
-  with check (false);
+do $$ begin
+  create policy "corpus_chapter_graphs_public_read"
+    on public.corpus_chapter_graphs
+    for select
+    using (true);
+exception when duplicate_object then null; end $$;
+do $$ begin
+  create policy "corpus_chapter_graphs_no_write"
+    on public.corpus_chapter_graphs
+    for all
+    using (false)
+    with check (false);
+exception when duplicate_object then null; end $$;
 
 create table if not exists public.corpus_source_links (
   source_id text not null references public.corpus_sources(id) on delete cascade,
@@ -436,15 +464,19 @@ create table if not exists public.corpus_source_links (
 );
 
 alter table public.corpus_source_links enable row level security;
-create policy "corpus_source_links_public_read"
-  on public.corpus_source_links
-  for select
-  using (true);
-create policy "corpus_source_links_no_write"
-  on public.corpus_source_links
-  for all
-  using (false)
-  with check (false);
+do $$ begin
+  create policy "corpus_source_links_public_read"
+    on public.corpus_source_links
+    for select
+    using (true);
+exception when duplicate_object then null; end $$;
+do $$ begin
+  create policy "corpus_source_links_no_write"
+    on public.corpus_source_links
+    for all
+    using (false)
+    with check (false);
+exception when duplicate_object then null; end $$;
 
 create table if not exists public.corpus_source_citations (
   source_id text not null references public.corpus_sources(id) on delete cascade,
@@ -454,13 +486,52 @@ create table if not exists public.corpus_source_citations (
 );
 
 alter table public.corpus_source_citations enable row level security;
-create policy "corpus_source_citations_public_read"
-  on public.corpus_source_citations
-  for select
-  using (true);
-create policy "corpus_source_citations_no_write"
-  on public.corpus_source_citations
-  for all
-  using (false)
-  with check (false);
+do $$ begin
+  create policy "corpus_source_citations_public_read"
+    on public.corpus_source_citations
+    for select
+    using (true);
+exception when duplicate_object then null; end $$;
+do $$ begin
+  create policy "corpus_source_citations_no_write"
+    on public.corpus_source_citations
+    for all
+    using (false)
+    with check (false);
+exception when duplicate_object then null; end $$;
+
+-- ── Corpus backlog (what still needs work) ──────────────────────────────────
+-- Intended for /monitor: what to ingest, encode, correlate, etc.
+
+create table if not exists public.corpus_backlog (
+  id uuid primary key default gen_random_uuid(),
+  title text not null,
+  author text not null default '',
+  canonical_url text not null default '',
+  license text not null default '',
+  status text not null default 'todo',
+  priority int not null default 0,
+  needs jsonb not null default '{"pull":true,"encode":true,"correlate":true}'::jsonb,
+  notes text not null default '',
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  constraint corpus_backlog_status_chk check (status in ('todo','doing','blocked','done'))
+);
+
+create index if not exists corpus_backlog_status_priority_idx on public.corpus_backlog (status, priority desc, updated_at desc);
+
+alter table public.corpus_backlog enable row level security;
+do $$ begin
+  create policy "corpus_backlog_public_read"
+    on public.corpus_backlog
+    for select
+    using (true);
+exception when duplicate_object then null; end $$;
+do $$ begin
+  create policy "corpus_backlog_no_write"
+    on public.corpus_backlog
+    for all
+    using (false)
+    with check (false);
+exception when duplicate_object then null; end $$;
 

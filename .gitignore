@@ -19,3 +19,4 @@ library/para_verse_map.json
 # Local Netlify folder
 .netlify
 lds_pipeline/reports/corpus_resource_map.json
+diagnostics/*.out
