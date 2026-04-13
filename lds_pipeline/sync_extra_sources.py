@@ -30,13 +30,18 @@ import urllib.error
 import urllib.parse
 from pathlib import Path
 
+from source_registry import registry as source_registry
+
 try:
     import internetarchive as _ia
     _IA_AVAILABLE = True
 except ImportError:
     _IA_AVAILABLE = False
 
-CACHE_DIR = Path("/Users/reify/Classified/goodcapital_landing/lds_pipeline/cache")
+REPO = Path(__file__).resolve().parent.parent
+CACHE_DIR = REPO / "lds_pipeline" / "cache"
+REPORT_DIR = REPO / "lds_pipeline" / "reports"
+MANIFEST_PATH = REPORT_DIR / "extra_sources_manifest.json"
 
 BROWSER_HEADERS = {
     "User-Agent": (
@@ -55,6 +60,17 @@ SSL_UNVERIFIED.verify_mode = ssl.CERT_NONE
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
+
+_MANIFEST: list[dict] = []
+
+
+def manifest_event(group: str, name: str, action: str, *, reason: str = "", meta: dict | None = None) -> None:
+    row = {"group": group, "name": name, "action": action}
+    if reason:
+        row["reason"] = reason
+    if meta:
+        row["meta"] = meta
+    _MANIFEST.append(row)
 
 def fetch_url(url: str, timeout: int = 90, ssl_ctx=None) -> str:
     req = urllib.request.Request(url, headers=BROWSER_HEADERS)
@@ -103,6 +119,34 @@ def fetch_archive_djvu_verified(identifier: str, timeout: int = 180) -> str:
                 time.sleep(wait)
             else:
                 raise
+
+
+def archive_redistributable(identifier: str) -> tuple[bool, str, dict]:
+    """
+    Conservative gate: only allow archive.org items with explicit PD/CC signals
+    and not access-restricted lending.
+    """
+    meta_url = f"https://archive.org/metadata/{identifier}"
+    try:
+        meta = json.loads(fetch_url(meta_url, timeout=30))
+    except Exception as e:
+        return False, f"metadata lookup failed: {e}", {"meta_url": meta_url}
+
+    md = meta.get("metadata", {}) or {}
+    licenseurl = str(md.get("licenseurl") or "").strip()
+    rights = str(md.get("rights") or "").strip()
+    access_restricted = bool(md.get("access-restricted-item")) or bool(md.get("restricted"))
+
+    if access_restricted:
+        return False, "access restricted (lending/controlled access)", {"licenseurl": licenseurl, "rights": rights}
+
+    s = (licenseurl + " " + rights).lower()
+    if "creativecommons.org/licenses/" in s:
+        return True, "creative_commons", {"licenseurl": licenseurl, "rights": rights}
+    if "publicdomain" in s or "public domain" in s:
+        return True, "public_domain", {"licenseurl": licenseurl, "rights": rights}
+
+    return False, "no explicit PD/CC license signals", {"licenseurl": licenseurl, "rights": rights}
 
 
 def strip_html(html: str) -> str:
@@ -417,14 +461,18 @@ def sync_dead_sea_scrolls(rebuild: bool) -> None:
             print(f"    Cached: {src['out']}")
             continue
         try:
-            if src.get("restricted"):
-                raw = fetch_archive_djvu_authenticated(src["identifier"])
-            else:
-                raw = fetch_archive_djvu(src["identifier"])
+            ok, why, meta = archive_redistributable(src["identifier"])
+            if not ok:
+                print(f"    SKIP (rights): {why}")
+                manifest_event("dead_sea_scrolls", src["name"], "skip", reason=why, meta=meta)
+                continue
+            raw = fetch_archive_djvu(src["identifier"])
             text = clean_djvu(raw)
             save(out_dir, src["out"], text, rebuild=True)
+            manifest_event("dead_sea_scrolls", src["name"], "saved", meta={"identifier": src["identifier"], **meta})
         except Exception as e:
             print(f"    ERROR (archive.org): {e}")
+            manifest_event("dead_sea_scrolls", src["name"], "error", reason=str(e))
 
 
 # ── Group 5: B.H. Roberts ─────────────────────────────────────────────────────
@@ -448,11 +496,18 @@ def sync_bh_roberts(rebuild: bool) -> None:
             print(f"    Cached: {src['out']}")
             continue
         try:
+            ok, why, meta = archive_redistributable(src["identifier"])
+            if not ok:
+                print(f"    SKIP (rights): {why}")
+                manifest_event("bh_roberts", src["name"], "skip", reason=why, meta=meta)
+                continue
             raw = fetch_archive_djvu(src["identifier"])
             text = clean_djvu(raw)
             save(out_dir, src["out"], text, rebuild=True)
+            manifest_event("bh_roberts", src["name"], "saved", meta={"identifier": src["identifier"], **meta})
         except Exception as e:
             print(f"    ERROR: {e}")
+            manifest_event("bh_roberts", src["name"], "error", reason=str(e))
         time.sleep(2)
 
 
@@ -490,14 +545,18 @@ def sync_nibley(rebuild: bool) -> None:
             print(f"    Cached: {src['out']}")
             continue
         try:
-            if src.get("restricted"):
-                raw = fetch_archive_djvu_authenticated(src["identifier"])
-            else:
-                raw = fetch_archive_djvu(src["identifier"])
+            ok, why, meta = archive_redistributable(src["identifier"])
+            if not ok:
+                print(f"    SKIP (rights): {why}")
+                manifest_event("nibley", src["name"], "skip", reason=why, meta=meta)
+                continue
+            raw = fetch_archive_djvu(src["identifier"])
             text = clean_djvu(raw)
             save(out_dir, src["out"], text, rebuild=True)
+            manifest_event("nibley", src["name"], "saved", meta={"identifier": src["identifier"], **meta})
         except Exception as e:
             print(f"    ERROR: {e}")
+            manifest_event("nibley", src["name"], "error", reason=str(e))
         time.sleep(2)
 
 
@@ -661,14 +720,24 @@ def main() -> None:
         return
 
     targets = {args.group: GROUPS[args.group]} if args.group else GROUPS
+    reg = source_registry()
+    reg_by_group: dict[str, list[str]] = {}
+    for r in reg:
+        reg_by_group.setdefault(r.ingest_group, []).append(r.id)
     for name, fn in targets.items():
         try:
+            if reg_by_group.get(name):
+                manifest_event(name, "registry", "targets", meta={"ids": sorted(reg_by_group[name])})
             fn(args.rebuild)
         except Exception as e:
             print(f"\nERROR in group '{name}': {e}")
+            manifest_event(name, name, "error", reason=str(e))
 
     print("\n\nDone. Run --list-sources to see correlate.py integration snippet.")
     print("Then rebuild TF-IDF: python3 correlate.py --rebuild")
+    REPORT_DIR.mkdir(parents=True, exist_ok=True)
+    MANIFEST_PATH.write_text(json.dumps(_MANIFEST, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"Manifest → {MANIFEST_PATH.relative_to(REPO)}")
 
 
 if __name__ == "__main__":

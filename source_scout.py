@@ -35,17 +35,10 @@ DASHBOARD_JSON = ROOT / "library" / "source-dashboard.json"
 COPYRIGHT_PASS = 0.7   # minimum copyright confidence score (0–1)
 RELEVANCE_PASS = 0.5   # minimum semantic relevance score (0–1)
 
-# Trusted archive domains that signal public domain
-TRUSTED_DOMAINS = {
-    "gutenberg.org",
-    "archive.org",
-    "ccel.org",
-    "sacred-texts.com",
-    "earlychristianwritings.com",
-    "gnosis.org",
-    "ecmarsh.com",
-    "tertullian.org",
-    "newadvent.org",
+# Domains that *may* host redistributable texts, but do not auto-pass.
+# We only pass on explicit PD/CC signals (or specific policy-known PD hosts).
+PD_ASSUMED_DOMAINS = {
+    "gutenberg.org",  # explicit redistribution terms for PD texts
 }
 
 # Archive.org queries targeting gaps in the LDS / Christian / Jewish corpus.
@@ -70,6 +63,11 @@ SEARCH_QUERIES = [
     '"R.H. Charles" apocrypha "old testament"',
     '"philo" "alexandria" yonge translation',
     '"wars of the jews" josephus whiston',
+    # Named targets (license-safe discovery)
+    '"Hugh Nibley" Creative Commons site:scholarsarchive.byu.edu',
+    '"Truman G. Madsen" site:speeches.byu.edu',
+    '"Matthew Bowman" doi "Creative Commons"',
+    'site:interpreterfoundation.org "Creative Commons" "journal"',
 ]
 
 
@@ -170,10 +168,34 @@ def score_copyright(url: str, snippet: str) -> tuple[float, str]:
     url_lower = url.lower()
     snippet_lower = snippet.lower()
 
-    # Trusted domains: presume public domain by policy
-    for domain in TRUSTED_DOMAINS:
+    # Explicitly PD host
+    for domain in PD_ASSUMED_DOMAINS:
         if domain in url_lower:
-            return 1.0, f"trusted archive domain ({domain})"
+            return 1.0, f"public-domain host policy ({domain})"
+
+    # Archive.org: require explicit PD/CC metadata (do not assume)
+    if "archive.org/details/" in url_lower:
+        try:
+            identifier = url_lower.split("archive.org/details/", 1)[1].split("?", 1)[0].split("#", 1)[0].strip("/")
+        except Exception:
+            identifier = ""
+        if identifier:
+            meta_url = f"https://archive.org/metadata/{identifier}"
+            page = fetch_page_snippet(meta_url, max_bytes=20000)
+            try:
+                data = json.loads(page) if page else {}
+            except Exception:
+                data = {}
+            md = (data.get("metadata") if isinstance(data, dict) else {}) or {}
+            licenseurl = str(md.get("licenseurl") or "").lower()
+            rights = str(md.get("rights") or "").lower()
+            if md.get("access-restricted-item") or md.get("restricted"):
+                return 0.05, "archive.org access restricted"
+            if "creativecommons.org/licenses/" in (licenseurl + " " + rights):
+                return 0.9, "archive.org metadata indicates Creative Commons"
+            if "publicdomain" in (licenseurl + " " + rights) or "public domain" in rights:
+                return 0.9, "archive.org metadata indicates public domain"
+            return 0.2, "archive.org without explicit PD/CC metadata"
 
     # Explicit public domain statement
     if "public domain" in snippet_lower:
@@ -182,6 +204,12 @@ def score_copyright(url: str, snippet: str) -> tuple[float, str]:
     # Creative Commons open licenses
     if "cc0" in snippet_lower or "creativecommons.org/licenses/by/" in snippet_lower:
         return 0.85, "Creative Commons license found"
+    if "creativecommons.org/licenses/by-nc-nd/" in snippet_lower:
+        return 0.85, "Creative Commons BY-NC-ND license found"
+    if "creativecommons.org/licenses/by-nc/" in snippet_lower:
+        return 0.85, "Creative Commons BY-NC license found"
+    if "creativecommons.org/licenses/by-sa/" in snippet_lower:
+        return 0.85, "Creative Commons BY-SA license found"
 
     # Look for pre-1928 publication date
     import re

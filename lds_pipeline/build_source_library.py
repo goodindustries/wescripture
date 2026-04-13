@@ -20,6 +20,8 @@ import re
 from pathlib import Path
 from typing import Optional
 
+from source_registry import registry as source_registry
+
 REPO = Path(__file__).resolve().parent.parent
 CACHE = REPO / "lds_pipeline" / "cache"
 LIBRARY = REPO / "library"
@@ -518,6 +520,65 @@ def render_source_page(group_label: str, title: str, paragraphs: list[str], subt
 """
 
 
+def render_external_link_page(group_label: str, title: str, url: str, subtitle: str = "", license_note: str = "") -> str:
+    paragraphs = []
+    paragraphs.append(f'<a href="{escape_html(url)}" target="_blank" rel="noopener noreferrer">{escape_html(url)}</a>')
+    if license_note:
+        paragraphs.append(escape_html(license_note))
+    body = "\n".join(f'<p class="source-para">{p}</p>' for p in paragraphs)
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../style/main.css">
+  <style>
+    .source-doc {{
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 40px 32px 120px;
+    }}
+    .source-kicker {{
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #9C7A4D;
+      margin-bottom: 10px;
+    }}
+    .source-title {{
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 34px;
+      line-height: 1.08;
+      margin: 0 0 20px;
+      color: #26221d;
+    }}
+    .source-subtitle {{
+      font-size: 14px;
+      line-height: 1.4;
+      color: #7a7063;
+      margin: -8px 0 20px;
+    }}
+    .source-para {{
+      font-size: 18px;
+      line-height: 1.78;
+      color: #2f2a24;
+      margin: 0 0 18px;
+    }}
+  </style>
+</head>
+<body>
+  <article class="source-doc">
+    <div class="source-kicker">{escape_html(group_label)}</div>
+    <h1 class="source-title">{escape_html(title)}</h1>
+    {'<div class="source-subtitle">' + escape_html(subtitle) + '</div>' if subtitle else ''}
+    {body}
+  </article>
+</body>
+</html>
+"""
+
+
 def build_group(group: dict, gc_meta: dict) -> Optional[dict]:
     src_dir = group["dir"]
     if not src_dir.exists():
@@ -618,6 +679,47 @@ def main():
         else:
             built_docs += len(items)
             print(f"{group['label']}: {len(items)} documents")
+
+    # Link-only shelf (external canonical URLs; not embedded/correlated)
+    external = [r for r in source_registry() if r.ingest_mode == "link_only"]
+    if external:
+        group_key = "external_links"
+        group_label = "External links"
+        group_out = OUT / group_key
+        group_out.mkdir(parents=True, exist_ok=True)
+        for stale in group_out.glob("*.html"):
+            stale.unlink()
+        docs = []
+        for r in external:
+            slug = slugify(r.id)
+            out_path = group_out / f"{slug}.html"
+            license_note = ""
+            if r.license_url:
+                license_note = f"License: {r.license_type} ({r.license_url})"
+            html = render_external_link_page(
+                group_label,
+                r.title,
+                r.canonical_url,
+                subtitle=r.author,
+                license_note=license_note,
+            )
+            out_path.write_text(html, encoding="utf-8")
+            docs.append({
+                "id": f"{group_key}:{slug}",
+                "label": r.title,
+                "href": f"sources/{group_key}/{slug}.html",
+                "paragraphs": 0,
+                "meta": r.author,
+                "external_url": r.canonical_url,
+            })
+        toc.append({
+            "id": group_key,
+            "label": group_label,
+            "description": "Link-only items (not cached or redistributed).",
+            "type": "collection",
+            "items": docs,
+        })
+        print(f"{group_label}: {len(docs)} link-only items")
 
     TOC_OUT.write_text(json.dumps(toc, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"\nDone. {built_docs} source documents written → {OUT}")
