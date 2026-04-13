@@ -29,27 +29,11 @@ async function run() {
   });
 
   await page.waitForSelector('#splash.gone', { timeout: 60000 });
-
-  await page.evaluate(() => {
-    var t = document.getElementById('toc');
-    if (!t) return;
-    window.tocOpen = true;
-    t.classList.remove('hidden');
+  // Navigate by URL param to avoid coupling to TOC markup (mobile).
+  await page.goto('http://127.0.0.1:4173/library/index.html?jump=Genesis%201:1', {
+    waitUntil: 'networkidle0',
+    timeout: 60000,
   });
-  await page.waitForSelector('#toc:not(.hidden)', { timeout: 10000 });
-  await page.waitForSelector('#toc-grid .toc-tile', { timeout: 10000 });
-
-  await page.$eval('.toc-tile[data-action="scripture-root"]', (el) => el.scrollIntoView({ block: 'center' }));
-  await page.click('.toc-tile[data-action="scripture-root"]');
-  await page.waitForFunction(() => document.querySelector('#toc-subtitle')?.textContent === 'The Holy Scriptures', { timeout: 30000 });
-  await page.$eval('.toc-tile[data-action="volume"][data-volume="Old Testament"]', (el) => el.scrollIntoView({ block: 'center' }));
-  await page.click('.toc-tile[data-action="volume"][data-volume="Old Testament"]');
-  await page.waitForFunction(() => document.querySelector('#toc-subtitle')?.textContent === 'Old Testament', { timeout: 30000 });
-  await page.$eval('.toc-tile[data-action="book"][data-book="Genesis"]', (el) => el.scrollIntoView({ block: 'center' }));
-  await page.click('.toc-tile[data-action="book"][data-book="Genesis"]');
-  await page.waitForFunction(() => document.querySelector('#toc-subtitle')?.textContent === 'Genesis', { timeout: 30000 });
-  await page.$eval('.toc-tile[data-action="chapter"][data-id="genesis_1"]', (el) => el.scrollIntoView({ block: 'center' }));
-  await page.click('.toc-tile[data-action="chapter"][data-id="genesis_1"]');
 
   await page.waitForSelector('#ch-genesis_1', { timeout: 20000 });
   await page.click('#ch-genesis_1 .verse[id="v1"] .verse-num');
