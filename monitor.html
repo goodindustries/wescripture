@@ -131,6 +131,26 @@
         <a href="/library/published/connection_thresholds.json">Thresholds JSON</a>
       </div>
     </div>
+
+    <div class="card" style="margin-top:10px">
+      <h2 class="chart-title">Corpus backlog</h2>
+      <div class="small">Add items that still need to be pulled in, encoded, correlated, etc. (shared via Supabase when configured).</div>
+      <div class="controls" style="margin-top:8px">
+        <input id="blTitle" type="text" placeholder="Title" style="flex:2;min-width:220px;padding:10px 12px;border-radius:12px;border:1px solid rgba(0,0,0,.12);background:#fffdf9" />
+        <input id="blUrl" type="url" placeholder="URL (optional)" style="flex:3;min-width:220px;padding:10px 12px;border-radius:12px;border:1px solid rgba(0,0,0,.12);background:#fffdf9" />
+        <button id="blAdd" type="button">Add</button>
+        <span id="blStatus" class="status"></span>
+      </div>
+      <div class="controls" style="margin-top:6px">
+        <label class="small"><input type="checkbox" id="blNeedPull" checked /> pull</label>
+        <label class="small"><input type="checkbox" id="blNeedEncode" checked /> encode</label>
+        <label class="small"><input type="checkbox" id="blNeedCorrelate" checked /> correlate</label>
+      </div>
+      <table aria-label="Corpus backlog" style="margin-top:6px">
+        <thead><tr><th>Item</th><th>Status</th><th class="n">Priority</th><th>Needs</th><th></th></tr></thead>
+        <tbody id="blBody"><tr><td colspan="5" class="small">Loading…</td></tr></tbody>
+      </table>
+    </div>
   </main>
 
   <script>
@@ -458,6 +478,62 @@
       return { configured:false, items:[] };
     }
 
+    async function fetchBacklog(){
+      const r = await fetch('/.netlify/functions/monitor_backlog', { cache:'no-store' });
+      const j = await r.json();
+      if(!r.ok) throw new Error((j && j.error) || ('HTTP ' + r.status));
+      if(j && j.ok && j.configured && Array.isArray(j.items)) return { configured:true, items:j.items };
+      return { configured:false, items:[] };
+    }
+
+    async function backlogMutate(method, payload){
+      const r = await fetch('/.netlify/functions/monitor_backlog', {
+        method,
+        cache:'no-store',
+        headers: { 'content-type':'application/json; charset=utf-8' },
+        body: JSON.stringify(payload || {}),
+      });
+      const j = await r.json().catch(()=> ({}));
+      if(!r.ok) throw new Error((j && j.error) || ('HTTP ' + r.status));
+      return j;
+    }
+
+    function needsLabel(needs){
+      const n = needs && typeof needs === 'object' ? needs : {};
+      const parts = [];
+      if(n.pull) parts.push('pull');
+      if(n.encode) parts.push('encode');
+      if(n.correlate) parts.push('correlate');
+      return parts.length ? parts.join(', ') : '—';
+    }
+
+    function renderBacklog(items){
+      const tb = document.getElementById('blBody');
+      if(!tb) return;
+      const rows = Array.isArray(items) ? items : [];
+      if(!rows.length){ tb.innerHTML = `<tr><td colspan="5" class="small">No backlog items.</td></tr>`; return; }
+      tb.innerHTML = rows.map(it => {
+        const title = String(it.title||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        const url = String(it.canonical_url||'').trim();
+        const safeUrl = url.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        const st = String(it.status||'todo');
+        const pri = Number(it.priority||0);
+        const needs = needsLabel(it.needs);
+        const itemCell = url ? `<a href="${safeUrl}" target="_blank" rel="noreferrer" style="color:var(--accent);font-weight:700;text-decoration:none">${title}</a>` : `<span style="font-weight:700">${title}</span>`;
+        return `<tr data-id="${String(it.id)}">
+          <td>${itemCell}<div class="small">${String(it.author||'')}</div></td>
+          <td>
+            <select class="blStatusSel" style="padding:8px 10px;border-radius:10px;border:1px solid rgba(0,0,0,.12);background:#fffdf9">
+              ${['todo','doing','blocked','done'].map(x => `<option value="${x}" ${x===st?'selected':''}>${x}</option>`).join('')}
+            </select>
+          </td>
+          <td class="n"><input class="blPri" type="number" value="${pri}" step="1" style="width:90px;padding:8px 10px;border-radius:10px;border:1px solid rgba(0,0,0,.12);background:#fffdf9;text-align:right" /></td>
+          <td class="small">${needs}</td>
+          <td class="n"><button class="blDel" type="button">Del</button></td>
+        </tr>`;
+      }).join('');
+    }
+
     async function runNow(){
       const btn=document.getElementById('runNow');
       const status=document.getElementById('status');
@@ -507,6 +583,84 @@
     })();
 
     loadPublishedCounts();
+
+    (async function initBacklog(){
+      const s = document.getElementById('blStatus');
+      try{
+        const bl = await fetchBacklog();
+        if(!bl.configured){
+          if(s) s.textContent = 'Not configured on server.';
+          const tb = document.getElementById('blBody');
+          if(tb) tb.innerHTML = `<tr><td colspan="5" class="small">Backlog requires Supabase server env.</td></tr>`;
+          return;
+        }
+        window.__BACKLOG = bl.items || [];
+        renderBacklog(window.__BACKLOG);
+        if(s) s.textContent = `Loaded ${fmt(window.__BACKLOG.length)} items.`;
+      }catch(e){
+        if(s) s.textContent = 'Error: ' + (e && (e.message || String(e)));
+      }
+    })();
+
+    document.getElementById('blAdd').addEventListener('click', async () => {
+      const s = document.getElementById('blStatus');
+      const title = (document.getElementById('blTitle').value || '').trim();
+      const url = (document.getElementById('blUrl').value || '').trim();
+      const needs = {
+        pull: !!document.getElementById('blNeedPull').checked,
+        encode: !!document.getElementById('blNeedEncode').checked,
+        correlate: !!document.getElementById('blNeedCorrelate').checked,
+      };
+      if(!title){ if(s) s.textContent = 'Title required.'; return; }
+      try{
+        if(s) s.textContent = 'Adding…';
+        await backlogMutate('POST', { title, canonical_url: url, needs });
+        const bl = await fetchBacklog();
+        window.__BACKLOG = bl.items || [];
+        renderBacklog(window.__BACKLOG);
+        document.getElementById('blTitle').value = '';
+        document.getElementById('blUrl').value = '';
+        if(s) s.textContent = 'Added.';
+      }catch(e){
+        if(s) s.textContent = 'Error: ' + (e && (e.message || String(e)));
+      }
+    });
+
+    document.addEventListener('change', async (ev) => {
+      const tr = ev.target && ev.target.closest ? ev.target.closest('#blBody tr[data-id]') : null;
+      if(!tr) return;
+      const id = tr.getAttribute('data-id');
+      if(!id) return;
+      const s = document.getElementById('blStatus');
+      const sel = tr.querySelector('.blStatusSel');
+      const pri = tr.querySelector('.blPri');
+      try{
+        if(s) s.textContent = 'Saving…';
+        await backlogMutate('PATCH', { id, status: sel ? sel.value : undefined, priority: pri ? pri.value : undefined });
+        if(s) s.textContent = 'Saved.';
+      }catch(e){
+        if(s) s.textContent = 'Error: ' + (e && (e.message || String(e)));
+      }
+    });
+
+    document.addEventListener('click', async (ev) => {
+      const btn = ev.target && ev.target.closest ? ev.target.closest('.blDel') : null;
+      if(!btn) return;
+      const tr = btn.closest('#blBody tr[data-id]');
+      if(!tr) return;
+      const id = tr.getAttribute('data-id');
+      const s = document.getElementById('blStatus');
+      try{
+        if(s) s.textContent = 'Deleting…';
+        await backlogMutate('DELETE', { id });
+        const bl = await fetchBacklog();
+        window.__BACKLOG = bl.items || [];
+        renderBacklog(window.__BACKLOG);
+        if(s) s.textContent = 'Deleted.';
+      }catch(e){
+        if(s) s.textContent = 'Error: ' + (e && (e.message || String(e)));
+      }
+    });
   </script>
 </body>
 </html>

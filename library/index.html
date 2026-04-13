@@ -1031,6 +1031,26 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     </div>
 </div>
 
+<div id="hl-overlay" onclick="if (event.target === this) closeHighlightModal()" role="dialog" aria-modal="true" aria-label="Highlight">
+    <div class="hl-modal" onclick="event.stopPropagation()">
+        <div class="hl-modal-hdr">
+            <strong>Highlight</strong>
+            <button type="button" id="hl-close" onclick="closeHighlightModal()" style="background:none;border:none;cursor:pointer;color:var(--muted)">✕</button>
+        </div>
+        <div class="hl-modal-body">
+            <div id="hl-target" style="font-size:12px;color:var(--muted);line-height:1.4"></div>
+            <label style="margin-top:12px">Color</label>
+            <div id="hl-colors" class="hl-color-row"></div>
+            <label>Insight</label>
+            <textarea id="hl-note" class="hl-note" placeholder="Add an insight…"></textarea>
+            <div class="hl-actions">
+                <button type="button" id="hl-cancel" onclick="closeHighlightModal()">Cancel</button>
+                <button type="button" id="hl-save" class="hl-primary" onclick="commitHighlightModal()">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div id="acct-overlay" class="acct-overlay" onclick="if (event.target === this) closeAccountPanel()">
     <div class="acct-modal" onclick="event.stopPropagation()">
         <div class="acct-hdr">
@@ -3554,6 +3574,7 @@ function finishVerseDiscoveryPanel(payload) {
     html += '<textarea id="verse-note" rows="4" placeholder="Write your note for this verse…" style="width:100%;padding:10px 11px;border-radius:12px;border:1px solid var(--divider);background:#fff;font-family:inherit;font-size:13px"></textarea>';
     html += '<div style="display:flex;gap:8px;align-items:center;margin-top:10px">';
     html += "<button type=\"button\" class=\"acct-tab on\" style=\"border-radius:10px\" onclick=\"saveVerseNoteFromPanel('" + escapeAttr(ref) + "')\">Save note</button>";
+    html += "<button type=\"button\" class=\"acct-tab\" style=\"border-radius:10px\" onclick=\"openHighlightModalForObject('verse','" + escapeAttr(ref) + "','" + escapeAttr(ref) + "')\">Highlight</button>";
     html += "<button type=\"button\" class=\"acct-tab\" style=\"border-radius:10px\" onclick=\"saveMorselFromPanel('" + escapeAttr(ref) + "')\">Save morsel</button>";
     html += '<div id="friends-anno-badge" style="margin-left:auto;font-size:12px;color:var(--muted)"></div>';
     html += '</div></div>';
@@ -4312,6 +4333,13 @@ function loadChapter(id, prepend) {
 
             loadedChapters.add(id);
             restoreHighlights(id, block);
+            // Public highlights (Supabase) overlay — best-effort, non-blocking
+            loadPublicHighlightsForChapter(id).then(function(rows) {
+                if (!rows || !rows.length) return;
+                rows.forEach(function(hl) {
+                    try { findAndHighlightText(block, hl.text, hl.colorClass, hl.id); } catch(e) {}
+                });
+            });
             setNextToLoad(id);
             markVerseDiscovery(block, id);
             annotateChapterEntities(block);
@@ -4526,8 +4554,15 @@ function updateActiveToc() {}
 var tip = document.getElementById('hl-tip');
 var pendingRange = null;
 
-var COLORS = ['hl-yellow', 'hl-green', 'hl-blue'];
-var colorIdx = 0;
+var HL_COLORS = [
+    { key: 'temple_granite', label: 'Temple granite', className: 'hl-temple-granite', swatch: 'rgba(183,178,169,0.85)' },
+    { key: 'tabernacle_carpet', label: 'Tabernacle carpet', className: 'hl-tabernacle-carpet', swatch: 'rgba(123,46,47,0.70)' },
+    { key: 'uchtdorf_tie', label: "Uchtdorf’s tie", className: 'hl-uchtdorf-tie', swatch: 'rgba(46,111,188,0.70)' },
+    { key: 'funeral_potatoes', label: 'Funeral potatoes', className: 'hl-funeral-potatoes', swatch: 'rgba(242,209,107,0.90)' },
+    { key: 'beehive_honey', label: 'Beehive honey', className: 'hl-beehive-honey', swatch: 'rgba(197,138,44,0.70)' },
+    { key: 'green_jello', label: 'Green Jell‑O', className: 'hl-green-jello', swatch: 'rgba(124,179,66,0.70)' },
+];
+var hlModalState = null; // { kind, targetLabel, targetType, targetId, chapterId, range?, selectedColorKey }
 
 document.addEventListener('mouseup', () => {
     var sel = window.getSelection();
@@ -4550,19 +4585,120 @@ document.addEventListener('mouseup', () => {
 
 tip.addEventListener('click', () => {
     if (!pendingRange) return;
-    applyHighlight(pendingRange.range, pendingRange.chapterId, COLORS[colorIdx % COLORS.length]);
-    colorIdx++;
+    openHighlightModalForSelection(pendingRange.range, pendingRange.chapterId);
     tip.style.display = 'none';
     window.getSelection().removeAllRanges();
     pendingRange = null;
 });
 
-function applyHighlight(range, chapterId, colorClass) {
+function _hlColorByKey(key) {
+    for (var i = 0; i < HL_COLORS.length; i++) if (HL_COLORS[i].key === key) return HL_COLORS[i];
+    return HL_COLORS[0];
+}
+
+function openHighlightModalForSelection(range, chapterId) {
+    var txt = (range && range.toString) ? String(range.toString() || '').trim() : '';
+    if (!txt) return;
+    hlModalState = {
+        kind: 'selection',
+        targetLabel: txt.length > 180 ? (txt.slice(0, 180) + '…') : txt,
+        targetType: 'text_range',
+        targetId: chapterId + '|' + stableHash(txt + '|' + chapterId),
+        chapterId: chapterId,
+        range: range.cloneRange(),
+        selectedColorKey: HL_COLORS[0].key,
+    };
+    showHighlightModal();
+}
+
+function openHighlightModalForObject(targetType, targetId, targetLabel) {
+    hlModalState = {
+        kind: 'object',
+        targetLabel: targetLabel || (targetType + ': ' + targetId),
+        targetType: targetType,
+        targetId: targetId,
+        chapterId: currentChapter || null,
+        selectedColorKey: HL_COLORS[0].key,
+    };
+    showHighlightModal();
+}
+
+function showHighlightModal() {
+    var ov = document.getElementById('hl-overlay');
+    var colorsEl = document.getElementById('hl-colors');
+    var targetEl = document.getElementById('hl-target');
+    var noteEl = document.getElementById('hl-note');
+    if (!ov || !colorsEl || !targetEl || !noteEl || !hlModalState) return;
+    targetEl.textContent = hlModalState.targetLabel || '';
+    colorsEl.innerHTML = '';
+    HL_COLORS.forEach(function(c) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'hl-color' + (c.key === hlModalState.selectedColorKey ? ' on' : '');
+        b.dataset.colorKey = c.key;
+        b.innerHTML = '<span class="hl-swatch" style="background:' + c.swatch + '"></span>' + escapeHtml(c.label);
+        b.addEventListener('click', function() {
+            hlModalState.selectedColorKey = c.key;
+            Array.from(colorsEl.querySelectorAll('.hl-color')).forEach(function(x) { x.classList.toggle('on', x.dataset.colorKey === c.key); });
+        });
+        colorsEl.appendChild(b);
+    });
+    noteEl.value = '';
+    ov.classList.add('open');
+}
+
+function closeHighlightModal() {
+    var ov = document.getElementById('hl-overlay');
+    if (ov) ov.classList.remove('open');
+    hlModalState = null;
+}
+
+async function commitHighlightModal() {
+    if (!hlModalState) return;
+    await initSupabaseOnce();
+    if (!supaReady()) { closeHighlightModal(); return; }
+    var uid = supaGetUserId();
+    if (!uid) { closeHighlightModal(); return; }
+    var noteEl = document.getElementById('hl-note');
+    var note = (noteEl && noteEl.value) ? String(noteEl.value).trim() : '';
+    var color = _hlColorByKey(hlModalState.selectedColorKey);
+    var nowIso = new Date().toISOString();
+    var payload = {};
+    if (hlModalState.kind === 'selection') {
+        payload = { chapter_id: hlModalState.chapterId, text: hlModalState.targetLabel };
+    }
+    var up = await SUPA.client.from('highlights').upsert({
+        user_id: uid,
+        target_type: hlModalState.targetType,
+        target_id: hlModalState.targetId,
+        color_key: color.key,
+        note: note,
+        payload: payload,
+        updated_at: nowIso
+    }, { onConflict: 'user_id,target_type,target_id' }).select('id').single();
+    if (up && up.error) { closeHighlightModal(); return; }
+
+    if (hlModalState.kind === 'selection' && hlModalState.range) {
+        applyHighlight(hlModalState.range, hlModalState.chapterId, color.className, up && up.data && up.data.id);
+    }
+    closeHighlightModal();
+}
+
+function stableHash(s) {
+    var h = 2166136261;
+    for (var i = 0; i < s.length; i++) {
+        h ^= s.charCodeAt(i);
+        h = (h * 16777619) >>> 0;
+    }
+    return ('00000000' + h.toString(16)).slice(-8);
+}
+
+function applyHighlight(range, chapterId, colorClass, hlId) {
     // Wrap selection in a mark element
     try {
         var mark = document.createElement('mark');
         mark.className = colorClass;
-        mark.dataset.hlId = Date.now();
+        mark.dataset.hlId = hlId || Date.now();
         range.surroundContents(mark);
 
         // Save: store text + xpath-like path
@@ -4590,6 +4726,30 @@ function restoreHighlights(chapterId, block) {
             findAndHighlightText(block, hl.text, hl.color, hl.id);
         } catch(e) {}
     });
+}
+
+async function loadPublicHighlightsForChapter(chapterId) {
+    await initSupabaseOnce();
+    if (!supaReady()) return [];
+    var r = await SUPA.client.from('highlights')
+        .select('id,user_id,target_type,target_id,color_key,note,payload,updated_at')
+        .eq('target_type', 'text_range')
+        .like('target_id', chapterId + '|%')
+        .limit(500);
+    if (r && r.error) return [];
+    var rows = r.data || [];
+    return rows.map(function(row) {
+        var ck = row.color_key || 'temple_granite';
+        var c = _hlColorByKey(ck);
+        var payload = row.payload || {};
+        return {
+            id: row.id,
+            userId: row.user_id,
+            colorClass: c.className,
+            text: payload.text || '',
+            note: row.note || '',
+        };
+    }).filter(function(x) { return x.text; });
 }
 
 function findAndHighlightText(root, text, colorClass, hlId) {
