@@ -15,7 +15,9 @@ exports.handler = async function () {
       };
     }
 
-    const items = await supaFetch("monitor_samples?select=ts,links,paragraphs,sources,verses_with_any&order=ts.asc&limit=180");
+    const items = await supaFetch(
+      "monitor_samples?select=ts,links,paragraphs,sources,verses_with_any,linked_docs,linked_paragraphs&order=ts.asc&limit=180"
+    );
     return {
       statusCode: 200,
       headers: {

@@ -37,6 +37,8 @@ exports.handler = async function () {
       paragraphs: Number(sample.paragraphs) || 0,
       sources: Number(sample.sources) || 0,
       verses_with_any: Number(sample.verses_with_any) || 0,
+      linked_docs: Number(sample.linked_docs) || 0,
+      linked_paragraphs: Number(sample.linked_paragraphs) || 0,
     };
 
     await supaFetch("monitor_samples?on_conflict=ts", {

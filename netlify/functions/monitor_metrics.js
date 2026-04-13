@@ -41,6 +41,27 @@ function countVersesWithAny(verseDiscovery) {
   return withAny;
 }
 
+function countLinkedFromSourceLinks(sourceLinks) {
+  let linkedDocs = 0;
+  let linkedParas = 0;
+  for (const docId of Object.keys(sourceLinks || {})) {
+    const paras = sourceLinks[docId];
+    if (!paras || typeof paras !== "object") continue;
+    const paraKeys = Object.keys(paras);
+    if (!paraKeys.length) continue;
+    let docHas = false;
+    for (const pk of paraKeys) {
+      const refs = paras[pk];
+      if (Array.isArray(refs) && refs.length) {
+        linkedParas += 1;
+        docHas = true;
+      }
+    }
+    if (docHas) linkedDocs += 1;
+  }
+  return { linked_docs: linkedDocs, linked_paragraphs: linkedParas };
+}
+
 function siteBaseUrl() {
   const u = (process.env.DEPLOY_PRIME_URL || process.env.URL || "").trim();
   return u.replace(/\/$/, "");
@@ -53,12 +74,18 @@ exports.handler = async function () {
 
     const verseDiscoveryUrl = base + "/library/verse_discovery.json";
     const sourceTocUrl = base + "/library/source_toc.json";
+    const sourceLinksUrl = base + "/library/source_links.json";
 
-    const [verseDiscovery, sourceToc] = await Promise.all([fetchJson(verseDiscoveryUrl), fetchJson(sourceTocUrl)]);
+    const [verseDiscovery, sourceToc, sourceLinks] = await Promise.all([
+      fetchJson(verseDiscoveryUrl),
+      fetchJson(sourceTocUrl),
+      fetchJson(sourceLinksUrl),
+    ]);
 
     const { sources, paragraphs } = countSourcesAndParagraphs(sourceToc);
     const links = countLinks(verseDiscovery);
     const versesWithAny = countVersesWithAny(verseDiscovery);
+    const { linked_docs, linked_paragraphs } = countLinkedFromSourceLinks(sourceLinks);
 
     const payload = {
       ts: new Date().toISOString(),
@@ -66,7 +93,9 @@ exports.handler = async function () {
       paragraphs,
       links,
       verses_with_any: versesWithAny,
-      version: 1,
+      linked_docs,
+      linked_paragraphs,
+      version: 2,
     };
 
     return {

@@ -76,6 +76,12 @@
       <div class="card"><h2 class="chart-title">Sources over time</h2><canvas id="cSources" width="900" height="360"></canvas><div class="small" id="cSourcesHint"></div></div>
     </div>
 
+    <div class="charts">
+      <div class="card"><h2 class="chart-title">Docs linked (%)</h2><canvas id="cDocPct" width="900" height="360"></canvas><div class="small" id="cDocPctHint"></div></div>
+      <div class="card"><h2 class="chart-title">Paragraphs linked (%)</h2><canvas id="cParaPct" width="900" height="360"></canvas><div class="small" id="cParaPctHint"></div></div>
+      <div class="card"><h2 class="chart-title">Linked paragraphs (count)</h2><canvas id="cLinkedParas" width="900" height="360"></canvas><div class="small" id="cLinkedParasHint"></div></div>
+    </div>
+
     <div class="tables">
       <div class="card">
         <h2 class="chart-title">Top verses by connections</h2>
@@ -171,11 +177,30 @@
       if(hint) hint.textContent = `Last ${pts.length} points · min ${fmt(min)} · max ${fmt(max)} · last ${fmt(pts[pts.length-1])}`;
     }
 
+    function docPct(x){
+      const a = Number(x && x.linked_docs) || 0;
+      const b = Number(x && x.sources) || 0;
+      return b ? (a / b * 100.0) : 0;
+    }
+    function paraPct(x){
+      const a = Number(x && x.linked_paragraphs) || 0;
+      const b = Number(x && x.paragraphs) || 0;
+      return b ? (a / b * 100.0) : 0;
+    }
+
     function renderAll(arr){
       renderLatest(arr);
       drawSeries('cLinks','cLinksHint',arr,'links');
       drawSeries('cParas','cParasHint',arr,'paragraphs');
       drawSeries('cSources','cSourcesHint',arr,'sources');
+      // Coverage series (computed on the fly from fields)
+      drawSeries('cLinkedParas','cLinkedParasHint',arr,'linked_paragraphs');
+      (function(){
+        const docSeries = (arr||[]).map(x => Object.assign({}, x, { __doc_pct: docPct(x) }));
+        const paraSeries = (arr||[]).map(x => Object.assign({}, x, { __para_pct: paraPct(x) }));
+        drawSeries('cDocPct','cDocPctHint',docSeries,'__doc_pct');
+        drawSeries('cParaPct','cParaPctHint',paraSeries,'__para_pct');
+      })();
     }
 
     async function fetchText(url){
