@@ -51,7 +51,6 @@
   to = "/monitor.html"
   status = 302
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# Do not add a blanket `/*` → `/index.html` (status 200) rewrite here: Netlify applies
+# redirects before Functions, so it would return HTML for `/.netlify/functions/*` and
+# break JSON clients (monitor history, monitor_backlog, etc.).

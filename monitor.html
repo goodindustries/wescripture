@@ -48,6 +48,8 @@
     .mini-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
     .mini-links a{color:var(--accent);text-decoration:none;font-weight:700}
     .mini-links a:hover{text-decoration:underline}
+    .monitor-fab{position:fixed;right:14px;bottom:14px;z-index:999;display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;border-radius:999px;border:1px solid rgba(156,122,77,.28);background:rgba(254,252,248,.96);color:var(--accent);text-decoration:none;font-weight:700;font-size:13px;box-shadow:0 10px 28px rgba(0,0,0,.10);backdrop-filter:blur(10px)}
+    .monitor-fab:hover{background:rgba(156,122,77,.08)}
   </style>
 </head>
 <body>
@@ -470,9 +472,21 @@
       });
     })();
 
+    async function readFnJson(r){
+      const text = await r.text();
+      const t = (text || '').trim();
+      if(!t) throw new Error('Empty response from server.');
+      if(t[0] === '<'){
+        throw new Error('Server returned HTML instead of JSON (Netlify function missing or blocked). Use Netlify deploy / netlify dev, or remove SPA rewrites for /.netlify/functions/*.');
+      }
+      try { return JSON.parse(t); } catch (e) {
+        throw new Error('Invalid JSON from server: ' + (e && e.message ? e.message : String(e)));
+      }
+    }
+
     async function fetchServerHistory(){
       const r = await fetch('/.netlify/functions/monitor_history', { cache:'no-store' });
-      const j = await r.json();
+      const j = await readFnJson(r);
       if(!r.ok) throw new Error((j && j.error) || ('HTTP ' + r.status));
       if(j && j.ok && j.configured && Array.isArray(j.items)) return { configured:true, items:j.items };
       return { configured:false, items:[] };
@@ -480,7 +494,7 @@
 
     async function fetchBacklog(){
       const r = await fetch('/.netlify/functions/monitor_backlog', { cache:'no-store' });
-      const j = await r.json();
+      const j = await readFnJson(r);
       if(!r.ok) throw new Error((j && j.error) || ('HTTP ' + r.status));
       if(j && j.ok && j.configured && Array.isArray(j.items)) return { configured:true, items:j.items };
       return { configured:false, items:[] };
@@ -493,7 +507,7 @@
         headers: { 'content-type':'application/json; charset=utf-8' },
         body: JSON.stringify(payload || {}),
       });
-      const j = await r.json().catch(()=> ({}));
+      const j = await readFnJson(r);
       if(!r.ok) throw new Error((j && j.error) || ('HTTP ' + r.status));
       return j;
     }
@@ -543,14 +557,14 @@
         const hist = await fetchServerHistory();
         if(hist.configured){
           const r = await fetch('/.netlify/functions/monitor_sample', { cache:'no-store' });
-          const j = await r.json();
+          const j = await readFnJson(r);
           if(!r.ok || !j.ok) throw new Error((j && j.error) || ('HTTP ' + r.status));
           const hist2 = await fetchServerHistory();
           renderAll(hist2.items || []);
           if(status) status.textContent = 'Saved to shared history.';
         } else {
           const r = await fetch('/.netlify/functions/monitor_metrics', { cache:'no-store' });
-          const j = await r.json();
+          const j = await readFnJson(r);
           if(!r.ok) throw new Error((j && j.error) || ('HTTP ' + r.status));
           const arr = loadLocal(); arr.push(j); saveLocal(arr); renderAll(arr);
           if(status) status.textContent = `Saved locally (${arr.length} points).`;
@@ -662,6 +676,7 @@
       }
     });
   </script>
+  <a class="monitor-fab" href="/monitor.html" aria-label="Open Monitor">Monitor</a>
 </body>
 </html>
 
