@@ -41,6 +41,13 @@ async function run() {
   });
 
   await page.waitForSelector('#ch-genesis_1 .chapter-heading', { timeout: 30000 });
+  // Study panel intro only renders when the right channel is open.
+  await page.evaluate(() => {
+    const ch = document.getElementById('channel');
+    if (ch) ch.classList.add('open');
+    window.channelOpen = true;
+    if (typeof renderStudyPanelIntro === 'function') renderStudyPanelIntro('genesis_1');
+  });
   await page.waitForSelector('#panel-body .panel-chapter-body', { timeout: 15000 });
 
   const { heading, panel } = await page.evaluate(() => {
