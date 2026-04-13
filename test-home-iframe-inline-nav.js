@@ -1,5 +1,5 @@
 /**
- * Title page: "Scriptures" opens the left Contents sidebar (standard works volumes).
+ * Title page: "Scriptures" opens the title-page nav panel (standard works volumes).
  *
  * Serve repo root: python3 -m http.server 4173
  *   node test-home-iframe-inline-nav.js
@@ -43,18 +43,18 @@ async function run() {
 
   await page.click('#ch-title_page a[data-open-shelf="scriptures"]');
   await page.waitForFunction(
-    () => document.getElementById('toc-title')?.textContent?.trim() === 'Scriptures',
+    () => document.getElementById('title-nav-title')?.textContent?.trim() === 'Scriptures',
     { timeout: 20000 }
   );
 
-  const tocVisible = await page.evaluate(() => {
-    const t = document.getElementById('toc');
-    return t && !t.classList.contains('hidden');
+  const navVisible = await page.evaluate(() => {
+    const n = document.getElementById('title-nav');
+    return n && n.hidden === false;
   });
-  assert(tocVisible, 'expected #toc visible after opening Scriptures');
-  await page.waitForSelector('#toc-grid .toc-tile[data-action="volume"]', { timeout: 25000 });
+  assert(navVisible, 'expected title nav visible after opening Scriptures');
+  await page.waitForSelector('#title-nav-grid .title-nav-tile[data-action="volume"]', { timeout: 25000 });
 
-  console.log(JSON.stringify({ ok: true, url, test: 'title-page-scriptures-opens-toc' }, null, 2));
+  console.log(JSON.stringify({ ok: true, url, test: 'title-page-scriptures-opens-nav' }, null, 2));
   await browser.close();
 }
 

@@ -1,5 +1,5 @@
 /**
- * Left Contents sidebar + ?open= deep-link smoke (title page starts with TOC collapsed).
+ * Title-page navigation drilldown + ?open= deep-link smoke (no left TOC).
  *
  * Serve repo root: python3 -m http.server 4173
  *   node test-title-inline-nav.js
@@ -40,56 +40,49 @@ async function run() {
   await page.waitForSelector('#splash.gone', { timeout: 90000 });
 
   await page.waitForSelector('#ch-title_page', { timeout: 30000 });
-  const tocHidden = await page.evaluate(() => {
-    const t = document.getElementById('toc');
-    return t && t.classList.contains('hidden');
-  });
-  assert(tocHidden, 'expected #toc collapsed on title page load');
+  const tocPresent = await page.evaluate(() => !!document.getElementById('toc'));
+  assert(!tocPresent, 'did not expect #toc in 2-pane mode');
 
   await page.click('#ch-title_page a[data-open-shelf="scriptures"]');
-  await page.waitForFunction(() => document.querySelector('#toc-title').textContent === 'Scriptures', {
+  await page.waitForFunction(() => document.querySelector('#title-nav-title')?.textContent?.trim() === 'Scriptures', {
     timeout: 15000,
   });
 
-  await page.click('#toc-grid .toc-tile[data-action="volume"][data-volume="Old Testament"]');
-  await page.waitForFunction(() => document.querySelector('#toc-title').textContent === 'Books', { timeout: 15000 });
+  await page.click('#title-nav-grid .title-nav-tile[data-action="volume"][data-volume="Old Testament"]');
+  await page.waitForFunction(() => document.querySelector('#title-nav-title')?.textContent?.trim() === 'Books', { timeout: 15000 });
 
-  await page.click('#toc-grid .toc-tile[data-action="book"][data-book="Genesis"]');
+  await page.click('#title-nav-grid .title-nav-tile[data-action="book"][data-book="Genesis"]');
   await page.waitForFunction(
     () =>
-      document.querySelector('#toc-title').textContent === 'Chapters' &&
-      document.querySelector('#toc-subtitle').textContent === 'Genesis',
-    { timeout: 15000 }
+      document.querySelector('#title-nav-title')?.textContent?.trim() === 'Chapters' &&
+      document.querySelector('#title-nav-subtitle')?.textContent?.trim() === 'Genesis',
+    { timeout: 15000 },
   );
 
-  await page.click('#toc-grid .toc-tile[data-action="chapter"][data-id="genesis_1"]');
+  await page.click('#title-nav-grid .title-nav-tile[data-action="chapter"][data-id="genesis_1"]');
   await page.waitForSelector('#ch-genesis_1', { timeout: 25000 });
 
-  await page.evaluate(() => {
-    setTocPathForChapter('genesis_1');
-    tocBack();
-    tocOpen = true;
-    document.getElementById('toc').classList.remove('hidden');
+  // Round-trip home and drill again (basic state sanity)
+  await page.click('#site-home');
+  await page.waitForSelector('#ch-title_page', { timeout: 25000 });
+  await page.click('#ch-title_page a[data-open-shelf="scriptures"]');
+  await page.waitForFunction(() => document.querySelector('#title-nav-title')?.textContent?.trim() === 'Scriptures', {
+    timeout: 15000,
   });
-  await page.waitForFunction(() => document.querySelector('#toc-title').textContent === 'Books', { timeout: 10000 });
 
   const sourcesUrl = new URL(baseUrl);
   sourcesUrl.searchParams.set('open', 'general_conference');
   await page.goto(sourcesUrl.href, { waitUntil: 'networkidle0', timeout: 90000 });
   await page.waitForSelector('#splash.gone', { timeout: 90000 });
 
-  const tocStillVisible = await page.evaluate(() => {
-    const t = document.getElementById('toc');
-    return t && !t.classList.contains('hidden');
-  });
-  assert(tocStillVisible, 'expected #toc visible after ?open=general_conference');
+  await page.waitForFunction(() => document.getElementById('title-nav')?.hidden === false, { timeout: 20000 });
   await page.waitForFunction(
-    () => document.querySelector('#toc-grid') && document.querySelectorAll('#toc-grid .toc-tile').length > 0,
-    { timeout: 20000 }
+    () => document.querySelectorAll('#title-nav-grid .title-nav-tile').length > 0,
+    { timeout: 20000 },
   );
 
   console.log(
-    JSON.stringify({ ok: true, baseUrl, tests: ['sidebar-toc-drill', 'toc-back', 'open-param-sources-smoke'] }, null, 2)
+    JSON.stringify({ ok: true, baseUrl, tests: ['title-nav-drill', 'home-roundtrip', 'open-param-sources-smoke'] }, null, 2),
   );
   await browser.close();
 }

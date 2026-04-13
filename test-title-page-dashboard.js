@@ -27,39 +27,37 @@ async function run() {
 
   const idle = await page.evaluate(() => ({
     title: document.querySelector('#ch-title_page .dashboard-title')?.textContent?.trim(),
-    tocHidden: document.getElementById('toc')?.classList.contains('hidden'),
-    inlineNav: document.querySelector('#ch-title_page #title-inline-nav'),
+    tocPresent: !!document.getElementById('toc'),
+    history: !!document.querySelector('#ch-title_page #title-recents'),
+    navHidden: document.querySelector('#ch-title_page #title-nav')?.hidden,
   }));
 
   assert(idle.title && /WeScripture/i.test(idle.title), 'title page hero missing');
-  assert(idle.tocHidden === true, 'expected title page to start with Contents sidebar collapsed');
-  assert(!idle.inlineNav, 'title page should not embed duplicate inline browse panel');
+  assert(idle.tocPresent === false, 'did not expect left TOC in 2-pane mode');
+  assert(idle.history === true, 'expected title page history container');
+  assert(idle.navHidden === true, 'expected title nav hidden until a shelf is chosen');
 
   await page.click('#ch-title_page a[data-open-shelf="scriptures"]');
   await page.waitForFunction(
     () =>
-      !document.getElementById('toc')?.classList.contains('hidden') &&
-      document.getElementById('toc-title')?.textContent?.trim() === 'Scriptures',
+      document.querySelector('#ch-title_page #title-nav')?.hidden === false &&
+      document.getElementById('title-nav-title')?.textContent?.trim() === 'Scriptures',
     { timeout: 15000 },
   );
-  const volTiles = await page.$$eval('#toc-grid .toc-tile[data-action="volume"]', (els) => els.length);
-  assert(volTiles >= 2, 'expected scripture volume tiles in left TOC');
+  const volTiles = await page.$$eval('#title-nav-grid .title-nav-tile[data-action="volume"]', (els) => els.length);
+  assert(volTiles >= 2, 'expected scripture volume tiles on title page');
 
   await page.evaluate(() => {
     jumpTo('genesis_1');
   });
   await page.waitForSelector('#ch-genesis_1', { timeout: 25000 });
   await page.click('#site-home');
-  await page.waitForFunction(
-    () => document.getElementById('toc')?.classList.contains('hidden') === true,
-    { timeout: 20000 },
-  );
+  await page.waitForSelector('#ch-title_page', { timeout: 20000 });
 
   console.log(
     JSON.stringify(
       {
         ok: true,
-        idleTocHidden: idle.tocHidden,
         volumeTiles: volTiles,
       },
       null,
