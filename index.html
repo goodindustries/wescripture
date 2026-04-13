@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WeScripture</title>
-    <meta name="description" content="Scripture and study sources in one reader, with cross-links and verse-level study tools.">
+    <meta name="description" content="Study the scriptures with your friends.">
     <meta property="og:title" content="WeScripture">
-    <meta property="og:description" content="Scripture and study sources in one reader, with cross-links and verse-level study tools.">
+    <meta property="og:description" content="Study the scriptures with your friends.">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PCMWDK746H"></script>
@@ -26,8 +26,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./home.css">
+    <script>
+      (function() {
+        var target = './library/index.html';
+        try {
+          window.location.replace(target + (window.location.search || '') + (window.location.hash || ''));
+        } catch (e) {
+          window.location.href = target;
+        }
+      }());
+    </script>
 </head>
 <body>
+<noscript>
+  <p style="padding:16px;font-family:Inter,system-ui,-apple-system,sans-serif">
+    <a href="./library/index.html">Open reader</a>
+  </p>
+</noscript>
 <header class="home-header">
     <a class="home-brand" href="./library/index.html" aria-label="WeScripture — open reader">
         <span class="home-brand-name">WeScripture</span>
