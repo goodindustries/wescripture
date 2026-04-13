@@ -3870,40 +3870,97 @@ function loadSourceDocument(docId, href, opts) {
     closeGraph();
     closeChannel();
     resetReaderContent();
-    return fetch('./' + href)
-        .then(function(r) { return r.text(); })
-        .then(function(html) {
-            var parser = new DOMParser();
-            var doc = parser.parseFromString(html, 'text/html');
-            var block = document.createElement('div');
-            block.className = 'chapter-block source-reader-block';
-            block.id = 'src-' + docId.replace(/[^a-z0-9:_-]/ig, '_');
-            block.dataset.sourceDocId = docId;
-            block.innerHTML = doc.body.innerHTML;
-            sanitizeEscapedConnectionMarkup(block);
-            document.getElementById('content').appendChild(block);
-            return loadSourceWordIndex(docId).then(function(idx) {
-                annotateSourceBlock(block, idx || {});
-                markLinkedSourceParas(block, docId);
-                injectSourceCitationLinks(block, docId);
-                updateLocationLabel(docId);
-                var para = null;
-                if (typeof opts.focusPara === 'number') {
-                    para = block.querySelectorAll('p.source-para')[opts.focusPara - 1] || null;
+    return corpusDbReady().then(function(ok) {
+        if (!ok) return null;
+        return initSupabaseOnce().then(function() { return ok; });
+    }).then(function(ok) {
+        if (!ok) return null;
+        var meta = sourceMeta[docId] || {};
+        if (meta && meta.external_url) {
+            try { window.open(meta.external_url, '_blank', 'noopener'); } catch (e) {}
+            return null;
+        }
+        return SUPA.client
+            .from('corpus_paragraphs')
+            .select('para_idx,text')
+            .eq('source_id', docId)
+            .order('para_idx', { ascending: true })
+            .then(function(res) {
+                if (res && res.error) throw res.error;
+                var rows = (res && res.data) || [];
+                if (!rows || rows.length === 0) return null;
+                var block = document.createElement('div');
+                block.className = 'chapter-block source-reader-block';
+                block.id = 'src-' + docId.replace(/[^a-z0-9:_-]/ig, '_');
+                block.dataset.sourceDocId = docId;
+                var html = '';
+                for (var i = 0; i < rows.length; i++) {
+                    var t = rows[i].text || '';
+                    html += '<p class=\"source-para\">' + escapeHtml(t) + '</p>';
                 }
-                if (!para && opts.focusText) {
-                    para = findSourceParagraphByExcerpt(block, opts.focusText);
-                }
-                if (para) {
-                    para.classList.add('source-para-focus');
-                    para.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                } else if (typeof opts.scrollTop === 'number') {
-                    document.getElementById('reader').scrollTop = opts.scrollTop;
-                } else {
-                    block.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                block.innerHTML = html;
+                sanitizeEscapedConnectionMarkup(block);
+                document.getElementById('content').appendChild(block);
+                return loadSourceWordIndex(docId).then(function(idx) {
+                    annotateSourceBlock(block, idx || {});
+                    markLinkedSourceParas(block, docId);
+                    injectSourceCitationLinks(block, docId);
+                    updateLocationLabel(docId);
+                    var para = null;
+                    if (typeof opts.focusPara === 'number') {
+                        para = block.querySelectorAll('p.source-para')[opts.focusPara - 1] || null;
+                    }
+                    if (!para && opts.focusText) {
+                        para = findSourceParagraphByExcerpt(block, opts.focusText);
+                    }
+                    if (para) {
+                        para.classList.add('source-para-focus');
+                        para.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    } else if (typeof opts.scrollTop === 'number') {
+                        document.getElementById('reader').scrollTop = opts.scrollTop;
+                    } else {
+                        block.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            })
+            .catch(function() { return null; });
+    }).then(function(done) {
+        if (done) return done;
+        return fetch('./' + href)
+            .then(function(r) { return r.text(); })
+            .then(function(html) {
+                var parser = new DOMParser();
+                var doc = parser.parseFromString(html, 'text/html');
+                var block = document.createElement('div');
+                block.className = 'chapter-block source-reader-block';
+                block.id = 'src-' + docId.replace(/[^a-z0-9:_-]/ig, '_');
+                block.dataset.sourceDocId = docId;
+                block.innerHTML = doc.body.innerHTML;
+                sanitizeEscapedConnectionMarkup(block);
+                document.getElementById('content').appendChild(block);
+                return loadSourceWordIndex(docId).then(function(idx) {
+                    annotateSourceBlock(block, idx || {});
+                    markLinkedSourceParas(block, docId);
+                    injectSourceCitationLinks(block, docId);
+                    updateLocationLabel(docId);
+                    var para = null;
+                    if (typeof opts.focusPara === 'number') {
+                        para = block.querySelectorAll('p.source-para')[opts.focusPara - 1] || null;
+                    }
+                    if (!para && opts.focusText) {
+                        para = findSourceParagraphByExcerpt(block, opts.focusText);
+                    }
+                    if (para) {
+                        para.classList.add('source-para-focus');
+                        para.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    } else if (typeof opts.scrollTop === 'number') {
+                        document.getElementById('reader').scrollTop = opts.scrollTop;
+                    } else {
+                        block.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
             });
-        });
+    });
 }
 
 // ── Load a chapter (scripture text only — fast) ──────────────────────────
