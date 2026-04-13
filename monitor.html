@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Monitor — WeScripture</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=EB+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#f7f3eb;--card:#fffdf9;--line:rgba(0,0,0,.10);--text:#2f2a24;--muted:#7a6d5c;--accent:#9c7a4d;}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 Inter,system-ui,sans-serif}
+    header{padding:18px 18px 8px;max-width:1100px;margin:0 auto}
+    .brand{display:flex;gap:10px;align-items:baseline}
+    .brand a{text-decoration:none;color:inherit}
+    h1{margin:0;font:700 34px/1.05 "EB Garamond",Georgia,serif}
+    .sub{margin:6px 0 0;color:var(--muted)}
+    main{max-width:1100px;margin:0 auto;padding:14px 18px 34px}
+    .row{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 14px 12px;min-width:240px;flex:1}
+    .k{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+    .v{margin-top:6px;font-size:28px;font-weight:700;color:var(--accent)}
+    .meta{margin-top:4px;color:var(--muted);font-size:12px}
+    .controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:12px 0 2px}
+    button{border:1px solid rgba(156,122,77,.28);background:#fcfaf6;color:var(--accent);font-weight:700;padding:10px 12px;border-radius:12px;cursor:pointer}
+    button:hover{background:rgba(156,122,77,.08)}
+    .status{color:var(--muted);font-size:12px}
+    .charts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px}
+    @media(max-width:900px){.charts{grid-template-columns:1fr}}
+    canvas{width:100%;height:180px}
+    .chart-title{margin:0 0 8px;font:700 18px/1.15 "EB Garamond",Georgia,serif}
+    .small{font-size:12px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand"><a href="./index.html">WeScripture</a></div>
+    <h1>Monitor</h1>
+    <p class="sub">Tracks connection coverage over time (local history by default). Use “Run now” after rebuilds or daily.</p>
+  </header>
+
+  <main>
+    <div class="controls">
+      <button id="runNow" type="button">Run now</button>
+      <button id="clearLocal" type="button">Clear local history</button>
+      <span id="status" class="status"></span>
+    </div>
+
+    <div class="row">
+      <div class="card"><div class="k">Links (total)</div><div class="v" id="mLinks">—</div><div class="meta" id="mLinksMeta"></div></div>
+      <div class="card"><div class="k">Paragraphs (total)</div><div class="v" id="mParas">—</div><div class="meta" id="mParasMeta"></div></div>
+      <div class="card"><div class="k">Sources (docs)</div><div class="v" id="mSources">—</div><div class="meta" id="mSourcesMeta"></div></div>
+    </div>
+
+    <div class="charts">
+      <div class="card"><h2 class="chart-title">Links over time</h2><canvas id="cLinks" width="900" height="360"></canvas><div class="small" id="cLinksHint"></div></div>
+      <div class="card"><h2 class="chart-title">Paragraphs over time</h2><canvas id="cParas" width="900" height="360"></canvas><div class="small" id="cParasHint"></div></div>
+      <div class="card"><h2 class="chart-title">Sources over time</h2><canvas id="cSources" width="900" height="360"></canvas><div class="small" id="cSourcesHint"></div></div>
+    </div>
+  </main>
+
+  <script>
+    const KEY = 'wescripture_monitor_v1';
+    function fmt(n){ return Number(n||0).toLocaleString(); }
+    function setText(id, v){ const el=document.getElementById(id); if(el) el.textContent = v; }
+
+    function loadHistory(){
+      try{ const raw = localStorage.getItem(KEY); if(!raw) return []; const arr = JSON.parse(raw); return Array.isArray(arr) ? arr : []; }
+      catch(e){ return []; }
+    }
+    function saveHistory(arr){ try{ localStorage.setItem(KEY, JSON.stringify(arr.slice(-180))); }catch(e){} }
+
+    function summarizeDelta(arr, field){
+      if(arr.length < 2) return '';
+      const a = arr[arr.length-2][field] || 0, b = arr[arr.length-1][field] || 0;
+      const d = b - a;
+      if(!d) return 'no change since last run';
+      return (d>0?'+':'') + fmt(d) + ' since last run';
+    }
+
+    function renderLatest(arr){
+      const last = arr[arr.length-1];
+      if(!last){ setText('mLinks','—'); setText('mParas','—'); setText('mSources','—'); setText('mLinksMeta',''); setText('mParasMeta',''); setText('mSourcesMeta',''); return; }
+      setText('mLinks', fmt(last.links)); setText('mParas', fmt(last.paragraphs)); setText('mSources', fmt(last.sources));
+      setText('mLinksMeta', summarizeDelta(arr,'links')); setText('mParasMeta', summarizeDelta(arr,'paragraphs')); setText('mSourcesMeta', summarizeDelta(arr,'sources'));
+    }
+
+    function drawSeries(canvasId, hintId, arr, field){
+      const c=document.getElementById(canvasId), hint=document.getElementById(hintId);
+      if(!c) return;
+      const ctx=c.getContext('2d'), w=c.width, h=c.height;
+      ctx.clearRect(0,0,w,h);
+      ctx.fillStyle='#fffdf9'; ctx.fillRect(0,0,w,h);
+      ctx.strokeStyle='rgba(0,0,0,0.08)'; ctx.strokeRect(0.5,0.5,w-1,h-1);
+      const pts = arr.slice(-60).map(x => Number(x[field]||0));
+      if(pts.length < 2){ if(hint) hint.textContent = pts.length ? '1 point' : 'No history yet.'; return; }
+      let min=Math.min(...pts), max=Math.max(...pts); if(min===max){ min=min*0.98; max=max*1.02; }
+      const padX=18,padY=18;
+      const x=i=>padX+(i/(pts.length-1))*(w-2*padX);
+      const y=v=>(h-padY)-((v-min)/(max-min))*(h-2*padY);
+      ctx.strokeStyle='rgba(0,0,0,0.06)';
+      for(let i=0;i<=4;i++){ const yy=padY+(i/4)*(h-2*padY); ctx.beginPath(); ctx.moveTo(padX,yy); ctx.lineTo(w-padX,yy); ctx.stroke(); }
+      ctx.strokeStyle='#9c7a4d'; ctx.lineWidth=2;
+      ctx.beginPath(); ctx.moveTo(x(0),y(pts[0])); for(let i=1;i<pts.length;i++) ctx.lineTo(x(i),y(pts[i])); ctx.stroke();
+      ctx.fillStyle='#9c7a4d'; ctx.beginPath(); ctx.arc(x(pts.length-1),y(pts[pts.length-1]),4,0,Math.PI*2); ctx.fill();
+      if(hint) hint.textContent = `Last ${pts.length} points · min ${fmt(min)} · max ${fmt(max)} · last ${fmt(pts[pts.length-1])}`;
+    }
+
+    function renderAll(arr){
+      renderLatest(arr);
+      drawSeries('cLinks','cLinksHint',arr,'links');
+      drawSeries('cParas','cParasHint',arr,'paragraphs');
+      drawSeries('cSources','cSourcesHint',arr,'sources');
+    }
+
+    async function runNow(){
+      const status=document.getElementById('status'); if(status) status.textContent='Running…';
+      try{
+        const r = await fetch('/.netlify/functions/monitor_metrics', { cache:'no-store' });
+        const j = await r.json();
+        if(!r.ok) throw new Error((j && j.error) || ('HTTP ' + r.status));
+        const arr=loadHistory(); arr.push(j); saveHistory(arr); renderAll(arr);
+        if(status) status.textContent = `Saved ${arr.length} points · ${new Date(j.ts).toLocaleString()}`;
+      }catch(e){ if(status) status.textContent = 'Error: ' + (e && (e.message || String(e))); }
+    }
+
+    document.getElementById('runNow').addEventListener('click', runNow);
+    document.getElementById('clearLocal').addEventListener('click', () => { localStorage.removeItem(KEY); renderAll([]); const s=document.getElementById('status'); if(s) s.textContent='Local history cleared.'; });
+    renderAll(loadHistory());
+    (function autoDaily(){ const arr=loadHistory(); const last=arr[arr.length-1]; const lastDay=last&&last.ts?String(last.ts).slice(0,10):''; const today=new Date().toISOString().slice(0,10); if(lastDay!==today) runNow(); })();
+  </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Monitor — WeScripture</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=EB+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f7f3eb;--card:#fffdf9;--line:rgba(0,0,0,.10);--text:#2f2a24;--muted:#7a6d5c;--accent:#9c7a4d;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 Inter,system-ui,sans-serif}
+    header{padding:18px 18px 8px;max-width:1100px;margin:0 auto}
+    .brand{display:flex;gap:10px;align-items:baseline}
+    .brand a{text-decoration:none;color:inherit}
+    h1{margin:0;font:700 34px/1.05 "EB Garamond",Georgia,serif}
+    .sub{margin:6px 0 0;color:var(--muted)}
+    main{max-width:1100px;margin:0 auto;padding:14px 18px 34px}
+    .row{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 14px 12px;min-width:240px;flex:1}
+    .k{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+    .v{margin-top:6px;font-size:28px;font-weight:700;color:var(--accent)}
+    .meta{margin-top:4px;color:var(--muted);font-size:12px}
+    .controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:12px 0 2px}
+    button{border:1px solid rgba(156,122,77,.28);background:#fcfaf6;color:var(--accent);font-weight:700;padding:10px 12px;border-radius:12px;cursor:pointer}
+    button:hover{background:rgba(156,122,77,.08)}
+    .status{color:var(--muted);font-size:12px}
+    .charts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px}
+    @media(max-width:900px){.charts{grid-template-columns:1fr}}
+    canvas{width:100%;height:180px}
+    .chart-title{margin:0 0 8px;font:700 18px/1.15 "EB Garamond",Georgia,serif}
+    .small{font-size:12px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <a href="./index.html">WeScripture</a>
+    </div>
+    <h1>Monitor</h1>
+    <p class="sub">Tracks connection coverage over time (local history by default). Use “Run now” after rebuilds or daily.</p>
+  </header>
+
+  <main>
+    <div class="controls">
+      <button id="runNow" type="button">Run now</button>
+      <button id="clearLocal" type="button">Clear local history</button>
+      <span id="status" class="status"></span>
+    </div>
+
+    <div class="row">
+      <div class="card">
+        <div class="k">Links (total)</div>
+        <div class="v" id="mLinks">—</div>
+        <div class="meta" id="mLinksMeta"></div>
+      </div>
+      <div class="card">
+        <div class="k">Paragraphs (total)</div>
+        <div class="v" id="mParas">—</div>
+        <div class="meta" id="mParasMeta"></div>
+      </div>
+      <div class="card">
+        <div class="k">Sources (docs)</div>
+        <div class="v" id="mSources">—</div>
+        <div class="meta" id="mSourcesMeta"></div>
+      </div>
+    </div>
+
+    <div class="charts">
+      <div class="card">
+        <h2 class="chart-title">Links over time</h2>
+        <canvas id="cLinks" width="900" height="360"></canvas>
+        <div class="small" id="cLinksHint"></div>
+      </div>
+      <div class="card">
+        <h2 class="chart-title">Paragraphs over time</h2>
+        <canvas id="cParas" width="900" height="360"></canvas>
+        <div class="small" id="cParasHint"></div>
+      </div>
+      <div class="card">
+        <h2 class="chart-title">Sources over time</h2>
+        <canvas id="cSources" width="900" height="360"></canvas>
+        <div class="small" id="cSourcesHint"></div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const KEY = 'wescripture_monitor_v1';
+
+    function fmt(n){ return Number(n||0).toLocaleString(); }
+    function setText(id, v){ const el=document.getElementById(id); if(el) el.textContent = v; }
+    function nowIso(){ return new Date().toISOString(); }
+
+    function loadHistory(){
+      try{
+        const raw = localStorage.getItem(KEY);
+        if(!raw) return [];
+        const arr = JSON.parse(raw);
+        return Array.isArray(arr) ? arr : [];
+      }catch(e){ return []; }
+    }
+    function saveHistory(arr){
+      try{ localStorage.setItem(KEY, JSON.stringify(arr.slice(-180))); }catch(e){}
+    }
+
+    function summarizeDelta(arr, field){
+      if(arr.length < 2) return '';
+      const a = arr[arr.length-2][field] || 0;
+      const b = arr[arr.length-1][field] || 0;
+      const d = b - a;
+      if(!d) return 'no change since last run';
+      return (d>0?'+':'') + fmt(d) + ' since last run';
+    }
+
+    function renderLatest(arr){
+      const last = arr[arr.length-1];
+      if(!last){
+        setText('mLinks','—'); setText('mParas','—'); setText('mSources','—');
+        setText('mLinksMeta',''); setText('mParasMeta',''); setText('mSourcesMeta','');
+        return;
+      }
+      setText('mLinks', fmt(last.links));
+      setText('mParas', fmt(last.paragraphs));
+      setText('mSources', fmt(last.sources));
+      setText('mLinksMeta', summarizeDelta(arr,'links'));
+      setText('mParasMeta', summarizeDelta(arr,'paragraphs'));
+      setText('mSourcesMeta', summarizeDelta(arr,'sources'));
+    }
+
+    function drawSeries(canvasId, hintId, arr, field){
+      const c = document.getElementById(canvasId);
+      const hint = document.getElementById(hintId);
+      if(!c) return;
+      const ctx = c.getContext('2d');
+      const w = c.width, h = c.height;
+      ctx.clearRect(0,0,w,h);
+      ctx.fillStyle = '#fffdf9';
+      ctx.fillRect(0,0,w,h);
+      ctx.strokeStyle = 'rgba(0,0,0,0.08)';
+      ctx.strokeRect(0.5,0.5,w-1,h-1);
+
+      const pts = arr.slice(-60).map(x => Number(x[field]||0));
+      if(pts.length < 2){
+        if(hint) hint.textContent = pts.length ? `1 point (${nowIso().slice(0,10)})` : 'No history yet.';
+        return;
+      }
+      let min = Math.min(...pts), max = Math.max(...pts);
+      if(min === max){ min = min * 0.98; max = max * 1.02; }
+      const padX = 18, padY = 18;
+      function x(i){ return padX + (i/(pts.length-1))*(w-2*padX); }
+      function y(v){ return (h-padY) - ((v-min)/(max-min))*(h-2*padY); }
+
+      // grid lines
+      ctx.strokeStyle = 'rgba(0,0,0,0.06)';
+      for(let i=0;i<=4;i++){
+        const yy = padY + (i/4)*(h-2*padY);
+        ctx.beginPath(); ctx.moveTo(padX,yy); ctx.lineTo(w-padX,yy); ctx.stroke();
+      }
+
+      // line
+      ctx.strokeStyle = '#9c7a4d';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(x(0), y(pts[0]));
+      for(let i=1;i<pts.length;i++) ctx.lineTo(x(i), y(pts[i]));
+      ctx.stroke();
+
+      // last point
+      ctx.fillStyle = '#9c7a4d';
+      ctx.beginPath();
+      ctx.arc(x(pts.length-1), y(pts[pts.length-1]), 4, 0, Math.PI*2);
+      ctx.fill();
+
+      if(hint){
+        hint.textContent = `Last ${pts.length} points · min ${fmt(min)} · max ${fmt(max)} · last ${fmt(pts[pts.length-1])}`;
+      }
+    }
+
+    function renderAll(arr){
+      renderLatest(arr);
+      drawSeries('cLinks','cLinksHint',arr,'links');
+      drawSeries('cParas','cParasHint',arr,'paragraphs');
+      drawSeries('cSources','cSourcesHint',arr,'sources');
+    }
+
+    async function runNow(){
+      const status = document.getElementById('status');
+      if(status) status.textContent = 'Running…';
+      try{
+        const r = await fetch('/.netlify/functions/monitor_metrics', { cache: 'no-store' });
+        const j = await r.json();
+        if(!r.ok) throw new Error((j && j.error) || ('HTTP ' + r.status));
+        const arr = loadHistory();
+        arr.push(j);
+        saveHistory(arr);
+        renderAll(arr);
+        if(status) status.textContent = `Saved ${arr.length} points · ${new Date(j.ts).toLocaleString()}`;
+      }catch(e){
+        if(status) status.textContent = 'Error: ' + (e && (e.message || String(e)));
+      }
+    }
+
+    document.getElementById('runNow').addEventListener('click', runNow);
+    document.getElementById('clearLocal').addEventListener('click', () => {
+      localStorage.removeItem(KEY);
+      renderAll([]);
+      const status = document.getElementById('status');
+      if(status) status.textContent = 'Local history cleared.';
+    });
+
+    renderAll(loadHistory());
+    // Auto-run once per day (local) if you visit the page.
+    (function autoDaily(){
+      const arr = loadHistory();
+      const last = arr[arr.length-1];
+      const lastDay = last && last.ts ? String(last.ts).slice(0,10) : '';
+      const today = new Date().toISOString().slice(0,10);
+      if(lastDay !== today) runNow();
+    })();
+  </script>
+</body>
+</html>
+

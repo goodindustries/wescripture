@@ -47,6 +47,11 @@
   status = 302
 
 [[redirects]]
+  from = "/monitor"
+  to = "/monitor.html"
+  status = 302
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
