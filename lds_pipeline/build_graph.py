@@ -502,10 +502,13 @@ def main():
             graph, changed = enrich_existing_graph(graph)
             if not changed:
                 continue
-            gf.write_text(
-                json.dumps(graph, ensure_ascii=False, separators=(',', ':')),
-                encoding='utf-8',
-            )
+            payload = json.dumps(graph, ensure_ascii=False, separators=(',', ':'))
+            try:
+                if gf.exists() and gf.read_text(encoding='utf-8') == payload:
+                    continue
+            except Exception:
+                pass
+            gf.write_text(payload, encoding='utf-8')
             written += 1
             if written % 50 == 0:
                 print(f'  {written} written...', flush=True)
@@ -513,7 +516,7 @@ def main():
         print(f'\nDone. {written} graph files enriched, {len(graph_files) - written} unchanged.')
         return
 
-    print(f"Building graphs for {len(by_chapter)} chapters...")
+    print(f"Building graphs for {len(by_chapter)} chapters...", flush=True)
 
     written = 0
     skipped = 0
@@ -528,14 +531,17 @@ def main():
             skipped += 1
             continue
 
-        outpath.write_text(
-            json.dumps(graph, ensure_ascii=False, separators=(',', ':')),
-            encoding='utf-8',
-        )
+        payload = json.dumps(graph, ensure_ascii=False, separators=(',', ':'))
+        try:
+            if outpath.exists() and outpath.read_text(encoding='utf-8') == payload:
+                continue
+        except Exception:
+            pass
+        outpath.write_text(payload, encoding='utf-8')
         written += 1
 
-        if written % 100 == 0:
-            print(f'  {written} written...')
+        if written % 50 == 0:
+            print(f'  {written} written...', flush=True)
 
     print(f'\nDone. {written} graph files written, {skipped} skipped (no nodes).')
 

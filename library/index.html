@@ -1236,7 +1236,12 @@ function formatAgo(ts) {
 async function loadSupaConfig() {
     if (SUPA.cfg) return SUPA.cfg;
     try {
-        var r = await fetch('/.netlify/functions/config', { cache: 'no-store' });
+        // Netlify functions: on prod, `/.netlify/functions/...` works.
+        // Locally, we don't run a functions server by default; keep local noise down.
+        var isLocal = (location.hostname === '127.0.0.1' || location.hostname === 'localhost');
+        if (isLocal) { SUPA.cfg = {}; return SUPA.cfg; }
+        var fn = '/.netlify/functions/config';
+        var r = await fetch(fn, { cache: 'no-store' });
         var j = await r.json();
         SUPA.cfg = j || {};
     } catch (e) {
@@ -2375,6 +2380,14 @@ function hydrateTitlePage() {
         if (jumpBtn) {
             ev.preventDefault();
             navToJumpText(jumpBtn.getAttribute('data-jump'));
+            return;
+        }
+
+        var hrefBtn = ev.target.closest && ev.target.closest('[data-href]');
+        if (hrefBtn) {
+            ev.preventDefault();
+            var href = hrefBtn.getAttribute('data-href') || '';
+            if (href) window.location.href = href;
             return;
         }
 
@@ -4233,6 +4246,8 @@ var notesObserver = new IntersectionObserver(function(entries) {
 }, { root: document.getElementById('reader'), threshold: 0.05 });
 
 function injectNotes(id, block) {
+    // The title page doesn't have a notes file; avoid a noisy 404.
+    if (id === 'title_page') return;
     fetch('./chapters/' + id + '_notes.html')
         .then(function(r) { if (r.ok) return r.text(); })
         .then(function(html) {
@@ -4940,11 +4955,9 @@ var lexStudiesCache = {};    // lex:slug → { vnum: { stem: {...} } } (no _meta
 var lexStudiesLoading = {};  // lex:slug → promise
 
 function closeTocPanel() {
-    var toc = document.getElementById('toc');
-    if (toc && toc.classList) toc.classList.add('hidden');
-    if (typeof window.tocOpen !== 'undefined') {
-        try { window.tocOpen = false; } catch (e) {}
-    }
+    // Sidebar TOC was removed from this build; keep as a safe no-op so
+    // click handlers (verse dots, words, etc.) never crash on close.
+    return;
 }
 
 var SRC_COLORS = {
@@ -5348,6 +5361,22 @@ document.getElementById('content').addEventListener('click', function(e) {
         closeTocPanel();
         openVerseDiscovery(dot.dataset.ref);
         return;
+    }
+
+    // Verse number click opens verse panel (when dot exists, this is redundant; when not, it keeps study discoverable).
+    var vnum = e.target.closest('.verse-num');
+    if (vnum && vnum.closest('div.verse')) {
+        var verseEl = vnum.closest('div.verse');
+        var block = verseEl.closest('.chapter-block');
+        var chapterId = block && block.dataset ? block.dataset.chapterId : (currentChapter || '');
+        var verseId = verseEl.id || '';
+        var vv = verseId && verseId.startsWith('v') ? verseId.slice(1) : '';
+        var m = chapterId && chapterId.match(/^(.+)_(\d+)$/);
+        if (m && vv) {
+            closeTocPanel();
+            openVerseDiscovery(slugToBookName(m[1]) + ' ' + m[2] + ':' + vv);
+            return;
+        }
     }
 
     // Source paragraph with verse back-links
