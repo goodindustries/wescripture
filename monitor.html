@@ -38,6 +38,13 @@
     th,td{padding:8px 8px;border-top:1px solid rgba(0,0,0,.08);font-size:13px;vertical-align:top}
     th{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);text-align:left}
     td.n{white-space:nowrap;text-align:right;color:var(--accent);font-weight:700}
+    tr.clickable td:first-child{cursor:pointer}
+    tr.clickable td:first-child:hover{text-decoration:underline}
+    .detail{padding:10px 10px 8px;color:var(--text)}
+    .detail .small{color:var(--muted)}
+    .detail-list{margin:6px 0 0;padding-left:18px}
+    .detail-list li{margin:2px 0}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace}
     .mini-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
     .mini-links a{color:var(--accent);text-decoration:none;font-weight:700}
     .mini-links a:hover{text-decoration:underline}
@@ -183,8 +190,16 @@
         if(!s || s.startsWith('#')) return;
         const parts = s.split('\t');
         if(parts.length < 2) return;
-        const name = parts[0];
-        const n = Number(parts[1]) || 0;
+        // Verses TSV: verse_ref \t connections
+        // Morsels TSV: doc_id \t para_idx \t verses
+        let name = parts[0];
+        let n = 0;
+        if(parts.length >= 3){
+          name = parts[0] + '\t' + parts[1];
+          n = Number(parts[2]) || 0;
+        } else {
+          n = Number(parts[1]) || 0;
+        }
         out.push([name, n]);
       });
       return out;
@@ -297,15 +312,118 @@
       const view = filtered.slice(start, end);
       if(!view.length){ tb.innerHTML = `<tr><td colspan="2" class="small">No matches.</td></tr>`; return; }
 
-      // Render small pages synchronously; avoid building huge DOM.
+      const expanded = state.expandedKey || '';
       tb.innerHTML = view.map(([name, n]) => {
         const safe = String(name||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        const key = state.kind === 'morsels' ? safe : safe;
         const a = state.kind === 'morsels'
-          ? `<span style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">${safe}</span>`
+          ? `<span class="mono">${safe}</span>`
           : safe;
-        return `<tr><td>${a}</td><td class="n">${fmt(n)}</td></tr>`;
+        const isOpen = expanded && expanded === key;
+        const row = `<tr class="clickable" data-key="${safe}"><td>${a}</td><td class="n">${fmt(n)}</td></tr>`;
+        const det = isOpen ? `<tr class="detail-row"><td colspan="2"><div class="detail" data-detail-for="${safe}"><span class="small">Loading…</span></div></td></tr>` : '';
+        return row + det;
       }).join('');
     }
+
+    async function ensureSourceLinks(){
+      if(window.__SOURCE_LINKS) return window.__SOURCE_LINKS;
+      const r = await fetch('/library/source_links.json', { cache:'no-store' });
+      if(!r.ok) throw new Error('source_links_http_' + r.status);
+      const j = await r.json();
+      window.__SOURCE_LINKS = j || {};
+      return window.__SOURCE_LINKS;
+    }
+
+    function linkToJump(ref){
+      const u = '/library/index.html?jump=' + encodeURIComponent(String(ref||''));
+      const safe = String(ref||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+      return `<a href="${u}">${safe}</a>`;
+    }
+
+    async function renderDetailsFor(state, key){
+      const tb = document.getElementById('browseBody');
+      if(!tb) return;
+      const host = tb.querySelector(`[data-detail-for="${CSS.escape(key)}"]`);
+      if(!host) return;
+
+      try{
+        const sl = await ensureSourceLinks();
+        if(state.kind === 'morsels'){
+          const parts = String(key).split('\\t');
+          // key in our table is full doc_id or verse_ref; for morsels TSV we stored doc_id in col 0 only,
+          // but browse table uses the TSV name string (doc_id) and count. Need para_idx as part of key? Not present.
+          // In browse view we show morsel key as "doc_id\tpara_idx" in the TSV name field (see published file).
+          const name = String(key);
+          const i = name.lastIndexOf('\\t');
+          const docId = i >= 0 ? name.slice(0, i) : name;
+          const paraIdx = i >= 0 ? name.slice(i+1) : '';
+          const refs = (sl && sl[docId] && sl[docId][String(paraIdx)]) ? sl[docId][String(paraIdx)] : [];
+          if(!refs || !refs.length){
+            host.innerHTML = `<div class="small">No verse refs found for this morsel.</div>`;
+            return;
+          }
+          const items = refs.slice(0, 20).map(r => {
+            const score = (r && r.score != null) ? Number(r.score) : null;
+            const s = (score != null && !Number.isNaN(score)) ? ` <span class="small">(score ${score.toFixed(3)})</span>` : '';
+            return `<li>${linkToJump(r.ref)}${s}</li>`;
+          }).join('');
+          host.innerHTML = `<div class="small">Connected verses (top ${Math.min(20, refs.length)}):</div><ol class="detail-list">${items}</ol>`;
+          return;
+        }
+
+        // kind === verses: invert source_links on demand for this verse
+        const target = String(key);
+        const hits = [];
+        for(const docId of Object.keys(sl||{})){
+          const paras = sl[docId];
+          if(!paras || typeof paras !== 'object') continue;
+          for(const paraIdx of Object.keys(paras)){
+            const refs = paras[paraIdx];
+            if(!Array.isArray(refs) || !refs.length) continue;
+            let best = null;
+            for(const rr of refs){
+              if(rr && rr.ref === target){
+                const sc = (rr.score != null) ? Number(rr.score) : 0;
+                if(best == null || sc > best) best = sc;
+              }
+            }
+            if(best != null){
+              hits.push({ docId, paraIdx, score: best });
+            }
+          }
+        }
+        hits.sort((a,b)=> (b.score - a.score));
+        const top = hits.slice(0, 20);
+        if(!top.length){
+          host.innerHTML = `<div class="small">No morsels found for this verse in source_links.</div>`;
+          return;
+        }
+        const items = top.map(h => {
+          const id = `${h.docId}\\t${h.paraIdx}`;
+          const safeId = id.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+          const s = (h.score != null && !Number.isNaN(h.score)) ? ` <span class="small">(score ${Number(h.score).toFixed(3)})</span>` : '';
+          return `<li><span class="mono">${safeId}</span>${s}</li>`;
+        }).join('');
+        host.innerHTML = `<div class="small">Connected morsels (top ${top.length}):</div><ol class="detail-list">${items}</ol>`;
+      }catch(e){
+        host.innerHTML = `<div class="small">Error loading details.</div>`;
+      }
+    }
+
+    (function wireBrowseClicks(){
+      document.addEventListener('click', function(ev){
+        const tr = ev.target && ev.target.closest ? ev.target.closest('#browseBody tr.clickable') : null;
+        if(!tr) return;
+        const state = window.__BROWSE_STATE;
+        if(!state) return;
+        const key = tr.getAttribute('data-key') || '';
+        if(!key) return;
+        state.expandedKey = (state.expandedKey === key) ? '' : key;
+        renderBrowse();
+        if(state.expandedKey) renderDetailsFor(state, state.expandedKey);
+      });
+    })();
 
     async function fetchServerHistory(){
       const r = await fetch('/.netlify/functions/monitor_history', { cache:'no-store' });
