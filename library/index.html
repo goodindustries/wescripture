@@ -1280,12 +1280,9 @@ function formatAgo(ts) {
 async function loadSupaConfig() {
     if (SUPA.cfg) return SUPA.cfg;
     try {
-        // Netlify functions: on prod, `/.netlify/functions/...` works.
-        // Locally, we don't run a functions server by default; keep local noise down.
-        var isLocal = (location.hostname === '127.0.0.1' || location.hostname === 'localhost');
-        if (isLocal) { SUPA.cfg = {}; return SUPA.cfg; }
         var fn = '/.netlify/functions/config';
         var r = await fetch(fn, { cache: 'no-store' });
+        if (!r.ok) { SUPA.cfg = {}; return SUPA.cfg; }
         var j = await r.json();
         SUPA.cfg = j || {};
     } catch (e) {
@@ -1294,12 +1291,36 @@ async function loadSupaConfig() {
     return SUPA.cfg;
 }
 
+async function consumeAuthUrlFragmentIfPresent() {
+    if (!SUPA.client || !location.hash || location.hash.indexOf('access_token=') < 0) return;
+    try {
+        var raw = location.hash.charAt(0) === '#' ? location.hash.slice(1) : location.hash;
+        var params = new URLSearchParams(raw);
+        var access_token = params.get('access_token');
+        var refresh_token = params.get('refresh_token') || '';
+        if (!access_token) return;
+        var out = await SUPA.client.auth.setSession({ access_token: access_token, refresh_token: refresh_token });
+        if (out && out.error) return;
+        history.replaceState(null, '', location.pathname + location.search);
+    } catch (e) {}
+}
+
 async function initSupabaseOnce() {
     if (SUPA.client) return SUPA.client;
     await loadSupaConfig();
     if (!window.supabase || typeof window.supabase.createClient !== 'function') return null;
     if (!SUPA.cfg || !SUPA.cfg.SUPABASE_URL || !SUPA.cfg.SUPABASE_ANON_KEY) return null;
-    SUPA.client = window.supabase.createClient(SUPA.cfg.SUPABASE_URL, SUPA.cfg.SUPABASE_ANON_KEY);
+    SUPA.client = window.supabase.createClient(SUPA.cfg.SUPABASE_URL, SUPA.cfg.SUPABASE_ANON_KEY, {
+        auth: {
+            persistSession: true,
+            autoRefreshToken: true,
+            detectSessionInUrl: true,
+        },
+    });
+
+    try {
+        await consumeAuthUrlFragmentIfPresent();
+    } catch (e) {}
 
     try {
         var sess = await SUPA.client.auth.getSession();
@@ -1341,7 +1362,8 @@ async function sendMagicLink() {
     var email = (document.getElementById('acct-email').value || '').trim();
     if (!email || email.indexOf('@') === -1) { _setAcctStatus('Enter a valid email.'); return; }
     _setAcctStatus('Sending magic link…');
-    var redirectTo = location.origin + location.pathname + location.search;
+    var canonical = (SUPA.cfg && SUPA.cfg.AUTH_REDIRECT_URL) ? String(SUPA.cfg.AUTH_REDIRECT_URL).trim() : '';
+    var redirectTo = canonical || (location.origin + location.pathname + location.search);
     var res = await SUPA.client.auth.signInWithOtp({ email: email, options: { emailRedirectTo: redirectTo } });
     if (res && res.error) _setAcctStatus('Error: ' + res.error.message);
     else _setAcctStatus('Check your email for a sign-in link.');

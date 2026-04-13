@@ -26,6 +26,28 @@ body {
     overflow: hidden;
 }
 
+/* Floating shortcut (bottom-right) */
+.monitor-fab {
+    position: fixed;
+    right: 14px;
+    bottom: 14px;
+    z-index: 999;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(156, 122, 77, 0.28);
+    background: rgba(254, 252, 248, 0.96);
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10);
+    backdrop-filter: blur(10px);
+}
+.monitor-fab:hover { background: rgba(156, 122, 77, 0.08); }
+
 .site-title {
     flex-shrink: 0;
     font-size: clamp(14px, 2vw, 18px);

@@ -35,10 +35,15 @@
   .detail.open { display: block; }
   .back { margin-bottom: 1rem; }
   .back a { color: var(--link, #1565c0); }
+  .monitor-fab { position: fixed; right: 14px; bottom: 14px; z-index: 999; display: inline-flex; align-items: center; justify-content: center;
+    padding: 10px 12px; border-radius: 999px; border: 1px solid rgba(21, 101, 192, 0.25); background: rgba(255,255,255,0.92);
+    color: #1565c0; text-decoration: none; font-weight: 700; font-size: 13px; box-shadow: 0 10px 28px rgba(0,0,0,0.10); backdrop-filter: blur(10px); }
+  .monitor-fab:hover { background: rgba(21, 101, 192, 0.08); }
 </style>
 </head>
 <body>
 <p class="back"><a href="index.html">← Library</a> · <a href="dashboard.html">Ops dashboard</a></p>
+<a class="monitor-fab" href="/monitor.html" aria-label="Open Monitor">Monitor</a>
 <h1>Verse-by-verse done-ness</h1>
 <p class="meta">Each verse scores <strong>D</strong> (Donaldson JSON), <strong>E</strong> (entity / place links in HTML), <strong>V</strong> (verse discovery row). Full = all three.</p>
 <div id="loading">Loading <code>verse_coverage.json</code>…</div>
