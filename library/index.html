@@ -1283,20 +1283,40 @@ function formatAgo(ts) {
 
 async function loadSupaConfig() {
     if (SUPA.cfg) return SUPA.cfg;
-    try {
-        var fn = '/.netlify/functions/config';
-        var r = await fetch(fn, { cache: 'no-store' });
-        if (!r.ok) { SUPA.cfg = {}; return SUPA.cfg; }
-        var j = await r.json();
-        SUPA.cfg = j || {};
-    } catch (e) {
-        SUPA.cfg = {};
+    var urls = ['/.netlify/functions/config', './supabase-config.json'];
+    for (var ui = 0; ui < urls.length; ui++) {
+        try {
+            var r = await fetch(urls[ui], { cache: 'no-store' });
+            if (!r.ok) continue;
+            var j = await r.json();
+            if (j && j.SUPABASE_URL && j.SUPABASE_ANON_KEY) {
+                SUPA.cfg = j;
+                return SUPA.cfg;
+            }
+        } catch (e) {}
     }
+    SUPA.cfg = {};
     return SUPA.cfg;
 }
 
 async function consumeAuthUrlFragmentIfPresent() {
-    if (!SUPA.client || !location.hash || location.hash.indexOf('access_token=') < 0) return;
+    if (!SUPA.client) return;
+    var h = location.hash || '';
+    if (!h || (h.indexOf('access_token=') < 0 && h.indexOf('error=') < 0)) return;
+    try {
+        var gs = SUPA.client.auth;
+        if (gs && typeof gs.getSessionFromUrl === 'function') {
+            var out2 = await gs.getSessionFromUrl({ storeSession: true });
+            if (out2 && out2.error) {
+                try { console.warn('[supabase auth]', out2.error); } catch (e0) {}
+                return;
+            }
+            history.replaceState(null, '', location.pathname + location.search);
+            return;
+        }
+    } catch (e1) {
+        try { console.warn('[supabase auth] getSessionFromUrl', e1); } catch (e2) {}
+    }
     try {
         var raw = location.hash.charAt(0) === '#' ? location.hash.slice(1) : location.hash;
         var params = new URLSearchParams(raw);
@@ -1304,9 +1324,14 @@ async function consumeAuthUrlFragmentIfPresent() {
         var refresh_token = params.get('refresh_token') || '';
         if (!access_token) return;
         var out = await SUPA.client.auth.setSession({ access_token: access_token, refresh_token: refresh_token });
-        if (out && out.error) return;
+        if (out && out.error) {
+            try { console.warn('[supabase auth] setSession', out.error); } catch (e3) {}
+            return;
+        }
         history.replaceState(null, '', location.pathname + location.search);
-    } catch (e) {}
+    } catch (e4) {
+        try { console.warn('[supabase auth] hash parse', e4); } catch (e5) {}
+    }
 }
 
 async function initSupabaseOnce() {
@@ -1342,6 +1367,18 @@ async function initSupabaseOnce() {
     } catch (e) {}
     return SUPA.client;
 }
+
+/** Magic links land with #access_token=… — initialize auth on first load (not only when opening Account). */
+(function bootSupabaseFromAuthUrl() {
+    var h = location.hash || '';
+    var s = location.search || '';
+    if (h.indexOf('access_token=') < 0 && h.indexOf('error=') < 0 && !/[?&]code=/.test(s)) return;
+    initSupabaseOnce().then(function() {
+        if (supaReady()) {
+            try { refreshAccount(); } catch (e) {}
+        }
+    }).catch(function() {});
+})();
 
 async function refreshAccount() {
     await initSupabaseOnce();

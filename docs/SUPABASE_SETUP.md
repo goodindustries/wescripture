@@ -6,7 +6,20 @@ Goal: add **public activity** (for now), with **email magic-link login**, per-ve
 - Create a new project in Supabase.
 - In **Authentication → URL Configuration**, set:
   - **Site URL**: your production origin (e.g. `https://wescripture.netlify.app`)
-  - Add any preview URLs you use as additional redirect URLs.
+  - **Redirect URLs**: add every origin the reader uses, including:
+    - `http://localhost:3000/**` (or your dev port)
+    - `http://127.0.0.1:3000/**`
+    - `https://wescripture.netlify.app/**`
+  Magic links must redirect to a URL in this list or Supabase will reject the redirect.
+
+### Local dev without Netlify Functions
+The reader loads config from `/.netlify/functions/config` (Netlify only). For a plain static server (e.g. `python3 -m http.server 3000`):
+
+1. Copy [`library/supabase-config.example.json`](../library/supabase-config.example.json) to `library/supabase-config.json` (gitignored).
+2. Fill in `SUPABASE_URL`, `SUPABASE_ANON_KEY`, and set `AUTH_REDIRECT_URL` to the exact URL you use (e.g. `http://localhost:3000/library/index.html`).
+3. Request a **new** magic link after saving — old links point at the wrong redirect.
+
+Alternatively run **`npx netlify-cli dev`** from the repo root so `/.netlify/functions/config` exists locally.
 
 ## 2) Set Netlify environment variables
 In Netlify site settings, add:

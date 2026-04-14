@@ -16,6 +16,9 @@ library/strongs_hebrew.json
 library/strongs_greek.json
 library/para_verse_map.json
 
+# Local Supabase client config (copy from supabase-config.example.json)
+library/supabase-config.json
+
 # Local Netlify folder
 .netlify
 lds_pipeline/reports/corpus_resource_map.json
