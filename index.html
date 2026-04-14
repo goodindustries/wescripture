@@ -14,7 +14,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-PCMWDK746H');
     </script>
 
@@ -24,39 +23,30 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=EB+Garamond:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./home.css">
-    <script>
-      (function() {
-        var target = './library/index.html';
-        try {
-          window.location.replace(target + (window.location.search || '') + (window.location.hash || ''));
-        } catch (e) {
-          window.location.href = target;
-        }
-      }());
-    </script>
 </head>
 <body>
 <noscript>
-  <p style="padding:16px;font-family:Inter,system-ui,-apple-system,sans-serif">
+  <p style="padding:16px;font-family:system-ui,-apple-system,sans-serif">
     <a href="./library/index.html">Open reader</a>
   </p>
 </noscript>
 <a class="monitor-fab" href="/monitor.html" aria-label="Open Monitor">Monitor</a>
 <header class="home-header">
-    <a class="home-brand" href="./library/index.html" aria-label="WeScripture — open reader">
+    <a class="home-brand" href="./" aria-label="WeScripture home">
         <span class="home-brand-name">WeScripture</span>
     </a>
     <nav class="home-nav" aria-label="Primary">
         <a class="home-nav-link" href="./library/index.html">Reader</a>
+        <a class="home-nav-pill" id="auth-pill" href="./library/index.html">Sign in</a>
     </nav>
 </header>
 
 <main class="home">
     <section class="home-hero-minimal" aria-label="Welcome">
-        <h1 class="home-hero-title">WeScripture</h1>
-        <p class="home-hero-lede">Scripture and study sources in one reader, with cross-links and verse-level study tools.</p>
+        <h1 class="home-hero-title">Study the scriptures.</h1>
+        <p class="home-hero-lede">Scripture and study sources in one reader — cross-links, verse-level tools, and study with friends.</p>
         <p class="home-hero-cta-wrap">
             <a class="home-cta-primary" href="./library/index.html" data-evt="home_open_reader">Open reader</a>
         </p>
@@ -69,21 +59,25 @@
         <div id="continue-row" class="chip-row"></div>
     </section>
 
-    <section class="home-advanced" aria-label="More">
-        <p class="home-advanced-lede">
-            <span class="home-advanced-hint">Standard-works tiles (for QA) live below.</span>
-        </p>
-        <details class="library-books-details" id="library-books-details">
-            <summary class="library-books-summary">Browse standard works by book</summary>
-            <p class="library-books-hint">Opens the list of all canon books with quick jumps into the reader.</p>
-            <div id="corpus-root" class="corpus-root corpus-root--nested" aria-live="polite"></div>
-        </details>
+    <section class="home-library" aria-label="Scripture library">
+        <div class="home-library-hdr">
+            <div class="home-library-title">Standard Works</div>
+        </div>
+        <div id="corpus-root" class="corpus-root" aria-live="polite" aria-busy="true"></div>
+    </section>
+
+    <section class="home-feed" id="home-feed" hidden aria-label="Study feed">
+        <div class="home-feed-card">
+            <p class="home-feed-title">Your study feed</p>
+            <p class="home-feed-sub">Follow friends to see their highlights here.</p>
+        </div>
     </section>
 </main>
 
 <script>
 (function() {
     var STORAGE_KEY = 'lds';
+    var AUTH_KEY = 'sb-itqeijgvzfmuyjlzdqwt-auth-token';
     var READER_HOME = (function() {
         var p = document.documentElement.getAttribute('data-assets-prefix');
         return p ? p.replace(/\/$/, '') + '/index.html' : './index.html';
@@ -121,6 +115,35 @@
     function pushUrl(u, evtName, evtData) {
         safeGtag('event', evtName, Object.assign({ page: 'home' }, evtData || {}));
         window.location.href = u;
+    }
+
+    // Auth: peek at Supabase localStorage session without loading the SDK
+    function peekSession() {
+        try {
+            var raw = localStorage.getItem(AUTH_KEY);
+            if (!raw) return null;
+            var obj = JSON.parse(raw);
+            // Supabase stores session as object or array depending on version
+            var user = (obj && obj.user) || (Array.isArray(obj) && obj[0] && obj[0].user);
+            if (!user) return null;
+            var meta = user.user_metadata || {};
+            return meta.handle || meta.username || meta.full_name || user.email || null;
+        } catch (e) {
+            return null;
+        }
+    }
+
+    function updateAuthNav() {
+        var pill = document.getElementById('auth-pill');
+        if (!pill) return;
+        var handle = peekSession();
+        if (handle) {
+            pill.textContent = handle.indexOf('@') === 0 ? handle : '@' + handle;
+            pill.href = './library/index.html';
+            // Show feed placeholder when signed in
+            var feed = document.getElementById('home-feed');
+            if (feed) feed.hidden = false;
+        }
     }
 
     function renderContinueReading() {
@@ -236,14 +259,14 @@
     function shortCoverLabel(b) {
         var a = (b.abbr || '').trim();
         if (a.length <= 9) return a || b.label.slice(0, 6);
-        return a.slice(0, 8) + '…';
+        return a.slice(0, 8) + '\u2026';
     }
 
     function renderCorpusBooks() {
         var root = document.getElementById('corpus-root');
         if (!root) return;
         if (!booksSuggest.length) {
-            root.innerHTML = '<p class="corpus-error">Couldn’t load scripture books. Try refreshing.</p>';
+            root.innerHTML = '<p class="corpus-error">Couldn\u2019t load scripture books. Try refreshing.</p>';
             root.setAttribute('aria-busy', 'false');
             return;
         }
@@ -285,19 +308,6 @@
         root.setAttribute('aria-busy', 'false');
     }
 
-    function wireLibraryBooksDetails() {
-        var det = document.getElementById('library-books-details');
-        if (!det) return;
-        var loaded = false;
-        det.addEventListener('toggle', function() {
-            if (!det.open || loaded) return;
-            loaded = true;
-            var root = document.getElementById('corpus-root');
-            if (root) root.setAttribute('aria-busy', 'true');
-            loadBooksSuggest().then(function() { renderCorpusBooks(); });
-        });
-    }
-
     function wireEvents() {
         document.addEventListener('click', function(e) {
             var a = e.target.closest('a[data-evt]');
@@ -308,9 +318,10 @@
         });
     }
 
+    updateAuthNav();
     renderContinueReading();
     wireEvents();
-    wireLibraryBooksDetails();
+    loadBooksSuggest().then(function() { renderCorpusBooks(); });
 })();
 </script>
 
