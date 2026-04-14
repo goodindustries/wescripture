@@ -4,7 +4,7 @@ exports.handler = async function () {
   const authRedirect =
     process.env.AUTH_REDIRECT_URL ||
     process.env.PUBLIC_SITE_URL ||
-    "";
+    "https://wescripture.netlify.app/library/index.html";
   return {
     statusCode: 200,
     headers: {

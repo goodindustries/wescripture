@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
   <key>Label</key>
-  <string>com.goodproject.source-scout</string>
+  <string>com.wescripture.source-scout</string>
 
   <key>ProgramArguments</key>
   <array>
-    <string>/Users/reify/Classified/goodcapital_landing/launchd/run_source_scout.sh</string>
+    <string>/Users/reify/Classified/wescripture/launchd/run_source_scout.sh</string>
   </array>
 
   <key>WorkingDirectory</key>
-  <string>/Users/reify/Classified/goodcapital_landing</string>
+  <string>/Users/reify/Classified/wescripture</string>
 
   <key>StartInterval</key>
   <integer>14400</integer>
@@ -20,9 +20,9 @@
   <true/>
 
   <key>StandardOutPath</key>
-  <string>/Users/reify/Classified/goodcapital_landing/diagnostics/source-scout-launchd.out</string>
+  <string>/Users/reify/Classified/wescripture/diagnostics/source-scout-launchd.out</string>
 
   <key>StandardErrorPath</key>
-  <string>/Users/reify/Classified/goodcapital_landing/diagnostics/source-scout-launchd.err</string>
+  <string>/Users/reify/Classified/wescripture/diagnostics/source-scout-launchd.err</string>
 </dict>
 </plist>

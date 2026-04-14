@@ -3,16 +3,16 @@
 <plist version="1.0">
 <dict>
   <key>Label</key>
-  <string>com.goodproject.beta-tester</string>
+  <string>com.wescripture.beta-tester</string>
 
   <key>ProgramArguments</key>
   <array>
     <string>/usr/bin/python3</string>
-    <string>/Users/reify/Classified/goodcapital_landing/beta_tester.py</string>
+    <string>/Users/reify/Classified/wescripture/beta_tester.py</string>
   </array>
 
   <key>WorkingDirectory</key>
-  <string>/Users/reify/Classified/goodcapital_landing</string>
+  <string>/Users/reify/Classified/wescripture</string>
 
   <key>EnvironmentVariables</key>
   <dict>
@@ -27,9 +27,9 @@
   <true/>
 
   <key>StandardOutPath</key>
-  <string>/Users/reify/Classified/goodcapital_landing/diagnostics/beta-tester-launchd.out</string>
+  <string>/Users/reify/Classified/wescripture/diagnostics/beta-tester-launchd.out</string>
 
   <key>StandardErrorPath</key>
-  <string>/Users/reify/Classified/goodcapital_landing/diagnostics/beta-tester-launchd.err</string>
+  <string>/Users/reify/Classified/wescripture/diagnostics/beta-tester-launchd.err</string>
 </dict>
 </plist>

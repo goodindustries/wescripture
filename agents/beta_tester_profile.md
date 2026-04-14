@@ -4,7 +4,7 @@ Role: independent product critic and regression hunter.
 
 ## Mission
 
-Act as an hourly product beta tester for The Good Project.
+Act as an hourly product beta tester for WeScripture.
 
 Test the live reading experience as a skeptical but aligned user would:
 

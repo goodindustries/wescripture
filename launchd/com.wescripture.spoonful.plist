@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
   <key>Label</key>
-  <string>com.goodproject.spoonful</string>
+  <string>com.wescripture.spoonful</string>
 
   <key>ProgramArguments</key>
   <array>
-    <string>/Users/reify/Classified/goodcapital_landing/launchd/run_spoonful.sh</string>
+    <string>/Users/reify/Classified/wescripture/launchd/run_spoonful.sh</string>
   </array>
 
   <key>WorkingDirectory</key>
-  <string>/Users/reify/Classified/goodcapital_landing</string>
+  <string>/Users/reify/Classified/wescripture</string>
 
   <!-- Run every 2 hours; processes 30 notes per run -->
   <!-- At ~0.4s per note, 30 notes ≈ 12 seconds. Full corpus ~500 runs ≈ ~40 days -->
@@ -22,9 +22,9 @@
   <true/>
 
   <key>StandardOutPath</key>
-  <string>/Users/reify/Classified/goodcapital_landing/diagnostics/spoonful-launchd.out</string>
+  <string>/Users/reify/Classified/wescripture/diagnostics/spoonful-launchd.out</string>
 
   <key>StandardErrorPath</key>
-  <string>/Users/reify/Classified/goodcapital_landing/diagnostics/spoonful-launchd.err</string>
+  <string>/Users/reify/Classified/wescripture/diagnostics/spoonful-launchd.err</string>
 </dict>
 </plist>

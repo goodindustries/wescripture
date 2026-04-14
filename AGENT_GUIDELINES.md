@@ -1,4 +1,4 @@
-# Agent Guidelines — The Good Project
+# Agent Guidelines — WeScripture
 
 This document is the canonical reference for any agent (Claude, autonomous script,
 or human contributor) working in this repository. Read it before writing a line.
@@ -109,7 +109,7 @@ Selected verse: `box-shadow: inset 3px 0 0 var(--accent), 0 0 0 1px rgba(156,122
 Rule: every click must open something useful or do nothing. No dead ends.
 
 **Completed-chapter panel shell (visual spec):** `library/test.html` (deployed:
-[thegoodproject.net/library/test.html](https://thegoodproject.net/library/test.html))
+[wescripture.netlify.app/library/test.html](https://wescripture.netlify.app/library/test.html))
 is the layout prototype for the right column: `#panel` / `#panel-body`, empty state,
 `panel-header` (ref + italic verse), uppercase `panel-section` bands, then stacked
 `word-card`, `note-card`, `quote-card`, `scrip-card`, and `hist-card` patterns.

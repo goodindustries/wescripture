@@ -1,4 +1,4 @@
-# The Good Project — Agent Mission
+# WeScripture — Agent Mission
 
 Read `MISSION.md` first — all of it. That document is the soul of the project.
 It contains the vision in the words of the prophets, what we are building, and

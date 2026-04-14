@@ -90,8 +90,8 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 .acct-modal { position: absolute; top: 72px; right: 14px; width: 360px; max-width: calc(100vw - 28px);
     border: 1px solid var(--divider); border-radius: 14px; background: rgba(255,255,255,0.96);
     box-shadow: 0 14px 40px rgba(0,0,0,0.18); overflow: hidden; }
-.acct-hdr { display:flex; align-items:center; justify-content:space-between; padding: 12px 14px; border-bottom: 1px solid var(--divider); }
-.acct-hdr strong { font-size: 13px; }
+.acct-hdr { display:flex; align-items:center; justify-content:space-between; padding: 14px 16px; border-bottom: 1px solid var(--divider); }
+.acct-hdr strong { font-size: 17px; font-family: 'EB Garamond', Georgia, serif; font-weight: 700; letter-spacing: -0.01em; }
 .acct-body { padding: 12px 14px 14px; }
 .acct-body label { display:block; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 10px 0 6px; }
 .acct-body input, .acct-body textarea { width: 100%; padding: 9px 10px; border-radius: 10px; border: 1px solid var(--divider); background: #fff; font-family: inherit; font-size: 13px; }
@@ -575,7 +575,7 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     overflow: hidden;
 }
 #channel:not(.open) { border-left: none; }
-#channel.open { flex: 0 0 420px; width: 420px; border-left: 1px solid var(--divider); }
+#channel.open { flex: 1; min-width: 320px; border-left: 1px solid var(--divider); }
 #ch-header {
     padding: 6px 10px 6px 14px; border-bottom: 1px solid var(--divider);
     display: flex; align-items: center; gap: 8px; flex-shrink: 0; min-height: 0;
@@ -1014,10 +1014,7 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
         </svg>
     </button>
     <button id="acct-btn" onclick="openAccountPanel()" title="Account">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M15 16v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1"></path>
-            <circle cx="9" cy="6.5" r="3"></circle>
-        </svg>
+        <span id="acct-nav-label" style="font-family:'EB Garamond',Georgia,serif;font-size:15px;font-weight:600;letter-spacing:-0.01em;line-height:1">Sign in</span>
         <span id="acct-dot" class="acct-dot" aria-hidden="true"></span>
     </button>
     <span id="offline-badge">Offline</span>
@@ -1084,33 +1081,38 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
             <button type="button" onclick="closeAccountPanel()" style="background:none;border:none;cursor:pointer;color:var(--muted)">✕</button>
         </div>
         <div class="acct-tabs">
-            <button type="button" class="acct-tab on" data-tab="account" onclick="setAcctTab('account')">Account</button>
-            <button type="button" class="acct-tab" data-tab="friends" onclick="setAcctTab('friends')">Friends</button>
-            <button type="button" class="acct-tab" data-tab="feed" onclick="setAcctTab('feed')">Feed</button>
-            <button type="button" class="acct-tab" data-tab="history" onclick="setAcctTab('history')">History</button>
+            <button type="button" class="acct-tab on" data-tab="account" onclick="setAcctTab(‘account’)">Account</button>
+            <button type="button" class="acct-tab" data-tab="friends" onclick="setAcctTab(‘friends’)" hidden>Friends</button>
+            <button type="button" class="acct-tab" data-tab="feed" onclick="setAcctTab(‘feed’)" hidden>Feed</button>
+            <button type="button" class="acct-tab" data-tab="history" onclick="setAcctTab(‘history’)" hidden>History</button>
         </div>
         <div class="acct-body">
             <div class="acct-pane" data-pane="account">
                 <div id="acct-status" class="acct-muted">Loading…</div>
-                <label for="acct-email">Email</label>
-                <div class="acct-row">
-                    <input id="acct-email" type="email" placeholder="you@example.com" autocomplete="email">
-                    <button type="button" onclick="sendMagicLink()">Send link</button>
-                </div>
-                <div class="acct-muted" id="acct-email-hint">We’ll email you a sign-in link.</div>
 
-                <div id="acct-handle-wrap" hidden>
-                    <label for="acct-handle">@handle</label>
+                <!-- Shown when NOT signed in -->
+                <div id="acct-login-wrap">
+                    <label for="acct-email">Email</label>
                     <div class="acct-row">
-                        <input id="acct-handle" type="text" placeholder="yourname" autocomplete="username" maxlength="24">
-                        <button type="button" onclick="saveHandle()">Save</button>
+                        <input id="acct-email" type="email" placeholder="you@example.com" autocomplete="email">
+                        <button type="button" onclick="sendMagicLink()">Send link</button>
                     </div>
-                    <div class="acct-muted">Public identity in feeds and your public history.</div>
+                    <div class="acct-muted">We’ll email you a sign-in link.</div>
                 </div>
 
-                <div class="acct-row" style="margin-top:12px;justify-content:space-between">
-                    <button type="button" onclick="refreshAccount()">Refresh</button>
-                    <button type="button" onclick="signOut()">Sign out</button>
+                <!-- Shown when signed in -->
+                <div id="acct-signed-wrap" hidden>
+                    <div id="acct-handle-wrap">
+                        <label for="acct-handle">@handle</label>
+                        <div class="acct-row">
+                            <input id="acct-handle" type="text" placeholder="yourname" autocomplete="username" maxlength="24">
+                            <button type="button" onclick="saveHandle()">Save</button>
+                        </div>
+                        <div class="acct-muted">Public identity in feeds and your public history.</div>
+                    </div>
+                    <div class="acct-row" style="margin-top:14px">
+                        <button type="button" onclick="signOut()">Sign out</button>
+                    </div>
                 </div>
             </div>
 
@@ -1238,8 +1240,11 @@ function _setAcctStatus(msg) {
 }
 function _setAuthedDot(on) {
     var d = document.getElementById('acct-dot');
-    if (!d) return;
-    d.classList.toggle('on', !!on);
+    if (d) d.classList.toggle('on', !!on);
+    if (!on) {
+        var lbl = document.getElementById('acct-nav-label');
+        if (lbl) lbl.textContent = 'Sign in';
+    }
 }
 
 function _normalizeHandle(h) {
@@ -1295,6 +1300,7 @@ async function loadSupaConfig() {
             }
         } catch (e) {}
     }
+    console.error('[supabase] Could not load config from Netlify function or supabase-config.json. Auth will not work. Copy library/supabase-config.example.json → library/supabase-config.json and fill in credentials.');
     SUPA.cfg = {};
     return SUPA.cfg;
 }
@@ -1380,19 +1386,30 @@ async function initSupabaseOnce() {
     }).catch(function() {});
 })();
 
+function _setAcctAuthState(authed) {
+    var loginWrap = document.getElementById('acct-login-wrap');
+    var signedWrap = document.getElementById('acct-signed-wrap');
+    if (loginWrap) loginWrap.hidden = !!authed;
+    if (signedWrap) signedWrap.hidden = !authed;
+    _qsa('.acct-tab[data-tab="friends"],.acct-tab[data-tab="feed"],.acct-tab[data-tab="history"]')
+        .forEach(function(t) { t.hidden = !authed; });
+}
+
 async function refreshAccount() {
     await initSupabaseOnce();
     if (!supaReady()) {
         _setAcctStatus('Server config missing. Set SUPABASE_URL + SUPABASE_ANON_KEY in Netlify env.');
+        _setAcctAuthState(false);
         return;
     }
     var uid = supaGetUserId();
     if (!uid) {
         _setAcctStatus('Not signed in.');
-        document.getElementById('acct-handle-wrap').hidden = true;
+        _setAcctAuthState(false);
         return;
     }
-    _setAcctStatus('Signed in.');
+    _setAcctStatus('');
+    _setAcctAuthState(true);
     await ensureProfile();
     await refreshFriends(true);
 }
@@ -1417,6 +1434,11 @@ async function signOut() {
     SUPA.profile = null;
     SUPA.friends = [];
     _setAcctStatus('Signed out.');
+    _setAcctAuthState(false);
+    var t = document.getElementById('acct-title');
+    if (t) t.textContent = 'Account';
+    var lbl = document.getElementById('acct-nav-label');
+    if (lbl) lbl.textContent = 'Sign in';
 }
 
 async function ensureProfile() {
@@ -1430,8 +1452,11 @@ async function ensureProfile() {
         if (wrap) wrap.hidden = false;
     } else {
         if (wrap) wrap.hidden = true;
+        var handle = '@' + SUPA.profile.handle;
         var t = document.getElementById('acct-title');
-        if (t) t.textContent = '@' + SUPA.profile.handle;
+        if (t) t.textContent = handle;
+        var lbl = document.getElementById('acct-nav-label');
+        if (lbl) lbl.textContent = handle;
     }
     return SUPA.profile;
 }
@@ -6276,4 +6301,6 @@ if ('serviceWorker' in navigator) {
 <a class="monitor-fab" href="/monitor.html" aria-label="Open Monitor">Monitor</a>
 
 </body>
+</html>
+
 </html>

@@ -2,8 +2,8 @@
 
 The task system is append-only.
 
-- Source of truth: [task-ledger.jsonl](/Users/reify/Classified/goodcapital_landing/task-ledger.jsonl)
-- CLI: [task_ledger.py](/Users/reify/Classified/goodcapital_landing/task_ledger.py)
+- Source of truth: [task-ledger.jsonl](/Users/reify/Classified/wescripture/task-ledger.jsonl)
+- CLI: [task_ledger.py](/Users/reify/Classified/wescripture/task_ledger.py)
 
 Nothing rewrites prior rows. New state is expressed by appending events.
 
@@ -94,20 +94,20 @@ entries.
 
 The shared mission for all automated agents lives in:
 
-- [AGENT_MISSION.md](/Users/reify/Classified/goodcapital_landing/AGENT_MISSION.md)
+- [AGENT_MISSION.md](/Users/reify/Classified/wescripture/AGENT_MISSION.md)
 
 Repo-owned agent profiles live in:
 
-- [agents/socrates_profile.md](/Users/reify/Classified/goodcapital_landing/agents/socrates_profile.md)
-- [agents/beta_tester_profile.md](/Users/reify/Classified/goodcapital_landing/agents/beta_tester_profile.md)
-- [agents/semantic_steward_profile.md](/Users/reify/Classified/goodcapital_landing/agents/semantic_steward_profile.md)
+- [agents/socrates_profile.md](/Users/reify/Classified/wescripture/agents/socrates_profile.md)
+- [agents/beta_tester_profile.md](/Users/reify/Classified/wescripture/agents/beta_tester_profile.md)
+- [agents/semantic_steward_profile.md](/Users/reify/Classified/wescripture/agents/semantic_steward_profile.md)
 
 These files are intended to keep agent behavior durable across sessions instead
 of leaving project intent only in chat context.
 
 ## Hourly Beta Tester
 
-There is a local hourly beta-tester runner at [beta_tester.py](/Users/reify/Classified/goodcapital_landing/beta_tester.py).
+There is a local hourly beta-tester runner at [beta_tester.py](/Users/reify/Classified/wescripture/beta_tester.py).
 
 - It runs a compact suite of audits and browser regressions.
 - It writes reports to `diagnostics/beta-tester-latest.json` and `diagnostics/beta-tester-latest.txt`.
@@ -116,42 +116,42 @@ There is a local hourly beta-tester runner at [beta_tester.py](/Users/reify/Clas
 
 Launchd job template:
 
-- [launchd/com.goodproject.beta-tester.plist](/Users/reify/Classified/goodcapital_landing/launchd/com.goodproject.beta-tester.plist)
+- [launchd/com.wescripture.beta-tester.plist](/Users/reify/Classified/wescripture/launchd/com.wescripture.beta-tester.plist)
 
 Install locally:
 
 ```bash
 mkdir -p ~/Library/LaunchAgents
-cp /Users/reify/Classified/goodcapital_landing/launchd/com.goodproject.beta-tester.plist ~/Library/LaunchAgents/
-launchctl unload ~/Library/LaunchAgents/com.goodproject.beta-tester.plist 2>/dev/null || true
-launchctl load ~/Library/LaunchAgents/com.goodproject.beta-tester.plist
+cp /Users/reify/Classified/wescripture/launchd/com.wescripture.beta-tester.plist ~/Library/LaunchAgents/
+launchctl unload ~/Library/LaunchAgents/com.wescripture.beta-tester.plist 2>/dev/null || true
+launchctl load ~/Library/LaunchAgents/com.wescripture.beta-tester.plist
 ```
 
 ## Hourly Semantic Steward
 
-There is a second hourly daemon at [semantic_steward.py](/Users/reify/Classified/goodcapital_landing/semantic_steward.py).
+There is a second hourly daemon at [semantic_steward.py](/Users/reify/Classified/wescripture/semantic_steward.py).
 
-- It refreshes semantic correlations through [lds_pipeline/transformer_worker.py](/Users/reify/Classified/goodcapital_landing/lds_pipeline/transformer_worker.py).
-- It rebuilds the dashboard through [lds_pipeline/build_source_dashboard.py](/Users/reify/Classified/goodcapital_landing/lds_pipeline/build_source_dashboard.py).
+- It refreshes semantic correlations through [lds_pipeline/transformer_worker.py](/Users/reify/Classified/wescripture/lds_pipeline/transformer_worker.py).
+- It rebuilds the dashboard through [lds_pipeline/build_source_dashboard.py](/Users/reify/Classified/wescripture/lds_pipeline/build_source_dashboard.py).
 - It writes reports to `diagnostics/semantic-steward-latest.json` and `diagnostics/semantic-steward-latest.txt`.
 - When the semantic refresh or dashboard build fails, it appends durable tasks to the ledger.
 
 Launchd job template:
 
-- [launchd/com.goodproject.semantic-steward.plist](/Users/reify/Classified/goodcapital_landing/launchd/com.goodproject.semantic-steward.plist)
+- [launchd/com.wescripture.semantic-steward.plist](/Users/reify/Classified/wescripture/launchd/com.wescripture.semantic-steward.plist)
 
 Install locally:
 
 ```bash
 mkdir -p ~/Library/LaunchAgents
-cp /Users/reify/Classified/goodcapital_landing/launchd/com.goodproject.semantic-steward.plist ~/Library/LaunchAgents/
-launchctl unload ~/Library/LaunchAgents/com.goodproject.semantic-steward.plist 2>/dev/null || true
-launchctl load ~/Library/LaunchAgents/com.goodproject.semantic-steward.plist
+cp /Users/reify/Classified/wescripture/launchd/com.wescripture.semantic-steward.plist ~/Library/LaunchAgents/
+launchctl unload ~/Library/LaunchAgents/com.wescripture.semantic-steward.plist 2>/dev/null || true
+launchctl load ~/Library/LaunchAgents/com.wescripture.semantic-steward.plist
 ```
 
 ## Four-Hourly Source Scout
 
-There is a third scheduled daemon at [source_scout.py](/Users/reify/Classified/goodcapital_landing/source_scout.py).
+There is a third scheduled daemon at [source_scout.py](/Users/reify/Classified/wescripture/source_scout.py).
 
 - It searches the web for public-domain or open-licensed texts relevant to scripture study.
 - It evaluates each candidate on two dimensions: copyright status and semantic relevance.
@@ -164,17 +164,17 @@ There is a third scheduled daemon at [source_scout.py](/Users/reify/Classified/g
 
 Runs every 4 hours (14400 seconds) to keep web search costs reasonable.
 
-Agent profile: [agents/source_scout_profile.md](/Users/reify/Classified/goodcapital_landing/agents/source_scout_profile.md)
+Agent profile: [agents/source_scout_profile.md](/Users/reify/Classified/wescripture/agents/source_scout_profile.md)
 
 Launchd job template:
 
-- [launchd/com.goodproject.source-scout.plist](/Users/reify/Classified/goodcapital_landing/launchd/com.goodproject.source-scout.plist)
+- [launchd/com.wescripture.source-scout.plist](/Users/reify/Classified/wescripture/launchd/com.wescripture.source-scout.plist)
 
 Install locally:
 
 ```bash
 mkdir -p ~/Library/LaunchAgents
-cp /Users/reify/Classified/goodcapital_landing/launchd/com.goodproject.source-scout.plist ~/Library/LaunchAgents/
-launchctl unload ~/Library/LaunchAgents/com.goodproject.source-scout.plist 2>/dev/null || true
-launchctl load ~/Library/LaunchAgents/com.goodproject.source-scout.plist
+cp /Users/reify/Classified/wescripture/launchd/com.wescripture.source-scout.plist ~/Library/LaunchAgents/
+launchctl unload ~/Library/LaunchAgents/com.wescripture.source-scout.plist 2>/dev/null || true
+launchctl load ~/Library/LaunchAgents/com.wescripture.source-scout.plist
 ```

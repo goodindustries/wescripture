@@ -3,16 +3,16 @@
 <plist version="1.0">
 <dict>
   <key>Label</key>
-  <string>com.goodproject.semantic-steward</string>
+  <string>com.wescripture.semantic-steward</string>
 
   <key>ProgramArguments</key>
   <array>
     <string>/usr/bin/python3</string>
-    <string>/Users/reify/Classified/goodcapital_landing/semantic_steward.py</string>
+    <string>/Users/reify/Classified/wescripture/semantic_steward.py</string>
   </array>
 
   <key>WorkingDirectory</key>
-  <string>/Users/reify/Classified/goodcapital_landing</string>
+  <string>/Users/reify/Classified/wescripture</string>
 
   <key>StartInterval</key>
   <integer>3600</integer>
@@ -21,9 +21,9 @@
   <true/>
 
   <key>StandardOutPath</key>
-  <string>/Users/reify/Classified/goodcapital_landing/diagnostics/semantic-steward-launchd.out</string>
+  <string>/Users/reify/Classified/wescripture/diagnostics/semantic-steward-launchd.out</string>
 
   <key>StandardErrorPath</key>
-  <string>/Users/reify/Classified/goodcapital_landing/diagnostics/semantic-steward-launchd.err</string>
+  <string>/Users/reify/Classified/wescripture/diagnostics/semantic-steward-launchd.err</string>
 </dict>
 </plist>

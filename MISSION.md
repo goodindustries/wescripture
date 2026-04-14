@@ -1,4 +1,4 @@
-# The Good Project — Mission
+# WeScripture — Mission
 
 **Agents: read this entire document before beginning any task.**
 
