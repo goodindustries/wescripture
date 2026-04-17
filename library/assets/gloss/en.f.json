@@ -1,0 +1,40 @@
+{
+"_meta": {
+"prompt_version": "gloss-define-v1",
+"shard": "f",
+"model": "qwen3:1.7b",
+"updated": "2026-04-17T17:34:47+00:00"
+},
+"stems": {
+"fath": {
+"semantic_range": "Covenantal fatherhood, familial relationship, divine authority, and symbolic representation of God's role in creation and redemption",
+"final_synthesis": "The term 'father' embodies the covenantal and familial dimensions of divine relationship, with its etymological roots in Hebrew and Greek reflecting theological emphasis on origin, authority, and unity. Its repeated use in scripture underscores the centrality of fatherhood in covenantal theology, particularly in the context of Jesus as the divine Son and Father, revealing a pattern of divine relationship and redemptive mission.",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"messianic_fulfillment": "Jesus is referred to as 'Father' in the Gospels (e.g., John 1:18), fulfilling the symbolic role of the covenantal father in Christian theology",
+"first_appearance": "Genesis 2:24 (Genesis 2:24: 'Therefore shall a man leave his father and his mother, and shall cleave unto his wife, and they shall be one flesh.')",
+"numerical_letter_observations": "The letters F, A, T, H (from 'fath') appear in 1168 verses, emphasizing the root's significance in covenantal and familial theology",
+"language": "English (Restoration volume / no original-language alignment)",
+"symbolic_structure": "Paired terms (father/son), covenantal patterns (e.g., 'father and mother'), and numerical letter observations (F, A, T, H) reflecting theological emphasis on divine origin and familial unity",
+"major_scriptural_pattern": "Repetition of 'father' in covenantal contexts (e.g., Exodus 4:22, Deuteronomy 7:9) and paired terms like 'father and son' to emphasize divine relationship",
+"reveals_about_christ": "The term 'father' underscores Christ's divine nature, His role as the covenantal head, and His relationship with the Father, reflecting the theological framework of Jesus as both Son and Father",
+"root": "fath",
+"literal_sense": "to be the source or origin of something, particularly in a familial or covenantal context",
+"term": "father",
+"_facts": {
+"stem": "fath",
+"surface": "Father",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 1168,
+"first_appearance_ref": "Genesis 2:24"
+}
+}
+}
+}

@@ -1,0 +1,71 @@
+{
+"_meta": {
+"prompt_version": "gloss-define-v1",
+"shard": "j",
+"model": "qwen3:1.7b",
+"updated": "2026-04-17T21:18:29+00:00"
+},
+"stems": {
+"jesu": {
+"final_synthesis": "The word 'Jesus' encapsulates the divine mission of Christ as the savior, mediator, and founder of the church, revealing His role as the incarnate Son of God and the fulfillment of God's redemptive plan.",
+"root": "Yeshua",
+"messianic_fulfillment": "Jesus is explicitly identified as the Messiah in the scriptures, fulfilling Old Testament prophecies about the suffering servant and the promised deliverer.",
+"first_appearance": "Matthew 1:1 (The beginning of the gospel of Jesus Christ, the Son of God)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "Jesus is portrayed as the incarnate Son of God, the covenant mediator, and the ultimate savior, reflecting His role as the fulfillment of divine purpose and the foundation of the church.",
+"major_scriptural_pattern": "Covenant, priesthood, kingship, temple, sacrifice, creation, exodus, inheritance, judgment, exile, redemption, resurrection, and Zion",
+"term": "Jesus",
+"literal_sense": "Savior of Israel, founder of the church",
+"symbolic_structure": "Repeated phrases (e.g., 'the beginning of the gospel'), paired terms (e.g., 'Jesus and his disciples'), numerical patterns (e.g., 'seven times'), and covenantal motifs (e.g., 'Son of God')",
+"language": "English",
+"numerical_letter_observations": "The root 'Yeshua' (Hebrew: Y-E-S-H-U-A) contains the letters Y, E, S, H, U, A, with numerical values 25, 5, 19, 8, 21, 1. The letter 'Y' (25) and 'H' (8) are associated with 'life' and 'light' in Hebrew theology.",
+"semantic_range": "Messiah, savior, founder of the church, covenant mediator, redemptive sacrifice",
+"_facts": {
+"stem": "jesu",
+"surface": "Jesus",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 978,
+"first_appearance_ref": "Matthew 1:1"
+}
+},
+"jerusalem": {
+"final_synthesis": "The word 'Jerusalem' encapsulates the intersection of divine covenant, human responsibility, and eschatological hope, reflecting Christ's role as both the 'King of the Jews' and the 'New Jerusalem' in the heavenly kingdom.",
+"root": "Yerushalayim",
+"messianic_fulfillment": "The city's restoration in Zechariah 2:12-13 and its role in the coming kingdom (Isaiah 2:2-4) fulfill its symbolic role as the 'New Jerusalem' in the Messianic age",
+"first_appearance": "Joshua 10:1 (Genesis 15:18 adapted)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference",
+"final_synthesis": "speculation"
+},
+"reveals_about_christ": "The word reveals Christ's mission as the 'King of the Jews' (Matthew 2:2), the 'City of God' (Ephesians 2:6), and the 'New Jerusalem' (Revelation 21:1-7), emphasizing His sovereignty and redemptive purpose",
+"major_scriptural_pattern": "Covenant and kingship; recurring themes of divine promise, military conquest, and spiritual restoration",
+"term": "Jerusalem",
+"literal_sense": "City of God / God's City",
+"symbolic_structure": "Repeated phrases like 'the city of God,' paired terms (e.g., 'Jerusalem' and 'Egypt'), and numerical patterns (e.g., 10, 70, 120) reflecting its centrality in biblical theology",
+"language": "English",
+"numerical_letter_observations": "The root word contains 10 letters, mirroring its role as the 'ten thousand' in Joshua 10:13, and the letter 'Y' (Hebrew) or 'J' (Greek) symbolizes divine sovereignty",
+"semantic_range": "Cultural, religious, and symbolic significance; references to the capital of Israel, the Holy City, and its role in divine covenant and redemption",
+"_facts": {
+"stem": "jerusalem",
+"surface": "Jerusalem",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 852,
+"first_appearance_ref": "Joshua 10:1"
+}
+}
+}
+}

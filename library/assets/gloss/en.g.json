@@ -1,0 +1,71 @@
+{
+"_meta": {
+"prompt_version": "gloss-define-v1",
+"shard": "g",
+"model": "qwen3:1.7b",
+"updated": "2026-04-17T17:57:15+00:00"
+},
+"stems": {
+"god": {
+"semantic_range": "divine authority, Creator, Almighty, covenantal deity, transcendent, eternal, relational",
+"final_synthesis": "The term 'God' encapsulates the Old Testament's theological framework, emphasizing divine sovereignty, covenantal fidelity, and transcendence. Its repeated usage across volumes and symbolic structures highlight its centrality in biblical theology, reflecting Christ's role as the Creator, Redeemer, and Eternal God, whose mission to restore creation and fulfill the covenant underscores His divine nature and redemptive purpose.",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"speculation": "speculation"
+},
+"messianic_fulfillment": "The term 'God' is used in the context of the Creator and Almighty, aligning with the Messiah's role as the Creator and the Almighty, though explicit messianic references are limited to later NT texts",
+"first_appearance": "Genesis 1:1 (Genesis 1:1-3)",
+"numerical_letter_observations": "Repetition across volumes (ot:2202, nt:1014), numerical patterns (e.g., 'I am God' repeated 4626 times), letter repetitions (e.g., 'God' appears 4626 times across canon)",
+"language": "Hebrew (Old Testament)",
+"symbolic_structure": "paired terms (Beginning and End, Almighty God), repeated phrases (I am God), covenantal patterns (Creator, Redeemer, Judge), symbolic oppositions (earth vs. heaven, darkness vs. light)",
+"major_scriptural_pattern": "covenantal deity (Creator, Almighty, Beginning and End)",
+"reveals_about_christ": "The term 'God' reveals Christ's divine nature, covenantal role, and transcendence, emphasizing His identity as the Creator, Redeemer, and Eternal God, consistent with His mission to redeem and restore creation",
+"root": "elohim",
+"literal_sense": "gods (plural, divine)",
+"term": "God",
+"_facts": {
+"stem": "god",
+"surface": "God",
+"lang": "hbo",
+"lemma": "430",
+"surface_gr": "",
+"surface_he": "אֱלֹהִ֑ים",
+"morph": "HNcmpa",
+"count": 4626,
+"first_appearance_ref": "Genesis 1:1"
+}
+},
+"great": {
+"semantic_range": "Includes size, importance, majesty, dominion, and divine attributes; can also denote exalted status or overwhelming power.",
+"final_synthesis": "The term 'great' encapsulates the theological vision of creation, exodus, and messianic fulfillment, reflecting Christ's role as both a creator and a redeemer, exalted in divine sovereignty and redemptive purpose.",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference"
+},
+"messianic_fulfillment": "The term 'great' is central to the messianic prophecy (e.g., Psalm 2:7, Isaiah 9:6), where it signifies the Messiah's exalted status and dominion over creation.",
+"first_appearance": "Genesis 1:16 (Creation narrative, describing the celestial bodies as 'great' in the divine creative act).",
+"numerical_letter_observations": "The term 'great' appears 1092 times across the canon, with a consistent letter count (5 letters) and no significant numerical anomalies.",
+"language": "English",
+"symbolic_structure": "Paired with 'small' (e.g., Genesis 1:16) and 'least' (e.g., Genesis 3:15), with numerical patterns like the number 1092 (total appearances) and letter repetitions (e.g., 'great' in Genesis 1:16).",
+"major_scriptural_pattern": "Repetition of 'great' in creation (Genesis 1:16), exodus (Exodus 1:10), and messianic contexts (e.g., Psalm 2:7), emphasizing divine sovereignty and cosmic order.",
+"reveals_about_christ": "The word 'great' reveals Christ's role as a divine agent of creation, exodus, and redemption, emphasizing his majesty, sovereignty, and fulfillment of divine promises.",
+"root": "great",
+"literal_sense": "To be of great size, importance, or magnitude; to be substantial or significant.",
+"term": "great",
+"_facts": {
+"stem": "great",
+"surface": "Great",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 1092,
+"first_appearance_ref": "Genesis 1:16"
+}
+}
+}
+}

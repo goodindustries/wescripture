@@ -1,0 +1,40 @@
+{
+"_meta": {
+"prompt_version": "gloss-define-v1",
+"shard": "n",
+"model": "qwen3:1.7b",
+"updated": "2026-04-17T18:19:26+00:00"
+},
+"stems": {
+"name": {
+"semantic_range": "designation, identification, divine name, covenantal identity, exodus symbolism, and redemptive fulfillment",
+"final_synthesis": "The term 'Name' underscores the triune nature of God, the redemptive work of Christ, and the restoration of creation through the New Covenant. Its symbolic structure and numerical patterns reflect divine order, covenantal fidelity, and the triune nature of God. The messianic fulfillment in Christ demonstrates the enduring significance of the name in redemptive history, revealing Jesus as the ultimate revelation of God's name.",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "inference",
+"messianic_reading": "pattern"
+},
+"messianic_fulfillment": "The name is fulfilled in Jesus Christ (Matthew 2:23, John 1:18), where it signifies divine revelation, redemptive sacrifice, and the restoration of creation",
+"first_appearance": "Genesis 2:11 (God gives the name to the Garden of Eden, marking its first use in Scripture)",
+"numerical_letter_observations": "The Hebrew root 'name' () contains three letters, reflecting the triune nature of God (Father, Son, Holy Spirit), and the number 6 (the number of days in creation) is associated with the Garden of Eden's name.",
+"language": "English (Restoration volume / no original-language alignment)",
+"symbolic_structure": "Paired terms (e.g., 'name' and 'image' in Genesis 2:24), numerical patterns (e.g., the number 6 in the Garden of Eden), and covenantal oppositions (e.g., 'name' vs. 'image' in Genesis 2:24)",
+"major_scriptural_pattern": "Repeated use in creation (Genesis 2:11), exodus (Exodus 3:15), covenant (Exodus 3:15), and redemptive fulfillment (Matthew 2:23, John 1:18)",
+"reveals_about_christ": "The term 'Name' reveals Jesus' role as the embodiment of God's divine name, His redemptive sacrifice, and His role in restoring creation to its original state through the New Covenant",
+"root": "name",
+"literal_sense": "to give a designation or title, often in the context of creation, identification, or divine revelation",
+"term": "Name",
+"_facts": {
+"stem": "name",
+"surface": "Name",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 977,
+"first_appearance_ref": "Genesis 2:11"
+}
+}
+}
+}

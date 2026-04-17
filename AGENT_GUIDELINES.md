@@ -193,13 +193,15 @@ library/
     topics.json           — 49 topics with related_scriptures
   chapters/               — 1,584 chapter HTML files, one per canonical chapter
 
-lds_pipeline/
-  task_ledger.py          — append-only JSONL ledger + agent CLI
-  build_entity_wikipedia.py  — Wikipedia REST enrichment per entity
-  build_entity_tasks.py      — gap scanner → batch tasks in ledger
-  build_scripture_figure_registry.py  — seeds scripture figures from verse text
+task_ledger.py            — multi-agent, cross-session task ledger CLI (canonical)
+task-ledger.jsonl         — append-only event log (source of truth)
+ledger-state.json         — materialized snapshot (rebuilt on every write; READ THIS FIRST)
+scripts/seed_ledger.py    — idempotent seeder (plan → unit chunks)
 
-task-ledger.jsonl         — live event log (replayed to derive task state)
+archive/                  — prior ledger modules + event log (pre-rebuild, read-only)
+lds_pipeline/             — legacy autonomous pipeline, slated for archive (T-0010)
+  task_ledger.py          — LEGACY; isolated to lds_pipeline/task-ledger-legacy.jsonl
+
 AGENT_GUIDELINES.md       — this file
 AGENT_MISSION.md          — product mission and quality standard
 agents/                   — individual agent profile documents
@@ -207,68 +209,148 @@ agents/                   — individual agent profile documents
 
 ---
 
-## 7. Distributed Agent Workflow
+## 7. Agent Workflow — Plan → Decompose → Ledger → Execute
 
-Agents operate against the shared `main` branch. The ledger is the coordination
-bus. Every state change must be pushed to origin immediately.
+The ledger (`task_ledger.py`) is the coordination surface across agents and
+sessions. It is append-only; `ledger-state.json` is the one-file snapshot an agent
+reads to know current state without replay.
 
-### Startup sequence
+### 7.1 Startup — zero context required
+
 ```bash
-git pull origin main                         # get latest ledger state
-python3 lds_pipeline/task_ledger.py next --agent MyAgent
-# → prints JSON with task_id, title, description
-# → automatically commits + pushes ledger (claim recorded for all agents)
+git pull origin main
+python3 task_ledger.py                       # prints the brief
+#   → last session's handoff + decisions
+#   → counts by status
+#   → in-progress, blocked
+#   → pending tasks grouped by plan + phase
+#   → 5 most-recent notes
 ```
 
-### Do the work
-Execute the task. Edit files. Run pipeline scripts. Verify output.
+If the brief is enough context, skip to 7.4. Otherwise continue.
 
-### Completion sequence
-```bash
-git add <specific files changed>
-git commit -m "T-XXXX: short description of what was done"
-git push origin main
+### 7.2 Plan first (non-trivial work only)
 
-python3 lds_pipeline/task_ledger.py complete \
-  --task-id T-XXXX \
-  --agent MyAgent \
-  --commit $(git rev-parse --short HEAD) \
-  --notes "brief result summary"
-# → automatically pushes ledger update to origin
+A "non-trivial" task = 3+ logical steps, touches multiple files, or has
+meaningful trade-offs. For these:
 
-# REQUIRED: spawn one follow-on task from your learnings
-python3 lds_pipeline/task_ledger.py append \
-  --type queue \
-  --title "Descriptive title of the next thing that should be done"
-# → the title must stem from something you observed while doing the task
-# → it must align with the project mission (deepen reading, improve links, clean corpus)
-# → one task, not a list — the most valuable next step you can name
+1. Write a plan to `.cursor/plans/<slug>_<shortid>.plan.md` capturing:
+   goal, constraints, target architecture, phased steps, risks, non-goals.
+2. The plan is the *why* and *shape*. The ledger is the *what* and *status*.
+
+For trivial single-step changes, skip planning and go to 7.3 — one ledger task
+with a clear title is enough.
+
+### 7.3 Decompose with Fibonacci estimation — every leaf is 1 point
+
+Every claimable task must be **1 point** of work. Anything larger is split
+recursively until it is. Estimation uses the Fibonacci SWE scale:
+
+```
+1pt   ~30 min     single file, single concept       (rename, css rule, one test case)
+2pt   ~1 h        single file or trivial multi      (small fn + caller)
+3pt   ~2-3 h      multi-file, well-bounded          (new CLI subcommand + tests)
+5pt   ~half day   cross-system, single concern      (new endpoint + frontend wire)
+8pt   ~full day   requires design choice            (schema + migration + api + reader)
+13pt+ epic, MUST be split before working
 ```
 
-### The follow-on task rule
+Workflow per task:
 
-Every agent is required to append one new task before calling the session complete.
-This is not optional and not a formality. It is the mechanism that keeps the queue
-alive and mission-aligned without human curation.
+```bash
+python3 task_ledger.py add "Task title" --plan <plan-slug> --phase <phase-id>
+python3 task_ledger.py decompose T-XXXX --agent <you>
+#   → runs estimate (LLM picks a Fibonacci number with rationale)
+#   → if > 1pt, splits into 2-8 children that should each estimate to 1pt
+#   → recurses on each child until every leaf is 1pt
+#   → honors MAX_DEPTH=5 (env LEDGER_MAX_DEPTH)
+```
 
-The follow-on task should come from direct observation:
-- A gap you found while doing the work ("Moses is enriched but Aaron has no born/died data")
-- A related pattern that would compound the value ("places are annotated but events are not")
-- A regression you noticed ("verse 1 Ne 3:7 text renders with a stray bracket")
-- A missing cross-link that would help a reader ("Faith topic has no link to figures known for faith")
+LLM provider resolution (automatic, first hit wins):
 
-Bad follow-on task: vague, broad, or not grounded in what you just did.
-Good follow-on task: specific, actionable, connected to what you observed.
+1. Ollama at `127.0.0.1:11434` if reachable (env `OLLAMA_MODEL`, default `llama3.2:3b`)
+2. Anthropic API if `ANTHROPIC_API_KEY` set
+3. **Stdout fallback**: `decompose` prints a parseable prompt and exits with
+   code 2. The Cursor agent reads the prompt, computes the answer, runs the
+   printed `LEDGER_FULFILL_COMMAND`, then reruns `decompose T-XXXX` to continue.
 
-### Conflict avoidance
-- Claim before writing. Never start work on a task you haven't claimed.
-- Push the ledger immediately on claim — `task_ledger.py` does this automatically.
-- If `git pull` shows a conflict on `task-ledger.jsonl`, the ledger is append-only:
-  accept both sides (keep all lines from both versions) — no line is ever deleted.
+Each decompose call processes as many nodes as it can before emitting the next
+prompt — you'll usually make progress in chunks of several nodes per iteration.
+
+A valid 1-point leaf is:
+
+- **Bounded**: ~30 minutes of focused work.
+- **Self-contained**: no undefined dependency on a later sibling.
+- **Verifiable**: single concrete artifact or a single test passing.
+- **Titled by effect, not activity**: `"Write Supabase migration for corpus tables"`
+  not `"work on database"`.
+
+Manual overrides (bypass the LLM):
+
+```bash
+python3 task_ledger.py estimate T-XXXX --agent <you> --apply --points 3 --rationale "..."
+python3 task_ledger.py split T-XXXX --agent <you> --apply \
+  --child "first 1pt leaf title" --child "second 1pt leaf title" --rationale "..."
+```
+
+Bulk seeding of a plan's root tasks still belongs in `scripts/seed_<name>.py`
+(idempotent, reviewable). Decomposition runs after seeding.
+
+### 7.4 Open a session
+
+```bash
+python3 task_ledger.py session start --agent <YourName> \
+  --goal "What you intend to accomplish this session"
+```
+
+One active session per agent. The goal is a sentence, not a paragraph.
+
+### 7.5 Claim and execute (only 1pt leaves)
+
+```bash
+# Claim (status = in_progress)
+python3 task_ledger.py status T-XXXX --agent <YourName> --status in_progress \
+  --note "starting; noted constraint X"
+
+# Progress notes (any time, any number)
+python3 task_ledger.py status T-XXXX --agent <YourName> --status in_progress \
+  --note "resolved constraint X via Y; next: Z"
+
+# Blocked (keep it claimed, but flag)
+python3 task_ledger.py status T-XXXX --agent <YourName> --status blocked \
+  --note "blocked: need Supabase service key"
+
+# Done
+git add <files> && git commit -m "T-XXXX: short description" && git push
+python3 task_ledger.py status T-XXXX --agent <YourName> --status completed \
+  --commit "$(git rev-parse --short HEAD)" --note "what shipped in one line"
+```
+
+Hold **at most one** in-progress task per agent. Release (`--status pending`) or
+complete before claiming the next.
+
+### 7.6 Close the session
+
+```bash
+python3 task_ledger.py session end --agent <YourName> \
+  --handoff "What the next agent needs to know in one paragraph" \
+  --decision "Decision 1 worth preserving" \
+  --decision "Decision 2 worth preserving"
+```
+
+The handoff + decisions are read verbatim by the next session's `brief`. This is
+the continuity mechanism — treat it seriously.
+
+### 7.7 Conflict avoidance
+
+- `task-ledger.jsonl` is append-only. On a merge conflict, **keep both sides**
+  (all lines from both versions). No line is ever deleted.
+- `ledger-state.json` is derived — on conflict, pick either side and run any
+  ledger command (e.g. `python3 task_ledger.py ls >/dev/null`) to rewrite it from
+  the jsonl.
+- Claim before editing. Never edit files for a task you haven't set to
+  `in_progress`.
 - Never rebase or force-push `main`.
-
-### One task at a time
-An agent should hold at most one claimed task. Complete or reopen before claiming next.
 
 ---
 

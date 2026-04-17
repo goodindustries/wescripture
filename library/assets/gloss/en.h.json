@@ -1,0 +1,132 @@
+{
+"_meta": {
+"prompt_version": "gloss-define-v1",
+"shard": "h",
+"model": "qwen3:1.7b",
+"updated": "2026-04-17T20:01:57+00:00"
+},
+"stems": {
+"house": {
+"semantic_range": "covenant, inheritance, redemption, kingdom, temple, and familial relationship",
+"final_synthesis": "The word 'house' reveals Christ's mission as the covenant-keeper, the fulfillment of God's promise to Abraham, and the symbolic foundation of the New Covenant. Its repeated use in covenant contexts underscores its role in divine revelation and redemptive plan, reflecting both earthly and heavenly dimensions of the Messiah's mission.",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"alignment_confidence": "speculation"
+},
+"messianic_fulfillment": "the 'house' (house of God) as the Messiah's kingdom and the fulfillment of the covenant promise (Genesis 12:1, 17:13)",
+"first_appearance": "Genesis 12:1 (Abraham's call to leave his homeland)",
+"numerical_letter_observations": "1693 verses across canon; OT:1274 (Genesis), NT:159 (Hebrews), OT:134 (BoM), OT:121 (PGP), NT:5 (Psalms)",
+"language": "English",
+"symbolic_structure": "repeated use of 'house' in contexts of divine promise, covenant, and redemption; paired with 'seed' (Genesis 15:3) and 'circumcision' (Genesis 17:13)",
+"major_scriptural_pattern": "covenant and inheritance through the lineage of Abraham",
+"reveals_about_christ": "the word 'house' reflects Christ's role as the covenant-keeper, the fulfillment of the promise to Abraham, and the symbolic foundation of the New Covenant",
+"root": "house",
+"literal_sense": "a dwelling place, especially a family home",
+"term": "house",
+"_facts": {
+"stem": "house",
+"surface": "House",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 1693,
+"first_appearance_ref": "Genesis 12:1"
+}
+},
+"heaven": {
+"semantic_range": "divine presence, creation, covenant, exodus, and eschatological realms; also denotes the divine realm and the Messiah's role in revealing God's will",
+"final_synthesis": "The term 'shamayim' reflects Christ's divine authority, covenantal role, and eschatological mission through its repeated use in creation, exodus, and covenantal promises, emphasizing His role as the Revealer of God's will and the embodiment of divine wisdom and character.",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"numerical_letter_observations": "speculation"
+},
+"messianic_fulfillment": "linked to the Messiah's role as 'Beginning and End' (Moses 2:1) and the divine revealer (Moses 2:8), aligning with Christ's eschatological mission",
+"first_appearance": "Genesis 1:1 (creation narrative)",
+"numerical_letter_observations": "root 'shamayim' (5 letters) reflects common Hebrew numerical patterns; the letters SHAMAYIM may encode symbolic values (speculation)",
+"language": "Hebrew (Old Testament)",
+"symbolic_structure": "paired terms 'heaven and earth,' repeated phrases 'I create,' and covenantal promises linked to divine attributes",
+"major_scriptural_pattern": "repeated use in creation, exodus, and covenant contexts; paired with 'earth' and 'dry land' in Moses 2:9",
+"reveals_about_christ": "the term underscores Christ's divine nature, Creator, and mediator role in revealing God's will through covenant and exodus narratives",
+"root": "shamayim",
+"literal_sense": "the celestial expanse, sky, or heavens",
+"term": "shamayim",
+"_facts": {
+"stem": "heaven",
+"surface": "Heaven",
+"lang": "hbo",
+"lemma": "d/8064",
+"surface_gr": "",
+"surface_he": "הַ/שָּׁמַ֖יִם",
+"morph": "HTd/Ncmpa",
+"count": 958,
+"first_appearance_ref": "Genesis 1:1"
+}
+},
+"heart": {
+"semantic_range": "emotions, will, spiritual essence, covenantal relationship, divine judgment, redemption, and moral disposition",
+"final_synthesis": "The term 'heart' encapsulates the intersection of physicality and spirituality, reflecting God's covenantal care for humanity. Its repeated use in Scripture underscores the centrality of moral and spiritual life, with Jesus Christ as the ultimate fulfillment of the 'heart' in divine love and redemption.",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"messianic_fulfillment": "The term 'heart' is fulfilled in Jesus' teachings (e.g., Matthew 11:28-30, Luke 15:20) as the 'heart of the Father' (Matthew 11:27), symbolizing divine love and redemption through Christ's sacrifice",
+"first_appearance": "Genesis 6:5 (Hebrew: 'qara'a) describing divine judgment on the earth's wickedness",
+"numerical_letter_observations": "The Hebrew root 'qara'a (Hebrew: ) contains three letters: 'k', 'r', 'a', reflecting the tripartite nature of the heart (soul, spirit, body). The letter 'k' (kara'a) appears in 67 instances across canonical texts, emphasizing its centrality.",
+"language": "English",
+"symbolic_structure": "paired terms (e.g., 'heart of the father' vs. 'heart of the child'), repeated phrases (e.g., 'turn the hearts of their children'), and numerical patterns (e.g., the number 6, symbolizing completeness in Genesis 6:5)",
+"major_scriptural_pattern": "heart as the locus of moral and spiritual life, central to covenantal faithfulness and divine judgment",
+"reveals_about_christ": "The word 'heart' reveals Christ's role as the 'heart of the Father' (John 10:15), embodying divine love, redemption, and the transformative power of the Holy Spirit in restoring moral and spiritual life to humanity",
+"root": "qara'a (Hebrew) or  (Greek)",
+"literal_sense": "the physical organ of the body, particularly the chest, and metaphorically the inner self or soul",
+"term": "heart",
+"_facts": {
+"stem": "heart",
+"surface": "Heart",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 876,
+"first_appearance_ref": "Genesis 6:5"
+}
+},
+"hand": {
+"final_synthesis": "The word 'hand' encapsulates the tension between human agency and divine sovereignty, reflecting Christ's mission to reconcile humanity through covenantal action, sacrificial offering, and divine authority. Its centrality in biblical texts underscores the theme of divine intervention and human responsibility, revealing Christ's role as the embodiment of God's covenantal will.",
+"root": "hand",
+"messianic_fulfillment": "Speculation: The word 'hand' is associated with the Messiah's role in blessing, redemption, and divine action (e.g., the hand of God in the Exodus, the hand of the Father in the resurrection), though explicit Messianic references are limited.",
+"first_appearance": "Genesis 3:22 (Genesis 3:22: 'Behold, the man is become as one of us to know good and evil; and now lest he put forth his hand and partake also of the tree of life, and eat and live forever')",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "speculation"
+},
+"reveals_about_christ": "The word 'hand' reveals Christ's role as a mediator of divine authority, a participant in redemptive action, and a symbol of the Father's covenantal care. It underscores Christ's dual nature as both human and divine, acting through the 'hand' of God and the 'hand' of the Father.",
+"major_scriptural_pattern": "repeated use of 'hand' in covenantal contexts (e.g., curses, blessings, sacrificial offerings) and as a symbol of divine authority or human responsibility",
+"term": "hand",
+"literal_sense": "a physical limb or tool, often used to denote action or authority",
+"symbolic_structure": "paired terms (e.g., 'hand' + 'hand' in covenantal curses), repeated phrases (e.g., 'hand' in the story of Adam and Eve), and numerical patterns (e.g., 1542 verses across the canon)",
+"language": "English",
+"numerical_letter_observations": "The word 'hand' appears in 1542 verses across the canon, with a distribution of 1026 in OT, 194 in Pseudepigrapha, and 190 in NT. Its frequency reflects its centrality in biblical narrative and theology.",
+"semantic_range": "physical limb, metaphorical authority, act of doing, covenantal responsibility, sacrificial offering, divine action",
+"_facts": {
+"stem": "hand",
+"surface": "Hand",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 1542,
+"first_appearance_ref": "Genesis 3:22"
+}
+}
+}
+}

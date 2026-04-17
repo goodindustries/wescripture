@@ -1,0 +1,41 @@
+{
+"_meta": {
+"prompt_version": "gloss-define-v1",
+"shard": "y",
+"model": "qwen3:1.7b",
+"updated": "2026-04-17T19:03:27+00:00"
+},
+"stems": {
+"year": {
+"semantic_range": "time measurement, covenantal duration, symbolic representation of eternity, and numerical quantification in biblical texts",
+"final_synthesis": "The word 'years' reflects the biblical theology of time as a covenantal measure, emphasizing both temporal limitations and eternal promises. Its repeated use in creation, covenantal duration, and redemption contexts underscores Christ's role in reconciling humanity to God and establishing a new era of eternal life, reflecting the tension between time and eternity in biblical theology.",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "speculation",
+"final_synthesis": "pattern"
+},
+"messianic_fulfillment": "The concept of 'years' as a covenantal measure is symbolic of Christ's role in redeeming time and eternity, reflecting His fulfillment of promises through eternal life and the establishment of a new covenant",
+"first_appearance": "Genesis 1:14 (creation of the heavens and earth, with the phrase 'days, and for years')",
+"numerical_letter_observations": "The word 'years' is often paired with numerical values (e.g., 'eight hundred years' in Genesis 6:11) and appears in contexts where time is quantified, though exact numerical patterns are not explicitly encoded in the text",
+"language": "English",
+"symbolic_structure": "paired terms like 'days, and for years' and repeated phrases such as 'for years' emphasize the cyclical and eternal nature of time in covenants, with numerical patterns (e.g., 'years' as a unit of measurement) reinforcing its significance",
+"major_scriptural_pattern": "repeated use in covenantal contexts to denote time periods, including creation, Adam's lifespan, and the fulfillment of divine promises",
+"reveals_about_christ": "The word 'years' underscores Christ's mission to redeem time, reconcile humanity to God, and establish a new era of eternal life, highlighting the tension between temporal limitations and eternal promises",
+"root": "year",
+"literal_sense": "a period of time, especially in the context of measurement or covenantal duration",
+"term": "years",
+"_facts": {
+"stem": "year",
+"surface": "Years",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 887,
+"first_appearance_ref": "Genesis 1:14"
+}
+}
+}
+}

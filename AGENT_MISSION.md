@@ -45,34 +45,41 @@ A change is better when it helps a reader:
 
 ## Agent Federation
 
-This project runs distributed agents that each pull the repository, claim a task
-from the shared ledger, execute it, and push results back. Every claim and completion
-is pushed to origin immediately so all agents see current state.
+Agents coordinate through a single append-only ledger at the repo root. Every
+session begins by reading the ledger brief; every session ends by recording a
+handoff so the next agent can pick up without user context.
 
-Before starting any work:
+Startup (any agent, any session):
 
 ```bash
 git pull origin main
-python3 lds_pipeline/task_ledger.py next --agent YourAgentName
+python3 task_ledger.py                        # brief: last handoff, decisions, open work
+python3 task_ledger.py session start --agent YourAgentName --goal "..."
 ```
 
-When done:
+Working a task:
 
 ```bash
-git add <files>
-git commit -m "T-XXXX: description"
+python3 task_ledger.py status T-XXXX --agent YourAgentName --status in_progress --note "..."
+# ... edit, test, commit ...
 git push origin main
-python3 lds_pipeline/task_ledger.py complete --task-id T-XXXX --agent YourAgentName \
-  --commit $(git rev-parse --short HEAD) --notes "what was done"
-
-# Required: spawn one follow-on task from what you observed while doing the work
-python3 lds_pipeline/task_ledger.py append --type queue \
-  --title "The next most valuable thing to do, grounded in what you just learned"
+python3 task_ledger.py status T-XXXX --agent YourAgentName --status completed \
+  --commit "$(git rev-parse --short HEAD)" --note "what shipped"
 ```
 
-The queue never runs dry because every agent feeds it. Every new task must be
-grounded in direct observation and must serve the mission: deepen reading, improve
-connections, clean the corpus, or make traversal faster and more trustworthy.
+Close the session (required for continuity):
+
+```bash
+python3 task_ledger.py session end --agent YourAgentName \
+  --handoff "What the next agent needs to know" \
+  --decision "Decision worth preserving" --decision "..."
+```
+
+Non-trivial work must be **planned first** (write `.cursor/plans/<slug>.plan.md`),
+then **decomposed into unit chunks** — each chunk a single ledger task with
+`--plan` and `--phase` tags. See `AGENT_GUIDELINES.md` §7 for the full contract.
+Every new task must serve the mission: deepen reading, improve connections, clean
+the corpus, or make traversal faster and more trustworthy.
 
 **Corpus task supply (automated):** The backlog is meant to be **TOC-sized** plus
 **entity registries** (Wikipedia, `christ_connection`, etc.). **`lds_pipeline/task_scout.py`**

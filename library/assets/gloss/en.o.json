@@ -1,0 +1,71 @@
+{
+"_meta": {
+"prompt_version": "gloss-define-v1",
+"shard": "o",
+"model": "qwen3:1.7b",
+"updated": "2026-04-17T17:18:05+00:00"
+},
+"stems": {
+"out": {
+"semantic_range": "actions related to exiting, reaching beyond, or being outside of a boundary; also metaphorically signifies departure, redemption, or the emergence from a state of exclusion",
+"final_synthesis": "The term 'out' encapsulates the tension between creation and redemption, with its first appearance in the Garden of Eden setting the stage for Christ's mission. Its symbolic structure ties to the Garden of God and the Messiah's role in restoring the original state, revealing a deep theological framework rooted in the wisdom of scripture.",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference",
+"numerical_letter_observations": "speculation"
+},
+"messianic_fulfillment": "the term 'out' is linked to the Garden of Eden, which is a symbolic reference to the Garden of God, and in the context of the Messiah, where he is described as coming out of the garden to redeem it",
+"first_appearance": "Genesis 2:9 (Genesis 2:9)",
+"numerical_letter_observations": "the letters 'o' and 'u' appear once each, forming a triad that may symbolize separation or transcendence, though no clear numerical pattern is discernible",
+"language": "English",
+"symbolic_structure": "paired terms like 'out of the ground' and 'out of Eden' emphasize the theme of creation and departure; repeated phrases like 'out of the garden' symbolize the Garden of God and the Messiah's role in redemption",
+"major_scriptural_pattern": "repeated use in creation narratives, exodus, and redemption contexts, often paired with 'out of the ground' or 'out of Eden'",
+"reveals_about_christ": "the term 'out' reflects Christ's role as the one who emerges from the Garden of Eden to bring salvation, highlighting the theme of redemption and the restoration of the original state",
+"root": "out",
+"literal_sense": "to emerge from a place, to extend beyond, or to be outside of something",
+"term": "out",
+"_facts": {
+"stem": "out",
+"surface": "Out",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 2208,
+"first_appearance_ref": "Genesis 2:9"
+}
+},
+"one": {
+"semantic_range": "Unity, singularity, individuality, oneness, and the concept of a single entity. It also conveys completeness, exclusivity, and the divine nature of God.",
+"final_synthesis": "The word 'One' encapsulates the theological vision of God's triune nature, the unity of the Church, and the messianic promise of Christ's singular identity. Its etymology and symbolic structure reflect the covenantal and redemptive purposes of Scripture, revealing Christ as the embodiment of divine unity and the fulfillment of God's eternal plan.",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference"
+},
+"messianic_fulfillment": "In the New Testament, 'One' is used to describe the Messiah's singular identity (e.g., 'One God' in John 17:3), the unity of the Father, Son, and Holy Spirit (John 17:21), and the Church as one body (Ephesians 4:3). It underscores the Messiah's role as the embodiment of divine unity.",
+"first_appearance": "Genesis 1:9 ('Let there be light'), where the divine command 'Let the waters under the heaven be gathered together unto one place' establishes the idea of unity in creation.",
+"numerical_letter_observations": "The word 'One' consists of three letters (O, N, E), symbolizing the triune God's three persons. The numerical value 1 (O) reflects the concept of completeness and the divine unity.",
+"language": "English (Restoration volume / no original-language alignment)",
+"symbolic_structure": "Embedded in covenantal theology, 'One' reflects the triune God's unity, the exclusivity of the Messiah, and the singular sovereignty of God. It also mirrors the structure of the Trinity (Father, Son, Holy Spirit) and the unity of the Church.",
+"major_scriptural_pattern": "Repeated use of 'One' in covenantal contexts (e.g., 'One God,' 'One Flesh'), and in symbolic oppositions (e.g., 'One' vs. 'Many'), emphasizing the triune nature of God and the unity of the Trinity.",
+"reveals_about_christ": "The term 'One' reveals Christ's nature as the singular, eternal Son of God, the unity of the Trinity, and the Church's call to fellowship and oneness. It underscores the divine economy of love and the messianic promise of reconciliation.",
+"root": "Hebrew (root: 'yod' or 'od' in Genesis 1:9, transliterated as 'Yod' or 'Od')",
+"literal_sense": "To exist in a single, unified state; to be singular, distinct, or indivisible.",
+"term": "One",
+"_facts": {
+"stem": "one",
+"surface": "One",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 1461,
+"first_appearance_ref": "Genesis 1:9"
+}
+}
+}
+}

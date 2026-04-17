@@ -44,7 +44,7 @@ from pathlib import Path
 
 
 REPO   = Path(__file__).resolve().parent.parent
-LEDGER = REPO / "task-ledger.jsonl"
+LEDGER = REPO / "lds_pipeline" / "task-ledger-legacy.jsonl"
 
 
 # ---------------------------------------------------------------------------

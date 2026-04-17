@@ -1,68 +1,73 @@
-# CLAUDE.md — WeScripture
+# AGENTS.md — WeScripture
+
+Cursor agents read this first. Project context + working contract.
 
 ## Project
 Scripture search and study platform. Frontend: HTML/CSS/JS. Backend pipelines: Python.
-Data lives in `library/` and `model/`. Agents live in `agents/`.
+Data lives in `library/` and `model/`. Multi-agent coordination runs through
+`task_ledger.py` at the repo root.
 
-## Token Rules (enforced always)
-- No preamble. No recap. No filler phrases. Start with the action or answer.
-- No unsolicited explanations. Code only unless explanation is asked for.
-- Diffs over full rewrites when change is < 30% of file.
-- Batch all related edits into one operation.
-- Done = one line: what changed. Nothing else.
-- If output would exceed 150 lines, stop and confirm before continuing.
+## Agent Startup (every session, in order)
 
-## Compaction — say "→ /compact now" after any of these:
-- Feature complete
-- Bug resolved
-- Diagnostic/test session ends
-- Exploration phase ends
-- Dead end, changing approach
-- Session exceeds ~35,000 output tokens
-Never compact mid-implementation.
+1. `python3 task_ledger.py` — read the brief. That *is* your context across sessions.
+   (last handoff + decisions, in-progress, blocked, pending by plan/phase, recent notes)
+2. If `brief` shows `[NEEDS-EST]` or `[NEEDS-SPLIT (Np)]`, decompose BEFORE claiming:
+   - `python3 task_ledger.py decompose T-XXXX --agent <you>`
+   - Uses Fibonacci scale (1,2,3,5,8,13). Every leaf must be **1 point**.
+   - If no local LLM (Ollama/Anthropic), the command prints a prompt and exits 2.
+     Fulfill the `LEDGER_FULFILL_COMMAND` it prints, then rerun `decompose`.
+3. For non-trivial work (3+ steps, multi-file, or real trade-offs):
+   - Write a plan at `.cursor/plans/<slug>_<shortid>.plan.md`.
+   - Seed root tasks via `python3 task_ledger.py add "..." --plan <slug> --phase <phase-id>`
+     (bulk seeding belongs in `scripts/seed_<name>.py`).
+   - Run `decompose` on each root until all leaves are 1pt.
+4. Open a session and work **only on 1pt leaves**:
+   - `python3 task_ledger.py session start --agent <you> --goal "..."`
+   - `status T-XXXX --agent <you> --status in_progress --note "..."`
+   - commit, push, then `--status completed --commit <sha> --note "..."`
+   - Parents auto-roll-up to `completed` when every child is terminal.
+5. Close with a handoff (required — this is the continuity mechanism):
+   - `python3 task_ledger.py session end --agent <you> --handoff "..." --decision "..." --decision "..."`
+
+Full contract: `AGENT_GUIDELINES.md` §7.
+
+## Working Rules
+
+- **No preamble. No recap. No filler.** Start with the action or answer.
+- **Diffs over rewrites** when change is <30% of file.
+- **Batch related edits** into one operation.
+- **Done = one line**: what changed. Nothing else.
+- **Commit after every working milestone** before starting new work.
+- Commit format: `T-XXXX: what changed` when a task id exists; else `[area] what changed`.
+- Never start a new feature on a dirty working tree.
 
 ## File Scope — read ONLY what the task requires
-Forbidden (never read or scan):
+
+Forbidden unless the task requires them:
 - `node_modules/`
 - `library/` (large data files — reference by path only unless task is data work)
 - `assets/tmp_*` and `tmp_*.jpg`
 - `diagnostics/` (unless task is diagnostics)
-- All `test-mobile-diag*.js` files (archived — do not load)
+- All `test-mobile-diag*.js` (archived)
+- `archive/` (prior ledger + archived modules, read-only reference)
 - `.idea/`, `.DS_Store`, `*.bak`
 
-Active working files:
-- `index.html`, `styles.css`, `approach.html`, `contact.html`
-- `agents/` (when working on agent logic)
-- `lds_pipeline/` (when working on pipeline)
-- `tools/` (when working on tooling)
+Active working surface:
+- `task_ledger.py`, `task-ledger.jsonl`, `ledger-state.json` — coordination
+- `library/index.html`, `library/chapters/` — reader
+- `server/` — FastAPI (post-rearchitect)
+- `pipeline/` — corpus ingestion (post-rearchitect)
+- `agents/` — agent profile docs
+- `scripts/` — one-shot utilities (e.g. `seed_ledger.py`)
 
 ## Test Scripts — Cleanup Rule
-Any `test-*.js` or `test-*.py` file older than the current task should be deleted
-after the task is complete, not accumulated. Ask before deleting if unsure.
 
-## Model Routing
-- Default: Sonnet (reasoning, architecture, complex debugging)
-- Subagents / exploration / file reading: Haiku or local (Ollama)
-- Routine tasks (linting, search/replace, file ops): local model preferred
-- Do NOT use extended thinking for HTML edits, CSS changes, or data formatting
-
-## Local LLM Tasks (route to Ollama when available)
-These tasks do NOT need Sonnet:
-- Reading and summarizing scripture data files
-- Finding references or cross-references in library/
-- Formatting, linting, or cleaning JSON/HTML
-- Running test scripts and reporting pass/fail
-- Searching codebase for patterns
-- Generating boilerplate HTML sections
-
-## Git Discipline
-- Commit after every working milestone before starting new work
-- Commit message format: `[area] what changed` (e.g. `[search] fix verse lookup timeout`)
-- Never start a new feature on a dirty working tree
-- This prevents context loss at compaction and token limit boundaries
+Any `test-*.js` or `test-*.py` older than the current task should be deleted after
+the task is complete, not accumulated. Ask before deleting if unsure.
 
 ## Architecture (quick ref)
+
 - Frontend: static HTML/CSS/JS, deployed via Netlify
-- Data pipeline: Python scripts ingesting scripture sources into library/
-- Search: client-side or pipeline-driven, see agents/
-- Agents: autonomous task runners, see AGENT_GUIDELINES.md for contract
+- Backend (v1, in progress): Supabase Postgres + pgvector, thin FastAPI at `server/`
+- Corpus pipeline (v1, in progress): `pipeline/` with Makefile DAG
+- Legacy: `lds_pipeline/` — autonomous agent loops, slated for archive (ledger task T-0010)

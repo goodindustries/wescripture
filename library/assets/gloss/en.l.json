@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "l",
 "model": "qwen3:1.7b",
-"updated": "2026-04-17T15:06:24+00:00"
+"updated": "2026-04-17T15:53:27+00:00"
 },
 "stems": {
 "lord": {
@@ -34,6 +34,37 @@
 "morph": "HNp",
 "count": 7794,
 "first_appearance_ref": "Genesis 2:4"
+}
+},
+"land": {
+"semantic_range": "territory, surface, the earth, and the land as a symbol of creation and inheritance",
+"final_synthesis": "The term 'land' encapsulates the tension between creation, covenant, and redemption, revealing Christ's dual nature as both the Creator and the Redeemer. Its symbolic structure bridges the Old and New Testaments, emphasizing the land as a metaphor for the Messiah's kingdom and the restoration of all things. The numerical prevalence of 'land' in the OT underscores its centrality to divine revelation, while its messianic fulfillment highlights Christ's role as the ultimate 'land' of God, fulfilling the promise of a new earth and a restored creation.",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"numerical_letter_observations": "speculation"
+},
+"messianic_fulfillment": "The term 'land' is central to the New Testament's eschatological vision, particularly in the 'land of Israel' (e.g., Acts 1:8, 11:26) and the 'land of God' (e.g., Revelation 21:4), where it symbolizes the Messiah's kingdom and the restoration of creation",
+"first_appearance": "Genesis 1:9 (Genesis 1:9: 'Let the waters under the heaven be gathered together unto one place, and it was so; and I, God, said: Let there be dry land; and it was so.')",
+"numerical_letter_observations": "The root 'aretz' (Hebrew: 'earth') contains three letters (R, T, Z), reflecting the tripartite nature of creation (earth, heaven, sea), and its appearance count (2103 verses) aligns with the OT's emphasis on land as a covenantal gift",
+"language": "English",
+"symbolic_structure": "embedded in covenantal symbolism (e.g., 'land of promise'), paired with 'sea' in Exodus 15:10, and linked to the 'Messiah's land' in New Testament apocalyptic literature",
+"major_scriptural_pattern": "repeated use in creation, exodus, and inheritance contexts, with paired terms like 'land and sea' and numerical patterns (e.g., 1174 verses across canon)",
+"reveals_about_christ": "The word 'land' reveals Christ's mission as a liberator of the oppressed, a provider of eternal territory, and a fulfillment of the covenantal promise to the Israelites, reflecting His role as both the 'land of promise' and the 'seed of the woman' (Matthew 1:15)",
+"root": "aretz",
+"literal_sense": "earth or land (as in territory or surface)",
+"term": "land",
+"_facts": {
+"stem": "land",
+"surface": "Land",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 2103,
+"first_appearance_ref": "Genesis 1:9"
 }
 }
 }

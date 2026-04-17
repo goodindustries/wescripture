@@ -1,0 +1,163 @@
+{
+"_meta": {
+"prompt_version": "gloss-define-v1",
+"shard": "s",
+"model": "qwen3:1.7b",
+"updated": "2026-04-17T20:53:58+00:00"
+},
+"stems": {
+"son": {
+"semantic_range": "roles of father, child, heir, covenant participant, sacrificial offering, divine designation",
+"final_synthesis": "The term 'son' encapsulates the theological tension between divine sonship and human limitation, with Jesus fulfilling the role of the covenantal son through redemption and resurrection, reflecting the divine plan of salvation.",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"speculation": "speculation"
+},
+"messianic_fulfillment": "Jesus Christ is explicitly called 'Son of God' (Matthew 2:23, Luke 1:35), with the term 'Son' central to his divine identity and redemptive role",
+"first_appearance": "Genesis 4:17 (Genesis 4:17)",
+"numerical_letter_observations": "1945 verses across canonical texts, with 1328 in OT, 296 in NT, and 45 in PGp, reflecting widespread theological emphasis on sonship",
+"language": "English",
+"symbolic_structure": "paired terms ('Son of God' vs. 'Son of Man'), repeated phrases ('Son of man'), and covenantal reciprocity (father/son, heir/son)",
+"major_scriptural_pattern": "repeated use in covenantal contexts (e.g., 'Son of God,' 'Son of Man'), symbolic oppositions (father/son), and numerical patterns (1945 verses)",
+"reveals_about_christ": "The term 'son' underscores Christ's divine nature, sacrificial role, and redemptive mission, reflecting the theological framework of covenantal sonship and divine sonship",
+"root": "son",
+"literal_sense": "child, offspring, heir",
+"term": "son",
+"_facts": {
+"stem": "son",
+"surface": "Son",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 1945,
+"first_appearance_ref": "Genesis 4:17"
+}
+},
+"say": {
+"semantic_range": "to communicate verbally, affirm, or proclaim; also metaphorically to reveal, justify, or validate",
+"final_synthesis": "The term 'say' underscores Christ's dual role as both a speaker of divine truth and a mediator of covenantal promises, reflecting His wisdom, authority, and mission to proclaim salvation through teaching and revelation",
+"confidence_by_claim": {
+"etymology": "pattern",
+"symbolic_structure": "inference",
+"messianic_reading": "pattern",
+"final_synthesis": "speculation"
+},
+"messianic_fulfillment": "Jesus' teachings (e.g., Matthew 5:14, Luke 1:33) reflect the OT use of 'say' as a covenantal declaration of divine authority",
+"first_appearance": "Genesis 12:12 (Genesis 12:12)",
+"numerical_letter_observations": "appears in 1434 verses across the canon, with frequent use in OT covenantal contexts and repeated in NT teachings",
+"language": "English",
+"symbolic_structure": "paired terms (e.g., 'say' and 'he says'), repeated phrases (e.g., 'say unto'), and covenantal patterns (e.g., 'say thou' in Deuteronomy 8:17)",
+"major_scriptural_pattern": "covenantal declarations, exhortations, and instructions",
+"reveals_about_christ": "Christ's role as a teacher and mediator is revealed through his use of 'say' to proclaim truth, fulfill covenantal promises, and guide discipleship",
+"root": "say",
+"literal_sense": "to speak, declare, instruct, or assert",
+"term": "say",
+"_facts": {
+"stem": "say",
+"surface": "Say",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 1434,
+"first_appearance_ref": "Genesis 12:12"
+}
+},
+"servant": {
+"semantic_range": "servitude, covenantal obligation, redemption, priestly role, and symbolic representation of divine submission",
+"final_synthesis": "The term 'servant' encapsulates the covenantal theology of Jesus Christ, where His role as a servant-king mirrors the OT covenantal structure, revealing His wisdom in humility, His character in obedience, His mission in redemption, and His pattern in fulfilling the divine plan through sacrifice and restoration.",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"messianic_fulfillment": "The term 'servant' is central to Isaiah 52:13 and later NT references, where it fulfills the role of Jesus as the ultimate covenantal servant (e.g., Isaiah 53:12)",
+"first_appearance": "Genesis 9:25 (Genesis 9:25-26)",
+"numerical_letter_observations": "The term appears 1095 times across canon, with a distribution of 540 OT, 330 OT, 122 NT, etc., suggesting a covenantal emphasis in the OT and a thematic focus on servitude in the NT",
+"language": "English",
+"symbolic_structure": "paired terms 'servant' and 'brothers' (Genesis 9:25), 'covenant' and 'servant' (Genesis 9:25), and numerical repetition of 'servant' in verses (1095 verses)",
+"major_scriptural_pattern": "repeated covenantal use of 'servant' in relation to Canaan and the Israelite covenantal structure",
+"reveals_about_christ": "The term reveals Christ's role as a servant-king, embodying both sacrificial obedience and covenantal fidelity, reflecting His mission to redeem and restore humanity through the covenantal framework",
+"root": "served",
+"literal_sense": "a person who serves, particularly in a covenantal or sacrificial role",
+"term": "servant",
+"_facts": {
+"stem": "servant",
+"surface": "Servant",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 1095,
+"first_appearance_ref": "Genesis 9:25"
+}
+},
+"sons": {
+"semantic_range": "offspring, progeny, subjects, followers, heirs, beneficiaries",
+"final_synthesis": "The term 'sons' underscores the covenantal relationship, the redemptive role of the Messiah, and the theme of lineage, reflecting Jesus Christ's dual nature as both Son of God and Redeemer.",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "inference",
+"messianic_fulfillment": "speculation"
+},
+"messianic_fulfillment": "the Messiah's role as the 'Son of God' (Son of Man) and the fulfillment of covenantal promises",
+"first_appearance": "Genesis 5:4 (Adam's sons)",
+"numerical_letter_observations": "ages listed as numerical values (e.g., eight hundred years, nine hundred five years), letter patterns (e.g., 'gennto' with repeated 'n' and 't' letters)",
+"language": "English",
+"symbolic_structure": "paired terms (sons and daughters), repeated phrases (many sons and daughters), covenantal emphasis on lineage and inheritance",
+"major_scriptural_pattern": "repetition of 'sons' in genealogical records (Moses 6:11-18)",
+"reveals_about_christ": "the Sonship, redemptive role, and covenantal significance in Jesus Christ's mission and identity",
+"root": "gennto",
+"literal_sense": "children, offspring, subjects, followers",
+"term": "sons",
+"_facts": {
+"stem": "sons",
+"surface": "Sons",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 924,
+"first_appearance_ref": "Genesis 5:4"
+}
+},
+"spirit": {
+"final_synthesis": "The word 'spirit' reveals Christ's divine nature as the embodiment of the Holy Spirit, whose role in creation, covenant, and redemption mirrors His wisdom, compassion, and mission as Savior and Sanctifier, reflecting the Trinity's relational harmony and redemptive purpose.",
+"root": "pneuma",
+"messianic_fulfillment": "Holy Spirit as Christ's divine presence (e.g., John 14:16, Acts 2:1-4), and role in resurrection (1 Corinthians 15:45)",
+"first_appearance": "Genesis 1:2 (God 'breathes into the dust' to create life)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference",
+"final_synthesis": "speculation"
+},
+"reveals_about_christ": "Christ's nature as divine mediator, embodying the Spirit's role in creation, covenant, and redemption, reflecting His wisdom, compassion, and mission as Savior and Sanctifier",
+"major_scriptural_pattern": "Holy Spirit as divine breath in creation, covenant, and redemption",
+"term": "spirit",
+"literal_sense": "breath, spirit, divine presence",
+"symbolic_structure": "Repeated phrases like 'my Spirit' (e.g., Exodus 3:5), paired terms (spirit + life), and numerical patterns (2 in Genesis 1:2)",
+"language": "English",
+"numerical_letter_observations": "865 verses across canon, with 2 appearing in Genesis 1:2 (key creation verse), and 4 in Exodus 3:5 (key covenant verse)",
+"semantic_range": "divine life, covenantal presence, redemption, creation, exodus, resurrection, and Zion",
+"_facts": {
+"stem": "spirit",
+"surface": "Spirit",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 865,
+"first_appearance_ref": "Genesis 1:2"
+}
+}
+}
+}

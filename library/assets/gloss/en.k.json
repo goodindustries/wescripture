@@ -1,0 +1,40 @@
+{
+"_meta": {
+"prompt_version": "gloss-define-v1",
+"shard": "k",
+"model": "qwen3:1.7b",
+"updated": "2026-04-17T15:25:26+00:00"
+},
+"stems": {
+"king": {
+"semantic_range": "authority, sovereignty, governance, dominion, military command, political leadership",
+"final_synthesis": "The term 'king' embodies the tension between divine sovereignty and human submission, reflecting Christ's dual role as both sovereign ruler and servant. Its symbolic structure of paired terms and numerical patterns underscores the covenantal nature of leadership, while its absence of original-language alignment highlights the text's reliance on later Christian interpretation. The word reveals Christ's mission to restore authority through redemption and to embody the perfect balance of power and humility.",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "speculation",
+"messianic_reading": "speculation"
+},
+"messianic_fulfillment": "the term 'king' is linked to Christ in eschatological contexts (e.g., Revelation 1:6, 20:6), though original-language alignment is absent",
+"first_appearance": "Genesis 14:1 (Genesis 14:9, 14:8, 2 Kings 24:12)",
+"numerical_letter_observations": "the number of kings listed (e.g., 'four kings with five') reflects a symbolic structure of balance and divine order",
+"language": "English (Restoration volume / no original-language alignment)",
+"symbolic_structure": "paired terms (e.g., 'king' vs. 'subject'), repeated phrases ('the king of...'), and numerical patterns (e.g., 'four kings with five')",
+"major_scriptural_pattern": "lists of kings in covenantal contexts (e.g., Genesis 14:1, 2 Kings 24:12) and their roles in conflict, alliance, and submission",
+"reveals_about_christ": "the word 'king' reveals Christ's role as sovereign ruler, mediator, and redeemer, reflecting His mission to restore authority and righteousness in the world",
+"root": "qaret (Hebrew) /  (Greek)",
+"literal_sense": "ruler, sovereign, leader, authority",
+"term": "king",
+"_facts": {
+"stem": "king",
+"surface": "King",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 2213,
+"first_appearance_ref": "Genesis 14:1"
+}
+}
+}
+}

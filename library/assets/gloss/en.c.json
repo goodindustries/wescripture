@@ -1,0 +1,101 @@
+{
+"_meta": {
+"prompt_version": "gloss-define-v1",
+"shard": "c",
+"model": "qwen3:1.7b",
+"updated": "2026-04-17T18:55:16+00:00"
+},
+"stems": {
+"children": {
+"semantic_range": "children as biological offspring, but also as covenantal subjects (e.g., 'children of God'), and metaphorically as those under parental authority or divine favor",
+"final_synthesis": "The term 'children' underscores the covenantal and symbolic significance of offspring in biblical theology, reflecting both divine promise and human responsibility, and its use in Christ's teachings highlights his role as the fulfillment of covenantal love and redemption",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "speculation"
+},
+"messianic_fulfillment": "speculation: the term 'children' is not explicitly tied to Christ in the provided texts, though its covenantal and symbolic meanings align with Christ's role as the 'Children of God' (John 1:12)",
+"first_appearance": "Genesis 3:16 (Genesis 3:16: 'I will greatly multiply thy sorrow and thy conception. In sorrow thou shalt bring forth children, and thy desire shall be to thy husband, and he shall rule over thee')",
+"numerical_letter_observations": "The number 16 in Genesis 3:16 is significant, but no specific letter patterns are provided in the text",
+"language": "English",
+"symbolic_structure": "paired terms (e.g., 'children of sorrow' or 'children of the promise'), repeated phrases (e.g., 'children of God'), and numerical patterns (e.g., the number 16 in Genesis 3:16)",
+"major_scriptural_pattern": "covenantal relationships, particularly in the context of divine promise and human responsibility (e.g., Exodus 1:22, Deuteronomy 1:31)",
+"reveals_about_christ": "The term 'children' reveals Christ's role as the covenantal son, the 'Children of God,' and the mediator who brings about the redemption of the 'children of sorrow' (Ephesians 1:4-6)",
+"root": "child",
+"literal_sense": "offspring, progeny, or descendants",
+"term": "children",
+"_facts": {
+"stem": "children",
+"surface": "Children",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 1497,
+"first_appearance_ref": "Genesis 3:16"
+}
+},
+"city": {
+"semantic_range": "places, settlements, symbolic terms (Zion, Eden), metaphor for divine habitation",
+"final_synthesis": "The term 'city' reveals Christ's role as the architect of divine habitation, the fulfillment of covenantal promises, and the symbolic heart of the heavenly Jerusalem, reflecting both practical settlement and eternal spiritual dwelling.",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"messianic_fulfillment": "the city of Zion in Revelation 21:1-7, where Christ is both builder and inhabitant",
+"first_appearance": "Genesis 4:17 (Cain builds a city)",
+"numerical_letter_observations": "seven cities (Genesis 4:17), seven hills (Ezekiel 40:3), and the number 1155 verses across canon",
+"language": "English",
+"symbolic_structure": "paired terms (city, Eden), numerical patterns (seven cities), and covenantal oppositions (city vs. wilderness)",
+"major_scriptural_pattern": "cities as settlements and symbolic places, recurring in covenant, exodus, and redemption contexts",
+"reveals_about_christ": "Christ as the builder of the heavenly city, the embodiment of divine habitation, and the fulfillment of covenantal promises",
+"root": "kereth",
+"literal_sense": "to build, city",
+"term": "city",
+"_facts": {
+"stem": "city",
+"surface": "City",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 1155,
+"first_appearance_ref": "Genesis 4:17"
+}
+},
+"christ": {
+"semantic_range": "Titles of the Messiah (Savior, Lord, Redeemer), covenant mediator, priestly role, royal designation, and symbolic representation of divine sovereignty",
+"final_synthesis": "The term 'Christ' encapsulates Jesus' divine identity, covenantal role, and redemptive mission, revealing his nature as the eternal Son of God, the mediator of salvation, and the fulfillment of divine promises, reflecting his universal significance in both Old and New Testaments.",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "pattern",
+"final_synthesis": "inference"
+},
+"messianic_fulfillment": "Jesus is explicitly identified as the Christ in the Gospels, fulfilling Old Testament prophecies about the Messiah, and his death and resurrection mark the culmination of redemptive history",
+"first_appearance": "Matthew 1:1 (Jesus as the Christ)",
+"numerical_letter_observations": "The root 'Christos' contains 7 letters (), a number significant in biblical numerology, and the letter '' (sigma) appears once, symbolizing 'sacred' or 'holy' in Greek theology",
+"language": "Greek (New Testament)",
+"symbolic_structure": "Paired terms (Christ + David, Christ + Father), numerical patterns (7-fold anointing, 1000-fold redemption), and covenantal oppositions (Christ vs. devil, Christ vs. law)",
+"major_scriptural_pattern": "Title of the Messiah in covenantal, priestly, royal, and redemptive contexts, recurring in prophetic and New Testament texts",
+"reveals_about_christ": "The word 'Christ' reveals Jesus' divine nature as the eternal Son of God, his role as the covenant mediator, and his fulfillment of Old Testament promises, underscoring his mission to save humanity and establish the new covenant",
+"root": "Christos",
+"literal_sense": "anointed one, Messiah, Lord",
+"term": "Christ",
+"_facts": {
+"stem": "christ",
+"surface": "Christ",
+"lang": "grc",
+"lemma": "Χριστός",
+"surface_gr": "χριστοῦ",
+"surface_he": "",
+"morph": "----GSM-",
+"count": 893,
+"first_appearance_ref": "Matthew 1:1"
+}
+}
+}
+}

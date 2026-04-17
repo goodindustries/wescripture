@@ -6,19 +6,19 @@
 "started_at": "2026-04-17T19:28:40+00:00",
 "universe_total": 7274,
 "work_total": 7274,
-"work_index": 8,
-"current_stem": "pass",
+"work_index": 37,
+"current_stem": "holy",
 "last_stem": "",
 "last_result": "",
 "last_reason": "",
 "last_elapsed_sec": 0.0,
-"done": 0,
-"failed": 0,
-"skipped": 8,
-"wall_sec": 0.0,
-"avg_sec_per_stem": null,
-"eta_sec_remaining": null,
-"stems_in_index": 28,
+"done": 8,
+"failed": 1,
+"skipped": 28,
+"wall_sec": 6590.8,
+"avg_sec_per_stem": 732.3,
+"eta_sec_remaining": 5298993,
+"stems_in_index": 36,
 "recent": [
 {
 "ts": "2026-04-17T19:28:40+00:00",
@@ -67,8 +67,183 @@
 "stem": "behold",
 "result": "skipped",
 "reason": "already_in_shard"
+},
+{
+"ts": "2026-04-17T19:44:20+00:00",
+"stem": "pass",
+"result": "ok",
+"sec": 940.3
+},
+{
+"ts": "2026-04-17T19:44:21+00:00",
+"stem": "son",
+"result": "skipped",
+"reason": "already_in_shard"
+},
+{
+"ts": "2026-04-17T19:44:21+00:00",
+"stem": "house",
+"result": "skipped",
+"reason": "already_in_shard"
+},
+{
+"ts": "2026-04-17T19:53:18+00:00",
+"stem": "men",
+"result": "ok",
+"sec": 537.3
+},
+{
+"ts": "2026-04-17T20:01:57+00:00",
+"stem": "hand",
+"result": "ok",
+"sec": 516.4
+},
+{
+"ts": "2026-04-17T20:01:58+00:00",
+"stem": "children",
+"result": "skipped",
+"reason": "already_in_shard"
+},
+{
+"ts": "2026-04-17T20:01:58+00:00",
+"stem": "word",
+"result": "skipped",
+"reason": "already_in_shard"
+},
+{
+"ts": "2026-04-17T20:01:58+00:00",
+"stem": "one",
+"result": "skipped",
+"reason": "already_in_shard"
+},
+{
+"ts": "2026-04-17T20:01:58+00:00",
+"stem": "say",
+"result": "skipped",
+"reason": "already_in_shard"
+},
+{
+"ts": "2026-04-17T20:01:58+00:00",
+"stem": "fath",
+"result": "skipped",
+"reason": "already_in_shard"
+},
+{
+"ts": "2026-04-17T20:01:58+00:00",
+"stem": "city",
+"result": "skipped",
+"reason": "already_in_shard"
+},
+{
+"ts": "2026-04-17T20:01:58+00:00",
+"stem": "servant",
+"result": "skipped",
+"reason": "already_in_shard"
+},
+{
+"ts": "2026-04-17T20:01:58+00:00",
+"stem": "great",
+"result": "skipped",
+"reason": "already_in_shard"
+},
+{
+"ts": "2026-04-17T20:13:49+00:00",
+"stem": "earth",
+"result": "fail",
+"reason": "validation-failed:missing-keys-or-empty-values",
+"sec": 710.5
+},
+{
+"ts": "2026-04-17T20:26:12+00:00",
+"stem": "jesu",
+"result": "ok",
+"sec": 742.4
+},
+{
+"ts": "2026-04-17T20:26:14+00:00",
+"stem": "name",
+"result": "skipped",
+"reason": "already_in_shard"
+},
+{
+"ts": "2026-04-17T20:26:14+00:00",
+"stem": "brethren",
+"result": "skipped",
+"reason": "already_in_shard"
+},
+{
+"ts": "2026-04-17T20:26:14+00:00",
+"stem": "heaven",
+"result": "skipped",
+"reason": "already_in_shard"
+},
+{
+"ts": "2026-04-17T20:26:14+00:00",
+"stem": "work",
+"result": "skipped",
+"reason": "already_in_shard"
+},
+{
+"ts": "2026-04-17T20:26:14+00:00",
+"stem": "sons",
+"result": "skipped",
+"reason": "already_in_shard"
+},
+{
+"ts": "2026-04-17T20:26:14+00:00",
+"stem": "christ",
+"result": "skipped",
+"reason": "already_in_shard"
+},
+{
+"ts": "2026-04-17T20:26:14+00:00",
+"stem": "year",
+"result": "skipped",
+"reason": "already_in_shard"
+},
+{
+"ts": "2026-04-17T20:26:14+00:00",
+"stem": "because",
+"result": "skipped",
+"reason": "already_in_shard"
+},
+{
+"ts": "2026-04-17T20:26:14+00:00",
+"stem": "heart",
+"result": "skipped",
+"reason": "already_in_shard"
+},
+{
+"ts": "2026-04-17T20:26:14+00:00",
+"stem": "mose",
+"result": "skipped",
+"reason": "already_in_shard"
+},
+{
+"ts": "2026-04-17T20:39:43+00:00",
+"stem": "mine",
+"result": "ok",
+"sec": 809.1
+},
+{
+"ts": "2026-04-17T20:53:58+00:00",
+"stem": "spirit",
+"result": "ok",
+"sec": 854.4
+},
+{
+"ts": "2026-04-17T21:08:17+00:00",
+"stem": "david",
+"result": "ok",
+"sec": 857.4
+},
+{
+"ts": "2026-04-17T21:18:29+00:00",
+"stem": "jerusalem",
+"result": "ok",
+"sec": 610.5
 }
 ],
-"updated": "2026-04-17T19:28:40+00:00",
+"updated": "2026-04-17T21:18:30+00:00",
 "prompt_version": "gloss-define-v1"
 }

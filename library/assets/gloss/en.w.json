@@ -1,0 +1,72 @@
+{
+"_meta": {
+"prompt_version": "gloss-define-v1",
+"shard": "w",
+"model": "qwen3:1.7b",
+"updated": "2026-04-17T18:38:21+00:00"
+},
+"stems": {
+"word": {
+"semantic_range": "communication, revelation, proclamation, covenantal promise, sacred speech, divine authority, and symbolic expression",
+"final_synthesis": "The Word's etymology and symbolic structure reveal Jesus Christ's mission as a covenantal mediator, embodying divine revelation and redemption. Its fulfillment in the Temple and exodus underscores its role in sanctifying human existence, reflecting the wisdom of God in bridging creation and eternity.",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "inference",
+"messianic_reading": "pattern",
+"final_synthesis": "speculation"
+},
+"messianic_fulfillment": "The Word (Logos) becomes flesh (John 1:1), fulfilling the covenantal promise of divine revelation and redemption. The Word's role in the Temple (John 1:14) and exodus (Exodus 19:5) underscores its centrality in salvation history.",
+"first_appearance": "Genesis 15:1 (dream vision of Abram): 'Fear not, Abram; I am thy defender, and thy reward will be exceeding great.'",
+"numerical_letter_observations": "Repetition of 'word' in 1478 verses, with 639 OT verses, and numerical patterns like '1' (Genesis 15:1) and '639' (OT verses).",
+"language": "English (Restoration volume / no original-language alignment)",
+"symbolic_structure": "paired terms ('word of the Lord' vs. 'word of God'), covenantal oppositions (e.g., 'word' vs. 'sin'), and symbolic echoes (e.g., 'word' in Genesis 15:1 and John 1:1).",
+"major_scriptural_pattern": "repeated use in covenantal contexts (e.g., 'word of the Lord,' 'word of God'), temple rituals (e.g., 'word of life'), and messianic fulfillment (e.g., 'Word made flesh'), with paired terms like 'word' and 'Lord' and numerical patterns (e.g., 1478 verses, 639 OT verses).",
+"reveals_about_christ": "The Word's role in Jesus Christ's mission reveals His divine nature as Creator, Redeemer, and Intercessor, with a focus on covenantal fidelity, sacrificial love, and the fulfillment of divine promises through incarnation.",
+"root": "logos (Greek) / emet (Hebrew)",
+"literal_sense": "to speak, declare, or reveal",
+"term": "word",
+"_facts": {
+"stem": "word",
+"surface": "Words",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 1478,
+"first_appearance_ref": "Genesis 15:1"
+}
+},
+"work": {
+"semantic_range": "creation, rest, labor, redemption, Sabbath, and spiritual restoration",
+"final_synthesis": "The word 'work' reveals Christ's dual role as Creator and Redeemer, emphasizing the interplay between labor, rest, and spiritual restoration, reflecting the divine order of creation and the promise of eternal rest in His kingdom",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"speculation": "speculation"
+},
+"messianic_fulfillment": "The word 'work' is linked to Jesus' role as the Redeemer who restores creation and reconciles humanity to God, fulfilling the Old Testament promise of 'comforter' (Moses 8:9)",
+"first_appearance": "Genesis 2:2 (God resting after creation)",
+"numerical_letter_observations": "The letters W-O-R-K (W=23, O=15, R=18, K=11) align with the seven-day creation week and the numerical value 11 (for 'work') in biblical numerology",
+"language": "English",
+"symbolic_structure": "Paired terms 'work' and 'rest,' numerical pattern of seven days, and symbolic oppositions between labor and rest",
+"major_scriptural_pattern": "Cycle of creation, rest, and Sabbath, with repeated emphasis on 'work' and 'rest' as complementary concepts",
+"reveals_about_christ": "The term 'work' underscores Christ's mission to redeem creation, reconcile humanity, and establish eternal rest through His resurrection and the new Sabbath of the Spirit",
+"root": "work",
+"literal_sense": "to create, produce, or accomplish",
+"term": "work",
+"_facts": {
+"stem": "work",
+"surface": "Work",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 930,
+"first_appearance_ref": "Genesis 2:2"
+}
+}
+}
+}

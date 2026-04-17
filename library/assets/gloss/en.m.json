@@ -1,0 +1,132 @@
+{
+"_meta": {
+"prompt_version": "gloss-define-v1",
+"shard": "m",
+"model": "qwen3:1.7b",
+"updated": "2026-04-17T20:39:43+00:00"
+},
+"stems": {
+"man": {
+"semantic_range": "includes humans, people, individuals, and the concept of creation, covenant, and divine image",
+"final_synthesis": "The term 'man' encapsulates the theological tension between human creation and divine sovereignty, reflecting the covenantal relationship between God and humanity. Its repeated use in scripture underscores its centrality to the narrative of creation, redemption, and the messianic promise. The word's etymology and symbolic patterns point to Jesus Christ as the fulfillment of the divine image, embodying both the original creation and the redemptive work of salvation.",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"messianic_fulfillment": "The term 'man' is explicitly linked to Jesus Christ in the Gospels (e.g., Matthew 1:1, John 1:14), where it signifies the fulfillment of the divine image and the redemptive role of the Messiah.",
+"first_appearance": "Genesis 1:26 (Genesis 1:26: 'And the Gods took counsel among themselves and said: Let us go down and form man in our image, after our likeness; and we will give them dominion over the fish of the sea, and over the fowl of the air, and over the cattle, and over all the earth, and over every creeping thing that...')",
+"numerical_letter_observations": "The root 'man' (Hebrew) contains three letters, mirroring the threefold nature of creation (Genesis 1:26), and the word 'man' appears 2496 times across the canonical texts, reflecting its centrality in scripture.",
+"language": "English",
+"symbolic_structure": "paired terms 'image of God' (Genesis 1:26) and 'likeness of God' (Genesis 1:26), repeated phrases 'form man' (Genesis 2:7), and numerical patterns (e.g., 'man' appears 2496 times across canon)",
+"major_scriptural_pattern": "repeated use in creation narratives (Genesis 1:26, Genesis 2:7), covenantal contexts (Exodus 2:25, Deuteronomy 7:7), and messianic fulfillment (Matthew 1:1, John 1:14)",
+"reveals_about_christ": "The word 'man' reveals Jesus' role as the image of God (Genesis 1:26), the mediator of creation (Hebrews 2:14), and the ultimate redeemer (Colossians 1:15), underscoring His divine nature and redemptive mission.",
+"root": "man",
+"literal_sense": "human being, person, or individual",
+"term": "man",
+"_facts": {
+"stem": "man",
+"surface": "Man",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 2496,
+"first_appearance_ref": "Genesis 1:26"
+}
+},
+"mose": {
+"semantic_range": "Leadership, covenant, redemption, exodus, priestly role, divine calling",
+"final_synthesis": "The term 'mose' encapsulates Christ's dual nature as both a historical figure and a spiritual archetype, reflecting His role as a covenantal leader, mediator, and redeemer, shaped by the Old Testament's prophetic tradition.",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"messianic_fulfillment": "Moses' role as a precursor to Christ, with his exodus and covenantal work foreshadowing Jesus' redemptive mission",
+"first_appearance": "Exodus 2:10 (spying mission, divine calling)",
+"numerical_letter_observations": "The letter 'm' appears 8 times in the root, symbolizing divine presence and mediation",
+"language": "English (Restoration volume / no original-language alignment)",
+"symbolic_structure": "Paired terms (Moses/Aaron), covenantal motifs (exodus, redemption), numerical pattern (10, signifying divine authority)",
+"major_scriptural_pattern": "Covenantal leadership, divine intervention, exodus narrative, priestly role",
+"reveals_about_christ": "The word reveals Christ's role as a mediator, leader, and redeemer, rooted in the Old Testament's covenantal framework",
+"root": "mose",
+"literal_sense": "Moses (the leader and prophet in the Exodus narrative)",
+"term": "mose",
+"_facts": {
+"stem": "mose",
+"surface": "Moses",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 872,
+"first_appearance_ref": "Exodus 2:10"
+}
+},
+"men": {
+"final_synthesis": "The term 'men' reflects the complexity of human nature, encompassing both creation and fall, and the redemptive work of Christ. It underscores the theological tension between humanity's fallen state and their ultimate salvation, revealing Christ's mission to reconcile all things through his humanity and divinity.",
+"root": "mane",
+"messianic_fulfillment": "The term 'men' is used in the context of Christ's humanity, as seen in passages like 1 Corinthians 15:47, where Christ is referred to as 'the sons of men,' emphasizing his dual nature as both human and divine.",
+"first_appearance": "Genesis 6:1: 'And it came to pass, when men began to multiply on the face of the earth, and daughters were born unto them,'",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "speculation",
+"final_synthesis": "inference"
+},
+"reveals_about_christ": "The term 'men' reveals Christ's humanity and his mission to redeem fallen humanity, showing his role as the mediator between God and humans, and his ultimate victory over sin and death.",
+"major_scriptural_pattern": "The term 'men' is repeatedly used in the context of creation, the fall of humanity, and the redemption of humanity, reflecting the dual nature of humans as both created beings and fallen sinners. It appears in passages like Genesis 6:1, Exodus 20:1, and 1 Corinthians 15:47, emphasizing their role in God's plan of salvation.",
+"term": "men",
+"literal_sense": "To be human, to be a person, or to be an individual; also to multiply or increase in number.",
+"symbolic_structure": "The term is paired with 'daughters' in Genesis 6:1, symbolizing the contrast between the original creation and the corrupting influence of sin. The numerical pattern involves the number of people, which is unspecified but highlights the vastness of humanity's fall and redemption.",
+"language": "English",
+"numerical_letter_observations": "The root 'mane' (Hebrew) has 5 letters, and the Greek equivalent (if any) would have a similar count, reflecting the numerical symbolism of humanity's role in creation and redemption.",
+"semantic_range": "Humanity, person, individual; also used metaphorically to describe the fallen state of mankind, the role of humans in creation, and the redemption of humanity through Christ.",
+"_facts": {
+"stem": "men",
+"surface": "Men",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 1664,
+"first_appearance_ref": "Genesis 6:1"
+}
+},
+"mine": {
+"final_synthesis": "The term 'mine' underscores Christ's role as the ultimate heir of divine inheritance, Redeemer, and Sovereign, reflecting His fulfillment of covenantal promises through spiritual possession and redemptive action.",
+"root": "mine",
+"messianic_fulfillment": "used in Ezekiel 8:3 and 2 Chronicles 9:6 to describe the Messiah's spiritual possession of divine authority and inheritance",
+"first_appearance": "Genesis 14:22 (Genesis 14:22: 'And he put forth the form of an hand, and took me by a lock of mine head')",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference",
+"final_synthesis": "speculation"
+},
+"reveals_about_christ": "the term reveals Christ's role as a mediator of covenantal inheritance, Redeemer, and Sovereign, emphasizing His spiritual possession of divine truths and His fulfillment of covenantal promises",
+"major_scriptural_pattern": "repeated use in covenantal contexts (e.g., inheritance, redemption) and symbolic paired terms ('mine' + 'thine', 'mine' + 'thy')",
+"term": "mine",
+"literal_sense": "to take, acquire, or extract (from Hebrew root 'mana' meaning 'to mine' or 'to take')",
+"symbolic_structure": "paired terms ('mine' + 'thine', 'mine' + 'thy') and covenantal ownership/possession motifs",
+"language": "English",
+"numerical_letter_observations": "the number 14 (Genesis 14:22) and the letter 'm' (from 'mana') appear in repeated patterns across canonical verses",
+"semantic_range": "actions of taking, acquiring, or extracting; metaphorical use in inheritance, redemption, and covenantal possession",
+"_facts": {
+"stem": "mine",
+"surface": "Mine",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 867,
+"first_appearance_ref": "Genesis 14:22"
+}
+}
+}
+}

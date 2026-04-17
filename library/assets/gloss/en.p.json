@@ -1,0 +1,41 @@
+{
+"_meta": {
+"prompt_version": "gloss-define-v1",
+"shard": "p",
+"model": "qwen3:1.7b",
+"updated": "2026-04-17T19:44:20+00:00"
+},
+"stems": {
+"pass": {
+"final_synthesis": "The term 'pass' embodies the tension between divine movement and human responsibility, reflecting Christ's role as a mediator and transformer. Its etymology and symbolic use in covenantal rituals highlight the complexity of divine-human interaction, with its numerical structure (3 letters) suggesting completeness or transformation, though this remains speculative without explicit textual alignment.",
+"root": "*pas-",
+"messianic_fulfillment": "The term 'pass' does not directly reference Jesus Christ's messianic role, but its etymological roots (e.g., *pas- as 'to pass' or 'to transfer') may symbolize the Messiah's role in bridging divine and human realms, though this is speculative.",
+"first_appearance": "Genesis 4:3 (Cain bringing an offering unto the Lord), where the term appears in the context of ritual sacrifice.",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "inference",
+"messianic_fulfillment": "speculation",
+"reveals_about_christ": "speculation"
+},
+"reveals_about_christ": "The term 'pass' underscores Christ's role as a mediator between God and humanity, reflecting His sacrifice and the transformative power of divine action, though its specific connection to Christ remains indirect.",
+"major_scriptural_pattern": "The term 'pass' is embedded in covenantal rituals (e.g., Moses 5:19, 32) and symbolic acts of atonement, reflecting its role in divine mediation and human responsibility.",
+"term": "pass",
+"literal_sense": "To move across a distance, especially in a physical sense; to transfer or convey something from one place to another.",
+"symbolic_structure": "Repeated in covenantal contexts (e.g., sacrifice, exile) as a metaphor for divine judgment or human accountability, with paired terms like 'pass' and 'slay' emphasizing the tension between divine will and human action.",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The root *pas- (3 letters) aligns with numerical patterns in biblical Hebrew, where 3 often signifies completeness or transformation, though this is speculative without explicit textual alignment.",
+"semantic_range": "Actions involving movement, transfer, or proceeding; connotations of forward motion, sacrifice, or divine action.",
+"_facts": {
+"stem": "pass",
+"surface": "Pass",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 1963,
+"first_appearance_ref": "Genesis 4:3"
+}
+}
+}
+}

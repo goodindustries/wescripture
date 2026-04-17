@@ -1,0 +1,102 @@
+{
+"_meta": {
+"prompt_version": "gloss-define-v1",
+"shard": "b",
+"model": "qwen3:1.7b",
+"updated": "2026-04-17T19:10:43+00:00"
+},
+"stems": {
+"behold": {
+"semantic_range": "Conveys astonishment, divine presence, and the anticipation of something extraordinary, often linked to covenantal faith and eschatological expectation.",
+"final_synthesis": "The term 'Behold' encapsulates the tension between human limitation and divine revelation, reflecting Christ's dual role as both the Revealer and the Revealed. Its use in scripture underscores the importance of faith, anticipation, and the transformative power of divine truth, aligning with the New Testament's emphasis on the Incarnation and the unfolding of God's plan.",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "inference",
+"messianic_reading": "speculation"
+},
+"messianic_fulfillment": "The term 'Behold' is central to Jesus Christ's role as the Revealer of divine truth, as seen in His proclamation of the Kingdom of God (e.g., Matthew 1:21: 'And the birth of Jesus the Christ, God's Son, was in the reign of Augustus').",
+"first_appearance": "Genesis 1:29 (Genesis 1:29: 'And I, God, said unto man: Behold, I have given you every herb bearing seed, which is upon the face of all the earth, and every tree in the which shall be the fruit of a tree yielding seed; to you it shall be for meat').",
+"numerical_letter_observations": "The root 'be-hold' contains three letters (b, h, l), which align with the numerical values 2, 8, and 12 in Hebrew, corresponding to the number 21 (the number of the Lord), a symbol of divine sovereignty.",
+"language": "English (Restoration volume / no original-language alignment)",
+"symbolic_structure": "Embedded in covenantal language, with paired terms like 'Behold' and 'And,' and numerical patterns (e.g., the number 6 in the sixth day, symbolizing completion and rest).",
+"major_scriptural_pattern": "Repeated in exodus, covenant, and eschatological contexts, often paired with 'And' or 'And now,' emphasizing divine revelation and the anticipation of salvation.",
+"reveals_about_christ": "The word 'Behold' reveals Christ's mission as the incarnate Word who reveals God's glory, bridging the gap between divine revelation and human understanding, and affirming His role as the ultimate Revealer of the Father.",
+"root": "be-hold",
+"literal_sense": "To look upon with wonder or awe, often in the context of divine revelation or supernatural sight.",
+"term": "Behold",
+"_facts": {
+"stem": "behold",
+"surface": "Behold",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 2074,
+"first_appearance_ref": "Genesis 1:29"
+}
+},
+"brethren": {
+"semantic_range": "kinship, covenant, priesthood, kingship, temple, sacrifice, creation, exodus, inheritance, judgment, exile, redemption, resurrection, Zion",
+"final_synthesis": "The word 'brethren' reveals Christ's mission as a relational, covenantal figure, emphasizing community, kinship, and the fulfillment of divine promises through the Son of Man, reflecting both historical and theological depth.",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"final_synthesis": "speculation"
+},
+"messianic_fulfillment": "James and John (brothers) are pivotal in the Gospels, symbolizing the Messiah's relational role and the importance of kinship in divine covenant",
+"first_appearance": "Genesis 9:22 (covenant context: 'brethren' as kinship)",
+"numerical_letter_observations": "The number twelve appears in the twelve tribes, twelve apostles, and twelve brethren, reflecting divine completeness and covenantal unity",
+"language": "English (Restoration volume / no original-language alignment)",
+"symbolic_structure": "paired terms (e.g., 'brothers and sons'), repeated phrases (e.g., 'the twelve brethren'), and numerical patterns (e.g., twelve in the twelve tribes)",
+"major_scriptural_pattern": "covenant relationships, priesthood, kingship, temple, and symbolic oppositions (e.g., 'brothers and sisters')",
+"reveals_about_christ": "The word 'brethren' underscores Christ's relational mission, emphasizing community, familial bonds, and the fulfillment of covenantal promises through the Son of Man",
+"root": "b'rei'ath",
+"literal_sense": "brothers (kinship, covenant, social role)",
+"term": "brethren",
+"_facts": {
+"stem": "brethren",
+"surface": "Brethren",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 973,
+"first_appearance_ref": "Genesis 9:22"
+}
+},
+"because": {
+"semantic_range": "reason for action, justification, causation, divine purpose, covenantal explanation",
+"final_synthesis": "The word 'because' reveals Christ's mission as the incarnate God who provides justification, restores covenantal rest, and redeems through exodus, embodying divine wisdom and the fulfillment of God's promises through grace and covenant.",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference",
+"final_synthesis": "speculation"
+},
+"messianic_fulfillment": "In Christ, 'because' reflects justification by faith (Romans 1:20), covenantal rest (Hebrews 4:10), and exodus redemption (Ephesians 1:19-23)",
+"first_appearance": "Genesis 2:3 (resting from creation)",
+"numerical_letter_observations": "Occurrences: 880 verses; repeated in Genesis 2:3, Exodus 20:8, Romans 1:20; letter patterns: 'b' and 'c' frequent in Hebrew roots",
+"language": "English",
+"symbolic_structure": "paired terms (because/for), numerical patterns (7, 13), covenantal oppositions (work vs. rest)",
+"major_scriptural_pattern": "covenantal justification, exodus narrative, redemption context",
+"reveals_about_christ": "Christ's mission emphasizes divine justification, covenantal rest, and exodus redemption, reflecting His role as the mediator of grace and the fulfillment of God's promises",
+"root": "proson (Greek) / kaboth (Hebrew)",
+"literal_sense": "since, because, for, justification, reason",
+"term": "because",
+"_facts": {
+"stem": "because",
+"surface": "Because",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 880,
+"first_appearance_ref": "Genesis 2:3"
+}
+}
+}
+}

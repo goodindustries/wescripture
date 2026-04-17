@@ -1,0 +1,40 @@
+{
+"_meta": {
+"prompt_version": "gloss-define-v1",
+"shard": "i",
+"model": "qwen3:1.7b",
+"updated": "2026-04-17T15:21:41+00:00"
+},
+"stems": {
+"israel": {
+"semantic_range": "Nations, tribes, and later messianic identity; also denotes the Lord God of Israel in covenantal contexts",
+"final_synthesis": "The term 'Israel' encapsulates the covenantal tension between divine sovereignty and human redemption, with its etymology rooted in the Hebrew word 'Yisrael' (stranger) and its symbolic evolution to signify both the rejected nation and the Messiah. Its repeated appearances in covenantal texts (Genesis, Joshua, Ezra) underscore its role in divine redemption, while its messianic fulfillment in the Gospels reflects the fulfillment of God's promise to restore the lost people of Israel. The word reveals Christ's identity as the mediator between God and humanity, embodying the covenantal promise of salvation and the divine plan for restoration.",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "inference",
+"messianic_reading": "speculation"
+},
+"messianic_fulfillment": "The term 'Israel' is central to the New Testament's messianic narrative, particularly in the Gospels (Matthew 1:1, Acts 3:26) where it signifies the Messiah's identity and redemptive role",
+"first_appearance": "Genesis 32:28 (Jacob's name change to Israel, marking the covenantal identity of the people of God)",
+"numerical_letter_observations": "The number 28 (Genesis 32:28) and 30 (Joshua 8:30) are repeated in covenantal contexts, symbolizing divine timing and covenantal fulfillment",
+"language": "English (Restoration volume / no original-language alignment)",
+"symbolic_structure": "Embedded structures include paired terms (Israel/Judah), covenantal oppositions (stranger/hostile), and numerical symbolism (28, 30) to emphasize divine sovereignty and covenantal fidelity",
+"major_scriptural_pattern": "Covenantal identity: repeated phrases like 'the Lord God of Israel' (Joshua 8:30), paired terms 'Israel and Judah' (Ezra 6:21), and numerical patterns (e.g., 28, 30) reflecting divine sovereignty and covenantal binding",
+"reveals_about_christ": "The word 'Israel' reveals Christ's dual nature as both the rejected nation (Genesis 32:28) and the promised Messiah (Acts 3:26), reflecting the tension between divine sovereignty and human redemption in the covenantal plan",
+"root": "Yisrael (Hebrew) /  (Greek)",
+"literal_sense": "Stranger (Genesis 32:28) or hostile (Joshua 8:30), later evolving to signify a people of God and the Messiah",
+"term": "Israel",
+"_facts": {
+"stem": "israel",
+"surface": "Israel",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 2235,
+"first_appearance_ref": "Genesis 32:28"
+}
+}
+}
+}

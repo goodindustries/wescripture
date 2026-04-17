@@ -1,0 +1,40 @@
+{
+"_meta": {
+"prompt_version": "gloss-define-v1",
+"shard": "d",
+"model": "qwen3:1.7b",
+"updated": "2026-04-17T21:08:17+00:00"
+},
+"stems": {
+"david": {
+"final_synthesis": "David's name and role reveal God's plan for salvation, emphasizing covenant fidelity, redemptive sacrifice, and the messianic promise, reflecting Jesus' fulfillment of Old Testament prophecies.",
+"root": "dawdi",
+"messianic_fulfillment": "David as a precursor to Jesus (Gospels, 1 Kings 5:5)",
+"first_appearance": "Ruth 4:17 (Hebrew: David, Greek: )",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "His role in salvation, redemption, and the messianic promise (Matthew 1:6, 1 Kings 5:5)",
+"major_scriptural_pattern": "monarchy and priesthood (1 Kings 5:5, Matthew 1:6)",
+"term": "david",
+"literal_sense": "to be a father; to be a ruler (Hebrew)",
+"symbolic_structure": "paired terms (David & Solomon), repeated phrases ('the Lord spake unto David'), numerical patterns (1, 5, 17)",
+"language": "English",
+"numerical_letter_observations": "1 (name), 5 (son), 17 (exile) - all significant in biblical numerology",
+"semantic_range": "monarchy, priesthood, sacrifice, creation, exodus, inheritance, judgment, exile, redemption, resurrection, Zion",
+"_facts": {
+"stem": "david",
+"surface": "David",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 856,
+"first_appearance_ref": "Ruth 4:17"
+}
+}
+}
+}
