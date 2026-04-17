@@ -45,6 +45,10 @@ DONALDSON = REPO / "library" / "donaldson"
 GLOSS_DIR = REPO / "library" / "assets" / "gloss"
 TOC_PATH = REPO / "library" / "toc.json"
 LOG_PATH = REPO / "diagnostics" / "gloss-build.log"
+STATE_PATH = REPO / "diagnostics" / "gloss-build-state.json"
+# Also written beside shards so /library/assets/gloss/_build_state.json is fetchable after deploy.
+PUBLIC_STATE_PATH = GLOSS_DIR / "_build_state.json"
+PID_PATH = REPO / "diagnostics" / "gloss-build.pid"
 
 OLLAMA_CHAT = "http://127.0.0.1:11434/api/chat"
 OLLAMA_TAGS = "http://127.0.0.1:11434/api/tags"
@@ -101,6 +105,38 @@ def log(msg: str) -> None:
     try:
         with LOG_PATH.open("a", encoding="utf-8") as fh:
             fh.write(line + "\n")
+    except OSError:
+        pass
+
+
+def write_build_state(payload: dict[str, Any]) -> None:
+    """Atomic JSON for dashboards (local + optional static deploy)."""
+    payload = dict(payload)
+    payload["updated"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    payload.setdefault("prompt_version", PROMPT_VERSION)
+    raw = json.dumps(payload, ensure_ascii=False, indent=0)
+    for path in (STATE_PATH, PUBLIC_STATE_PATH):
+        try:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            tmp = path.with_suffix(path.suffix + ".tmp")
+            tmp.write_text(raw, encoding="utf-8")
+            tmp.replace(path)
+        except OSError:
+            pass
+
+
+def write_pid_file() -> None:
+    try:
+        PID_PATH.parent.mkdir(parents=True, exist_ok=True)
+        PID_PATH.write_text(str(os.getpid()), encoding="utf-8")
+    except OSError:
+        pass
+
+
+def clear_pid_file() -> None:
+    try:
+        if PID_PATH.exists():
+            PID_PATH.unlink()
     except OSError:
         pass
 
@@ -845,6 +881,62 @@ def main() -> int:
         log(f"dry-run: {len(work)} stems would be processed")
         return 0
 
+    write_pid_file()
+    recent_events: list[dict[str, Any]] = []
+    started_iso = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    start = time.time()
+
+    def _emit_state(
+        *,
+        status: str,
+        phase: str,
+        current_stem: str = "",
+        last_stem: str = "",
+        last_result: str = "",
+        last_reason: str = "",
+        last_elapsed_sec: float = 0.0,
+        work_index: int = 0,
+    ) -> None:
+        wall = time.time() - start
+        processed = done + failed
+        avg = wall / processed if processed > 0 else 0.0
+        remaining_new = max(0, len(work) - work_index - 1)
+        eta_sec = int(avg * remaining_new) if avg > 0 and remaining_new > 0 else None
+        idx = load_gloss_index_counts()
+        write_build_state({
+            "status": status,
+            "phase": phase,
+            "pid": os.getpid(),
+            "model": model,
+            "started_at": started_iso,
+            "universe_total": len(universe),
+            "work_total": len(work),
+            "work_index": work_index,
+            "current_stem": current_stem,
+            "last_stem": last_stem,
+            "last_result": last_result,
+            "last_reason": last_reason,
+            "last_elapsed_sec": round(last_elapsed_sec, 1),
+            "done": done,
+            "failed": failed,
+            "skipped": skipped,
+            "wall_sec": round(wall, 1),
+            "avg_sec_per_stem": round(avg, 1) if processed else None,
+            "eta_sec_remaining": eta_sec,
+            "stems_in_index": idx,
+            "recent": recent_events[-40:],
+        })
+
+    def load_gloss_index_counts() -> int:
+        p = GLOSS_DIR / "en.index.json"
+        if not p.exists():
+            return 0
+        try:
+            data = json.loads(p.read_text(encoding="utf-8"))
+            return len(data.get("byStem") or {})
+        except (OSError, json.JSONDecodeError):
+            return 0
+
     # Load existing shards lazily; keep in-memory working copies.
     shards: dict[str, dict[str, Any]] = {}
 
@@ -859,7 +951,8 @@ def main() -> int:
     dirty_keys: set[str] = set()
     FLUSH_EVERY = 1  # flush after every completion so the reader surfaces entries promptly
 
-    start = time.time()
+    _emit_state(status="running", phase="starting", work_index=-1)
+
     for i, rec in enumerate(work):
         if _STOP["flag"]:
             break
@@ -868,9 +961,19 @@ def main() -> int:
         sh = _shard(key)
         if (not args.force) and stem in sh["stems"]:
             skipped += 1
+            recent_events.append({
+                "ts": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                "stem": stem,
+                "result": "skipped",
+                "reason": "already_in_shard",
+            })
+            _emit_state(status="running", phase="skipped", current_stem=stem, work_index=i,
+                        last_stem=stem, last_result="skipped", last_reason="already_in_shard")
             continue
         if not args.skip_watchdog and i > 0 and i % WATCHDOG_EVERY == 0:
             watchdog_check()
+
+        _emit_state(status="running", phase="generating", current_stem=stem, work_index=i)
 
         t0 = time.time()
         entry, reason = generate_entry(model, rec)
@@ -878,6 +981,15 @@ def main() -> int:
         if entry is None:
             failed += 1
             log(f"  fail {stem:20s} reason={reason} ({elapsed:.1f}s)")
+            recent_events.append({
+                "ts": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                "stem": stem,
+                "result": "fail",
+                "reason": reason,
+                "sec": round(elapsed, 1),
+            })
+            _emit_state(status="running", phase="after_stem", current_stem="", work_index=i,
+                        last_stem=stem, last_result="fail", last_reason=reason, last_elapsed_sec=elapsed)
         else:
             sh["stems"][stem] = entry
             sh["_meta"]["model"] = model
@@ -886,6 +998,14 @@ def main() -> int:
             dirty_keys.add(key)
             done += 1
             log(f"  ok   {stem:20s} count={rec['count']:4d} first={_first_appearance_label(rec)} ({elapsed:.1f}s)")
+            recent_events.append({
+                "ts": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                "stem": stem,
+                "result": "ok",
+                "sec": round(elapsed, 1),
+            })
+            _emit_state(status="running", phase="after_stem", current_stem="", work_index=i,
+                        last_stem=stem, last_result="ok", last_reason="", last_elapsed_sec=elapsed)
 
         if dirty_keys and (done % FLUSH_EVERY == 0 or _STOP["flag"]):
             for k in list(dirty_keys):
@@ -907,6 +1027,9 @@ def main() -> int:
 
     wall = time.time() - start
     log(f"done: wrote={done} skipped={skipped} failed={failed} wall={wall:.0f}s")
+    final_status = "stopped" if _STOP["flag"] else "complete"
+    _emit_state(status=final_status, phase="finished", work_index=len(work) - 1)
+    clear_pid_file()
     return 0
 
 

@@ -1,0 +1,74 @@
+{
+"status": "running",
+"phase": "generating",
+"pid": 25923,
+"model": "qwen3:1.7b",
+"started_at": "2026-04-17T19:28:40+00:00",
+"universe_total": 7274,
+"work_total": 7274,
+"work_index": 8,
+"current_stem": "pass",
+"last_stem": "",
+"last_result": "",
+"last_reason": "",
+"last_elapsed_sec": 0.0,
+"done": 0,
+"failed": 0,
+"skipped": 8,
+"wall_sec": 0.0,
+"avg_sec_per_stem": null,
+"eta_sec_remaining": null,
+"stems_in_index": 28,
+"recent": [
+{
+"ts": "2026-04-17T19:28:40+00:00",
+"stem": "lord",
+"result": "skipped",
+"reason": "already_in_shard"
+},
+{
+"ts": "2026-04-17T19:28:40+00:00",
+"stem": "god",
+"result": "skipped",
+"reason": "already_in_shard"
+},
+{
+"ts": "2026-04-17T19:28:40+00:00",
+"stem": "man",
+"result": "skipped",
+"reason": "already_in_shard"
+},
+{
+"ts": "2026-04-17T19:28:40+00:00",
+"stem": "israel",
+"result": "skipped",
+"reason": "already_in_shard"
+},
+{
+"ts": "2026-04-17T19:28:40+00:00",
+"stem": "king",
+"result": "skipped",
+"reason": "already_in_shard"
+},
+{
+"ts": "2026-04-17T19:28:40+00:00",
+"stem": "out",
+"result": "skipped",
+"reason": "already_in_shard"
+},
+{
+"ts": "2026-04-17T19:28:40+00:00",
+"stem": "land",
+"result": "skipped",
+"reason": "already_in_shard"
+},
+{
+"ts": "2026-04-17T19:28:40+00:00",
+"stem": "behold",
+"result": "skipped",
+"reason": "already_in_shard"
+}
+],
+"updated": "2026-04-17T19:28:40+00:00",
+"prompt_version": "gloss-define-v1"
+}

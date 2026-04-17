@@ -47,9 +47,19 @@
   status = 302
 
 [[redirects]]
-  from = "/monitor"
-  to = "/monitor.html"
-  status = 302
+from = "/monitor"
+to = "/monitor.html"
+status = 302
+
+[[redirects]]
+from = "/gloss-monitor"
+to = "/gloss-monitor.html"
+status = 302
+
+[[headers]]
+  for = "/library/assets/gloss/_build_state.json"
+  [headers.values]
+    Cache-Control = "public, max-age=5, must-revalidate"
 
 # Do not add a blanket `/*` → `/index.html` (status 200) rewrite here: Netlify applies
 # redirects before Functions, so it would return HTML for `/.netlify/functions/*` and

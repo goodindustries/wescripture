@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gloss build — WeScripture</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=EB+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#f7f3eb;--card:#fffdf9;--line:rgba(0,0,0,.10);--text:#2f2a24;--muted:#7a6d5c;--accent:#9c7a4d;--ok:#2d6b3f;--warn:#876022;--bad:#7a3434;}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 Inter,system-ui,sans-serif}
+    header{padding:18px 18px 8px;max-width:960px;margin:0 auto}
+    .brand{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+    .brand a{text-decoration:none;color:inherit}
+    h1{margin:0;font:700 30px/1.05 "EB Garamond",Georgia,serif}
+    .sub{margin:6px 0 0;color:var(--muted);max-width:52em}
+    main{max-width:960px;margin:0 auto;padding:8px 18px 40px}
+    .row{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;flex:1;min-width:200px}
+    .k{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+    .v{margin-top:4px;font-size:22px;font-weight:700;color:var(--accent)}
+    .v.small{font-size:15px;font-weight:600;color:var(--text)}
+    .meta{font-size:12px;color:var(--muted);margin-top:6px}
+    .bar{height:10px;background:rgba(156,122,77,.15);border-radius:999px;overflow:hidden;margin-top:8px}
+    .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#c4a574);width:0%;transition:width .4s ease}
+    .pill{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;margin-right:6px}
+    .pill.run{background:#eaf0f7;color:#34567a}
+    .pill.done{background:#e6f1e8;color:var(--ok)}
+    .pill.stop{background:#f1e8e8;color:var(--bad)}
+    .pill.idle{background:#eee;color:var(--muted)}
+    table{width:100%;border-collapse:collapse;font-size:13px}
+    th,td{padding:6px 8px;border-top:1px solid rgba(0,0,0,.08);text-align:left}
+    th{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+    td.mono{font-family:ui-monospace,Menlo,monospace;font-size:12px}
+    .controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:8px 0}
+    button{border:1px solid rgba(156,122,77,.28);background:#fcfaf6;color:var(--accent);font-weight:700;padding:8px 12px;border-radius:10px;cursor:pointer}
+    button:hover{background:rgba(156,122,77,.08)}
+    .err{color:var(--bad);font-size:13px;margin-top:8px}
+    .foot{margin-top:18px;font-size:12px;color:var(--muted)}
+    .foot code{font-size:11px;background:rgba(0,0,0,.04);padding:2px 6px;border-radius:4px}
+    code.mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 12px;}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand"><a href="./index.html">WeScripture</a> <span style="color:var(--muted)">/</span> <span>Gloss build</span></div>
+    <h1>Deep gloss pipeline</h1>
+    <p class="sub">Live state from <code class="mono">library/assets/gloss/_build_state.json</code> (updated by <code class="mono">lds_pipeline/build_shared_gloss.py</code> on your machine). Auto-refreshes every 5s. Deploy this file + JSON to see status on Netlify after you commit fresh state.</p>
+  </header>
+  <main>
+    <div class="controls">
+      <button type="button" id="refresh">Refresh now</button>
+      <label><input type="checkbox" id="auto" checked /> Auto-refresh (5s)</label>
+      <span id="pollStatus" class="meta"></span>
+    </div>
+    <div id="banner" class="err" style="display:none"></div>
+
+    <div class="row">
+      <div class="card" style="flex:2;min-width:280px">
+        <div class="k">Status</div>
+        <div id="statusLine" class="v small">Loading…</div>
+        <div id="phaseLine" class="meta"></div>
+        <div class="bar"><i id="barFill"></i></div>
+        <div id="etaLine" class="meta"></div>
+      </div>
+      <div class="card"><div class="k">Stems in index</div><div id="idxCount" class="v">—</div><div class="meta">Unique stems shipped in <code>en.index.json</code></div></div>
+      <div class="card"><div class="k">This run</div><div id="runCounts" class="v small">—</div><div class="meta" id="runMeta"></div></div>
+    </div>
+
+    <div class="row">
+      <div class="card" style="flex:1;min-width:260px"><div class="k">Model</div><div id="model" class="v small">—</div></div>
+      <div class="card" style="flex:1;min-width:260px"><div class="k">PID</div><div id="pid" class="v small">—</div></div>
+      <div class="card" style="flex:2;min-width:280px"><div class="k">Wall time</div><div id="wall" class="v small">—</div><div class="meta" id="started"></div></div>
+    </div>
+
+    <div class="card" style="margin-top:10px">
+      <div class="k">Recent events (last 40)</div>
+      <table aria-label="Recent stems">
+        <thead><tr><th>Time</th><th>Stem</th><th>Result</th><th>Sec / reason</th></tr></thead>
+        <tbody id="recentBody"><tr><td colspan="4" class="meta">Loading…</td></tr></tbody>
+      </table>
+    </div>
+
+    <p class="foot">Local log (not on CDN): <code>diagnostics/gloss-build.log</code> (append) and <code>diagnostics/gloss-build-run.log</code> (if you use <code>scripts/gloss_build_start.sh</code>). Start: <code>./scripts/gloss_build_start.sh</code> — requires <code>ollama serve</code>.</p>
+  </main>
+  <script>
+(function(){
+  var stateUrl = './library/assets/gloss/_build_state.json';
+  var pollMs = 5000;
+  var timer = null;
+
+  function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  function fmtDur(sec){
+    if (sec == null || sec === '') return '—';
+    sec = Number(sec);
+    if (sec < 60) return Math.round(sec) + 's';
+    if (sec < 3600) return Math.floor(sec/60) + 'm ' + Math.round(sec%60) + 's';
+    var h = Math.floor(sec/3600);
+    var m = Math.floor((sec % 3600)/60);
+    return h + 'h ' + m + 'm';
+  }
+
+  function render(data){
+    var err = document.getElementById('banner');
+    err.style.display = 'none';
+    err.textContent = '';
+
+    var st = (data && data.status) || 'idle';
+    var pill = '<span class="pill idle">idle</span>';
+    if (st === 'running') pill = '<span class="pill run">running</span>';
+    else if (st === 'complete') pill = '<span class="pill done">complete</span>';
+    else if (st === 'stopped') pill = '<span class="pill stop">stopped</span>';
+
+    document.getElementById('statusLine').innerHTML = pill + ' <span style="font-weight:600;color:var(--text)">' + esc(st) + '</span>';
+    document.getElementById('phaseLine').textContent = data.phase ? ('Phase: ' + data.phase + (data.current_stem ? ' — ' + data.current_stem : '')) : '';
+
+    var wt = Number(data.work_total) || 0;
+    var wi = Number(data.work_index);
+    var frac = wt > 0 && wi >= 0 ? Math.min(100, ((wi + 1) / wt) * 100) : (st === 'complete' ? 100 : 0);
+    if (st === 'running' && data.phase === 'generating' && wt > 0) frac = Math.min(100, ((wi || 0) + 0.5) / wt * 100);
+    document.getElementById('barFill').style.width = frac + '%';
+
+    var eta = data.eta_sec_remaining;
+    document.getElementById('etaLine').textContent =
+      (eta != null && st === 'running') ? ('ETA (rough): ~' + fmtDur(eta) + ' remaining in queue') : '';
+
+    document.getElementById('idxCount').textContent = (data.stems_in_index != null) ? data.stems_in_index : '—';
+    var d = data.done || 0, f = data.failed || 0, sk = data.skipped || 0;
+    document.getElementById('runCounts').textContent = 'ok ' + d + ' · fail ' + f + ' · skip ' + sk;
+    document.getElementById('runMeta').textContent =
+      'work queue: ' + wt + ' stems · avg ' + (data.avg_sec_per_stem != null ? (data.avg_sec_per_stem + 's / stem') : '—');
+
+    document.getElementById('model').textContent = data.model || '—';
+    document.getElementById('pid').textContent = data.pid != null ? String(data.pid) : '—';
+    document.getElementById('wall').textContent = data.wall_sec != null ? fmtDur(data.wall_sec) : '—';
+    document.getElementById('started').textContent = data.started_at ? ('Started ' + data.started_at + ' UTC') : '';
+
+    var tbody = document.getElementById('recentBody');
+    var rec = data.recent || [];
+    if (!rec.length) {
+      tbody.innerHTML = '<tr><td colspan="4" class="meta">No events yet (build not started or idle snapshot).</td></tr>';
+    } else {
+      tbody.innerHTML = rec.slice().reverse().map(function(r){
+        var reason = r.reason || '';
+        var sec = r.sec != null ? String(r.sec) : (reason && r.result === 'fail' ? reason : '');
+        return '<tr><td class="mono">' + esc(r.ts||'') + '</td><td>' + esc(r.stem) + '</td><td>' + esc(r.result) + '</td><td class="mono">' + esc(sec) + '</td></tr>';
+      }).join('');
+    }
+
+    document.getElementById('pollStatus').textContent = 'Last fetch: ' + new Date().toISOString().slice(11,19) + ' local';
+  }
+
+  function load(){
+    fetch(stateUrl + '?t=' + Date.now(), { cache: 'no-store' })
+      .then(function(r){ if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(render)
+      .catch(function(e){
+        document.getElementById('banner').style.display = 'block';
+        document.getElementById('banner').textContent = 'Could not load state: ' + e.message + ' — open this page from the site (not file://) or run the pipeline once to create _build_state.json.';
+        document.getElementById('statusLine').textContent = 'Unavailable';
+      });
+  }
+
+  document.getElementById('refresh').addEventListener('click', load);
+  document.getElementById('auto').addEventListener('change', function(){
+    if (timer) clearInterval(timer);
+    timer = null;
+    if (this.checked) timer = setInterval(load, pollMs);
+  });
+
+  load();
+  timer = setInterval(load, pollMs);
+})();
+  </script>
+</body>
+</html>
