@@ -841,6 +841,70 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 .quote-card.expanded .quote-more { display: none; }
 .ent-link { color: var(--accent); border-bottom: 1px dotted currentColor; cursor: pointer; }
 .ent-link:hover { background: rgba(156,122,77,0.08); border-radius: 2px; }
+/* Deep gloss card (13-field structure). Collapsed state shows term + chips + synthesis;
+   expanded state reveals the labeled rows. Chips communicate language/root/first-use at a glance. */
+.word-deep-chips {
+    display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px;
+}
+.word-deep-chip {
+    display: inline-block; font-size: 10.5px; letter-spacing: .02em; color: var(--muted);
+    background: rgba(156,122,77,0.08); border: 1px solid rgba(156,122,77,0.18);
+    padding: 2px 8px; border-radius: 999px; line-height: 1.5;
+}
+.word-deep-chip--lang { color: #4a7090; border-color: rgba(74,112,144,0.22); background: rgba(74,112,144,0.08); }
+.word-deep-chip--root { font-family: 'EB Garamond', Georgia, serif; font-style: italic; font-size: 11.5px; }
+.word-deep-chip--first { color: var(--muted); }
+.word-card-def--deep {
+    font-family: 'EB Garamond', Georgia, serif; font-size: 14.5px; line-height: 1.7;
+}
+.word-deep-synth {
+    color: var(--text); margin-bottom: 10px; padding-left: 10px;
+    border-left: 2px solid rgba(156,122,77,0.3);
+}
+.word-deep-rows { display: none; }
+.word-card:not(.word-card--kw-collapsed) .word-deep-rows { display: block; }
+.word-card:not(.word-card--kw-collapsed) .word-card-def--deep { padding-top: 4px; }
+.word-deep-row {
+    display: grid; grid-template-columns: 150px 1fr; gap: 10px;
+    padding: 8px 0; border-top: 1px solid rgba(156,122,77,0.1);
+}
+.word-deep-label {
+    font-size: 10.5px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+    color: var(--muted);
+}
+.word-deep-value { color: var(--text); font-size: 14px; }
+.word-deep-conf {
+    margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px 12px;
+    font-size: 11px; color: var(--muted); display: none;
+}
+.word-card:not(.word-card--kw-collapsed) .word-deep-conf { display: flex; }
+.word-deep-conf-row { display: inline-flex; align-items: center; gap: 4px; }
+.word-deep-conf-label { font-weight: 600; }
+.conf-pill {
+    display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .04em;
+    padding: 1px 7px; border-radius: 3px; text-transform: uppercase;
+}
+.conf-pill--lexical     { background: #e6f1e8; color: #2d6b3f; }
+.conf-pill--pattern     { background: #eaf0f7; color: #34567a; }
+.conf-pill--inference   { background: #f6efdf; color: #876022; }
+.conf-pill--speculation { background: #f1e8e8; color: #7a3434; }
+/* Request-definition card (no entry yet). */
+.word-card-def--request { display: flex; flex-direction: column; gap: 8px; padding-top: 4px; }
+.word-deep-request-text { font-size: 13px; color: var(--muted); }
+.word-deep-request-btn {
+    align-self: flex-start; font-size: 12px; font-weight: 600; cursor: pointer;
+    background: var(--accent); color: #fff; border: none; padding: 6px 12px; border-radius: 4px;
+}
+.word-deep-request-btn--done { background: #8a8a8a; cursor: default; }
+.word-deep-request-count {
+    display: inline-block; margin-left: 4px; background: rgba(255,255,255,0.2);
+    padding: 0 6px; border-radius: 999px; font-size: 11px;
+}
+.word-card--requested::before {
+    content: "requested"; position: absolute; top: 4px; right: 6px;
+    font-size: 9px; letter-spacing: .05em; text-transform: uppercase; color: var(--accent);
+}
+.word-card--kw-request, .word-card--kw-deep { position: relative; }
 /* Entity-linked word spans inside verse text */
 .verse-text span.w[data-entity],
 .verse-text span.w[data-place],
@@ -3944,14 +4008,22 @@ function finishVerseDiscoveryPanel(payload) {
         html += '</div>';
     }
 
-    var showedKeyWords = mergedKw.length > 0;
+    var keywordCards = [];
+    mergedKw.forEach(function(item) {
+        var card = '';
+        if (item.kind === 'dona') {
+            card = htmlKeyWordCardDona(item.w, verseText);
+        } else if (item.kind === 'graph') {
+            card = htmlKeyWordCardGraph(item, verseText, lexByStem);
+            if (!card) card = htmlKeyWordCardRequest(item, verseText);
+        }
+        if (card) keywordCards.push(card);
+    });
+    var showedKeyWords = keywordCards.length > 0;
     if (showedKeyWords) {
         html += '<div class="panel-section">Key words</div>';
         html += '<div class="word-cards-wrap expanded">';
-        mergedKw.forEach(function(item) {
-            if (item.kind === 'dona') html += htmlKeyWordCardDona(item.w, verseText);
-            else if (item.kind === 'graph') html += htmlKeyWordCardGraph(item, verseText, lexByStem);
-        });
+        html += keywordCards.join('');
         html += '</div>';
     }
 
@@ -3997,6 +4069,29 @@ function finishVerseDiscoveryPanel(payload) {
             if (meta) {
                 loadSourceDocument(e.source_doc_id, meta.href, { focusPara: e.source_para });
             }
+        });
+    });
+    panelBody.querySelectorAll('.word-deep-request-btn').forEach(function(btn) {
+        btn.addEventListener('click', function(ev) {
+            ev.preventDefault(); ev.stopPropagation();
+            var stem = btn.getAttribute('data-stem');
+            var term = btn.getAttribute('data-term');
+            var rec = requestGlossDefinition(stem, term);
+            btn.classList.add('word-deep-request-btn--done');
+            btn.innerHTML = 'Queued <span class="word-deep-request-count">' + (rec ? rec.count : 1) + '</span>';
+            btn.disabled = true;
+        });
+    });
+    // Right-click on any keyword card to queue a definition request too.
+    panelBody.querySelectorAll('.word-card[data-stem]').forEach(function(card) {
+        card.addEventListener('contextmenu', function(ev) {
+            var stem = card.getAttribute('data-stem');
+            if (!stem) return;
+            ev.preventDefault();
+            var term = (card.querySelector('.word-english') || {}).textContent || stem;
+            var rec = requestGlossDefinition(stem, term.trim());
+            card.classList.add('word-card--requested');
+            card.setAttribute('data-req-count', rec ? rec.count : 1);
         });
     });
     panelBody.querySelectorAll('.scrip-card--jump').forEach(function(row) {
@@ -4056,7 +4151,8 @@ async function openVerseDiscovery(ref) {
 
     return Promise.all([
         loadChapterWordIndex(chapterId),
-        loadChapterLexStudies(chapterId)
+        loadChapterLexStudies(chapterId),
+        loadGlossIndex()
     ]).then(function(results) {
         var wordIdx = results[0];
         var lexRoot = results[1] || {};
@@ -4064,10 +4160,13 @@ async function openVerseDiscovery(ref) {
         var lexByStem = lexRoot && lexRoot[vnum] ? lexRoot[vnum] : {};
         var mergedKw = mergeKeyWordsForVerse(donaWords, verseData, verseText, chapterId, verseEl);
         registerChapterKeywordHeadwords(mergedKw, verseText);
-        finishVerseDiscoveryPanel(Object.assign({}, payloadBase, {
-            mergedKw: mergedKw,
-            lexByStem: lexByStem
-        }));
+        var stemsForGloss = mergedKw.filter(function(k) { return k.kind === 'graph'; }).map(function(k) { return k.stem; });
+        return ensureGlossShardsForStems(stemsForGloss).then(function() {
+            finishVerseDiscoveryPanel(Object.assign({}, payloadBase, {
+                mergedKw: mergedKw,
+                lexByStem: lexByStem
+            }));
+        });
     });
 }
 
@@ -5496,23 +5595,138 @@ function htmlKeyWordCardDona(w, verseText) {
     return '<div class="word-card word-card--kw-collapsed">' + head + def + '</div>';
 }
 
-/** Keyword card: pre-generated *_lexstudies.json `study` only (no corpus excerpt composite). */
+// Known reader placeholders that used to ship from build_lex_studies.py fallbacks.
+// Treat them as "no entry" so the deep gloss / Donaldson fallback runs instead.
+var LEX_PLACEHOLDER_PREFIXES = [
+    'A compact word study',
+    'No confident open-licensed morphology',
+    'No public verse-token',
+    'A compact word-study for this keyword'
+];
+
+function lexStudyIsUsable(s) {
+    if (!s) return false;
+    var t = String(s).trim();
+    if (t.length < 30) return false;
+    for (var i = 0; i < LEX_PLACEHOLDER_PREFIXES.length; i++) {
+        if (t.indexOf(LEX_PLACEHOLDER_PREFIXES[i]) === 0) return false;
+    }
+    return true;
+}
+
+/**
+ * Keyword card with a deterministic fallback chain:
+ *   1. Per-chapter *_lexstudies.json (non-placeholder)   -> legacy paragraph card
+ *   2. Shared deep gloss (en.*.json), 13-field structure -> deep card
+ *   3. Donaldson word-study row (via caller)             -> handled before this fn
+ *   4. Empty string (caller filters it out)
+ */
 function htmlKeyWordCardGraph(item, verseText, lexByStem) {
     lexByStem = lexByStem || {};
     var title = graphKeywordHeadword(item, verseText) || 'Key term';
-    var lx = lexByStem[item.stem];
+    var stem = item && item.stem;
+
+    var lx = lexByStem[stem];
     var rawStudy = lx && lx.study ? String(lx.study).trim() : '';
-    var sense = rawStudy
-        ? rawStudy
-        : 'A compact word study for this keyword is not in the index yet for this verse.';
+    if (lexStudyIsUsable(rawStudy)) {
+        var verifiedL = verseText && keywordVerifiedInVerse(title, verseText);
+        var headL = '<div class="word-card-head" onclick="toggleVerseKwCard(this)"><div class="word-card-head-text">'
+            + '<div class="word-english' + (verifiedL ? ' word-kw-in-verse' : '') + '">' + escapeHtml(title) + '</div>'
+            + '</div><span class="word-card-chevron" aria-hidden="true">\u25bc</span></div>';
+        var defL = '<div class="word-card-def"><div class="word-kw-block"><div class="word-kw-text">'
+            + makeExpandable(rawStudy, 'note-preview', 'note-overflow', 'note-more') + '</div></div></div>';
+        return '<div class="word-card word-card--kw-collapsed word-card--kw-lex" role="article" data-stem="' + escapeAttr(stem || '') + '" aria-label="Keyword: ' + escapeAttr(title) + '">'
+            + headL + defL + '</div>';
+    }
+
+    var deep = lookupGlossEntry(stem);
+    if (deep) return htmlKeyWordCardDeep(title, stem, deep, verseText);
+
+    return '';
+}
+
+function _confPill(level) {
+    var cls = 'conf-pill conf-pill--' + (level || 'speculation');
+    var label = (level || 'speculation').charAt(0).toUpperCase() + (level || 'speculation').slice(1);
+    return '<span class="' + cls + '">' + escapeHtml(label) + '</span>';
+}
+
+function htmlKeyWordCardDeep(title, stem, entry, verseText) {
     var verified = verseText && keywordVerifiedInVerse(title, verseText);
+    var facts = entry._facts || {};
+    var lang = entry.language || facts.lang || '';
+    var root = entry.root || '';
+    var chips = '';
+    if (lang) chips += '<span class="word-deep-chip word-deep-chip--lang">' + escapeHtml(lang) + '</span>';
+    if (root) chips += '<span class="word-deep-chip word-deep-chip--root">' + escapeHtml(root) + '</span>';
+    if (facts.first_appearance_ref) chips += '<span class="word-deep-chip word-deep-chip--first">First: ' + escapeHtml(facts.first_appearance_ref) + '</span>';
+
+    var synth = entry.final_synthesis || '';
+    var conf = entry.confidence_by_claim || {};
+
+    // 13-field rows (collapsed by default; revealed when the card expands).
+    var rows = [
+        ['Literal sense', entry.literal_sense],
+        ['Semantic range', entry.semantic_range],
+        ['First appearance', entry.first_appearance],
+        ['Major scriptural pattern', entry.major_scriptural_pattern],
+        ['Symbolic structure', entry.symbolic_structure],
+        ['Numerical / letter observations', entry.numerical_letter_observations],
+        ['Messianic fulfillment', entry.messianic_fulfillment],
+        ['What this reveals about Christ', entry.reveals_about_christ]
+    ];
+    var rowsHtml = '';
+    rows.forEach(function(row) {
+        var label = row[0], val = row[1];
+        if (!val) return;
+        rowsHtml += '<div class="word-deep-row"><div class="word-deep-label">' + escapeHtml(label) + '</div>'
+            + '<div class="word-deep-value">' + escapeHtml(val) + '</div></div>';
+    });
+
+    var confHtml = '';
+    var confKeys = Object.keys(conf);
+    if (confKeys.length) {
+        confHtml = '<div class="word-deep-conf">';
+        confKeys.forEach(function(k) {
+            confHtml += '<span class="word-deep-conf-row"><span class="word-deep-conf-label">' + escapeHtml(k) + '</span>' + _confPill(String(conf[k] || '').toLowerCase()) + '</span>';
+        });
+        confHtml += '</div>';
+    }
+
     var head = '<div class="word-card-head" onclick="toggleVerseKwCard(this)"><div class="word-card-head-text">'
-        + '<div class="word-english' + (verified ? ' word-kw-in-verse' : '') + '">' + escapeHtml(title) + '</div>';
-    head += '</div><span class="word-card-chevron" aria-hidden="true">\u25bc</span></div>';
-    var def = '<div class="word-card-def"><div class="word-kw-block"><div class="word-kw-text">'
-        + makeExpandable(sense, 'note-preview', 'note-overflow', 'note-more') + '</div></div></div>';
-    return '<div class="word-card word-card--kw-collapsed" role="article" aria-label="Keyword: ' + escapeAttr(title) + '">'
-        + head + def + '</div>';
+        + '<div class="word-english' + (verified ? ' word-kw-in-verse' : '') + '">' + escapeHtml(title) + '</div>'
+        + (chips ? '<div class="word-deep-chips">' + chips + '</div>' : '')
+        + '</div><span class="word-card-chevron" aria-hidden="true">\u25bc</span></div>';
+
+    var body = '<div class="word-card-def word-card-def--deep">'
+        + (synth ? '<div class="word-deep-synth">' + escapeHtml(synth) + '</div>' : '')
+        + (rowsHtml ? '<div class="word-deep-rows">' + rowsHtml + '</div>' : '')
+        + confHtml
+        + '</div>';
+
+    return '<div class="word-card word-card--kw-collapsed word-card--kw-deep" role="article" data-stem="' + escapeAttr(stem || '') + '" aria-label="Keyword: ' + escapeAttr(title) + '">'
+        + head + body + '</div>';
+}
+
+/** Placeholder card used when nothing is defined yet: lets the reader queue a request. */
+function htmlKeyWordCardRequest(item, verseText) {
+    var title = graphKeywordHeadword(item, verseText) || 'Key term';
+    var stem = item && item.stem;
+    if (!stem) return '';
+    var count = glossRequestCount(stem);
+    var verified = verseText && keywordVerifiedInVerse(title, verseText);
+    var head = '<div class="word-card-head"><div class="word-card-head-text">'
+        + '<div class="word-english' + (verified ? ' word-kw-in-verse' : '') + '">' + escapeHtml(title) + '</div>'
+        + '</div></div>';
+    var body = '<div class="word-card-def word-card-def--request">'
+        + '<div class="word-deep-request-text">No deep study yet for this keyword.</div>'
+        + '<button type="button" class="word-deep-request-btn" data-stem="' + escapeAttr(stem) + '" data-term="' + escapeAttr(title) + '">'
+        + 'Request definition'
+        + (count ? ' <span class="word-deep-request-count">' + count + '</span>' : '')
+        + '</button>'
+        + '</div>';
+    return '<div class="word-card word-card--kw-collapsed word-card--kw-request" role="article" data-stem="' + escapeAttr(stem) + '" aria-label="Keyword: ' + escapeAttr(title) + '">'
+        + head + body + '</div>';
 }
 
 function escapeAttr(str) {
@@ -5531,6 +5745,11 @@ var wordIndexCache = {};     // slug → loaded words JSON
 var wordIndexLoading = {};   // slug → promise
 var lexStudiesCache = {};    // lex:slug → { vnum: { stem: {...} } } (no _meta)
 var lexStudiesLoading = {};  // lex:slug → promise
+var glossIndex = null;       // { byStem: {stem:key}, byHead: {head:stem} } from en.index.json
+var glossIndexLoading = null;
+var glossShards = {};        // shardKey → { _meta, stems: {stem: entry} }
+var glossShardLoading = {};  // shardKey → promise
+var glossRequestQueue = null; // cached { stem: {count, ts, users:[]} } from localStorage
 
 function closeTocPanel() {
     // Sidebar TOC was removed from this build; keep as a safe no-op so
@@ -5914,6 +6133,131 @@ function loadSourceWordIndex(docId) {
     if (!meta || !meta.href) return Promise.resolve({});
     var wordsHref = './' + meta.href.replace(/\.html$/, '_words.json');
     return loadWordIndex('source:' + docId, wordsHref);
+}
+
+// ── Shared deep-gloss (en.*.json) ─────────────────────────────────────────
+// Built by lds_pipeline/build_shared_gloss.py. One shard per leading letter
+// plus _digits / _other. Lazy fetch: index on first chapter render, shards
+// on demand per stem.
+function loadGlossIndex() {
+    if (glossIndex) return Promise.resolve(glossIndex);
+    if (glossIndexLoading) return glossIndexLoading;
+    glossIndexLoading = fetch('./assets/gloss/en.index.json', { cache: 'no-cache' })
+        .then(function(r) { return r.ok ? r.json() : null; })
+        .then(function(data) {
+            glossIndex = (data && data.byStem) ? data : { byStem: {}, byHead: {} };
+            return glossIndex;
+        })
+        .catch(function() {
+            glossIndex = { byStem: {}, byHead: {} };
+            return glossIndex;
+        });
+    return glossIndexLoading;
+}
+
+function glossShardKeyForStem(stem) {
+    var s = String(stem || '').toLowerCase();
+    if (!s) return '_other';
+    var c = s.charAt(0);
+    if (c >= 'a' && c <= 'z') return c;
+    if (c >= '0' && c <= '9') return '_digits';
+    return '_other';
+}
+
+function loadGlossShard(key) {
+    if (!key) return Promise.resolve(null);
+    if (glossShards[key]) return Promise.resolve(glossShards[key]);
+    if (glossShardLoading[key]) return glossShardLoading[key];
+    glossShardLoading[key] = fetch('./assets/gloss/en.' + key + '.json', { cache: 'no-cache' })
+        .then(function(r) { return r.ok ? r.json() : null; })
+        .then(function(data) {
+            glossShards[key] = (data && data.stems) ? data : { stems: {} };
+            return glossShards[key];
+        })
+        .catch(function() {
+            glossShards[key] = { stems: {} };
+            return glossShards[key];
+        });
+    return glossShardLoading[key];
+}
+
+/** Resolve a stem → deep gloss entry by consulting the index, then the shard. */
+function lookupGlossEntry(stem) {
+    if (!glossIndex || !stem) return null;
+    var idx = glossIndex.byStem || {};
+    var key = idx[stem] || idx[String(stem).toLowerCase()];
+    if (!key) return null;
+    var shard = glossShards[key];
+    if (!shard) return null;
+    return (shard.stems && shard.stems[stem]) || (shard.stems && shard.stems[String(stem).toLowerCase()]) || null;
+}
+
+/** Fire-and-forget: make sure the shards for these stems are in cache. */
+function ensureGlossShardsForStems(stems) {
+    if (!stems || !stems.length) return Promise.resolve();
+    if (!glossIndex) {
+        return loadGlossIndex().then(function() { return ensureGlossShardsForStems(stems); });
+    }
+    var idx = glossIndex.byStem || {};
+    var keys = {};
+    stems.forEach(function(s) {
+        var k = idx[s] || idx[String(s || '').toLowerCase()];
+        if (k) keys[k] = true;
+    });
+    var pending = Object.keys(keys).map(function(k) { return loadGlossShard(k); });
+    return Promise.all(pending);
+}
+
+// localStorage-backed "request definition" queue. Light, no server round trip;
+// surfaced later to the pipeline via a separate drain script if desired.
+function loadGlossRequestQueue() {
+    if (glossRequestQueue) return glossRequestQueue;
+    try {
+        var raw = localStorage.getItem('ws.gloss.requests') || '{}';
+        glossRequestQueue = JSON.parse(raw) || {};
+    } catch (e) { glossRequestQueue = {}; }
+    return glossRequestQueue;
+}
+
+function saveGlossRequestQueue() {
+    try { localStorage.setItem('ws.gloss.requests', JSON.stringify(glossRequestQueue || {})); }
+    catch (e) { /* storage full or disabled */ }
+}
+
+function currentRequesterId() {
+    // Piggyback on whatever "account" handle we have; fall back to an anonymous
+    // per-browser id so we can count unique requesters without PII.
+    try {
+        if (window.currentUser && window.currentUser.id) return String(window.currentUser.id);
+        if (window.acctState && window.acctState.handle) return 'h:' + String(window.acctState.handle);
+    } catch (e) {}
+    var anon = localStorage.getItem('ws.anonId');
+    if (!anon) {
+        anon = 'anon:' + Math.random().toString(36).slice(2, 10) + '.' + Date.now().toString(36);
+        try { localStorage.setItem('ws.anonId', anon); } catch (e) {}
+    }
+    return anon;
+}
+
+function requestGlossDefinition(stem, displayTerm) {
+    if (!stem) return null;
+    var q = loadGlossRequestQueue();
+    var rec = q[stem] || { stem: stem, term: displayTerm || stem, users: [], count: 0, ts: 0 };
+    var uid = currentRequesterId();
+    if (rec.users.indexOf(uid) < 0) rec.users.push(uid);
+    rec.count = rec.users.length;
+    rec.ts = Date.now();
+    rec.term = displayTerm || rec.term || stem;
+    q[stem] = rec;
+    glossRequestQueue = q;
+    saveGlossRequestQueue();
+    return rec;
+}
+
+function glossRequestCount(stem) {
+    var q = loadGlossRequestQueue();
+    var rec = stem && q[stem];
+    return rec && rec.count ? rec.count : 0;
 }
 
 // ── Verse expand/collapse ─────────────────────────────────────────────────
