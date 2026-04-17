@@ -1,6 +1,6 @@
 {
-  "generated": "2026-04-10T00:29:43+00:00",
-  "coverage_generated": "2026-04-09T22:35:36+00:00",
+  "generated": "2026-04-17T13:03:22+00:00",
+  "coverage_generated": "2026-04-10T03:56:33+00:00",
   "coverage": {
     "chapters_scanned": 1582,
     "verses": 41995,
@@ -8,166 +8,169 @@
     "full_pct": 3.88,
     "bit_hits": {
       "donaldson": 14924,
-      "entity_links": 11994,
+      "entity_links": 11995,
       "verse_discovery": 17050
+    },
+    "verse_discovery": {
+      "verses_with_more_than_three_rows": 452,
+      "note": "Reader shows top 3 + expand; >3 rows means continuation data exists"
+    },
+    "entity_registry": {
+      "people.json": {
+        "records": 1660,
+        "with_scripture_refs": 97
+      },
+      "places.json": {
+        "records": 122,
+        "with_scripture_refs": 47
+      },
+      "things.json": {
+        "records": 61,
+        "with_scripture_refs": 36
+      },
+      "topics.json": {
+        "records": 49,
+        "with_scripture_refs": 49
+      }
     },
     "legend": {
       "bits": "bitmask per verse index: 1=Donaldson content, 2=entity markup, 4=verse_discovery row; 7=all"
     }
   },
   "ledger": {
-    "last_event_ts": "2026-04-10T00:29:28+00:00",
+    "last_event_ts": "2026-04-10T13:57:21+00:00",
     "pending": 37,
-    "claimed": 1,
-    "agents_claimed_now": [
-      "WorkerA"
-    ],
-    "claimed_tasks": [
-      {
-        "task_id": "T-0060",
-        "agent": "WorkerA",
-        "title": "People registry: Wikipedia enrichment for scripture figures — born/died, thumbnail, summary",
-        "claim_ts": "2026-04-09T02:15:12+00:00"
-      }
-    ],
-    "completed_last_24h": 51,
-    "agents_active_7d": [
-      "Claude",
-      "ClaudeCode",
-      "Worker000",
-      "Worker001",
-      "Worker002",
-      "Worker003",
-      "Worker005",
-      "WorkerA",
-      "WorkerB"
-    ]
+    "claimed": 0,
+    "agents_claimed_now": [],
+    "claimed_tasks": [],
+    "completed_last_24h": 0,
+    "agents_active_7d": []
   },
   "recent_events": [
     {
       "event": "task_reopened",
-      "task_id": "T-0072",
+      "task_id": "T-0113",
       "agent": null,
-      "ts": "2026-04-10T00:29:28+00:00",
+      "ts": "2026-04-10T13:57:21+00:00",
       "title": ""
     },
     {
       "event": "task_reopened",
-      "task_id": "T-0072",
+      "task_id": "T-0113",
       "agent": null,
-      "ts": "2026-04-10T00:29:24+00:00",
+      "ts": "2026-04-10T13:57:21+00:00",
       "title": ""
     },
     {
       "event": "task_reopened",
-      "task_id": "T-0075",
+      "task_id": "T-0113",
       "agent": null,
-      "ts": "2026-04-10T00:29:24+00:00",
+      "ts": "2026-04-10T13:57:21+00:00",
       "title": ""
     },
     {
       "event": "task_reopened",
-      "task_id": "T-0072",
+      "task_id": "T-0113",
       "agent": null,
-      "ts": "2026-04-10T00:29:24+00:00",
+      "ts": "2026-04-10T13:57:21+00:00",
       "title": ""
     },
     {
       "event": "task_reopened",
-      "task_id": "T-0072",
+      "task_id": "T-0113",
       "agent": null,
-      "ts": "2026-04-10T00:29:24+00:00",
+      "ts": "2026-04-10T13:57:21+00:00",
       "title": ""
     },
     {
       "event": "task_reopened",
-      "task_id": "T-0072",
+      "task_id": "T-0113",
       "agent": null,
-      "ts": "2026-04-10T00:29:24+00:00",
+      "ts": "2026-04-10T13:57:21+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_reopened",
+      "task_id": "T-0113",
+      "agent": null,
+      "ts": "2026-04-10T13:57:21+00:00",
       "title": ""
     },
     {
       "event": "task_claimed",
-      "task_id": "T-0075",
-      "agent": "Worker003",
-      "ts": "2026-04-10T00:29:24+00:00",
-      "title": ""
-    },
-    {
-      "event": "task_claimed",
-      "task_id": "T-0072",
-      "agent": "Worker005",
-      "ts": "2026-04-10T00:29:24+00:00",
-      "title": ""
-    },
-    {
-      "event": "task_claimed",
-      "task_id": "T-0072",
-      "agent": "Worker004",
-      "ts": "2026-04-10T00:29:24+00:00",
-      "title": ""
-    },
-    {
-      "event": "task_claimed",
-      "task_id": "T-0072",
-      "agent": "Worker002",
-      "ts": "2026-04-10T00:29:24+00:00",
-      "title": ""
-    },
-    {
-      "event": "task_claimed",
-      "task_id": "T-0072",
+      "task_id": "T-0113",
       "agent": "Worker001",
-      "ts": "2026-04-10T00:29:24+00:00",
+      "ts": "2026-04-10T13:57:19+00:00",
       "title": ""
     },
     {
       "event": "task_claimed",
-      "task_id": "T-0072",
+      "task_id": "T-0113",
       "agent": "Worker000",
-      "ts": "2026-04-10T00:29:24+00:00",
-      "title": ""
-    },
-    {
-      "event": "task_reopened",
-      "task_id": "T-0072",
-      "agent": null,
-      "ts": "2026-04-10T00:29:17+00:00",
-      "title": ""
-    },
-    {
-      "event": "task_reopened",
-      "task_id": "T-0075",
-      "agent": null,
-      "ts": "2026-04-10T00:29:13+00:00",
-      "title": ""
-    },
-    {
-      "event": "task_reopened",
-      "task_id": "T-0075",
-      "agent": null,
-      "ts": "2026-04-10T00:29:13+00:00",
-      "title": ""
-    },
-    {
-      "event": "task_reopened",
-      "task_id": "T-0072",
-      "agent": null,
-      "ts": "2026-04-10T00:29:13+00:00",
+      "ts": "2026-04-10T13:57:19+00:00",
       "title": ""
     },
     {
       "event": "task_claimed",
-      "task_id": "T-0075",
+      "task_id": "T-0113",
       "agent": "Worker003",
-      "ts": "2026-04-10T00:29:13+00:00",
+      "ts": "2026-04-10T13:57:19+00:00",
       "title": ""
     },
     {
       "event": "task_claimed",
-      "task_id": "T-0075",
+      "task_id": "T-0113",
+      "agent": "Worker006",
+      "ts": "2026-04-10T13:57:19+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_claimed",
+      "task_id": "T-0113",
+      "agent": "Worker004",
+      "ts": "2026-04-10T13:57:19+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_claimed",
+      "task_id": "T-0113",
+      "agent": "Worker007",
+      "ts": "2026-04-10T13:57:19+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_claimed",
+      "task_id": "T-0113",
+      "agent": "Worker005",
+      "ts": "2026-04-10T13:57:19+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_claimed",
+      "task_id": "T-0113",
       "agent": "Worker002",
-      "ts": "2026-04-10T00:29:13+00:00",
+      "ts": "2026-04-10T13:57:19+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_reopened",
+      "task_id": "T-0113",
+      "agent": null,
+      "ts": "2026-04-10T13:57:16+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_reopened",
+      "task_id": "T-0113",
+      "agent": null,
+      "ts": "2026-04-10T13:57:16+00:00",
+      "title": ""
+    },
+    {
+      "event": "task_reopened",
+      "task_id": "T-0113",
+      "agent": null,
+      "ts": "2026-04-10T13:57:16+00:00",
       "title": ""
     }
   ],
