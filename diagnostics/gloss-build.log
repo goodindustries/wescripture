@@ -38,3 +38,4 @@
 [2026-04-17T13:34:46+00:00] universe: 7274 candidate stems after stopword filtering
 [2026-04-17T13:43:57+00:00] model: gemma4:e4b
 [2026-04-17T13:44:07+00:00] universe: 7274 candidate stems after stopword filtering
+[2026-04-17T13:49:49+00:00]   fail heaven               reason=ollama-error:timeout (902.8s)
