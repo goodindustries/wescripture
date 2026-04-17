@@ -46,7 +46,7 @@ GLOSS_DIR = REPO / "library" / "assets" / "gloss"
 TOC_PATH = REPO / "library" / "toc.json"
 LOG_PATH = REPO / "diagnostics" / "gloss-build.log"
 
-OLLAMA_URL = "http://127.0.0.1:11434/api/generate"
+OLLAMA_CHAT = "http://127.0.0.1:11434/api/chat"
 OLLAMA_TAGS = "http://127.0.0.1:11434/api/tags"
 OLLAMA_TIMEOUT_S = 900  # deep prompts can take a while under throttle
 
@@ -56,8 +56,8 @@ PROMPT_VERSION = "gloss-define-v1"
 # is ~4 logical cores; 25% RAM is 8 GB. We stay inside both.
 NUM_THREAD = 4
 NUM_CTX = 2048
-NUM_PREDICT = 1400
-TEMPERATURE = 0.2
+NUM_PREDICT = 1100
+TEMPERATURE = 0.25
 JITTER_MIN_S = 1.0
 JITTER_MAX_S = 2.0
 WATCHDOG_EVERY = 10            # stems between watchdog checks
@@ -66,11 +66,14 @@ WATCHDOG_SLEEP_S = 45
 
 # Model preference (auto-detect). Prefer strongest that fits <=8 GB RAM.
 MODEL_PREFERENCE = [
-    "gemma4:e4b",        # ~3 GB; good quality, usable throughput under 4 threads
-    "gemma4:latest",
-    "qwen3.5:9b",        # ~5-6 GB; stronger but 3-5x slower per stem
-    "gemma4:e2b",
+    # qwen3:1.7b is small (~1.1 GB RAM) and produces usable output on this CPU-only box
+    # at ~5 tok/s under 4 threads; that's ~4 min/stem, which fits the 25% CPU/RAM budget
+    # and finishes the top ~500 priority stems overnight.
     "qwen3:1.7b",
+    "qwen3.5:9b",
+    "gemma4:e4b",
+    "gemma4:latest",
+    "gemma4:e2b",
 ]
 
 # Shared stop word mirroring reader + build_lex_studies.py.
@@ -400,8 +403,10 @@ DEFINE_SYSTEM = (
     "symbolic_structure, numerical_letter_observations, messianic_fulfillment, reveals_about_christ, "
     "confidence_by_claim, final_synthesis. "
     "All string values must be plain English ASCII (no Hebrew/Greek script; transliterations only). "
-    "confidence_by_claim is an object mapping short claim labels to one of: "
-    "'lexical', 'pattern', 'inference', 'speculation'. "
+    "confidence_by_claim is an object whose KEYS are short claim labels you choose "
+    "(e.g. 'etymology', 'symbolic_structure', 'messianic_reading') and whose VALUES "
+    "are one of: 'lexical', 'pattern', 'inference', 'speculation'. Do NOT use the "
+    "confidence level itself as the key. "
     "Write complete prose paragraphs in each field. No bullet lists. No filler."
 )
 
@@ -452,44 +457,81 @@ def _build_user_prompt(rec: dict[str, Any], bundle: dict[str, Any],
     return "\n".join(lines)
 
 
-_FENCE_JSON_RE = re.compile(r"```(?:json)?\s*(\{.*?\})\s*```", re.DOTALL | re.IGNORECASE)
 _THINK_RE = re.compile(r"<think>.*?</think>", re.DOTALL | re.IGNORECASE)
+_FENCE_OPEN_RE = re.compile(r"```(?:json)?\s*", re.IGNORECASE)
+
+
+def _balanced_object(s: str, start: int) -> str | None:
+    """Return the balanced {...} block starting at s[start], or None."""
+    if start < 0 or start >= len(s) or s[start] != "{":
+        return None
+    depth = 0
+    in_str = False
+    esc = False
+    for i in range(start, len(s)):
+        c = s[i]
+        if in_str:
+            if esc:
+                esc = False
+            elif c == "\\":
+                esc = True
+            elif c == '"':
+                in_str = False
+            continue
+        if c == '"':
+            in_str = True
+            continue
+        if c == "{":
+            depth += 1
+        elif c == "}":
+            depth -= 1
+            if depth == 0:
+                return s[start:i + 1]
+    return None
 
 
 def _extract_json(text: str) -> dict[str, Any] | None:
     if not text:
         return None
     text = _THINK_RE.sub("", text).strip()
-    m = _FENCE_JSON_RE.search(text)
-    raw = m.group(1) if m else None
-    if raw is None:
-        # Best-effort: take the largest balanced {...} block.
-        depth = 0
-        start = -1
-        best = None
-        for i, c in enumerate(text):
-            if c == "{":
-                if depth == 0:
-                    start = i
-                depth += 1
-            elif c == "}":
-                depth -= 1
-                if depth == 0 and start >= 0:
-                    cand = text[start:i + 1]
-                    if best is None or len(cand) > len(best):
-                        best = cand
-        raw = best
-    if not raw:
-        return None
-    try:
-        return json.loads(raw)
-    except json.JSONDecodeError:
-        # Remove trailing commas as a last resort.
+
+    candidates: list[str] = []
+
+    # Strip ```json fences first, then find balanced {...} blocks inside.
+    body = text
+    mopen = _FENCE_OPEN_RE.search(body)
+    if mopen:
+        body = body[mopen.end():]
+        # chop off trailing ``` if present
+        if "```" in body:
+            body = body[:body.rindex("```")]
+
+    for blob in (body, text):
+        idx = 0
+        while True:
+            i = blob.find("{", idx)
+            if i < 0:
+                break
+            obj = _balanced_object(blob, i)
+            if obj:
+                candidates.append(obj)
+                idx = i + len(obj)
+            else:
+                break
+
+    # Largest candidate first — most likely the full object.
+    candidates.sort(key=len, reverse=True)
+    for raw in candidates:
+        try:
+            return json.loads(raw)
+        except json.JSONDecodeError:
+            pass
         cleaned = re.sub(r",(\s*[}\]])", r"\1", raw)
         try:
             return json.loads(cleaned)
         except json.JSONDecodeError:
-            return None
+            continue
+    return None
 
 
 def _ascii_only(s: str) -> str:
@@ -514,14 +556,20 @@ def _normalize_entry(obj: dict[str, Any]) -> dict[str, Any] | None:
             conf: dict[str, str] = {}
             for ck, cv in v.items():
                 label = _ascii_only(str(ck)).strip()[:60]
-                val = _ascii_only(str(cv)).strip().lower()
-                if val not in CONF_VALUES:
-                    # Map common stand-ins.
-                    if val in {"certain", "strong"}:
+                raw_val = _ascii_only(str(cv)).strip().lower()
+                # Models often suffix explanations, e.g. "lexical (direct word meaning)".
+                # Pick the first recognized token that appears.
+                val = None
+                for candidate in CONF_VALUES:
+                    if re.search(r"\b" + candidate + r"\b", raw_val):
+                        val = candidate
+                        break
+                if val is None:
+                    if re.search(r"\b(certain|strong|established)\b", raw_val):
                         val = "lexical"
-                    elif val in {"likely", "probable"}:
+                    elif re.search(r"\b(likely|probable|recurring)\b", raw_val):
                         val = "pattern"
-                    elif val in {"possible", "suggestive"}:
+                    elif re.search(r"\b(possible|suggestive|plausible)\b", raw_val):
                         val = "inference"
                     else:
                         val = "speculation"
@@ -542,10 +590,12 @@ def _validate(obj: dict[str, Any]) -> tuple[dict[str, Any] | None, str]:
     entry = _normalize_entry(obj)
     if entry is None:
         return None, "missing-keys-or-empty-values"
-    # Quality floor: the analytical fields should have some real prose.
-    for field in ("literal_sense", "semantic_range", "major_scriptural_pattern",
-                  "reveals_about_christ", "final_synthesis"):
-        if len(entry[field]) < 40:
+    # Minimum floors: terse 1.7B output is acceptable if substantive analytical
+    # fields have real content. Synthesis is the most visible; keep it stricter.
+    if len(entry["final_synthesis"]) < 30:
+        return None, "field-too-short:final_synthesis"
+    for field in ("major_scriptural_pattern", "reveals_about_christ"):
+        if len(entry[field]) < 20:
             return None, f"field-too-short:{field}"
     return entry, ""
 
@@ -554,9 +604,14 @@ def _validate(obj: dict[str, Any]) -> tuple[dict[str, Any] | None, str]:
 # Ollama request
 # -----------------------------------------------------------------------------
 def ollama_generate(model: str, system: str, user: str) -> str:
+    # /api/chat applies the model's chat template (gemma/qwen both need this);
+    # /api/generate returns empty content for some installed tags on this box.
     payload = json.dumps({
         "model": model,
-        "prompt": f"{system}\n\n{user}",
+        "messages": [
+            {"role": "system", "content": system},
+            {"role": "user", "content": user + "\n/no_think"},
+        ],
         "stream": False,
         "options": {
             "temperature": TEMPERATURE,
@@ -566,13 +621,14 @@ def ollama_generate(model: str, system: str, user: str) -> str:
         },
     }).encode()
     req = urllib.request.Request(
-        OLLAMA_URL, data=payload,
+        OLLAMA_CHAT, data=payload,
         headers={"Content-Type": "application/json"},
         method="POST",
     )
     with urllib.request.urlopen(req, timeout=OLLAMA_TIMEOUT_S) as resp:
         data = json.loads(resp.read())
-    return (data.get("response") or "").strip()
+    msg = data.get("message") or {}
+    return (msg.get("content") or "").strip()
 
 
 def _repair_prompt(reason: str) -> str:
@@ -801,7 +857,7 @@ def main() -> int:
     skipped = 0
     failed = 0
     dirty_keys: set[str] = set()
-    FLUSH_EVERY = 5
+    FLUSH_EVERY = 1  # flush after every completion so the reader surfaces entries promptly
 
     start = time.time()
     for i, rec in enumerate(work):

@@ -44,3 +44,21 @@
 [2026-04-17T14:04:52+00:00] done: wrote=0 skipped=0 failed=2 wall=1806s
 [2026-04-17T14:14:13+00:00]   fail firma                reason=ollama-error:timeout (900.0s)
 [2026-04-17T14:14:14+00:00] done: wrote=0 skipped=0 failed=2 wall=1807s
+[2026-04-17T14:29:47+00:00] model: qwen3:1.7b
+[2026-04-17T14:29:50+00:00] universe: 7274 candidate stems after stopword filtering
+[2026-04-17T14:36:10+00:00]   ok   lord                 count=7794 first=Genesis 2:4 (380.0s)
+[2026-04-17T14:36:12+00:00] done: wrote=1 skipped=0 failed=0 wall=382s
+[2026-04-17T14:40:11+00:00] model: qwen3:1.7b
+[2026-04-17T14:40:15+00:00] universe: 7274 candidate stems after stopword filtering
+[2026-04-17T14:49:40+00:00] signal 15 — finishing current stem, then stopping
+[2026-04-17T14:49:43+00:00]   fail lord                 reason=json-parse-failed-retry (567.7s)
+[2026-04-17T14:49:43+00:00] model: qwen3:1.7b
+[2026-04-17T14:49:44+00:00] done: wrote=0 skipped=0 failed=1 wall=569s
+[2026-04-17T14:49:47+00:00] universe: 7274 candidate stems after stopword filtering
+[2026-04-17T14:50:11+00:00] signal 15 — finishing current stem, then stopping
+[2026-04-17T14:55:41+00:00] signal 15 — finishing current stem, then stopping
+[2026-04-17T14:55:43+00:00] model: qwen3:1.7b
+[2026-04-17T14:55:49+00:00] universe: 7274 candidate stems after stopword filtering
+[2026-04-17T14:59:41+00:00]   ok   lord                 count=7794 first=Genesis 2:4 (593.7s)
+[2026-04-17T14:59:42+00:00] done: wrote=1 skipped=0 failed=0 wall=595s
+[2026-04-17T15:06:24+00:00]   ok   lord                 count=7794 first=Genesis 2:4 (634.9s)
