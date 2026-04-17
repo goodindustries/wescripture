@@ -1,0 +1,40 @@
+{
+"_meta": {
+"prompt_version": "gloss-define-v1",
+"shard": "l",
+"model": "qwen3:1.7b",
+"updated": "2026-04-17T15:06:24+00:00"
+},
+"stems": {
+"lord": {
+"semantic_range": "Deity, sovereign ruler, covenantal authority, divine presence, spiritual sustenance",
+"final_synthesis": "The term 'Lord' encapsulates Yahweh's sovereignty, covenantal fidelity, and redemptive plan, revealing Christ as the eternal, incarnate God who upholds and redeems creation",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"messianic_fulfillment": "Jesus Christ is called 'Lord' in the New Testament as the fulfillment of Yahweh's covenantal role",
+"first_appearance": "Genesis 2:4 (Yahweh created the heavens and the earth)",
+"numerical_letter_observations": "The number 4 (YAHWEH) symbolizes creation, while the letter 'H' (Hebrew) reflects holiness and humanity",
+"language": "Hebrew (Old Testament)",
+"symbolic_structure": "Pairing 'Lord' with 'Savior' (e.g., 'Lord and Savior'), repeated phrases like 'I am,' and covenantal obligations",
+"major_scriptural_pattern": "Repetition of 'I am' (Yahweh), covenantal titles, exodus narratives, and resurrection fulfillment",
+"reveals_about_christ": "The term 'Lord' underscores Christ's divine nature, covenantal authority, and redemptive mission as the incarnate God",
+"root": "YAHWEH",
+"literal_sense": "He who is, the self-existent One",
+"term": "Lord",
+"_facts": {
+"stem": "lord",
+"surface": "Lord",
+"lang": "hbo",
+"lemma": "3068",
+"surface_gr": "",
+"surface_he": "יְהוָ֥ה",
+"morph": "HNp",
+"count": 7794,
+"first_appearance_ref": "Genesis 2:4"
+}
+}
+}
+}

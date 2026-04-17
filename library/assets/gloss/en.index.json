@@ -1,8 +1,12 @@
 {
 "_meta": {
 "prompt_version": "gloss-define-v1",
-"generated": "2026-04-17T14:14:14+00:00"
+"generated": "2026-04-17T15:06:24+00:00"
 },
-"byStem": {},
-"byHead": {}
+"byStem": {
+"lord": "l"
+},
+"byHead": {
+"lord": "lord"
+}
 }
