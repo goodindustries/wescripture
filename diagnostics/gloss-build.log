@@ -1,1 +1,31 @@
 [2026-04-17T13:22:21+00:00] ollama not reachable at 127.0.0.1:11434. Start with: ollama serve &
+[2026-04-17T13:22:31+00:00] model: qwen3.5:9b
+[2026-04-17T13:22:40+00:00] universe: 7274 candidate stems after stopword filtering
+[2026-04-17T13:22:40+00:00]   plan: lord                 count=7794 first=Genesis 2:4
+[2026-04-17T13:22:40+00:00]   plan: god                  count=4626 first=Genesis 1:1
+[2026-04-17T13:22:40+00:00]   plan: man                  count=2496 first=Genesis 1:26
+[2026-04-17T13:22:40+00:00]   plan: israel               count=2235 first=Genesis 32:28
+[2026-04-17T13:22:40+00:00]   plan: king                 count=2213 first=Genesis 14:1
+[2026-04-17T13:22:40+00:00]   plan: out                  count=2208 first=Genesis 2:9
+[2026-04-17T13:22:40+00:00]   plan: land                 count=2103 first=Genesis 1:9
+[2026-04-17T13:22:40+00:00]   plan: behold               count=2074 first=Genesis 1:29
+[2026-04-17T13:22:40+00:00]   plan: pass                 count=1963 first=Genesis 4:3
+[2026-04-17T13:22:40+00:00]   plan: son                  count=1945 first=Genesis 4:17
+[2026-04-17T13:22:40+00:00]   plan: house                count=1693 first=Genesis 12:1
+[2026-04-17T13:22:40+00:00]   plan: men                  count=1664 first=Genesis 6:1
+[2026-04-17T13:22:40+00:00]   plan: hand                 count=1542 first=Genesis 3:22
+[2026-04-17T13:22:40+00:00]   plan: children             count=1497 first=Genesis 3:16
+[2026-04-17T13:22:40+00:00]   plan: word                 count=1478 first=Genesis 15:1
+[2026-04-17T13:22:40+00:00]   plan: one                  count=1461 first=Genesis 1:9
+[2026-04-17T13:22:40+00:00]   plan: say                  count=1434 first=Genesis 12:12
+[2026-04-17T13:22:40+00:00]   plan: fath                 count=1168 first=Genesis 2:24
+[2026-04-17T13:22:40+00:00]   plan: city                 count=1155 first=Genesis 4:17
+[2026-04-17T13:22:40+00:00]   plan: servant              count=1095 first=Genesis 9:25
+[2026-04-17T13:22:40+00:00]   plan: great                count=1092 first=Genesis 1:16
+[2026-04-17T13:22:40+00:00]   plan: earth                count=1085 first=Genesis 1:1
+[2026-04-17T13:22:40+00:00]   plan: jesu                 count= 978 first=Matthew 1:1
+[2026-04-17T13:22:40+00:00]   plan: name                 count= 977 first=Genesis 2:11
+[2026-04-17T13:22:40+00:00]   plan: brethren             count= 973 first=Genesis 9:22
+[2026-04-17T13:22:40+00:00] dry-run: 25 stems would be processed
+[2026-04-17T13:23:12+00:00] model: qwen3.5:9b
+[2026-04-17T13:23:19+00:00] universe: 7274 candidate stems after stopword filtering

@@ -749,15 +749,16 @@ def main() -> int:
 
     _install_signals()
 
-    if not ollama_up():
-        log("ollama not reachable at 127.0.0.1:11434. Start with: ollama serve &")
-        return 2
+    if not args.dry_run:
+        if not ollama_up():
+            log("ollama not reachable at 127.0.0.1:11434. Start with: ollama serve &")
+            return 2
 
     model = pick_model(args.model)
-    if not model:
+    if not model and not args.dry_run:
         log("no suitable model installed. Want one of: " + ", ".join(MODEL_PREFERENCE))
         return 2
-    log(f"model: {model}")
+    log(f"model: {model or '(dry-run; none selected)'}")
 
     os.environ.setdefault("OLLAMA_NUM_PARALLEL", "1")
     os.environ.setdefault("OLLAMA_MAX_LOADED_MODELS", "1")
