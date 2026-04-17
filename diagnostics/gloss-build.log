@@ -29,3 +29,12 @@
 [2026-04-17T13:22:40+00:00] dry-run: 25 stems would be processed
 [2026-04-17T13:23:12+00:00] model: qwen3.5:9b
 [2026-04-17T13:23:19+00:00] universe: 7274 candidate stems after stopword filtering
+[2026-04-17T13:33:21+00:00]   fail heaven               reason=ollama-error:timeout (602.2s)
+[2026-04-17T13:33:24+00:00] done: wrote=0 skipped=0 failed=1 wall=605s
+[2026-04-17T13:34:16+00:00] model: qwen3.5:9b
+[2026-04-17T13:34:25+00:00] universe: 7274 candidate stems after stopword filtering
+[2026-04-17T13:34:25+00:00] done: wrote=0 skipped=0 failed=0 wall=0s
+[2026-04-17T13:34:37+00:00] model: qwen3.5:9b
+[2026-04-17T13:34:46+00:00] universe: 7274 candidate stems after stopword filtering
+[2026-04-17T13:43:57+00:00] model: gemma4:e4b
+[2026-04-17T13:44:07+00:00] universe: 7274 candidate stems after stopword filtering

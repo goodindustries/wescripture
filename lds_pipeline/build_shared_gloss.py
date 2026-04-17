@@ -48,26 +48,27 @@ LOG_PATH = REPO / "diagnostics" / "gloss-build.log"
 
 OLLAMA_URL = "http://127.0.0.1:11434/api/generate"
 OLLAMA_TAGS = "http://127.0.0.1:11434/api/tags"
-OLLAMA_TIMEOUT_S = 600  # deep prompts can take a while under throttle
+OLLAMA_TIMEOUT_S = 900  # deep prompts can take a while under throttle
 
 PROMPT_VERSION = "gloss-define-v1"
 
-# Throttle defaults — 25% of an 8-core / 32 GB box.
-NUM_THREAD = 2
-NUM_CTX = 4096
-NUM_PREDICT = 2500
+# Throttle defaults for a 32 GB / 16 logical-core box. 25% CPU on macOS `top`
+# is ~4 logical cores; 25% RAM is 8 GB. We stay inside both.
+NUM_THREAD = 4
+NUM_CTX = 2048
+NUM_PREDICT = 1400
 TEMPERATURE = 0.2
-JITTER_MIN_S = 2.0
-JITTER_MAX_S = 3.0
+JITTER_MIN_S = 1.0
+JITTER_MAX_S = 2.0
 WATCHDOG_EVERY = 10            # stems between watchdog checks
 WATCHDOG_RSS_GB = 8.0          # soft cap; pause if exceeded
-WATCHDOG_SLEEP_S = 60
+WATCHDOG_SLEEP_S = 45
 
 # Model preference (auto-detect). Prefer strongest that fits <=8 GB RAM.
 MODEL_PREFERENCE = [
-    "qwen3.5:9b",
-    "gemma4:e4b",
+    "gemma4:e4b",        # ~3 GB; good quality, usable throughput under 4 threads
     "gemma4:latest",
+    "qwen3.5:9b",        # ~5-6 GB; stronger but 3-5x slower per stem
     "gemma4:e2b",
     "qwen3:1.7b",
 ]
@@ -768,7 +769,13 @@ def main() -> int:
 
     if args.stems:
         wanted = {s.lower() for s in args.stems}
-        work = [r for r in universe if r["stem"].lower() in wanted]
+        work = []
+        for r in universe:
+            if r["stem"].lower() in wanted:
+                work.append(r); continue
+            forms = {f.lower() for f in (r.get("forms") or {})}
+            if wanted & forms:
+                work.append(r); continue
     else:
         work = list(universe)
 
