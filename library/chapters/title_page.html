@@ -7,108 +7,142 @@
 </head>
 <body>
 <style>
-  .title-shell { max-width: 1080px; margin: 0 auto; padding: 0 22px 48px; }
-  .dashboard-title { margin: 1.4rem auto 0.3rem; font: 700 2.1rem/1.1 "EB Garamond", Georgia, serif; color: #26221d; text-align: center; }
-  .title-kicker { margin: 0 auto 1rem; max-width: 640px; color: #7f7467; font-size: 1.05rem; line-height: 1.55; text-align: center; }
-  .title-links { text-align: center; margin: 0 0 1.25rem; font-size: 0.98rem; color: #5a4e42; line-height: 1.6; }
-  .title-links a { color: #9C7A4D; font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(156,122,77,0.35); }
-  .title-links a:hover { color: #7A5E38; border-bottom-color: rgba(122,94,56,0.55); }
+  .title-shell { max-width: 1180px; margin: 0 auto; padding: 0 22px 48px; }
+  .dashboard-title { margin: 1.1rem auto 0.25rem; font: 700 1.9rem/1.1 "EB Garamond", Georgia, serif; color: #26221d; text-align: center; }
+  .title-kicker { margin: 0 auto 0.9rem; max-width: 640px; color: #7f7467; font-size: 1rem; line-height: 1.5; text-align: center; }
 
-  .title-row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; margin-top: 10px; }
-  .panel { background: #fffdf9; border: 1px solid rgba(156,122,77,0.16); border-radius: 24px; box-shadow: 0 12px 28px rgba(60,46,28,0.05); padding: 18px 18px 16px; }
-  .panel-kicker { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #9C7A4D; margin-bottom: 6px; }
-  .panel-title { margin: 0; font: 700 1.35rem/1.15 "EB Garamond", Georgia, serif; color: #32281f; }
-  .panel-subtitle { margin: 6px 0 0; font-size: .95rem; color: #776b5d; line-height: 1.45; }
+  /* Dashboard: browse on the left, activity/feed on the right. */
+  .title-dash { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(260px, 1fr); gap: 16px; margin-top: 14px; align-items: start; }
+  .panel { background: #fffdf9; border: 1px solid rgba(156,122,77,0.16); border-radius: 20px; box-shadow: 0 10px 24px rgba(60,46,28,0.04); padding: 16px 16px 14px; }
+  .panel-kicker { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #9C7A4D; margin-bottom: 4px; }
+  .panel-title { margin: 0; font: 700 1.2rem/1.15 "EB Garamond", Georgia, serif; color: #32281f; }
+  .panel-subtitle { margin: 4px 0 0; font-size: .9rem; color: #776b5d; line-height: 1.4; }
 
-  .history-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-  .history-btn { padding: 8px 10px; border: 1px solid rgba(156,122,77,0.18); background: rgba(255,255,255,0.82); border-radius: 12px; cursor: pointer; font: inherit; text-align: left; min-width: 0; }
-  .history-btn:hover { background: rgba(156,122,77,0.08); border-color: rgba(156,122,77,0.34); }
-  .history-btn:disabled { opacity: 0.55; cursor: default; }
-  .history-label { font-size: 12px; font-weight: 700; color: #32281f; }
-  .history-meta { font-size: 11px; color: #8a7c6a; margin-top: 2px; }
-  .history-empty { margin: 10px 0 0; font-size: 12px; color: #8a7c6a; }
+  /* Compact volume row: horizontal covers, always visible, never dominate the viewport. */
+  .vol-row { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; margin: 10px 0 4px; }
+  .vol-tile { position: relative; display: block; border: 1px solid rgba(156,122,77,0.2); border-radius: 10px; overflow: hidden; background: #1a1611; cursor: pointer; padding: 0; aspect-ratio: 3 / 4; transition: transform .12s, box-shadow .12s; }
+  .vol-tile:hover { transform: translateY(-1px); box-shadow: 0 8px 18px rgba(0,0,0,0.12); }
+  .vol-tile.active { box-shadow: 0 0 0 2px #fff, 0 0 0 4px #9C7A4D; }
+  .vol-tile img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .vol-tile .vol-label { position: absolute; left: 0; right: 0; bottom: 0; padding: 6px 8px; font-size: 11px; font-weight: 700; letter-spacing: .04em; color: #f6eedb; background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0)); text-align: center; }
 
+  /* Full menu: every volume + sources expanded on one page, compact book chips. */
+  .menu-section { margin-top: 14px; }
+  .menu-section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; padding: 0 2px 6px; border-bottom: 1px solid rgba(156,122,77,0.14); }
+  .menu-section-title { font: 700 1rem/1.15 "EB Garamond", Georgia, serif; color: #32281f; margin: 0; }
+  .menu-section-link { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #9C7A4D; cursor: pointer; background: none; border: none; padding: 2px 0; }
+  .menu-section-link:hover { color: #7A5E38; text-decoration: underline; }
+  .book-chips { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 6px; margin-top: 8px; }
+  .book-chip { border: 1px solid rgba(156,122,77,0.16); border-radius: 8px; background: rgba(255,255,255,0.82); padding: 7px 10px; cursor: pointer; font: inherit; font-size: 12.5px; font-weight: 600; color: #32281f; text-align: left; line-height: 1.2; transition: background .12s, border-color .12s, transform .1s; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .book-chip:hover { background: rgba(156,122,77,0.08); border-color: rgba(156,122,77,0.34); transform: translateY(-1px); }
+  .book-chip.active { background: #9C7A4D; border-color: #9C7A4D; color: #fff; }
+
+  /* Drill-down pane (when user picks a volume/book for chapter grid). */
   #title-nav[hidden] { display: none !important; }
-  .title-nav-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
-  #title-nav-back { flex-shrink: 0; margin-top: 1px; padding: 6px 10px; font-size: .88rem; font-weight: 600; color: #9C7A4D; background: #fcfaf6; border: 1px solid rgba(156,122,77,0.28); border-radius: 10px; cursor: pointer; }
+  .title-nav-head { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+  #title-nav-back { flex-shrink: 0; margin-top: 1px; padding: 5px 9px; font-size: .85rem; font-weight: 600; color: #9C7A4D; background: #fcfaf6; border: 1px solid rgba(156,122,77,0.28); border-radius: 10px; cursor: pointer; }
   #title-nav-back:hover { background: rgba(156,122,77,0.08); border-color: rgba(156,122,77,0.45); }
   #title-nav-back[hidden] { display: none !important; }
-  /* Browse grid: dense tiles on wide screens so cover art is not half-viewport wide */
-  .title-nav-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(148px, 1fr)); gap: 8px; }
-  .title-nav-grid.chapter-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .title-nav-tile { border: 1px solid rgba(156,122,77,0.14); border-radius: 12px; background: rgba(255,255,255,0.82); padding: 12px 10px; min-height: 78px; cursor: pointer; transition: transform .12s, border-color .12s, background .12s, box-shadow .12s; display: flex; flex-direction: column; justify-content: space-between; gap: 8px; font: inherit; text-align: left; color: inherit; }
-  .title-nav-tile:hover { transform: translateY(-1px); border-color: rgba(156,122,77,0.34); background: rgba(156,122,77,0.08); box-shadow: 0 8px 18px rgba(0,0,0,0.04); }
+  .title-nav-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 6px; }
+  .title-nav-grid.chapter-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .title-nav-tile { border: 1px solid rgba(156,122,77,0.14); border-radius: 10px; background: rgba(255,255,255,0.82); padding: 9px 8px; min-height: 58px; cursor: pointer; transition: transform .12s, border-color .12s, background .12s; display: flex; flex-direction: column; justify-content: center; gap: 4px; font: inherit; text-align: left; color: inherit; }
+  .title-nav-tile:hover { transform: translateY(-1px); border-color: rgba(156,122,77,0.34); background: rgba(156,122,77,0.08); }
   .title-nav-tile.active { background: #9C7A4D; border-color: #9C7A4D; color: #fff; }
-  .title-nav-tile-title { font-size: 13px; line-height: 1.2; font-weight: 600; color: #32281f; }
+  .title-nav-tile-title { font-size: 12.5px; line-height: 1.2; font-weight: 600; color: #32281f; }
   .title-nav-tile.active .title-nav-tile-title { color: #fff; }
   .title-nav-tile-meta { font-size: 10px; line-height: 1.2; letter-spacing: .06em; text-transform: uppercase; color: #8a7c6a; }
   .title-nav-tile.active .title-nav-tile-meta { color: rgba(255,255,255,0.82); }
-  .title-nav-provenance { font-size: 11px; line-height: 1.55; color: #776b5d; padding: 2px 4px 12px; grid-column: 1 / -1; }
-  .title-nav-section { grid-column: 1 / -1; margin-top: 14px; padding: 6px 2px 2px; font-size: 10px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: #8a7c6a; }
-  .title-nav-placeholder { margin: 0; font-size: .95rem; color: #8a7c6a; line-height: 1.5; grid-column: 1 / -1; }
-  .title-nav-tile.book-tile { min-height: 58px; padding: 10px 8px; align-items: center; justify-content: center; text-align: center; }
-  .title-nav-tile.book-tile .title-nav-tile-title { font-size: 12.5px; }
   .title-nav-tile.chapter-tile { min-height: 0; aspect-ratio: 1 / 1; padding: 0; align-items: center; justify-content: center; text-align: center; }
-  .title-nav-tile.chapter-tile .title-nav-tile-title { font-size: 14px; }
-  .title-nav-tile.wide { grid-column: 1 / -1; }
-  /* Cover tiles: fixed max height so 2-column layout does not create skyscraper cards */
-  .title-nav-tile.title-nav-tile--cover {
-    padding: 0;
-    min-height: 0;
-    height: clamp(120px, 26vh, 220px);
-    max-height: 220px;
-    border-radius: 10px;
-    overflow: hidden;
-    align-items: stretch;
-  }
-  .title-nav-tile.title-nav-tile--cover:hover { box-shadow: 0 10px 28px rgba(0,0,0,0.18); }
-  .title-nav-tile-cover-img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-  .title-nav-tile.title-nav-tile--cover.active { box-shadow: 0 0 0 2px #fff, 0 0 0 4px #9C7A4D; }
+  .title-nav-tile.chapter-tile .title-nav-tile-title { font-size: 13px; }
+  .title-nav-provenance { font-size: 11px; line-height: 1.55; color: #776b5d; padding: 2px 4px 10px; grid-column: 1 / -1; }
+  .title-nav-placeholder { margin: 0; font-size: .92rem; color: #8a7c6a; line-height: 1.4; grid-column: 1 / -1; }
 
-  @media (max-width: 760px) {
-    .title-shell { padding: 0 14px 36px; }
-    .title-nav-grid:not(.chapter-grid) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .title-nav-grid.chapter-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  /* Right column: Resume + Feed. Ready to accept real feed stream. */
+  .right-col { display: grid; gap: 14px; }
+  .resume-btn { width: 100%; padding: 10px 12px; border: 1px solid rgba(156,122,77,0.24); background: rgba(255,255,255,0.92); border-radius: 12px; cursor: pointer; font: inherit; text-align: left; transition: background .12s, border-color .12s, transform .1s; }
+  .resume-btn:hover { background: rgba(156,122,77,0.08); border-color: rgba(156,122,77,0.42); transform: translateY(-1px); }
+  .resume-btn:disabled { opacity: 0.55; cursor: default; }
+  .resume-label { font-size: 12px; font-weight: 700; color: #32281f; }
+  .resume-meta { font-size: 11px; color: #8a7c6a; margin-top: 2px; }
+  .history-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .history-btn { padding: 6px 9px; border: 1px solid rgba(156,122,77,0.18); background: rgba(255,255,255,0.82); border-radius: 10px; cursor: pointer; font: inherit; text-align: left; min-width: 0; font-size: 12px; }
+  .history-btn:hover { background: rgba(156,122,77,0.08); border-color: rgba(156,122,77,0.34); }
+  .history-label { font-size: 12px; font-weight: 700; color: #32281f; white-space: nowrap; }
+  .history-meta { font-size: 10px; color: #8a7c6a; margin-top: 2px; letter-spacing: .04em; text-transform: uppercase; }
+  .history-empty { margin: 8px 0 0; font-size: 12px; color: #8a7c6a; }
+
+  .feed-list { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; max-height: 520px; overflow-y: auto; padding-right: 2px; }
+  .feed-item { padding: 8px 10px; border: 1px solid rgba(156,122,77,0.14); border-radius: 10px; background: rgba(255,255,255,0.82); font-size: 12.5px; line-height: 1.45; color: #32281f; cursor: pointer; transition: background .12s, border-color .12s; }
+  .feed-item:hover { background: rgba(156,122,77,0.06); border-color: rgba(156,122,77,0.3); }
+  .feed-head { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+  .feed-who { font-weight: 700; color: #32281f; }
+  .feed-when { font-size: 10.5px; color: #8a7c6a; letter-spacing: .04em; }
+  .feed-ref { font-size: 11px; font-weight: 600; color: #9C7A4D; margin-top: 2px; }
+  .feed-preview { margin-top: 4px; color: #5a4e42; font-size: 12px; font-style: italic; line-height: 1.4; }
+  .feed-empty, .feed-signin { margin: 8px 0 0; font-size: 12px; color: #8a7c6a; line-height: 1.45; }
+  .feed-signin a { color: #9C7A4D; cursor: pointer; font-weight: 600; text-decoration: underline; }
+
+  @media (max-width: 960px) {
+    .title-dash { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .title-shell { padding: 0 14px 32px; }
+    .vol-row { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
+    .vol-tile .vol-label { font-size: 10px; padding: 4px 4px; }
+    .title-nav-grid.chapter-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    .book-chips { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
   }
 </style>
 
 <div class="title-shell">
-  <div class="panel-kicker" style="text-align:center;margin-top:1.25rem">Words (of God) with friends!</div>
   <h1 class="dashboard-title">WeScripture</h1>
   <p class="title-kicker">Open the scriptures, save what you love, and share it with friends.</p>
-  <p class="title-links">
-    <a data-open-shelf="scriptures" href="javascript:void(0)">Scriptures</a>
-    ·
-    <a data-open-shelf="sources" href="javascript:void(0)">Other writings</a>
-  </p>
 
-  <div class="title-row">
-    <section class="panel" aria-label="Resume and recent activity">
-      <div class="panel-kicker">Continue</div>
-      <h2 class="panel-title">Resume</h2>
-      <p class="panel-subtitle">Pick up where you left off, or jump back into something recent.</p>
-      <div class="history-row">
-        <button type="button" class="history-btn" data-resume="1">
-          <div class="history-label">Resume last session</div>
-          <div class="history-meta" id="title-resume-meta"></div>
-        </button>
+  <div class="title-dash">
+    <!-- LEFT: full menu, always visible -->
+    <section class="panel" aria-label="Browse the library">
+      <div class="panel-kicker">Library</div>
+      <h2 class="panel-title">Browse</h2>
+
+      <div id="title-menu">
+        <!-- Rendered by renderTitleMenu(): volume covers + book chips + sources -->
       </div>
-      <div class="history-row" id="title-recents"></div>
-      <div class="history-row" id="title-saves"></div>
-      <p class="history-empty" id="title-history-empty" hidden>No recent places yet. Open a chapter and it will appear here.</p>
-    </section>
 
-    <section id="title-nav" class="panel" aria-label="Browse">
-      <div class="title-nav-head">
-        <button type="button" id="title-nav-back" hidden aria-label="Back">← Back</button>
-        <div>
-          <div class="panel-kicker">Browse</div>
-          <h2 id="title-nav-title" class="panel-title"></h2>
-          <p id="title-nav-subtitle" class="panel-subtitle"></p>
+      <!-- Drill-down view (chapters, source docs) appears here when a book is picked. -->
+      <section id="title-nav" class="menu-section" aria-label="Drill-down" hidden>
+        <div class="title-nav-head">
+          <button type="button" id="title-nav-back" hidden aria-label="Back">← Back</button>
+          <div>
+            <div class="panel-kicker">Open</div>
+            <h2 id="title-nav-title" class="panel-title"></h2>
+            <p id="title-nav-subtitle" class="panel-subtitle"></p>
+          </div>
         </div>
-      </div>
-      <div id="title-nav-grid" class="title-nav-grid"></div>
+        <div id="title-nav-grid" class="title-nav-grid"></div>
+      </section>
     </section>
+
+    <!-- RIGHT: activity + feed -->
+    <aside class="right-col">
+      <section class="panel" aria-label="Resume">
+        <div class="panel-kicker">Continue</div>
+        <h2 class="panel-title">Resume</h2>
+        <button type="button" class="resume-btn" data-resume="1" style="margin-top:10px">
+          <div class="resume-label">Resume last session</div>
+          <div class="resume-meta" id="title-resume-meta">—</div>
+        </button>
+        <div class="history-row" id="title-recents"></div>
+        <div class="history-row" id="title-saves"></div>
+        <p class="history-empty" id="title-history-empty" hidden>Open a chapter and it will appear here.</p>
+      </section>
+
+      <section class="panel" aria-label="Community feed">
+        <div class="panel-kicker">Community</div>
+        <h2 class="panel-title">Feed</h2>
+        <p class="panel-subtitle">Notes and morsels from readers.</p>
+        <div id="title-feed-list" class="feed-list"></div>
+      </section>
+    </aside>
   </div>
 </div>
 </body>
