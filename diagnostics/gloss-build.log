@@ -42,3 +42,5 @@
 [2026-04-17T13:59:11+00:00]   fail bless                reason=ollama-error:timeout (903.4s)
 [2026-04-17T14:04:50+00:00]   fail firma                reason=ollama-error:timeout (900.0s)
 [2026-04-17T14:04:52+00:00] done: wrote=0 skipped=0 failed=2 wall=1806s
+[2026-04-17T14:14:13+00:00]   fail firma                reason=ollama-error:timeout (900.0s)
+[2026-04-17T14:14:14+00:00] done: wrote=0 skipped=0 failed=2 wall=1807s
