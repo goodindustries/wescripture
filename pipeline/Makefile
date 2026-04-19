@@ -10,7 +10,7 @@ STAMPS   := $(BUILD)/stamps
 
 $(shell mkdir -p $(STAMPS))
 
-.PHONY: all fetch normalize jst_weave donaldson clean help
+.PHONY: all fetch normalize jst_weave donaldson upsert embed connect audit clean help
 
 all: audit ## Run the full DAG end to end
 
@@ -49,3 +49,32 @@ donaldson: $(STAMPS)/donaldson ## Donaldson commentary -> commentary_para rows
 $(STAMPS)/donaldson: $(STAMPS)/normalize
 	$(PY) -m pipeline.donaldson.run --verses $(BUILD)/verses --out $(BUILD)/commentary
 	@touch $@
+
+# ── Stage 5: upsert ─────────────────────────────────────────────────────────
+# Push verse / verse_variant / commentary_para rows into Supabase.
+# Requires SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY in env.
+upsert: $(STAMPS)/upsert ## Push normalized rows into Supabase
+$(STAMPS)/upsert: $(STAMPS)/jst_weave $(STAMPS)/donaldson
+	$(PY) -m pipeline.db.upsert --verses $(BUILD)/verses \
+		--variants $(BUILD)/variants --commentary $(BUILD)/commentary
+	@touch $@
+
+# ── Stage 6: embed ──────────────────────────────────────────────────────────
+# Compute + store embeddings for verses and commentary paragraphs in pgvector.
+embed: $(STAMPS)/embed ## Verse + commentary embeddings -> pgvector
+$(STAMPS)/embed: $(STAMPS)/upsert
+	$(PY) -m pipeline.embed.run
+	@touch $@
+
+# ── Stage 7: connect ────────────────────────────────────────────────────────
+# Build connection table: top-K=40 cosine neighbors, threshold >= 0.28.
+connect: $(STAMPS)/connect ## Build connection table from embeddings
+$(STAMPS)/connect: $(STAMPS)/embed
+	$(PY) -m pipeline.connect.run --top-k 40 --min-cosine 0.28
+	@touch $@
+
+# ── Stage 8: audit ──────────────────────────────────────────────────────────
+# Strict audit: row counts per book/chapter, orphan FK checks, license provenance.
+# Non-zero exit fails CI.
+audit: $(STAMPS)/connect ## Strict audit (row counts, orphans, licenses)
+	$(PY) -m pipeline.audit.run --strict
