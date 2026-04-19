@@ -118,3 +118,32 @@ exception when duplicate_object then null; end $$;
 do $$ begin
   create policy "verse_no_write" on public.verse for all using (false) with check (false);
 exception when duplicate_object then null; end $$;
+
+-- ── verse_variant ──────────────────────────────────────────────────────────
+-- Variant renderings attached to a base verse: JST, footnotes, translator
+-- notes. The enum is a CHECK constraint (not a pg ENUM type) to keep schema
+-- evolution cheap — add new kinds with an ALTER TABLE, no ALTER TYPE.
+create table if not exists public.verse_variant (
+  id           uuid primary key default gen_random_uuid(),
+  verse_id     uuid not null references public.verse(id) on delete cascade,
+  variant_kind text not null,
+  text         text not null,
+  label        text not null default '',
+  source_slug  text not null default '',
+  license      text not null default '',
+  sort         int  not null default 0,
+  created_at   timestamptz not null default now(),
+  updated_at   timestamptz not null default now(),
+  constraint verse_variant_kind_chk
+    check (variant_kind in ('jst', 'footnote', 'translator_note'))
+);
+
+create index if not exists verse_variant_verse_idx on public.verse_variant (verse_id, variant_kind, sort);
+
+alter table public.verse_variant enable row level security;
+do $$ begin
+  create policy "verse_variant_public_read" on public.verse_variant for select using (true);
+exception when duplicate_object then null; end $$;
+do $$ begin
+  create policy "verse_variant_no_write" on public.verse_variant for all using (false) with check (false);
+exception when duplicate_object then null; end $$;
