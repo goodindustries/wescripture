@@ -10,7 +10,7 @@ STAMPS   := $(BUILD)/stamps
 
 $(shell mkdir -p $(STAMPS))
 
-.PHONY: all fetch normalize clean help
+.PHONY: all fetch normalize jst_weave donaldson clean help
 
 all: audit ## Run the full DAG end to end
 
@@ -33,4 +33,19 @@ $(STAMPS)/fetch:
 normalize: $(STAMPS)/normalize ## HTML/XML -> canonical verse JSON
 $(STAMPS)/normalize: $(STAMPS)/fetch
 	$(PY) -m pipeline.normalize.run --in $(BUILD)/raw --out $(BUILD)/verses
+	@touch $@
+
+# ── Stage 3: jst_weave ──────────────────────────────────────────────────────
+# Merge JST variants inline as verse_variant rows. Deterministic: emits
+# (verse_id, variant_kind, text) tuples; never mutates base verses.
+jst_weave: $(STAMPS)/jst_weave ## Merge JST variants as verse_variant rows
+$(STAMPS)/jst_weave: $(STAMPS)/normalize
+	$(PY) -m pipeline.weave.run --verses $(BUILD)/verses --out $(BUILD)/variants
+	@touch $@
+
+# ── Stage 4: donaldson ──────────────────────────────────────────────────────
+# Ingest Donaldson commentary, segment into paragraphs, map to verse ranges.
+donaldson: $(STAMPS)/donaldson ## Donaldson commentary -> commentary_para rows
+$(STAMPS)/donaldson: $(STAMPS)/normalize
+	$(PY) -m pipeline.donaldson.run --verses $(BUILD)/verses --out $(BUILD)/commentary
 	@touch $@
