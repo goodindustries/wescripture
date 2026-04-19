@@ -202,3 +202,38 @@ exception when duplicate_object then null; end $$;
 do $$ begin
   create policy "commentary_para_no_write" on public.commentary_para for all using (false) with check (false);
 exception when duplicate_object then null; end $$;
+
+-- ── embedding ──────────────────────────────────────────────────────────────
+-- Polymorphic row-per-embedding over verse + commentary_para. We enforce
+-- exactly-one FK populated via a CHECK; deletes cascade from either parent.
+-- Dimension 384 matches sentence-transformers/all-MiniLM-L6-v2 (pipeline
+-- default). If/when we upgrade the model we add a new column + migrate, not
+-- mutate the existing vector type.
+--
+-- Index: IVFFLAT with cosine opclass. Tune `lists` after first full ingest
+-- (rule of thumb: rows / 1000). 100 is a safe bootstrap for the pilot slice.
+create table if not exists public.embedding (
+  id                 uuid primary key default gen_random_uuid(),
+  verse_id           uuid references public.verse(id) on delete cascade,
+  commentary_para_id uuid references public.commentary_para(id) on delete cascade,
+  model              text not null default 'all-MiniLM-L6-v2',
+  vec                vector(384) not null,
+  created_at         timestamptz not null default now(),
+  constraint embedding_exactly_one_parent_chk
+    check ((verse_id is not null)::int + (commentary_para_id is not null)::int = 1)
+);
+
+create unique index if not exists embedding_verse_model_uniq
+  on public.embedding (verse_id, model) where verse_id is not null;
+create unique index if not exists embedding_commentary_para_model_uniq
+  on public.embedding (commentary_para_id, model) where commentary_para_id is not null;
+create index if not exists embedding_vec_cosine_idx
+  on public.embedding using ivfflat (vec vector_cosine_ops) with (lists = 100);
+
+alter table public.embedding enable row level security;
+do $$ begin
+  create policy "embedding_public_read" on public.embedding for select using (true);
+exception when duplicate_object then null; end $$;
+do $$ begin
+  create policy "embedding_no_write" on public.embedding for all using (false) with check (false);
+exception when duplicate_object then null; end $$;
