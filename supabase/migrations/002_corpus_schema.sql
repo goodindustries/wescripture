@@ -237,3 +237,34 @@ exception when duplicate_object then null; end $$;
 do $$ begin
   create policy "embedding_no_write" on public.embedding for all using (false) with check (false);
 exception when duplicate_object then null; end $$;
+
+-- ── connection ─────────────────────────────────────────────────────────────
+-- Directed similarity edges between embeddings (verse->verse, verse->commentary,
+-- commentary->verse, commentary->commentary). Edge materialization is done by
+-- `pipeline/connect` with top-K=40 per source and cosine >= 0.28.
+--
+-- src/dst reference embedding.id so we can recompute without cascading into
+-- the corpus tables. Rebuild = truncate connection, re-run connect stage.
+create table if not exists public.connection (
+  id          uuid primary key default gen_random_uuid(),
+  src_id      uuid not null references public.embedding(id) on delete cascade,
+  dst_id      uuid not null references public.embedding(id) on delete cascade,
+  cosine      real not null,
+  rank        int  not null,
+  created_at  timestamptz not null default now(),
+  unique (src_id, dst_id),
+  constraint connection_no_self_chk check (src_id <> dst_id),
+  constraint connection_cosine_chk  check (cosine >= -1 and cosine <= 1),
+  constraint connection_rank_chk    check (rank >= 1)
+);
+
+create index if not exists connection_src_rank_idx on public.connection (src_id, rank);
+create index if not exists connection_dst_idx      on public.connection (dst_id);
+
+alter table public.connection enable row level security;
+do $$ begin
+  create policy "connection_public_read" on public.connection for select using (true);
+exception when duplicate_object then null; end $$;
+do $$ begin
+  create policy "connection_no_write" on public.connection for all using (false) with check (false);
+exception when duplicate_object then null; end $$;
