@@ -147,3 +147,58 @@ exception when duplicate_object then null; end $$;
 do $$ begin
   create policy "verse_variant_no_write" on public.verse_variant for all using (false) with check (false);
 exception when duplicate_object then null; end $$;
+
+-- ── commentary_source ──────────────────────────────────────────────────────
+-- One row per commentary work (e.g. 'donaldson', future 'jfb', 'clarke').
+-- Carries license + provenance so readers can attribute per paragraph.
+create table if not exists public.commentary_source (
+  slug         text primary key,
+  label        text not null,
+  author       text not null default '',
+  year         int,
+  canonical_url text not null default '',
+  license      text not null default 'unknown',
+  license_url  text,
+  created_at   timestamptz not null default now(),
+  updated_at   timestamptz not null default now(),
+  constraint commentary_source_slug_chk check (slug = lower(slug) and length(slug) between 2 and 32)
+);
+
+alter table public.commentary_source enable row level security;
+do $$ begin
+  create policy "commentary_source_public_read" on public.commentary_source for select using (true);
+exception when duplicate_object then null; end $$;
+do $$ begin
+  create policy "commentary_source_no_write" on public.commentary_source for all using (false) with check (false);
+exception when duplicate_object then null; end $$;
+
+-- ── commentary_para ────────────────────────────────────────────────────────
+-- Paragraph of commentary, mapped to an inclusive verse range
+-- (verse_start_id .. verse_end_id). Ranges that span chapters are legal and
+-- enforced only at ingest time; schema does not require same-chapter.
+-- A commentary paragraph may attach to a single verse by setting
+-- verse_end_id = verse_start_id.
+create table if not exists public.commentary_para (
+  id              uuid primary key default gen_random_uuid(),
+  source_slug     text not null references public.commentary_source(slug) on delete cascade,
+  verse_start_id  uuid not null references public.verse(id) on delete cascade,
+  verse_end_id    uuid not null references public.verse(id) on delete cascade,
+  para_idx        int  not null,
+  text            text not null,
+  text_hash       text not null,
+  created_at      timestamptz not null default now(),
+  updated_at      timestamptz not null default now(),
+  unique (source_slug, para_idx),
+  constraint commentary_para_idx_chk check (para_idx >= 1)
+);
+
+create index if not exists commentary_para_start_idx on public.commentary_para (verse_start_id);
+create index if not exists commentary_para_source_idx on public.commentary_para (source_slug, para_idx);
+
+alter table public.commentary_para enable row level security;
+do $$ begin
+  create policy "commentary_para_public_read" on public.commentary_para for select using (true);
+exception when duplicate_object then null; end $$;
+do $$ begin
+  create policy "commentary_para_no_write" on public.commentary_para for all using (false) with check (false);
+exception when duplicate_object then null; end $$;
