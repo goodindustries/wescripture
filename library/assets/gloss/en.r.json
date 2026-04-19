@@ -1,0 +1,226 @@
+{
+"_meta": {
+"prompt_version": "gloss-define-v1",
+"shard": "r",
+"model": "qwen3:1.7b",
+"updated": "2026-04-19T18:41:59+00:00"
+},
+"stems": {
+"return": {
+"final_synthesis": "The word 'return' encapsulates the theological tension between mortality and transcendence, redemption and restoration, and the covenantal promise of life. Its etymology and symbolic structure reveal Christ's role as the fulfillment of divine covenant, bridging the gap between God and humanity through redemption and resurrection. The letter 'R' and number 3 highlight the centrality of Christ's name and the cyclical nature of divine promise.",
+"root": "retur",
+"messianic_fulfillment": "The term 'return' is fulfilled in Christ through redemption (e.g., 1 Samuel 17:57: 'David returned from the slaughter'), and in the New Testament, it signifies the restoration of the kingdom (e.g., 1 Corinthians 15:35: 'return to life'). The letter 'R' is central to Christ's name (Matthew 2:15: 'Return to your own'), and the number 3 ('three times' in Genesis) is linked to Christ's resurrection.",
+"first_appearance": "Genesis 3:19 ('return unto the ground')",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"speculation": "speculation"
+},
+"reveals_about_christ": "The word 'return' reveals Christ's mission to redeem, restore, and resurrect humanity. It underscores His role as the mediator between God and humanity, fulfilling the covenantal promise of life and death, and exemplifying obedience to divine will.",
+"major_scriptural_pattern": "return to the origin, covenantal obligation, divine promise, redemption through restoration",
+"term": "return",
+"literal_sense": "to go back, to return, to return to the origin",
+"symbolic_structure": "repeated phrases (e.g., 'return unto the ground'), paired terms (return + ground), covenantal patterns (return + death), symbolic oppositions (return vs. death, ground vs. sky)",
+"language": "English",
+"numerical_letter_observations": "The letter 'R' appears 535 times across canon, with 3 instances in Genesis (3:19, 5:24, 6:9), and 14 instances in the New Testament (Matthew 2:15, 1 Corinthians 15:35, etc.). The number 3 is central to Genesis, and the letter 'R' is repeated in key covenantal passages.",
+"semantic_range": "mortality, redemption, obedience, restoration, divine promise, covenant fulfillment",
+"_facts": {
+"stem": "return",
+"surface": "Return",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 535,
+"first_appearance_ref": "Genesis 3:19"
+}
+},
+"right": {
+"final_synthesis": "The word 'right' underscores Christ's role as a covenantal mediator, guiding believers to divine truth, and embodying righteousness through His teachings and resurrection. Its prevalence in OT and NT covenantal texts reflects its centrality to Christ's mission, where He is both the 'right' way and the 'right' hand of God.",
+"root": "right",
+"messianic_fulfillment": "Christ is depicted as the 'right' guide (e.g., Deuteronomy 28:14) and the 'right' way (1 Samuel 12:23), fulfilling covenantal roles",
+"first_appearance": "Genesis 13:9 ('to the right hand or to the left')",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_reading": "pattern",
+"lexical": "pattern"
+},
+"reveals_about_christ": "Christ's role as a covenantal mediator, guiding believers to divine truth, and embodying righteousness through His teachings and resurrection",
+"major_scriptural_pattern": "covenantal obedience and divine guidance, emphasized through repeated 'right' and 'left' oppositions",
+"term": "right",
+"literal_sense": "correct, right, proper, or aligned with divine will",
+"symbolic_structure": "paired terms 'right' and 'left' as opposites, repeated phrases 'to the right hand or to the left', and numerical patterns (e.g., 255 verses in OT)",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "255 verses in OT (most frequent), 69 in NT, 52 in other volumes, reflecting widespread use in covenantal contexts",
+"semantic_range": "moral righteousness, divine judgment, covenantal obedience, and symbolic opposition to deviation",
+"_facts": {
+"stem": "right",
+"surface": "Right",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 432,
+"first_appearance_ref": "Genesis 13:9"
+}
+},
+"rece": {
+"final_synthesis": "The term 'receive' underscores Christ's role as the mediator of divine grace, his fulfillment of covenantal obligations, and his resurrection as the ultimate act of receiving and giving blessings, reflecting the wisdom of God in redeeming humanity through his sacrifice and exaltation.",
+"root": "rec",
+"messianic_fulfillment": "Jesus' role as the Messiah is inferred through his reception of blessings (e.g., Acts 9:12) and his fulfillment of covenantal obligations (e.g., Moses 5:36), though specific scriptural references are limited",
+"first_appearance": "Genesis 4:11 (curse on Adam's descendants)",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "speculation",
+"messianic_fulfillment": "inference",
+"final_synthesis": "lexical"
+},
+"reveals_about_christ": "The word 'receive' reveals Christ's mission as a mediator of grace, his role in receiving and giving blessings, and his fulfillment of covenantal promises through his resurrection and exaltation",
+"major_scriptural_pattern": "covenantal obligation and divine action, with repeated emphasis on 'receive' in contexts of blessing and curse",
+"term": "receive",
+"literal_sense": "to receive (to accept, to take in, to accept as a gift or burden)",
+"symbolic_structure": "paired terms (e.g., 'receive thy blood' vs. 'receive his sight'), repeated phrases (e.g., 'receive thy brother's blood'), covenantal oppositions (blessing/curse), and numerical patterns (419 verses across canon)",
+"language": "English",
+"numerical_letter_observations": "419 verses across canonical texts, with repeated use in Genesis, Acts, and Psalms, and a recurring emphasis on 'receive' in covenantal contexts",
+"semantic_range": "blessing, curse, covenantal obligation, spiritual reception, divine action, legal transaction",
+"_facts": {
+"stem": "rece",
+"surface": "Receive",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 419,
+"first_appearance_ref": "Genesis 4:11"
+}
+},
+"reign": {
+"final_synthesis": "The term 'reign' encapsulates the biblical theme of divine sovereignty and human kingship, with its earliest appearance in Genesis 36:31 highlighting the covenantal tension between Edom and Israel. The repeated use of 'reign' in the context of kingship and the numerical patterns in the text underscore the importance of authority and justice. While the etymology is speculative, the symbolic structure and messianic fulfillment reveal a deeper theological pattern: the fulfillment of God's promise through a rightful king who subdues evil and establishes a new order. This mirrors Christ's role as the ultimate ruler who brings peace and salvation to all nations.",
+"root": "reign",
+"messianic_fulfillment": "The term 'reign' in the context of Edom and Israel foreshadows the Messianic kingdom, where rulers will exercise divine sovereignty over all nations (Revelation 11:15)",
+"first_appearance": "Genesis 36:31 (Edom's kings before Israel's kings)",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "inference",
+"messianic_fulfillment": "speculation",
+"reveals_about_christ": "speculation"
+},
+"reveals_about_christ": "The term 'reign' reveals Christ's role as both the rightful king of Israel and the universal ruler who establishes a new kingdom of peace and justice, reflecting His mission to subdue hearts and bring salvation",
+"major_scriptural_pattern": "covenantal kingship: the authority of rulers bound by divine promises and laws",
+"term": "reign",
+"literal_sense": "to rule, govern, or exercise authority",
+"symbolic_structure": "paired terms (king + reign), repeated phrases (e.g., 'any king reigned'), and numerical patterns (count of kings in Edom and Israel)",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The count of kings in Genesis 36:31 (12 kings) and 1 Chronicles 1:43-44 (12 kings) mirrors the numerical structure of the Hebrew root, suggesting a symbolic emphasis on completeness or divine order",
+"semantic_range": "kingship, sovereignty, governance, dominion, and the act of ruling over a people or territory",
+"_facts": {
+"stem": "reign",
+"surface": "Reign",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 415,
+"first_appearance_ref": "Genesis 36:31"
+}
+},
+"righteous": {
+"final_synthesis": "Righteousness reflects God's covenantal justice and Christ's redemptive work, embodying the balance between divine holiness and human sin, and serving as a paradigm for moral and spiritual transformation",
+"root": "szd",
+"messianic_fulfillment": "linked to Christ's role in 1 John 2:29 (righteousness as born of the Holy Spirit), and in resurrection (1 Corinthians 15:57)",
+"first_appearance": "Genesis 15:6 (covenantal promise of righteousness)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"speculation": "speculation"
+},
+"reveals_about_christ": "Christ embodies the ultimate covenantal righteousness, reconciling sin and justice, and reflecting God's eternal plan for redemption and restoration",
+"major_scriptural_pattern": "covenantal promises, priestly laws, kingship responsibilities, temple rituals, sacrifice, creation, exodus, inheritance, judgment, exile, redemption, resurrection, and Zion",
+"term": "righteousness",
+"literal_sense": "justice, holiness, uprightness",
+"symbolic_structure": "paired terms (righteousness/unrighteousness), numerical patterns (6666), covenantal oppositions (justice/sin), and repeated phrases (e.g., 'righteousness unto all generations')",
+"language": "Hebrew (Old Testament)",
+"numerical_letter_observations": "Hebrew root 'szd' () contains letters 's' (19), 'z' (26), 'd' (4), with numerical values 19, 26, 4; repeated in covenantal contexts",
+"semantic_range": "justice, holiness, uprightness; covenantal attribute; moral perfection; divine attribute",
+"_facts": {
+"stem": "righteous",
+"surface": "Righteousness",
+"lang": "hbo",
+"lemma": "6666",
+"surface_gr": "",
+"surface_he": "צְדָקָֽה",
+"morph": "HNcfsa",
+"count": 401,
+"first_appearance_ref": "Genesis 15:6"
+}
+},
+"round": {
+"final_synthesis": "The word 'round' encapsulates the biblical theme of creation, covenant, and the fulfillment of the Messiah's mission through circular structures, highlighting the divine order and the completeness of the covenant, and revealing the wisdom of God in establishing unity and completeness in the kingdom of heaven.",
+"root": "round",
+"messianic_fulfillment": "The word 'round' is used in the context of the city of Zion, which is a symbolic representation of the Messiah's kingdom, emphasizing the unity and completeness of the divine covenant;",
+"first_appearance": "Genesis 19:4 (Genesis 19:4: 'And ye shall compass the city, all ye men of war, and go round about the city once. Thus shalt thou do six days.')",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The word 'round' reveals the biblical emphasis on the fulfillment of the Messiah's mission through the creation of a circular, unified structure, reflecting the divine order and the completeness of the covenant;",
+"major_scriptural_pattern": "The word 'round' is repeatedly used in the context of creation, covenant, and the formation of the city of Zion, emphasizing circularity as a symbol of divine order and completeness;",
+"term": "round",
+"literal_sense": "To form a circular shape or to be full, as in the earth's surface or a vessel;",
+"symbolic_structure": "The word 'round' is paired with terms like 'circle' and 'circumference,' and its numerical pattern involves the number 6 (six days of creation), reflecting the cyclical nature of divine creation and the covenant;",
+"language": "English",
+"numerical_letter_observations": "The letter 'r' appears in the root, and the word 'round' is associated with the number 6, which is a common number in biblical texts, symbolizing completion and cyclical order;",
+"semantic_range": "Circumference, completeness, fullness, unity, and the formation of a circular structure or entity;",
+"_facts": {
+"stem": "round",
+"surface": "Round",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 372,
+"first_appearance_ref": "Genesis 19:4"
+}
+},
+"rest": {
+"final_synthesis": "The word 'rest' reveals the biblical emphasis on divine cessation, covenantal sanctification, and the ultimate fulfillment in Jesus Christ. Its etymology is speculative, but its symbolic structure and numerical patterns reflect foundational theological themes. The messianic reading highlights Jesus' role as the mediator of eternal peace, aligning with the biblical vision of rest as both a divine act and a redemptive promise.",
+"root": "rest",
+"messianic_fulfillment": "Jesus Christ is described as 'resting in heaven' (Matthew 28:20) and 'the rest of God' (Hebrews 4:9), aligning with the biblical theme of divine cessation and eternal peace",
+"first_appearance": "Genesis 2:2 (God rests after creating the world)",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"numerical_letter_observations": "speculation"
+},
+"reveals_about_christ": "the word 'rest' underscores Jesus' role as the ultimate mediator of divine peace, his resurrection as the fulfillment of the Sabbath's rest, and his mission to bring eternal cessation from sin and suffering",
+"major_scriptural_pattern": "rest as a covenantal act, symbolizing divine completion and sanctification of the Sabbath",
+"term": "rest",
+"literal_sense": "to cease, to stop, or to be at peace",
+"symbolic_structure": "paired terms (rest/work), numerical patterns (seven days), and repeated phrases (resting from labor)",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "the number seven is central, reflecting the seven days of creation and the cyclical nature of rest; the letter 'r' appears in 'rest' and 'sabbath' (sabbath = rest + day)",
+"semantic_range": "concepts of cessation, peace, tranquility, and the act of pausing from labor; also denotes a state of being free from obligation or burden",
+"_facts": {
+"stem": "rest",
+"surface": "Rest",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 348,
+"first_appearance_ref": "Genesis 2:2"
+}
+}
+}
+}

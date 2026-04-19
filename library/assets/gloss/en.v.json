@@ -1,0 +1,71 @@
+{
+"_meta": {
+"prompt_version": "gloss-define-v1",
+"shard": "v",
+"model": "qwen3:1.7b",
+"updated": "2026-04-18T06:50:57+00:00"
+},
+"stems": {
+"voice": {
+"final_synthesis": "The word 'voice' underscores Christ's dual role as both the speaker of divine truth and the executor of divine will, reflecting his mission to reveal God's character and bring salvation through proclamation and authority.",
+"root": "voice",
+"messianic_fulfillment": "The term 'voice' is linked to Christ's role as the 'voice of the Father' (John 15:26) and his proclamation of the kingdom (Matthew 11:5), fulfilling the prophecy of the Messiah as the one who speaks truth and commands authority.",
+"first_appearance": "Genesis 3:8 (Genesis 3:8)",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference",
+"final_synthesis": "speculation"
+},
+"reveals_about_christ": "The word 'voice' reveals Christ's mission as a mediator between God and humanity, emphasizing his role as the final speaker of divine truth and the one who brings salvation through proclamation and authority.",
+"major_scriptural_pattern": "divine communication, authority, and revelation through voice",
+"term": "voice",
+"literal_sense": "sound, speech, command, or declaration",
+"symbolic_structure": "opposition between silence and sound, voice as a command, and voice as a symbol of divine presence and judgment",
+"language": "English",
+"numerical_letter_observations": "The root 'voice' contains 5 letters, and its transliteration (voice) has a letter pattern of 'v-o-i-c-e'-a sequence that may reflect the Hebrew root 'vayikra' (to speak) or Greek 'euloges' (to declare). The letter 'e' appears once, possibly symbolizing the finality of divine revelation.",
+"semantic_range": "sound, speak, command, authority, divine communication, revelation, judgment, and exaltation",
+"_facts": {
+"stem": "voice",
+"surface": "Voice",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 769,
+"first_appearance_ref": "Genesis 3:8"
+}
+},
+"veri": {
+"final_synthesis": "The word 'verily' embodies the tension between human testimony and divine truth, its repeated use in scripture reflects the covenantal nature of Christ's revelation, and its symbolic structure underscores the importance of communal affirmation of divine truth in Christian theology.",
+"root": "veri",
+"messianic_fulfillment": "Jesus' use of 'Verily, verily' in John 6:32 (verily, verily I say unto you, Moses gave you not that bread from heaven; but my Father giveth you the true bread from heaven) fulfills the Messianic role of a divine witness to truth",
+"first_appearance": "Genesis 42:21 (Genesis 42:21: 'Verily, verily, I say unto you, that my people shall know my name; yea, in that day they shall know that I am he that doth speak.' )",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The word 'verily' reveals Christ's role as a covenantal witness to truth, emphasizing his divine authority and the communal responsibility to proclaim and uphold divine revelation",
+"major_scriptural_pattern": "Repeated use of 'Verily, verily' as a covenantal testimony, often paired with 'I say unto you' or 'I will say unto you' to affirm divine authority and fidelity",
+"term": "verily",
+"literal_sense": "Indeed, truly, verily",
+"symbolic_structure": "Contrast between the mundane (human testimony) and the divine (truth), with embedded numerical patterns (e.g., 492 verses across canon) and paired terms ('verily, verily') reflecting covenantal repetition and communal affirmation",
+"language": "English",
+"numerical_letter_observations": "The number 492 verses across canon (other:327, nt:99, bofm:49, ot:14, pgp:3) suggests a theological emphasis on collective revelation and divine testimony",
+"semantic_range": "Truth, certainty, realization, veracity; also connotation of divine testimony and covenant fidelity",
+"_facts": {
+"stem": "veri",
+"surface": "Verily",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 492,
+"first_appearance_ref": "Genesis 42:21"
+}
+}
+}
+}

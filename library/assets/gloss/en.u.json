@@ -1,0 +1,41 @@
+{
+"_meta": {
+"prompt_version": "gloss-define-v1",
+"shard": "u",
+"model": "qwen3:1.7b",
+"updated": "2026-04-18T03:14:11+00:00"
+},
+"stems": {
+"until": {
+"final_synthesis": "The term 'until' reveals Christ's role as the covenantal mediator, bridging time and eternity, and fulfilling the promise of redemption through the fulfillment of time-bound covenants.",
+"root": "heos",
+"messianic_fulfillment": "Joseph Smith's quote: 'until the day that Noah entered the ark' (Book of Mormon)",
+"first_appearance": "Genesis 8:5 (waters dried up until the land was fertile)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference",
+"final_synthesis": "speculation"
+},
+"reveals_about_christ": "Christ's fulfillment of covenantal timekeeping, intergenerational covenantal continuity, and the promise of redemption through time-bound promises",
+"major_scriptural_pattern": "covenantal timekeeping, paired terms (until/after), numerical patterns (595 verses)",
+"term": "until",
+"literal_sense": "up to, until, as in time or duration",
+"symbolic_structure": "paired terms (until/after), covenantal oppositions (until/after), repeated phrases (until the day...)",
+"language": "English",
+"numerical_letter_observations": "595 verses across canon, 266 OT, 124 BoFM, 122 Other, 58 NT",
+"semantic_range": "time, duration, covenantal fulfillment, state of being until a condition is met",
+"_facts": {
+"stem": "until",
+"surface": "Until",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 595,
+"first_appearance_ref": "Genesis 8:5"
+}
+}
+}
+}

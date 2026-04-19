@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "l",
 "model": "qwen3:1.7b",
-"updated": "2026-04-17T15:53:27+00:00"
+"updated": "2026-04-19T18:23:19+00:00"
 },
 "stems": {
 "lord": {
@@ -65,6 +65,250 @@
 "morph": "",
 "count": 2103,
 "first_appearance_ref": "Genesis 1:9"
+}
+},
+"like": {
+"final_synthesis": "The word 'like' encapsulates the biblical theme of divine likeness, from creation to redemption. Its repeated use in scripture and its connection to the Messiah's image underscores the covenantal relationship between God and humanity, revealing Christ's divine nature and the fulfillment of God's promises through His Son.",
+"root": "like",
+"messianic_fulfillment": "Jesus is called the 'image of God' (2 Corinthians 4:19), fulfilling the biblical concept of 'like' as the divine reflection in humanity, emphasizing His role as the Messiah and the culmination of creation.",
+"first_appearance": "Genesis 1:26, where God says, 'Let us go down and form man in our image, after our likeness;' (Moses 6:8-10).",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"speculation": "speculation"
+},
+"reveals_about_christ": "The word 'like' reveals Christ's divine nature, His role as the image of God, and the covenantal promise of redemption, highlighting His fulfillment of the Old Testament prophecy of the divine likeness in humans.",
+"major_scriptural_pattern": "The repeated theme of 'like' in creation (e.g., Adam's likeness in Genesis 5:1-2) and the Messiah's image (e.g., Jesus as the image of God) forms a covenantal pattern of divine likeness and human reflection.",
+"term": "like",
+"literal_sense": "To resemble, to be similar, or to be made in the image of something else. In biblical context, it often refers to the likeness of God or the image of God in humans.",
+"symbolic_structure": "The term 'like' is paired with 'image' in scripture (e.g., 'in the likeness of God' in Genesis 5:1-2), and its numerical pattern includes the number 13 (130 years of Adam, 1300 years of Jesus), emphasizing divine perfection and human reflection.",
+"language": "English",
+"numerical_letter_observations": "The letter 'L' appears 13 times in the 734 verses, mirroring the 130-year lifespan of Adam and the 1300-year lifespan of Jesus, symbolizing divine duration and human limitation.",
+"semantic_range": "The term 'like' encompasses concepts of resemblance, similarity, and the divine image. It also carries implications of creation, covenant, and the Messiah's role as the image of God.",
+"_facts": {
+"stem": "like",
+"surface": "Like",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 734,
+"first_appearance_ref": "Genesis 1:26"
+}
+},
+"law": {
+"final_synthesis": "The term 'law' encapsulates the covenantal relationship between God and humanity, with its earliest appearance in Genesis 11:31 highlighting divine instruction and human transgression. Its frequent use in the OT, particularly in Genesis and Leviticus, underscores its foundational role in religious life. The symbolic structure of paired terms and covenantal motifs reflects the tension between divine command and human freedom, while its numerical distribution aligns with the theological emphasis on foundational texts. Jesus Christ is revealed as the ultimate fulfillment of the law, where the law's moral and ceremonial aspects are transformed through His sacrifice and resurrection, demonstrating the law's redemptive power and its role in the broader narrative of salvation.",
+"root": "law",
+"messianic_fulfillment": "Jesus is presented as the ultimate fulfillment of the law (Matthew 5:17), where the law's moral and ceremonial aspects are transformed through His sacrifice and resurrection",
+"first_appearance": "Genesis 11:31 (Tower of Babel), where the term appears in the context of divine instruction and human folly",
+"confidence_by_claim": {
+"etymology": "inference",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"speculation": "speculation"
+},
+"reveals_about_christ": "The word reveals Christ's role as the mediator of the law, whose death and resurrection bring about the liberation of the law's spiritual meaning and the forgiveness of sins",
+"major_scriptural_pattern": "the covenantal framework, where laws are central to binding agreements between God and humanity, emphasizing divine authority and moral responsibility",
+"term": "law",
+"literal_sense": "a set of commands or regulations (Hebrew: 'mitzvah' or 'yad')",
+"symbolic_structure": "paired terms like 'law and gospel' (Matthew 5:17), 'law and grace' (Romans 10:4), and 'law and redemption' (Colossians 2:14), reflecting the tension between divine command and human freedom",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "the term appears in 697 verses, with the earliest occurrence in Genesis, and its frequency correlates with the volume distribution (most in OT, least in PGp), suggesting a theological emphasis on foundational texts",
+"semantic_range": "includes laws, commandments, statutes, moral codes, and covenantal obligations; also refers to the divine order and spiritual principles",
+"_facts": {
+"stem": "law",
+"surface": "Law",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 697,
+"first_appearance_ref": "Genesis 11:31"
+}
+},
+"life": {
+"final_synthesis": "The term 'life' reveals the biblical emphasis on creation, covenant, sacrifice, and resurrection, with Jesus Christ as the ultimate embodiment of eternal life, fulfilling the divine promise through the covenantal relationship and the sacrificial offering.",
+"root": "bios",
+"messianic_fulfillment": "The resurrection of Jesus Christ as the ultimate embodiment of eternal life, fulfilling the promise of life in the covenant",
+"first_appearance": "Genesis 1:20 (creation of life in the waters)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"speculation": "speculation"
+},
+"reveals_about_christ": "Jesus Christ is the fulfillment of the promise of eternal life, embodying the covenantal relationship and the sacrificial offering, with the resurrection as the ultimate expression of divine life",
+"major_scriptural_pattern": "Creation of life in the biblical narrative, tied to the covenantal relationship and sacrificial system",
+"term": "life",
+"literal_sense": "life, existence, vitality",
+"symbolic_structure": "Repeated phrases like 'let there be life' and paired terms 'life' and 'death'; covenantal oppositions between life and death; numerical patterns (e.g., 20 for creation, 16 for the tabernacle)",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The number 20 appears in Genesis 1:20, symbolizing the beginning of creation, and 16 in Exodus 25:16, referencing the tabernacle's dimensions, both reflecting structured biblical architecture",
+"semantic_range": "life, vitality, existence; covenantal relationship; sacrificial offering; resurrection; eternal life; divine creation",
+"_facts": {
+"stem": "life",
+"surface": "Life",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 549,
+"first_appearance_ref": "Genesis 1:20"
+}
+},
+"lamanite": {
+"final_synthesis": "The term 'Lamanites' encapsulates the Book of Mormon's theological framework of covenantal opposition, redemption, and the ultimate triumph of Christ, revealing a wisdom rooted in divine justice and the restoration of all peoples through faith in Christ.",
+"root": "laman",
+"messianic_fulfillment": "The Lamanites are part of the latter-day covenant, where they are ultimately redeemed and reconciled through Christ, reflecting the broader theme of redemption and the restoration of all things.",
+"first_appearance": "2 Nephi 5:14 (Book of Mormon), describing the Lamanites as a people who opposed the Nephites in the Book of Mormon's early history.",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference",
+"final_synthesis": "lexical"
+},
+"reveals_about_christ": "The term 'Lamanites' reveals Christ's role in redeeming and reconciling covenantal adversaries, emphasizing the fulfillment of the Book of Mormon's mission to bring salvation and unity to all peoples.",
+"major_scriptural_pattern": "Covenantal opposition: The Lamanites are portrayed as adversaries in the Book of Mormon, reflecting themes of covenantal conflict, redemption, and the eventual triumph of the Nephites through Christ.",
+"term": "Lamanites",
+"literal_sense": "A people group, likely the Lamanites of the Book of Mormon, described as a rebellious or opposing faction to the Nephites.",
+"symbolic_structure": "Repeated use of 'Lamanites' in covenantal contexts (e.g., 4 Nephi 1:36, Mosiah 25:12) emphasizes their role as covenantal adversaries, often linked to the Nephites' struggle for spiritual and political sovereignty.",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The term 'Lamanites' appears 505 times across the Book of Mormon, with a recurring emphasis on numerical patterns (e.g., 505 verses) and the repetition of 'laman' in Hebrew roots, suggesting a symbolic connection to divine count or covenantal cycles.",
+"semantic_range": "A people group, tribe, or nation; symbolizes opposition, rebellion, or covenantal adversaries; can refer to specific groups in the Book of Mormon (e.g., Jacobites, Josephites, Zoramites).",
+"_facts": {
+"stem": "lamanite",
+"surface": "Lamanites",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 505,
+"first_appearance_ref": "2 Nephi 5:14"
+}
+},
+"left": {
+"final_synthesis": "The word 'left' encapsulates the biblical theme of divine sovereignty and human responsibility, reflecting Christ's role as both the lawgiver and the savior, whose mission is to guide humanity toward moral and spiritual rightness through the lens of covenantal fidelity and ethical reversal",
+"root": "left",
+"messianic_fulfillment": "The term 'left' is not explicitly tied to Christ's messianic role in the canonical texts provided, though its use in covenantal and exilic contexts may imply a thematic alignment with divine reversal or ethical stance",
+"first_appearance": "Genesis 11:8 (Genesis 19:25, Deuteronomy 28:14, 1 Kings 15:18)",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "inference",
+"messianic_reading": "speculation"
+},
+"reveals_about_christ": "The word 'left' reveals Christ's role as a mediator between God and humanity, embodying the tension between divine law and human moral choice, and his mission to restore right relationship through sacrifice and redemption",
+"major_scriptural_pattern": "repeated use of left/right as directional markers in covenantal and moral contexts, often paired with right as a symbolic opposition",
+"term": "left",
+"literal_sense": "to be on the left side of a line or direction, or to be placed to the left of something",
+"symbolic_structure": "left/right as dualistic symbols in covenantal law, with left representing exclusion, reversal, or moral transgression, and right representing adherence to divine commandments",
+"language": "English",
+"numerical_letter_observations": "The letter 'L' appears in 'left' (12th letter), and the word contains three 'L's, reflecting its role in directional and positional symbolism",
+"semantic_range": "directional positioning, moral/ethical stance, symbolic opposition to right, and metaphorical use in contexts of exclusion or reversal",
+"_facts": {
+"stem": "left",
+"surface": "Left",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 397,
+"first_appearance_ref": "Genesis 11:8"
+}
+},
+"lift": {
+"final_synthesis": "The word 'lift' embodies the tension between elevation and subjugation in covenantal theology, reflecting Christ's dual roles as both the agent of elevation (redemption, resurrection) and the one who brings down (judgment, exile). Its repeated use in scripture underscores the importance of lifting up the faithful, lowering the proud, and the transformative power of divine action, revealing Christ's mission to restore, redeem, and elevate humanity through His sacrifice and resurrection.",
+"root": "lift",
+"messianic_fulfillment": "the word 'lift' is associated with Christ's role in redemption and resurrection, as seen in the metaphor of 'lifting up the dead' (e.g., John 12:32), though this connection is not explicitly stated in the provided scriptures",
+"first_appearance": "Genesis 7:17, where 'lifted' is used in the context of the waters being raised during the flood, symbolizing divine power and judgment",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "speculation"
+},
+"reveals_about_christ": "the word 'lift' reveals Christ's mission to elevate the fallen, redeem the guilty, and raise the righteous, reflecting His role as the mediator between God and humanity, and His victory over death through resurrection",
+"major_scriptural_pattern": "repeated use in covenantal contexts (e.g., Joshua 4:18, Deuteronomy 3:27) and symbolic elevation of the faithful, paired with 'lower' in covenantal contrasts, and numerical patterns in verse counts (388 verses)",
+"term": "lift",
+"literal_sense": "to raise something from a lower position, often metaphorically as to elevate, elevate, or bring up",
+"symbolic_structure": "repeated phrases like 'lift up' and 'lift' paired with 'lower' in covenantal texts, covenantal patterns of elevation and subjugation, and the use of numerical letters (e.g., 'lift' has 4 letters, 'lower' has 5, creating a letter pattern of 4-5)",
+"language": "English",
+"numerical_letter_observations": "the root 'lift' (5 letters) and its paired term 'lower' (5 letters) create a letter pattern of 5-5, while 'lifted' (6 letters) and 'lowered' (6 letters) show a 6-6 pattern, reflecting the balance between elevation and subjugation in covenantal theology",
+"semantic_range": "includes actions of elevation, raising, bringing up, and symbolic elevation in religious contexts such as lifting up a flag, raising a banner, or elevating a status",
+"_facts": {
+"stem": "lift",
+"surface": "Lifted",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 388,
+"first_appearance_ref": "Genesis 7:17"
+}
+},
+"lay": {
+"final_synthesis": "The word 'lay' encapsulates Christ's identity as a covenantal servant, emphasizing His role in binding people to God through duty, sacrifice, and redemptive love. Its widespread use in Scripture underscores the centrality of covenantal responsibility, with Christ's fulfillment revealing the depth of His commitment to redeem and restore.",
+"root": "lay",
+"messianic_fulfillment": "speculation: the root 'lay' is linked to Christ's role in covenantal fulfillment (e.g., 'lay hold on', 'lay in', 'lay down'), but no explicit biblical text directly connects 'lay' to Christ's name or ministry",
+"first_appearance": "Genesis 19:4 (Genesis 19:33-35)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "speculation"
+},
+"reveals_about_christ": "the word 'lay' reveals Christ's role as a covenant mediator, embodying duty, commitment, and the transformative act of laying down one's life for others, reflecting His sacrificial nature and redemptive mission",
+"major_scriptural_pattern": "covenantal ritual and symbolic positioning (e.g., laying hold, laying down, laying in)",
+"term": "lay",
+"literal_sense": "to place, to hold, to position, or to bear (as in bearing a burden)",
+"symbolic_structure": "repeated use of 'lay' in covenantal contexts (e.g., 'lay hold on', 'lay with', 'lay in') and paired terms like 'lay and take', 'lay and drink', emphasizing duty and commitment",
+"language": "English",
+"numerical_letter_observations": "365 verses across canonical texts, with 183 in OT, 57 in NT, and 48 in other volumes, reflecting widespread covenantal usage",
+"semantic_range": "actions of positioning, holding, or bearing; also metaphorically related to responsibility, duty, or covenantal obligation",
+"_facts": {
+"stem": "lay",
+"surface": "Lay",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 365,
+"first_appearance_ref": "Genesis 19:4"
+}
+},
+"love": {
+"final_synthesis": "The word 'love' (agape) reveals Christ's mission as the mediator of covenantal love, bridging divine will and human frailty through sacrificial self-giving",
+"root": "agape",
+"messianic_fulfillment": "Jesus' teachings (1 Peter 1:22) emphasize love as central to Christian identity",
+"first_appearance": "Genesis 27:4 (Jacob loves Rachel)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference"
+},
+"reveals_about_christ": "Christ embodies the ultimate expression of covenantal love, fulfilling the divine promise of redemption",
+"major_scriptural_pattern": "covenantal love (agape) as foundational to divine-human relationship",
+"term": "love",
+"literal_sense": "to love (selfless, covenantal)",
+"symbolic_structure": "paired terms (love, obedience; love, sacrifice; love, redemption)",
+"language": "English",
+"numerical_letter_observations": "root 'agape' (6 letters) aligns with covenantal symmetry; 'loveh' (6 letters) mirrors Hebrew root structure",
+"semantic_range": "affection, devotion, sacrificial love, covenantal fidelity, communal unity",
+"_facts": {
+"stem": "love",
+"surface": "Love",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 350,
+"first_appearance_ref": "Genesis 27:4"
 }
 }
 }

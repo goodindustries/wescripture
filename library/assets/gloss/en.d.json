@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "d",
 "model": "qwen3:1.7b",
-"updated": "2026-04-17T21:08:17+00:00"
+"updated": "2026-04-19T13:20:26+00:00"
 },
 "stems": {
 "david": {
@@ -34,6 +34,247 @@
 "morph": "",
 "count": 856,
 "first_appearance_ref": "Ruth 4:17"
+}
+},
+"done": {
+"final_synthesis": "The term 'done' encapsulates the tension between divine judgment and redemptive completion, revealing Christ's mission as both the Judge and the Fulfiller of God's covenantal promises.",
+"root": "don",
+"messianic_fulfillment": "Speculation: The term 'done' reflects the redemptive completion of sin through Christ, as seen in the New Testament's emphasis on the final act of God's judgment and redemption.",
+"first_appearance": "Genesis 3:13",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "speculation"
+},
+"reveals_about_christ": "The word 'done' underscores Christ's role as the ultimate executor of God's will, bridging the gap between divine justice and human salvation through His sacrificial act.",
+"major_scriptural_pattern": "covenantal punishment and redemption through divine judgment",
+"term": "done",
+"literal_sense": "to complete, finish, accomplish",
+"symbolic_structure": "paired terms (e.g., 'beguiled' and 'eat'), covenantal oppositions (sin vs. holiness), numerical patterns (threefold curse in Exodus 20:14)",
+"language": "English",
+"numerical_letter_observations": "The root 'don' (Old English) contains three letters, mirroring the threefold curse in Exodus 20:14, and its consonants align with the Hebrew 'sas' (to do) in Genesis 3:13.",
+"semantic_range": "actions completed, fulfillment of purpose, judicial outcome, covenantal consequence",
+"_facts": {
+"stem": "done",
+"surface": "Done",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 692,
+"first_appearance_ref": "Genesis 3:13"
+}
+},
+"destroy": {
+"final_synthesis": "The word 'destroy' embodies the tension between divine sovereignty and human responsibility, reflecting Christ's dual role as both the executor of God's will (covenantal destruction) and the agent of redemption (resurrection). Its pervasive use in scripture underscores the theme of covenantal fidelity and the promise of eternal restoration.",
+"root": "destroy",
+"messianic_fulfillment": "The concept of redemption (Genesis 9:11) aligns with Christ's role as the ultimate redeemer, as seen in His sacrifice and resurrection (1 Corinthians 15:57).",
+"first_appearance": "Genesis 6:7",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The word 'destroy' reveals Christ's mission to redeem humanity through sacrifice, emphasizing His role as the covenantal mediator and the fulfillment of God's promise to restore creation.",
+"major_scriptural_pattern": "covenantal destruction (Genesis 9:11)",
+"term": "destroy",
+"literal_sense": "to remove, to annihilate, to obliterate",
+"symbolic_structure": "repeated covenantal promises of redemption (e.g., Genesis 9:11, Exodus 32:12)",
+"language": "English",
+"numerical_letter_observations": "The word 'destroy' appears 616 times across canonical texts, with a letter count of 8 (d-e-s-t-r-o-y), reflecting its thematic centrality in covenantal theology.",
+"semantic_range": "to eliminate, to annul, to eradicate, to destroy in a covenantal sense",
+"_facts": {
+"stem": "destroy",
+"surface": "Destroy",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 616,
+"first_appearance_ref": "Genesis 6:7"
+}
+},
+"death": {
+"final_synthesis": "The word 'death' embodies the tension between life and death, central to covenantal theology. Its repeated appearances and symbolic structures highlight Christ's role as the mediator between life and death, fulfilling the covenantal promise of redemption and new life. The numerical prevalence of 'd' underscores its significance in biblical discourse, revealing Christ's mission to conquer death through sacrifice and resurrection.",
+"root": "morphe",
+"messianic_fulfillment": "death is fulfilled in Jesus Christ as both a sacrificial act (e.g., 'to put to death' in 2 Samuel 8:2) and a transformative experience (e.g., resurrection), aligning with the covenantal promise of life and death",
+"first_appearance": "Genesis 21:16 (covenant context: 'life and good, and death and evil' set before the Israelites)",
+"confidence_by_claim": {
+"etymology": "pattern",
+"symbolic_structure": "inference",
+"messianic_reading": "speculation"
+},
+"reveals_about_christ": "the word 'death' reveals Christ's dual nature: as a sacrificial agent (sacrifice, redemption) and a transformative reality (resurrection, new life), reflecting His mission to conquer death through redemption and restoration",
+"major_scriptural_pattern": "repeated use of 'life and death' in covenantal contexts (Deuteronomy 30:15, 2 Samuel 8:2), paired terms (e.g., 'to put to death' vs. 'to keep alive'), and numerical patterns (e.g., 'two lines' vs. 'one full line')",
+"term": "death",
+"literal_sense": "the state of dying, the end of life, or the consequence of sin",
+"symbolic_structure": "embedded in covenantal oppositions (life vs. death), symbolic echoes (e.g., 'death' as a transformative act), and covenantal patterns (e.g., 'see I have set before thee' in Deuteronomy 30:15)",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "repeated use of the number 2 (e.g., 'two lines measured to put to death'), and the letter 'd' (death) appears 507 times across canon, reflecting its centrality in biblical theology",
+"semantic_range": "includes the end of life, the consequence of sin, the finality of death, and the transformative power of resurrection",
+"_facts": {
+"stem": "death",
+"surface": "Death",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 507,
+"first_appearance_ref": "Genesis 21:16"
+}
+},
+"dwell": {
+"final_synthesis": "The word 'dwell' encapsulates the biblical narrative of habitation as both a physical and spiritual reality, central to covenantal relationships and the Messianic promise. Its etymology and symbolic use reveal a theology of divine presence, community, and transformation, reflecting the overarching theme of Christ's dwelling in humanity and the restoration of all things.",
+"root": "dwell",
+"messianic_fulfillment": "The phrase 'where God and Christ dwell' (Doctrine & Covenants 76:112) suggests a future state where divine presence is fully realized, fulfilling the Messianic promise of a heavenly dwelling. The word 'dwell' here implies a transformative, eternal habitation of God in humanity.",
+"first_appearance": "Genesis 4:20, where the phrase 'dwell in tents' is used to describe the habitation of Adam and Eve in the Garden of Eden, symbolizing the natural state of humanity before the Fall.",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "speculation",
+"messianic_reading": "pattern"
+},
+"reveals_about_christ": "The word 'dwell' reveals Christ's mission to dwell in humanity, offering a spiritual home and eternal presence. It underscores the theme of redemption and the restoration of relationship with God, reflecting the New Covenant's emphasis on divine habitation in the believer.",
+"major_scriptural_pattern": "The concept of dwelling is central to covenantal relationships, particularly in the context of the Tabernacle, the Temple, and the New Jerusalem. It reflects the idea of habitation as both a physical and spiritual reality, often tied to divine presence and community.",
+"term": "dwell",
+"literal_sense": "to rest, to reside, or to inhabit a place, often in a temporary or nomadic context",
+"symbolic_structure": "The word 'dwell' is embedded in repeated phrases like 'where God and Christ dwell' (Doctrine & Covenants 76:112) and 'the Lord will create upon every dwelling-place of mount Zion' (2 Nephi 14:5). It also appears in paired terms such as 'dwelling-place' and 'assembly,' emphasizing the interplay between physical and spiritual habitation.",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The word 'dwell' appears 445 times across the canonical texts, a number significant in biblical numerology, though its exact meaning remains speculative. The letter count (5 letters) aligns with the concept of 'dwelling' as a fundamental human experience.",
+"semantic_range": "The word encompasses the act of inhabiting a space, whether permanent or transient, and carries connotations of dwelling in a community, under a covenant, or in a sacred place. It also implies the presence of a divine or spiritual entity in a physical location.",
+"_facts": {
+"stem": "dwell",
+"surface": "Dwell",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 445,
+"first_appearance_ref": "Genesis 4:20"
+}
+},
+"dead": {
+"final_synthesis": "The word 'dead' encapsulates the biblical theology of death, burial, and resurrection, reflecting the covenantal relationship between God and humanity. Its repeated use in the context of the Messiah's death and exaltation underscores the theme of redemption and the promise of eternal life, revealing Christ's role as the 'man of God' who overcomes death through resurrection.",
+"root": "dead",
+"messianic_fulfillment": "The word 'dead' is fulfilled in the context of the Messiah's death and resurrection, as seen in 1 Kings 13:31 and Genesis 23:8, where the Messiah is described as 'the man of God' and 'the bones beside his bones,' reflecting the covenantal promise of redemption and eternal life.",
+"first_appearance": "Genesis 20:3 (Genesis 20:3: And it came to pass, after he had buried him, that he spake to his sons, saying, When I am dead, then bury me in the sepulchre wherein the man of God is buried; lay my bones beside his bones:)",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference"
+},
+"reveals_about_christ": "The word 'dead' reveals Christ's role as the 'man of God' who overcomes death through resurrection, emphasizing the covenantal promise of eternal life and the transformative power of God's word.",
+"major_scriptural_pattern": "The word 'dead' is central to the theology of burial, resurrection, and the covenantal relationship between God and humanity, particularly in the context of the Messiah's death and exaltation.",
+"term": "dead",
+"literal_sense": "to cease to be alive, to be buried, or to be in a state of nonexistence",
+"symbolic_structure": "The word 'dead' is embedded in repeated phrases (e.g., 'bury me in the sepulchre'), paired terms (e.g., 'man of God' and 'bones beside his bones'), and numerical patterns (e.g., the number 442, representing the total appearances across the canon). It also reflects the tension between life and death, and between the physical and spiritual realms.",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The word 'dead' appears 442 times across the canon, with a distribution of nt:171, ot:155, bofm:71, other:44, pgp:1. The letter 'd' appears 442 times, and the letter 'e' appears 441 times, creating a numerical pattern of 442:441, which may symbolize the unity of death and life.",
+"semantic_range": "death, burial, resurrection, covenant, inheritance, judgment, and the state of being 'unfit' for life",
+"_facts": {
+"stem": "dead",
+"surface": "Dead",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 442,
+"first_appearance_ref": "Genesis 20:3"
+}
+},
+"depart": {
+"final_synthesis": "The verb 'depart' encapsulates the theological tension between human frailty and divine sovereignty, reflecting Christ's journey from sin to salvation, from exile to restoration, and from death to eternal life, embodying the paradox of a servant who 'departed' to fulfill the will of the Father and a risen Lord who 'departed' to return to His glory.",
+"root": "depart",
+"messianic_fulfillment": "the verb 'depart' is fulfilled in the resurrection of Jesus, where He 'departed' to the Father (Matthew 25:41) and was 're-departed' in His ascension and return to heaven",
+"first_appearance": "Genesis 12:4 (Abraham departing from Haran)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "the word 'depart' reveals Christ's role as both a covenantal mediator (departing from sin) and a victorious redeemer (re-departing from death), reflecting His dual nature as a servant and sovereign",
+"major_scriptural_pattern": "covenantal departure, emphasizing the relationship between God and His people, with repeated motifs of leaving, exile, and restoration",
+"term": "depart",
+"literal_sense": "to leave or go away, often with a sense of departure from a place, person, or covenant",
+"symbolic_structure": "repeated use of the verb 'depart' in contexts of covenantal rupture (e.g., Matthew 25:41), paired with terms like 'left hand' (judgment) and 'right hand' (redemption), and numerical patterns in verse counts (399 verses)",
+"language": "English",
+"numerical_letter_observations": "the root 'depart' contains letters 'd' and 'e', which appear in the verse counts (399) and in the word 'departed' (3 letters), suggesting a thematic emphasis on movement and transition",
+"semantic_range": "refers to the act of leaving, exile, spiritual separation, and the departure of individuals from a community or divine covenant, often carrying connotations of judgment or redemption",
+"_facts": {
+"stem": "depart",
+"surface": "Departed",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 399,
+"first_appearance_ref": "Genesis 12:4"
+}
+},
+"deliv": {
+"final_synthesis": "The verb 'deliver' encapsulates the core of God's covenantal promise: to rescue, redeem, and restore. Its repeated use in Scripture reflects the centrality of salvation in Christian theology, with Jesus as the ultimate fulfillment of this divine mission, embodying both the ethical and redemptive aspects of God's will.",
+"root": "deliv",
+"messianic_fulfillment": "Jesus Christ is explicitly called 'the Deliverer' (Acts 10:38; 1 Corinthians 15:57), fulfilling the Old Testament prophecy of a Messiah who rescues Israel and humanity",
+"first_appearance": "Genesis 32:11 (Genesis 37:21, 1 Samuel 17:46)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The word 'deliver' underscores Jesus' role as the ultimate redeemer, bridging the gap between God's covenant and human salvation, and reflecting His mission to bring restoration and hope",
+"major_scriptural_pattern": "covenantal deliverance, especially in contexts of divine promise and human responsibility",
+"term": "deliver",
+"literal_sense": "to give something back, to rescue, or to transfer possession",
+"symbolic_structure": "paired terms (e.g., 'deliver' and 'deliverance'), repeated phrases (e.g., 'I will deliver'), and numerical patterns (e.g., the number 32, which marks a pivotal moment of deliverance in Genesis)",
+"language": "English",
+"numerical_letter_observations": "the root 'deliv' consists of three letters, mirroring the number 3, which is significant in biblical numerology (e.g., 32, 33, 34)",
+"semantic_range": "actions of rescuing, delivering, or transferring ownership; also metaphorically linked to redemption, salvation, and covenantal promises",
+"_facts": {
+"stem": "deliv",
+"surface": "Deliver",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 363,
+"first_appearance_ref": "Genesis 32:11"
+}
+},
+"drink": {
+"final_synthesis": "The word 'drink' reveals Christ's mission as transformative spiritual nourishment, fulfilling covenantal symbolism through sacrificial love and the promise of eternal life, reflecting the interplay of ritual, intimacy, and divine provision in biblical theology.",
+"root": "drunk",
+"messianic_fulfillment": "speculation: covenantal symbolism of life-giving liquid aligns with Christ's role as the 'living water' (John 4:10-14)",
+"first_appearance": "Genesis 19:32 (Genesis 19:34-35)",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_reading": "speculation",
+"numerical_letter_observations": "pattern"
+},
+"reveals_about_christ": "Christ's ministry as transformative spiritual nourishment, fulfillment of covenantal ritual through sacrificial love",
+"major_scriptural_pattern": "covenantal ritual of intimate consumption (drinking wine) to preserve seed",
+"term": "drink",
+"literal_sense": "to consume liquid, especially in a ritual or intimate context",
+"symbolic_structure": "repeated phrases ('make our father drink wine'), paired terms ('father' & 'you'), covenantal symbolism of life-giving liquid",
+"language": "English",
+"numerical_letter_observations": "360 verses across OT, 252 in OT, 68 in NT, 23 in BoM, 14 in other, 3 in PGp",
+"semantic_range": "covenantal ritual, symbolic consumption, communal intimacy, divine provision",
+"_facts": {
+"stem": "drink",
+"surface": "Drink",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 360,
+"first_appearance_ref": "Genesis 19:32"
 }
 }
 }

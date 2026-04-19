@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "w",
 "model": "qwen3:1.7b",
-"updated": "2026-04-17T18:38:21+00:00"
+"updated": "2026-04-19T12:48:53+00:00"
 },
 "stems": {
 "word": {
@@ -66,6 +66,218 @@
 "morph": "",
 "count": 930,
 "first_appearance_ref": "Genesis 2:2"
+}
+},
+"world": {
+"final_synthesis": "The word 'world' reflects Christ's mission to create, redeem, and illuminate the cosmos, emphasizing His divine authority and redemptive purpose, grounded in the etymology of 'kosmos' and its symbolic use in scripture.",
+"root": "kosmos",
+"messianic_fulfillment": "Christ is described as 'the light and life of the world' (3 Nephi 11:11), fulfilling the role of the Messiah as the Redeemer and Creator of the cosmos",
+"first_appearance": "2 Samuel 22:16 (Psalm 22:16, Hebrew text)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "inference",
+"messianic_reading": "pattern",
+"numerical_letter_observations": "speculation"
+},
+"reveals_about_christ": "The word reveals Christ's divine mission to create, redeem, and illuminate the cosmos, emphasizing His role as the Savior and Lord of all creation",
+"major_scriptural_pattern": "repeated use in contexts of creation, exodus, redemption, and divine sovereignty, often paired with 'light' and 'life' to emphasize God's authority over the cosmos",
+"term": "world",
+"literal_sense": "the universe, cosmos, or earth, often referring to creation or divine order",
+"symbolic_structure": "paired with 'light' and 'life' to signify Christ as the illuminator and sustainer of creation; embedded in phrases like 'the world was made' and 'the world is my light'",
+"language": "English",
+"numerical_letter_observations": "root 'kos-mos' (k, o, s, m, o, s) contains repeated 'o's and a final 's', suggesting a focus on divine order and the cosmos as a vessel for God's work",
+"semantic_range": "includes the cosmos, creation, divine sovereignty, and the human realm; can also denote the earth and the realm of God",
+"_facts": {
+"stem": "world",
+"surface": "World",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 533,
+"first_appearance_ref": "2 Samuel 22:16"
+}
+},
+"wick": {
+"final_synthesis": "The term 'wick' encapsulates the biblical tension between moral corruption and divine justice, reflecting Christ's role as the Redeemer. Its etymology and symbolic use in scripture reveal a pattern of covenantal warnings and moral contrast, underscoring the theme of redemption through Christ. The word's linguistic structure and numerical letters suggest a continuity with Old English roots, reinforcing its significance in biblical theology.",
+"root": "wick",
+"messianic_fulfillment": "The term 'wicked' is not directly linked to Jesus Christ in the Bible. However, its semantic range includes themes of moral corruption and redemption, which are central to Christ's mission to reconcile humanity to God. The concept of 'wickedness' in the context of covenant and judgment may indirectly reflect Christ's role as the Redeemer.",
+"first_appearance": "Genesis 13:13 (Genesis 13:13: 'Thou knowest, O Lord, that they have been greatly oppressed and afflicted by wicked men; and our hearts flow out with sorrow because of their grievous burdens').",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "inference",
+"messianic_fulfillment": "speculation"
+},
+"reveals_about_christ": "The word 'wick' reveals Christ's role as the embodiment of justice and redemption, contrasting the moral corruption of the world with His righteousness. Its etymological roots and symbolic use in scripture highlight the tension between wickedness and divine grace, which is a key aspect of Christ's mission.",
+"major_scriptural_pattern": "The term 'wicked' is repeatedly used in contexts of moral corruption, covenant violation, and divine judgment, often paired with 'righteous' to contrast evil and justice.",
+"term": "wick",
+"literal_sense": "to corrupt, to be evil, or to be wicked",
+"symbolic_structure": "The word 'wicked' is embedded in repeated phrases (e.g., 'wicked men,' 'wickedness'), paired with 'righteous' to highlight moral contrast, and appears in covenantal warnings (Exodus 23:7) and exilic lamentations (Job 21:30). Its numerical letter pattern (W-I-C-K) mirrors the Hebrew root 'wic-' (from Old English 'wic'), suggesting a linguistic continuity.",
+"language": "English",
+"numerical_letter_observations": "The word 'wick' contains 5 letters (W-I-C-K), with the letters W, I, C, K, and T. The letter 'W' appears in the first and last positions, and 'K' is the fourth letter, forming a pattern that may reflect a phonetic or structural echo of the Hebrew root 'wic-' (from Old English 'wic').",
+"semantic_range": "includes moral corruption, wickedness, evil, and the state of being unjust or unjustly treated",
+"_facts": {
+"stem": "wick",
+"surface": "Wicked",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 457,
+"first_appearance_ref": "Genesis 13:13"
+}
+},
+"wilder": {
+"final_synthesis": "The wilderness, as a root term, encapsulates the tension between divine presence and human limitation, reflecting both the covenantal exodus and the Messiah's redemptive journey. Its symbolic structure and numerical patterns underscore its role as a space of testing, purification, and divine revelation, revealing Christ's mission as a pilgrim prophet and redeemer.",
+"root": "wilder",
+"messianic_fulfillment": "The wilderness is fulfilled in Jesus' journey to Jerusalem (e.g., the 'wilderness of Mount Sinai' in Acts 7:30) as a symbolic path of suffering, revelation, and redemption, aligning with the Messiah's role as a vessel of God's will.",
+"first_appearance": "Genesis 14:6, where it appears in the context of a journey into the wilderness by the Red Sea, marking its first use in scripture.",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "speculation",
+"messianic_reading": "pattern"
+},
+"reveals_about_christ": "The term reveals Christ's identity as a pilgrim and prophet, navigating trials, receiving divine instruction, and ultimately redeeming humanity through His journey and sacrifice.",
+"major_scriptural_pattern": "The wilderness is repeatedly linked to exile, testing, and the covenantal relationship between God and His people, often as a stage for divine instruction or redemption.",
+"term": "wilderness",
+"literal_sense": "wildness, desolation, or a place of testing and exile",
+"symbolic_structure": "Repeated phrases like 'wilderness' in Deuteronomy 2:1 and Acts 7:30 emphasize its role as a symbolic space of trial, purification, and divine presence, with paired terms such as 'wilderness' and 'exile' reinforcing its dual nature.",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The number 40 is prominently associated with the wilderness in Exodus (e.g., 40 years in the desert), suggesting a numerical pattern tied to divine duration or covenantal testing.",
+"semantic_range": "The term encompasses desolation, spiritual journey, exile, and the symbolic representation of trials, purification, and the wilderness as a covenantal space.",
+"_facts": {
+"stem": "wilder",
+"surface": "Wilderness",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 450,
+"first_appearance_ref": "Genesis 14:6"
+}
+},
+"wat": {
+"final_synthesis": "Water's centrality in scripture reflects God's covenantal wisdom, emphasizing life, purification, and redemption. Its repeated use in baptism, temple rituals, and the 'living water' of Jesus reveals Christ as the ultimate source of spiritual life and the fulfillment of divine promises. The word's high frequency and symbolic depth highlight its role in shaping the theology of salvation and covenant faith.",
+"root": "wat",
+"messianic_fulfillment": "Water is central to Jesus' ministry: His baptism (Matthew 26:38), the 'living water' (John 4:10), and the cleansing of the temple (John 2:13). It symbolizes spiritual renewal and the promise of eternal life.",
+"first_appearance": "Genesis 2:10 (creation narrative, God 'watered' the garden)",
+"confidence_by_claim": {
+"etymology": "pattern",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The word reveals Christ as the source of spiritual life (living water), the agent of purification (temple cleansing), and the mediator of covenantal grace. It underscores His role as the fulfillment of God's plan for salvation.",
+"major_scriptural_pattern": "water as a covenantal symbol of life, purification, and divine promise (e.g., baptism, temple cleansing, and the 'living water' of Jesus)",
+"term": "water",
+"literal_sense": "to wet, to be moist, or to flow; a body of liquid",
+"symbolic_structure": "paired terms (e.g., 'water' and 'blood' in baptismal symbolism), repeated phrases (e.g., 'pure water' in temple rituals), and numerical patterns (e.g., 415 verses across the canon, reflecting its centrality)",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The word appears 415 times across the canon, with 277 in the Old Testament and 62 in the New. Its high frequency underscores its thematic importance, including covenantal and redemptive roles.",
+"semantic_range": "life, purification, divine presence, covenant, sacrifice, creation, redemption, and symbolism of water as a source of life and cleansing",
+"_facts": {
+"stem": "wat",
+"surface": "Water",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 415,
+"first_appearance_ref": "Genesis 2:10"
+}
+},
+"written": {
+"final_synthesis": "The word 'written' reveals the Bible's covenantal theology, where divine truth is both 'recorded' (literal) and 'kept' (symbolic). Its first appearance in Exodus 24:12 establishes its role in covenantal fidelity, while its repeated use in law, prophecy, and Christ's ministry underscores its centrality to divine revelation. The word's etymology and symbolic structure reflect a balance between textual fidelity and spiritual truth, mirroring Christ's dual nature as Lawgiver and Sanctifier.",
+"root": "graphe (Greek) or qare (Hebrew, assumed based on contextual parallels)",
+"messianic_fulfillment": "The law's 'written' in Exodus 24:12 foreshadows Jesus Christ as the Lawgiver (Matthew 5:17), whose teachings are 'written' in the New Testament (John 15:3; 2 Peter 1:21)",
+"first_appearance": "Exodus 24:12 ('written with the finger of God')",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The word 'written' underscores Christ's role as the mediator of covenantal truth, whose teachings are both 'written' in Scripture and 'kept' by believers, reflecting His dual nature as Lawgiver and Savior",
+"major_scriptural_pattern": "covenantal fidelity: keeping laws, statutes, and testimonies as divine mandates",
+"term": "written",
+"literal_sense": "to record, inscribe, or depict in writing",
+"symbolic_structure": "paired terms (e.g., 'written with the finger of God' vs. 'written in the law'), repeated covenantal phrases (e.g., 'walk in his ways'), and numerical patterns (e.g., 12, 10, 24) reflecting divine order",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The number 12 (signifying completeness) and 10 (symbolizing revelation) recur in Exodus 24:12, emphasizing divine authority and covenantal fidelity",
+"semantic_range": "includes 'recorded,' 'inscribed,' 'written down,' 'kept,' 'fulfilled,' and 'transmitted' in covenantal contexts",
+"_facts": {
+"stem": "written",
+"surface": "Written",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 412,
+"first_appearance_ref": "Exodus 24:12"
+}
+},
+"wife": {
+"final_synthesis": "The term 'wife' reveals Christ's mission as the mediator of divine love, the healer of broken relationships, and the embodiment of covenantal fidelity, reflecting His role as both Savior and Head of the Church.",
+"root": "wife",
+"messianic_fulfillment": "Christ's role as the 'one flesh' (Ephesians 2:3) and the husband of the Church (Ephesians 5:22-33) fulfills the biblical imagery of marital covenant and divine partnership.",
+"first_appearance": "Genesis 2:24",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "inference",
+"messianic_fulfillment": "lexical",
+"final_synthesis": "speculation"
+},
+"reveals_about_christ": "The term 'wife' underscores Christ's redemptive role in marriage, His sacrificial love, and His exalted status as the head of the Church, reflecting His divine and human nature.",
+"major_scriptural_pattern": "covenantal marriage and family dynamics",
+"term": "wife",
+"literal_sense": "a female spouse, particularly in a marital relationship",
+"symbolic_structure": "paired terms (father-wife, one flesh), repeated phrases (cleave unto wife), and numerical patterns (2, 10, 14)",
+"language": "English",
+"numerical_letter_observations": "The root 'wife' (Hebrew: 'emeth') contains two 'w's, reflecting the dual nature of marital union (male and female). The letter 'w' appears in the Greek form 'pharmakon' (medicine), symbolizing the healing of broken relationships.",
+"semantic_range": "marital relationship, covenant, family, symbolism, and theological significance",
+"_facts": {
+"stem": "wife",
+"surface": "Wife",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 401,
+"first_appearance_ref": "Genesis 2:24"
+}
+},
+"woman": {
+"final_synthesis": "The word 'woman' encapsulates the biblical theme of divine creation, covenantal relationships, and the redemptive role of Christ. Its etymology and symbolic use highlight the interplay between human and divine, the establishment of relational bonds, and the fulfillment of God's promises through Jesus, reflecting the wisdom and mission of Jesus Christ as the new creation and the new woman in God's plan.",
+"root": "woman",
+"messianic_fulfillment": "Jesus is referred to as 'woman' in the Gospels (e.g., Mary Magdalene, the mother of Jesus), fulfilling Old Testament imagery of the new creation and the feminine aspect of God's plan for salvation",
+"first_appearance": "Genesis 2:22 (Genesis 2:22)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference"
+},
+"reveals_about_christ": "The word 'woman' reveals Christ's role as the new creation, the new woman in the Garden of Eden, and the fulfillment of divine promises through his redemptive work and resurrection",
+"major_scriptural_pattern": "covenantal and relational themes, particularly in the Garden of Eden, creation, and the roles of man and woman in the biblical narrative",
+"term": "woman",
+"literal_sense": "a female person or entity, often referring to a female member of a community or a female role in a relationship",
+"symbolic_structure": "paired terms like 'man' and 'woman' in the Garden of Eden, repeated in passages like Moses 3:22 and 4:7, and embedded in covenantal promises (e.g., 'bone of my bones')",
+"language": "English",
+"numerical_letter_observations": "The earliest appearance (Genesis 2:22) uses the number 22, which may symbolize divine purpose or the beginning of a covenantal relationship, and the word appears 362 times across canonical texts, suggesting a recurring thematic importance",
+"semantic_range": "includes roles such as mother, wife, mother-in-law, and symbolic figures in religious contexts, often linked to divine creation and covenantal relationships",
+"_facts": {
+"stem": "woman",
+"surface": "Woman",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 362,
+"first_appearance_ref": "Genesis 2:22"
 }
 }
 }

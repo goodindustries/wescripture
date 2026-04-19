@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "k",
 "model": "qwen3:1.7b",
-"updated": "2026-04-17T15:25:26+00:00"
+"updated": "2026-04-18T03:37:37+00:00"
 },
 "stems": {
 "king": {
@@ -34,6 +34,37 @@
 "morph": "",
 "count": 2213,
 "first_appearance_ref": "Genesis 14:1"
+}
+},
+"kingdom": {
+"final_synthesis": "The term 'kingdom' reveals Christ's divine sovereignty, covenantal mission, and role as both ruler and mediator, reflecting God's eternal plan for salvation and spiritual governance.",
+"root": "kingdom",
+"messianic_fulfillment": "linked to Christ's reign in the New Testament, with references to 'kingdom of God' as a messianic promise",
+"first_appearance": "Genesis 10:10",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference",
+"final_synthesis": "speculation"
+},
+"reveals_about_christ": "Christ's role as divine sovereign, mediator, and embodiment of the kingdom, reflecting God's eternal plan for redemption and restoration",
+"major_scriptural_pattern": "covenantal use in divine sovereignty and human governance",
+"term": "kingdom",
+"literal_sense": "rule, dominion, sovereignty, governance",
+"symbolic_structure": "paired terms (kingdom, rule), repeated phrases (kingdom of God), covenantal patterns (binding, oath)",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "appears in 584 verses across OT, with 196 in OT+ and 153 in NT",
+"semantic_range": "authority, governance, divine sovereignty, spiritual authority, political power",
+"_facts": {
+"stem": "kingdom",
+"surface": "Kingdom",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 584,
+"first_appearance_ref": "Genesis 10:10"
 }
 }
 }

@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "i",
 "model": "qwen3:1.7b",
-"updated": "2026-04-17T15:21:41+00:00"
+"updated": "2026-04-18T07:32:35+00:00"
 },
 "stems": {
 "israel": {
@@ -34,6 +34,37 @@
 "morph": "",
 "count": 2235,
 "first_appearance_ref": "Genesis 32:28"
+}
+},
+"iniquity": {
+"final_synthesis": "Iniquity reveals Christ's dual nature as both the betrayer of humanity and the redeemer through sacrifice, embodying the tension between law and grace and the ultimate victory over sin through redemption.",
+"root": "iniquity",
+"messianic_fulfillment": "Jesus' role as the 'Lamb of God' (Isaiah 53:6) and his atonement for sin, resolving the tension between iniquity and redemption",
+"first_appearance": "Genesis 15:16",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"speculation": "speculation"
+},
+"reveals_about_christ": "Christ's mission to reconcile humanity to God through sacrifice, transforming sin into righteousness and restoring covenantal relationship",
+"major_scriptural_pattern": "covenantal theology, where iniquity is linked to divine judgment and the necessity of atonement",
+"term": "iniquity",
+"literal_sense": "wickedness, sin, moral transgression, guilt, and the consequence of violating divine law",
+"symbolic_structure": "paired terms (e.g., 'iniquity' vs. 'righteousness'), covenantal oppositions (sin vs. holiness), and repeated motifs of law and punishment",
+"language": "English",
+"numerical_letter_observations": "appears in 470 verses across the canon, with distribution skewed toward OT (Genesis, Deuteronomy, Psalms) and repeated in covenantal passages",
+"semantic_range": "moral transgression, covenantal punishment, judicial judgment, and the transformative power of redemption through Christ",
+"_facts": {
+"stem": "iniquity",
+"surface": "Iniquity",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 470,
+"first_appearance_ref": "Genesis 15:16"
 }
 }
 }

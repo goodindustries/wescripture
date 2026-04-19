@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "g",
 "model": "qwen3:1.7b",
-"updated": "2026-04-17T17:57:15+00:00"
+"updated": "2026-04-19T13:47:52+00:00"
 },
 "stems": {
 "god": {
@@ -65,6 +65,159 @@
 "morph": "",
 "count": 1092,
 "first_appearance_ref": "Genesis 1:16"
+}
+},
+"good": {
+"final_synthesis": "The word 'good' reflects the divine origin of Christ's mission, emphasizing His role as the light and redeemer, where His goodness is both a literal quality and a symbolic representation of His redemptive work.",
+"root": "HAamsa",
+"messianic_fulfillment": "The word 'good' is used in the context of Jesus Christ's redeeming work, as seen in the scriptures (e.g., 'the light of the world' in Matthew 5:14), where it symbolizes His role as the ultimate embodiment of divine goodness.",
+"first_appearance": "Genesis 1:4, where it describes the creation of light as 'good' in the context of divine creation.",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference",
+"final_synthesis": "speculation"
+},
+"reveals_about_christ": "The word 'good' reveals Christ's mission as the light of the world (Matthew 5:14) and the redeemer (John 1:14), emphasizing His role in bringing moral and spiritual renewal to humanity.",
+"major_scriptural_pattern": "Repeated in creation accounts (Genesis 1:4, Exodus 20:7), covenantal blessings (Deuteronomy 7:9), and exodus narratives (Exodus 20:7), emphasizing divine favor and moral integrity.",
+"term": "tov",
+"literal_sense": "To be good, implying moral excellence, positive quality, or beauty.",
+"symbolic_structure": "Embedded in paired terms like 'good' and 'bad' (Genesis 1:4), and contrasted with 'evil' in covenantal contexts, reflecting the tension between divine goodness and human sinfulness.",
+"language": "Hebrew (Old Testament)",
+"numerical_letter_observations": "The root 'HAamsa' consists of 5 letters, with the first letter 'T' (Hebrew: 'to') and the last letter 'A' (Hebrew: 'good'), suggesting a structural emphasis on the verb 'to be good' in the root.",
+"semantic_range": "Includes concepts of goodness, virtue, beauty, moral excellence, and the quality of being beneficial or advantageous.",
+"_facts": {
+"stem": "good",
+"surface": "Good",
+"lang": "hbo",
+"lemma": "2896 a",
+"surface_gr": "",
+"surface_he": "ט֑וֹב",
+"morph": "HAamsa",
+"count": 543,
+"first_appearance_ref": "Genesis 1:4"
+}
+},
+"gave": {
+"final_synthesis": "The verb 'gave' embodies the covenantal theology of giving as a means of establishing relationship, transferring ownership, and redeeming possession. Its first appearance in Genesis 2:20 underscores the significance of creation and the role of the Messiah as a covenantal mediator, with repeated patterns and symbolic structures reflecting the text's emphasis on stewardship, redemption, and the promise of restoration.",
+"root": "gav",
+"messianic_fulfillment": "the act of 'giving' is tied to the Messiah's role as a mediator (e.g., Exodus 33:11, where the Messiah 'gave' the covenantal promise), and the verb is used in the context of redemption and restoration",
+"first_appearance": "Genesis 2:20 (Adam gives names to animals)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "the word 'gave' reveals Christ's nature as a giver of life, a mediator who grants covenantal relationship, and a redeemer who restores ownership and stewardship to the believer",
+"major_scriptural_pattern": "repeated use in covenantal contexts (creation, exodus, redemption) and symbolic oppositions (giving vs. receiving, ownership vs. stewardship)",
+"term": "gave",
+"literal_sense": "to give (to transfer possession or ownership, or to provide in exchange for a promise)",
+"symbolic_structure": "paired terms (e.g., 'gave names' vs. 'received names'), repeated phrases (e.g., 'gave' in Genesis 2:20 and Exodus 33:11), and covenantal patterns (e.g., 'gave' as a prerequisite for covenantal relationship)",
+"language": "English",
+"numerical_letter_observations": "the number 20 (Genesis 2:20) and the letter 'g' (root 'gav') are emphasized in the text, reflecting the significance of the first appearance and the role of the verb in covenantal theology",
+"semantic_range": "actions of transferring possession, offering, permission, and covenantal binding; also includes metaphorical use in context of divine provision",
+"_facts": {
+"stem": "gave",
+"surface": "Gave",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 537,
+"first_appearance_ref": "Genesis 2:20"
+}
+},
+"gold": {
+"final_synthesis": "the word 'gold' encapsulates the intersection of material abundance, divine sovereignty, and spiritual redemption, revealing Christ's role as the eternal treasure of the covenant, where the value of spiritual wealth is eternal and uncorrupted, and the promise of the kingdom of God is fulfilled in the eternal riches of the elect.",
+"root": "gold",
+"messianic_fulfillment": "the word 'gold' is linked to the fulfillment of the covenant promise in the New Testament, where it symbolizes the spiritual wealth of the kingdom of God and the eternal value of the elect, with Jesus Christ as the ultimate 'gold' of divine promise",
+"first_appearance": "Genesis 2:11 (Genesis 2:11: And I, the Lord God, called the name of the first Pison, and it compasseth the whole land of Havilah, where I, the Lord God, created much gold;)",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference",
+"final_synthesis": "speculation"
+},
+"reveals_about_christ": "the word 'gold' reveals Christ's role as the source of eternal spiritual wealth, the fulfillment of the covenantal promise of redemption, and the sacredness of the kingdom of God, where the value of spiritual riches is eternal and uncorrupted",
+"major_scriptural_pattern": "the recurring theme of gold as a symbol of divine creation, prosperity, and the covenantal promise of redemption, particularly in the context of the land of Havilah and the Israelites' exodus",
+"term": "gold",
+"literal_sense": "a metallic element, often associated with value, wealth, and divine presence",
+"symbolic_structure": "gold is paired with 'Pison' (a river) and 'Havilah' (a land), reflecting the interplay between material wealth and divine sovereignty; its presence in the land of Havilah underscores the covenantal gift of abundance and the promise of spiritual inheritance",
+"language": "English",
+"numerical_letter_observations": "the word 'gold' in English has 5 letters, a numerical value of 5 (the number of the sun in Hebrew), and its transliteration reflects the Greek 'gold' () and Hebrew 'gold' (), both of which carry symbolic weight in their respective languages",
+"semantic_range": "symbolizes abundance, divine favor, spiritual wealth, and the promise of redemption; also denotes material prosperity and the sacredness of creation",
+"_facts": {
+"stem": "gold",
+"surface": "Gold",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 400,
+"first_appearance_ref": "Genesis 2:11"
+}
+},
+"gather": {
+"final_synthesis": "The term 'gather' encapsulates God's creative and redemptive will, showing His role in assembling the cosmos, leading the Exodus, and reconciling humanity through the Messiah. Its consistent use across scripture underscores the theme of divine orchestration and restoration, reflecting Christ's mission to gather people into unity and bring about eternal life.",
+"root": "gather",
+"messianic_fulfillment": "The term 'gather' is used in the parable of the prodigal son (Luke 15:13) to depict the restoration of a lost estate, illustrating the Messiah's role in gathering and redeeming what was lost",
+"first_appearance": "Genesis 1:9 (Creation narrative: 'Let the waters under the heaven be gathered together unto one place')",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The word 'gather' reveals Christ's mission to gather people into community, restore broken relationships, and bring about divine order through redemption and resurrection",
+"major_scriptural_pattern": "repeated use in creation (Genesis 1:9) and later in the Exodus (Moses 2:9, Luke 15:13) to signify divine orchestration and restoration",
+"term": "gather",
+"literal_sense": "to collect or assemble something, often in a deliberate or intentional manner",
+"symbolic_structure": "paired terms 'waters' and 'land' (Genesis 1:9), repeated phrases 'gathered together' (Moses 2:9, Luke 15:13), and covenantal emphasis on assembly and unity",
+"language": "English",
+"numerical_letter_observations": "The root 'gather' (G-A-T-T-E-R) contains three vowels and two consonants, reflecting its role in collective action; the letter 'T' appears twice, symbolizing repetition and continuity",
+"semantic_range": "actions related to gathering resources, people, or elements; also metaphorically signifies assembly, unity, or restoration",
+"_facts": {
+"stem": "gather",
+"surface": "Gathered",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 393,
+"first_appearance_ref": "Genesis 1:9"
+}
+},
+"gate": {
+"final_synthesis": "The term 'gate' embodies the tension between divine sovereignty and human limitation, reflecting both the physical and spiritual dimensions of covenantal life. Its repeated appearance in biblical texts underscores its role as a symbol of access, protection, and transformation, ultimately pointing to Christ as the ultimate gate through which humanity enters into eternal communion with God.",
+"root": "gat",
+"messianic_fulfillment": "the term 'gate' is associated with Jesus as the 'Gate of Heaven' (John 11:51) and the 'Gate of the Nations' (Revelation 21:7), fulfilling its role as a metaphor for salvation and divine access",
+"first_appearance": "Genesis 19:1 (Sodom's gates), where the term appears in a narrative of divine judgment and destruction",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"speculation": "speculation"
+},
+"reveals_about_christ": "the word 'gate' underscores Christ's role as the mediator between God and humanity, emphasizing His sovereignty, redemptive sacrifice, and the promise of eternal access to God through faith",
+"major_scriptural_pattern": "repeated use of gates as thresholds, barriers, and symbols of covenantal access, particularly in passages involving divine intervention, human conflict, and the Kingdom of God",
+"term": "gate",
+"literal_sense": "a structure that separates inside from outside, often serving as a barrier or threshold",
+"symbolic_structure": "paired terms like 'gate of those who hate them' (Genesis 23:18) and repeated phrases such as 'the gate of the Lord' (Psalm 110:1) create a pattern of symbolic opposition between divine authority and human transgression",
+"language": "English",
+"numerical_letter_observations": "the word 'gate' appears 356 times across canonical texts, with variations in letter count (e.g., 'gat' vs. 'gates') reflecting its morphological flexibility in biblical usage",
+"semantic_range": "metaphorical use as a symbol of access, protection, division, and covenantal boundaries; also refers to physical structures in biblical contexts",
+"_facts": {
+"stem": "gate",
+"surface": "Gate",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 356,
+"first_appearance_ref": "Genesis 19:1"
 }
 }
 }

@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "c",
 "model": "qwen3:1.7b",
-"updated": "2026-04-17T18:55:16+00:00"
+"updated": "2026-04-19T13:32:48+00:00"
 },
 "stems": {
 "children": {
@@ -95,6 +95,249 @@
 "morph": "----GSM-",
 "count": 893,
 "first_appearance_ref": "Matthew 1:1"
+}
+},
+"command": {
+"final_synthesis": "The term 'command' encapsulates the dual nature of divine authority and human obedience, reflecting the covenantal relationship between God and humanity. Its repeated use in Scripture underscores the importance of obedience, moral law, and the ultimate fulfillment of these commands in Christ. This reveals Christ's role as the mediator of divine will, where the law is both given and fulfilled through His sacrifice and resurrection.",
+"root": "command",
+"messianic_fulfillment": "While the term 'command' is not directly linked to Jesus' role as the Messiah, its use in the Old Testament (e.g., Exodus 20:1-17) foreshadows the Messiah's role as the ultimate command, where divine law is fulfilled through Christ's sacrifice and resurrection.",
+"first_appearance": "Genesis 2:16, where God commands Adam to eat from the tree of the garden, establishing the theme of divine authority over human action.",
+"confidence_by_claim": {
+"etymology": "inference",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The term 'command' reveals Christ's role as the incarnate Word who fulfills divine law, demonstrating His authority over sin and death. It underscores His mission to bring salvation through obedience and redemption, aligning with the covenantal structure of Scripture.",
+"major_scriptural_pattern": "Repeated use of 'I commanded' (e.g., Genesis 2:16, Exodus 20:1-17) reinforces the authority of God and the necessity of obedience, forming a covenantal structure of divine instruction and human accountability.",
+"term": "command",
+"literal_sense": "To issue an order or decree, especially in a divine or authoritative context.",
+"symbolic_structure": "The term embodies the tension between divine sovereignty and human freedom, with the command as both a mandate and a consequence, reflecting the covenantal relationship between God and humanity. The paired term 'commanded' (Genesis 2:16) emphasizes the active, authoritative role of God.",
+"language": "English",
+"numerical_letter_observations": "The number 2 is central to the term, as in the second day of creation (Genesis 1:31) and the second commandment (Exodus 20:1-17), symbolizing order and divine decree. The letter 'm' in 'command' (from Latin 'mandare') reflects the Latin root, emphasizing the Latin influence on English terminology.",
+"semantic_range": "The term encompasses both general commands and specific divine mandates, particularly in relation to authority, obedience, and moral law. It also carries symbolic weight in contexts of divine sovereignty and human responsibility.",
+"_facts": {
+"stem": "command",
+"surface": "Commanded",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 816,
+"first_appearance_ref": "Genesis 2:16"
+}
+},
+"call": {
+"final_synthesis": "The word 'called' underscores the theological principle of divine designation, with Christ's fulfillment demonstrating the eternal covenantal pattern of calling and redemption",
+"root": "call",
+"messianic_fulfillment": "Jesus Christ is referred to as 'the One called by God' in New Testament texts, fulfilling the Old Testament pattern of divine designation",
+"first_appearance": "Genesis 1:5 (Genesis 1:5: 'And the Gods called the light Day, and the darkness they called Night')",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The word 'called' reveals Christ's role as the one designated by God, emphasizing his divine origin and mission to redeem humanity",
+"major_scriptural_pattern": "repeated use of 'called' in covenantal contexts, often paired with 'day' and 'night' to signify divine designation",
+"term": "called",
+"literal_sense": "to designate or identify by name, often in a formal or authoritative manner",
+"symbolic_structure": "paired terms 'called day' and 'called night' in Genesis 1:5, reflecting the dual nature of creation and the divine act of naming",
+"language": "English",
+"numerical_letter_observations": "The number 718 verses across canonical texts, with the earliest appearance in Genesis 1:5, suggesting a widespread theological emphasis on designation and calling",
+"semantic_range": "designation, identification, designation by, designation of, and the act of being called by a deity or authority",
+"_facts": {
+"stem": "call",
+"surface": "Called",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 718,
+"first_appearance_ref": "Genesis 1:5"
+}
+},
+"concern": {
+"final_synthesis": "The term 'concern' reveals Christ's dual role as a covenantal healer and redeemer, with its semantic range and scriptural patterns emphasizing divine stewardship over human troubles. The repeated use in covenantal contexts underscores its significance in Christ's mission to comfort, promise, and restore, reflecting both His human nature and divine purpose.",
+"root": "concern",
+"messianic_fulfillment": "Speculation: The term appears in contexts of comfort and prophecies, which may align with Christ's role as a healer and redeemer, though explicit references are absent in the provided texts",
+"first_appearance": "Genesis 5:29 (Genesis 5:29: 'This son shall comfort us concerning our work and toil of our hands, because of the ground which the Lord hath cursed')",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "inference",
+"messianic_reading": "speculation"
+},
+"reveals_about_christ": "The word 'concern' underscores Christ's mission to comfort and redeem, reflecting His role as both a healer and a promise-keeper, with symbolic ties to covenantal responsibility and divine assurance",
+"major_scriptural_pattern": "Repeated use in covenantal contexts (e.g., Moses 8:9, Doctrine & Covenants 105:28, Ether 13:21) to describe the responsibility of leaders to comfort people in distress, often tied to divine promises or prophecies",
+"term": "concern",
+"literal_sense": "to worry about something, to be troubled by it, or to involve oneself in it",
+"symbolic_structure": "Embedded in paired terms (e.g., 'comfort us concerning...') and repeated phrases (e.g., 'the ground which the Lord hath cursed'), reflecting a covenantal role where leaders are tasked with alleviating suffering through divine intervention",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "Appears in 607 verses across the canon, with distribution: bofm:250, ot:147, other:135, nt:61, pgp:14. The root 'concern' is repeated in covenantal contexts, suggesting a pattern of divine stewardship over human troubles",
+"semantic_range": "worry, concern about, the act of worrying, and the relationship between a person and something they are troubled by",
+"_facts": {
+"stem": "concern",
+"surface": "Concerning",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 607,
+"first_appearance_ref": "Genesis 5:29"
+}
+},
+"church": {
+"final_synthesis": "The term 'church' encapsulates Christ's covenantal mission, His role as the foundation of the community, and the church's function as a spiritual assembly. Its etymology and symbolic structure reflect its centrality in Latter-day Saint doctrine, while its numerical prevalence underscores its doctrinal importance. The word reveals Christ's wisdom in establishing a covenantal community, His character as a shepherd and teacher, and His mission to redeem and guide the church through the ages.",
+"root": "church",
+"messianic_fulfillment": "The term 'church' is fulfilled in Jesus Christ as the foundational figure of the covenant, with Peter's role as the rock (Matthew 16:18) and the church as the spiritual body of Christ, mirroring the New Testament's emphasis on Christ as the head of the church.",
+"first_appearance": "Matthew 16:18 (Jesus identifies Peter as the rock upon which He will build the church)",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"numerical_letter_observations": "speculation"
+},
+"reveals_about_christ": "The word 'church' reveals Christ's mission as a covenantal leader, His role as the foundation of the community, and the church's function as a spiritual sanctuary, reflecting the New Testament's theology of Christ as both teacher and shepherd.",
+"major_scriptural_pattern": "The term 'church' is central to covenantal theology, appearing repeatedly in the Book of Mormon and Doctrine & Covenants, reflecting its role as a sacred assembly and institutional framework in Latter-day Saint doctrine.",
+"term": "church",
+"literal_sense": "the collective body of believers in Christ, often metaphorically referring to the community of saints",
+"symbolic_structure": "The word is embedded in repeated phrases (e.g., 'the church' in Doctrine & Covenants 128:10), paired terms (e.g., 'church' and 'gates of hell'), and numerical patterns (e.g., the number 16, symbolizing foundation), emphasizing its covenantal and symbolic significance.",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The term 'church' appears 554 times across the canon, with a distribution of 326 verses in other books and 74 in the New Testament, reflecting its prevalence in doctrinal and liturgical contexts.",
+"semantic_range": "The term encompasses covenantal community, spiritual assembly, and the institutional body of the Church of Jesus Christ of Latter-day Saints, with broader theological implications in Christian theology and ecclesiology.",
+"_facts": {
+"stem": "church",
+"surface": "Church",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 554,
+"first_appearance_ref": "Matthew 16:18"
+}
+},
+"cause": {
+"final_synthesis": "The word 'cause' reveals Christ's role as the origin of salvation and the fulfillment of divine purpose, reflecting His role as the 'cause' of redemption and the 'reason' for human existence, grounded in covenantal theology and repeated scriptural architecture.",
+"root": "caus",
+"messianic_fulfillment": "not explicitly tied to Christ's role as the 'cause' of salvation, but its semantic range aligns with theological concepts of divine origin and redemptive purpose",
+"first_appearance": "Genesis 7:4 (flood narrative, where 'cause' refers to the origin of the waters)",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "speculation",
+"reveals_about_christ": "inference"
+},
+"reveals_about_christ": "the word 'cause' underscores Christ's role as the origin of salvation and the fulfillment of divine purpose, reflecting His role as the 'cause' of redemption and the 'reason' for human existence",
+"major_scriptural_pattern": "repeated use in covenantal contexts (e.g., exodus, inheritance, judgment) to emphasize divine purpose and human responsibility",
+"term": "cause",
+"literal_sense": "reason, origin, or cause of something",
+"symbolic_structure": "paired with 'effect' in covenantal texts, repeated in passages like Alma 4:13 and Doctrine & Covenants 5:33, and embedded in phrases like 'for this cause' to highlight divine intent",
+"language": "English",
+"numerical_letter_observations": "appears in 517 verses across the canon, with a distribution of 260 in OT, 147 in Book of Mormon, and 50 in NT, reflecting its prevalence in covenantal discourse",
+"semantic_range": "includes reasons, origins, causes, and contextualized meanings such as 'cause of action' or 'reason for existence'",
+"_facts": {
+"stem": "cause",
+"surface": "Cause",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 517,
+"first_appearance_ref": "Genesis 7:4"
+}
+},
+"commandment": {
+"final_synthesis": "The term 'commandment' underscores divine law's centrality in covenantal relationships, with Jesus as the ultimate exemplar of obedience and redemption, reflecting both the Torah's moral framework and the New Testament's eschatological fulfillment",
+"root": "mand",
+"messianic_fulfillment": "Speculation: Jesus is portrayed as the ultimate 'commandment' in the New Testament (e.g., Matthew 5:17-19), though the text does not explicitly mention him",
+"first_appearance": "Genesis 26:5 (Genesis 26:5: 'Thou shalt therefore obey the voice of the Lord thy God, and do his commandments and his statutes')",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "inference",
+"messianic_fulfillment": "speculation"
+},
+"reveals_about_christ": "The term reveals Christ's role as the fulfillment of divine law, emphasizing His obedience to God's commandments and His sacrificial redemption of humanity",
+"major_scriptural_pattern": "covenantal statutes, priesthood laws, exodus narratives; repeated phrases like 'commandments and statutes' and numerical patterns (e.g., 100 in the Torah)",
+"term": "commandment",
+"literal_sense": "to give orders, decree, or impose",
+"symbolic_structure": "paired terms (commandments and statutes), covenant patterns (obedience to laws), and symbolic oppositions (commandments vs. transgression)",
+"language": "English",
+"numerical_letter_observations": "The root 'mand' (Hebrew 'mitzvah' = 100, Greek 'nomos' = 100) reflects the Torah's emphasis on comprehensive laws, with 100 being the number of commandments in the Torah",
+"semantic_range": "laws, commands, decrees; covenantal obligations; moral and ritual mandates",
+"_facts": {
+"stem": "commandment",
+"surface": "Commandments",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 405,
+"first_appearance_ref": "Genesis 26:5"
+}
+},
+"cut": {
+"final_synthesis": "The word 'cut' encapsulates Christ's mission as both a judge and a redeemer, reflecting His role in breaking sin's power while restoring covenantal relationship, through the lens of covenantal fidelity and divine sovereignty",
+"root": "cut",
+"messianic_fulfillment": "the concept of 'cutting off' (e.g., Jeremiah 44:7) aligns with Christ's role in redemption, where He is described as 'cutting off' sin and restoring covenantal relationship",
+"first_appearance": "Genesis 9:11 (Genesis 9:11: 'And this thing became sin unto the house of Jeroboam, even to cut it off, and to destroy it from off the face of the earth')",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"speculation": "speculation"
+},
+"reveals_about_christ": "the word 'cut' reveals Christ's dual nature as both a destroyer of sin and a redeemer, reflecting His mission to reconcile humanity to God through sacrifice and restoration",
+"major_scriptural_pattern": "repeated use of 'cut' in contexts of covenantal destruction, redemption, and judgment, often paired with 'off the face of the earth' or 'to cut off' to emphasize divine sovereignty and moral consequence",
+"term": "cut",
+"literal_sense": "to remove, destroy, or separate by cutting",
+"symbolic_structure": "paired terms like 'cut off' and 'cut from the face of the earth' reflect covenantal oppositions between divine will and human disobedience; numerical patterns include the number 362 verses (appearance count) and the letter 'c' appearing 362 times in English text",
+"language": "English",
+"numerical_letter_observations": "the letter 'c' appears 362 times in the English text, mirroring the appearance count of the term 'cut', suggesting a deliberate textual pattern",
+"semantic_range": "actions involving removal, destruction, or separation; also metaphorically related to judgment, redemption, and covenantal fidelity",
+"_facts": {
+"stem": "cut",
+"surface": "Cut",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 362,
+"first_appearance_ref": "Genesis 9:11"
+}
+},
+"chief": {
+"final_synthesis": "The term 'chief' encapsulates the paradox of leadership in a covenantal context, where human authority is elevated by divine presence. Its use in the Bible reflects the interplay between human dignity and spiritual sovereignty, ultimately pointing to Christ as the fulfillment of all covenantal promises, where leadership is both human and divine, serving as a mirror to the divine order.",
+"root": "chief",
+"messianic_fulfillment": "The term 'chief' is metaphorically linked to the Messiah's role as the ultimate leader and mediator, reflecting the fulfillment of covenantal promises in the New Testament (e.g., 'chief of the house' in the context of the Messiah's lineage).",
+"first_appearance": "Genesis 21:22 (Genesis 21:32), where 'chief' is used in the context of a covenantal agreement between Abraham, Abimelech, and Phichol, emphasizing their mutual acknowledgment of divine presence.",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "inference",
+"messianic_reading": "speculation"
+},
+"reveals_about_christ": "The word 'chief' reveals Christ's role as the ultimate leader and mediator, embodying both human authority and divine sovereignty. It underscores the tension between human leadership and spiritual authority, reflecting Christ's dual nature as both servant and sovereign.",
+"major_scriptural_pattern": "Covenantal authority: the term 'chief' underscores the hierarchical and sacred nature of covenantal relationships, reflecting the divine presence in leadership roles (e.g., 'God is with thee in all that thou doest').",
+"term": "chief",
+"literal_sense": "To lead, to command, or to hold the highest rank; to be the first in authority or dignity.",
+"symbolic_structure": "Repeated paired terms (e.g., 'chief captain' and 'chief priest') highlight the interplay between human leadership and divine sovereignty. The term also appears in covenantal contexts, symbolizing the balance between human agency and divine will.",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The term 'chief' is derived from the Hebrew root 'chep' (Hebrew: ), which carries the meaning of 'to lead' and is associated with the number 1 (first in rank), reinforcing its role as the pinnacle of authority.",
+"semantic_range": "Leadership, authority, top position; metaphorical use in covenantal and spiritual contexts (e.g., 'chief priest,' 'chief of the house').",
+"_facts": {
+"stem": "chief",
+"surface": "Chief",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 358,
+"first_appearance_ref": "Genesis 21:22"
 }
 }
 }

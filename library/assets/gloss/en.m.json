@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "m",
 "model": "qwen3:1.7b",
-"updated": "2026-04-17T20:39:43+00:00"
+"updated": "2026-04-19T14:13:55+00:00"
 },
 "stems": {
 "man": {
@@ -126,6 +126,97 @@
 "morph": "",
 "count": 867,
 "first_appearance_ref": "Genesis 14:22"
+}
+},
+"midst": {
+"final_synthesis": "The term 'midst' reveals Christ's centrality in salvation, his role as the focal point of divine purpose, and the symbolic significance of the middle as both a physical and spiritual axis in biblical theology.",
+"root": "midst",
+"messianic_fulfillment": "The Messiah is portrayed as the central figure in salvation, aligning with the biblical narrative of being in the midst of divine and human realms",
+"first_appearance": "Genesis 1:6 (in the midst of the waters)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "Christ's role as the central figure in salvation, the focal point of divine purpose, and the embodiment of the middle between divine and human realms",
+"major_scriptural_pattern": "repetition of 'in the midst' in creation, exodus, and covenant contexts, emphasizing centrality and divine presence",
+"term": "midst",
+"literal_sense": "in the middle, central, or focal point",
+"symbolic_structure": "paired terms (e.g., 'in the midst' and 'in the center'), numerical patterns (M, I, D, S, T, sum to 17), and symbolic oppositions (external vs. internal, divine vs. created)",
+"language": "English",
+"numerical_letter_observations": "Letters M, I, D, S, T (sum to 17), a prime number, reflecting unique positional significance",
+"semantic_range": "positions, centers, focal points; divine presence; creation, exodus, covenant, and resurrection contexts",
+"_facts": {
+"stem": "midst",
+"surface": "Midst",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 396,
+"first_appearance_ref": "Genesis 1:6"
+}
+},
+"mercy": {
+"final_synthesis": "The term 'mercy' reflects the core theological truth of God's unchanging love and covenantal fidelity, revealing Christ's role as the mediator of salvation through grace and the transformative power of divine compassion in human history.",
+"root": "mercy",
+"messianic_fulfillment": "Jesus Christ is called 'my servant' (Isaiah 49:3) and embodies the ultimate expression of divine mercy, fulfilling the covenantal promise of salvation through grace and redemption.",
+"first_appearance": "Genesis 19:19 (Hebrew: , 'mercy' as a divine attribute in the context of divine judgment and covenantal fidelity)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference",
+"final_synthesis": "speculation"
+},
+"reveals_about_christ": "The term 'mercy' reveals Christ's role as the incarnate God who embodies divine grace, fulfilling the covenantal promise of salvation, and demonstrating the transformative power of God's love in human history.",
+"major_scriptural_pattern": "covenantal mercy: repeated use in Psalms (e.g., Psalms 143:12) and 1 Peter 1:3 to emphasize God's unchanging promise of salvation through grace, paired with themes of justice and redemption",
+"term": "mercy",
+"literal_sense": "compassion, grace, favor, and the quality of being merciful",
+"symbolic_structure": "paired terms (e.g., 'mercy' + 'justice' in Deuteronomy 10:17), covenantal patterns (e.g., 'I am thy servant' in Psalms 143:12), and numerical symbolism (e.g., 19 in Genesis 19:19 as a covenantal number)",
+"language": "English",
+"numerical_letter_observations": "The letter 'm' appears 19 times in the Hebrew text (Genesis 19:19), reflecting the covenantal significance of mercy as a divine attribute, and the numerical 19 is linked to the number of the beast in Revelation 13:18 (symbolizing divine judgment and redemption).",
+"semantic_range": "divine attributes (grace, forgiveness, redemption), covenantal fidelity, moral virtue, and the transformative power of divine compassion",
+"_facts": {
+"stem": "mercy",
+"surface": "Mercy",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 378,
+"first_appearance_ref": "Genesis 19:19"
+}
+},
+"mighty": {
+"final_synthesis": "The word 'might' reveals Christ's divine authority, his role as the sovereign executor of God's will, and his redemptive power over humanity, reflecting the interplay of divine sovereignty and human frailty in biblical theology.",
+"root": "metaq",
+"messianic_fulfillment": "Jesus' 'might' is linked to his divine authority (e.g., Acts 1:8; John 1:12) and his role as the ultimate power bearer",
+"first_appearance": "Genesis 6:4 (Hebrew: 'metaq' in the context of divine power)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference"
+},
+"reveals_about_christ": "The word 'might' underscores Christ's divine nature, his role as the sovereign executor of God's will, and his redemptive power over humanity",
+"major_scriptural_pattern": "repeated use in covenantal contexts (Mosaic, New Testament) and paired with 'power' to emphasize divine sovereignty",
+"term": "might",
+"literal_sense": "power, strength, authority",
+"symbolic_structure": "paired with 'power' to contrast human frailty with divine might; numerical pattern of 6 (Genesis 6:4) symbolizes creation and divine intervention",
+"language": "English",
+"numerical_letter_observations": "The number 6 (Genesis 6:4) reflects the six days of creation and the flood, emphasizing divine authority over chaos",
+"semantic_range": "strength, divine power, dominion, capability, force",
+"_facts": {
+"stem": "mighty",
+"surface": "Mighty",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 352,
+"first_appearance_ref": "Genesis 6:4"
 }
 }
 }

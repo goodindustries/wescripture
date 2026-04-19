@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "b",
 "model": "qwen3:1.7b",
-"updated": "2026-04-17T19:10:43+00:00"
+"updated": "2026-04-19T19:05:48+00:00"
 },
 "stems": {
 "behold": {
@@ -96,6 +96,98 @@
 "morph": "",
 "count": 880,
 "first_appearance_ref": "Genesis 2:3"
+}
+},
+"blood": {
+"final_synthesis": "The word 'blood' in Scripture reveals the profound theological framework of covenantal sacrifice, where life is symbolized through blood, and redemption is achieved through Christ's atoning death. Its repeated appearance and symbolic associations highlight the centrality of sacrifice in God's plan, culminating in the fulfillment of the Messiah's role as the Lamb of God. This underscores the enduring nature of the covenant and the transformative power of Christ's sacrifice, reflecting the wisdom and mission of Jesus Christ in reconciling humanity to God.",
+"root": "blood",
+"messianic_fulfillment": "Jesus Christ is referred to as the 'blood of the covenant' (Matthew 26:28), and his sacrifice is central to redemption and the restoration of the covenantal relationship between God and humanity.",
+"first_appearance": "Genesis 4:10 (Genesis 4:10: 'What hast thou done? The voice of thy brother's blood cries unto me from the ground.')",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"numerical_letter_observations": "speculation"
+},
+"reveals_about_christ": "The word 'blood' underscores Christ's role as the ultimate sacrifice, the mediator of the covenant, and the embodiment of divine love and atonement, reflecting His mission to reconcile humanity to God through sacrifice and redemption.",
+"major_scriptural_pattern": "covenant and sacrifice: repeated use of 'blood' in contexts of divine judgment, atonement, and the binding of vows",
+"term": "blood",
+"literal_sense": "the life of a living being; the fluid from a wound or the essence of a creature",
+"symbolic_structure": "paired terms (e.g., 'blood' and 'life'), repeated phrases (e.g., 'blood of the covenant'), and numerical patterns (e.g., 484 verses across canonical texts), reflecting the centrality of blood in covenantal theology",
+"language": "English",
+"numerical_letter_observations": "The word 'blood' appears 484 times across canonical texts, with distribution across volumes (ot:264, nt:93, bofm:90, other:29, pgp:8). The number 484 may symbolize completeness or divine abundance, though this is speculative.",
+"semantic_range": "life, sacrifice, covenant, judgment, redemption, and the symbolic representation of divine punishment or atonement",
+"_facts": {
+"stem": "blood",
+"surface": "Blood",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 484,
+"first_appearance_ref": "Genesis 4:10"
+}
+},
+"broth": {
+"final_synthesis": "The term 'brother' encapsulates the biblical narrative's emphasis on relational fidelity, covenantal duty, and the redemptive role of human kinship. Its centrality in both Old and New Testaments reflects the tension between familial bonds and divine sovereignty, ultimately pointing to Jesus as the fulfillment of the covenantal promise through his relationship with his brothers and sisters.",
+"root": "broth",
+"messianic_fulfillment": "The term 'brother' is explicitly used in the Gospels (e.g., Matthew 13:55: 'And the Lord said, \"And the Son of Man must be like a brother to the Son of Man'), underscoring its role in Jesus' familial and messianic identity",
+"first_appearance": "Genesis 4:2 (the name 'Brother' is first used in the Bible, establishing its role in familial and covenantal contexts)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "inference",
+"messianic_reading": "speculation"
+},
+"reveals_about_christ": "The word 'brother' reveals Jesus' role as a relational figure, emphasizing familial bonds, covenantal responsibility, and the fulfillment of divine promises through human kinship",
+"major_scriptural_pattern": "covenantal kinship, particularly in the Exodus narratives (e.g., Moses 5:17-34), where brothers are central to divine judgment, redemption, and familial duty",
+"term": "brother",
+"literal_sense": "a thick, liquid substance (Old English), but in biblical context, it denotes a sibling relationship",
+"symbolic_structure": "paired terms like 'brother and sister' and repeated phrases such as 'brother and brother' emphasize relational bonds, while the term 'brother' often contrasts with 'father' in covenantal contexts (e.g., Moses 5:34: 'Am I my brother's keeper?')",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The term appears 479 times across canonical texts, with a distribution of 227 in OT (Genesis-Deuteronomy), 123 in OT (Joshua-Psalm), and 98 in NT (Gospels-Epistles), reflecting its centrality in both Old and New Testaments",
+"semantic_range": "family relations (sibling), covenantal kinship, and symbolic oppositions (e.g., 'brother and sister' vs. 'father and mother')",
+"_facts": {
+"stem": "broth",
+"surface": "Brother",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 479,
+"first_appearance_ref": "Genesis 4:2"
+}
+},
+"build": {
+"final_synthesis": "The word 'build' reveals Christ's dual role as both a creator of divine institutions (temple, covenant) and a redeemer through sacrifice, reflecting His mission to restore humanity to God through covenantal faith and spiritual renewal.",
+"root": "build",
+"messianic_fulfillment": "fulfilled in the context of the Messiah building the temple (Ezra 3:2) and establishing the kingdom (Moses 5:42), aligning with the role of the Messiah as a builder of divine institutions",
+"first_appearance": "Genesis 4:17 (Cain builds a city)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference",
+"final_synthesis": "speculation"
+},
+"reveals_about_christ": "Christ's role as a builder of the temple, mediator of covenants, and agent of divine restoration, reflecting His mission to reconcile humanity to God through sacrifice and covenant",
+"major_scriptural_pattern": "repeated use in covenantal contexts (e.g., temple, priesthood, kingship) and symbolic oppositions (creation vs. destruction)",
+"term": "build",
+"literal_sense": "to construct or erect something",
+"symbolic_structure": "paired terms (e.g., 'build' vs. 'destroy') and repeated phrases (e.g., 'build an altar'), reflecting divine sovereignty and human responsibility",
+"language": "English",
+"numerical_letter_observations": "348 verses across canonical texts, with distribution across volumes (ot:203, nt:29), emphasizing widespread theological significance",
+"semantic_range": "actions of creating structures, offering sacrifices, establishing covenants, and symbolizing divine sovereignty",
+"_facts": {
+"stem": "build",
+"surface": "Build",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 348,
+"first_appearance_ref": "Genesis 4:17"
 }
 }
 }

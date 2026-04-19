@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "p",
 "model": "qwen3:1.7b",
-"updated": "2026-04-17T19:44:20+00:00"
+"updated": "2026-04-19T18:57:56+00:00"
 },
 "stems": {
 "pass": {
@@ -35,6 +35,188 @@
 "morph": "",
 "count": 1963,
 "first_appearance_ref": "Genesis 4:3"
+}
+},
+"pow": {
+"final_synthesis": "The word 'power' encapsulates Christ's divine authority and redemptive mission, reflecting his role as the ultimate source of strength and salvation. Its repeated use in covenantal and redemptive contexts underscores its significance in theological discourse, revealing Christ's identity as both the giver of power and the one who fulfills God's promises through his sacrifice.",
+"root": "pow",
+"messianic_fulfillment": "Jesus Christ is depicted as the 'power' of God (Acts 1:7), embodying the ultimate authority and redemption through his sacrifice, where 'power' transcends human limitation and reflects divine sovereignty",
+"first_appearance": "Genesis 31:6 (Jacob's covenant with Esau, where 'power' signifies a binding agreement)",
+"confidence_by_claim": {
+"etymology": "pattern",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"speculation": "speculation"
+},
+"reveals_about_christ": "The term 'power' reveals Christ's role as the source of divine authority, the mediator of redemption, and the fulfillment of God's covenantal promises, highlighting his dual nature as both human and divine",
+"major_scriptural_pattern": "Covenantal use of 'power' to denote divine authority and binding vows, often paired with 'authority' or 'dominion' in covenantal contexts",
+"term": "Power",
+"literal_sense": "strength, authority, capability, or dominion",
+"symbolic_structure": "Repeated phrases like 'power of priesthood' (Doctrine & Covenants 113:8) and 'fulfil all the good pleasure of his goodness' (2 Thessalonians 1:11) emphasize the interplay between divine authority and human responsibility, with 'power' as a mediator of divine will",
+"language": "English",
+"numerical_letter_observations": "Occurrences in canonical texts (711 verses) reflect its centrality in covenantal and redemptive narratives, with frequent association with 'priesthood' and 'redemption' across volumes (bofm:265, other:186, nt:141, ot:109, pgp:10)",
+"semantic_range": "authority, influence, dominion, ability, and the capacity to act or command",
+"_facts": {
+"stem": "pow",
+"surface": "Power",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 711,
+"first_appearance_ref": "Genesis 31:6"
+}
+},
+"prophet": {
+"final_synthesis": "The term 'prophet' reveals Christ's role as the divine messenger, bridging Old and New Testament covenants, and emphasizing His authority as the ultimate prophet of God",
+"root": "mashal",
+"messianic_fulfillment": "Christ is called 'the prophet' in the New Testament (e.g., Acts 3:22, 13:26), fulfilling Old Testament roles of prophecy and revelation",
+"first_appearance": "Genesis 20:7 (Genesis 20:7, Hebrew: 'nachash'-snake, but root 'mashal' is implied)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference",
+"final_synthesis": "speculation"
+},
+"reveals_about_christ": "The term reflects Christ's dual role as both the fulfillment of Old Testament prophecy and the ultimate mediator of salvation",
+"major_scriptural_pattern": "covenantal roles: prophet as mediator, messenger, and servant of God",
+"term": "prophet",
+"literal_sense": "to speak forth the word of the Lord, to be a messenger",
+"symbolic_structure": "paired terms (prophet + priest, prophet + king), repeated phrases (e.g., 'a prophet shall be raised up'), and numerical patterns (e.g., 70 prophets in Deuteronomy 18:15)",
+"language": "English",
+"numerical_letter_observations": "Root 'mashal' (5 letters) aligns with the number 5 (Hebrew: 'mashal' = 'five'), and the term appears 632 times across canon",
+"semantic_range": "to convey divine revelation, serve as a covenant mediator, and proclaim God's will",
+"_facts": {
+"stem": "prophet",
+"surface": "Prophets",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 632,
+"first_appearance_ref": "Genesis 20:7"
+}
+},
+"peace": {
+"final_synthesis": "The term 'peace' encapsulates the biblical vision of divine harmony, covenantal fidelity, and the messianic promise of universal tranquility, reflecting Christ's role as the embodiment of God's peace and the fulfillment of the Old Testament's call for justice and unity.",
+"root": "eirene (Greek) or  (Hebrew)",
+"messianic_fulfillment": "Jesus is called 'Prince of Peace' (Isaiah 9:6), and the 'peace of God' (John 14:27) is central to his ministry and the New Testament's exaltation of his kingdom",
+"first_appearance": "Genesis 15:15 (covenant promise of peace with Abraham)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "pattern"
+},
+"reveals_about_christ": "The term 'peace' reveals Christ's role as the mediator of divine harmony, the fulfillment of God's covenant promises, and the ultimate source of spiritual tranquility in the believer's life",
+"major_scriptural_pattern": "repeated use of 'peace be with you' (e.g., Luke 24:36, 1 Peter 3:11) and 'peace in the world' (Matthew 5:9)",
+"term": "peace",
+"literal_sense": "tranquility, harmony, or absence of conflict; to make calm or peaceful",
+"symbolic_structure": "paired terms like 'peace' and 'war' (Ephesians 2:2), 'peace' and 'conflict' (Isaiah 2:4), and numerical patterns like 7 (week, Sabbath) and 11 (peace in the world)",
+"language": "English",
+"numerical_letter_observations": "The letter 'e' appears 11 times in the root 'eirene' (Greek), symbolizing completeness; the letter 'p' appears 11 times in 'peace' (Hebrew), reflecting divine perfection",
+"semantic_range": "peace as a divine gift, covenant promise, relational harmony, and the peace of God; also includes peace in conflict resolution, justice, and the kingdom of God",
+"_facts": {
+"stem": "peace",
+"surface": "Peace",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 488,
+"first_appearance_ref": "Genesis 15:15"
+}
+},
+"pri": {
+"final_synthesis": "The term 'pri' encapsulates the biblical vision of priestly service, covenantal fidelity, and divine mediation, reflecting Christ's role as the ultimate priest and mediator. Its repeated appearance in sacred texts and its association with key themes like kingship, sacrifice, and covenant highlight its enduring significance in understanding God's redemptive plan.",
+"root": "pri",
+"messianic_fulfillment": "While the term 'pri' is not directly linked to Christ in the canonical texts provided, its association with priestly roles and covenantal mediation suggests a symbolic fulfillment in the context of Christ as the ultimate priest and mediator of the new covenant.",
+"first_appearance": "Genesis 14:18 (Melchisedec, king of Salem, priest of the most high God), marking its first use in the biblical canon.",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "inference",
+"messianic_fulfillment": "speculation"
+},
+"reveals_about_christ": "The term 'pri' reveals Christ's role as the eternal high priest, bridging the gap between humanity and divinity through sacrifice and covenantal fidelity. It underscores His mission to serve, intercede, and restore relationship with God.",
+"major_scriptural_pattern": "The term is central to covenantal theology, appearing in passages linked to priesthood, kingship, and the tabernacle system. It is repeatedly paired with 'sacrifice' and 'king' in contexts of divine mediation and covenantal fidelity.",
+"term": "pri",
+"literal_sense": "To serve, to be a priest, or to be high priest, implying a role of service, consecration, and mediation between the divine and the earthly.",
+"symbolic_structure": "The term embodies the tension between earthly authority and divine sovereignty, with repeated motifs of 'priest' and 'king' in passages like Genesis 14:18 and Hebrews 7:1. It also reflects the hierarchical structure of the temple and the interplay between human and divine roles.",
+"language": "Hebrew",
+"numerical_letter_observations": "The root 'pri' appears in 476 verses across the canon, with a recurring pattern of consonants 'pr' (Hebrew: 'pri') and 'r' (as in 'pri' or 'r' in 'priest'). The letter 'r' is often associated with divine authority and sacrifice in biblical text.",
+"semantic_range": "The term encompasses roles of priest, high priest, and associated functions in the temple, including covenantal authority, sacrificial duties, and spiritual leadership. It also carries connotations of divine presence and intercession.",
+"_facts": {
+"stem": "pri",
+"surface": "Priest",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 476,
+"first_appearance_ref": "Genesis 14:18"
+}
+},
+"priest": {
+"final_synthesis": "The term 'priests' encapsulates the biblical theme of covenantal service, where the priests are both earthly leaders and divine servants. Its repeated use in scripture underscores the importance of fidelity, sacrifice, and the fulfillment of covenantal promises, reflecting Christ's role as the eternal priest who bridges the divine and human realms.",
+"root": "qoreth",
+"messianic_fulfillment": "The term is used in the context of the Messiah's ministry, where priests symbolize the fulfillment of covenantal roles, though the specific messianic reading is speculative based on the term's historical and symbolic use",
+"first_appearance": "Genesis 47:22 (Genesis 47:26 and 2 Chronicles 13:12 also mention the term)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "speculation"
+},
+"reveals_about_christ": "The word 'priests' reveals Christ's role as the ultimate mediator and servant, fulfilling the covenantal promises of the Old Testament while embodying the wisdom, character, and mission of Jesus Christ as both priest and king",
+"major_scriptural_pattern": "The term appears in contexts of covenant, priesthood, kingship, temple, sacrifice, creation, exodus, inheritance, judgment, exile, redemption, resurrection, and Zion, often emphasizing the role of priests as covenant keepers and divine servants",
+"term": "priests",
+"literal_sense": "to serve, to be a priest, to act as a guardian of sacred things",
+"symbolic_structure": "Repeated phrases like 'the land of the priests' and 'the fifth part' highlight the priests' privileged status, paired with themes of ownership and divine provision, and embedded in numerical patterns (e.g., the number 5, symbolizing the fifth part of the land)",
+"language": "English",
+"numerical_letter_observations": "The term appears 457 times across the canon, with a distribution of 277 OT, 82 NT, and 63 BoFM, reflecting its centrality in covenantal and sacrificial contexts. The number 5 is frequently associated with the fifth part of the land, emphasizing the priests' role in distribution and divine provision",
+"semantic_range": "roles including priest, servant, leader, guardian, and covenant mediator; also associated with divine service and the temple",
+"_facts": {
+"stem": "priest",
+"surface": "Priests",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 457,
+"first_appearance_ref": "Genesis 47:22"
+}
+},
+"prince": {
+"final_synthesis": "The term 'prince' encapsulates the biblical theme of divine sovereignty and covenantal leadership, revealing Christ's mission to rule over humanity, restore broken relationships, and bring eternal salvation through His sacrifice and resurrection. Its etymology and symbolic use underscore the interplay between divine authority, human responsibility, and the fulfillment of God's promises in the New Testament.",
+"root": "prince",
+"messianic_fulfillment": "The term 'prince' is central to the messianic revelation, as seen in the New Testament (e.g., Psalm 2:7, Isaiah 9:6), where the 'prince' signifies Jesus Christ as the ultimate ruler and mediator of salvation",
+"first_appearance": "Genesis 12:15 (Genesis 12:15: 'And I will make of thee a father of nations')",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "speculation"
+},
+"reveals_about_christ": "The word 'prince' reveals Christ's role as both a sovereign ruler (covenantal authority) and a mediator (redemption), reflecting His dual nature as divine and human, and His mission to restore humanity to God through sacrifice and resurrection",
+"major_scriptural_pattern": "covenantal kingship, where the 'prince' symbolizes divine sovereignty, leadership, and the fulfillment of God's promises to Israel",
+"term": "prince",
+"literal_sense": "a ruler or leader, especially one who governs a kingdom or people",
+"symbolic_structure": "paired terms like 'prince' and 'king' reflect covenantal duality; numerical patterns include the number 12 (twelve princes) and the letter 'P' (prince) in the Hebrew root, symbolizing divine order and selection",
+"language": "English",
+"numerical_letter_observations": "The Hebrew root 'prince' (P-R-I-N-C-E) contains the letter 'P' (prince) and 'E' (exile), linking to themes of restoration and covenantal renewal. The number 12 (twelve princes) emphasizes divine sovereignty and the inclusion of all nations in God's plan",
+"semantic_range": "a sovereign, ruler, or leader; metaphorically, a representative or mediator; also used in biblical contexts to denote divine authority or covenantal roles",
+"_facts": {
+"stem": "prince",
+"surface": "Princes",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 348,
+"first_appearance_ref": "Genesis 12:15"
 }
 }
 }

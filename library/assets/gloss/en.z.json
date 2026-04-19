@@ -1,0 +1,40 @@
+{
+"_meta": {
+"prompt_version": "gloss-define-v1",
+"shard": "z",
+"model": "qwen3:1.7b",
+"updated": "2026-04-19T13:28:52+00:00"
+},
+"stems": {
+"zion": {
+"final_synthesis": "Zion's etymology and symbolic use reveal a theology of covenantal restoration, where the physical city of David is transformed into the spiritual Jerusalem. Its repeated appearance in scripture underscores the theme of divine habitation and the promise of eternal life, with Jesus Christ as the ultimate fulfillment of this covenant, embodying both the old and new covenants through His death and resurrection.",
+"root": "zion",
+"messianic_fulfillment": "Jesus Christ is referred to as 'the Son of David' (1 Chronicles 22:12) and 'the Lord of the house of Israel' (Isaiah 9:6), with the new Zion symbolizing the heavenly Jerusalem and the Holy Spirit's dwelling (Isaiah 54:5-6)",
+"first_appearance": "2 Samuel 5:7 ('the city of David'), where Zion is explicitly named as the capital of the united monarchy",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "inference",
+"messianic_reading": "pattern"
+},
+"reveals_about_christ": "Zion reveals Christ's role as the new David, the mediator of the new covenant, and the embodiment of God's promise of eternal dwelling in the heavenly Jerusalem, reflecting His sovereignty and the fulfillment of eschatological hope",
+"major_scriptural_pattern": "Repeated use in covenantal contexts (Davidic kingdom, temple, exodus), paired with 'Jerusalem' (literal and symbolic), and embedded in themes of redemption, judgment, and the new heaven/new earth",
+"term": "Zion",
+"literal_sense": "The city of David, as in 1 Chronicles 11:5 ('the city of David'), and the symbolic name for the heavenly Jerusalem in biblical theology",
+"symbolic_structure": "Paired terms 'Zion' and 'Jerusalem' (literal and symbolic), numerical patterns (e.g., 12, 7, 13) reflecting divine completeness, and covenantal repetition of 'the Lord shall dwell in Zion' (Isaiah 54:5-6)",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The word 'Zion' (5 letters) aligns with the number 5 (the number of the Holy Spirit), and the letters Z (Holy Spirit) and I (soul) reflect spiritual significance in covenant theology",
+"semantic_range": "A place of divine habitation, a symbolic name for the heavenly Jerusalem, and a metaphor for God's covenant people, emphasizing His sovereignty and promise of restoration",
+"_facts": {
+"stem": "zion",
+"surface": "Zion",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 359,
+"first_appearance_ref": "2 Samuel 5:7"
+}
+}
+}
+}

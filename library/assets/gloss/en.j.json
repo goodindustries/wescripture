@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "j",
 "model": "qwen3:1.7b",
-"updated": "2026-04-17T21:18:29+00:00"
+"updated": "2026-04-18T11:53:41+00:00"
 },
 "stems": {
 "jesu": {
@@ -65,6 +65,128 @@
 "morph": "",
 "count": 852,
 "first_appearance_ref": "Joshua 10:1"
+}
+},
+"judah": {
+"final_synthesis": "The term Judah encapsulates the biblical narrative's emphasis on covenantal fidelity, the tribe's role in the divine plan, and the fulfillment of Messianic prophecies, reflecting Jesus Christ's mission to restore and redeem the covenantal relationship.",
+"root": "Judah",
+"messianic_fulfillment": "Judah is associated with the Messiah through the prophecy of Zechariah 14:14, where the tribe's role in the covenant is linked to the fulfillment of divine promises and the establishment of the Kingdom of God.",
+"first_appearance": "Genesis 29:35, where Judah is mentioned in the context of the covenant with Jacob and the promise of a future leader.",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference",
+"final_synthesis": "speculation"
+},
+"reveals_about_christ": "The term Judah reveals the wisdom of the divine plan, the character of covenantal fidelity, and the mission of Jesus Christ to redeem and restore the covenantal relationship with Israel and the nations.",
+"major_scriptural_pattern": "Repeated use in covenantal contexts (e.g., Exodus 35:30, 1 Chronicles 2:1) and symbolic paired terms (e.g., 'Judah and Israel'), reflecting its role in the divine plan and the covenantal relationship.",
+"term": "Judah",
+"literal_sense": "The tribe of Judah in the Old Testament, often associated with the covenant, priesthood, and kingship roles, and the city of Jerusalem.",
+"symbolic_structure": "Embedded in repeated phrases like 'Judah shall fight' (Zechariah 14:14) and paired terms with Israel, emphasizing its role in the covenant and the fulfillment of divine promises.",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The number 12 (the 12th tribe) and the letter 'J' (from Judah) are emphasized in scriptural architecture, reflecting the tribe's significance in the census and covenantal roles.",
+"semantic_range": "The tribe of Judah, the city of Jerusalem, and the covenantal role of the tribe in the biblical narrative, including its connection to the Messiah and the Temple.",
+"_facts": {
+"stem": "judah",
+"surface": "Judah",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 742,
+"first_appearance_ref": "Genesis 29:35"
+}
+},
+"judg": {
+"final_synthesis": "The word 'judgment' encapsulates the tension between divine justice and mercy, reflecting Jesus' character as a just and compassionate Savior. Its repeated use in Scripture underscores the covenantal nature of God's relationship with humanity, where judgment is both a call to repentance and a promise of restoration. This word reveals Christ's mission to embody justice, grace, and the fulfillment of God's promises through His redemptive work, aligning with the pattern of divine sovereignty and human salvation.",
+"root": "judg",
+"messianic_fulfillment": "The word 'judgment' is central to Jesus' role as the 'Judge of the world' (1 Corinthians 2:14), where His judgment is both a revelation of truth and a call to repentance, reflecting His mission to reconcile humanity to God through redemption",
+"first_appearance": "Genesis 18:19 (Genesis 18:19, where God judges Sodom and Gomorrah)",
+"confidence_by_claim": {
+"etymology": "pattern",
+"symbolic_structure": "inference",
+"messianic_fulfillment": "pattern"
+},
+"reveals_about_christ": "The word 'judgment' reveals Christ's dual nature as both the executor of divine justice and the savior who brings about reconciliation, underscoring His role as the mediator between God and humanity, and the fulfillment of the Old Testament covenantal promises",
+"major_scriptural_pattern": "Theological framework of divine judgment as a covenantal act of righteousness, emphasizing God's justice, mercy, and the restoration of relationship through faith in Jesus Christ",
+"term": "judgment",
+"literal_sense": "decision, ruling, judicial act, or the act of judging",
+"symbolic_structure": "Repeated use of 'judgment' in contexts of covenantal fidelity (e.g., 1 Kings 8:58), paired with terms like 'grace' and 'mercy' to contrast divine justice with human frailty, and embedded in the structure of the Psalms and Proverbs as a call to moral and spiritual transformation",
+"language": "English",
+"numerical_letter_observations": "The root 'judg' (5 letters) appears 501 times across the canon, with the letter 'g' (position 6) often linked to the number 6 (symbolizing completeness or divine order), though this is speculative without textual evidence",
+"semantic_range": "legal rulings, divine justice, moral accountability, covenantal fidelity, and the exercise of authority in God's kingdom",
+"_facts": {
+"stem": "judg",
+"surface": "Judgment",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 501,
+"first_appearance_ref": "Genesis 18:19"
+}
+},
+"judge": {
+"final_synthesis": "The word 'judge' encapsulates the tension between divine judgment and mercy, reflecting Christ's dual role as a judge of sin and a redeemer of souls, grounded in covenantal promises and symbolic patterns across Scripture",
+"root": "dikastes",
+"messianic_fulfillment": "The role of the Messiah as a judge is inferred through passages like Acts 7:7 and 2 Nephi 21:3, where the Messiah is depicted as one who judges with justice and mercy",
+"first_appearance": "Genesis 15:14 (God promises to judge the nation to whom they shall be in bondage)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "inference",
+"messianic_fulfillment": "speculation"
+},
+"reveals_about_christ": "The word 'judge' reveals Christ's mission to reconcile humanity through judgment and redemption, reflecting His role as both a judge of sin and a redeemer of souls",
+"major_scriptural_pattern": "covenantal judgments, priestly roles, and royal authority, often paired with terms like 'judge and redeemed' or 'judgment and mercy'",
+"term": "judge",
+"literal_sense": "to decide or determine, especially in a judicial or moral context",
+"symbolic_structure": "repeated phrases such as 'judge thy servants' and 'bring his way upon his head' emphasize the balance between judgment and mercy, with numerical patterns like the number 15 (Genesis) and volume distribution showing prevalence in canonical texts",
+"language": "English",
+"numerical_letter_observations": "The number 15 is significant in Genesis, and the volume distribution shows 'judge' appears frequently across canonical texts, with a focus on the Book of Mormon and Acts",
+"semantic_range": "actions of judging, condemning, and righteous judgment; also encompasses the role of a judge in a covenantal or royal context",
+"_facts": {
+"stem": "judge",
+"surface": "Judge",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 419,
+"first_appearance_ref": "Genesis 15:14"
+}
+},
+"joseph": {
+"final_synthesis": "The word 'Joseph' embodies the tension between human lineage and divine sovereignty, reflecting Christ's role as both a descendant of David (Messiah) and a servant of God. Its etymology and symbolic use in covenantal contexts reveal Christ's mission as a mediator between God and humanity, emphasizing faith, inheritance, and redemption.",
+"root": "Yosef",
+"messianic_fulfillment": "In the New Testament, Joseph is linked to Jesus (Matthew 1:16, Luke 1:28), fulfilling the prophecy of a descendant of David who would save Israel. The name 'Joseph' (Yosef) is used to denote a descendant of David, emphasizing lineage and divine promise.",
+"first_appearance": "Genesis 30:24 (Genesis 30:24: 'And Joseph said unto his father, They are my sons, whom God hath given me in this place.'), marking its first use in the Bible.",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference",
+"reveals_about_christ": "inference"
+},
+"reveals_about_christ": "The name 'Joseph' reveals Christ's dual nature as a descendant of David (Messiah) and a faithful servant of God, reflecting His role as both a prophet and a Redeemer. It underscores His covenantal relationship with Israel and the fulfillment of divine promises.",
+"major_scriptural_pattern": "Covenantal and familial, reflecting themes of divine provision, lineage, and the promise of redemption through a descendant (e.g., the 10 sons in Genesis 30, the 120 sons in Exodus 1:7).",
+"term": "Joseph",
+"literal_sense": "He who is, or the one who is; a name meaning 'the one who is' in Hebrew, derived from the verb 'yosef' (to be, to come, to be born).",
+"symbolic_structure": "Paired terms like 'Joseph and his brothers' (Genesis 37:2) and 'Joseph and his father' (Genesis 37:2) emphasize lineage and covenantal bonds. The number 10 (10 sons) and 120 (120 sons) symbolize divine abundance and covenantal fulfillment.",
+"language": "English",
+"numerical_letter_observations": "The root 'Yosef' (Hebrew) contains 10 letters, reflecting the 10 sons of Jacob, and the Greek form 'Iesous' (Jesus) has 10 letters, aligning with the 10th letter of the Greek alphabet (Kairos).",
+"semantic_range": "A name for a male child, often associated with fatherhood, brotherhood, and divine providence. It carries connotations of trust, inheritance, and covenantal fidelity, with implications in roles such as prophet, leader, and Redeemer.",
+"_facts": {
+"stem": "joseph",
+"surface": "Joseph",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 389,
+"first_appearance_ref": "Genesis 30:24"
 }
 }
 }

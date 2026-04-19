@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "s",
 "model": "qwen3:1.7b",
-"updated": "2026-04-17T20:53:58+00:00"
+"updated": "2026-04-19T15:29:22+00:00"
 },
 "stems": {
 "son": {
@@ -157,6 +157,426 @@
 "morph": "",
 "count": 865,
 "first_appearance_ref": "Genesis 1:2"
+}
+},
+"saw": {
+"final_synthesis": "The verb 'saw' encapsulates the theological tension between divine sovereignty and human participation, revealing Christ's dual role as both the Creator and the Covenantal Witness. Its pervasive use in scripture underscores the importance of divine observation and the covenantal promise of redemption, reflecting the wisdom of God in His creation and the mission of Jesus Christ to reveal His will through the lens of the covenant.",
+"root": "saw",
+"messianic_fulfillment": "The verb 'saw' is linked to the covenantal act of witnessing, which Jesus Christ fulfills as the ultimate revelation of God's will, embodying the fulfillment of the covenantal promise of redemption",
+"first_appearance": "Genesis 1:4 (Genesis 1:4, Moses 2:4, 10, 12)",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "inference",
+"messianic_reading": "speculation"
+},
+"reveals_about_christ": "The verb 'saw' reveals Christ's role as the mediator of creation and covenant, where His actions of seeing and witnessing mirror God's divine purpose, underscoring His role as the incarnate Word and the fulfillment of the covenantal promise",
+"major_scriptural_pattern": "The verb 'saw' appears in the context of creation, divine observation, and the covenantal act of witnessing, reflecting God's active involvement in shaping the world and establishing relationships",
+"term": "saw",
+"literal_sense": "to observe, witness, or perceive, often in a divine or authoritative context",
+"symbolic_structure": "paired terms like 'saw the light' and 'saw that all things were good' emphasize divine sovereignty and the fulfillment of creation, with repeated phrases underscoring the covenantal nature of God's actions",
+"language": "English",
+"numerical_letter_observations": "The verb 'saw' appears in 821 verses across the canon, with a distribution of 321 OT, 225 NT, and 213 BoFM, reflecting its pervasive role in theological discourse",
+"semantic_range": "creation, divine observation, judgment, redemption, and covenantal witnessing",
+"_facts": {
+"stem": "saw",
+"surface": "Saw",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 821,
+"first_appearance_ref": "Genesis 1:4"
+}
+},
+"speak": {
+"final_synthesis": "The verb 'speak' embodies the covenantal dimension of divine communication, from the angel's proclamation to Christ's redemptive speech. Its etymological roots in Proto-Indo-European *s-p-e-k and its repeated use in covenantal contexts (e.g., 'speak unto', 'speak for') reveal a theological pattern of divine revelation and covenantal fidelity. The numerical symbolism (twenty, thirty) and paired terms (e.g., 'speak unto') reinforce the weight of covenantal vows, while its fulfillment in Christ underscores His role as the ultimate speaker of God's word. This word thus reflects the wisdom of divine communication, the character of covenantal fidelity, and the mission of redemptive proclamation.",
+"root": "speak",
+"messianic_fulfillment": "The term 'speak' is linked to Christ's role as the Lamb of God (e.g., 'Behold, saith the Lamb of God') and His proclamation of salvation, aligning with the covenantal motif of divine revelation and covenantal fidelity. The verb 'speak' in the New Testament often reflects Christ's teaching and redemptive proclamation.",
+"first_appearance": "Genesis 18:27 (Genesis 18:30-31)",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The word 'speak' reveals Christ's role as both the revealer of divine truth (e.g., the Lamb of God) and the mediator of covenantal communication. It underscores His authority, prophetic mission, and the centrality of dialogue in His redemptive work.",
+"major_scriptural_pattern": "covenantal communication: angelic proclamation, prophetic revelation, and covenantal vows",
+"term": "speak",
+"literal_sense": "to utter, to convey, to communicate",
+"symbolic_structure": "repeated use of 'speak' in covenantal contexts (e.g., 'speak unto', 'speak for', 'speak with'), paired with numerical expressions (twenty, thirty), and embedded in covenantal vows (e.g., 'I will not destroy it for twenty's sake')",
+"language": "English",
+"numerical_letter_observations": "The numbers 20 and 30 appear in covenantal contexts, possibly symbolizing divine abundance or covenantal fidelity, and their repetition underscores the weight of the promise (e.g., 'Peradventure there shall be twenty found there'). The letter 't' in 'twenty' and 'thirty' may reflect a phonetic echo of the root 'speak' (s-p-e-k), suggesting a linguistic continuity.",
+"semantic_range": "communication, revelation, proclamation, instruction, dialogue, discourse, utterance",
+"_facts": {
+"stem": "speak",
+"surface": "Speak",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 790,
+"first_appearance_ref": "Genesis 18:27"
+}
+},
+"spake": {
+"final_synthesis": "The word 'spake' reveals Christ's mission as the embodiment of divine communication, where speaking is both a divine act and a redemptive proclamation, reflecting the covenantal tension between God's sovereignty and human response",
+"root": "spake",
+"messianic_fulfillment": "Jesus Christ is referred to as 'the Word' (John 1:1), whose speaking embodies divine revelation and redemption (e.g., John 12:41, 1 Corinthians 15:4), aligning with the OT pattern of 'spake' as covenantal speech",
+"first_appearance": "Genesis 8:15 (God spake unto Noah, saying, ...)",
+"confidence_by_claim": {
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference"
+},
+"reveals_about_christ": "The word 'spake' underscores Christ's role as the incarnate Word, whose speaking reveals divine truth, heals brokenness, and inaugurates the new covenant (John 1:1-14, 1 Corinthians 15:3-4)",
+"major_scriptural_pattern": "repeated covenantal use of 'spake' to establish divine authority and binding promises (e.g., Genesis 8:15, Exodus 20:1-17, Deuteronomy 1:1-3, Jeremiah 1:5)",
+"term": "spake",
+"literal_sense": "to speak, utter, or declare",
+"symbolic_structure": "paired terms (e.g., 'God spake' vs. 'they spake') and repeated phrases (e.g., 'spake unto' in covenantal contexts) reflect the tension between divine sovereignty and human response",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "753 verses across canon, with 434 in OT (Genesis, Exodus, Deuteronomy) and 134 in NT (Matthew, John, Acts), suggesting a covenantal emphasis in early scripture",
+"semantic_range": "actions of communication, proclamation, and metaphorical use; also denotes divine authority and covenantal speech",
+"_facts": {
+"stem": "spake",
+"surface": "Spake",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 753,
+"first_appearance_ref": "Genesis 8:15"
+}
+},
+"see": {
+"final_synthesis": "The verb 'see' reflects God's active role in creation and revelation, embodying covenantal fidelity and the eschatological unveiling of divine glory, with Christ as the ultimate fulfillment of this divine seeing.",
+"root": "sene",
+"messianic_fulfillment": "in Revelation 1:17, the Lamb 'sees' the throne of God, fulfilling the eschatological role of divine revelation",
+"first_appearance": "Genesis 2:19 (God creating beasts and birds, 'see' as a divine act of creation)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "the term 'see' underscores Christ's role as the ultimate revealer of divine truth, bridging creation, covenant, and eschatology",
+"major_scriptural_pattern": "the passive voice of 'see' as a divine revelation mechanism, central to covenant, creation, and exodus narratives",
+"term": "see",
+"literal_sense": "to look or observe, often with a passive or divine connotation",
+"symbolic_structure": "paired terms like 'see' and 'know,' numerical patterns (e.g., 19, 20), and covenantal obligations to 'see' the divine order",
+"language": "English",
+"numerical_letter_observations": "the number 19 appears in Genesis 2:19, symbolizing divine completeness; the letter 's' (sene) is repeated in key covenantal passages",
+"semantic_range": "actions of perception, revelation, and divine insight; also includes the passive voice of seeing",
+"_facts": {
+"stem": "see",
+"surface": "See",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 738,
+"first_appearance_ref": "Genesis 2:19"
+}
+},
+"spoken": {
+"final_synthesis": "The word 'spoken' embodies the biblical theme of divine proclamation, reflecting both the immediacy of God's revelation and the structured patterns of prophecy. Its centrality in the canon underscores the importance of communication in the divine plan, with its symbolic structure emphasizing paired terms and repeated motifs, ultimately revealing Christ's role as the ultimate revelation of God's will.",
+"root": "spok-",
+"messianic_fulfillment": "Not directly tied to Christ's name or prophecies, but its role in divine revelation aligns with the broader pattern of God's communication through prophets and prophecies",
+"first_appearance": "Genesis 12:4 (Genesis 12:4, 'And the Lord said unto Abram, Arise, go from thy country, and from thy father's house, and go unto a land which I will show thee')",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "inference",
+"messianic_fulfillment": "speculation"
+},
+"reveals_about_christ": "The word 'spoken' underscores Christ's role as the ultimate revelation of God's will, reflecting the biblical emphasis on divine communication and the fulfillment of prophecies through Him",
+"major_scriptural_pattern": "recurring motif of divine proclamation and prophetic revelation, often paired with 'prophesied' or 'spoken by the Lord', emphasizing the immediacy of God's communication",
+"term": "spoken",
+"literal_sense": "to utter, to proclaim, to declare, especially in the context of divine or prophetic revelation",
+"symbolic_structure": "paired terms 'spoken' and 'prophesied' in prophetic contexts, repeated phrases in the prophets (e.g., 'I will speak' in Ezekiel 38:17), and the tension between divine utterance and human understanding",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "503 verses across the canon, with volume distribution bofm:179, ot:176, nt:88, other:51, pgp:9; the word appears in 503 verses, reflecting its centrality in biblical narrative",
+"semantic_range": "proclamation, divine utterance, prophetic revelation, proclamation of truth, communication of God's will",
+"_facts": {
+"stem": "spoken",
+"surface": "Spoken",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 503,
+"first_appearance_ref": "Genesis 12:4"
+}
+},
+"stand": {
+"final_synthesis": "The word 'stand' underscores Christ's role as the covenantal mediator, delivering judgment and deliverance, and embodying the wisdom of God's plan for redemption, reflecting the interplay of fidelity, judgment, and deliverance in the New Testament.",
+"root": "stand",
+"messianic_fulfillment": "Jesus Christ is portrayed as the one who stands firm in covenantal fidelity, delivering judgment and deliverance to the people of God",
+"first_appearance": "Genesis 19:9",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "the word 'stand' reveals Christ's role as the mediator of covenantal fidelity, delivering judgment and deliverance, and embodying the wisdom of God's plan for redemption",
+"major_scriptural_pattern": "covenantal fidelity and deliverance",
+"term": "stand",
+"literal_sense": "to be in a position of height or elevation, or to deliver judgment or deliverance",
+"symbolic_structure": "paired terms (stand, fall) and repeated phrases (stand in the house of the Lord)",
+"language": "English",
+"numerical_letter_observations": "the number 19 (Genesis 19:9) and the letter 's' (standing) are emphasized in covenantal contexts",
+"semantic_range": "to be in a position of height or elevation; to deliver judgment or deliverance; to stand firm in covenantal fidelity",
+"_facts": {
+"stem": "stand",
+"surface": "Stand",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 476,
+"first_appearance_ref": "Genesis 19:9"
+}
+},
+"sea": {
+"final_synthesis": "The term 'sea' encapsulates divine creation, exodus, and redemption, reflecting Christ's mission to restore order, eliminate chaos, and bring eternal life through His resurrection and the new Jerusalem's divine order.",
+"root": "metes",
+"messianic_fulfillment": "the 'sea' in Revelation 21:1 symbolizes the new creation, where the sea is transformed into a river of life, reflecting the new Jerusalem's divine order",
+"first_appearance": "Genesis 1:26 (creation narrative, 'sea' as divine expanse)",
+"confidence_by_claim": {
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference"
+},
+"reveals_about_christ": "the term 'sea' reveals Christ's role as the Creator and Redeemer, bridging the divine and human, and embodying the promise of a new creation through His resurrection",
+"major_scriptural_pattern": "repeated use in creation, exodus, and the 'sea of confusion' (Exodus 17:7), paired with 'dry land' in covenant contexts",
+"term": "sea",
+"literal_sense": "sea (ocean, body of water)",
+"symbolic_structure": "repeated oppositions (sea vs. dry land), numerical patterns (ten seas, ten tribes), and structured symbolic contrasts (chaos vs. order)",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "the number 10 (ten seas, ten tribes) and the letter 'e' (from 'metes' in Greek) recurring in covenantal contexts",
+"semantic_range": "bodies of water, metaphorical uses (confusion, chaos, divine expanse), symbolic oppositions (dry land, chaos, redemption)",
+"_facts": {
+"stem": "sea",
+"surface": "Sea",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 423,
+"first_appearance_ref": "Genesis 1:26"
+}
+},
+"save": {
+"final_synthesis": "The word 'save' reflects Christ's redemptive mission, covenantal promises, and symbolic role as the Savior, with its etymology and symbolic use aligning with its fulfillment in Christian theology.",
+"root": "saver",
+"messianic_fulfillment": "The term 'save' is linked to Jesus Christ's role as the Redeemer (e.g., 'He will save his people from their sins' in Matthew 2:14), though the Greek root 'saver' is not explicitly tied to Christ in the text provided.",
+"first_appearance": "Genesis 12:12",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_reading": "speculation",
+"final_synthesis": "inference"
+},
+"reveals_about_christ": "The word 'save' reveals Christ's mission to redeem humanity, fulfill covenantal promises, and deliver from sin and death, reflecting His role as the ultimate Savior and Redeemer.",
+"major_scriptural_pattern": "covenantal salvation, redemption, and deliverance",
+"term": "save",
+"literal_sense": "to preserve, to keep safe, to deliver from danger",
+"symbolic_structure": "repeated use in covenantal contexts (e.g., Abraham 2:23, 1 Samuel 30:17, Alma 30:52), paired terms like 'save' and 'save', and numerical patterns (e.g., 12 in Genesis 12:12)",
+"language": "English",
+"numerical_letter_observations": "The word 'save' (5 letters) mirrors the number 12 in Genesis 12:12, and the letters 's', 'a', 'v', 'e', 'r' align with the Greek root 'saver' (12 letters in Greek). The letter 's' appears twice, and 'a' twice, 'v' once, 'e' once, 'r' once.",
+"semantic_range": "to protect, to save from harm, to redeem, to deliver, to preserve in a covenant context",
+"_facts": {
+"stem": "save",
+"surface": "Save",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 411,
+"first_appearance_ref": "Genesis 12:12"
+}
+},
+"seven": {
+"final_synthesis": "The word 'seven' reflects the biblical emphasis on numerical symbolism, covenantal completeness, and generational timelines. Its etymology is uncertain, but its use in scripture underscores divine order and the fulfillment of prophecies through numerical patterns, revealing Christ's role as the completion of God's plan.",
+"root": "sev",
+"messianic_fulfillment": "the number seven is fulfilled in the lineage of Christ (e.g., 70 generations, 782 years, 187 years), aligning with biblical prophecies about the Messiah's lineage and divine completeness",
+"first_appearance": "Genesis 5:7 (Genesis 5:7: 'And Seth lived, after he begat Enos, eight hundred and seven years, and begat many sons and daughters')",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"numerical_letter_observations": "speculation"
+},
+"reveals_about_christ": "the word 'seven' reveals Christ's role as the completion of divine order (e.g., 70 nations, 70 weeks), His generational lineage, and His fulfillment of covenantal promises through numerical symbolism",
+"major_scriptural_pattern": "repetition of seven in generational timelines (e.g., Seth's 70 years, Methuselah's 187 years, 782 years), covenantal cycles (e.g., 7 days, 70 nations), and numerical symbolism (e.g., 70, 77, 78)",
+"term": "seven",
+"literal_sense": "a number (7)",
+"symbolic_structure": "paired terms (e.g., 'seven' + 'years', 'seven' + 'sons'), repeated phrases (e.g., 'seven generations'), and covenantal patterns (e.g., 70 nations, 70 weeks)",
+"language": "English",
+"numerical_letter_observations": "7 is the seventh letter in the Hebrew alphabet, symbolizing completion and divine order; the letter 'S' (sev) is associated with 'life' in Hebrew, reflecting its role in generational timelines",
+"semantic_range": "count, measure, divine attribute, generational timeline, covenantal significance",
+"_facts": {
+"stem": "seven",
+"surface": "Seven",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 403,
+"first_appearance_ref": "Genesis 5:7"
+}
+},
+"seed": {
+"final_synthesis": "The word 'seed' encapsulates the divine plan of creation, redemption, and restoration, reflecting the wisdom of God in nurturing life, fulfilling covenants, and redeeming humanity through the Messiah. Its centrality in scripture underscores the theme of growth, covenant, and the promise of eternal life.",
+"root": "zerak",
+"messianic_fulfillment": "The word 'seed' is fulfilled in Jesus Christ as the 'seed of the woman' (Genesis 3:15), symbolizing His role as the Redeemer who brings forth new life and restores the covenantal relationship with God.",
+"first_appearance": "Genesis 1:11, where the word appears in the context of God's creative act, describing the earth bringing forth grass, herbs, and trees bearing seed.",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The word 'seed' reveals Christ's role as the incarnate Word of God, the source of all creation, and the fulfillment of the promise of salvation. It underscores His nature as both the Creator and the Redeemer, embodying the wisdom of God in nurturing and redeeming humanity.",
+"major_scriptural_pattern": "The covenantal pattern of 'seed' is central to the narrative of creation, redemption, and the fulfillment of the Messianic promise, particularly in the story of Abraham and the Israelites.",
+"term": "zeerak",
+"literal_sense": "To sow or to produce offspring; to bring forth, as in the growth of plants and the reproduction of life.",
+"symbolic_structure": "The word is embedded in repeated phrases like 'seed of the woman' (Genesis 3:15) and paired with 'fruit' (Genesis 2:15), reflecting the tension between growth and decay, sowing and reaping, and the covenantal relationship between God and humanity.",
+"language": "Hebrew (Old Testament)",
+"numerical_letter_observations": "The number 1 is prominently associated with the word, as in the creation of the first seed (Genesis 1:11), and the word appears 398 times across the canon, emphasizing its centrality in divine revelation.",
+"semantic_range": "The word encompasses the biological process of reproduction, the promise of the Messiah (seed of the woman), and the covenantal obligation to bear fruit. It also symbolizes growth, renewal, and the divine act of creation.",
+"_facts": {
+"stem": "seed",
+"surface": "Seed",
+"lang": "hbo",
+"lemma": "2233",
+"surface_gr": "",
+"surface_he": "זֶ֔רַע",
+"morph": "HNcmsa",
+"count": 398,
+"first_appearance_ref": "Genesis 1:11"
+}
+},
+"side": {
+"final_synthesis": "The word 'side' encapsulates Christ's dual nature as both a boundary and a mediator, reflecting his mission to reconcile humanity with divinity through sacrifice and redemption",
+"root": "sida",
+"messianic_fulfillment": "Jesus Christ is referred to as the 'side of the cross' (e.g., Philippians 2:8), symbolizing his role as the mediator and fulfillment of divine plan",
+"first_appearance": "Genesis 6:16 (a side of a boat)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The word 'side' reveals Christ's role as a mediator, a boundary between divine and human, and a symbol of redemption through sacrifice",
+"major_scriptural_pattern": "repeated use in contexts of boundaries, structures, and symbolic thresholds (e.g., temple, city, and cross)",
+"term": "side",
+"literal_sense": "a boundary, a part of a structure, or a direction",
+"symbolic_structure": "paired terms (e.g., 'side' and 'back'), numerical patterns (e.g., 10, 20), and covenantal oppositions (e.g., 'side' vs. 'front')",
+"language": "English",
+"numerical_letter_observations": "S, D, A in Hebrew (Sid) and S, D, A in Greek (Sida), aligning with the number 10 (Sid) and 20 (Sida)",
+"semantic_range": "a boundary, a part of a structure, a direction, a side of a vessel, and a symbolic boundary in religious contexts",
+"_facts": {
+"stem": "side",
+"surface": "Side",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 389,
+"first_appearance_ref": "Genesis 6:16"
+}
+},
+"sure": {
+"final_synthesis": "The word 'surely' underscores Christ's role as the embodiment of divine certainty, His mission to uphold covenantal truth, and His unwavering commitment to God's promises, reflecting His nature as both the fulfillment of divine will and the mediator of eternal covenantal trust.",
+"root": "sure",
+"messianic_fulfillment": "The term 'surely' is central to the Messiah's role in fulfilling divine promises, as seen in passages like Exodus 19:13, where God's sovereignty is affirmed through covenantal certainty",
+"first_appearance": "Genesis 2:17",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The word 'surely' reveals Christ's mission to uphold divine truth, maintain covenant fidelity, and embody the unyielding nature of God's promises, reflecting His role as the mediator of eternal covenantal trust",
+"major_scriptural_pattern": "Repeated use in covenantal contexts to affirm divine sovereignty and unchanging promises",
+"term": "surely",
+"literal_sense": "in a manner that is certain or definitive",
+"symbolic_structure": "Paired with 'not surely' to contrast divine certainty with human frailty, and embedded in covenantal vows (e.g., Exodus 19:13)",
+"language": "English",
+"numerical_letter_observations": "The word 'surely' appears 369 times, with the letter 's' repeated 369 times, mirroring the count of verses, and the letter 'r' appearing 369 times in the root 'sure' (though this is speculative based on transliteration patterns)",
+"semantic_range": "Used to emphasize divine certainty, covenant fidelity, and the unyielding nature of God's promises",
+"_facts": {
+"stem": "sure",
+"surface": "Surely",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 369,
+"first_appearance_ref": "Genesis 2:17"
+}
+},
+"seen": {
+"final_synthesis": "The word 'seen' reveals Christ's role as a mediator, a faithful servant, and a light in the world, emphasizing His mission to reveal God's will and the importance of faith in the covenantal relationship.",
+"root": "sene",
+"messianic_fulfillment": "Used in passages about faith and divine revelation, aligning with Christ's role as the mediator and light of the world",
+"first_appearance": "Genesis 7:1 (floodwaters 'seen' as yet unseen)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "Christ's mission to reveal God's will, His role as a faithful servant, and the importance of faith in the covenantal relationship",
+"major_scriptural_pattern": "Repetition in covenantal contexts (faith, divine revelation, judgment), paired with 'faith' and 'heir of the righteousness' to emphasize covenantal trust",
+"term": "seen",
+"literal_sense": "To see, perceive, or discern in a spiritual or divine sense",
+"symbolic_structure": "Embedded in covenantal motifs (faith, divine judgment, redemption), paired with 'seen' to signify the believer's role in God's plan and the revelation of His will",
+"language": "English",
+"numerical_letter_observations": "Greek 'sene' (5 letters) and Hebrew 'sene' (5 letters) share the same root; the letter 'e' appears twice, possibly reflecting a pattern of divine emphasis",
+"semantic_range": "Literal 'to see' in physical or metaphorical contexts; signifies divine revelation, faith, and the perception of God's will",
+"_facts": {
+"stem": "seen",
+"surface": "Seen",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 366,
+"first_appearance_ref": "Genesis 7:1"
+}
+},
+"shew": {
+"final_synthesis": "The term 'shew' encapsulates the biblical theme of divine revelation and covenantal manifestation, reflecting Christ's role as both the revealer of God's will and the fulfillment of the promise of divine revelation through the Messiah. Its etymological clarity, symbolic repetition in covenantal contexts, and messianic fulfillment underscore its significance in understanding Christ's mission and the nature of divine revelation.",
+"root": "shew",
+"messianic_fulfillment": "In Acts 7:3 and 1 Kings 3:6, 'shew' is linked to Jesus Christ's role in revelation and manifestation, fulfilling the prophecy of divine revelation through the Messiah",
+"first_appearance": "Genesis 12:1 ('shew thee')",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The word 'shew' reveals Christ's mission as a revealer of divine truth, his role in covenantal revelation, and his fulfillment of the promise of divine manifestation through the Messiah",
+"major_scriptural_pattern": "repeated use in divine revelation and manifestation, often paired with 'show' or 'reveal' in covenantal contexts",
+"term": "shew",
+"literal_sense": "to show, reveal, or display",
+"symbolic_structure": "repeated phrases like 'shew thee' and paired terms such as 'shew' and 'show', with numerical patterns in verse counts (352 verses) and covenantal repetition",
+"language": "English",
+"numerical_letter_observations": "The term appears 352 times across the canon, with a consistent pattern of covenantal revelation and divine action",
+"semantic_range": "to display, reveal, or bring about the manifestation of something; also metaphorically to cause something to happen or bring about a result",
+"_facts": {
+"stem": "shew",
+"surface": "Shew",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 352,
+"first_appearance_ref": "Genesis 12:1"
 }
 }
 }

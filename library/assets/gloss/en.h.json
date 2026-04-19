@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "h",
 "model": "qwen3:1.7b",
-"updated": "2026-04-17T20:01:57+00:00"
+"updated": "2026-04-18T05:15:56+00:00"
 },
 "stems": {
 "house": {
@@ -126,6 +126,160 @@
 "morph": "",
 "count": 1542,
 "first_appearance_ref": "Genesis 3:22"
+}
+},
+"holy": {
+"final_synthesis": "The word 'holy' encapsulates the theological framework of covenantal faith, emphasizing divine authority, moral purity, and sacrificial redemption. Its repeated use in scripture, particularly in the context of the Messiah, reveals a consistent pattern of divine sovereignty and the fulfillment of Old Testament prophecies through Christ. This word reflects the wisdom of God in establishing a covenantal relationship grounded in holiness, justice, and love, ultimately pointing to the incarnate Christ as the embodiment of divine holiness.",
+"root": "holy",
+"messianic_fulfillment": "In 1 Nephi 20:17, 'the Holy One of Israel' directly identifies Jesus Christ as the Redeemer, fulfilling the Old Testament prophecy of the Holy One (Isaiah 53:6-7), emphasizing his divine sovereignty and sacrificial role in redemption.",
+"first_appearance": "Exodus 3:5 (where 'holy ground' is explicitly mentioned)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference"
+},
+"reveals_about_christ": "The word 'holy' reveals Christ's divine nature, his role as the Redeemer, and his covenantal relationship with God. It underscores his sacrificial atonement, moral purity, and eternal priesthood, reflecting his mission to reconcile humanity to God through love and sacrifice.",
+"major_scriptural_pattern": "covenantal significance, emphasizing divine authority and sacredness through ritual and ritualistic law",
+"term": "holy",
+"literal_sense": "set apart for a sacred purpose, often implying divinity or moral purity",
+"symbolic_structure": "repeated use of 'holy' in covenant contexts (e.g., 'holy convocation'), paired with terms like 'sacred' and 'set apart', and numerical patterns (e.g., 3, 18, 20) reflecting covenantal cycles",
+"language": "English",
+"numerical_letter_observations": "The number 3 appears in Exodus 3:5 (holy ground), 18 in Numbers 28:18 (holy convocation), and 20 in 1 Nephi 20:17 (holy One of Israel), suggesting a tripartite structure of covenantal roles (ground, convocation, redemption). The letter 'h' in 'holy' (Hebrew: 'qodesh') and 'l' (Greek: 'hagios') may reflect a numerical pattern (h + l = 8, corresponding to the number of the Lord in Exodus 3:5).",
+"semantic_range": "sacred, holy, divine, pure, set apart, devoted to a sacred purpose, covenantal status, moral excellence, and spiritual purity",
+"_facts": {
+"stem": "holy",
+"surface": "Holy",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 850,
+"first_appearance_ref": "Exodus 3:5"
+}
+},
+"heard": {
+"final_synthesis": "The verb 'heard' underscores the covenantal and redemptive nature of Christ's ministry, where divine revelation is both a gift and a call to faithful listening. Its symbolic structure reflects the interplay of hearing, seeing, and obeying in the covenantal pattern, and its messianic fulfillment highlights Christ's role as the ultimate listener and speaker of God's word.",
+"root": "heard",
+"messianic_fulfillment": "In the New Testament, 'heard' is linked to Jesus' experience of divine revelation (e.g., John 1:18, 14:13), where He hears God's voice and fulfills the covenantal role of mediating divine will to humanity.",
+"first_appearance": "Genesis 3:8 (Adam and Eve hearing God's voice in the garden)",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference",
+"final_synthesis": "speculation"
+},
+"reveals_about_christ": "The verb 'heard' reveals Christ's role as the mediator of divine revelation, His intimate communion with the Father, and His obedience to the covenantal call to 'hear' and proclaim God's word.",
+"major_scriptural_pattern": "Covenantal hearing: the verb 'heard' reflects the faithful reception of divine revelation, central to the covenantal relationship between God and humanity, especially in the Old Testament.",
+"term": "heard",
+"literal_sense": "to listen to, perceive, or understand (especially in the context of divine communication)",
+"symbolic_structure": "Repeated phrases like 'heard the voice of the Lord' (Moses 4:14, 16) and paired terms (e.g., 'heard' vs. 'saw' in Exodus 3:1-4) emphasize the immediacy of divine communication. The verb 'heard' also mirrors the covenantal pattern of 'seeing' (Exodus 3:2) and 'listening' (Numbers 10:10).",
+"language": "English",
+"numerical_letter_observations": "The verb 'heard' (Hebrew: 'yadad') contains three letters (Y-D-A), a numerical value of 4 (Yod=3, Dalet=4, Aleph=1), symbolizing the covenantal promise of divine revelation (Exodus 3:1-4). The letter 'A' (Aleph) in the root may signify the beginning of divine communication.",
+"semantic_range": "The verb 'heard' encompasses the act of receiving information, particularly from a divine source, and can imply both physical hearing and spiritual insight. It is often linked to covenantal fidelity, sacrificial obedience, and the revelation of God's will.",
+"_facts": {
+"stem": "heard",
+"surface": "Heard",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 780,
+"first_appearance_ref": "Genesis 3:8"
+}
+},
+"hear": {
+"final_synthesis": "The word 'hear' reflects the wisdom of Christ in teaching, the character of a servant, and the mission of a mediator, emphasizing obedience, revelation, and the importance of listening to divine instruction.",
+"root": "heron",
+"messianic_fulfillment": "While 'hear' is not explicitly linked to Christ in the given facts, its use in covenantal and expository contexts suggests a role in mediating divine revelation and obedience, aligning with Christ's role as a teacher and mediator.",
+"first_appearance": "Genesis 4:23 (Moses 5:47; 1 Chronicles 14:15)",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_reading": "speculation",
+"final_synthesis": "pattern"
+},
+"reveals_about_christ": "The word 'hear' reveals Christ's mission as a teacher, mediator, and servant, emphasizing his role in guiding believers to listen, obey, and discern truth, reflecting his character as a humble and compassionate leader.",
+"major_scriptural_pattern": "covenantal commands and warnings, exhortations, and divine revelations",
+"term": "hear",
+"literal_sense": "to hear (to listen, to perceive sound, to obey)",
+"symbolic_structure": "paired terms (e.g., 'hearken' vs. 'hear'), repeated phrases (e.g., 'hearken unto my speech'), covenantal contrasts (e.g., 'hearken' vs. 'not hearken'), and numerical patterns (e.g., 677 verses where 'hear' appears)",
+"language": "English",
+"numerical_letter_observations": "The word 'hear' appears in 677 verses across the canon, with a distribution of ot:396, nt:150, bofm:80, other:46, pgp:5. Its frequency reflects its centrality in covenantal and expository contexts.",
+"semantic_range": "to listen, to obey, to be attentive, to receive instruction, to discern truth, to respond to divine call",
+"_facts": {
+"stem": "hear",
+"surface": "Hear",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 677,
+"first_appearance_ref": "Genesis 4:23"
+}
+},
+"hundr": {
+"final_synthesis": "the word 'hundred' embodies a numerical pattern in biblical covenantal measurements, reflecting the theme of abundance and duration, which may foreshadow Christ's redemptive work through symbolic numerical structures (e.g., 100 years of ministry, 100 days of prayer). Its etymology and symbolic structure suggest a theological pattern of measurement and covenant, aligning with the biblical emphasis on numerical symbolism in divine decrees and human experiences.",
+"root": "hundr",
+"messianic_fulfillment": "speculation: the 100-year lifespan of Adam may symbolize a long duration, but no direct reference to Christ's ministry or reign is present in the provided facts",
+"first_appearance": "Genesis 5:3 (Adam's lifespan: 'one hundred and thirty years')",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "speculation",
+"final_synthesis": "inference"
+},
+"reveals_about_christ": "the word 'hundred' reflects the biblical theme of measurement and covenant, suggesting a pattern of numerical symbolism that may foreshadow Christ's role in redemptive measurement (e.g., 100 years of ministry, 100 days of prayer)",
+"major_scriptural_pattern": "repeated numerical measurements in covenantal contexts (e.g., Adam's lifespan, priestly duties, royal reigns)",
+"term": "hundred",
+"literal_sense": "a quantity of 100",
+"symbolic_structure": "paired terms ('hundred' + 'thousand') and numerical letter patterns (H-U-N-D-R, 5 letters, prime number 5)",
+"language": "English",
+"numerical_letter_observations": "root 'hundr' (H-U-N-D-R) corresponds to Roman numerals 'C' (100), with 5 letters (prime number) and a vowel-heavy structure",
+"semantic_range": "numerical measurement, abundance, covenant terms, symbolic oppositions (e.g., 'hundred' vs. 'thousand')",
+"_facts": {
+"stem": "hundr",
+"surface": "Hundred",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 605,
+"first_appearance_ref": "Genesis 5:3"
+}
+},
+"head": {
+"final_synthesis": "The term 'head' in the context of Jesus Christ reveals a deep theological framework where Christ is both the end of the lineage (as in the river's four heads) and the authority of the covenant. This reflects His role as the mediator, the fulfillment of prophecy, and the ultimate authority over all creation. The symbolic structures of division, paired terms, and numerical patterns underscore His dual nature as both the head of the seed line and the head of the covenant, affirming His divine mission and redemptive work.",
+"root": "head",
+"messianic_fulfillment": "the Messiah is referred to as the 'head' of the lineage, fulfilling the prophecy of 'the seed bruising the head' (Moses 4:21) and the 'head of the woman' (Moses 4:21)",
+"first_appearance": "Genesis 2:10 (Genesis 2:10: There was a river running out of Eden, to water the garden, and from thence it was parted and became into four heads.)",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"numerical_letter_observations": "speculation"
+},
+"reveals_about_christ": "the word 'head' reveals Christ's role as the ultimate authority, the end of the lineage, and the mediator between God and humanity, reflecting His divine authority and redemptive mission",
+"major_scriptural_pattern": "the concept of division and the end of a river, symbolizing the separation of seed lines and the authority of the Messiah",
+"term": "head",
+"literal_sense": "end, extremity, or terminal point; to direct or guide",
+"symbolic_structure": "paired terms like 'head and tail' and 'head and body'; repeated use of 'head' in covenantal contexts (e.g., 'head of the lineage', 'head of the seed')",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "the number four is repeated in the four heads of the river, reflecting the numerical pattern of the covenantal seed line",
+"semantic_range": "concepts of division, lineage, authority, and the end of a life; also metaphorically the head of a body or a lineage",
+"_facts": {
+"stem": "head",
+"surface": "Head",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 529,
+"first_appearance_ref": "Genesis 2:10"
 }
 }
 }

@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "o",
 "model": "qwen3:1.7b",
-"updated": "2026-04-17T17:18:05+00:00"
+"updated": "2026-04-18T08:23:59+00:00"
 },
 "stems": {
 "out": {
@@ -65,6 +65,99 @@
 "morph": "",
 "count": 1461,
 "first_appearance_ref": "Genesis 1:9"
+}
+},
+"off": {
+"final_synthesis": "The word 'off' bridges etymological roots in Old English with biblical symbolism of removal, exclusion, and restoration. Its prevalence in OT narratives (e.g., flood, exodus) and its role in Christ's name (Ophis) reflects a theological pattern of divine intervention and salvation. This word reveals Christ's mission as both the 'remove' (exorcism) and 'to the earth' (redemption), embodying His dual nature as Savior and Redeemer.",
+"root": "off",
+"messianic_fulfillment": "Jesus Christ's name 'Off' (from the Greek 'Ophis') symbolizes His role as the 'remove' (exorcism) and 'to the earth' (redemption) in the New Covenant, fulfilling OT patterns of salvation and restoration",
+"first_appearance": "Genesis 7:4 (drying of the waters from off the earth)",
+"confidence_by_claim": {
+"etymology": "inference",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"speculation": "speculation"
+},
+"reveals_about_christ": "The word 'off' underscores Christ's dual nature: His removal from sin and His return to the earth for redemption, reflecting His mission as both Savior and Redeemer",
+"major_scriptural_pattern": "repeated use in contexts of divine removal (e.g., exodus, redemption, resurrection) and symbolic oppositions (earth vs. heaven, life vs. death)",
+"term": "off",
+"literal_sense": "from, away, beyond",
+"symbolic_structure": "paired terms (e.g., 'from off the earth' vs. 'to the earth') and repeated phrases (e.g., 'off the face of the earth') reflect themes of divine intervention and cosmic order",
+"language": "English",
+"numerical_letter_observations": "828 verses across the canon contain 'off,' with distribution skewed toward OT (Genesis, Exodus) and aligned with the book of Genesis' emphasis on creation and exodus narratives",
+"semantic_range": "removal, departure, separation, exclusion, abstraction",
+"_facts": {
+"stem": "off",
+"surface": "Off",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 828,
+"first_appearance_ref": "Genesis 7:4"
+}
+},
+"offer": {
+"final_synthesis": "The word 'offering' reveals Christ's role as the ultimate sacrifice, embodying the covenantal principle of submission and divine acknowledgment, while emphasizing the tripartite nature of the covenant and the numerical symbolism of 3 in Genesis 4:3.",
+"root": "offering",
+"messianic_fulfillment": "Christ's sacrifice as the ultimate offering, fulfilling the covenantal role of atonement and redemption",
+"first_appearance": "Genesis 4:3 (Cain and Abel's offerings)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"final_synthesis": "speculation"
+},
+"reveals_about_christ": "Christ's death and resurrection as the final offering, reconciling humanity with God through sacrifice and grace",
+"major_scriptural_pattern": "covenantal ritual of submission and divine acknowledgment",
+"term": "offering",
+"literal_sense": "presentation, gift, or sacrifice given to a deity or community",
+"symbolic_structure": "paired terms (offering/sacrifice), repeated phrases (offering unto the Lord), and numerical patterns (3: Cain, Abel, Satan)",
+"language": "English",
+"numerical_letter_observations": "The number 3 in Genesis 4:3 reflects the tripartite nature of the covenant (Cain, Abel, Satan), emphasizing the balance between sin and redemption.",
+"semantic_range": "religious ritual, covenantal submission, communal gift, and symbolic act of devotion",
+"_facts": {
+"stem": "offer",
+"surface": "Offering",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 616,
+"first_appearance_ref": "Genesis 4:3"
+}
+},
+"old": {
+"final_synthesis": "The word 'old' reveals the biblical theology of divine sovereignty, human frailty, and the covenantal promise of eternal life. Its repeated use in contexts of age and time underscores the tension between mortality and eternity, reflecting Christ's mission to redeem and transform human frailty through eternal life.",
+"root": "old",
+"messianic_fulfillment": "Speculation: The term 'old' may symbolize Christ's role as the 'Second Adam' (1 Corinthians 15:3-4), bridging human frailty and divine eternity, though this is not explicitly stated in the text.",
+"first_appearance": "Genesis 5:32 (Genesis 5:32: And Noah was five hundred years old: and Noah begat Shem, Ham, and Japheth).",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"numerical_letter_observations": "speculation"
+},
+"reveals_about_christ": "The word 'old' reveals Christ's mission to redeem mortality through eternal life, reflecting the tension between human age and divine eternity, and his role as the 'Second Adam' (1 Corinthians 15:3-4).",
+"major_scriptural_pattern": "Repeated use in contexts of covenantal age (e.g., Genesis 5:32, Moses 8:12) and the cyclical nature of time in creation and redemption.",
+"term": "Old",
+"literal_sense": "To age, become mature, or be in a state of timelessness; to be old or aged.",
+"symbolic_structure": "Embedded in the concept of 'covenantal age' (e.g., Noah's 500 years) and the tension between mortality and eternity, reflecting the tension between human frailty and divine sovereignty.",
+"language": "English",
+"numerical_letter_observations": "The word 'old' appears 443 times across the canon, with a recurring pattern of 500-year cycles (e.g., Genesis 5:32, Moses 8:12), suggesting a symbolic emphasis on divine timing and covenantal duration.",
+"semantic_range": "Age, maturity, time, covenantal age, and the concept of being 'in the image of God' (Genesis 5:32).",
+"_facts": {
+"stem": "old",
+"surface": "Old",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 443,
+"first_appearance_ref": "Genesis 5:32"
 }
 }
 }

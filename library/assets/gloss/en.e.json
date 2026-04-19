@@ -1,0 +1,130 @@
+{
+"_meta": {
+"prompt_version": "gloss-define-v1",
+"shard": "e",
+"model": "qwen3:1.7b",
+"updated": "2026-04-18T08:54:22+00:00"
+},
+"stems": {
+"eat": {
+"final_synthesis": "The word 'eat' encapsulates the paradox of spiritual nourishment and the consequence of spiritual consumption, reflecting Christ's mission to offer salvation through faith and the transformative power of the Eucharist, emphasizing the interplay between freedom, prohibition, and redemption in Scripture.",
+"root": "eat",
+"messianic_fulfillment": "Jesus' teaching on the Eucharist (e.g., 'This is my body' in Matthew 26:28) and the command to 'eat of it' (Luke 22:17) fulfill the symbolic meaning of consuming spiritual nourishment",
+"first_appearance": "Genesis 2:16 (Genesis 2:16: 'Of every tree of the garden thou mayest freely eat')",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The word 'eat' reveals Christ's role as the spiritual nourishment (John 6:35), the necessity of faith (Matthew 28:19), and the transformative power of the Eucharist (1 Corinthians 10:16)",
+"major_scriptural_pattern": "the command to eat from the tree of the garden, followed by the prohibition of eating from the tree of knowledge of good and evil, and the consequence of death",
+"term": "eat",
+"literal_sense": "to consume or ingest food",
+"symbolic_structure": "the tension between freedom and prohibition, the role of the serpent as a tempter, and the dual meaning of 'eat' as both consumption and spiritual reckoning",
+"language": "English",
+"numerical_letter_observations": "636 verses across the canon, with the earliest appearance in Genesis 2:16, and the word appearing in 450 OT verses (OT:450) and 135 NT verses (NT:135)",
+"semantic_range": "literal (eating physical food) and metaphorical (eating spiritual nourishment, consuming, or rejecting something)",
+"_facts": {
+"stem": "eat",
+"surface": "Eat",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 636,
+"first_appearance_ref": "Genesis 2:16"
+}
+},
+"egypt": {
+"final_synthesis": "The word 'Egypt' encapsulates the tension between divine sovereignty and human limitation, revealing Christ's mission as both a liberator and a redeemer. Its historical and theological context underscores the covenantal nature of God's promises, with the Exodus narrative paralleling the New Covenant. The repeated use of Egypt in the Bible reflects the cyclical nature of divine intervention, emphasizing that salvation is not merely a historical event but a perpetual promise through Christ, who fulfills the prophecy of a new exodus and a restored Israel.",
+"root": "egypt",
+"messianic_fulfillment": "Egypt is often interpreted as a symbolic fulfillment of the Messiah's role in redeeming Israel, with the Exodus narrative paralleling the New Covenant and the promise of a new exodus through Christ",
+"first_appearance": "Genesis 12:10 (Abraham's journey to Egypt during the famine)",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The word 'Egypt' reveals Christ's mission as a redeemer who brings liberation from bondage, His role as the new Exodus, and the enduring covenantal relationship between God and His people, reflecting His wisdom in orchestrating salvation through both history and prophecy",
+"major_scriptural_pattern": "The recurring theme of Egypt as a foreign land, often linked to exile, redemption, and the Exodus narrative, with a focus on the covenantal relationship between God and Israel",
+"term": "Egypt",
+"literal_sense": "A country in the eastern Mediterranean, known for its pharaonic civilization and historical significance in the Bible",
+"symbolic_structure": "Repeated phrases like 'go down into Egypt' (Exodus 12:12), paired terms 'famine' and 'Egypt' (Genesis 12:11), and numerical patterns (e.g., 12, 499) reflecting the cyclical nature of divine intervention and human suffering",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The number 12 appears 544 times across the canon, symbolizing completeness and divine purpose, while the letter 'e' in 'Egypt' (E-G-Y-P-T) mirrors the Hebrew root 'Egyp' (E-G-Y-P), emphasizing the connection between the land and the covenantal promise",
+"semantic_range": "A geopolitical entity, a metaphor for exile, a symbol of divine judgment, and a site of redemption in biblical theology",
+"_facts": {
+"stem": "egypt",
+"surface": "Egypt",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 544,
+"first_appearance_ref": "Genesis 12:10"
+}
+},
+"enemy": {
+"final_synthesis": "The word 'enemies' encapsulates the tension between divine sovereignty and human frailty, reflecting Christ's mission to reconcile adversaries through love, deliverance, and redemption. Its repeated appearance in scripture underscores its theological significance, from covenantal protection to messianic fulfillment, and its role in shaping the narrative of salvation history.",
+"root": "emenes",
+"messianic_fulfillment": "Jesus Christ is depicted as the ultimate deliverer from enemies (e.g., Matthew 10:28-31), fulfilling the OT promise of a Savior who defeats adversaries and brings restoration",
+"first_appearance": "Genesis 14:20 (Genesis 14:20: 'And behold, we are again delivered out of the hands of our enemies.')",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The word reveals Christ's role as a mediator between God and humanity, a conqueror over sin and death, and a redeemer who brings salvation from spiritual bondage",
+"major_scriptural_pattern": "repeated use in covenantal contexts (e.g., Deuteronomy 33:7, 2 Chronicles 6:34) to signify divine intervention, deliverance, and the role of God as a protector and redeemer",
+"term": "enemies",
+"literal_sense": "adversaries, foes, or rivals, particularly in a conflictual or hostile context",
+"symbolic_structure": "paired terms like 'enemies' and 'help' (Deuteronomy 33:7) reflect the tension between external adversaries and divine deliverance, while numerical patterns (479 verses) emphasize its ubiquity in scripture",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The word appears 479 times across the canon, with significant distribution in OT (Genesis, Deuteronomy, 2 Chronicles), suggesting its centrality in theological discourse and covenantal theology",
+"semantic_range": "opposition, conflict, divine deliverance, and the concept of being under threat or subjugation, often linked to covenantal relationships and spiritual warfare",
+"_facts": {
+"stem": "enemy",
+"surface": "Enemies",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 479,
+"first_appearance_ref": "Genesis 14:20"
+}
+},
+"ever": {
+"final_synthesis": "The word 'ever' encapsulates the eternal nature of God, the covenantal fidelity of Christ, and the unchanging promises of salvation. Its etymology and symbolic use in covenantal contexts reveal Christ's role as the eternal sustainer of creation and the fulfillment of divine will, emphasizing his divine sovereignty and unchanging character.",
+"root": "ever",
+"messianic_fulfillment": "Jesus Christ is referred to as 'Ever' in the Greek name 'Eva' (meaning 'life'), and in the Hebrew name 'Elohim' (God), reflecting his role as the eternal sustainer of creation and the fulfillment of divine promises",
+"first_appearance": "Genesis 3:22 (Genesis 3:22: 'I will put you to death, but yet you shall not die; for I will not take my own life from you, and you shall not die')",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "inference",
+"messianic_reading": "speculation"
+},
+"reveals_about_christ": "The word 'ever' reveals Christ's eternal nature, his role as the eternal sustainer of creation, and his fulfillment of covenantal promises, emphasizing his divine sovereignty and unchanging character",
+"major_scriptural_pattern": "covenantal promises of eternal life and unchanging divine presence, recurring in passages of salvation, redemption, and covenantal fidelity",
+"term": "ever",
+"literal_sense": "to remain, to be present, to continue, to endure",
+"symbolic_structure": "paired terms (e.g., 'ever' and 'never'), repeated phrases (e.g., 'ever since'), and numerical patterns (e.g., the number 3 in Genesis 3:22, symbolizing the Trinity)",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The letters 'E-V-E-R' sum to 16, a number associated with the Trinity in Christian theology, and the letter 'E' (Elohim) in Hebrew reflects divine sovereignty",
+"semantic_range": "eternity, permanence, ongoing existence, covenantal fidelity, divine promise, temporal continuity, unchanging nature",
+"_facts": {
+"stem": "ever",
+"surface": "Ever",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 431,
+"first_appearance_ref": "Genesis 3:22"
+}
+}
+}
+}

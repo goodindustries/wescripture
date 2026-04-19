@@ -1,0 +1,131 @@
+{
+"_meta": {
+"prompt_version": "gloss-define-v1",
+"shard": "a",
+"model": "qwen3:1.7b",
+"updated": "2026-04-18T21:56:14+00:00"
+},
+"stems": {
+"answer": {
+"final_synthesis": "The verb 'answer' underscores the covenantal responsibility of humans to respond to God's revelation, with Jesus as the ultimate 'answer' to the divine call. This reflects the biblical theme of divine sovereignty and human agency, where the Messiah fulfills the covenantal promise to answer God's questions and redeem humanity, embodying both the pattern of covenantal fidelity and the messianic fulfillment of divine will.",
+"root": "answer",
+"messianic_fulfillment": "Jesus is portrayed as the ultimate 'answer' to God's call (e.g., John 15:10: 'I am the vine'), fulfilling the covenantal role of responding to divine revelation and redeeming humanity",
+"first_appearance": "Genesis 18:27: 'I am' (God's self-revelation), which is echoed in the verb 'answer' as a covenantal response to Elijah's call",
+"confidence_by_claim": {
+"etymology": "pattern",
+"symbolic_structure": "inference",
+"messianic_reading": "speculation"
+},
+"reveals_about_christ": "the word 'answer' reveals Christ's role as the mediator between God and humanity, embodying the fulfillment of the covenantal promise to respond to divine revelation and redeem the world",
+"major_scriptural_pattern": "repeated use in covenantal contexts (e.g., Genesis 18:27, 1 Kings 18:8) and symbolic oppositions between 'I am' (divine) and 'answer' (human response), reflecting the tension between divine sovereignty and human agency",
+"term": "answer",
+"literal_sense": "to respond, to answer, or to fulfill a promise",
+"symbolic_structure": "paired terms 'I am' (divine) and 'answer' (human), with numerical patterns (e.g., 18:27, 1 Kings 18:8) and repeated phrases (e.g., 'go, tell thy lord') emphasizing covenantal fidelity and the call to respond to God's presence",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "the number 18 appears in Genesis 18:27, and the letter 'a' is repeated in 'answer' (1st and 2nd syllables), symbolizing the cyclical nature of covenantal promises and the need for continual response",
+"semantic_range": "actions of giving a reply, fulfilling a covenantal obligation, or embodying divine presence; also metaphorically signifies resolution or completion",
+"_facts": {
+"stem": "answer",
+"surface": "Answered",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 557,
+"first_appearance_ref": "Genesis 18:27"
+}
+},
+"accord": {
+"final_synthesis": "The word 'according' reveals Christ's identity as the obedient servant, embodying covenantal fidelity and the transformative power of divine command in salvation history.",
+"root": "accord",
+"messianic_fulfillment": "fulfilled in Christ's obedience (e.g., Matthew 5:16, Luke 2:40), where 'according' mirrors the New Testament's emphasis on submission to God's will",
+"first_appearance": "Genesis 6:22 (Noah's obedience to God's word)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "pattern"
+},
+"reveals_about_christ": "Christ's life exemplifies 'according' to God's law, highlighting his role as the mediator of covenantal fidelity and the fulfillment of divine command",
+"major_scriptural_pattern": "repeated use in covenantal contexts (e.g., Genesis 18:10, Exodus 20:2), paired with 'according to' (e.g., Genesis 18:10), and numerical emphasis in Genesis (544 verses)",
+"term": "according",
+"literal_sense": "to agree with, in accordance with, as per",
+"symbolic_structure": "paired with 'according to' (e.g., Genesis 18:10), covenantal fidelity, and symbolic oppositions (e.g., 'according to the time of life' in Genesis 18:10)",
+"language": "English",
+"numerical_letter_observations": "high frequency in Genesis (544 verses), repeated in covenantal passages, and embedded in numerical patterns (e.g., 'according to the time of life' in Genesis 18:10)",
+"semantic_range": "obedience, compliance, adherence to laws, covenantal fidelity, divine command",
+"_facts": {
+"stem": "accord",
+"surface": "According",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 544,
+"first_appearance_ref": "Genesis 6:22"
+}
+},
+"appoint": {
+"final_synthesis": "The word 'appoint' underscores the biblical theme of divine sovereignty and the covenantal nature of Jesus' mission. Its etymology and symbolic use in scripture highlight the fulfillment of God's purpose through Christ, where the act of appointing reflects both divine selection and the redemptive work of the Messiah.",
+"root": "appoint",
+"messianic_fulfillment": "The term 'appoint' is central to the fulfillment of Jesus as the Messiah, as seen in the scriptures where He is appointed as the Lamb of God and the Seed of the Woman (e.g., 1 Kings 20:42, Genesis 4:25).",
+"first_appearance": "Genesis 4:25 (Genesis 4:25: 'God hath appointed me another seed, instead of Abel, whom Cain slew').",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The word 'appoint' reveals Christ's role as a divine agent of selection and redemption, emphasizing His mission to fulfill the covenant and restore humanity to God through sacrifice and resurrection.",
+"major_scriptural_pattern": "The appointment of individuals for specific roles, particularly in the context of covenant, priesthood, and the Messiah, reflecting the divine sovereignty and the establishment of divine order.",
+"term": "appoint",
+"literal_sense": "To set apart for a purpose, to assign a role or task, or to designate as a representative of a higher authority.",
+"symbolic_structure": "Repeated phrases like 'appointed' in covenantal contexts, paired terms such as 'appointed' and 'set apart,' and numerical patterns (e.g., the number 25, symbolizing divine selection).",
+"language": "English",
+"numerical_letter_observations": "The word 'appoint' has 8 letters, and its first appearance in Genesis 4:25 aligns with the numerical significance of 25, which is often associated with divine selection in biblical texts.",
+"semantic_range": "Includes the act of designating someone for a specific role, the establishment of a covenant, the appointment of a leader, and the fulfillment of divine purpose in the context of the Messiah.",
+"_facts": {
+"stem": "appoint",
+"surface": "Appointed",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 388,
+"first_appearance_ref": "Genesis 4:25"
+}
+},
+"aaron": {
+"final_synthesis": "The term 'Aaron' underscores Christ's role as a covenantal mediator, reflecting divine wisdom in sustaining humanity through redemption and restoration, aligning with the pattern of divine sovereignty and human salvation.",
+"root": "Aaron",
+"messianic_fulfillment": "Aaron's role as a covenant mediator is fulfilled in Jesus Christ, who acts as the ultimate mediator between God and humanity (1 Timothy 2:5-6). The term 'Aaron' echoes Christ's role as a servant-leader and redeemer.",
+"first_appearance": "The term first appears in Exodus 4:14, where God addresses Moses, instructing him to speak to Aaron, establishing Aaron as a key figure in the covenantal narrative.",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference",
+"final_synthesis": "speculation"
+},
+"reveals_about_christ": "The word 'Aaron' reveals Christ's dual nature as a servant (mediator) and a redeemer, reflecting His mission to restore covenantal relationships and offer salvation through sacrifice.",
+"major_scriptural_pattern": "Aaron is central to covenantal structures, including the priesthood, exodus, and redemption. His role as a mediator and leader reflects the pattern of divine authority and covenantal fidelity.",
+"term": "Aaron",
+"literal_sense": "Aaron is a name meaning 'defender' or 'savior' in Hebrew, derived from the root 'aron' (to save, to redeem). It denotes a leader, priest, and mediator in the covenant.",
+"symbolic_structure": "Aaron is paired with his sons (Leviticus 8:36) and repeatedly invoked in covenantal contexts (e.g., Leviticus 16:2). The term embodies symbolic oppositions between mortal and divine, and numerical patterns like the 368 verses across the canon highlight its prevalence.",
+"language": "English",
+"numerical_letter_observations": "The root 'Aaron' (Hebrew: 'aron') contains 5 letters, and its appearance in 368 verses across the canon reflects its centrality. The letter 'r' appears in the root, symbolizing divine intervention and redemption.",
+"semantic_range": "Aaron encompasses roles as a prophet, priest, leader, and mediator in the covenant, emphasizing divine authority, salvation, and intercession. It also symbolizes divine protection and the fulfillment of God's promises.",
+"_facts": {
+"stem": "aaron",
+"surface": "Aaron",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 368,
+"first_appearance_ref": "Exodus 4:14"
+}
+}
+}
+}

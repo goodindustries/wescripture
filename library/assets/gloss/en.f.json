@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "f",
 "model": "qwen3:1.7b",
-"updated": "2026-04-17T17:34:47+00:00"
+"updated": "2026-04-19T20:36:10+00:00"
 },
 "stems": {
 "fath": {
@@ -34,6 +34,221 @@
 "morph": "",
 "count": 1168,
 "first_appearance_ref": "Genesis 2:24"
+}
+},
+"faith": {
+"final_synthesis": "The term 'faith' encapsulates the core of Christian theology, revealing Christ's mission as one of transformative faith, covenantal fidelity, and the imperative to trust in God's promises, reflecting both the etymological roots and symbolic structures of scripture.",
+"root": "pistis",
+"messianic_fulfillment": "Jesus' call to 'faith' in Mark 11:22-23 and Acts 1:8, where it embodies the disciples' trust in God's plan, fulfilling the Old Testament covenantal expectation of faith as a transformative act",
+"first_appearance": "Numbers 12:7 (Hebrew: 'pistis')-Moses' faithfulness as a servant of testimony",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference",
+"final_synthesis": "speculation"
+},
+"reveals_about_christ": "The term reveals Christ's mission through the lens of faith-His call to discipleship, the transformative power of belief, and the necessity of spiritual commitment to fulfill God's promises",
+"major_scriptural_pattern": "Covenantal fidelity, redemption, and judgment through the lens of faith, with repeated emphasis on trust in God's promises and the consequences of disbelieving them",
+"term": "faith",
+"literal_sense": "belief, trust, faith, spiritual commitment",
+"symbolic_structure": "Paired terms like 'faith' and 'deceit' in covenantal contexts, repeated phrases in passages like Hebrews 3:5 and Alma 50:22, and numerical patterns in verse counts (687 verses) reflecting its centrality in scripture",
+"language": "English",
+"numerical_letter_observations": "Repetition of 'faith' in 687 verses, with 272 in NT (Numbers, Titus), 192 in BoM, and 188 in other volumes, suggesting its pervasive role in theological discourse",
+"semantic_range": "trust, belief, faith, spiritual conviction, covenantal fidelity, redemption, judgment, exodus, inheritance, resurrection, Zion",
+"_facts": {
+"stem": "faith",
+"surface": "Faith",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 687,
+"first_appearance_ref": "Numbers 12:7"
+}
+},
+"father": {
+"final_synthesis": "The term 'Fathers' reveals the theological framework of covenantal parenthood, where the patriarchal lineage is both a historical and symbolic foundation for divine promise and redemption. Its repeated use in scripture highlights the interplay between mortality and eternity, and its messianic fulfillment points to Christ as the ultimate Father and mediator, embodying the wisdom, character, and mission of Jesus Christ.",
+"root": "father",
+"messianic_fulfillment": "In the New Testament, 'Fathers' refers to the Old Testament patriarchs, symbolizing the fulfillment of God's covenant through Christ, who is the ultimate Father and mediator of salvation",
+"first_appearance": "Genesis 15:15 (Abram's covenant with God, where 'fathers' refers to the patriarchal lineage)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The term 'Fathers' underscores Christ's role as the eternal Father, the mediator between God and humanity, and the fulfillment of covenantal promises in the New Testament",
+"major_scriptural_pattern": "Repeated paired terms 'Fathers and Children' in covenantal passages, emphasizing the covenantal relationship and the role of the patriarch as a mediator between God and humanity",
+"term": "Fathers",
+"literal_sense": "parents, elders, or those who bear the title of father in a covenantal context",
+"symbolic_structure": "Embedded in covenantal architecture, with 'Fathers' paired with 'Children' and linked to 'Buryingplace' (Genesis 47:30), reflecting the tension between mortality and eternal life, and the theme of divine promise and fulfillment",
+"language": "English",
+"numerical_letter_observations": "The number 15 (Genesis 15:15) and the repetition of 'Fathers' across 631 verses suggest a thematic emphasis on lineage and covenantal continuity, with possible numerical symbolism (e.g., 15 as a key covenantal number)",
+"semantic_range": "Covenantal authority, lineage, familial bonds, and the role of patriarchs in divine promises",
+"_facts": {
+"stem": "father",
+"surface": "Fathers",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 631,
+"first_appearance_ref": "Genesis 15:15"
+}
+},
+"fear": {
+"final_synthesis": "The term 'fear' encapsulates the tension between divine authority and human response, revealing Christ's mission as one of reconciling fear with reverence and transforming disobedience into obedience. Its theological depth lies in the covenantal structure, where fear is both a divine discipline and a pathway to redemption, reflecting the wisdom of God in guiding humanity toward truth and holiness.",
+"root": "fear",
+"messianic_fulfillment": "the term is used in the context of Jesus Christ's role as a mediator between God and humanity, where fear is transformed into reverence and trust in divine sovereignty",
+"first_appearance": "Genesis 9:2 (Genesis 9:2: 'And the fear of God and the dread of man shall be upon them')",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"numerical_letter_observations": "speculation"
+},
+"reveals_about_christ": "the word reveals Christ's character as a Savior who calls people to fear God not as a threat but as a source of purpose and redemption, reflecting the wisdom of covenantal faith and the mission of transformative love",
+"major_scriptural_pattern": "the theme of fear as a divine discipline, reflecting covenantal obligations and the consequences of human disobedience, with repeated emphasis on divine sovereignty and human vulnerability",
+"term": "fear",
+"literal_sense": "a state of anxiety, dread, or trepidation, often associated with divine authority or moral conviction",
+"symbolic_structure": "paired terms like 'fear' and 'serve' (1 Samuel 12:24), repeated phrases such as 'fear and dread' (Exodus 15:16), and covenantal contrasts between human fear and divine deliverance",
+"language": "English",
+"numerical_letter_observations": "the term appears in 627 verses, with a distribution across volumes (ot:360, bofm:115, nt:110, other:37, pgp:5), suggesting widespread theological engagement but no specific numerical pattern in root letters",
+"semantic_range": "includes reverence, awe, terror, and the consequence of human response to divine will, spanning moral, covenantal, and existential dimensions",
+"_facts": {
+"stem": "fear",
+"surface": "Fear",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 627,
+"first_appearance_ref": "Genesis 9:2"
+}
+},
+"fire": {
+"final_synthesis": "The word 'fire' reveals Jesus' role as the divine fire of purification and sacrifice, fulfilling covenant promises through redemption and renewal, reflecting His mission to transform through divine action.",
+"root": "fir",
+"messianic_fulfillment": "Jesus as the Lamb of God (Revelation 1:5), symbolizing sacrifice and redemption (Luke 22:29-30)",
+"first_appearance": "Genesis 19:24 (destruction of Sodom)",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"numerical_letter_observations": "speculation"
+},
+"reveals_about_christ": "Jesus' role as the ultimate sacrifice, embodying divine fire for purification and renewal, and fulfilling covenant promises",
+"major_scriptural_pattern": "divine judgment, purification, and sacrifice (e.g., Lot's Lot, Abraham's sacrifice, Exodus 19:16)",
+"term": "fire",
+"literal_sense": "fire (as in heat, destruction, or divine presence)",
+"symbolic_structure": "paired terms (fire/brimstone, fire/wood, fire/lamb), repeated phrases (fire and brimstone), covenant patterns (covenant with Abraham, Exodus 19:16)",
+"language": "English",
+"numerical_letter_observations": "19 (Sodom), 24 (Genesis), 7 (Abraham's sacrifice), 16 (Exodus 19:16) - numbers 19, 24, 7, 16 are significant in biblical numerology",
+"semantic_range": "destruction, purification, divine action, symbol of judgment, sacrifice, and renewal",
+"_facts": {
+"stem": "fire",
+"surface": "Fire",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 564,
+"first_appearance_ref": "Genesis 19:24"
+}
+},
+"flesh": {
+"final_synthesis": "The word 'flesh' embodies the tension between divine essence and human nature, central to biblical theology. Its etymology and usage reveal a focus on unity, covenantal fidelity, and the incarnation of God as flesh. The symbolic structures of paired terms, numerical patterns, and covenantal themes highlight its role in shaping Christian understanding of divinity, humanity, and the Church. The messianic fulfillment, though speculative, aligns with the broader biblical narrative of divine humanity and the redemptive work of Christ.",
+"root": "lesh",
+"messianic_fulfillment": "Speculation: The term 'flesh' is used in the New Testament to refer to the Messiah as the 'flesh of God' (Hebrews 10:5), though this is not explicitly stated in the provided facts. The etymology and usage suggest a theological emphasis on divine humanity and the unity of God and man",
+"first_appearance": "Genesis 2:21 (Genesis 2:21: 'And the Gods caused a deep sleep to fall upon Adam; and he slept, and they took one of his ribs, and closed up the flesh in the stead thereof')",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "speculation",
+"messianic_reading": "speculation"
+},
+"reveals_about_christ": "The word 'flesh' reveals Christ's divine essence as the 'flesh of God' (Hebrews 10:5), His role as the mediator between God and humanity, and the centrality of the body in biblical theology. It underscores the paradox of divine humanity and the importance of unity in the Church",
+"major_scriptural_pattern": "covenantal use in the context of marriage and unity (e.g., 'one flesh' in Genesis 2:21 and Abraham 5:18)",
+"term": "flesh",
+"literal_sense": "the physical body or material of the human being, particularly the flesh as a biological organ or substance",
+"symbolic_structure": "paired terms 'one flesh' (Genesis 2:21) and 'flesh' as a metaphor for divine essence (Matthew 23:35), symbolic oppositions between flesh and spirit, and numerical patterns (e.g., 21, 18, 5) reflecting divine numbers",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The number 21 appears in Genesis 2:21, symbolizing completeness; the letter 'flesh' (Hebrew 'lesh') has 5 letters, reflecting the five senses or the five wounds of Christ. The letter 'f' (flesh) is repeated in key verses, emphasizing its centrality in biblical theology",
+"semantic_range": "physical manifestation, biological material, metaphorical representation of humanity, unity, and divine essence",
+"_facts": {
+"stem": "flesh",
+"surface": "Flesh",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 469,
+"first_appearance_ref": "Genesis 2:21"
+}
+},
+"fruit": {
+"final_synthesis": "The word 'fruit' encapsulates the interplay of divine creation, covenantal promise, and the transformative work of Christ, reflecting the eternal cycle of growth, salvation, and the Holy Spirit's role in the believer's life.",
+"root": "fruct",
+"messianic_fulfillment": "The concept of 'fruit' in the Garden of Eden foreshadows Christ as the 'fruit' of the Spirit (Galatians 5:22-23), where the Holy Spirit produces transformative fruit in believers, mirroring the divine promise of salvation",
+"first_appearance": "Genesis 1:11 (Genesis 1:11: 'And the Gods said: Let us prepare the earth to bring forth grass; the herb yielding seed; the fruit tree yielding fruit, after his kind, whose seed in itself yieldeth its own likeness upon the earth; and it was so, even as they ordered.')",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"unknown": "speculation"
+},
+"reveals_about_christ": "The word 'fruit' reveals Christ's role as the source of spiritual transformation, the fulfillment of the promise of 'fruit' in the Garden, and the eternal nature of the Holy Spirit's work in the believer's life",
+"major_scriptural_pattern": "creation and covenant, with repeated emphasis on the tree of knowledge and the promise of fruit in the Garden of Eden",
+"term": "fruit",
+"literal_sense": "the result of growth, particularly the produce of plants or the outcome of a process",
+"symbolic_structure": "paired terms (fruit/seed, fruit/creation), numerical patterns (11 for the Garden), and the symbolic opposition of 'fruit' (produce) vs. 'seed' (potential), reflecting divine sovereignty and the promise of salvation",
+"language": "English",
+"numerical_letter_observations": "The number 11 appears in Genesis 1:11, symbolizing completeness and the divine order, while the letter 'fruct' (from 'fructus' in Latin) reflects the cyclical nature of creation and redemption",
+"semantic_range": "produce, result, ripening, consequence, and the symbolic representation of divine creation and covenant fulfillment",
+"_facts": {
+"stem": "fruit",
+"surface": "Fruit",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 371,
+"first_appearance_ref": "Genesis 1:11"
+}
+},
+"fall": {
+"final_synthesis": "The term 'fall' reveals Christ's mission as one of redemption, where the biblical theme of descent (sin, loss) is reversed through resurrection, reflecting the divine plan of restoration and victory",
+"root": "fall",
+"messianic_fulfillment": "Jesus' resurrection is framed as a reversal of the fall from sin, with the term 'fall' echoing the biblical theme of redemption through Christ",
+"first_appearance": "Genesis 2:21 (God causing a deep sleep to fall upon Adam)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "inference",
+"messianic_reading": "inference",
+"final_synthesis": "speculation"
+},
+"reveals_about_christ": "the word 'fall' underscores Christ's role in reversing human fallibility, emphasizing salvation and the triumph over death through resurrection",
+"major_scriptural_pattern": "repeated use in creation, covenant, and redemption contexts, often paired with 'rise' or 'rest'",
+"term": "fall",
+"literal_sense": "to cause to descend or decrease in height",
+"symbolic_structure": "opposition between 'fall' (sin, loss) and 'rise' (redemption, restoration), with numerical repetition (four letters) symbolizing cyclical reversal",
+"language": "English",
+"numerical_letter_observations": "the letter 'L' repeats twice, possibly symbolizing dualism or cyclical nature, and the fourth letter (L) may align with the number four in ancient numerology",
+"semantic_range": "actions of descent, loss, or reversal; metaphor for sin, death, or redemption",
+"_facts": {
+"stem": "fall",
+"surface": "Fall",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 348,
+"first_appearance_ref": "Genesis 2:21"
 }
 }
 }

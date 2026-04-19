@@ -1,0 +1,161 @@
+{
+"_meta": {
+"prompt_version": "gloss-define-v1",
+"shard": "t",
+"model": "qwen3:1.7b",
+"updated": "2026-04-19T13:39:58+00:00"
+},
+"stems": {
+"took": {
+"final_synthesis": "The word 'took' encapsulates Christ's dual nature as both divine executor (e.g., redeeming humanity) and human participant (e.g., salvation), reflecting the tension between divine sovereignty and human responsibility in redemptive history.",
+"root": "took",
+"messianic_fulfillment": "Jesus' role as the 'One who took' (e.g., salvation, redemption, authority) fulfills the OT pattern of divine action in human history",
+"first_appearance": "Genesis 2:15 (Genesis 2:15)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The word 'took' reveals Christ's mission as both agent and recipient of divine action, reflecting his role in redeeming humanity and establishing new covenants",
+"major_scriptural_pattern": "repeated use in covenantal contexts (e.g., creation, exodus, redemption) and symbolic oppositions (e.g., 'took' vs. 'gave')",
+"term": "took",
+"literal_sense": "to take, as in acquiring or seizing something",
+"symbolic_structure": "paired terms (e.g., 'took' and 'gave') and repeated phrases (e.g., 'took the man' in Genesis 2:15) reflecting divine sovereignty and human responsibility",
+"language": "English",
+"numerical_letter_observations": "849 verses across canonical texts, with 566 in OT (Genesis, Exodus, Psalms), 161 in NT (Matthew, John), and 103 in other volumes",
+"semantic_range": "actions of acquiring, seizing, or withholding; metaphorically, responsibility, authority, or salvation",
+"_facts": {
+"stem": "took",
+"surface": "Took",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 849,
+"first_appearance_ref": "Genesis 2:15"
+}
+},
+"two": {
+"final_synthesis": "The word 'two' reveals the theological tension between creation's duality and redemption's resolution, reflecting Jesus Christ as the mediator who reconciles the covenant through the fulfillment of the laws with 'two' and the establishment of a new, unified covenant.",
+"root": "dou",
+"messianic_fulfillment": "the laws with 'two' are fulfilled by Jesus Christ, who embodies the fullness of the covenant and the resolution of duality in redemption",
+"first_appearance": "Genesis 1:16 (God creates two great lights, the sun and moon)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "Jesus Christ's role as the mediator of the covenant, the fulfillment of the laws with 'two' (e.g., the two tablets of stone), and the resolution of duality through His resurrection and the establishment of the new covenant",
+"major_scriptural_pattern": "repeated use in covenantal laws, creation, and exodus narratives, often paired with 'one' to emphasize duality",
+"term": "two",
+"literal_sense": "two, duality, or the number two",
+"symbolic_structure": "paired terms (e.g., 'two wives'), repeated phrases (e.g., 'two lights'), and covenantal patterns (e.g., laws with 'two' as a numerical motif)",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "the number 2 is central in the laws, with the Greek letter 'T' (tau) representing 'two' in the Septuagint, and the letter 'D' (daleth) in Hebrew reflecting the root 'dou'",
+"semantic_range": "quantity, duality, opposition, and symbolic significance in covenantal contexts; also appears in laws, creation, and exodus narratives",
+"_facts": {
+"stem": "two",
+"surface": "Two",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 826,
+"first_appearance_ref": "Genesis 1:16"
+}
+},
+"togeth": {
+"final_synthesis": "The word 'togeth' underscores the divine narrative of creation and redemption, where God's sovereignty is manifested through the act of gathering and uniting, reflecting Christ's mission to restore unity and order in the world. Its repeated use in the canonical text emphasizes the centrality of divine assembly in both the Old and New Testaments, revealing the theological framework of Christ's role as the Creator, Sustainer, and Redeemer.",
+"root": "togeth",
+"messianic_fulfillment": "Speculation: The root's association with 'gather' and 'unite' aligns with Christ's role in reconciling divided hearts and uniting the body of Christ, though explicit Messianic references are absent in the given texts",
+"first_appearance": "Genesis 1:9 ('Let the waters under the heaven be gathered together unto one place')",
+"confidence_by_claim": {
+"etymology": "pattern",
+"symbolic_structure": "pattern",
+"messianic_reading": "speculation"
+},
+"reveals_about_christ": "The word reveals Christ's mission through the lens of unity and creation, highlighting His role as the Creator and Sustainer of order, and His redemptive work in reconciling humanity to God through the Holy Spirit",
+"major_scriptural_pattern": "Repetition of the root in Genesis 1:9-13, emphasizing the divine act of unifying waters and land, reflecting the foundational theme of creation through collective assembly",
+"term": "togeth",
+"literal_sense": "together, gathered, in union",
+"symbolic_structure": "Embedded in the structure of creation exordium, where the root mirrors the divine command to 'gather' and 'unite' elements of the cosmos, symbolizing the Father's sovereignty over order and the Son's role in its fulfillment",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The root 'togeth' appears 685 times across the canon, with a consistent letter count (6 letters: t-o-g-e-t-h), suggesting a deliberate textual pattern for emphasis or mnemonic value",
+"semantic_range": "Unity, cohesion, divine order, creation, assembly, and the act of bringing things into collective existence",
+"_facts": {
+"stem": "togeth",
+"surface": "Together",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 685,
+"first_appearance_ref": "Genesis 1:9"
+}
+},
+"thousand": {
+"final_synthesis": "The term 'thousand' reflects the interplay of numerical symbolism, covenantal provision, and symbolic oppositions in the Bible. Its centrality in Levitical offerings and its use in the New Testament underscores its role in revealing Christ's redemptive work and his fulfillment of divine promises through abundance and mediation.",
+"root": "thous",
+"messianic_fulfillment": "The term 'thousand' is used in the context of Jesus as the 'One who will give life to the dead' (1 Corinthians 15:54), symbolizing his role as the mediator of a new covenant. Its numerical significance (1000) reflects the abundance of his redemptive work.",
+"first_appearance": "Genesis 20:16",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference"
+},
+"reveals_about_christ": "The word 'thousand' reveals Christ's role as the mediator of a new covenant, offering abundant grace and redemption. Its numerical symbolism underscores his universal salvific work, while its covenantal use highlights his fulfillment of divine promises.",
+"major_scriptural_pattern": "repetition in covenant contexts (e.g., temple, sacrifice, exodus), paired terms (e.g., 'thousand' + 'hundred'), and numerical patterns (e.g., 1000 in Levitical offerings)",
+"term": "thousand",
+"literal_sense": "a hundred",
+"symbolic_structure": "paired terms (e.g., 'thousand' + 'hundred'), covenant patterns (e.g., 'thousand' in Levitical offerings), and symbolic oppositions (e.g., 'thousand' vs. 'hundred' in numerical symbolism)",
+"language": "English",
+"numerical_letter_observations": "The number 1000 is emphasized in Levitical offerings (e.g., 1000 talents of gold), reflecting its centrality in covenantal provision. The letter 'thous' (Greek) and 'qadosh' (Hebrew) both derive from the root 'thous,' emphasizing its numerical and symbolic weight.",
+"semantic_range": "quantity, abundance, symbolic representation of vastness, covenant terms, numerical symbolism",
+"_facts": {
+"stem": "thousand",
+"surface": "Thousand",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 515,
+"first_appearance_ref": "Genesis 20:16"
+}
+},
+"toward": {
+"final_synthesis": "The term 'toward' reflects God's sovereignty in guiding creation, covenantal fidelity, and Christ's redemptive mission. Its repeated use in scripture underscores the centrality of direction in divine will, from the rivers of Eden to the exodus and Zion, revealing Christ as the ultimate 'toward'-the one who restores alignment with God's purpose and leads humanity toward eternal life.",
+"root": "hemen",
+"messianic_fulfillment": "Symbolizes Christ's direction toward salvation, redemption, and the new creation (e.g., 'toward the east' in Exodus 14:12, 'toward the north' in Isaiah 11:10)",
+"first_appearance": "Genesis 2:14 (direction of rivers)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"speculation": "speculation"
+},
+"reveals_about_christ": "Reveals Christ's mission to restore direction, fulfill covenantal promises, and lead people toward God's kingdom and eternal life",
+"major_scriptural_pattern": "repeated use in covenant contexts (e.g., rivers, porters, exodus, Zion) to signify alignment with divine will",
+"term": "toward",
+"literal_sense": "to go toward, in the direction of",
+"symbolic_structure": "paired terms (e.g., 'toward the east' vs. 'toward the west'), covenant patterns (e.g., 'toward the land of the plain'), and numerical letter observations (e.g., 'toward' appears 358 times across canon)",
+"language": "English",
+"numerical_letter_observations": "Occurrences distributed as ot:226 (Genesis), bofm:73 (1 Chronicles), nt:50 (Matthew), other:5 (Ephesians), pgp:4 (Philippians)",
+"semantic_range": "direction, movement, metaphorical use (e.g., toward God, toward salvation, toward the east/west)",
+"_facts": {
+"stem": "toward",
+"surface": "Toward",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 358,
+"first_appearance_ref": "Genesis 2:14"
+}
+}
+}
+}

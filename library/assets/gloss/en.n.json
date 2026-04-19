@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "n",
 "model": "qwen3:1.7b",
-"updated": "2026-04-17T18:19:26+00:00"
+"updated": "2026-04-18T19:26:36+00:00"
 },
 "stems": {
 "name": {
@@ -34,6 +34,127 @@
 "morph": "",
 "count": 977,
 "first_appearance_ref": "Genesis 2:11"
+}
+},
+"nation": {
+"final_synthesis": "The term 'nation' reveals Christ's mission as the reconciling agent, embodying the divine pattern of covenantal unity and the messianic fulfillment of universal sovereignty over divided humanity.",
+"root": "naba",
+"messianic_fulfillment": "Ezekiel 37:22: 'one nation in the land' mirrors the messianic vision of universal unity under a single king (Isaiah 11:11-12)",
+"first_appearance": "Genesis 10:5 (Genesis 10:5: These are the sons of Ham, after their families, after their tongues, in their countries, and in their nations.)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "Christ's role as the universal reconciler, bridging divine sovereignty and human division, reflecting the messianic promise of covenantal unity",
+"major_scriptural_pattern": "covenantal unity, divine sovereignty, hierarchical division",
+"term": "nation",
+"literal_sense": "to be, to live, to dwell",
+"symbolic_structure": "paired terms (nations and kings), numerical patterns (10:5, 10:20), covenantal oppositions (divided vs. united)",
+"language": "English",
+"numerical_letter_observations": "repeated use of '10' in Genesis 10:5, 10:20, and Ezekiel 37:22, reflecting divine order and completeness",
+"semantic_range": "people, communities, groups, divine covenantal entities, political sovereignty",
+"_facts": {
+"stem": "nation",
+"surface": "Nations",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 574,
+"first_appearance_ref": "Genesis 10:5"
+}
+},
+"none": {
+"final_synthesis": "The term 'none' reflects the covenantal emphasis on absence and nonexistence, linking it to Christ's sacrifice, the disciples, and the fulfillment of redemption. Its centrality in the Bible underscores its role in covenantal theology, where absence and nonexistence are symbols of God's presence and salvation.",
+"root": "nab",
+"messianic_fulfillment": "The term 'none' is linked to the Lamb of God (Revelation 1:5) and the disciples (Matthew 16:13), suggesting its role in redemption and the fulfillment of the covenantal promise of salvation.",
+"first_appearance": "Genesis 23:6",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference",
+"final_synthesis": "speculation"
+},
+"reveals_about_christ": "The term 'none' reveals Christ's role as the Lamb of God (Revelation 1:5), the disciple (Matthew 16:13), and the fulfillment of the covenantal promise of salvation, emphasizing His sacrifice and the absence of sin in His nature.",
+"major_scriptural_pattern": "paired terms (none/all), repeated phrases (none/many), covenantal absence (Genesis 23:6, Exodus 3:10)",
+"term": "none",
+"literal_sense": "nothing, absence, nonexistence",
+"symbolic_structure": "paired terms (none/many), covenantal opposition (Genesis 23:6, Exodus 3:10), numerical pattern (6, the number of the Lord)",
+"language": "English",
+"numerical_letter_observations": "The root 'nab' (Hebrew) contains three letters, mirroring the number 6 (the number of the Lord), and the term 'none' appears 429 times in the Bible, reflecting its centrality in covenantal discourse.",
+"semantic_range": "absence, nonexistence, lack, void, emptiness",
+"_facts": {
+"stem": "none",
+"surface": "None",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 429,
+"first_appearance_ref": "Genesis 23:6"
+}
+},
+"night": {
+"final_synthesis": "The word 'night' reveals Christ's mission as the liberator of spiritual darkness, embodying both covenantal fidelity and redemptive hope through illumination",
+"root": "nilyah",
+"messianic_fulfillment": "The Messiah is depicted as bringing light to darkness, fulfilling the covenantal role of illumination in the Kingdom of God",
+"first_appearance": "Genesis 1:5 (Genesis 1:5)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The word 'night' underscores Christ's role as the light of the world, overcoming spiritual darkness and restoring divine order",
+"major_scriptural_pattern": "creation of day and night as foundational to divine order",
+"term": "laylah",
+"literal_sense": "night (as in darkness, time, or period)",
+"symbolic_structure": "paired terms (day/night), covenantal oppositions (light/darkness), and numerical patterns (1 in Genesis 1:5)",
+"language": "Hebrew",
+"numerical_letter_observations": "The root 'nilyah' (N-I-L-A-H) contains letters summing to 10, a number associated with divine completeness in Hebrew theology",
+"semantic_range": "darkness, time, period, boundary, illumination, spiritual growth, covenantal boundary",
+"_facts": {
+"stem": "night",
+"surface": "Night",
+"lang": "hbo",
+"lemma": "3915",
+"surface_gr": "",
+"surface_he": "לָ֑יְלָה",
+"morph": "HNcmsa",
+"count": 395,
+"first_appearance_ref": "Genesis 1:5"
+}
+},
+"nephi": {
+"final_synthesis": "The term 'Nephi' embodies the intersection of divine revelation, prophetic ministry, and the human capacity to seek knowledge of God. Its repeated use in the Book of Mormon underscores the importance of faith, revelation, and the role of individuals in God's plan. While the etymology and symbolic structure are speculative, the text's emphasis on divine communication and the prophet's role aligns with the mission of Jesus Christ, who is both the fulfillment of prophecy and the source of divine revelation.",
+"root": "neph",
+"messianic_fulfillment": "Speculation: The term 'Nephi' is used in the Book of Mormon to denote a prophet, but there is no explicit biblical text linking it to the Messiah. The symbolic structure of repeated names and divine revelation aligns with the prophetic role of Jesus Christ, though this connection is not explicitly stated in the text",
+"first_appearance": "1 Nephi 1:1 (Genesis 5:1-24 in the original text)",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "speculation",
+"messianic_reading": "speculation"
+},
+"reveals_about_christ": "The term 'Nephi' highlights the importance of divine revelation, prophetic ministry, and the role of individuals as vessels of God's word, reflecting the wisdom and mission of Jesus Christ through the prophet's teachings",
+"major_scriptural_pattern": "repeated use in prophetic contexts to denote divine revelation and the role of the prophet as a vessel of God's word",
+"term": "Nephi",
+"literal_sense": "son, birth, or origin",
+"symbolic_structure": "paired with 'Neph' in different contexts (e.g., 'Nephi' vs. 'Neph' in Hebrew), repeated in multiple books, and linked to the concept of 'mystery' (1 Nephi 2:16)",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The root 'neph' (Hebrew) has three letters, matching the number 3, symbolizing completeness or divine perfection; the English stem 'nephi' has three letters, reinforcing this numerical pattern",
+"semantic_range": "son, birth, origin; also used metaphorically for knowledge, mystery, or divine revelation",
+"_facts": {
+"stem": "nephi",
+"surface": "Nephi",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 375,
+"first_appearance_ref": "1 Nephi 1:1"
 }
 }
 }
