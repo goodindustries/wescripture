@@ -4110,6 +4110,18 @@ function finishVerseDiscoveryPanel(payload) {
             card.setAttribute('data-req-count', rec ? rec.count : 1);
         });
     });
+    panelBody.querySelectorAll('.scrip-card--passage').forEach(function(row) {
+        row.addEventListener('click', function() {
+            var id = row.dataset.sourceId;
+            var meta = id && sourceMeta[id];
+            if (meta && meta.href) {
+                var opts = {};
+                var p = row.dataset.para;
+                if (p) opts.focusPara = parseInt(p, 10) || p;
+                loadSourceDocument(id, meta.href, opts);
+            }
+        });
+    });
     panelBody.querySelectorAll('.scrip-card--jump').forEach(function(row) {
         row.addEventListener('click', function() {
             var cid = row.dataset.chapterId;
