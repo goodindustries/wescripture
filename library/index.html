@@ -1094,6 +1094,67 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     border-color: rgba(156,122,77,0.35);
     font-weight: 500;
 }
+.ep-family-list {
+    padding: 6px 28px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.ep-family-row { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.ep-family-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    min-width: 70px;
+}
+.ep-family-row .ep-chip-row { flex: 1; padding: 0; }
+.ep-timeline-list {
+    padding: 6px 28px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.ep-timeline-item {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 8px 12px;
+    padding: 8px 10px;
+    border-left: 2px solid rgba(156,122,77,0.35);
+    background: rgba(156,122,77,0.04);
+    border-radius: 0 4px 4px 0;
+}
+.ep-timeline-when {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.03em;
+    font-variant-numeric: tabular-nums;
+}
+.ep-timeline-label {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.45;
+}
+.ep-timeline-item .ep-scripture-ref--inline {
+    grid-column: 2;
+    justify-self: start;
+    margin-top: 2px;
+}
+.ep-dispensation, .ep-legacy {
+    padding: 8px 28px 14px;
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--text);
+}
+.ep-dispensation-name { font-weight: 600; margin-bottom: 4px; }
+.ep-dispensation-body { color: var(--text); }
+.ep-legacy-list {
+    padding: 0 28px 14px 44px;
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.55;
+}
+.ep-legacy-list li { margin-bottom: 4px; }
 .ep-sermon-list {
     padding: 6px 28px 14px;
     display: flex;
@@ -3640,6 +3701,89 @@ function christConnectionHtml(entity) {
         + '</div>';
 }
 
+// Person-profile section helpers (T-0167/T-0168/T-0169). Each returns ''
+// when the relevant schema field isn't present so profiles gracefully
+// degrade to the legacy layout until people.json is curated.
+function renderPersonFamily(entity) {
+    var fam = entity && entity.family;
+    if (!fam || typeof fam !== 'object') return '';
+    var rows = [];
+    ['parents', 'spouses', 'children', 'siblings'].forEach(function(role) {
+        var ids = fam[role];
+        if (!Array.isArray(ids) || !ids.length) return;
+        var chips = ids.slice(0, 8).map(function(id) {
+            var obj = entityById[id];
+            var name = (obj && obj.name) ? obj.name : (typeof id === 'string' ? id.split(':').pop().replace(/_/g, ' ') : '');
+            if (!name) return '';
+            return '<span class="ep-chip" data-chip-type="person" data-chip-id="' + escapeHtml(id) + '">' + escapeHtml(name) + '</span>';
+        }).join('');
+        if (chips) {
+            rows.push('<div class="ep-family-row">'
+                + '<div class="ep-family-label">' + role.charAt(0).toUpperCase() + role.slice(1) + '</div>'
+                + '<div class="ep-chip-row">' + chips + '</div>'
+                + '</div>');
+        }
+    });
+    if (!rows.length) return '';
+    return '<div class="ep-section">Family</div>'
+        + '<div class="ep-family-list">' + rows.join('') + '</div>';
+}
+
+function renderPersonTimeline(entity) {
+    var events = entity && entity.timeline;
+    if (!Array.isArray(events) || !events.length) return '';
+    return '<div class="ep-section">Timeline <span class="ep-section-count">(' + events.length + ')</span></div>'
+        + '<div class="ep-timeline-list">'
+        + events.slice(0, 20).map(function(ev) {
+            var when = (ev && (ev.when || ev.date || ev.year)) || '';
+            var label = (ev && (ev.label || ev.event || ev.title || '')) || '';
+            var ref = (ev && (ev.ref || ev.scripture)) || '';
+            if (!label) return '';
+            return '<div class="ep-timeline-item">'
+                + (when ? '<div class="ep-timeline-when">' + escapeHtml(String(when)) + '</div>' : '')
+                + '<div class="ep-timeline-label">' + escapeHtml(label) + '</div>'
+                + (ref ? '<span class="ep-scripture-ref ep-scripture-ref--inline" data-verse-ref="' + escapeHtml(ref) + '">' + escapeHtml(ref) + '</span>' : '')
+                + '</div>';
+        }).filter(Boolean).join('')
+        + '</div>';
+}
+
+function renderPersonDispensation(entity) {
+    var disp = entity && entity.dispensation;
+    if (!disp) return '';
+    if (typeof disp === 'string') {
+        return '<div class="ep-section">Dispensation</div>'
+            + '<div class="ep-dispensation">' + escapeHtml(disp) + '</div>';
+    }
+    var name = disp.name || disp.label || '';
+    var body = disp.description || disp.summary || '';
+    if (!name && !body) return '';
+    return '<div class="ep-section">Dispensation</div>'
+        + '<div class="ep-dispensation">'
+        + (name ? '<div class="ep-dispensation-name">' + escapeHtml(name) + '</div>' : '')
+        + (body ? '<div class="ep-dispensation-body">' + escapeHtml(body) + '</div>' : '')
+        + '</div>';
+}
+
+function renderPersonLegacy(entity) {
+    var leg = entity && entity.legacy;
+    if (!leg) return '';
+    if (typeof leg === 'string') {
+        return '<div class="ep-section">Legacy</div>'
+            + '<div class="ep-legacy">' + escapeHtml(leg) + '</div>';
+    }
+    if (Array.isArray(leg)) {
+        if (!leg.length) return '';
+        return '<div class="ep-section">Legacy</div>'
+            + '<ul class="ep-legacy-list">'
+            + leg.slice(0, 10).map(function(item) {
+                return '<li>' + escapeHtml(typeof item === 'string' ? item : (item && item.text) || '') + '</li>';
+            }).filter(function(s) { return s !== '<li></li>'; }).join('')
+            + '</ul>';
+    }
+    return '';
+}
+
 function openEntityProfile(entityId) {
     var entity = entityById[entityId];
     if (!entity) return;
@@ -3657,6 +3801,10 @@ function openEntityProfile(entityId) {
         extraHtml += '<div class="ep-meta-row">' + escapeHtml(dates) + '</div>';
     }
     extraHtml += christConnectionHtml(entity);
+    extraHtml += renderPersonFamily(entity)
+        + renderPersonTimeline(entity)
+        + renderPersonDispensation(entity)
+        + renderPersonLegacy(entity);
     if (entity.scripture_refs && entity.scripture_refs.length) {
         extraHtml += renderScriptureRefsByBook(entity.scripture_refs);
     }
