@@ -2216,6 +2216,39 @@ function pushVisit(current, next) {
     } catch (err) { /* SecurityError in some sandboxed contexts — skip */ }
 }
 
+// Restore navigation target when the user hits the browser back button or
+// presses Esc/Backspace (T-0153). Prefers popping visitStack (which carries
+// scrollTop) and falls back to anything we might have stored in state.
+function restorePreviousVisit() {
+    var previous = visitStack.pop();
+    if (!previous) return false;
+    if (previous.type === 'source' && previous.docId && sourceMeta[previous.docId]) {
+        loadSourceDocument(previous.docId, sourceMeta[previous.docId].href, {
+            pushHistory: false,
+            scrollTop: previous.scrollTop || 0
+        });
+        return true;
+    }
+    if (previous.type === 'scripture' && previous.chapterId) {
+        jumpTo(previous.chapterId, previous.verse, {
+            pushHistory: false,
+            scrollTop: previous.scrollTop || 0
+        });
+        return true;
+    }
+    return false;
+}
+
+window.addEventListener('popstate', function(e) {
+    // popstate may fire with no relevant state (e.g. initial page). Only act
+    // when our own wsTarget sentinel is present OR we have a pending visit.
+    if (e && e.state && e.state.wsTarget) {
+        restorePreviousVisit();
+        return;
+    }
+    if (visitStack.length) restorePreviousVisit();
+});
+
 function quickBack() {
     var previous = visitStack.pop();
     if (!previous) return;
