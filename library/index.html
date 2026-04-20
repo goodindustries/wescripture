@@ -987,6 +987,26 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     box-shadow: inset 3px 0 0 0 rgba(74,103,65,0.6);
 }
 .comm-author { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+.comm-trio {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 6px;
+    margin-bottom: 6px;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.45;
+}
+.comm-trio-author {
+    color: var(--text);
+    font-weight: 600;
+    font-size: 13px;
+}
+.comm-trio-author .ent-link { color: var(--accent); cursor: pointer; text-decoration: none; }
+.comm-trio-author .ent-link:hover { text-decoration: underline; }
+.comm-trio-work { font-style: italic; color: var(--text); }
+.comm-trio-year { color: var(--muted); font-variant-numeric: tabular-nums; }
+.comm-trio-sep { color: var(--divider); }
 .comm-author .ent-link { color: var(--accent); cursor: pointer; text-decoration: none; }
 .comm-author .ent-link:hover { text-decoration: underline; }
 .comm-work   { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
@@ -4111,6 +4131,47 @@ function makeExpandable(text, previewClass, overflowClass, moreClass) {
         + '<span class="' + overflowClass + '">' + escapeHtml(text.slice(cut)) + '</span>'
         + '<button class="' + moreClass + '" onclick="expandCard(this)">Read more \u2192</button>';
 }
+// Compact author · work · year badge line. Always renders when at least
+// one field is present — downstream commentary cards lean on it for
+// provenance so cards never go anonymous.
+function citationTrioHtml(c) {
+    if (!c) return '';
+    var parts = [];
+    if (c.author) parts.push('<span class="comm-trio-author">' + linkifyName(c.author) + '</span>');
+    if (c.work) parts.push('<span class="comm-trio-work">' + escapeHtml(c.work) + '</span>');
+    if (c.year) parts.push('<span class="comm-trio-year">' + escapeHtml(c.year) + '</span>');
+    if (!parts.length) return '';
+    return '<div class="comm-trio">' + parts.join('<span class="comm-trio-sep">·</span>') + '</div>';
+}
+
+// Resolve the author + work + year triplet for a verse-discovery entry
+// Author+work+year badge. sourceMeta is the canonical source so it wins
+// on every field it supplies; discParseCard fills remaining slots so
+// legacy Donaldson/GC/JD entries keep their author+work.
+function resolveCitationTriplet(entry) {
+    var parsed = discParseCard(entry || {});
+    var author = parsed.author || '';
+    var work = parsed.work || '';
+    var year = '';
+    var meta = entry && entry.source_doc_id ? sourceMeta[entry.source_doc_id] : null;
+    if (meta) {
+        if (meta.author) author = meta.author;
+        if (meta.collection) work = meta.collection + (meta.label ? (' · ' + meta.label) : '');
+        else if (meta.label) work = meta.label;
+        if (meta.year != null && meta.year !== '') year = String(meta.year);
+        else if (meta.date) {
+            var ym = String(meta.date).match(/(\d{4})/);
+            if (ym) year = ym[1];
+        }
+    }
+    if (!year && entry && entry.year != null && entry.year !== '') year = String(entry.year);
+    if (!year && entry && entry.source_label) {
+        var ym2 = String(entry.source_label).match(/\b(1[5-9]\d{2}|20\d{2}|21\d{2})\b/);
+        if (ym2) year = ym2[1];
+    }
+    return { author: author.trim(), work: work.trim(), year: year.trim() };
+}
+
 function discParseCard(entry) {
     var lb  = entry.source_label || '';
     var src = entry.source || '';
@@ -4560,6 +4621,7 @@ function finishVerseDiscoveryPanel(payload) {
     var connections = [];
     entries.forEach(function(e, i) {
         var meta = discParseCard(e);
+        var trio = resolveCitationTriplet(e);
         var qt = (e.source_text || '').replace(/  +/g, ' ').replace(/\n\s*/g, ' ').trim();
         var fc = e.collection || e.source || '';
         var fy = null;
@@ -4571,7 +4633,8 @@ function finishVerseDiscoveryPanel(payload) {
         var bonusFigure = computeSameFigureBonus(verseEntsForRank, qt);
         var baseScore = typeof e.score === 'number' ? e.score : 0;
         connections.push({
-            author: meta.author, work: meta.work, text: qt,
+            author: trio.author || meta.author, work: trio.work || meta.work,
+            year: trio.year, text: qt,
             badge: meta.badge, badgeClass: meta.badgeClass,
             hasLink: !!(e.source_doc_id && e.source_para != null && sourceMeta[e.source_doc_id]),
             entryIdx: i,
@@ -4598,8 +4661,7 @@ function finishVerseDiscoveryPanel(payload) {
         donaldsonCards.forEach(function(c) {
             html += '<div class="comm-card">'
                 + (c.badge ? '<div class="hist-badge ' + escapeHtml(c.badgeClass || '') + '">' + escapeHtml(c.badge) + '</div>' : '')
-                + (c.author ? '<div class="comm-author">' + linkifyName(c.author) + '</div>' : '')
-                + (c.work ? '<div class="comm-work">' + escapeHtml(c.work) + '</div>' : '')
+                + citationTrioHtml(c)
                 + '<div class="comm-text">' + escapeHtml(c.text || '') + '</div></div>';
         });
         html += '</div>';
@@ -4622,8 +4684,7 @@ function finishVerseDiscoveryPanel(payload) {
             html += '<div class="comm-card' + (c.hasLink ? ' has-link' : '') + '"' + vdAttrs + '>'
                 + (c.badge ? '<div class="hist-badge ' + escapeHtml(c.badgeClass || '') + '">' + escapeHtml(c.badge) + '</div>' : '')
                 + (c.reason ? '<span class="conn-reason-chip" title="Why this connection">' + escapeHtml(formatConnReason(c.reason)) + '</span>' : '')
-                + (c.author ? '<div class="comm-author">' + linkifyName(c.author) + '</div>' : '')
-                + (c.work ? '<div class="comm-work">' + escapeHtml(c.work) + '</div>' : '')
+                + citationTrioHtml(c)
                 + '<div class="comm-text">' + escapeHtml(c.text || '') + '</div></div>';
         });
         if (connList.length > connInitial) {
