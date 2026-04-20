@@ -982,6 +982,10 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 .verse-panel-cards { min-width: 0; }
 .comm-card.has-link { cursor: pointer; }
 .comm-card.has-link:hover { background: rgba(0,0,0,0.025); }
+.comm-card--kb-focus {
+    background: rgba(74,103,65,0.08) !important;
+    box-shadow: inset 3px 0 0 0 rgba(74,103,65,0.6);
+}
 .comm-author { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
 .comm-author .ent-link { color: var(--accent); cursor: pointer; text-decoration: none; }
 .comm-author .ent-link:hover { text-decoration: underline; }
@@ -4187,6 +4191,7 @@ function finishVerseDiscoveryPanel(payload) {
     panelBody.innerHTML = html;
     panelBody.dataset.panelMode = 'verse';
     panelBody.scrollTop = 0;
+    connKbIdx = -1;
     document.getElementById('channel').classList.add('open');
     channelOpen = true;
     wireVerseDiscoveryFilters(panelBody, entries);
@@ -6934,6 +6939,22 @@ function closeChannel() {
     }, { passive: true });
 })();
 
+// Cycle focus across verse-panel connection cards with j/k.
+// Highlight is a transient CSS class (.comm-card--kb-focus) scoped to the
+// channel body so it doesn't collide with click-focus styles.
+var connKbIdx = -1;
+function cycleConnectionFocus(dir) {
+    var body = document.getElementById('panel-body');
+    if (!body) return;
+    var cards = body.querySelectorAll('.comm-card');
+    if (!cards.length) return;
+    connKbIdx = ((connKbIdx + dir) % cards.length + cards.length) % cards.length;
+    cards.forEach(function(c) { c.classList.remove('comm-card--kb-focus'); });
+    var target = cards[connKbIdx];
+    target.classList.add('comm-card--kb-focus');
+    target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
 // Spacebar advances channel
 document.addEventListener('keydown', function(e) {
     if (e.key === ' ' && channelOpen && !e.target.matches('input,textarea')) {
@@ -6941,6 +6962,17 @@ document.addEventListener('keydown', function(e) {
         if (channelMorsels.length === 0) return;
         channelIdx = (channelIdx + 1) % channelMorsels.length;
         renderChannelList();
+    }
+    // j/k cycle connection cards while the verse panel is open and the user
+    // isn't typing in a field. Plain letters — no modifiers.
+    if ((e.key === 'j' || e.key === 'k') && channelOpen
+            && !e.metaKey && !e.ctrlKey && !e.altKey
+            && !e.target.matches('input,textarea,[contenteditable=true]')) {
+        var body = document.getElementById('panel-body');
+        if (body && body.dataset.panelMode === 'verse') {
+            e.preventDefault();
+            cycleConnectionFocus(e.key === 'j' ? 1 : -1);
+        }
     }
     if (e.key === 'Escape') {
         if (graphOpen)   { closeGraph();   return; }
