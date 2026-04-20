@@ -4033,6 +4033,7 @@ function finishVerseDiscoveryPanel(payload) {
             fy = isNaN(yn) ? null : yn;
         }
         var bonusEntity = computeSharedEntityBonus(verseEntsForRank, qt);
+        var bonusFigure = computeSameFigureBonus(verseEntsForRank, qt);
         var baseScore = typeof e.score === 'number' ? e.score : 0;
         connections.push({
             author: meta.author, work: meta.work, text: qt,
@@ -4043,7 +4044,8 @@ function finishVerseDiscoveryPanel(payload) {
             filterYear: fy,
             reason: e.reason || e.reason_label || '',
             baseScore: baseScore,
-            bonusEntity: bonusEntity
+            bonusEntity: bonusEntity,
+            bonusFigure: bonusFigure
         });
     });
 
@@ -4374,6 +4376,31 @@ function computeSharedEntityBonus(verseEnts, entryText) {
     var n = sharedEntityCount(verseEnts, entryText);
     if (!n) return 0;
     return 0.03 * Math.min(n, 3);
+}
+
+// Count shared persons that are "major figures" — entries in entities/people.json
+// rather than the broader scripture_people roster. We detect them by the
+// presence of a `group` or `arc`/`excerpts` field on the entity record, which
+// people.json entries carry but scripture_people.json entries don't.
+function sharedMajorFigureCount(verseEnts, entryText) {
+    if (!entryText) return 0;
+    var other = scanVerseEntities(String(entryText));
+    var vSet = {};
+    (verseEnts.persons || []).forEach(function(id) { vSet[id] = true; });
+    var shared = 0;
+    (other.persons || []).forEach(function(id) {
+        if (!vSet[id]) return;
+        var ent = entityById[id];
+        if (ent && (ent.excerpts || ent.arc || ent.biography || ent.group === 'major')) shared += 1;
+    });
+    return shared;
+}
+
+// Blend bonus: a single same-figure overlap is meaningful; two or more saturate.
+function computeSameFigureBonus(verseEnts, entryText) {
+    var n = sharedMajorFigureCount(verseEnts, entryText);
+    if (!n) return 0;
+    return 0.04 * Math.min(n, 2);
 }
 
 // Humanize a source-category slug for the cross-ref chip.
