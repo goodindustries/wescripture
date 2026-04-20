@@ -4045,8 +4045,16 @@ function finishVerseDiscoveryPanel(payload) {
             reason: e.reason || e.reason_label || '',
             baseScore: baseScore,
             bonusEntity: bonusEntity,
-            bonusFigure: bonusFigure
+            bonusFigure: bonusFigure,
+            rankScore: baseScore + bonusEntity + bonusFigure
         });
+    });
+    // Re-rank by blended score so entity / same-figure overlaps rise above
+    // cosine-only rows. Stable for equal scores: preserves original insertion
+    // order by comparing entryIdx on tie.
+    connections.sort(function(a, b) {
+        if (b.rankScore !== a.rankScore) return b.rankScore - a.rankScore;
+        return (a.entryIdx || 0) - (b.entryIdx || 0);
     });
 
     if (donaldsonCards.length) {
