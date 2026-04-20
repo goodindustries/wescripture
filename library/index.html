@@ -1008,6 +1008,19 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     overflow-wrap: anywhere; word-break: break-word; min-width: 0;
 }
 .scrip-card--jump:hover { background: rgba(74,103,65,0.06); }
+.word-why-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 4px 0;
+    border: 0;
+    background: transparent;
+    font-size: 12px;
+    color: var(--link, #4a6741);
+    cursor: pointer;
+    font-family: inherit;
+    letter-spacing: 0.01em;
+}
+.word-why-link:hover { text-decoration: underline; }
 .scrip-source-chip {
     display: inline-block;
     font-size: 10px;
@@ -4173,6 +4186,27 @@ function finishVerseDiscoveryPanel(payload) {
             }
         });
     });
+    panelBody.querySelectorAll('.word-why-link').forEach(function(btn) {
+        btn.addEventListener('click', function(ev) {
+            ev.preventDefault(); ev.stopPropagation();
+            var stem = btn.getAttribute('data-stem');
+            var term = btn.getAttribute('data-term') || stem;
+            if (!stem || !chapterId) return;
+            loadChapterWordIndex(chapterId).then(function(idx) {
+                var matches = [];
+                if (idx && typeof idx === 'object') {
+                    Object.keys(idx).forEach(function(vk) {
+                        var pack = idx[vk] && idx[vk][stem];
+                        if (pack && pack.matches && pack.matches.length) {
+                            pack.matches.forEach(function(m) { matches.push(m); });
+                        }
+                    });
+                }
+                if (matches.length) openChannel(term, matches);
+                else openChannelEmpty(term);
+            });
+        });
+    });
     panelBody.querySelectorAll('.word-deep-request-btn').forEach(function(btn) {
         btn.addEventListener('click', function(ev) {
             ev.preventDefault(); ev.stopPropagation();
@@ -5965,6 +5999,7 @@ function htmlKeyWordCardDeep(title, stem, entry, verseText) {
         + (synth ? '<div class="word-deep-synth">' + escapeHtml(synth) + '</div>' : '')
         + (rowsHtml ? '<div class="word-deep-rows">' + rowsHtml + '</div>' : '')
         + confHtml
+        + (stem ? '<button type="button" class="word-why-link" data-stem="' + escapeAttr(stem) + '" data-term="' + escapeAttr(title) + '">Why this word matters \u2192</button>' : '')
         + '</div>';
 
     return '<div class="word-card word-card--kw-collapsed word-card--kw-deep" role="article" data-stem="' + escapeAttr(stem || '') + '" aria-label="Keyword: ' + escapeAttr(title) + '">'
