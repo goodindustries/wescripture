@@ -4017,7 +4017,11 @@ function finishVerseDiscoveryPanel(payload) {
         });
     });
 
-    // External corpus “web” connections (from verse_discovery.json)
+    // External corpus “web” connections (from verse_discovery.json).
+    // Scan verse-side entities once per panel so sharedEntityCount is cheap.
+    var verseEntsForRank = verseText
+        ? scanVerseEntities(verseText)
+        : { persons: [], places: [], things: [] };
     var connections = [];
     entries.forEach(function(e, i) {
         var meta = discParseCard(e);
@@ -4028,6 +4032,8 @@ function finishVerseDiscoveryPanel(payload) {
             var yn = parseInt(e.year, 10);
             fy = isNaN(yn) ? null : yn;
         }
+        var bonusEntity = computeSharedEntityBonus(verseEntsForRank, qt);
+        var baseScore = typeof e.score === 'number' ? e.score : 0;
         connections.push({
             author: meta.author, work: meta.work, text: qt,
             badge: meta.badge, badgeClass: meta.badgeClass,
@@ -4035,7 +4041,9 @@ function finishVerseDiscoveryPanel(payload) {
             entryIdx: i,
             filterColl: fc,
             filterYear: fy,
-            reason: e.reason || e.reason_label || ''
+            reason: e.reason || e.reason_label || '',
+            baseScore: baseScore,
+            bonusEntity: bonusEntity
         });
     });
 
@@ -4339,6 +4347,33 @@ function openSourceParaDiscovery(block, paraNode) {
             jumpTo(bookSlug + '_' + ch, v);
         });
     });
+}
+
+// Count entity overlap (persons+places+things) between two texts. Cheap
+// reuse of scanVerseEntities; caller is expected to cache the verse-side
+// scan since it's stable per verse panel.
+function sharedEntityCount(verseEnts, entryText) {
+    if (!entryText) return 0;
+    var other = scanVerseEntities(String(entryText));
+    var shared = 0;
+    var buckets = ['persons', 'places', 'things'];
+    for (var b = 0; b < buckets.length; b++) {
+        var vset = {};
+        (verseEnts[buckets[b]] || []).forEach(function(id) { vset[id] = true; });
+        var otherList = other[buckets[b]] || [];
+        for (var i = 0; i < otherList.length; i++) {
+            if (vset[otherList[i]]) shared += 1;
+        }
+    }
+    return shared;
+}
+
+// Blend cosine score with shared-entity bonus. Capped so a single shared
+// entity can't dominate cosine; three or more saturate the bonus.
+function computeSharedEntityBonus(verseEnts, entryText) {
+    var n = sharedEntityCount(verseEnts, entryText);
+    if (!n) return 0;
+    return 0.03 * Math.min(n, 3);
 }
 
 // Humanize a source-category slug for the cross-ref chip.
