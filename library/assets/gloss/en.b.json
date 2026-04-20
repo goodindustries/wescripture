@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "b",
 "model": "qwen3:1.7b",
-"updated": "2026-04-19T19:05:48+00:00"
+"updated": "2026-04-20T12:30:45+00:00"
 },
 "stems": {
 "behold": {
@@ -188,6 +188,66 @@
 "morph": "",
 "count": 348,
 "first_appearance_ref": "Genesis 4:17"
+}
+},
+"bread": {
+"final_synthesis": "The word 'bread' encapsulates the theological tension between sustenance and transgression, the covenantal promise of life, and the redemptive work of Christ. Its etymology and symbolic use reveal a deep engagement with themes of salvation, covenant, and the triad of life/death, resurrection, and redemption.",
+"root": "bodem",
+"messianic_fulfillment": "The resurrection of the body (1 Corinthians 15:44) and the promise of eternal life (John 10:10) align with the symbolic meaning of 'bread' as sustenance and covenantal fidelity.",
+"first_appearance": "Genesis 3:19 (Fall of man, eating from the tree of knowledge of good and evil)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference"
+},
+"reveals_about_christ": "The word 'bread' reveals Christ's role as the sustainer of life, the fulfillment of the covenantal promise, and the hope of resurrection, reflecting His mission to nourish spiritually and redeem humanity.",
+"major_scriptural_pattern": "covenantal promise (resurrection), exodus (Moses 4:25), and the consequence of transgression (Judges 19:5)",
+"term": "bread",
+"literal_sense": "to eat, to be eaten, to nourish",
+"symbolic_structure": "paired terms (eat and be eaten), numerical patterns (seven times, sevenfold), and covenantal oppositions (life vs. death, sustenance vs. decay)",
+"language": "English",
+"numerical_letter_observations": "The root 'bodem' (Hebrew) contains three letters: 'b', 'd', 'm', reflecting the number 3 (triad) and the concept of 'threefold' in covenantal contexts.",
+"semantic_range": "sustenance, nourishment, covenantal obligation, resurrection, exile, redemption, and the consequence of transgression",
+"_facts": {
+"stem": "bread",
+"surface": "Bread",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 347,
+"first_appearance_ref": "Genesis 3:19"
+}
+},
+"beast": {
+"final_synthesis": "The term 'beast' encapsulates the biblical theme of creation and the divine order, with its etymology rooted in Greek and Hebrew roots, and its symbolic structure reflecting paired terms and numerical patterns. While its messianic fulfillment is speculative, the analysis highlights Christ's role in redeeming creation and restoring the divine order.",
+"root": "bestes",
+"messianic_fulfillment": "The term 'beast' in Revelation is often interpreted as the Antichrist, but in the creation context, it reflects the diversity of life and God's sovereignty over all creation, which aligns with Christ's role as the Creator and Redeemer.",
+"first_appearance": "Genesis 1:24 (Genesis 1:24: 'And I, God, said: Let the earth bring forth the living creature after his kind, cattle, and creeping things, and beasts of the earth after their kind, and it was so, even as I spake').",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "inference",
+"messianic_fulfillment": "speculation"
+},
+"reveals_about_christ": "The term 'beast' underscores the complexity of creation and the interplay between divine sovereignty and the natural order, revealing Christ's mission to restore creation and bring about the new age of harmony.",
+"major_scriptural_pattern": "Creation of animals and creatures, with repeated emphasis on diversity and the role of God in their formation, reflecting the covenantal relationship between God and creation.",
+"term": "beast",
+"literal_sense": "animal, creature, or beast (as in the biblical sense of 'to be')",
+"symbolic_structure": "Paired terms like 'beasts' and 'creatures' emphasize the distinction between the divine and the created, with numerical patterns (e.g., 6000 in Revelation) suggesting universal or cosmic significance. The term 'beast' also echoes in later eschatological contexts, linking to the Antichrist and the end of the age.",
+"language": "English",
+"numerical_letter_observations": "The Greek root 'bestes' (6 letters) may align with the number 6000 in Revelation, though this is speculative and not explicitly attested in the text.",
+"semantic_range": "animals, creatures, beings of the earth, and symbolic representations of life and diversity",
+"_facts": {
+"stem": "beast",
+"surface": "Beasts",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 329,
+"first_appearance_ref": "Genesis 1:24"
 }
 }
 }

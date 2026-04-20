@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "a",
 "model": "qwen3:1.7b",
-"updated": "2026-04-18T21:56:14+00:00"
+"updated": "2026-04-20T12:49:18+00:00"
 },
 "stems": {
 "answer": {
@@ -125,6 +125,67 @@
 "morph": "",
 "count": 368,
 "first_appearance_ref": "Exodus 4:14"
+}
+},
+"army": {
+"final_synthesis": "The term 'army' reveals Christ's role as a victorious leader, the covenantal agent of salvation, and the embodiment of divine power and unity. Its etymology remains speculative, but its symbolic structure reflects repeated military themes, numerical patterns, and messianic fulfillment in Christ's kingdom. The word underscores Christ's mission to bring deliverance and unity through divine power, aligning with the covenantal trust and strategic warfare depicted in Scripture.",
+"root": "(logos) or Hebrew 'milam' (army)",
+"messianic_fulfillment": "symbolizes the triumphant army of Christ, fulfilling the promise of a victorious kingdom and divine deliverance",
+"first_appearance": "Genesis 26:26 (Lehi's army fleeing Lamanite forces)",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"numerical_letter_observations": "speculation"
+},
+"reveals_about_christ": "reveals Christ's role as a victorious leader, the covenantal agent of salvation, and the embodiment of divine power and unity",
+"major_scriptural_pattern": "military campaigns and divine deliverance, reflecting covenantal trust and strategic warfare",
+"term": "army",
+"literal_sense": "a collective force of warriors, often associated with military organization and strategic deployment",
+"symbolic_structure": "paired terms (army/enemy), repeated phrases (armies in Exodus 12:51), and numerical emphasis (e.g., 'armies under Moses' in Numbers 33:1)",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "repeated use of 'armies' in canonical texts, with numerical patterns (e.g., 'armies under Moses' in Numbers 33:1) suggesting covenantal significance",
+"semantic_range": "military forces, divine intervention, metaphorical representation of power, and symbolic of unity and conquest",
+"_facts": {
+"stem": "army",
+"surface": "Army",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 331,
+"first_appearance_ref": "Genesis 26:26"
+}
+},
+"ask": {
+"final_synthesis": "The word 'ask' embodies the covenantal tension between human petition and divine sovereignty, with its earliest appearance in Genesis 24:47 symbolizing the fulfillment of a promise through faith. Its repeated use in covenantal texts underscores its role in prayer and intercession, reflecting Christ's mission to bridge humanity and divinity. The word's etymology and symbolic structure reveal a theology of humility and grace, while its messianic fulfillment highlights Christ's role as the mediator of prayer, affirming His mission to restore divine communion and empower believers to seek God's will.",
+"root": "ask",
+"messianic_fulfillment": "the word 'ask' is central to the New Testament's exhortation to pray in the name of Jesus Christ (e.g., Matthew 11:28, Luke 11:2; 1 John 5:14), underscoring its role in the Messiah's mission to intercede for humanity and restore divine communion",
+"first_appearance": "Genesis 24:47 (Genesis 24:47: 'Wherefore it came to pass, when the time was come about after Hannah had conceived, that she bare a son, and called his name Samuel, saying, Because I have asked him of the Lord.')",
+"confidence_by_claim": {
+"symbolic_structure": "inference",
+"etymology": "speculation",
+"messianic_reading": "speculation"
+},
+"reveals_about_christ": "the word 'ask' reveals Christ's role as both the mediator of prayer and the embodiment of humility, as seen in His teachings and the transformative power of His intercession in the New Covenant",
+"major_scriptural_pattern": "covenantal prayer and supplication, particularly in the context of divine promises and the intercession of Jesus Christ",
+"term": "ask",
+"literal_sense": "to request, inquire, or implore",
+"symbolic_structure": "repeated use in covenantal contexts (e.g., 1 Samuel 1:20, Doctrine & Covenants 132:41, 20:77) to signify the believer's reliance on divine grace and the efficacy of prayer in fulfilling God's will",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "the word appears 328 times across the canon, with a distribution of 125 in nt, 93 in ot, and 66 in other volumes, reflecting its prevalence in theological discourse and covenantal texts",
+"semantic_range": "includes requests, inquiries, implores, and the act of seeking divine favor or knowledge, with connotations of humility, faith, and covenantal engagement",
+"_facts": {
+"stem": "ask",
+"surface": "Ask",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 328,
+"first_appearance_ref": "Genesis 24:47"
 }
 }
 }

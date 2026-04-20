@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "w",
 "model": "qwen3:1.7b",
-"updated": "2026-04-19T12:48:53+00:00"
+"updated": "2026-04-20T13:23:22+00:00"
 },
 "stems": {
 "word": {
@@ -278,6 +278,37 @@
 "morph": "",
 "count": 362,
 "first_appearance_ref": "Genesis 2:22"
+}
+},
+"wisdom": {
+"final_synthesis": "The term 'wisdom' reveals God's eternal pursuit of divine knowledge, its role in covenantal mediation, and its ultimate fulfillment in Christ, reflecting the interplay of wisdom, understanding, and spiritual insight in Scripture.",
+"root": "emeth",
+"messianic_fulfillment": "Jesus Christ as the ultimate embodiment of divine wisdom, fulfilling the covenantal role of wisdom in salvation and redemption",
+"first_appearance": "Exodus 28:3 (Hebrew 'emeth' in the tabernacle's design)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"speculation": "speculation"
+},
+"reveals_about_christ": "Christ's divine knowledge, moral insight, and role as the mediator of salvation, reflecting the covenantal and spiritual depth of the term 'wisdom' in Scripture",
+"major_scriptural_pattern": "wisdom as divine creation, covenant mediation, and spiritual illumination",
+"term": "wisdom",
+"literal_sense": "knowledge, understanding, insight, and the ability to discern right from wrong",
+"symbolic_structure": "paired terms like 'wisdom and understanding,' repeated phrases 'in wisdom,' and covenantal oppositions between 'wisdom' and 'folly' (Ecclesiastes 1:17)",
+"language": "English",
+"numerical_letter_observations": "324 verses across canon, volume distribution (ot:172, nt:50), and the number 324 reflecting the total canon's completeness",
+"semantic_range": "divine knowledge, spiritual insight, covenant wisdom, and the capacity to guide moral and ethical decisions",
+"_facts": {
+"stem": "wisdom",
+"surface": "Wisdom",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 324,
+"first_appearance_ref": "Exodus 28:3"
 }
 }
 }

@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "s",
 "model": "qwen3:1.7b",
-"updated": "2026-04-19T15:29:22+00:00"
+"updated": "2026-04-20T13:13:29+00:00"
 },
 "stems": {
 "son": {
@@ -577,6 +577,190 @@
 "morph": "",
 "count": 352,
 "first_appearance_ref": "Genesis 12:1"
+}
+},
+"stone": {
+"final_synthesis": "The word 'stone' reflects Christ's role as the foundational, unyielding truth of salvation, emphasizing His sacrifice as the cornerstone of the covenant, His resurrection as the ultimate stone of faith, and His mission to build the temple of the heart. It underscores the Bible's theme of divine foundation and unbreakable covenant.",
+"root": "stone",
+"messianic_fulfillment": "The stone that the builders refused to lay (Matthew 21:46) fulfills the prophecy of the Messiah as the foundation of the temple, emphasizing His role as the cornerstone of salvation.",
+"first_appearance": "Genesis 2:12 (Genesis 2:12: And the gold of that land was good, and there was bdellium and the onyx stone).",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference",
+"reveals_about_christ": "inference"
+},
+"reveals_about_christ": "The word 'stone' reveals Christ's wisdom (e.g., the stone as a metaphor for His sacrifice), character (unyielding faith), mission (foundational role in salvation), and pattern (covenantal significance).",
+"major_scriptural_pattern": "repeated use in creation (Genesis 2:12), covenant (Exodus 25:7), and resurrection (Matthew 21:46), emphasizing foundational role and unbreakable nature",
+"term": "stone",
+"literal_sense": "a solid, unyielding material, often used metaphorically to denote foundation, support, or unbreakable nature",
+"symbolic_structure": "paired terms (e.g., 'stone' and 'foundation'), numerical patterns (e.g., 12 in Genesis 2:12), and covenant patterns (e.g., 'stone' as a covenant symbol in Exodus 25:7)",
+"language": "English",
+"numerical_letter_observations": "The number 12 appears in Genesis 2:12, symbolizing completeness and divine purpose, and the letter 'S' (stone) is repeated in the text, reflecting cyclical themes.",
+"semantic_range": "foundation, cornerstone, unyielding, metaphorical (e.g., rock, temple, covenant), and symbolic oppositions (e.g., stone vs. sand, stone vs. rock)",
+"_facts": {
+"stem": "stone",
+"surface": "Stone",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 346,
+"first_appearance_ref": "Genesis 2:12"
+}
+},
+"strong": {
+"final_synthesis": "The term 'strong' underscores Christ's divine power, moral fortitude, and redemptive mission, reflecting His role as the ultimate mediator and savior, where His strength is both divine and redemptive.",
+"root": "Strong",
+"messianic_fulfillment": "The term 'strong' is used in the Gospels to describe Christ's power and endurance, aligning with His role as the ultimate mediator and savior",
+"first_appearance": "Genesis 25:23 (Deuteronomy 31:13, Psalm 18:30, Proverbs 1:33)",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"final_synthesis": "speculation"
+},
+"reveals_about_christ": "The term 'strong' reveals Christ's divine power, moral integrity, and ability to overcome sin and death, reflecting His mission to redeem and empower humanity",
+"major_scriptural_pattern": "Repetition of 'strong' in contexts of deception, moral fortitude, and divine power, often paired with 'weak' to emphasize contrast",
+"term": "Strong",
+"literal_sense": "To exert power or force; to be robust or vigorous",
+"symbolic_structure": "Repeated phrases like 'strong and weak' (Genesis 25:23), paired terms (e.g., 'strong' vs. 'weak'), and numerical patterns (342 verses across canon)",
+"language": "English",
+"numerical_letter_observations": "The term appears in 342 verses, with a distribution of 224 in OT, 66 in Deuteronomy, 29 in NT, and 23 elsewhere, reflecting its prevalence in covenantal and moral contexts",
+"semantic_range": "Strength, power, might, moral fortitude, resilience, and the capacity to overcome adversity",
+"_facts": {
+"stem": "strong",
+"surface": "Strong",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 342,
+"first_appearance_ref": "Genesis 25:23"
+}
+},
+"seek": {
+"final_synthesis": "The word 'seek' reveals Christ's mission as a covenantal seeker of lost souls, embodying the redemptive work of God through human agency, and reflecting the transformative power of divine pursuit in the New Testament.",
+"root": "seek",
+"messianic_fulfillment": "speculation: references to Jesus as the seeker of salvation (Mark 1:37) and the fulfillment of covenantal pursuit in His redemptive work",
+"first_appearance": "Genesis 37:15 (seek for thy good)",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"final_synthesis": "pattern"
+},
+"reveals_about_christ": "Jesus' mission as a seeker of lost souls, the covenantal nature of His redemptive work, and the transformative power of divine pursuit",
+"major_scriptural_pattern": "covenantal pursuit of divine purpose, redemptive quest, communal salvation",
+"term": "seek",
+"literal_sense": "to search for, to pursue, to desire",
+"symbolic_structure": "paired terms (seek/seek), repeated phrases (seek for thy good), covenantal oppositions (seek vs. forsake), numerical patterns (341 verses, 173 OT, 69 NT)",
+"language": "English",
+"numerical_letter_observations": "341 verses across canon, 173 OT, 69 NT, 54 BoFm, 44 other, 1 pgp",
+"semantic_range": "emotional desire, spiritual pursuit, covenantal obligation, divine calling, redemptive quest",
+"_facts": {
+"stem": "seek",
+"surface": "Seek",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 341,
+"first_appearance_ref": "Genesis 37:15"
+}
+},
+"strength": {
+"final_synthesis": "The term 'strength' reveals Jesus' dual nature as both divine power (covenantal) and human vulnerability (Redemption), reflecting His mission to conquer through faith and sacrifice, grounded in scriptural covenantal architecture.",
+"root": "stron",
+"messianic_fulfillment": "linked to divine power (Exodus 17:7) and redemption (Deuteronomy 21:17)",
+"first_appearance": "Genesis 4:12 (famine context)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"final_synthesis": "speculation"
+},
+"reveals_about_christ": "Jesus' wisdom (Matthew 28:18-20), character (humility, strength), mission (redemption, victory), and pattern (covenantal fulfillment)",
+"major_scriptural_pattern": "covenant and sacrifice",
+"term": "strength",
+"literal_sense": "power, force, vigor",
+"symbolic_structure": "paired terms (strength/weakness), repeated phrases (e.g., 'strength' in Exodus 17:7-10), covenant patterns (victory through strength)",
+"language": "English",
+"numerical_letter_observations": "340 verses across canon, 210 in OT, 5 in PGp",
+"semantic_range": "physical power, spiritual fortitude, moral strength, divine authority",
+"_facts": {
+"stem": "strength",
+"surface": "Strength",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 340,
+"first_appearance_ref": "Genesis 4:12"
+}
+},
+"sight": {
+"final_synthesis": "The word 'sight' encapsulates the biblical theme of divine revelation, creation, and covenant fulfillment, revealing Christ as the ultimate Revealer and Savior, where sight is both a gift and a transformative act of God's presence.",
+"root": "s-k-h",
+"messianic_fulfillment": "Jesus Christ is described as 'the Light of the world' (John 8:12), fulfilling the biblical concept of 'sight' as divine revelation and salvation.",
+"first_appearance": "Genesis 2:9 (creation of trees 'pleasant to the sight' and 'good for food')",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The word 'sight' reveals Christ's role as the Revealer of God's will, the fulfillment of covenant promises, and the transformative power of divine vision in salvation.",
+"major_scriptural_pattern": "sight as a gift from God, divine presence, creation, covenant, and redemption",
+"term": "sight",
+"literal_sense": "to see, vision, perception",
+"symbolic_structure": "paired terms (sight & vision), numerical patterns (2 in creation), covenant patterns (priesthood, kingship), symbolic oppositions (light vs. darkness)",
+"language": "English",
+"numerical_letter_observations": "The root 's-k-h' (sight) appears in 329 verses, with 2 in Genesis 2:9 and 11:15, reflecting the number 2 as a covenant symbol (e.g., 2+1=3, 2+2=4).",
+"semantic_range": "seeing, vision, perception, divine presence, creation, covenant, sacrifice, exodus, redemption, resurrection, Zion",
+"_facts": {
+"stem": "sight",
+"surface": "Sight",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 329,
+"first_appearance_ref": "Genesis 2:9"
+}
+},
+"saul": {
+"final_synthesis": "Saul's name and role reveal the complexity of divine sovereignty, where human rulership intersects with covenantal fidelity. The text's emphasis on kingship and covenant underscores Christ's dual nature as king and redeemer, reflecting the pattern of divine plan through human agency.",
+"root": "saul",
+"messianic_fulfillment": "Speculation: Saul's role in the OT is linked to Christ's mission, but the text does not explicitly reference Christ, leaving this connection uncertain",
+"first_appearance": "Genesis 36:37 (Hebrew: , Greek: )",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "speculation"
+},
+"reveals_about_christ": "Saul's story highlights the tension between human leadership and divine sovereignty, reflecting Christ's role as both king and redeemer, with a focus on covenant and redemption",
+"major_scriptural_pattern": "covenantal kingship and divine sovereignty, emphasizing the role of rulers in God's plan",
+"term": "Saul",
+"literal_sense": "a king, especially a ruler of Israel (Hebrew: , Greek: )",
+"symbolic_structure": "repeated use of 'reigned in his stead' (e.g., Genesis 36:38, 1 Samuel 14:1), paired terms like 'Saul of Rehoboth' (1 Samuel 14:1), and numerical patterns (e.g., 324 verses across canon)",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The term appears in 324 verses, with a disproportionate distribution across OT (301) and NT (22), suggesting a focus on covenantal themes",
+"semantic_range": "a ruler, leader, and figure of the covenant; associated with kingship, priesthood, and divine sovereignty",
+"_facts": {
+"stem": "saul",
+"surface": "Saul",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 324,
+"first_appearance_ref": "Genesis 36:37"
 }
 }
 }

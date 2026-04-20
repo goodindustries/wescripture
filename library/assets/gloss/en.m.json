@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "m",
 "model": "qwen3:1.7b",
-"updated": "2026-04-19T14:13:55+00:00"
+"updated": "2026-04-20T09:02:43+00:00"
 },
 "stems": {
 "man": {
@@ -217,6 +217,67 @@
 "morph": "",
 "count": 352,
 "first_appearance_ref": "Genesis 6:4"
+}
+},
+"multitude": {
+"final_synthesis": "The term 'multitude' reveals Christ's mission as the universal shepherd of a vast, diverse people, emphasizing divine abundance, covenantal promise, and the fulfillment of God's plan through His Son. Its etymology and symbolic use highlight the interplay between human plurality and divine sovereignty, reflecting the richness of God's blessings and the depth of His covenant with humanity.",
+"root": "(Greek)",
+"messianic_fulfillment": "The term 'multitude' is used in the New Testament to describe the multitude of people in the Kingdom of God (Acts 1:15), reflecting the fulfillment of Christ's role as the universal shepherd of a vast, diverse people.",
+"first_appearance": "Genesis 16:10 (Genesis 16:10: 'I will surely do thee good, and make thy seed as the sand of the sea, which cannot be numbered for multitude').",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The term 'multitude' underscores Christ's mission to gather a vast, diverse community of believers, emphasizing His role as the universal shepherd and the abundance of God's promises to those who trust Him.",
+"major_scriptural_pattern": "Repetition of 'multitude' in covenantal contexts (Genesis, 4 Nephi) as a symbol of divine promise and communal blessing, often paired with 'seed' or 'land' to emphasize abundance and inheritance.",
+"term": "multitude",
+"literal_sense": "A large number of people, often emphasizing abundance or plurality",
+"symbolic_structure": "Paired terms ('multitude' + 'seed') and numerical patterns (e.g., 'multitude' appearing 337 times across canon), reflecting the interplay between human plurality and divine sovereignty.",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The Greek root  (-) contains letters that mirror the numerical value of 137 (the earliest canonical appearance), suggesting a divine orchestration of scriptural density.",
+"semantic_range": "Covenantal plurality, divine promise, communal blessing, and symbolic overflow of God's favor",
+"_facts": {
+"stem": "multitude",
+"surface": "Multitude",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 337,
+"first_appearance_ref": "Genesis 16:10"
+}
+},
+"mountain": {
+"final_synthesis": "The word 'mountains' encapsulates the tension between divine judgment and redemption, reflecting Christ's role as the mediator between God and humanity, embodying the wisdom of God's plan to restore creation and bring about eternal life through His sacrifice.",
+"root": "mountain",
+"messianic_fulfillment": "the imagery of mountains being 'broken down' reflects Christ's role as the Redeemer, removing barriers and restoring creation (e.g., Isaiah 11:1-9, Revelation 21:1), aligning with His victory over sin and death",
+"first_appearance": "Genesis 7:20 (flood narrative, waters submerging mountains)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"speculation": "speculation"
+},
+"reveals_about_christ": "the word reveals Christ's dual nature as both judge and redeemer, embodying the wisdom of God's plan to cleanse the world and bring about eternal restoration through His sacrifice",
+"major_scriptural_pattern": "repeated use of 'break down the mountains' (e.g., Doctrine & Covenants 133:22) as a metaphor for divine destruction and renewal",
+"term": "mountains",
+"literal_sense": "the physical landforms consisting of elevated rocky terrain",
+"symbolic_structure": "paired terms 'mountains' and 'valleys' (opposition), repeated phrases 'voice as the voice of many waters,' and numerical patterns (e.g., 9 letters, 10th month reference)",
+"language": "English",
+"numerical_letter_observations": "9 letters (M-O-U-N-T-A-I-N-S) align with the number 9 in biblical numerology, symbolizing completeness or transformation",
+"semantic_range": "metaphorical use as barriers, divine power, judgment, redemption, and symbolic representation of divine action",
+"_facts": {
+"stem": "mountain",
+"surface": "Mountains",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 333,
+"first_appearance_ref": "Genesis 7:20"
 }
 }
 }

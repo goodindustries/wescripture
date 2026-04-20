@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "r",
 "model": "qwen3:1.7b",
-"updated": "2026-04-19T18:41:59+00:00"
+"updated": "2026-04-20T12:56:23+00:00"
 },
 "stems": {
 "return": {
@@ -220,6 +220,96 @@
 "morph": "",
 "count": 348,
 "first_appearance_ref": "Genesis 2:2"
+}
+},
+"receiv": {
+"final_synthesis": "The word 'received' reflects the biblical emphasis on divine provision, covenantal fidelity, and the transformative power of faith. Its use in the Book of Mormon and New Testament underscores Christ's role as the giver of salvation and the mediator of divine promises. The word's repeated appearance in covenantal contexts highlights the importance of trust and obedience in receiving divine truth, aligning with the broader theme of Christ's mission to redeem and restore humanity.",
+"root": "rec-eiv",
+"messianic_fulfillment": "The word 'received' is central to the Book of Mormon's narrative of Joseph Smith's revelation, where he receives a vision and command. It also appears in the Book of Revelation as a metaphor for receiving divine truth and salvation.",
+"first_appearance": "Genesis 26:12 (Jacob receiving a gift from Isaac)",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "inference",
+"messianic_reading": "speculation"
+},
+"reveals_about_christ": "The word 'received' reveals Christ's role as the mediator who gives divine promises, the fulfillment of covenantal obligations, and the embodiment of divine grace. It underscores the theme of divine provision and the importance of faith in receiving salvation.",
+"major_scriptural_pattern": "repeated use in covenantal contexts (e.g., receiving a promise, inheritance, or command), paired with 'gave' in parallel phrases, and embedded in numerical patterns (e.g., 12, 6, 7)",
+"term": "received",
+"literal_sense": "to receive, to accept, or to be given something",
+"symbolic_structure": "paired with 'gave' in parallel phrases, repeated in covenantal contexts, and used to emphasize divine provision and divine promise",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The word appears 344 times across the canon, with a distribution of 128 verses in the NT, 97 in other books, and 84 in the Book of Mormon. The number 12 is frequently associated with divine promise (e.g., 12 tribes, 12 disciples), and the number 6 is linked to the Law and the Tabernacle.",
+"semantic_range": "actions of receiving, accepting, or being given; also metaphorically as to be given a gift, a command, or a promise",
+"_facts": {
+"stem": "receiv",
+"surface": "Received",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 344,
+"first_appearance_ref": "Genesis 26:12"
+}
+},
+"repent": {
+"final_synthesis": "The word 'repent' underscores the theological tension between divine judgment and human moral responsibility, reflecting Christ's dual role as both the Judge and the Merciful Savior. Its repeated use in scripture highlights the centrality of repentance in the Christian faith, illustrating the wisdom of a God who calls His people to turn from sin and embrace salvation.",
+"root": "repent",
+"messianic_fulfillment": "not directly addressed in the provided scriptures, but the theme of repentance is central to Christ's role as the Lamb of God (Revelation 13:18) and the mediator of sin (Hebrews 10:10)",
+"first_appearance": "Genesis 6:6 (Genesis 6:6: 'And it repented Noah, and his heart was pained that the Lord had made man on the earth')",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "speculation"
+},
+"reveals_about_christ": "the word 'repent' reveals Christ's character as a Savior who calls humanity to moral transformation, His mission to reconcile sinners to God, and His role as the ultimate example of repentance (John 1:29)",
+"major_scriptural_pattern": "repeated use in covenantal contexts (e.g., Exodus 34:6, Jeremiah 13:21), paired with 'repent and believe,' and symbolic oppositions between sin and salvation",
+"term": "repent",
+"literal_sense": "to turn away, to forsake, to cease from sin",
+"symbolic_structure": "embedded in covenantal theology as a call to moral transformation, with repeated phrases like 'repent and be converted' and the dual role of repentance as both a divine judgment and a path to redemption",
+"language": "English",
+"numerical_letter_observations": "the word 'repent' contains 7 letters, with the letters R-E-P-E-N-T possibly reflecting a numerical pattern (e.g., 7th letter of the alphabet is G, but this is speculative)",
+"semantic_range": "embodying sorrow, remorse, the act of turning from sin, and the moral obligation to seek forgiveness",
+"_facts": {
+"stem": "repent",
+"surface": "Repent",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 343,
+"first_appearance_ref": "Genesis 6:6"
+}
+},
+"righte": {
+"final_synthesis": "The term 'righteous' underscores the interplay of divine justice, covenantal fidelity, and moral transformation, reflecting Christ's role as both the fulfillment of covenantal promises and the embodiment of divine righteousness in human history.",
+"root": "righteous",
+"messianic_fulfillment": "The term 'righteous' is central to the fulfillment of Christ's role as the 'righteous branch' (2 Nephi 3:5), where the Lord promises to raise up a righteous leader to restore covenantal faithfulness.",
+"first_appearance": "Genesis 7:1 (Genesis 7:1)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The word 'righteous' reveals Christ's mission to embody divine justice, fulfill covenantal promises, and restore moral integrity through His sacrificial atonement and resurrection.",
+"major_scriptural_pattern": "covenantal promises and judgments, emphasizing moral uprightness and divine accountability",
+"term": "righteous",
+"literal_sense": "just, righteous, morally upright",
+"symbolic_structure": "paired terms (e.g., 'righteous' vs. 'unrighteous'), repeated covenantal phrases (e.g., 'the Lord will raise up a righteous branch'), and numerical patterns (e.g., 50 righteous in Genesis 18:28)",
+"language": "English",
+"numerical_letter_observations": "The number 50 appears in Genesis 18:28, symbolizing completeness or divine provision, and the 50 righteous people in Genesis 18:28 reflect a covenantal promise of restoration.",
+"semantic_range": "justice, moral integrity, covenantal fidelity, divine attribute",
+"_facts": {
+"stem": "righte",
+"surface": "Righteous",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 327,
+"first_appearance_ref": "Genesis 7:1"
 }
 }
 }

@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "t",
 "model": "qwen3:1.7b",
-"updated": "2026-04-19T13:39:58+00:00"
+"updated": "2026-04-20T03:11:31+00:00"
 },
 "stems": {
 "took": {
@@ -155,6 +155,37 @@
 "morph": "",
 "count": 358,
 "first_appearance_ref": "Genesis 2:14"
+}
+},
+"truth": {
+"final_synthesis": "The word 'truth' reveals Christ's role as the covenantal embodiment of divine fidelity, whose mission prioritizes moral integrity and divine revelation, reflecting the interplay of law, love, and redemption in biblical theology.",
+"root": "truth",
+"messianic_fulfillment": "Jesus Christ is called 'the Son of the Father in truth' (2 Nephi 9:40), fulfilling the covenantal role of embodying divine truth",
+"first_appearance": "Genesis 24:27 (blessing of Abraham's wife Rachel, 'truth' as a divine attribute)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"speculation": "speculation"
+},
+"reveals_about_christ": "Christ's mission reveals the centrality of truth in covenantal faith, its role in redemption, and its symbolic opposition to human imperfection",
+"major_scriptural_pattern": "repeated covenantal use of 'truth' as a divine attribute, paired with 'love' in blessings (e.g., 2 John 1:3), and embedded in covenantal fidelity (1 Kings 3:6)",
+"term": "truth",
+"literal_sense": "honesty, sincerity, divine reality, and the nature of truthfulness in covenantal contexts",
+"symbolic_structure": "paired terms 'truth' and 'love' in blessings, covenantal patterns of divine fidelity, and symbolic oppositions between human imperfection and divine truth",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "root 'truth' (T-R-U-T-H) contains no numerical patterns, but its letters align with the number 339 (total appearances in canon), suggesting a thematic resonance",
+"semantic_range": "truthfulness, divine truth, covenantal fidelity, moral integrity, and the embodiment of God's nature in Christ",
+"_facts": {
+"stem": "truth",
+"surface": "Truth",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 339,
+"first_appearance_ref": "Genesis 24:27"
 }
 }
 }

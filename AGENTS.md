@@ -31,6 +31,12 @@ Data lives in `library/` and `model/`. Multi-agent coordination runs through
 
 Full contract: `AGENT_GUIDELINES.md` §7.
 
+## Ledger environment (optional)
+
+- `LEDGER_MAX_SPLIT_CHILDREN` (default **21**) — max children per `split`. Must be at least **13** if you estimate a parent at **13p** and want thirteen 1p leaves in one split (the old cap of 8 blocked that).
+- `LEDGER_MAX_DEPTH`, `LEDGER_MIN_TITLE_LEN`, `LEDGER_DIR` (isolated ledger for tests)
+- `LEDGER_LLM` (`auto` \| `ollama` \| `anthropic` \| `stdout`), `OLLAMA_MODEL`, `ANTHROPIC_API_KEY`
+
 ## Working Rules
 
 - **No preamble. No recap. No filler.** Start with the action or answer.

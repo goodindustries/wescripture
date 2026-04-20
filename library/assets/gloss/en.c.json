@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "c",
 "model": "qwen3:1.7b",
-"updated": "2026-04-19T13:32:48+00:00"
+"updated": "2026-04-19T21:14:50+00:00"
 },
 "stems": {
 "children": {
@@ -338,6 +338,36 @@
 "morph": "",
 "count": 358,
 "first_appearance_ref": "Genesis 21:22"
+}
+},
+"cannot": {
+"final_synthesis": "The word 'cannot' encapsulates the covenantal paradox of human limitation and divine capability, reflecting Jesus' dual nature as both fully human and fully God. Its repeated use in scripture underscores the theme of redemption through humility, where human inability is transformed through Christ's divine power, fulfilling the covenantal promise of salvation.",
+"root": "kanat",
+"messianic_fulfillment": "Jesus' declaration in Matthew 19:16-22 (paraphrased) that 'I can do nothing' underscores His limitation in human terms, yet His divine power transcends human capacity, fulfilling the covenantal promise of redemption through humility and obedience.",
+"first_appearance": "Genesis 19:19 (proverb about being unable to bear burdens)",
+"confidence_by_claim": {
+"etymology": "pattern",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The word 'cannot' reveals Christ's human limitation and divine sovereignty, reflecting His mission to reconcile humanity through humility and reliance on God's grace, embodying the covenantal tension between human frailty and divine omnipotence.",
+"major_scriptural_pattern": "repeated use in covenantal contexts to emphasize divine sovereignty and human limitation",
+"term": "cannot",
+"literal_sense": "to be unable, to lack, or to fail in capacity",
+"symbolic_structure": "paired terms (cannot/can), numerical patterns (19, a prime number), and covenantal oppositions (human frailty vs. divine will)",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The root 'kanat' (Hebrew) has letters summing to 19 (kanat = 19 in Hebrew numerology), aligning with the prime number 19, which marks the earliest canonical appearance. The letter count reflects the covenantal emphasis on divine judgment and human inability.",
+"semantic_range": "inability to act, lack of capacity, divine limitation, and the contrast between human frailty and divine sovereignty",
+"_facts": {
+"stem": "cannot",
+"surface": "Cannot",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 343,
+"first_appearance_ref": "Genesis 19:19"
 }
 }
 }

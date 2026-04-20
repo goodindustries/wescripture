@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "u",
 "model": "qwen3:1.7b",
-"updated": "2026-04-18T03:14:11+00:00"
+"updated": "2026-04-20T13:06:08+00:00"
 },
 "stems": {
 "until": {
@@ -35,6 +35,36 @@
 "morph": "",
 "count": 595,
 "first_appearance_ref": "Genesis 8:5"
+}
+},
+"understand": {
+"final_synthesis": "The term 'understanding' encapsulates the interplay between human limitation and divine sovereignty, reflecting Christ's dual roles as both the revealer of God's will and the transformer of hearts through spiritual insight and the indwelling Spirit.",
+"root": "understand",
+"messianic_fulfillment": "The term 'understanding' is central to Christ's role as the 'Spirit of God' (Ezekiel 3:6) and the 'Light of the world' (John 1:5), where it signifies the revelation of divine truths and the empowerment of believers to discern God's will",
+"first_appearance": "Genesis 11:7 (Genesis 11:7, ESV): 'Not to many people of a strange speech and of an hard language, whose words thou canst not understand.'",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The word 'understanding' reveals Christ's mission as a teacher and healer, emphasizing His role in imparting divine knowledge and transforming hearts through spiritual insight and the indwelling Holy Spirit",
+"major_scriptural_pattern": "divine revelation and spiritual insight, emphasizing the capacity to grasp divine truths through wisdom and divine presence",
+"term": "understanding",
+"literal_sense": "to know, to comprehend, to perceive",
+"symbolic_structure": "paired terms (e.g., 'understanding' and 'knowledge'), repeated phrases (e.g., 'the spirit of God'), and numerical patterns (e.g., the number 11 in Genesis 11:7), reflecting the tension between human limitation and divine omniscience",
+"language": "English",
+"numerical_letter_observations": "The root 'understand' (Greek: ) contains 11 letters, mirroring the number of people in Genesis 11:7, symbolizing divine completeness and the inclusion of all nations in God's plan",
+"semantic_range": "knowledge, insight, revelation, wisdom, spiritual comprehension",
+"_facts": {
+"stem": "understand",
+"surface": "Understanding",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 325,
+"first_appearance_ref": "Genesis 11:7"
 }
 }
 }

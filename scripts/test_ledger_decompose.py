@@ -172,17 +172,36 @@ def test_min_title_len(tmp: Path) -> None:
     print("[ok] min title length enforced")
 
 
+def test_thirteen_child_split(tmp: Path) -> None:
+    """Default LEDGER_MAX_SPLIT_CHILDREN=21 must allow a 13p parent -> 13 leaves."""
+    env = {"LEDGER_DIR": str(tmp), "LEDGER_LLM": "stdout"}
+    run(env, "add", "thirteen child split parent task title here")
+    run(env, "estimate", "T-0001", "--apply", "--points", "13", "--rationale", "epic")
+    children = [f"child task number {i} with enough padding here" for i in range(13)]
+    cmd = ["split", "T-0001", "--agent", "tester", "--apply", "--rationale", "13-way split"]
+    for c in children:
+        cmd.extend(["--child", c])
+    run(env, *cmd)
+    state = json.loads((tmp / "ledger-state.json").read_text())
+    parent = find(state, "T-0001")
+    assert_eq(len(parent["children"]), 13, "thirteen-way split child count")
+    assert_eq(parent["leaf_points"], 13, "leaf_points rollup")
+    print("[ok] 13-child split accepted (MAX_SPLIT_CHILDREN default 21)")
+
+
 def main() -> int:
     with tempfile.TemporaryDirectory() as d1, \
          tempfile.TemporaryDirectory() as d2, \
          tempfile.TemporaryDirectory() as d3, \
          tempfile.TemporaryDirectory() as d4, \
-         tempfile.TemporaryDirectory() as d5:
+         tempfile.TemporaryDirectory() as d5, \
+         tempfile.TemporaryDirectory() as d6:
         test_happy_path(Path(d1))
         test_depth_cap(Path(d2))
         test_cycle_guard(Path(d3))
         test_stdout_fallback(Path(d4))
         test_min_title_len(Path(d5))
+        test_thirteen_child_split(Path(d6))
     print("\nall tests passed")
     return 0
 

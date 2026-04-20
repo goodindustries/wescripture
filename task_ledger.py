@@ -23,6 +23,8 @@ Fibonacci SWE scale:
     13pt+ epic, must split before working
 
 Stop rule: split until every leaf is 1pt. `LEDGER_MAX_DEPTH` (default 5) is safety cap.
+`LEDGER_MAX_SPLIT_CHILDREN` (default 21) caps children per split so a 13p task can
+become thirteen 1p leaves in one `split` call (older default of 8 was too low).
 
 Commands:
     python3 task_ledger.py                          # brief (default)
@@ -78,6 +80,8 @@ TERMINAL_STATUS = {"completed", "cancelled"}
 FIB_POINTS: tuple[int, ...] = (1, 2, 3, 5, 8, 13, 21)
 MAX_DEPTH = int(os.environ.get("LEDGER_MAX_DEPTH", "5"))
 MIN_TITLE_LEN = int(os.environ.get("LEDGER_MIN_TITLE_LEN", "12"))
+# Must be >= max Fibonacci point so a 13p task can become 13 one-point leaves in one split.
+MAX_SPLIT_CHILDREN = int(os.environ.get("LEDGER_MAX_SPLIT_CHILDREN", "21"))
 LEDGER_LLM = os.environ.get("LEDGER_LLM", "auto").lower()  # auto|ollama|anthropic|stdout
 OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://127.0.0.1:11434")
 OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "llama3.2:3b")
@@ -383,7 +387,7 @@ You are splitting a software engineering task into sub-tasks.
 
 Each sub-task MUST be 1 point on the Fibonacci scale (roughly 30 minutes of
 focused work: single file OR single concept OR one test case OR one migration
-step). Propose 2 to 8 children. Children must:
+step). Propose 2 to {max_children} children. Children must:
   - each be self-contained (no undefined dependency on a later sibling)
   - each describe a single concrete artifact or verifiable change
   - collectively cover the parent (no gaps)
@@ -532,6 +536,7 @@ def _build_split_prompt(task: dict[str, Any]) -> str:
         phase=task.get("phase") or "(none)",
         points=task.get("points") or "?",
         title=task["title"],
+        max_children=MAX_SPLIT_CHILDREN,
     )
 
 
@@ -560,8 +565,8 @@ def apply_split(task_id: str, agent: str, child_titles: list[str], rationale: st
     clean = [c.strip() for c in child_titles if c and c.strip()]
     if len(clean) < 2:
         raise SystemExit("split requires at least 2 children")
-    if len(clean) > 8:
-        raise SystemExit("split refuses more than 8 children (hallucination guard)")
+    if len(clean) > MAX_SPLIT_CHILDREN:
+        raise SystemExit(f"split refuses more than {MAX_SPLIT_CHILDREN} children (hallucination guard)")
     for title in clean:
         if len(title) < MIN_TITLE_LEN:
             raise SystemExit(f"child title too short (<{MIN_TITLE_LEN}): {title!r}")
