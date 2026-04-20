@@ -7091,6 +7091,36 @@ var Peek = (function() {
     return { scheduleShow: scheduleShow, cancelShow: cancelShow, scheduleHide: scheduleHide, hide: hide };
 })();
 
+// Delegated hover-peek binding for entity chips across the reader.
+// Matches .ent-link[data-entity|place|thing|topic] AND inline verse spans
+// span.w[data-entity|place|thing]. Mouseover/mouseout bubble; we resolve
+// the nearest peekable ancestor so we fire exactly once per chip.
+function peekKindAndId(node) {
+    if (!node) return null;
+    if (node.dataset.entity) return { kind: 'entity', id: node.dataset.entity };
+    if (node.dataset.place)  return { kind: 'place',  id: node.dataset.place };
+    if (node.dataset.thing)  return { kind: 'thing',  id: node.dataset.thing };
+    if (node.dataset.topic)  return { kind: 'topic',  id: node.dataset.topic };
+    return null;
+}
+document.addEventListener('mouseover', function(e) {
+    var chip = e.target.closest('.ent-link, span.w[data-entity], span.w[data-place], span.w[data-thing]');
+    if (!chip) return;
+    // Ignore intra-chip moves (from a child text node back into the chip).
+    if (chip.contains(e.relatedTarget)) return;
+    var k = peekKindAndId(chip);
+    if (!k) return;
+    Peek.scheduleShow(chip, function() { return peekEntitySnippetHtml(k.kind, k.id); }, 400);
+});
+document.addEventListener('mouseout', function(e) {
+    var chip = e.target.closest('.ent-link, span.w[data-entity], span.w[data-place], span.w[data-thing]');
+    if (!chip) return;
+    // Ignore moves that stay inside the chip (to a child element).
+    if (chip.contains(e.relatedTarget)) return;
+    Peek.cancelShow();
+    Peek.scheduleHide();
+});
+
 // Cycle focus across verse-panel connection cards with j/k.
 // Highlight is a transient CSS class (.comm-card--kb-focus) scoped to the
 // channel body so it doesn't collide with click-focus styles.
