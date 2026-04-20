@@ -1071,6 +1071,49 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 .source-badge + .score-dots {
     margin-left: 6px;
 }
+.search-facets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 8px;
+    padding: 8px 0 10px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--divider);
+}
+.search-facet {
+    font: inherit;
+    font-size: 11px;
+    letter-spacing: 0.03em;
+    padding: 4px 10px;
+    border: 1px solid var(--divider);
+    border-radius: 12px;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: background-color 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+}
+.search-facet:hover { background: rgba(156,122,77,0.06); }
+.search-facet--active {
+    background: rgba(74,103,65,0.1);
+    color: var(--text);
+    border-color: rgba(74,103,65,0.5);
+}
+.search-facet-count {
+    font-size: 10px;
+    color: var(--muted);
+    margin-left: 3px;
+}
+.search-result-chip {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    padding: 1px 6px;
+    margin-right: 6px;
+    background: rgba(156,122,77,0.12);
+    color: var(--muted);
+    border-radius: 8px;
+    vertical-align: middle;
+    text-transform: uppercase;
+}
 .xref-filter-row {
     display: flex;
     flex-wrap: wrap;
@@ -4611,6 +4654,15 @@ function computeSameFigureBonus(verseEnts, entryText) {
 
 // Cross-ref source filter — stored in localStorage so the choice survives
 // reloads (T-0182). Empty string means "All sources".
+function wireSearchFacets(container) {
+    container.querySelectorAll('.search-facet').forEach(function(chip) {
+        chip.addEventListener('click', function() {
+            setSearchFacet(chip.dataset.src || '');
+            if (lastSearchQuery) runSearch(lastSearchQuery);
+        });
+    });
+}
+
 var XREF_FILTER_KEY = 'ws:xref-source-filter';
 function getXrefSourceFilter() {
     try { return localStorage.getItem(XREF_FILTER_KEY) || ''; }
@@ -5740,6 +5792,7 @@ function flattenSearchIndex() {
             if (!text) return;
             searchRows.push({
                 kind: 'source',
+                src: doc.s || '',
                 id: doc.id,
                 collection: doc.collection || '',
                 label: doc.label || '',
@@ -5756,6 +5809,7 @@ function flattenSearchIndex() {
                 if (!text) return;
                 searchRows.push({
                     kind: 'verse',
+                    src: 'standard_works',
                     id: doc.id,
                     book: doc.b || '',
                     chapter: doc.c || 0,
@@ -5878,11 +5932,24 @@ function snippetForRow(row, q) {
     return highlightTerms(escapeHtml(snippet), needles);
 }
 
+var SEARCH_FACET_KEY = 'ws:search-source-filter';
+function getSearchFacet() {
+    try { return localStorage.getItem(SEARCH_FACET_KEY) || ''; }
+    catch (e) { return ''; }
+}
+function setSearchFacet(v) {
+    try {
+        if (v) localStorage.setItem(SEARCH_FACET_KEY, v);
+        else localStorage.removeItem(SEARCH_FACET_KEY);
+    } catch (e) {}
+}
+var lastSearchQuery = '';
 function runSearch(query) {
     if (!searchIndex) return;
+    lastSearchQuery = query;
     var q = parseSearchQuery(query);
     var rows = flattenSearchIndex();
-    var results = rows.map(function(row) {
+    var scored = rows.map(function(row) {
         return { row: row, score: scoreSearchRow(row, q) };
     }).filter(function(hit) {
         return hit.score > 0;
@@ -5890,30 +5957,68 @@ function runSearch(query) {
         if (b.score !== a.score) return b.score - a.score;
         if (a.row.kind !== b.row.kind) return a.row.kind === 'verse' ? -1 : 1;
         return String(a.row.ref || '').localeCompare(String(b.row.ref || ''));
+    });
+
+    // Facet counts derived from the pre-filtered hit set so chip counts
+    // reflect what exists for the query, not what's left after filtering.
+    var facetCounts = {};
+    scored.forEach(function(h) {
+        var k = h.row.src || 'standard_works';
+        facetCounts[k] = (facetCounts[k] || 0) + 1;
+    });
+
+    var facet = getSearchFacet();
+    // Drop facet silently if the current query doesn't include it.
+    if (facet && !facetCounts[facet]) facet = '';
+
+    var results = scored.filter(function(h) {
+        if (!facet) return true;
+        return (h.row.src || 'standard_works') === facet;
     }).slice(0, 20);
 
     var status = document.getElementById('search-status');
     var container = document.getElementById('search-results');
 
+    var facetKeys = Object.keys(facetCounts);
+    var facetHtml = '';
+    if (facetKeys.length > 1) {
+        facetHtml = '<div class="search-facets">'
+            + '<button type="button" class="search-facet' + (!facet ? ' search-facet--active' : '') + '" data-src="">All <span class="search-facet-count">' + scored.length + '</span></button>'
+            + facetKeys.sort().map(function(k) {
+                return '<button type="button" class="search-facet' + (facet === k ? ' search-facet--active' : '') + '" data-src="' + escapeAttr(k) + '">'
+                    + escapeHtml(formatSourceChip(k)) + ' <span class="search-facet-count">' + facetCounts[k] + '</span></button>';
+            }).join('')
+            + '</div>';
+    }
+
     if (results.length === 0) {
-        status.textContent = 'No results.';
-        container.innerHTML = '';
+        status.textContent = facet ? 'No ' + formatSourceChip(facet) + ' results.' : 'No results.';
+        container.innerHTML = facetHtml;
+        wireSearchFacets(container);
         return;
     }
-    status.textContent = results.length === 20 ? 'Top 20 results' : results.length + ' result' + (results.length === 1 ? '' : 's');
+    status.textContent = results.length === 20
+        ? (facet ? 'Top 20 ' + formatSourceChip(facet) + ' results' : 'Top 20 results')
+        : results.length + ' result' + (results.length === 1 ? '' : 's');
 
-    var html = '';
+    var html = facetHtml;
     results.forEach(function(r) {
         html += '<div class="search-result" data-kind="' + escapeAttr(r.row.kind) + '"'
              + ' data-id="' + escapeAttr(r.row.id) + '"'
              + ' data-n="' + escapeAttr(String(r.row.n || '')) + '"'
              + ' data-href="' + escapeAttr(r.row.href || '') + '"'
+             + ' data-src="' + escapeAttr(r.row.src || 'standard_works') + '"'
              + ' data-text="' + escapeAttr(r.row.t || '') + '">'
-             + '<div class="search-result-ref">' + escapeHtml(r.row.ref || '') + '</div>'
+             + '<div class="search-result-ref">'
+             + (r.row.src && r.row.src !== 'standard_works'
+                 ? '<span class="search-result-chip">' + escapeHtml(formatSourceChip(r.row.src)) + '</span>'
+                 : '')
+             + escapeHtml(r.row.ref || '') + '</div>'
              + '<div class="search-result-text">' + snippetForRow(r.row, q) + '</div>'
              + '</div>';
     });
     container.innerHTML = html;
+    wireSearchFacets(container);
 
     // Click handler via delegation
     container.onclick = function(e) {
