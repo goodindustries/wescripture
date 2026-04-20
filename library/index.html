@@ -6360,8 +6360,8 @@ document.getElementById('content').addEventListener('click', function(e) {
         if (block) { openSourceParaDiscovery(block, para); return; }
     }
 
-    // Inline commentary/quote block (semantic-quote) → open quote card in channel
-    var quoteEl = e.target.closest('.semantic-quote');
+    // Inline commentary/quote block (semantic-quote, donaldson-block) → open quote card in channel
+    var quoteEl = e.target.closest('.semantic-quote, .donaldson-block');
     if (quoteEl && !e.target.closest('a, button')) {
         e.stopPropagation();
         openInlineQuoteCard(quoteEl);
