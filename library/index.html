@@ -6447,7 +6447,14 @@ document.getElementById('content').addEventListener('click', function(e) {
         }
     }
 
-    // Scripture: stemmed word span → semantic channel (chapter _words.json)
+    // Scripture reader: stemmed word spans inside verses.
+    //
+    // Decision (ledger T-0076): entity / place / thing stems open their profile;
+    // all OTHER stems are intentionally silent here. The curated "Key words"
+    // card inside the verse panel is the sanctioned surfacing path — it filters
+    // out noise (stop words, low-signal matches) that would otherwise pollute
+    // the semantic channel. Clicks therefore fall through to the verse-level
+    // handler below, which opens the verse panel.
     var wSpanVerse = e.target.closest('span.w[data-st]');
     var verseForWord = wSpanVerse && wSpanVerse.closest('div.verse');
     if (wSpanVerse && verseForWord && !sourceMode) {
@@ -6459,35 +6466,7 @@ document.getElementById('content').addEventListener('click', function(e) {
             else if (wSpanVerse.dataset.thing) openThingProfile(wSpanVerse.dataset.thing);
             return;
         }
-        // Main verses should not open the semantic channel from inline stems; use Key words in the verse panel.
-        return;
-        var chBlock = verseForWord.closest('.chapter-block[data-chapter-id]');
-        var chId = chBlock && chBlock.dataset.chapterId;
-        var vnumW = String((verseForWord.id || '').replace(/^v/, '') || '');
-        if (chId && vnumW) {
-            closeTocPanel();
-            focusVerse(verseForWord, false);
-            var stemV = wSpanVerse.dataset.st || '';
-            var ctxV = verseForWord.querySelector('.verse-text') || verseForWord;
-            activeContextText = ctxV ? (ctxV.textContent || '') : '';
-            if (channelActiveSpan) {
-                channelActiveSpan.classList.remove('cw-active');
-            }
-            channelActiveSpan = wSpanVerse;
-            wSpanVerse.classList.add('cw-active');
-            loadChapterWordIndex(chId).then(function(idx) {
-                var pack = idx && idx[vnumW];
-                var wdata = pack && pack[stemV];
-                var raw = wdata && (wdata.matches || []);
-                var labelV = (wdata && wdata.forms && wdata.forms[0]) || (wSpanVerse.textContent || '').trim() || stemV;
-                if (!raw || !raw.length) {
-                    openChannelEmpty(labelV);
-                    return;
-                }
-                openChannel(labelV, raw);
-            });
-            return;
-        }
+        // Non-entity stem — fall through to the verse-level handler on purpose.
     }
 
     var verse = e.target.closest('div.verse');
