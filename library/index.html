@@ -4245,6 +4245,36 @@ function openSourceParaDiscovery(block, paraNode) {
     });
 }
 
+// Render an inline commentary / cross-ref quote as a channel card.
+// Used by .semantic-quote and .donaldson-block click handlers.
+function openInlineQuoteCard(el) {
+    var isDonaldson = el.classList.contains('donaldson-block');
+    var srcEl = el.querySelector('.semantic-source') || el.querySelector('.source-label');
+    var refEl = el.querySelector('.semantic-ref');
+    var textEl = el.querySelector('.semantic-text') || el.querySelector('.donaldson-para');
+    var sourceName = srcEl ? (srcEl.textContent || '').trim() : (isDonaldson ? 'Donaldson' : 'Source');
+    var refRaw = refEl ? (refEl.textContent || '').trim() : '';
+    var text = textEl ? (textEl.textContent || '').trim() : (el.textContent || '').trim();
+
+    var html = '';
+    html += '<div class="panel-header">'
+         +   '<div class="panel-verse-ref">' + escapeHtml(sourceName) + '</div>'
+         +   (refRaw ? '<div class="panel-verse-text">' + escapeHtml(refRaw) + '</div>' : '')
+         + '</div>';
+    html += '<div style="padding:16px 28px 12px;border-bottom:1px solid var(--divider);">'
+         +   '<div style="font-family:\'EB Garamond\',Georgia,serif;font-size:16px;line-height:1.8;font-style:italic;color:var(--text);padding-left:16px;border-left:2px solid rgba(156,122,77,0.3);">'
+         +     makeExpandable(text.slice(0, 2000), 'quote-preview', 'quote-overflow', 'quote-more')
+         +   '</div>'
+         + '</div>';
+
+    var panelBody = document.getElementById('panel-body');
+    panelBody.innerHTML = html;
+    panelBody.dataset.panelMode = 'quote';
+    panelBody.scrollTop = 0;
+    document.getElementById('channel').classList.add('open');
+    channelOpen = true;
+}
+
 function injectSourceCitationLinks(block, docId) {
     var idx = sourceCitations && sourceCitations[docId];
     if (!idx || !block) return;
@@ -6306,6 +6336,14 @@ document.getElementById('content').addEventListener('click', function(e) {
     if (para) {
         var block = para.closest('.chapter-block');
         if (block) { openSourceParaDiscovery(block, para); return; }
+    }
+
+    // Inline commentary/quote block (semantic-quote) → open quote card in channel
+    var quoteEl = e.target.closest('.semantic-quote');
+    if (quoteEl && !e.target.closest('a, button')) {
+        e.stopPropagation();
+        openInlineQuoteCard(quoteEl);
+        return;
     }
 
     // Source reader: clickable word → semantic channel (words JSON)
