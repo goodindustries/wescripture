@@ -1155,6 +1155,33 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     line-height: 1.55;
 }
 .ep-legacy-list li { margin-bottom: 4px; }
+.ep-xdisp-list {
+    padding: 6px 28px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.ep-xdisp-row { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.ep-xdisp-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    min-width: 110px;
+    font-weight: 600;
+}
+.ep-xdisp-count {
+    color: var(--muted);
+    font-weight: 400;
+    margin-left: 3px;
+    font-size: 10px;
+}
+.ep-xdisp-refs {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 6px;
+}
 .ep-sermon-list {
     padding: 6px 28px 14px;
     display: flex;
@@ -3765,6 +3792,60 @@ function renderPersonDispensation(entity) {
         + '</div>';
 }
 
+// Map book slugs → dispensation bucket for the cross-dispensation section.
+// Books outside standard works fall through to the corpus-type implied by
+// source id (handled via prefix in the reference string).
+var DISPENSATION_BY_BOOK_PREFIX = [
+    { prefix: ['gen', 'exod', 'lev', 'num', 'deut'], bucket: 'Patriarchal' },
+    { prefix: ['josh', 'judg', 'ruth', '1_sam', '2_sam', '1_kgs', '2_kgs', '1_chr', '2_chr', 'ezra', 'neh', 'esth', 'job', 'ps', 'prov', 'eccl', 'song', 'isa', 'jer', 'lam', 'ezek', 'dan', 'hos', 'joel', 'amos', 'obad', 'jonah', 'mic', 'nah', 'hab', 'zeph', 'hag', 'zech', 'mal'], bucket: 'Mosaic' },
+    { prefix: ['matt', 'mark', 'luke', 'john', 'acts', 'rom', '1_cor', '2_cor', 'gal', 'eph', 'phil', 'col', '1_thess', '2_thess', '1_tim', '2_tim', 'titus', 'philem', 'heb', 'james', '1_pet', '2_pet', '1_jn', '2_jn', '3_jn', 'jude', 'rev'], bucket: 'Meridian' },
+    { prefix: ['1_ne', '2_ne', 'jacob', 'enos', 'jarom', 'omni', 'w_of_m', 'mosiah', 'alma', 'hel', '3_ne', '4_ne', 'morm', 'ether', 'moro'], bucket: 'Nephite' },
+    { prefix: ['d_c', 'doctrine', 'dc_'], bucket: 'Restoration' },
+    { prefix: ['moses', 'abr', 'js_m', 'js_h', 'a_of_f', 'pearl'], bucket: 'Restoration' }
+];
+function dispensationForRef(ref) {
+    var norm = String(ref || '').toLowerCase().replace(/[\s:]/g, '_');
+    for (var i = 0; i < DISPENSATION_BY_BOOK_PREFIX.length; i++) {
+        var entry = DISPENSATION_BY_BOOK_PREFIX[i];
+        for (var j = 0; j < entry.prefix.length; j++) {
+            if (norm.indexOf(entry.prefix[j]) === 0) return entry.bucket;
+        }
+    }
+    return null;
+}
+
+function renderPersonCrossDispensation(entity) {
+    var refs = (entity && entity.scripture_refs) || [];
+    if (!Array.isArray(refs) || !refs.length) return '';
+    var buckets = {};
+    refs.forEach(function(ref) {
+        var label = typeof ref === 'string' ? ref : (ref && (ref.ref || ref.label)) || '';
+        if (!label) return;
+        var bucket = dispensationForRef(label);
+        if (!bucket) return;
+        (buckets[bucket] = buckets[bucket] || []).push(label);
+    });
+    var order = ['Patriarchal', 'Mosaic', 'Meridian', 'Nephite', 'Restoration'];
+    var present = order.filter(function(b) { return buckets[b] && buckets[b].length; });
+    // Only surface the section when the figure appears in 2+ dispensations —
+    // one bucket is already implied by the Scriptures list and adds noise.
+    if (present.length < 2) return '';
+    var html = '<div class="ep-section">Cross-Dispensation Appearances <span class="ep-section-count">(' + present.length + ')</span></div>'
+        + '<div class="ep-xdisp-list">';
+    present.forEach(function(b) {
+        var list = buckets[b].slice(0, 10);
+        html += '<div class="ep-xdisp-row">'
+            + '<div class="ep-xdisp-label">' + escapeHtml(b) + ' <span class="ep-xdisp-count">' + buckets[b].length + '</span></div>'
+            + '<div class="ep-xdisp-refs">'
+            + list.map(function(r) {
+                return '<span class="ep-scripture-ref" data-verse-ref="' + escapeHtml(r) + '">' + escapeHtml(r) + '</span>';
+            }).join('')
+            + '</div></div>';
+    });
+    html += '</div>';
+    return html;
+}
+
 function renderPersonLegacy(entity) {
     var leg = entity && entity.legacy;
     if (!leg) return '';
@@ -3804,6 +3885,7 @@ function openEntityProfile(entityId) {
     extraHtml += renderPersonFamily(entity)
         + renderPersonTimeline(entity)
         + renderPersonDispensation(entity)
+        + renderPersonCrossDispensation(entity)
         + renderPersonLegacy(entity);
     if (entity.scripture_refs && entity.scripture_refs.length) {
         extraHtml += renderScriptureRefsByBook(entity.scripture_refs);
