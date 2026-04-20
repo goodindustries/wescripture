@@ -3646,7 +3646,14 @@ function chapterGraphEchoes(chapterId, vnum) {
         var ref = (pn.lb || '').trim();
         if (!ref || scriptureRefIsSameChapter(chapterId, ref)) return;
         if (!results.some(function(x){ return x.ref === ref; })) {
-            results.push({ ref: ref, text: (pn.x || '').replace(/  +/g,' ').trim(), score: edge.w || 0 });
+            results.push({
+                ref: ref,
+                text: (pn.x || '').replace(/  +/g,' ').trim(),
+                score: edge.w || 0,
+                source_src: pn.src || '',
+                source_id: pn.doc || pn.src || '',
+                para: (pn.para != null ? String(pn.para) : '')
+            });
         }
     });
     results.sort(function(a, b){ return b.score - a.score; });
@@ -4033,11 +4040,20 @@ function finishVerseDiscoveryPanel(payload) {
         html += '<div class="verse-panel-cards verse-panel-cards--scrip' + (scriptureEdges.length <= 4 ? ' expanded' : '') + '">';
         scriptureEdges.forEach(function(s) {
             var jr = parseVerseRefForStudy(s.ref);
-            html += '<div class="scrip-card' + (jr && chapterMeta[jr.chapterId] ? ' scrip-card--jump' : '') + '"'
-                + (jr && chapterMeta[jr.chapterId]
+            var srcId = s.source_id || '';
+            var srcPara = s.para || '';
+            var hasDocMeta = srcId && sourceMeta && sourceMeta[srcId];
+            var jumpable = jr && chapterMeta[jr.chapterId];
+            html += '<div class="scrip-card'
+                + (jumpable ? ' scrip-card--jump' : '')
+                + (!jumpable && hasDocMeta ? ' scrip-card--passage' : '')
+                + '"'
+                + (jumpable
                     ? ' data-chapter-id="' + escapeAttr(jr.chapterId) + '" data-v="' + jr.verse + '"'
                     : '')
-                + ' style="' + (jr && chapterMeta[jr.chapterId] ? 'cursor:pointer;' : '') + '">'
+                + (srcId ? ' data-source-id="' + escapeAttr(srcId) + '"' : '')
+                + (srcPara ? ' data-para="' + escapeAttr(srcPara) + '"' : '')
+                + ' style="' + (jumpable || hasDocMeta ? 'cursor:pointer;' : '') + '">'
                 + '<div class="scrip-ref">' + escapeHtml(s.ref) + '</div>'
                 + '<div class="scrip-text">' + escapeHtml(s.text) + '</div>'
                 + '</div>';
