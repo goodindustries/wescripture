@@ -1008,6 +1008,18 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     overflow-wrap: anywhere; word-break: break-word; min-width: 0;
 }
 .scrip-card--jump:hover { background: rgba(74,103,65,0.06); }
+.scrip-source-chip {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    margin: 0 0 6px 0;
+    border: 1px solid rgba(156,122,77,0.35);
+    border-radius: 10px;
+    color: var(--muted);
+    background: rgba(156,122,77,0.05);
+}
 .conn-reason-chip {
     display: inline-block;
     font-size: 10px;
@@ -4107,6 +4119,9 @@ function finishVerseDiscoveryPanel(payload) {
                 + (srcId ? ' data-source-id="' + escapeAttr(srcId) + '"' : '')
                 + (srcPara ? ' data-para="' + escapeAttr(srcPara) + '"' : '')
                 + ' style="' + (jumpable || hasDocMeta ? 'cursor:pointer;' : '') + '">'
+                + (s.source_src && s.source_src !== 'standard_works'
+                    ? '<span class="scrip-source-chip">' + escapeHtml(formatSourceChip(s.source_src)) + '</span>'
+                    : '')
                 + '<div class="scrip-ref">' + escapeHtml(s.ref) + '</div>'
                 + '<div class="scrip-text">' + escapeHtml(s.text) + '</div>'
                 + '</div>';
@@ -4324,6 +4339,24 @@ function openSourceParaDiscovery(block, paraNode) {
             jumpTo(bookSlug + '_' + ch, v);
         });
     });
+}
+
+// Humanize a source-category slug for the cross-ref chip.
+// Unknown slugs are title-cased on the fly so new corpora render reasonably.
+function formatSourceChip(slug) {
+    var v = String(slug || '').trim().toLowerCase().replace(/[-\s]+/g, '_');
+    var map = {
+        standard_works: 'Scripture',
+        general_conference: 'GC',
+        journal_of_discourses: 'JD',
+        times_and_seasons: 'T&S',
+        millennial_star: 'Millennial Star',
+        ancient_myths: 'Ancient Texts',
+        sefaria: 'Sefaria',
+        donaldson: 'Donaldson'
+    };
+    if (map[v]) return map[v];
+    return v.split('_').map(function(s) { return s ? s[0].toUpperCase() + s.slice(1) : s; }).join(' ');
 }
 
 // Humanize the raw `reason` code emitted by pipeline.connect.
