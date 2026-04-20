@@ -1,28 +1,27 @@
 {
-  "generated_ts": "2026-04-20T01:51:42+00:00",
+  "generated_ts": "2026-04-20T03:18:27+00:00",
   "active_session": {
     "agent": "Opus",
-    "goal": "Implement vision-gaps-full-sweep: estimate/split Track R + seed Track V vision-gaps plan",
-    "ts": "2026-04-20T01:47:59+00:00"
+    "goal": "phase_clickable + phase_why_labels: wire semantic-quote/donaldson clicks, loosen cross-refs, add reason labels",
+    "ts": "2026-04-20T01:54:52+00:00"
   },
   "last_session_end": {
     "agent": "Opus",
-    "handoff": "T-0002 corpus schema migration shipped at supabase/migrations/002_corpus_schema.sql: volume, book, chapter, verse, verse_variant, commentary_source, commentary_para, embedding (pgvector 384, ivfflat cosine lists=100), connection (directed, top-K, cosine). Public-read RLS on every table; writes via service role only. server/migrations/001_init.sql retired; lineage documented. Next: decompose T-0005 (API rewrite) — gates reader cutover (T-0006) and enables pilot ingest verification (T-0004). T-0001 still blocked on BoMC creds.",
+    "handoff": "Vision-gaps full-sweep planning complete. Track R: 12 rearchitect roots estimated + split into 47 1pt leaves (T-0028..T-0072, T-0188, T-0189). Track V: new plan wescripture-vision-gaps seeded with 29 roots across 10 phases (clickable/why_labels/plain_english/deep_wide/provenance/christ_chain/arcing/topic_profiles/person_arcs/corpus_scope), split into 88 1pt leaves (T-0073..T-0187). Total pending: 174 tasks, zero NEEDS-EST or NEEDS-SPLIT. Next agent: claim any unblocked 1pt leaf via task_ledger.py claim --agent <you>; reader-side V leaves (clickable/why_labels/provenance/arcing/topic_profiles/person_arcs) land against the current static stack, server-side V leaves (christ_chain/connection-backed provenance) wait on Track R API+ingest+connect. T-0001 pins still blocked on BoMC creds.",
     "decisions": [
-      "Canonical refs like ot.gen.1.1 enforced by verse.ref regex check",
-      "variant_kind is a CHECK constraint not a pg ENUM — cheap to extend",
-      "embedding uses polymorphic verse_id XOR commentary_para_id + exactly-one CHECK",
-      "connection references embedding.id (not verse/commentary directly) so rebuilds are a truncate + re-run connect"
+      "Track R estimates: pilot ingest + API rewrite at 8pt each; everything else 2-5pt",
+      "Track V points budgeted so every phase has at least one 1pt entry point for quick wins",
+      "phase_clickable and phase_why_labels are recommended first wave — they directly close MISSION point 2 and 3 without needing the rearchitect"
     ],
-    "ts": "2026-04-19T21:02:39+00:00",
+    "ts": "2026-04-20T01:52:09+00:00",
     "kind": "end"
   },
   "counts": {
-    "blocked": 0,
-    "in_progress": 0,
-    "completed": 15,
+    "in_progress": 1,
+    "pending": 153,
+    "completed": 38,
     "cancelled": 0,
-    "pending": 174
+    "blocked": 2
   },
   "tasks": [
     {
@@ -1775,7 +1774,7 @@
       "parent": "",
       "points": 2,
       "points_rationale": "",
-      "status": "pending",
+      "status": "completed",
       "agent": "",
       "commit": "",
       "notes": [],
@@ -1799,7 +1798,7 @@
       "parent": "",
       "points": 2,
       "points_rationale": "",
-      "status": "pending",
+      "status": "completed",
       "agent": "",
       "commit": "",
       "notes": [],
@@ -1823,7 +1822,7 @@
       "parent": "",
       "points": 3,
       "points_rationale": "",
-      "status": "pending",
+      "status": "completed",
       "agent": "",
       "commit": "",
       "notes": [],
@@ -1848,14 +1847,25 @@
       "parent": "",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
-      "commit": "",
-      "notes": [],
+      "status": "completed",
+      "agent": "Opus",
+      "commit": "6f5425fe8",
+      "notes": [
+        {
+          "ts": "2026-04-20T02:01:16+00:00",
+          "agent": "Opus",
+          "note": "formalize: in reader, non-entity stems inside verses are silent; key-words card is the surfacing path"
+        },
+        {
+          "ts": "2026-04-20T02:01:47+00:00",
+          "agent": "Opus",
+          "note": "deleted unreachable channel-open branch; decision comment anchors the behavior"
+        }
+      ],
       "children": [],
       "depth": 0,
       "created_ts": "2026-04-20T01:49:48+00:00",
-      "updated_ts": "2026-04-20T01:49:48+00:00",
+      "updated_ts": "2026-04-20T02:01:47+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -1894,7 +1904,7 @@
       "parent": "",
       "points": 2,
       "points_rationale": "",
-      "status": "pending",
+      "status": "completed",
       "agent": "",
       "commit": "",
       "notes": [],
@@ -1918,7 +1928,7 @@
       "parent": "",
       "points": 3,
       "points_rationale": "",
-      "status": "pending",
+      "status": "completed",
       "agent": "",
       "commit": "",
       "notes": [],
@@ -1995,14 +2005,25 @@
       "parent": "",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
-      "commit": "",
-      "notes": [],
+      "status": "completed",
+      "agent": "Opus",
+      "commit": "c0e8a8279",
+      "notes": [
+        {
+          "ts": "2026-04-20T03:14:52+00:00",
+          "agent": "Opus",
+          "note": "link key-word card into gloss-card via existing request-def path"
+        },
+        {
+          "ts": "2026-04-20T03:15:39+00:00",
+          "agent": "Opus",
+          "note": "link opens openChannel across chapterWordIndex matches; falls back to openChannelEmpty"
+        }
+      ],
       "children": [],
       "depth": 0,
       "created_ts": "2026-04-20T01:49:50+00:00",
-      "updated_ts": "2026-04-20T01:49:50+00:00",
+      "updated_ts": "2026-04-20T03:15:39+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -2497,14 +2518,25 @@
       "parent": "T-0073",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
-      "commit": "",
-      "notes": [],
+      "status": "completed",
+      "agent": "Opus",
+      "commit": "74319e389",
+      "notes": [
+        {
+          "ts": "2026-04-20T01:56:28+00:00",
+          "agent": "Opus",
+          "note": "adding handler + openInlineQuoteCard stub"
+        },
+        {
+          "ts": "2026-04-20T01:57:06+00:00",
+          "agent": "Opus",
+          "note": "delegator handler + openInlineQuoteCard render"
+        }
+      ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-04-20T01:51:15+00:00",
-      "updated_ts": "2026-04-20T01:51:15+00:00",
+      "updated_ts": "2026-04-20T01:57:06+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -2518,14 +2550,25 @@
       "parent": "T-0073",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
-      "commit": "",
-      "notes": [],
+      "status": "completed",
+      "agent": "Opus",
+      "commit": "b3df60a9e",
+      "notes": [
+        {
+          "ts": "2026-04-20T01:57:07+00:00",
+          "agent": "Opus",
+          "note": "wire Open Source / Jump to verse actions"
+        },
+        {
+          "ts": "2026-04-20T01:57:30+00:00",
+          "agent": "Opus",
+          "note": "added docId→loadSourceDocument and scripture-ref→openVerseDiscovery"
+        }
+      ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-04-20T01:51:15+00:00",
-      "updated_ts": "2026-04-20T01:51:15+00:00",
+      "updated_ts": "2026-04-20T01:57:30+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -2539,14 +2582,25 @@
       "parent": "T-0074",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
-      "commit": "",
-      "notes": [],
+      "status": "completed",
+      "agent": "Opus",
+      "commit": "d99146ec6",
+      "notes": [
+        {
+          "ts": "2026-04-20T01:57:36+00:00",
+          "agent": "Opus",
+          "note": "extend selector to .donaldson-block"
+        },
+        {
+          "ts": "2026-04-20T01:57:51+00:00",
+          "agent": "Opus",
+          "note": "selector covers donaldson-block; openInlineQuoteCard already branches on source-label"
+        }
+      ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-04-20T01:51:15+00:00",
-      "updated_ts": "2026-04-20T01:51:15+00:00",
+      "updated_ts": "2026-04-20T01:57:51+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -2560,14 +2614,25 @@
       "parent": "T-0074",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
-      "commit": "",
-      "notes": [],
+      "status": "completed",
+      "agent": "Opus",
+      "commit": "0adf1e6e5",
+      "notes": [
+        {
+          "ts": "2026-04-20T01:58:04+00:00",
+          "agent": "Opus",
+          "note": "surface trailing parenthetical attribution for donaldson card"
+        },
+        {
+          "ts": "2026-04-20T01:58:19+00:00",
+          "agent": "Opus",
+          "note": "extracts '(Author, Work, p.N)' into refRaw and strips it from body"
+        }
+      ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-04-20T01:51:15+00:00",
-      "updated_ts": "2026-04-20T01:51:15+00:00",
+      "updated_ts": "2026-04-20T01:58:19+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -2581,14 +2646,25 @@
       "parent": "T-0075",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
-      "commit": "",
-      "notes": [],
+      "status": "completed",
+      "agent": "Opus",
+      "commit": "d0a9ae5db",
+      "notes": [
+        {
+          "ts": "2026-04-20T02:00:03+00:00",
+          "agent": "Opus",
+          "note": "plumb pn.src/pn.lb through chapterGraphEchoes onto scrip-card"
+        },
+        {
+          "ts": "2026-04-20T02:00:27+00:00",
+          "agent": "Opus",
+          "note": "chapterGraphEchoes now returns source_id/para; render emits attrs + scrip-card--passage class"
+        }
+      ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-04-20T01:51:15+00:00",
-      "updated_ts": "2026-04-20T01:51:15+00:00",
+      "updated_ts": "2026-04-20T02:00:27+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -2602,14 +2678,25 @@
       "parent": "T-0075",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
-      "commit": "",
-      "notes": [],
+      "status": "completed",
+      "agent": "Opus",
+      "commit": "7838acaff",
+      "notes": [
+        {
+          "ts": "2026-04-20T02:00:32+00:00",
+          "agent": "Opus",
+          "note": "add scrip-card--passage click handler calling loadSourceDocument with focusPara"
+        },
+        {
+          "ts": "2026-04-20T02:00:44+00:00",
+          "agent": "Opus",
+          "note": "click handler resolves data-source-id via sourceMeta and forwards data-para as focusPara"
+        }
+      ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-04-20T01:51:15+00:00",
-      "updated_ts": "2026-04-20T01:51:15+00:00",
+      "updated_ts": "2026-04-20T02:00:44+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -2623,14 +2710,25 @@
       "parent": "T-0075",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
-      "commit": "",
-      "notes": [],
+      "status": "completed",
+      "agent": "Opus",
+      "commit": "3dd6d6107",
+      "notes": [
+        {
+          "ts": "2026-04-20T02:00:50+00:00",
+          "agent": "Opus",
+          "note": "add scrip-card--passage hover style"
+        },
+        {
+          "ts": "2026-04-20T02:01:09+00:00",
+          "agent": "Opus",
+          "note": "hover tint + ↗ glyph marks passage cards as opening a source document"
+        }
+      ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-04-20T01:51:15+00:00",
-      "updated_ts": "2026-04-20T01:51:15+00:00",
+      "updated_ts": "2026-04-20T02:01:09+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -2644,14 +2742,20 @@
       "parent": "T-0077",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
+      "status": "blocked",
+      "agent": "Opus",
       "commit": "",
-      "notes": [],
+      "notes": [
+        {
+          "ts": "2026-04-20T02:02:04+00:00",
+          "agent": "Opus",
+          "note": "blocked by T-0055 (pipeline.connect stage must exist before reason can be computed)"
+        }
+      ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-04-20T01:51:15+00:00",
-      "updated_ts": "2026-04-20T01:51:15+00:00",
+      "updated_ts": "2026-04-20T02:02:04+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -2665,14 +2769,20 @@
       "parent": "T-0077",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
+      "status": "blocked",
+      "agent": "Opus",
       "commit": "",
-      "notes": [],
+      "notes": [
+        {
+          "ts": "2026-04-20T02:02:04+00:00",
+          "agent": "Opus",
+          "note": "blocked by T-0055 (connection table must exist before reason column can be persisted)"
+        }
+      ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-04-20T01:51:15+00:00",
-      "updated_ts": "2026-04-20T01:51:15+00:00",
+      "updated_ts": "2026-04-20T02:02:04+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -2686,14 +2796,25 @@
       "parent": "T-0077",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
-      "commit": "",
-      "notes": [],
+      "status": "completed",
+      "agent": "Opus",
+      "commit": "9de5a6c7e",
+      "notes": [
+        {
+          "ts": "2026-04-20T02:02:09+00:00",
+          "agent": "Opus",
+          "note": "render reason tag when entry carries reason; opt-in render, graceful when absent"
+        },
+        {
+          "ts": "2026-04-20T02:22:15+00:00",
+          "agent": "Opus",
+          "note": "render path ready; graceful absence; forward-compat with Track R reason column"
+        }
+      ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-04-20T01:51:15+00:00",
-      "updated_ts": "2026-04-20T01:51:15+00:00",
+      "updated_ts": "2026-04-20T02:22:15+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -2707,14 +2828,25 @@
       "parent": "T-0078",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
-      "commit": "",
-      "notes": [],
+      "status": "completed",
+      "agent": "Opus",
+      "commit": "afd96d7a0",
+      "notes": [
+        {
+          "ts": "2026-04-20T02:22:27+00:00",
+          "agent": "Opus",
+          "note": "allow non-SW passages with per-source cap; expose source label to render"
+        },
+        {
+          "ts": "2026-04-20T03:11:55+00:00",
+          "agent": "Opus",
+          "note": "per-source caps + non-SW passthrough landed; ready for T-0113 chip render"
+        }
+      ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-04-20T01:51:15+00:00",
-      "updated_ts": "2026-04-20T01:51:15+00:00",
+      "updated_ts": "2026-04-20T03:11:55+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -2728,14 +2860,25 @@
       "parent": "T-0078",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
-      "commit": "",
-      "notes": [],
+      "status": "completed",
+      "agent": "Opus",
+      "commit": "e2ccfd462",
+      "notes": [
+        {
+          "ts": "2026-04-20T03:12:02+00:00",
+          "agent": "Opus",
+          "note": "render source chip on scrip-card using source_src"
+        },
+        {
+          "ts": "2026-04-20T03:12:31+00:00",
+          "agent": "Opus",
+          "note": "scrip-source-chip renders for non-SW sources; title-case fallback for unknown slugs"
+        }
+      ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-04-20T01:51:15+00:00",
-      "updated_ts": "2026-04-20T01:51:15+00:00",
+      "updated_ts": "2026-04-20T03:12:31+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -2749,14 +2892,25 @@
       "parent": "T-0079",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
-      "commit": "",
-      "notes": [],
+      "status": "completed",
+      "agent": "Opus",
+      "commit": "0460b166c",
+      "notes": [
+        {
+          "ts": "2026-04-20T03:12:38+00:00",
+          "agent": "Opus",
+          "note": "compute shared-entity bonus from entity spans per verse/entry pair"
+        },
+        {
+          "ts": "2026-04-20T03:13:30+00:00",
+          "agent": "Opus",
+          "note": "bonus cap 0.09 (3× shared entities); verseEnts scanned once per panel"
+        }
+      ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-04-20T01:51:16+00:00",
-      "updated_ts": "2026-04-20T01:51:16+00:00",
+      "updated_ts": "2026-04-20T03:13:30+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -2770,14 +2924,25 @@
       "parent": "T-0079",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
-      "commit": "",
-      "notes": [],
+      "status": "completed",
+      "agent": "Opus",
+      "commit": "97c797d26",
+      "notes": [
+        {
+          "ts": "2026-04-20T03:13:35+00:00",
+          "agent": "Opus",
+          "note": "boost entries that mention a person already marked as appearing in this verse"
+        },
+        {
+          "ts": "2026-04-20T03:14:12+00:00",
+          "agent": "Opus",
+          "note": "filters shared persons to major figures (excerpts/arc/biography/group=major); bonus cap 0.08"
+        }
+      ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-04-20T01:51:16+00:00",
-      "updated_ts": "2026-04-20T01:51:16+00:00",
+      "updated_ts": "2026-04-20T03:14:12+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -2791,14 +2956,25 @@
       "parent": "T-0079",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
-      "commit": "",
-      "notes": [],
+      "status": "completed",
+      "agent": "Opus",
+      "commit": "80ff81486",
+      "notes": [
+        {
+          "ts": "2026-04-20T03:14:17+00:00",
+          "agent": "Opus",
+          "note": "sort connections[] by blended rank_score = baseScore + bonusEntity + bonusFigure"
+        },
+        {
+          "ts": "2026-04-20T03:14:32+00:00",
+          "agent": "Opus",
+          "note": "rankScore = baseScore + bonusEntity + bonusFigure; tie-break by entryIdx for stability"
+        }
+      ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-04-20T01:51:16+00:00",
-      "updated_ts": "2026-04-20T01:51:16+00:00",
+      "updated_ts": "2026-04-20T03:14:32+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -2896,14 +3072,25 @@
       "parent": "T-0080",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
+      "status": "completed",
+      "agent": "Opus",
       "commit": "",
-      "notes": [],
+      "notes": [
+        {
+          "ts": "2026-04-20T03:15:50+00:00",
+          "agent": "Opus",
+          "note": "render christ_connection block when present on topic object"
+        },
+        {
+          "ts": "2026-04-20T03:16:17+00:00",
+          "agent": "Opus",
+          "note": "already satisfied: openTopicProfile calls christConnectionHtml(entity) and .ep-christ styles exist (commit c0e8a8279 baseline). Render activates the moment T-0120 merges christ_connection fields."
+        }
+      ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-04-20T01:51:16+00:00",
-      "updated_ts": "2026-04-20T01:51:16+00:00",
+      "updated_ts": "2026-04-20T03:16:17+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -2917,14 +3104,25 @@
       "parent": "T-0081",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
-      "commit": "",
-      "notes": [],
+      "status": "completed",
+      "agent": "Opus",
+      "commit": "ff1c98cb4",
+      "notes": [
+        {
+          "ts": "2026-04-20T03:16:22+00:00",
+          "agent": "Opus",
+          "note": "audit script computing word freq vs gloss shard presence"
+        },
+        {
+          "ts": "2026-04-20T03:17:35+00:00",
+          "agent": "Opus",
+          "note": "report written to diagnostics/gloss-coverage.json; 4385 missing stems over freq 3"
+        }
+      ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-04-20T01:51:16+00:00",
-      "updated_ts": "2026-04-20T01:51:16+00:00",
+      "updated_ts": "2026-04-20T03:17:35+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -2938,14 +3136,25 @@
       "parent": "T-0081",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
-      "commit": "",
-      "notes": [],
+      "status": "completed",
+      "agent": "Opus",
+      "commit": "f691c90f9",
+      "notes": [
+        {
+          "ts": "2026-04-20T03:17:40+00:00",
+          "agent": "Opus",
+          "note": "generate full coverage report and commit diagnostics snapshot"
+        },
+        {
+          "ts": "2026-04-20T03:17:58+00:00",
+          "agent": "Opus",
+          "note": "diagnostics/gloss-coverage.json committed; 500 rows ready for queue in T-0124"
+        }
+      ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-04-20T01:51:16+00:00",
-      "updated_ts": "2026-04-20T01:51:16+00:00",
+      "updated_ts": "2026-04-20T03:17:58+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -2959,14 +3168,20 @@
       "parent": "T-0081",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
+      "status": "in_progress",
+      "agent": "Opus",
       "commit": "",
-      "notes": [],
+      "notes": [
+        {
+          "ts": "2026-04-20T03:18:18+00:00",
+          "agent": "Opus",
+          "note": "queue batched gloss backfill tasks referencing diagnostics snapshot"
+        }
+      ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-04-20T01:51:16+00:00",
-      "updated_ts": "2026-04-20T01:51:16+00:00",
+      "updated_ts": "2026-04-20T03:18:18+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -4334,6 +4549,111 @@
       "updated_ts": "2026-04-20T01:51:42+00:00",
       "leaf_points": 1,
       "kind": "leaf"
+    },
+    {
+      "id": "T-0190",
+      "title": "Gloss backfill batch 1: missing stems ranks 1-100 (see diagnostics/gloss-coverage.json)",
+      "plan": "wescripture-vision-gaps",
+      "phase": "phase_plain_english",
+      "priority": "P2",
+      "source": "gloss-coverage-audit",
+      "parent": "",
+      "points": 1,
+      "points_rationale": "",
+      "status": "pending",
+      "agent": "",
+      "commit": "",
+      "notes": [],
+      "children": [],
+      "depth": 0,
+      "created_ts": "2026-04-20T03:18:25+00:00",
+      "updated_ts": "2026-04-20T03:18:25+00:00",
+      "leaf_points": 1,
+      "kind": "leaf"
+    },
+    {
+      "id": "T-0191",
+      "title": "Gloss backfill batch 2: missing stems ranks 101-200 (see diagnostics/gloss-coverage.json)",
+      "plan": "wescripture-vision-gaps",
+      "phase": "phase_plain_english",
+      "priority": "P2",
+      "source": "gloss-coverage-audit",
+      "parent": "",
+      "points": 1,
+      "points_rationale": "",
+      "status": "pending",
+      "agent": "",
+      "commit": "",
+      "notes": [],
+      "children": [],
+      "depth": 0,
+      "created_ts": "2026-04-20T03:18:25+00:00",
+      "updated_ts": "2026-04-20T03:18:25+00:00",
+      "leaf_points": 1,
+      "kind": "leaf"
+    },
+    {
+      "id": "T-0192",
+      "title": "Gloss backfill batch 3: missing stems ranks 201-300 (see diagnostics/gloss-coverage.json)",
+      "plan": "wescripture-vision-gaps",
+      "phase": "phase_plain_english",
+      "priority": "P2",
+      "source": "gloss-coverage-audit",
+      "parent": "",
+      "points": 1,
+      "points_rationale": "",
+      "status": "pending",
+      "agent": "",
+      "commit": "",
+      "notes": [],
+      "children": [],
+      "depth": 0,
+      "created_ts": "2026-04-20T03:18:26+00:00",
+      "updated_ts": "2026-04-20T03:18:26+00:00",
+      "leaf_points": 1,
+      "kind": "leaf"
+    },
+    {
+      "id": "T-0193",
+      "title": "Gloss backfill batch 4: missing stems ranks 301-400 (see diagnostics/gloss-coverage.json)",
+      "plan": "wescripture-vision-gaps",
+      "phase": "phase_plain_english",
+      "priority": "P2",
+      "source": "gloss-coverage-audit",
+      "parent": "",
+      "points": 1,
+      "points_rationale": "",
+      "status": "pending",
+      "agent": "",
+      "commit": "",
+      "notes": [],
+      "children": [],
+      "depth": 0,
+      "created_ts": "2026-04-20T03:18:26+00:00",
+      "updated_ts": "2026-04-20T03:18:26+00:00",
+      "leaf_points": 1,
+      "kind": "leaf"
+    },
+    {
+      "id": "T-0194",
+      "title": "Gloss backfill batch 5: missing stems ranks 401-500 (see diagnostics/gloss-coverage.json)",
+      "plan": "wescripture-vision-gaps",
+      "phase": "phase_plain_english",
+      "priority": "P2",
+      "source": "gloss-coverage-audit",
+      "parent": "",
+      "points": 1,
+      "points_rationale": "",
+      "status": "pending",
+      "agent": "",
+      "commit": "",
+      "notes": [],
+      "children": [],
+      "depth": 0,
+      "created_ts": "2026-04-20T03:18:27+00:00",
+      "updated_ts": "2026-04-20T03:18:27+00:00",
+      "leaf_points": 1,
+      "kind": "leaf"
     }
   ],
   "by_plan": {
@@ -4396,7 +4716,12 @@
       "phase_plain_english": [
         "T-0080",
         "T-0081",
-        "T-0082"
+        "T-0082",
+        "T-0190",
+        "T-0191",
+        "T-0192",
+        "T-0193",
+        "T-0194"
       ],
       "phase_deep_wide": [
         "T-0083",
