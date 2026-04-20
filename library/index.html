@@ -1071,6 +1071,36 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 .source-badge + .score-dots {
     margin-left: 6px;
 }
+.xref-filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 8px;
+    padding: 8px 28px 12px;
+    border-bottom: 1px solid var(--divider);
+}
+.xref-filter-chip {
+    font: inherit;
+    font-size: 11px;
+    letter-spacing: 0.03em;
+    padding: 4px 10px;
+    border: 1px solid var(--divider);
+    border-radius: 12px;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: background-color 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+}
+.xref-filter-chip:hover { background: rgba(156,122,77,0.06); }
+.xref-filter-chip--active {
+    background: rgba(74,103,65,0.1);
+    color: var(--text);
+    border-color: rgba(74,103,65,0.5);
+}
+.xref-filter-count {
+    font-size: 10px;
+    color: var(--muted);
+    margin-left: 3px;
+}
 .scrip-source-chip {
     display: inline-block;
     font-size: 10px;
@@ -4225,6 +4255,23 @@ function finishVerseDiscoveryPanel(payload) {
     var scriptureEdges = scriptureEdgesEarly;
     if (scriptureEdges.length) {
         html += '<div class="panel-section">Cross References</div>';
+        // Build filter chip row from distinct sources present in this set.
+        var srcCounts = {};
+        scriptureEdges.forEach(function(s) {
+            var k = s.source_src || 'standard_works';
+            srcCounts[k] = (srcCounts[k] || 0) + 1;
+        });
+        var srcKeys = Object.keys(srcCounts);
+        if (srcKeys.length > 1) {
+            var active = getXrefSourceFilter();
+            html += '<div class="xref-filter-row">';
+            html += '<button type="button" class="xref-filter-chip' + (!active ? ' xref-filter-chip--active' : '') + '" data-src="">All <span class="xref-filter-count">' + scriptureEdges.length + '</span></button>';
+            srcKeys.sort().forEach(function(k) {
+                html += '<button type="button" class="xref-filter-chip' + (active === k ? ' xref-filter-chip--active' : '') + '" data-src="' + escapeAttr(k) + '">'
+                    + escapeHtml(formatSourceChip(k)) + ' <span class="xref-filter-count">' + srcCounts[k] + '</span></button>';
+            });
+            html += '</div>';
+        }
         html += '<div class="verse-panel-cards verse-panel-cards--scrip' + (scriptureEdges.length <= 4 ? ' expanded' : '') + '">';
         scriptureEdges.forEach(function(s) {
             var jr = parseVerseRefForStudy(s.ref);
@@ -4241,6 +4288,7 @@ function finishVerseDiscoveryPanel(payload) {
                     : '')
                 + (srcId ? ' data-source-id="' + escapeAttr(srcId) + '"' : '')
                 + (srcPara ? ' data-para="' + escapeAttr(srcPara) + '"' : '')
+                + ' data-src="' + escapeAttr(s.source_src || 'standard_works') + '"'
                 + ' style="' + (jumpable || hasDocMeta ? 'cursor:pointer;' : '') + '">'
                 + (s.source_src && s.source_src !== 'standard_works'
                     ? '<span class="scrip-source-chip">' + escapeHtml(formatSourceChip(s.source_src)) + '</span>'
@@ -4323,6 +4371,29 @@ function finishVerseDiscoveryPanel(payload) {
             card.setAttribute('data-req-count', rec ? rec.count : 1);
         });
     });
+    // Cross-refs source filter chips — filter in place without re-rendering.
+    panelBody.querySelectorAll('.xref-filter-chip').forEach(function(chip) {
+        chip.addEventListener('click', function() {
+            var src = chip.dataset.src || '';
+            setXrefSourceFilter(src);
+            panelBody.querySelectorAll('.xref-filter-chip').forEach(function(c) {
+                c.classList.toggle('xref-filter-chip--active', (c.dataset.src || '') === src);
+            });
+            panelBody.querySelectorAll('.verse-panel-cards--scrip .scrip-card').forEach(function(card) {
+                var cardSrc = card.dataset.src || 'standard_works';
+                card.style.display = (!src || cardSrc === src) ? '' : 'none';
+            });
+        });
+    });
+    // Apply persisted filter on initial render.
+    (function applyPersistedXrefFilter() {
+        var src = getXrefSourceFilter();
+        if (!src) return;
+        panelBody.querySelectorAll('.verse-panel-cards--scrip .scrip-card').forEach(function(card) {
+            var cardSrc = card.dataset.src || 'standard_works';
+            card.style.display = cardSrc === src ? '' : 'none';
+        });
+    })();
     panelBody.querySelectorAll('.scrip-card--passage').forEach(function(row) {
         row.addEventListener('click', function() {
             var id = row.dataset.sourceId;
@@ -4536,6 +4607,20 @@ function computeSameFigureBonus(verseEnts, entryText) {
     var n = sharedMajorFigureCount(verseEnts, entryText);
     if (!n) return 0;
     return 0.04 * Math.min(n, 2);
+}
+
+// Cross-ref source filter — stored in localStorage so the choice survives
+// reloads (T-0182). Empty string means "All sources".
+var XREF_FILTER_KEY = 'ws:xref-source-filter';
+function getXrefSourceFilter() {
+    try { return localStorage.getItem(XREF_FILTER_KEY) || ''; }
+    catch (e) { return ''; }
+}
+function setXrefSourceFilter(src) {
+    try {
+        if (src) localStorage.setItem(XREF_FILTER_KEY, src);
+        else localStorage.removeItem(XREF_FILTER_KEY);
+    } catch (e) { /* storage disabled — in-memory only */ }
 }
 
 // Humanize a source-category slug for the cross-ref chip.
