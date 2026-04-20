@@ -6994,6 +6994,46 @@ function stepBreadthVerse(dir) {
     if (m && vn) openVerseDiscovery(slugToBookName(m[1]) + ' ' + m[2] + ':' + vn);
 }
 
+// Build the HTML shown inside a Peek panel for an entity/place/thing chip.
+// Pulls from the already-loaded entities/* indexes; returns '' when nothing
+// useful is found so Peek can silently skip the show.
+function peekEntitySnippetHtml(kind, id) {
+    if (!id) return '';
+    var record = null, title = '', sub = '', body = '';
+    if (kind === 'person' || kind === 'entity') {
+        record = entityById[id];
+        if (!record) return '';
+        title = record.name || record.label || id;
+        sub = [record.group || record.role, record.born ? 'b. ' + record.born : '', record.died ? 'd. ' + record.died : ''].filter(Boolean).join(' · ');
+        body = record.desc || record.wikipedia_summary || ((record.excerpts && record.excerpts[0] && record.excerpts[0].text) || '');
+    } else if (kind === 'place') {
+        record = placeById[id];
+        if (!record) return '';
+        title = record.name || record.label || id;
+        sub = record.region || record.type || 'Place';
+        body = record.desc || record.wikipedia_summary || '';
+    } else if (kind === 'thing') {
+        record = thingById[id];
+        if (!record) return '';
+        title = record.name || record.label || id;
+        sub = record.type || 'Thing';
+        body = record.desc || '';
+    } else if (kind === 'topic') {
+        record = topicById[id];
+        if (!record) return '';
+        title = record.name || record.label || id;
+        sub = 'Topic';
+        body = record.description || record.christ_connection || ((record.excerpts && record.excerpts[0] && record.excerpts[0].text) || '');
+    } else {
+        return '';
+    }
+    body = String(body || '').trim().slice(0, 280);
+    if (!title && !body) return '';
+    return '<div class="peek-title">' + escapeHtml(title) + '</div>'
+        + (sub ? '<div class="peek-sub">' + escapeHtml(sub) + '</div>' : '')
+        + (body ? '<div class="peek-body">' + escapeHtml(body) + (body.length >= 280 ? '…' : '') + '</div>' : '');
+}
+
 // Hover-peek: floating panel that opens on hover-delay and hides on
 // mouseleave. Generic API — callers pass an anchor element and an HTML
 // provider. Peek stays open while the cursor is over the panel itself so
