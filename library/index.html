@@ -6939,6 +6939,31 @@ function closeChannel() {
     }, { passive: true });
 })();
 
+// Step to the next/prev verse in the current chapter and reopen the panel.
+// Used by n/p shortcuts for breadth traversal. Skips when no focused verse.
+function stepBreadthVerse(dir) {
+    var verse = focusedVerseEl;
+    if (!verse) return;
+    var block = verse.closest('.chapter-block');
+    if (!block) return;
+    var verses = Array.from(block.querySelectorAll('div.verse'));
+    var i = verses.indexOf(verse);
+    if (i < 0) return;
+    var j = i + dir;
+    if (j < 0 || j >= verses.length) return;
+    var next = verses[j];
+    var disc = next.querySelector('.verse-disc[data-ref]');
+    focusVerse(next, false);
+    if (disc) {
+        openVerseDiscovery(disc.dataset.ref);
+        return;
+    }
+    var cid = block.dataset.chapterId;
+    var vn = (next.id || '').replace(/^v/, '');
+    var m = cid && cid.match(/^(.+)_(\d+)$/);
+    if (m && vn) openVerseDiscovery(slugToBookName(m[1]) + ' ' + m[2] + ':' + vn);
+}
+
 // Cycle focus across verse-panel connection cards with j/k.
 // Highlight is a transient CSS class (.comm-card--kb-focus) scoped to the
 // channel body so it doesn't collide with click-focus styles.
@@ -6972,6 +6997,18 @@ document.addEventListener('keydown', function(e) {
         if (body && body.dataset.panelMode === 'verse') {
             e.preventDefault();
             cycleConnectionFocus(e.key === 'j' ? 1 : -1);
+        }
+    }
+    // n/p step through the breadth list — today the chapter's verse stream.
+    // When a verse panel is open we hop to the next/prev verse in the same
+    // chapter and reopen its panel. Falls through when typing.
+    if ((e.key === 'n' || e.key === 'p') && channelOpen
+            && !e.metaKey && !e.ctrlKey && !e.altKey
+            && !e.target.matches('input,textarea,[contenteditable=true]')) {
+        var bodyNP = document.getElementById('panel-body');
+        if (bodyNP && bodyNP.dataset.panelMode === 'verse') {
+            e.preventDefault();
+            stepBreadthVerse(e.key === 'n' ? 1 : -1);
         }
     }
     if (e.key === 'Escape') {
