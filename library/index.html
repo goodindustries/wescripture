@@ -5070,6 +5070,11 @@ function injectNotes(id, block) {
                     verseEl.insertAdjacentHTML('beforeend', section.innerHTML);
                 }
             });
+            // Promote existing source labels to standardized badges so the
+            // reader gets consistent provenance chrome on every inline quote.
+            block.querySelectorAll('.semantic-quote .semantic-source, .donaldson-block .source-label').forEach(function(el) {
+                el.classList.add('source-badge');
+            });
         })
         .catch(function() {});  // notes file absent (e.g. title page)
 
