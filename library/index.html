@@ -3650,8 +3650,25 @@ function scriptureRefIsSameChapter(chapterId, refLabel) {
     return re.test(ref);
 }
 
-function chapterGraphEchoes(chapterId, vnum) {
-    // Return [{ref, text, score}] of standard_works edges with w≥0.75 for this verse
+// Per-source caps applied to graph echoes. Keep standard_works generous since
+// canonical cross-refs are the reader's spine; cap GC/JD/Sefaria/etc. lower so
+// they add breadth without drowning the panel. Unknown sources fall back to
+// CHAPTER_ECHO_DEFAULT_CAP.
+var CHAPTER_ECHO_DEFAULT_CAP = 4;
+var CHAPTER_ECHO_SOURCE_CAPS = {
+    standard_works: 16,
+    ancient_myths: 4,
+    millennial_star: 4,
+    general_conference: 4,
+    journal_of_discourses: 4,
+    times_and_seasons: 4,
+    sefaria: 4
+};
+
+function chapterGraphEchoes(chapterId, vnum, opts) {
+    // Return [{ref, text, score, source_src, source_id, para}] of graph edges
+    // with w≥0.75 for this verse, with per-source caps applied.
+    opts = opts || {};
     var graph = chapterGraphCache[chapterId];
     if (!graph) return [];
     var nodeMap = {}, verseMap = {};
@@ -3659,27 +3676,39 @@ function chapterGraphEchoes(chapterId, vnum) {
         nodeMap[n.id] = n;
         if (n.t === 'v') verseMap[n.id] = n;
     });
-    var results = [];
+    var caps = opts.sourceCaps || CHAPTER_ECHO_SOURCE_CAPS;
+    var defaultCap = opts.defaultCap != null ? opts.defaultCap : CHAPTER_ECHO_DEFAULT_CAP;
+    var candidates = [];
     (graph.edges || []).forEach(function(edge) {
         if ((edge.w || 0) < 0.75) return;
         var vn = verseMap[edge.s], pn = nodeMap[edge.t];
-        if (!vn || !pn || pn.src !== 'standard_works') return;
+        if (!vn || !pn) return;
         if (String(vn.n) !== String(vnum)) return;
         var ref = (pn.lb || '').trim();
-        if (!ref || scriptureRefIsSameChapter(chapterId, ref)) return;
-        if (!results.some(function(x){ return x.ref === ref; })) {
-            results.push({
-                ref: ref,
-                text: (pn.x || '').replace(/  +/g,' ').trim(),
-                score: edge.w || 0,
-                source_src: pn.src || '',
-                source_id: pn.doc || pn.src || '',
-                para: (pn.para != null ? String(pn.para) : '')
-            });
-        }
+        if (!ref) return;
+        var src = pn.src || 'unknown';
+        if (src === 'standard_works' && scriptureRefIsSameChapter(chapterId, ref)) return;
+        candidates.push({
+            ref: ref,
+            text: (pn.x || '').replace(/  +/g,' ').trim(),
+            score: edge.w || 0,
+            source_src: src,
+            source_id: pn.doc || src,
+            para: (pn.para != null ? String(pn.para) : '')
+        });
     });
-    results.sort(function(a, b){ return b.score - a.score; });
-    return results.slice(0, 24);
+    candidates.sort(function(a, b){ return b.score - a.score; });
+    var seen = {}, perSrc = {}, results = [];
+    candidates.forEach(function(c) {
+        if (seen[c.ref]) return;
+        var cap = (caps[c.source_src] != null) ? caps[c.source_src] : defaultCap;
+        var used = perSrc[c.source_src] || 0;
+        if (used >= cap) return;
+        perSrc[c.source_src] = used + 1;
+        seen[c.ref] = true;
+        results.push(c);
+    });
+    return results.slice(0, 32);
 }
 
 /** Dedupe verse_discovery rows by document + paragraph. */
