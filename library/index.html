@@ -2764,6 +2764,12 @@ Promise.all([
                     }
                 }
 
+                // #topic/<slug> opens the topic profile as an entrypoint
+                // (Topic Explorer). Slug can be either the bare slug or the
+                // full topic id (topic:<slug>). Missing topic silently falls
+                // through to the default reader state.
+                handleTopicHashRoute();
+
                 if (didConsume) {
                     // Clean the URL without reload (preserve hash).
                     history.replaceState(null, '', window.location.pathname + (window.location.hash || ''));
@@ -2771,6 +2777,28 @@ Promise.all([
             })();
         });
     });
+
+// Topic Explorer route: #topic/<slug> opens the topic profile (or a bare
+// slug for future expansion to a dedicated page shell).
+function handleTopicHashRoute() {
+    var h = String(location.hash || '');
+    var m = h.match(/^#topic\/([a-z0-9_\-:]+)/i);
+    if (!m) return;
+    var slug = m[1].toLowerCase();
+    var tid = slug.indexOf(':') === -1 ? ('topic:' + slug) : slug;
+    // Fallback: case-insensitive search on topicById keys when the direct
+    // lookup fails (topic slugs may include case variance in older data).
+    if (!topicById[tid]) {
+        var hit = Object.keys(topicById).find(function(k) {
+            return k.toLowerCase() === tid;
+        });
+        if (hit) tid = hit;
+    }
+    if (topicById[tid]) openTopicProfile(tid);
+}
+window.addEventListener('hashchange', function() {
+    handleTopicHashRoute();
+});
 
 // ── Title page navigation (2‑pane) ───────────────────────────────────────
 function titleNavBack() {
