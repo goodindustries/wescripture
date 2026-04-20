@@ -1025,6 +1025,36 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     letter-spacing: 0.01em;
 }
 .word-why-link:hover { text-decoration: underline; }
+.peek-panel {
+    position: absolute;
+    z-index: 9999;
+    max-width: 320px;
+    padding: 12px 14px;
+    background: var(--panel, #fff);
+    color: var(--text, #222);
+    border: 1px solid var(--divider, rgba(0,0,0,0.1));
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    font-size: 13px;
+    line-height: 1.55;
+}
+.peek-panel .peek-title {
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+.peek-panel .peek-sub {
+    font-size: 11px;
+    color: var(--muted, #888);
+    margin-bottom: 6px;
+    letter-spacing: 0.02em;
+}
+.peek-panel .peek-body {
+    font-size: 12.5px;
+    color: var(--text, #222);
+    max-height: 180px;
+    overflow: hidden;
+}
 .source-badge {
     display: inline-block;
     font-size: 9.5px;
@@ -6963,6 +6993,63 @@ function stepBreadthVerse(dir) {
     var m = cid && cid.match(/^(.+)_(\d+)$/);
     if (m && vn) openVerseDiscovery(slugToBookName(m[1]) + ' ' + m[2] + ':' + vn);
 }
+
+// Hover-peek: floating panel that opens on hover-delay and hides on
+// mouseleave. Generic API — callers pass an anchor element and an HTML
+// provider. Peek stays open while the cursor is over the panel itself so
+// the reader can scan its contents without flicker.
+var Peek = (function() {
+    var el = null, showTimer = null, hideTimer = null;
+    function ensure() {
+        if (el) return el;
+        el = document.createElement('div');
+        el.className = 'peek-panel';
+        el.setAttribute('role', 'tooltip');
+        el.style.display = 'none';
+        el.addEventListener('mouseenter', function() {
+            if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
+        });
+        el.addEventListener('mouseleave', scheduleHide);
+        document.body.appendChild(el);
+        return el;
+    }
+    function position(anchor) {
+        var r = anchor.getBoundingClientRect();
+        var pe = ensure();
+        var width = pe.offsetWidth || 320;
+        var left = Math.max(8, Math.min(window.innerWidth - width - 8, r.left));
+        var top = r.bottom + window.scrollY + 6;
+        pe.style.left = left + 'px';
+        pe.style.top = top + 'px';
+    }
+    function show(anchor, html) {
+        var pe = ensure();
+        pe.innerHTML = html;
+        pe.style.display = 'block';
+        position(anchor);
+    }
+    function scheduleShow(anchor, htmlFn, delay) {
+        cancelShow();
+        showTimer = setTimeout(function() {
+            var html = typeof htmlFn === 'function' ? htmlFn() : htmlFn;
+            if (html) show(anchor, html);
+            showTimer = null;
+        }, delay == null ? 350 : delay);
+    }
+    function cancelShow() {
+        if (showTimer) { clearTimeout(showTimer); showTimer = null; }
+    }
+    function scheduleHide() {
+        if (hideTimer) clearTimeout(hideTimer);
+        hideTimer = setTimeout(hide, 120);
+    }
+    function hide() {
+        cancelShow();
+        if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
+        if (el) el.style.display = 'none';
+    }
+    return { scheduleShow: scheduleShow, cancelShow: cancelShow, scheduleHide: scheduleHide, hide: hide };
+})();
 
 // Cycle focus across verse-panel connection cards with j/k.
 // Highlight is a transient CSS class (.comm-card--kb-focus) scoped to the
