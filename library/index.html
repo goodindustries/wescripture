@@ -2202,9 +2202,18 @@ function sameTarget(a, b) {
 function pushVisit(current, next) {
     if (!current || sameTarget(current, next)) return;
     var last = visitStack[visitStack.length - 1];
-    if (sameTarget(last, current)) return;
-    visitStack.push(current);
-    if (visitStack.length > 60) visitStack.shift();
+    if (!sameTarget(last, current)) {
+        visitStack.push(current);
+        if (visitStack.length > 60) visitStack.shift();
+    }
+    // Mirror into the browser History so back button + popstate restore the
+    // prior target. State carries the `next` destination — on popstate we
+    // know what the user was on when this entry was pushed.
+    try {
+        if (window.history && typeof window.history.pushState === 'function') {
+            window.history.pushState({ wsTarget: next }, '', window.location.href);
+        }
+    } catch (err) { /* SecurityError in some sandboxed contexts — skip */ }
 }
 
 function quickBack() {
