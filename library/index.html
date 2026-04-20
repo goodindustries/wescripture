@@ -1196,6 +1196,46 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     margin-left: 3px;
     font-size: 10px;
 }
+.ep-breadth-open, .ep-breadth-back {
+    display: inline-block;
+    margin: 6px 28px 14px;
+    padding: 6px 12px;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--accent);
+    background: transparent;
+    border: 1px solid rgba(156,122,77,0.35);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: background-color 0.12s ease, color 0.12s ease;
+}
+.ep-breadth-open:hover, .ep-breadth-back:hover {
+    background: rgba(156,122,77,0.08);
+}
+.ep-breadth-list {
+    padding: 0 28px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.ep-breadth-group {
+    border-top: 1px solid var(--divider);
+    padding-top: 10px;
+}
+.ep-breadth-book {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+    letter-spacing: 0.01em;
+}
+.ep-breadth-book-count {
+    margin-left: 4px;
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 400;
+}
 .ep-xdisp-refs {
     flex: 1;
     display: flex;
@@ -3766,6 +3806,17 @@ function openProfilePanel(entity, typeLabel, placeholderIcon, extraHtml) {
             if (meta && meta.href) loadSourceDocument(id, meta.href);
         });
     });
+    // T-0132: breadth view open + back buttons on the topic profile.
+    chList.querySelectorAll('.ep-breadth-open[data-topic-breadth]').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            openTopicBreadthView(btn.dataset.topicBreadth);
+        });
+    });
+    chList.querySelectorAll('.ep-breadth-back[data-topic-back]').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            openTopicProfile(btn.dataset.topicBack);
+        });
+    });
 }
 
 function christConnectionHtml(entity) {
@@ -3993,6 +4044,80 @@ function openThingProfile(thingId) {
     openProfilePanel(entity, 'Artifact / Object', '📜', extraHtml);
 }
 
+// Rank a topic's related_scriptures by a lightweight centrality score:
+// canonical-listed refs get a hefty boost, and refs that also appear in
+// one of the topic's key-figure scripture_refs pick up a co-occurrence
+// bonus. Stable within ties via original insertion order.
+function rankTopicScripturesByCentrality(entity) {
+    var refs = (entity && entity.related_scriptures) || [];
+    if (!Array.isArray(refs) || !refs.length) return [];
+    var canonical = {};
+    ((entity && entity.canonical_verses) || []).forEach(function(r) {
+        var label = typeof r === 'string' ? r : (r && r.ref) || '';
+        if (label) canonical[label] = true;
+    });
+    var figureRefs = {};
+    ((entity && entity.key_figures) || []).forEach(function(fid) {
+        var f = entityById[fid];
+        if (!f || !Array.isArray(f.scripture_refs)) return;
+        f.scripture_refs.forEach(function(r) {
+            var label = typeof r === 'string' ? r : (r && r.ref) || '';
+            if (label) figureRefs[label] = (figureRefs[label] || 0) + 1;
+        });
+    });
+    return refs.map(function(r, i) {
+        var label = typeof r === 'string' ? r : (r && r.ref) || '';
+        var score = 1;
+        if (canonical[label]) score += 5;
+        if (figureRefs[label]) score += Math.min(3, figureRefs[label]);
+        return { ref: label, score: score, idx: i };
+    }).filter(function(x) { return !!x.ref; })
+      .sort(function(a, b) {
+          if (b.score !== a.score) return b.score - a.score;
+          return a.idx - b.idx;
+      });
+}
+
+// Group a ranked list of scripture refs by book so the breadth view stays
+// scannable even when a topic has hundreds of refs across the canon.
+function groupScriptureRefsByBook(ranked) {
+    var groups = {};
+    var order = [];
+    ranked.forEach(function(item) {
+        var m = item.ref.match(/^(.+?)\s+\d+:\d+/);
+        var book = m ? m[1] : (item.ref.split(' ')[0] || 'Other');
+        if (!groups[book]) { groups[book] = []; order.push(book); }
+        groups[book].push(item);
+    });
+    return order.map(function(b) { return { book: b, items: groups[b] }; });
+}
+
+function renderTopicBreadthView(entity) {
+    var ranked = rankTopicScripturesByCentrality(entity);
+    if (!ranked.length) return '';
+    var grouped = groupScriptureRefsByBook(ranked);
+    var html = '<div class="ep-section">All Verses on ' + escapeHtml(entity.name || 'Topic') + ' <span class="ep-section-count">(' + ranked.length + ')</span></div>'
+        + '<div class="ep-breadth-list">';
+    grouped.forEach(function(g) {
+        html += '<div class="ep-breadth-group">'
+            + '<div class="ep-breadth-book">' + escapeHtml(g.book) + ' <span class="ep-breadth-book-count">' + g.items.length + '</span></div>'
+            + '<div class="ep-scripture-list">'
+            + g.items.slice(0, 40).map(function(it) {
+                return '<span class="ep-scripture-ref" data-verse-ref="' + escapeHtml(it.ref) + '">' + escapeHtml(it.ref) + '</span>';
+            }).join('')
+            + '</div></div>';
+    });
+    html += '</div>';
+    return html;
+}
+
+function renderTopicBreadthButton(entity) {
+    var refs = (entity && entity.related_scriptures) || [];
+    if (!Array.isArray(refs) || refs.length < 8) return '';
+    return '<button type="button" class="ep-breadth-open" data-topic-breadth="' + escapeAttr(entity.id || '') + '">'
+        + 'All ' + refs.length + ' verses on this topic \u2192</button>';
+}
+
 // Topic profile sections — each renderer returns '' when data is missing so
 // the UI gracefully degrades. Order: Description → Christ connection →
 // Canonical Verses → Key Figures → Representative Sermons → secondary
@@ -4063,6 +4188,7 @@ function openTopicProfile(topicId) {
         + renderTopicCanonicalVerses(entity)
         // Fallback to related_scriptures when no curated canonical list.
         + (entity.canonical_verses && entity.canonical_verses.length ? '' : renderScriptureRefs(entity.related_scriptures))
+        + renderTopicBreadthButton(entity)
         + renderTopicKeyFigures(entity)
         + (entity.key_figures && entity.key_figures.length ? '' : renderChips(entity.related_people || [], 'person'))
         + renderTopicSermons(entity)
@@ -4071,6 +4197,22 @@ function openTopicProfile(topicId) {
         + renderChips(entity.related_things || [], 'thing');
 
     openProfilePanel(entity, 'Topic', '📖', extraHtml);
+}
+
+// Swap the topic profile body for its breadth view (ranked + grouped by
+// book). Re-entrant: clicking the button a second time adds a "Back to
+// profile" link so the reader can return without rebuilding.
+function openTopicBreadthView(topicId) {
+    var entity = topicById[topicId];
+    if (!entity) return;
+    var chList = document.getElementById('panel-body');
+    if (!chList) return;
+    var html = buildProfileHeader(entity, 'Topic — All Verses', '📖')
+        + '<button type="button" class="ep-breadth-back" data-topic-back="' + escapeAttr(entity.id || '') + '">\u2190 Back to topic profile</button>'
+        + renderTopicBreadthView(entity);
+    chList.innerHTML = html;
+    chList.dataset.panelMode = 'entity';
+    chList.scrollTop = 0;
 }
 
 function openBookProfile(bookId) {
