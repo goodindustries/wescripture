@@ -1071,6 +1071,59 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 .source-badge + .score-dots {
     margin-left: 6px;
 }
+.ep-section-count {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 400;
+    margin-left: 4px;
+}
+.ep-topic-description {
+    padding: 8px 28px 14px;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--text);
+}
+.ep-scripture-list--canonical .ep-scripture-ref--canonical {
+    background: rgba(74,103,65,0.08);
+    border-color: rgba(74,103,65,0.3);
+    color: var(--text);
+    font-weight: 500;
+}
+.ep-chip-row--figures .ep-chip--figure {
+    background: rgba(156,122,77,0.1);
+    border-color: rgba(156,122,77,0.35);
+    font-weight: 500;
+}
+.ep-sermon-list {
+    padding: 6px 28px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.ep-sermon-card {
+    padding: 10px 12px;
+    border: 1px solid var(--divider);
+    border-radius: 6px;
+    cursor: pointer;
+    background: transparent;
+    transition: background-color 0.12s ease, border-color 0.12s ease;
+}
+.ep-sermon-card:hover {
+    background: rgba(156,122,77,0.05);
+    border-color: rgba(156,122,77,0.3);
+}
+.ep-sermon-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+}
+.ep-sermon-meta {
+    margin-top: 3px;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+}
 .search-facets {
     display: flex;
     flex-wrap: wrap;
@@ -3568,6 +3621,15 @@ function openProfilePanel(entity, typeLabel, placeholderIcon, extraHtml) {
             if (meta) loadSourceDocument(row.dataset.doc, meta.href);
         });
     });
+    // Wire up topic-profile sermon cards (T-0161). Fall back silently when
+    // sourceMeta lookup fails so unresolved curated ids never break the UI.
+    chList.querySelectorAll('.ep-sermon-card[data-source-id]').forEach(function(row) {
+        row.addEventListener('click', function() {
+            var id = row.dataset.sourceId;
+            var meta = id && sourceMeta[id];
+            if (meta && meta.href) loadSourceDocument(id, meta.href);
+        });
+    });
 }
 
 function christConnectionHtml(entity) {
@@ -3653,15 +3715,80 @@ function openThingProfile(thingId) {
     openProfilePanel(entity, 'Artifact / Object', '📜', extraHtml);
 }
 
+// Topic profile sections — each renderer returns '' when data is missing so
+// the UI gracefully degrades. Order: Description → Christ connection →
+// Canonical Verses → Key Figures → Representative Sermons → secondary
+// commentary excerpts and related places/things chips.
+function renderTopicDescription(entity) {
+    var desc = (entity && (entity.description || entity.summary || '')).toString().trim();
+    if (!desc) return '';
+    return '<div class="ep-section">About</div>'
+        + '<div class="ep-topic-description">' + escapeHtml(desc) + '</div>';
+}
+
+function renderTopicCanonicalVerses(entity) {
+    var refs = (entity && (entity.canonical_verses || [])).slice(0);
+    if (!refs.length) return '';
+    var html = '<div class="ep-section">Canonical Verses <span class="ep-section-count">(' + refs.length + ')</span></div>'
+        + '<div class="ep-scripture-list ep-scripture-list--canonical">';
+    refs.slice(0, 20).forEach(function(ref) {
+        var label = typeof ref === 'string' ? ref : (ref && ref.ref) || '';
+        if (!label) return;
+        html += '<span class="ep-scripture-ref ep-scripture-ref--canonical" data-verse-ref="' + escapeHtml(label) + '">'
+            + escapeHtml(label) + '</span>';
+    });
+    html += '</div>';
+    return html;
+}
+
+function renderTopicKeyFigures(entity) {
+    var ids = (entity && (entity.key_figures || [])).slice(0);
+    if (!ids.length) return '';
+    return '<div class="ep-section">Key Figures <span class="ep-section-count">(' + ids.length + ')</span></div>'
+        + '<div class="ep-chip-row ep-chip-row--figures">'
+        + ids.slice(0, 12).map(function(id) {
+            var obj = entityById[id];
+            var name = (obj && obj.name) ? obj.name : id.split(':').pop().replace(/_/g, ' ');
+            return '<span class="ep-chip ep-chip--figure" data-chip-type="person" data-chip-id="' + escapeHtml(id) + '">'
+                + escapeHtml(name) + '</span>';
+        }).join('')
+        + '</div>';
+}
+
+function renderTopicSermons(entity) {
+    var sermons = (entity && (entity.representative_sermons || [])).slice(0);
+    if (!sermons.length) return '';
+    var html = '<div class="ep-section">Representative Sermons <span class="ep-section-count">(' + sermons.length + ')</span></div>'
+        + '<div class="ep-sermon-list">';
+    sermons.slice(0, 8).forEach(function(s) {
+        var docId = (s && (s.doc_id || s.id)) || '';
+        var title = (s && (s.title || s.label || s.doc_id)) || '';
+        var author = (s && (s.author || s.speaker)) || '';
+        var date = (s && (s.date || s.year)) || '';
+        var meta = [author, date].filter(Boolean).join(' · ');
+        html += '<div class="ep-sermon-card"' + (docId ? ' data-source-id="' + escapeHtml(docId) + '"' : '') + '>'
+            + '<div class="ep-sermon-title">' + escapeHtml(title) + '</div>'
+            + (meta ? '<div class="ep-sermon-meta">' + escapeHtml(meta) + '</div>' : '')
+            + '</div>';
+    });
+    html += '</div>';
+    return html;
+}
+
 function openTopicProfile(topicId) {
     var entity = topicById[topicId];
     if (!entity) return;
 
-    var extraHtml = '';
-    extraHtml += christConnectionHtml(entity)
-        + renderExcerpts(entity.excerpts, 8)
-        + renderScriptureRefs(entity.related_scriptures)
-        + renderChips(entity.related_people || [], 'person')
+    var extraHtml = ''
+        + renderTopicDescription(entity)
+        + christConnectionHtml(entity)
+        + renderTopicCanonicalVerses(entity)
+        // Fallback to related_scriptures when no curated canonical list.
+        + (entity.canonical_verses && entity.canonical_verses.length ? '' : renderScriptureRefs(entity.related_scriptures))
+        + renderTopicKeyFigures(entity)
+        + (entity.key_figures && entity.key_figures.length ? '' : renderChips(entity.related_people || [], 'person'))
+        + renderTopicSermons(entity)
+        + renderExcerpts(entity.excerpts, 6)
         + renderChips(entity.related_places || [], 'place')
         + renderChips(entity.related_things || [], 'thing');
 
