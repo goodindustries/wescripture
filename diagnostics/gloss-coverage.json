@@ -1,0 +1,2510 @@
+{
+  "chapters_scanned": 1584,
+  "unique_stems": 7276,
+  "stems_present": 157,
+  "stems_missing": 5526,
+  "coverage_pct": 2.76,
+  "min_freq_filter": 3,
+  "missing_top": [
+    {
+      "stem": "you",
+      "freq": 3316,
+      "shard": "y"
+    },
+    {
+      "stem": "earth",
+      "freq": 1085,
+      "shard": "e"
+    },
+    {
+      "stem": "thine",
+      "freq": 862,
+      "shard": "t"
+    },
+    {
+      "stem": "know",
+      "freq": 796,
+      "shard": "k"
+    },
+    {
+      "stem": "soul",
+      "freq": 704,
+      "shard": "s"
+    },
+    {
+      "stem": "bless",
+      "freq": 697,
+      "shard": "b"
+    },
+    {
+      "stem": "cast",
+      "freq": 675,
+      "shard": "c"
+    },
+    {
+      "stem": "evil",
+      "freq": 674,
+      "shard": "e"
+    },
+    {
+      "stem": "turn",
+      "freq": 657,
+      "shard": "t"
+    },
+    {
+      "stem": "pray",
+      "freq": 647,
+      "shard": "p"
+    },
+    {
+      "stem": "face",
+      "freq": 595,
+      "shard": "f"
+    },
+    {
+      "stem": "high",
+      "freq": 593,
+      "shard": "h"
+    },
+    {
+      "stem": "eyes",
+      "freq": 570,
+      "shard": "e"
+    },
+    {
+      "stem": "glory",
+      "freq": 560,
+      "shard": "g"
+    },
+    {
+      "stem": "end",
+      "freq": 539,
+      "shard": "e"
+    },
+    {
+      "stem": "host",
+      "freq": 511,
+      "shard": "h"
+    },
+    {
+      "stem": "mouth",
+      "freq": 509,
+      "shard": "m"
+    },
+    {
+      "stem": "three",
+      "freq": 508,
+      "shard": "t"
+    },
+    {
+      "stem": "began",
+      "freq": 501,
+      "shard": "b"
+    },
+    {
+      "stem": "sword",
+      "freq": 500,
+      "shard": "s"
+    },
+    {
+      "stem": "sin",
+      "freq": 462,
+      "shard": "s"
+    },
+    {
+      "stem": "angel",
+      "freq": 461,
+      "shard": "a"
+    },
+    {
+      "stem": "look",
+      "freq": 443,
+      "shard": "l"
+    },
+    {
+      "stem": "covenant",
+      "freq": 440,
+      "shard": "c"
+    },
+    {
+      "stem": "light",
+      "freq": 428,
+      "shard": "l"
+    },
+    {
+      "stem": "jacob",
+      "freq": 423,
+      "shard": "j"
+    },
+    {
+      "stem": "cometh",
+      "freq": 419,
+      "shard": "c"
+    },
+    {
+      "stem": "walk",
+      "freq": 412,
+      "shard": "w"
+    },
+    {
+      "stem": "tree",
+      "freq": 398,
+      "shard": "t"
+    },
+    {
+      "stem": "stood",
+      "freq": 386,
+      "shard": "s"
+    },
+    {
+      "stem": "hearken",
+      "freq": 382,
+      "shard": "h"
+    },
+    {
+      "stem": "open",
+      "freq": 381,
+      "shard": "o"
+    },
+    {
+      "stem": "deliver",
+      "freq": 376,
+      "shard": "d"
+    },
+    {
+      "stem": "field",
+      "freq": 367,
+      "shard": "f"
+    },
+    {
+      "stem": "water",
+      "freq": 355,
+      "shard": "w"
+    },
+    {
+      "stem": "altar",
+      "freq": 355,
+      "shard": "a"
+    },
+    {
+      "stem": "four",
+      "freq": 349,
+      "shard": "f"
+    },
+    {
+      "stem": "sins",
+      "freq": 348,
+      "shard": "s"
+    },
+    {
+      "stem": "bear",
+      "freq": 339,
+      "shard": "b"
+    },
+    {
+      "stem": "known",
+      "freq": 338,
+      "shard": "k"
+    },
+    {
+      "stem": "die",
+      "freq": 338,
+      "shard": "d"
+    },
+    {
+      "stem": "multitude",
+      "freq": 337,
+      "shard": "m"
+    },
+    {
+      "stem": "mountain",
+      "freq": 333,
+      "shard": "m"
+    },
+    {
+      "stem": "army",
+      "freq": 331,
+      "shard": "a"
+    },
+    {
+      "stem": "live",
+      "freq": 329,
+      "shard": "l"
+    },
+    {
+      "stem": "sight",
+      "freq": 329,
+      "shard": "s"
+    },
+    {
+      "stem": "beast",
+      "freq": 329,
+      "shard": "b"
+    },
+    {
+      "stem": "ask",
+      "freq": 328,
+      "shard": "a"
+    },
+    {
+      "stem": "righte",
+      "freq": 327,
+      "shard": "r"
+    },
+    {
+      "stem": "understand",
+      "freq": 325,
+      "shard": "u"
+    },
+    {
+      "stem": "saul",
+      "freq": 324,
+      "shard": "s"
+    },
+    {
+      "stem": "wisdom",
+      "freq": 324,
+      "shard": "w"
+    },
+    {
+      "stem": "disciple",
+      "freq": 323,
+      "shard": "d"
+    },
+    {
+      "stem": "congrega",
+      "freq": 322,
+      "shard": "c"
+    },
+    {
+      "stem": "while",
+      "freq": 321,
+      "shard": "w"
+    },
+    {
+      "stem": "preach",
+      "freq": 320,
+      "shard": "p"
+    },
+    {
+      "stem": "lest",
+      "freq": 319,
+      "shard": "l"
+    },
+    {
+      "stem": "wise",
+      "freq": 319,
+      "shard": "w"
+    },
+    {
+      "stem": "laid",
+      "freq": 319,
+      "shard": "l"
+    },
+    {
+      "stem": "full",
+      "freq": 318,
+      "shard": "f"
+    },
+    {
+      "stem": "well",
+      "freq": 318,
+      "shard": "w"
+    },
+    {
+      "stem": "burnt",
+      "freq": 317,
+      "shard": "b"
+    },
+    {
+      "stem": "tabernacle",
+      "freq": 317,
+      "shard": "t"
+    },
+    {
+      "stem": "believe",
+      "freq": 313,
+      "shard": "b"
+    },
+    {
+      "stem": "nevertheless",
+      "freq": 311,
+      "shard": "n"
+    },
+    {
+      "stem": "twenty",
+      "freq": 309,
+      "shard": "t"
+    },
+    {
+      "stem": "whole",
+      "freq": 309,
+      "shard": "w"
+    },
+    {
+      "stem": "silv",
+      "freq": 308,
+      "shard": "s"
+    },
+    {
+      "stem": "cry",
+      "freq": 308,
+      "shard": "c"
+    },
+    {
+      "stem": "joy",
+      "freq": 305,
+      "shard": "j"
+    },
+    {
+      "stem": "hold",
+      "freq": 304,
+      "shard": "h"
+    },
+    {
+      "stem": "tribe",
+      "freq": 303,
+      "shard": "t"
+    },
+    {
+      "stem": "daught",
+      "freq": 303,
+      "shard": "d"
+    },
+    {
+      "stem": "jews",
+      "freq": 302,
+      "shard": "j"
+    },
+    {
+      "stem": "dark",
+      "freq": 302,
+      "shard": "d"
+    },
+    {
+      "stem": "five",
+      "freq": 299,
+      "shard": "f"
+    },
+    {
+      "stem": "fill",
+      "freq": 299,
+      "shard": "f"
+    },
+    {
+      "stem": "yourselve",
+      "freq": 298,
+      "shard": "y"
+    },
+    {
+      "stem": "sacrifice",
+      "freq": 293,
+      "shard": "s"
+    },
+    {
+      "stem": "feet",
+      "freq": 293,
+      "shard": "f"
+    },
+    {
+      "stem": "inhabitant",
+      "freq": 292,
+      "shard": "i"
+    },
+    {
+      "stem": "burn",
+      "freq": 292,
+      "shard": "b"
+    },
+    {
+      "stem": "war",
+      "freq": 290,
+      "shard": "w"
+    },
+    {
+      "stem": "rememb",
+      "freq": 290,
+      "shard": "r"
+    },
+    {
+      "stem": "daughter",
+      "freq": 289,
+      "shard": "d"
+    },
+    {
+      "stem": "follow",
+      "freq": 288,
+      "shard": "f"
+    },
+    {
+      "stem": "knowledge",
+      "freq": 287,
+      "shard": "k"
+    },
+    {
+      "stem": "ang",
+      "freq": 283,
+      "shard": "a"
+    },
+    {
+      "stem": "liv",
+      "freq": 282,
+      "shard": "l"
+    },
+    {
+      "stem": "nephite",
+      "freq": 280,
+      "shard": "n"
+    },
+    {
+      "stem": "body",
+      "freq": 274,
+      "shard": "b"
+    },
+    {
+      "stem": "abraham",
+      "freq": 274,
+      "shard": "a"
+    },
+    {
+      "stem": "gath",
+      "freq": 272,
+      "shard": "g"
+    },
+    {
+      "stem": "gone",
+      "freq": 271,
+      "shard": "g"
+    },
+    {
+      "stem": "fell",
+      "freq": 268,
+      "shard": "f"
+    },
+    {
+      "stem": "meat",
+      "freq": 268,
+      "shard": "m"
+    },
+    {
+      "stem": "wicked",
+      "freq": 267,
+      "shard": "w"
+    },
+    {
+      "stem": "moth",
+      "freq": 267,
+      "shard": "m"
+    },
+    {
+      "stem": "noth",
+      "freq": 267,
+      "shard": "n"
+    },
+    {
+      "stem": "captain",
+      "freq": 266,
+      "shard": "c"
+    },
+    {
+      "stem": "rejoice",
+      "freq": 263,
+      "shard": "r"
+    },
+    {
+      "stem": "knew",
+      "freq": 260,
+      "shard": "k"
+    },
+    {
+      "stem": "slain",
+      "freq": 259,
+      "shard": "s"
+    },
+    {
+      "stem": "mount",
+      "freq": 259,
+      "shard": "m"
+    },
+    {
+      "stem": "battle",
+      "freq": 259,
+      "shard": "b"
+    },
+    {
+      "stem": "become",
+      "freq": 259,
+      "shard": "b"
+    },
+    {
+      "stem": "inheritance",
+      "freq": 257,
+      "shard": "i"
+    },
+    {
+      "stem": "teach",
+      "freq": 257,
+      "shard": "t"
+    },
+    {
+      "stem": "wine",
+      "freq": 256,
+      "shard": "w"
+    },
+    {
+      "stem": "book",
+      "freq": 256,
+      "shard": "b"
+    },
+    {
+      "stem": "elder",
+      "freq": 255,
+      "shard": "e"
+    },
+    {
+      "stem": "gods",
+      "freq": 254,
+      "shard": "g"
+    },
+    {
+      "stem": "levite",
+      "freq": 254,
+      "shard": "l"
+    },
+    {
+      "stem": "wall",
+      "freq": 254,
+      "shard": "w"
+    },
+    {
+      "stem": "poor",
+      "freq": 254,
+      "shard": "p"
+    },
+    {
+      "stem": "month",
+      "freq": 253,
+      "shard": "m"
+    },
+    {
+      "stem": "gospel",
+      "freq": 253,
+      "shard": "g"
+    },
+    {
+      "stem": "solomon",
+      "freq": 252,
+      "shard": "s"
+    },
+    {
+      "stem": "country",
+      "freq": 252,
+      "shard": "c"
+    },
+    {
+      "stem": "wrath",
+      "freq": 252,
+      "shard": "w"
+    },
+    {
+      "stem": "salva",
+      "freq": 249,
+      "shard": "s"
+    },
+    {
+      "stem": "whatsoev",
+      "freq": 249,
+      "shard": "w"
+    },
+    {
+      "stem": "desire",
+      "freq": 249,
+      "shard": "d"
+    },
+    {
+      "stem": "praise",
+      "freq": 248,
+      "shard": "p"
+    },
+    {
+      "stem": "exceeding",
+      "freq": 248,
+      "shard": "e"
+    },
+    {
+      "stem": "babylon",
+      "freq": 248,
+      "shard": "b"
+    },
+    {
+      "stem": "cri",
+      "freq": 247,
+      "shard": "c"
+    },
+    {
+      "stem": "caus",
+      "freq": 247,
+      "shard": "c"
+    },
+    {
+      "stem": "whosoev",
+      "freq": 246,
+      "shard": "w"
+    },
+    {
+      "stem": "dwelt",
+      "freq": 245,
+      "shard": "d"
+    },
+    {
+      "stem": "king\u2019",
+      "freq": 242,
+      "shard": "k"
+    },
+    {
+      "stem": "gentile",
+      "freq": 242,
+      "shard": "g"
+    },
+    {
+      "stem": "record",
+      "freq": 241,
+      "shard": "r"
+    },
+    {
+      "stem": "door",
+      "freq": 241,
+      "shard": "d"
+    },
+    {
+      "stem": "built",
+      "freq": 240,
+      "shard": "b"
+    },
+    {
+      "stem": "ground",
+      "freq": 239,
+      "shard": "g"
+    },
+    {
+      "stem": "morn",
+      "freq": 238,
+      "shard": "m"
+    },
+    {
+      "stem": "certain",
+      "freq": 236,
+      "shard": "c"
+    },
+    {
+      "stem": "died",
+      "freq": 235,
+      "shard": "d"
+    },
+    {
+      "stem": "smote",
+      "freq": 235,
+      "shard": "s"
+    },
+    {
+      "stem": "philistine",
+      "freq": 234,
+      "shard": "p"
+    },
+    {
+      "stem": "ten",
+      "freq": 234,
+      "shard": "t"
+    },
+    {
+      "stem": "broken",
+      "freq": 231,
+      "shard": "b"
+    },
+    {
+      "stem": "flock",
+      "freq": 231,
+      "shard": "f"
+    },
+    {
+      "stem": "second",
+      "freq": 229,
+      "shard": "s"
+    },
+    {
+      "stem": "ear",
+      "freq": 229,
+      "shard": "e"
+    },
+    {
+      "stem": "lamb",
+      "freq": 228,
+      "shard": "l"
+    },
+    {
+      "stem": "prepar",
+      "freq": 225,
+      "shard": "p"
+    },
+    {
+      "stem": "temple",
+      "freq": 224,
+      "shard": "t"
+    },
+    {
+      "stem": "though",
+      "freq": 223,
+      "shard": "t"
+    },
+    {
+      "stem": "serve",
+      "freq": 223,
+      "shard": "s"
+    },
+    {
+      "stem": "redeem",
+      "freq": 222,
+      "shard": "r"
+    },
+    {
+      "stem": "ammon",
+      "freq": 220,
+      "shard": "a"
+    },
+    {
+      "stem": "twelve",
+      "freq": 218,
+      "shard": "t"
+    },
+    {
+      "stem": "mind",
+      "freq": 215,
+      "shard": "m"
+    },
+    {
+      "stem": "ghost",
+      "freq": 214,
+      "shard": "g"
+    },
+    {
+      "stem": "pharaoh",
+      "freq": 212,
+      "shard": "p"
+    },
+    {
+      "stem": "tongue",
+      "freq": 210,
+      "shard": "t"
+    },
+    {
+      "stem": "ent",
+      "freq": 210,
+      "shard": "e"
+    },
+    {
+      "stem": "bow",
+      "freq": 209,
+      "shard": "b"
+    },
+    {
+      "stem": "except",
+      "freq": 208,
+      "shard": "e"
+    },
+    {
+      "stem": "women",
+      "freq": 208,
+      "shard": "w"
+    },
+    {
+      "stem": "beginn",
+      "freq": 208,
+      "shard": "b"
+    },
+    {
+      "stem": "devil",
+      "freq": 207,
+      "shard": "d"
+    },
+    {
+      "stem": "counsel",
+      "freq": 206,
+      "shard": "c"
+    },
+    {
+      "stem": "child",
+      "freq": 206,
+      "shard": "c"
+    },
+    {
+      "stem": "third",
+      "freq": 205,
+      "shard": "t"
+    },
+    {
+      "stem": "kill",
+      "freq": 205,
+      "shard": "k"
+    },
+    {
+      "stem": "sav",
+      "freq": 204,
+      "shard": "s"
+    },
+    {
+      "stem": "remain",
+      "freq": 204,
+      "shard": "r"
+    },
+    {
+      "stem": "grace",
+      "freq": 204,
+      "shard": "g"
+    },
+    {
+      "stem": "desir",
+      "freq": 204,
+      "shard": "d"
+    },
+    {
+      "stem": "thyself",
+      "freq": 204,
+      "shard": "t"
+    },
+    {
+      "stem": "slay",
+      "freq": 204,
+      "shard": "s"
+    },
+    {
+      "stem": "six",
+      "freq": 203,
+      "shard": "s"
+    },
+    {
+      "stem": "believ",
+      "freq": 202,
+      "shard": "b"
+    },
+    {
+      "stem": "trust",
+      "freq": 202,
+      "shard": "t"
+    },
+    {
+      "stem": "alma",
+      "freq": 202,
+      "shard": "a"
+    },
+    {
+      "stem": "slew",
+      "freq": 201,
+      "shard": "s"
+    },
+    {
+      "stem": "meet",
+      "freq": 201,
+      "shard": "m"
+    },
+    {
+      "stem": "suff",
+      "freq": 201,
+      "shard": "s"
+    },
+    {
+      "stem": "arose",
+      "freq": 200,
+      "shard": "a"
+    },
+    {
+      "stem": "thirty",
+      "freq": 200,
+      "shard": "t"
+    },
+    {
+      "stem": "ark",
+      "freq": 200,
+      "shard": "a"
+    },
+    {
+      "stem": "wheth",
+      "freq": 200,
+      "shard": "w"
+    },
+    {
+      "stem": "unclean",
+      "freq": 199,
+      "shard": "u"
+    },
+    {
+      "stem": "afraid",
+      "freq": 198,
+      "shard": "a"
+    },
+    {
+      "stem": "throughout",
+      "freq": 198,
+      "shard": "t"
+    },
+    {
+      "stem": "sake",
+      "freq": 197,
+      "shard": "s"
+    },
+    {
+      "stem": "write",
+      "freq": 197,
+      "shard": "w"
+    },
+    {
+      "stem": "amen",
+      "freq": 196,
+      "shard": "a"
+    },
+    {
+      "stem": "sheep",
+      "freq": 196,
+      "shard": "s"
+    },
+    {
+      "stem": "family",
+      "freq": 196,
+      "shard": "f"
+    },
+    {
+      "stem": "belov",
+      "freq": 196,
+      "shard": "b"
+    },
+    {
+      "stem": "sign",
+      "freq": 196,
+      "shard": "s"
+    },
+    {
+      "stem": "throne",
+      "freq": 195,
+      "shard": "t"
+    },
+    {
+      "stem": "journey",
+      "freq": 195,
+      "shard": "j"
+    },
+    {
+      "stem": "fulfill",
+      "freq": 195,
+      "shard": "f"
+    },
+    {
+      "stem": "fled",
+      "freq": 194,
+      "shard": "f"
+    },
+    {
+      "stem": "offering",
+      "freq": 194,
+      "shard": "o"
+    },
+    {
+      "stem": "joshua",
+      "freq": 194,
+      "shard": "j"
+    },
+    {
+      "stem": "bare",
+      "freq": 193,
+      "shard": "b"
+    },
+    {
+      "stem": "destruc",
+      "freq": 193,
+      "shard": "d"
+    },
+    {
+      "stem": "sat",
+      "freq": 192,
+      "shard": "s"
+    },
+    {
+      "stem": "testimony",
+      "freq": 192,
+      "shard": "t"
+    },
+    {
+      "stem": "till",
+      "freq": 192,
+      "shard": "t"
+    },
+    {
+      "stem": "need",
+      "freq": 192,
+      "shard": "n"
+    },
+    {
+      "stem": "beheld",
+      "freq": 190,
+      "shard": "b"
+    },
+    {
+      "stem": "thought",
+      "freq": 189,
+      "shard": "t"
+    },
+    {
+      "stem": "beth",
+      "freq": 188,
+      "shard": "b"
+    },
+    {
+      "stem": "east",
+      "freq": 188,
+      "shard": "e"
+    },
+    {
+      "stem": "declare",
+      "freq": 188,
+      "shard": "d"
+    },
+    {
+      "stem": "presence",
+      "freq": 188,
+      "shard": "p"
+    },
+    {
+      "stem": "became",
+      "freq": 188,
+      "shard": "b"
+    },
+    {
+      "stem": "moreov",
+      "freq": 187,
+      "shard": "m"
+    },
+    {
+      "stem": "tent",
+      "freq": 187,
+      "shard": "t"
+    },
+    {
+      "stem": "vineyard",
+      "freq": 187,
+      "shard": "v"
+    },
+    {
+      "stem": "break",
+      "freq": 186,
+      "shard": "b"
+    },
+    {
+      "stem": "new",
+      "freq": 185,
+      "shard": "n"
+    },
+    {
+      "stem": "sought",
+      "freq": 185,
+      "shard": "s"
+    },
+    {
+      "stem": "saint",
+      "freq": 185,
+      "shard": "s"
+    },
+    {
+      "stem": "arise",
+      "freq": 184,
+      "shard": "a"
+    },
+    {
+      "stem": "possess",
+      "freq": 183,
+      "shard": "p"
+    },
+    {
+      "stem": "valley",
+      "freq": 182,
+      "shard": "v"
+    },
+    {
+      "stem": "begat",
+      "freq": 181,
+      "shard": "b"
+    },
+    {
+      "stem": "secret",
+      "freq": 181,
+      "shard": "s"
+    },
+    {
+      "stem": "john",
+      "freq": 181,
+      "shard": "j"
+    },
+    {
+      "stem": "enter",
+      "freq": 180,
+      "shard": "e"
+    },
+    {
+      "stem": "sun",
+      "freq": 180,
+      "shard": "s"
+    },
+    {
+      "stem": "moroni",
+      "freq": 180,
+      "shard": "m"
+    },
+    {
+      "stem": "glad",
+      "freq": 179,
+      "shard": "g"
+    },
+    {
+      "stem": "obtain",
+      "freq": 179,
+      "shard": "o"
+    },
+    {
+      "stem": "pour",
+      "freq": 179,
+      "shard": "p"
+    },
+    {
+      "stem": "wherein",
+      "freq": 178,
+      "shard": "w"
+    },
+    {
+      "stem": "per",
+      "freq": 178,
+      "shard": "p"
+    },
+    {
+      "stem": "forty",
+      "freq": 177,
+      "shard": "f"
+    },
+    {
+      "stem": "riv",
+      "freq": 177,
+      "shard": "r"
+    },
+    {
+      "stem": "rise",
+      "freq": 177,
+      "shard": "r"
+    },
+    {
+      "stem": "lie",
+      "freq": 177,
+      "shard": "l"
+    },
+    {
+      "stem": "benjamin",
+      "freq": 176,
+      "shard": "b"
+    },
+    {
+      "stem": "able",
+      "freq": 175,
+      "shard": "a"
+    },
+    {
+      "stem": "vessel",
+      "freq": 174,
+      "shard": "v"
+    },
+    {
+      "stem": "jordan",
+      "freq": 173,
+      "shard": "j"
+    },
+    {
+      "stem": "help",
+      "freq": 173,
+      "shard": "h"
+    },
+    {
+      "stem": "fool",
+      "freq": 173,
+      "shard": "f"
+    },
+    {
+      "stem": "rock",
+      "freq": 172,
+      "shard": "r"
+    },
+    {
+      "stem": "wit",
+      "freq": 172,
+      "shard": "w"
+    },
+    {
+      "stem": "sorrow",
+      "freq": 172,
+      "shard": "s"
+    },
+    {
+      "stem": "myself",
+      "freq": 172,
+      "shard": "m"
+    },
+    {
+      "stem": "true",
+      "freq": 172,
+      "shard": "t"
+    },
+    {
+      "stem": "oil",
+      "freq": 171,
+      "shard": "o"
+    },
+    {
+      "stem": "hill",
+      "freq": 170,
+      "shard": "h"
+    },
+    {
+      "stem": "genera",
+      "freq": 170,
+      "shard": "g"
+    },
+    {
+      "stem": "everlast",
+      "freq": 169,
+      "shard": "e"
+    },
+    {
+      "stem": "gift",
+      "freq": 169,
+      "shard": "g"
+    },
+    {
+      "stem": "born",
+      "freq": 169,
+      "shard": "b"
+    },
+    {
+      "stem": "chosen",
+      "freq": 168,
+      "shard": "c"
+    },
+    {
+      "stem": "pet",
+      "freq": 168,
+      "shard": "p"
+    },
+    {
+      "stem": "fifty",
+      "freq": 167,
+      "shard": "f"
+    },
+    {
+      "stem": "smite",
+      "freq": 166,
+      "shard": "s"
+    },
+    {
+      "stem": "wait",
+      "freq": 166,
+      "shard": "w"
+    },
+    {
+      "stem": "present",
+      "freq": 166,
+      "shard": "p"
+    },
+    {
+      "stem": "ephraim",
+      "freq": 165,
+      "shard": "e"
+    },
+    {
+      "stem": "statute",
+      "freq": 165,
+      "shard": "s"
+    },
+    {
+      "stem": "nev",
+      "freq": 165,
+      "shard": "n"
+    },
+    {
+      "stem": "hope",
+      "freq": 165,
+      "shard": "h"
+    },
+    {
+      "stem": "anoint",
+      "freq": 163,
+      "shard": "a"
+    },
+    {
+      "stem": "carri",
+      "freq": 163,
+      "shard": "c"
+    },
+    {
+      "stem": "wive",
+      "freq": 163,
+      "shard": "w"
+    },
+    {
+      "stem": "spoil",
+      "freq": 163,
+      "shard": "s"
+    },
+    {
+      "stem": "money",
+      "freq": 163,
+      "shard": "m"
+    },
+    {
+      "stem": "cloud",
+      "freq": 162,
+      "shard": "c"
+    },
+    {
+      "stem": "show",
+      "freq": 161,
+      "shard": "s"
+    },
+    {
+      "stem": "judgment",
+      "freq": 160,
+      "shard": "j"
+    },
+    {
+      "stem": "form",
+      "freq": 160,
+      "shard": "f"
+    },
+    {
+      "stem": "hid",
+      "freq": 159,
+      "shard": "h"
+    },
+    {
+      "stem": "cover",
+      "freq": 159,
+      "shard": "c"
+    },
+    {
+      "stem": "mast",
+      "freq": 158,
+      "shard": "m"
+    },
+    {
+      "stem": "led",
+      "freq": 158,
+      "shard": "l"
+    },
+    {
+      "stem": "promise",
+      "freq": 158,
+      "shard": "p"
+    },
+    {
+      "stem": "chariot",
+      "freq": 156,
+      "shard": "c"
+    },
+    {
+      "stem": "baptiz",
+      "freq": 156,
+      "shard": "b"
+    },
+    {
+      "stem": "appear",
+      "freq": 156,
+      "shard": "a"
+    },
+    {
+      "stem": "flee",
+      "freq": 155,
+      "shard": "f"
+    },
+    {
+      "stem": "paul",
+      "freq": 155,
+      "shard": "p"
+    },
+    {
+      "stem": "answ",
+      "freq": 155,
+      "shard": "a"
+    },
+    {
+      "stem": "moab",
+      "freq": 154,
+      "shard": "m"
+    },
+    {
+      "stem": "perfect",
+      "freq": 154,
+      "shard": "p"
+    },
+    {
+      "stem": "ord",
+      "freq": 154,
+      "shard": "o"
+    },
+    {
+      "stem": "ears",
+      "freq": 154,
+      "shard": "e"
+    },
+    {
+      "stem": "south",
+      "freq": 154,
+      "shard": "s"
+    },
+    {
+      "stem": "insomuch",
+      "freq": 154,
+      "shard": "i"
+    },
+    {
+      "stem": "horse",
+      "freq": 153,
+      "shard": "h"
+    },
+    {
+      "stem": "prepare",
+      "freq": 153,
+      "shard": "p"
+    },
+    {
+      "stem": "wind",
+      "freq": 152,
+      "shard": "w"
+    },
+    {
+      "stem": "plain",
+      "freq": 151,
+      "shard": "p"
+    },
+    {
+      "stem": "mourn",
+      "freq": 151,
+      "shard": "m"
+    },
+    {
+      "stem": "north",
+      "freq": 151,
+      "shard": "n"
+    },
+    {
+      "stem": "image",
+      "freq": 151,
+      "shard": "i"
+    },
+    {
+      "stem": "leave",
+      "freq": 151,
+      "shard": "l"
+    },
+    {
+      "stem": "camp",
+      "freq": 151,
+      "shard": "c"
+    },
+    {
+      "stem": "thence",
+      "freq": 150,
+      "shard": "t"
+    },
+    {
+      "stem": "sing",
+      "freq": 150,
+      "shard": "s"
+    },
+    {
+      "stem": "piece",
+      "freq": 150,
+      "shard": "p"
+    },
+    {
+      "stem": "comfort",
+      "freq": 150,
+      "shard": "c"
+    },
+    {
+      "stem": "stretch",
+      "freq": 150,
+      "shard": "s"
+    },
+    {
+      "stem": "taught",
+      "freq": 150,
+      "shard": "t"
+    },
+    {
+      "stem": "fallen",
+      "freq": 149,
+      "shard": "f"
+    },
+    {
+      "stem": "fine",
+      "freq": 148,
+      "shard": "f"
+    },
+    {
+      "stem": "ordain",
+      "freq": 148,
+      "shard": "o"
+    },
+    {
+      "stem": "sabbath",
+      "freq": 148,
+      "shard": "s"
+    },
+    {
+      "stem": "bound",
+      "freq": 147,
+      "shard": "b"
+    },
+    {
+      "stem": "etern",
+      "freq": 147,
+      "shard": "e"
+    },
+    {
+      "stem": "arm",
+      "freq": 146,
+      "shard": "a"
+    },
+    {
+      "stem": "sound",
+      "freq": 146,
+      "shard": "s"
+    },
+    {
+      "stem": "touch",
+      "freq": 146,
+      "shard": "t"
+    },
+    {
+      "stem": "heathen",
+      "freq": 146,
+      "shard": "h"
+    },
+    {
+      "stem": "worship",
+      "freq": 146,
+      "shard": "w"
+    },
+    {
+      "stem": "feast",
+      "freq": 146,
+      "shard": "f"
+    },
+    {
+      "stem": "heal",
+      "freq": 146,
+      "shard": "h"
+    },
+    {
+      "stem": "sinn",
+      "freq": 145,
+      "shard": "s"
+    },
+    {
+      "stem": "hour",
+      "freq": 145,
+      "shard": "h"
+    },
+    {
+      "stem": "father\u2019",
+      "freq": 144,
+      "shard": "f"
+    },
+    {
+      "stem": "honour",
+      "freq": 144,
+      "shard": "h"
+    },
+    {
+      "stem": "samuel",
+      "freq": 144,
+      "shard": "s"
+    },
+    {
+      "stem": "vain",
+      "freq": 144,
+      "shard": "v"
+    },
+    {
+      "stem": "wherewith",
+      "freq": 143,
+      "shard": "w"
+    },
+    {
+      "stem": "seventh",
+      "freq": 142,
+      "shard": "s"
+    },
+    {
+      "stem": "isaac",
+      "freq": 141,
+      "shard": "i"
+    },
+    {
+      "stem": "lord\u2019",
+      "freq": 141,
+      "shard": "l"
+    },
+    {
+      "stem": "prophesy",
+      "freq": 141,
+      "shard": "p"
+    },
+    {
+      "stem": "obey",
+      "freq": 141,
+      "shard": "o"
+    },
+    {
+      "stem": "captivity",
+      "freq": 141,
+      "shard": "c"
+    },
+    {
+      "stem": "wash",
+      "freq": 141,
+      "shard": "w"
+    },
+    {
+      "stem": "thank",
+      "freq": 140,
+      "shard": "t"
+    },
+    {
+      "stem": "small",
+      "freq": 140,
+      "shard": "s"
+    },
+    {
+      "stem": "knoweth",
+      "freq": 140,
+      "shard": "k"
+    },
+    {
+      "stem": "inasmuch",
+      "freq": 140,
+      "shard": "i"
+    },
+    {
+      "stem": "pure",
+      "freq": 139,
+      "shard": "p"
+    },
+    {
+      "stem": "prison",
+      "freq": 139,
+      "shard": "p"
+    },
+    {
+      "stem": "desolate",
+      "freq": 139,
+      "shard": "d"
+    },
+    {
+      "stem": "brass",
+      "freq": 138,
+      "shard": "b"
+    },
+    {
+      "stem": "wood",
+      "freq": 138,
+      "shard": "w"
+    },
+    {
+      "stem": "sit",
+      "freq": 138,
+      "shard": "s"
+    },
+    {
+      "stem": "remnant",
+      "freq": 138,
+      "shard": "r"
+    },
+    {
+      "stem": "fast",
+      "freq": 137,
+      "shard": "f"
+    },
+    {
+      "stem": "lead",
+      "freq": 137,
+      "shard": "l"
+    },
+    {
+      "stem": "cattle",
+      "freq": 137,
+      "shard": "c"
+    },
+    {
+      "stem": "husband",
+      "freq": 137,
+      "shard": "h"
+    },
+    {
+      "stem": "reward",
+      "freq": 137,
+      "shard": "r"
+    },
+    {
+      "stem": "curse",
+      "freq": 137,
+      "shard": "c"
+    },
+    {
+      "stem": "devour",
+      "freq": 137,
+      "shard": "d"
+    },
+    {
+      "stem": "cubit",
+      "freq": 136,
+      "shard": "c"
+    },
+    {
+      "stem": "generation",
+      "freq": 136,
+      "shard": "g"
+    },
+    {
+      "stem": "bullock",
+      "freq": 135,
+      "shard": "b"
+    },
+    {
+      "stem": "cloth",
+      "freq": 135,
+      "shard": "c"
+    },
+    {
+      "stem": "riche",
+      "freq": 135,
+      "shard": "r"
+    },
+    {
+      "stem": "whith",
+      "freq": 135,
+      "shard": "w"
+    },
+    {
+      "stem": "pitch",
+      "freq": 134,
+      "shard": "p"
+    },
+    {
+      "stem": "trouble",
+      "freq": 134,
+      "shard": "t"
+    },
+    {
+      "stem": "goeth",
+      "freq": 134,
+      "shard": "g"
+    },
+    {
+      "stem": "friend",
+      "freq": 134,
+      "shard": "f"
+    },
+    {
+      "stem": "dust",
+      "freq": 133,
+      "shard": "d"
+    },
+    {
+      "stem": "morrow",
+      "freq": 132,
+      "shard": "m"
+    },
+    {
+      "stem": "eye",
+      "freq": 132,
+      "shard": "e"
+    },
+    {
+      "stem": "jeremiah",
+      "freq": 131,
+      "shard": "j"
+    },
+    {
+      "stem": "alone",
+      "freq": 131,
+      "shard": "a"
+    },
+    {
+      "stem": "rose",
+      "freq": 131,
+      "shard": "r"
+    },
+    {
+      "stem": "clean",
+      "freq": 131,
+      "shard": "c"
+    },
+    {
+      "stem": "spread",
+      "freq": 130,
+      "shard": "s"
+    },
+    {
+      "stem": "stead",
+      "freq": 130,
+      "shard": "s"
+    },
+    {
+      "stem": "corn",
+      "freq": 130,
+      "shard": "c"
+    },
+    {
+      "stem": "priesthood",
+      "freq": 130,
+      "shard": "p"
+    },
+    {
+      "stem": "sore",
+      "freq": 128,
+      "shard": "s"
+    },
+    {
+      "stem": "half",
+      "freq": 128,
+      "shard": "h"
+    },
+    {
+      "stem": "alway",
+      "freq": 128,
+      "shard": "a"
+    },
+    {
+      "stem": "establish",
+      "freq": 128,
+      "shard": "e"
+    },
+    {
+      "stem": "doing",
+      "freq": 128,
+      "shard": "d"
+    },
+    {
+      "stem": "giveth",
+      "freq": 128,
+      "shard": "g"
+    },
+    {
+      "stem": "fight",
+      "freq": 128,
+      "shard": "f"
+    },
+    {
+      "stem": "wrought",
+      "freq": 127,
+      "shard": "w"
+    },
+    {
+      "stem": "man\u2019",
+      "freq": 127,
+      "shard": "m"
+    },
+    {
+      "stem": "maketh",
+      "freq": 127,
+      "shard": "m"
+    },
+    {
+      "stem": "person",
+      "freq": 127,
+      "shard": "p"
+    },
+    {
+      "stem": "afflict",
+      "freq": 127,
+      "shard": "a"
+    },
+    {
+      "stem": "manasseh",
+      "freq": 126,
+      "shard": "m"
+    },
+    {
+      "stem": "ful",
+      "freq": 126,
+      "shard": "f"
+    },
+    {
+      "stem": "plant",
+      "freq": 126,
+      "shard": "p"
+    },
+    {
+      "stem": "satan",
+      "freq": 126,
+      "shard": "s"
+    },
+    {
+      "stem": "buri",
+      "freq": 125,
+      "shard": "b"
+    },
+    {
+      "stem": "suffer",
+      "freq": 125,
+      "shard": "s"
+    },
+    {
+      "stem": "sick",
+      "freq": 125,
+      "shard": "s"
+    },
+    {
+      "stem": "goat",
+      "freq": 125,
+      "shard": "g"
+    },
+    {
+      "stem": "court",
+      "freq": 124,
+      "shard": "c"
+    },
+    {
+      "stem": "bett",
+      "freq": 124,
+      "shard": "b"
+    },
+    {
+      "stem": "lips",
+      "freq": 124,
+      "shard": "l"
+    },
+    {
+      "stem": "wonder",
+      "freq": 123,
+      "shard": "w"
+    },
+    {
+      "stem": "vision",
+      "freq": 123,
+      "shard": "v"
+    },
+    {
+      "stem": "sanctu",
+      "freq": 123,
+      "shard": "s"
+    },
+    {
+      "stem": "posses",
+      "freq": 123,
+      "shard": "p"
+    },
+    {
+      "stem": "curs",
+      "freq": 123,
+      "shard": "c"
+    },
+    {
+      "stem": "asham",
+      "freq": 122,
+      "shard": "a"
+    },
+    {
+      "stem": "heed",
+      "freq": 122,
+      "shard": "h"
+    },
+    {
+      "stem": "utter",
+      "freq": 122,
+      "shard": "u"
+    },
+    {
+      "stem": "soon",
+      "freq": 122,
+      "shard": "s"
+    },
+    {
+      "stem": "plate",
+      "freq": 122,
+      "shard": "p"
+    },
+    {
+      "stem": "repentance",
+      "freq": 122,
+      "shard": "r"
+    },
+    {
+      "stem": "lion",
+      "freq": 121,
+      "shard": "l"
+    },
+    {
+      "stem": "nigh",
+      "freq": 121,
+      "shard": "n"
+    },
+    {
+      "stem": "scribe",
+      "freq": 121,
+      "shard": "s"
+    },
+    {
+      "stem": "service",
+      "freq": 121,
+      "shard": "s"
+    },
+    {
+      "stem": "abomination",
+      "freq": 121,
+      "shard": "a"
+    },
+    {
+      "stem": "ought",
+      "freq": 120,
+      "shard": "o"
+    },
+    {
+      "stem": "minist",
+      "freq": 120,
+      "shard": "m"
+    },
+    {
+      "stem": "fat",
+      "freq": 120,
+      "shard": "f"
+    },
+    {
+      "stem": "apostle",
+      "freq": 120,
+      "shard": "a"
+    },
+    {
+      "stem": "lov",
+      "freq": 120,
+      "shard": "l"
+    },
+    {
+      "stem": "bord",
+      "freq": 120,
+      "shard": "b"
+    },
+    {
+      "stem": "read",
+      "freq": 120,
+      "shard": "r"
+    },
+    {
+      "stem": "garment",
+      "freq": 119,
+      "shard": "g"
+    },
+    {
+      "stem": "doeth",
+      "freq": 119,
+      "shard": "d"
+    },
+    {
+      "stem": "ship",
+      "freq": 119,
+      "shard": "s"
+    },
+    {
+      "stem": "gilead",
+      "freq": 118,
+      "shard": "g"
+    },
+    {
+      "stem": "continual",
+      "freq": 118,
+      "shard": "c"
+    },
+    {
+      "stem": "whoso",
+      "freq": 118,
+      "shard": "w"
+    },
+    {
+      "stem": "neighbour",
+      "freq": 118,
+      "shard": "n"
+    },
+    {
+      "stem": "scatter",
+      "freq": 118,
+      "shard": "s"
+    },
+    {
+      "stem": "joab",
+      "freq": 117,
+      "shard": "j"
+    },
+    {
+      "stem": "samaria",
+      "freq": 117,
+      "shard": "s"
+    },
+    {
+      "stem": "clothe",
+      "freq": 117,
+      "shard": "c"
+    },
+    {
+      "stem": "strang",
+      "freq": 117,
+      "shard": "s"
+    },
+    {
+      "stem": "noah",
+      "freq": 116,
+      "shard": "n"
+    },
+    {
+      "stem": "free",
+      "freq": 116,
+      "shard": "f"
+    },
+    {
+      "stem": "rais",
+      "freq": 116,
+      "shard": "r"
+    },
+    {
+      "stem": "visit",
+      "freq": 116,
+      "shard": "v"
+    },
+    {
+      "stem": "carry",
+      "freq": 115,
+      "shard": "c"
+    },
+    {
+      "stem": "fami",
+      "freq": 115,
+      "shard": "f"
+    },
+    {
+      "stem": "rul",
+      "freq": 115,
+      "shard": "r"
+    },
+    {
+      "stem": "adam",
+      "freq": 115,
+      "shard": "a"
+    },
+    {
+      "stem": "firstborn",
+      "freq": 115,
+      "shard": "f"
+    },
+    {
+      "stem": "assyria",
+      "freq": 115,
+      "shard": "a"
+    },
+    {
+      "stem": "por",
+      "freq": 115,
+      "shard": "p"
+    },
+    {
+      "stem": "committ",
+      "freq": 114,
+      "shard": "c"
+    },
+    {
+      "stem": "fourth",
+      "freq": 114,
+      "shard": "f"
+    },
+    {
+      "stem": "charge",
+      "freq": 114,
+      "shard": "c"
+    },
+    {
+      "stem": "hezekiah",
+      "freq": 114,
+      "shard": "h"
+    },
+    {
+      "stem": "seal",
+      "freq": 114,
+      "shard": "s"
+    },
+    {
+      "stem": "hell",
+      "freq": 114,
+      "shard": "h"
+    },
+    {
+      "stem": "lot",
+      "freq": 113,
+      "shard": "l"
+    },
+    {
+      "stem": "famine",
+      "freq": 113,
+      "shard": "f"
+    },
+    {
+      "stem": "incense",
+      "freq": 113,
+      "shard": "i"
+    },
+    {
+      "stem": "seat",
+      "freq": 113,
+      "shard": "s"
+    },
+    {
+      "stem": "labour",
+      "freq": 112,
+      "shard": "l"
+    },
+    {
+      "stem": "rich",
+      "freq": 112,
+      "shard": "r"
+    },
+    {
+      "stem": "reason",
+      "freq": 112,
+      "shard": "r"
+    },
+    {
+      "stem": "sweet",
+      "freq": 112,
+      "shard": "s"
+    },
+    {
+      "stem": "idol",
+      "freq": 111,
+      "shard": "i"
+    },
+    {
+      "stem": "egyptian",
+      "freq": 111,
+      "shard": "e"
+    },
+    {
+      "stem": "company",
+      "freq": 111,
+      "shard": "c"
+    },
+    {
+      "stem": "scripture",
+      "freq": 111,
+      "shard": "s"
+    },
+    {
+      "stem": "watch",
+      "freq": 111,
+      "shard": "w"
+    },
+    {
+      "stem": "shut",
+      "freq": 111,
+      "shard": "s"
+    },
+    {
+      "stem": "fowl",
+      "freq": 111,
+      "shard": "f"
+    },
+    {
+      "stem": "labor",
+      "freq": 111,
+      "shard": "l"
+    },
+    {
+      "stem": "bone",
+      "freq": 110,
+      "shard": "b"
+    },
+    {
+      "stem": "measure",
+      "freq": 110,
+      "shard": "m"
+    },
+    {
+      "stem": "angry",
+      "freq": 110,
+      "shard": "a"
+    },
+    {
+      "stem": "harden",
+      "freq": 110,
+      "shard": "h"
+    },
+    {
+      "stem": "treasure",
+      "freq": 109,
+      "shard": "t"
+    },
+    {
+      "stem": "likewise",
+      "freq": 108,
+      "shard": "l"
+    },
+    {
+      "stem": "search",
+      "freq": 108,
+      "shard": "s"
+    },
+    {
+      "stem": "account",
+      "freq": 108,
+      "shard": "a"
+    },
+    {
+      "stem": "cease",
+      "freq": 108,
+      "shard": "c"
+    },
+    {
+      "stem": "learn",
+      "freq": 108,
+      "shard": "l"
+    },
+    {
+      "stem": "deep",
+      "freq": 108,
+      "shard": "d"
+    },
+    {
+      "stem": "blind",
+      "freq": 108,
+      "shard": "b"
+    },
+    {
+      "stem": "exalt",
+      "freq": 108,
+      "shard": "e"
+    },
+    {
+      "stem": "driven",
+      "freq": 108,
+      "shard": "d"
+    },
+    {
+      "stem": "ones",
+      "freq": 107,
+      "shard": "o"
+    },
+    {
+      "stem": "pillar",
+      "freq": 107,
+      "shard": "p"
+    },
+    {
+      "stem": "crown",
+      "freq": 107,
+      "shard": "c"
+    },
+    {
+      "stem": "preci",
+      "freq": 107,
+      "shard": "p"
+    },
+    {
+      "stem": "upright",
+      "freq": 107,
+      "shard": "u"
+    },
+    {
+      "stem": "remov",
+      "freq": 107,
+      "shard": "r"
+    },
+    {
+      "stem": "space",
+      "freq": 107,
+      "shard": "s"
+    },
+    {
+      "stem": "band",
+      "freq": 106,
+      "shard": "b"
+    },
+    {
+      "stem": "season",
+      "freq": 106,
+      "shard": "s"
+    },
+    {
+      "stem": "weep",
+      "freq": 106,
+      "shard": "w"
+    },
+    {
+      "stem": "smith",
+      "freq": 106,
+      "shard": "s"
+    },
+    {
+      "stem": "bringeth",
+      "freq": 106,
+      "shard": "b"
+    },
+    {
+      "stem": "sist",
+      "freq": 105,
+      "shard": "s"
+    },
+    {
+      "stem": "office",
+      "freq": 105,
+      "shard": "o"
+    },
+    {
+      "stem": "griev",
+      "freq": 105,
+      "shard": "g"
+    },
+    {
+      "stem": "hide",
+      "freq": 105,
+      "shard": "h"
+    },
+    {
+      "stem": "diligent",
+      "freq": 105,
+      "shard": "d"
+    },
+    {
+      "stem": "increase",
+      "freq": 104,
+      "shard": "i"
+    },
+    {
+      "stem": "table",
+      "freq": 104,
+      "shard": "t"
+    },
+    {
+      "stem": "shame",
+      "freq": 104,
+      "shard": "s"
+    },
+    {
+      "stem": "resurrec",
+      "freq": 104,
+      "shard": "r"
+    },
+    {
+      "stem": "founda",
+      "freq": 104,
+      "shard": "f"
+    }
+  ]
+}
