@@ -4256,6 +4256,10 @@ function openInlineQuoteCard(el) {
     var refRaw = refEl ? (refEl.textContent || '').trim() : '';
     var text = textEl ? (textEl.textContent || '').trim() : (el.textContent || '').trim();
 
+    // Resolve a navigation target: exact source-doc id match, or a scripture-ref-looking string.
+    var docId = (refRaw && sourceMeta && sourceMeta[refRaw]) ? refRaw : '';
+    var scripMatch = !docId && refRaw ? refRaw.match(/([1-4]?\s*[A-Z][A-Za-z]+(?:\s+[A-Z][A-Za-z]+)?)\s+(\d+):(\d+)/) : null;
+
     var html = '';
     html += '<div class="panel-header">'
          +   '<div class="panel-verse-ref">' + escapeHtml(sourceName) + '</div>'
@@ -4267,12 +4271,30 @@ function openInlineQuoteCard(el) {
          +   '</div>'
          + '</div>';
 
+    var btnStyle = 'margin:14px 28px;padding:8px 14px;border:1px solid var(--divider);background:transparent;cursor:pointer;font:inherit;color:var(--text);border-radius:4px';
+    if (docId) {
+        html += '<button type="button" class="quote-open-source" data-doc="' + escapeAttr(docId) + '" style="' + btnStyle + '">Open source</button>';
+    } else if (scripMatch) {
+        html += '<button type="button" class="quote-jump-ref" data-ref="' + escapeAttr(scripMatch[1].replace(/\s+/g, ' ').trim() + ' ' + scripMatch[2] + ':' + scripMatch[3]) + '" style="' + btnStyle + '">Jump to verse</button>';
+    }
+
     var panelBody = document.getElementById('panel-body');
     panelBody.innerHTML = html;
     panelBody.dataset.panelMode = 'quote';
     panelBody.scrollTop = 0;
     document.getElementById('channel').classList.add('open');
     channelOpen = true;
+
+    var openSrcBtn = panelBody.querySelector('.quote-open-source');
+    if (openSrcBtn) openSrcBtn.addEventListener('click', function() {
+        var id = openSrcBtn.dataset.doc;
+        var meta = sourceMeta && sourceMeta[id];
+        if (meta && meta.href) loadSourceDocument(id, meta.href);
+    });
+    var jumpBtn = panelBody.querySelector('.quote-jump-ref');
+    if (jumpBtn) jumpBtn.addEventListener('click', function() {
+        openVerseDiscovery(jumpBtn.dataset.ref);
+    });
 }
 
 function injectSourceCitationLinks(block, docId) {
