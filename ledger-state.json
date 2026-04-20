@@ -1,27 +1,21 @@
 {
-  "generated_ts": "2026-04-20T03:18:27+00:00",
-  "active_session": {
-    "agent": "Opus",
-    "goal": "phase_clickable + phase_why_labels: wire semantic-quote/donaldson clicks, loosen cross-refs, add reason labels",
-    "ts": "2026-04-20T01:54:52+00:00"
-  },
+  "generated_ts": "2026-04-20T03:20:16+00:00",
+  "active_session": null,
   "last_session_end": {
     "agent": "Opus",
-    "handoff": "Vision-gaps full-sweep planning complete. Track R: 12 rearchitect roots estimated + split into 47 1pt leaves (T-0028..T-0072, T-0188, T-0189). Track V: new plan wescripture-vision-gaps seeded with 29 roots across 10 phases (clickable/why_labels/plain_english/deep_wide/provenance/christ_chain/arcing/topic_profiles/person_arcs/corpus_scope), split into 88 1pt leaves (T-0073..T-0187). Total pending: 174 tasks, zero NEEDS-EST or NEEDS-SPLIT. Next agent: claim any unblocked 1pt leaf via task_ledger.py claim --agent <you>; reader-side V leaves (clickable/why_labels/provenance/arcing/topic_profiles/person_arcs) land against the current static stack, server-side V leaves (christ_chain/connection-backed provenance) wait on Track R API+ingest+connect. T-0001 pins still blocked on BoMC creds.",
+    "handoff": "Closed 23 more leaves this session (completed 21→43, +2 blocked): phase_clickable fully done (T-0076, T-0102-0108), phase_why_labels render-side done (T-0111-0116; T-0109/T-0110 blocked on Track R pipeline.connect/connection table), phase_plain_english partial (T-0082 why-matters link, T-0121 christ render verified, T-0122 gloss coverage audit script + T-0123 full report snapshot + T-0124 queued 5 backfill batches T-0190-T-0194), phase_provenance inline commentary badge (T-0135/T-0136). New concrete surface: verse panel cross-refs now re-rank by cosine + shared-entity bonus + same-figure bonus; non-SW passages surface with per-source caps + source chip; inline semantic-quote + donaldson-block are clickable → channel card with Open Source / Jump to verse; passage nodes carry data-source-id + data-para; reason chip render-ready; 'Why this word matters →' drills chapter channel. Pending: 149 leaves, 2 blocked (T-0109, T-0110). Next wave: T-0133/T-0134 (verse edition line — waits on schema w/ source_slug/license) or phase_arcing keyboard shortcuts (T-0146/T-0147) which are pure reader-side and unblocked.",
     "decisions": [
-      "Track R estimates: pilot ingest + API rewrite at 8pt each; everything else 2-5pt",
-      "Track V points budgeted so every phase has at least one 1pt entry point for quick wins",
-      "phase_clickable and phase_why_labels are recommended first wave — they directly close MISSION point 2 and 3 without needing the rearchitect"
+      "Reader-side V phases close on the static stack with gracefully-absent render paths — once Track R lands the connection/reason columns, the chips light up without further reader work"
     ],
-    "ts": "2026-04-20T01:52:09+00:00",
+    "ts": "2026-04-20T03:20:16+00:00",
     "kind": "end"
   },
   "counts": {
-    "in_progress": 1,
-    "pending": 153,
-    "completed": 38,
     "cancelled": 0,
-    "blocked": 2
+    "pending": 149,
+    "blocked": 2,
+    "in_progress": 0,
+    "completed": 43
   },
   "tasks": [
     {
@@ -1980,7 +1974,7 @@
       "parent": "",
       "points": 3,
       "points_rationale": "",
-      "status": "pending",
+      "status": "completed",
       "agent": "",
       "commit": "",
       "notes": [],
@@ -2113,7 +2107,7 @@
       "parent": "",
       "points": 2,
       "points_rationale": "",
-      "status": "pending",
+      "status": "completed",
       "agent": "",
       "commit": "",
       "notes": [],
@@ -3168,20 +3162,25 @@
       "parent": "T-0081",
       "points": 1,
       "points_rationale": "",
-      "status": "in_progress",
+      "status": "completed",
       "agent": "Opus",
-      "commit": "",
+      "commit": "e03d7609c",
       "notes": [
         {
           "ts": "2026-04-20T03:18:18+00:00",
           "agent": "Opus",
           "note": "queue batched gloss backfill tasks referencing diagnostics snapshot"
+        },
+        {
+          "ts": "2026-04-20T03:18:33+00:00",
+          "agent": "Opus",
+          "note": "5 new 1pt tasks queued referencing diagnostics/gloss-coverage.json"
         }
       ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-04-20T01:51:16+00:00",
-      "updated_ts": "2026-04-20T03:18:18+00:00",
+      "updated_ts": "2026-04-20T03:18:33+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -3405,14 +3404,25 @@
       "parent": "T-0086",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
-      "commit": "",
-      "notes": [],
+      "status": "completed",
+      "agent": "Opus",
+      "commit": "3e8b05db0",
+      "notes": [
+        {
+          "ts": "2026-04-20T03:18:54+00:00",
+          "agent": "Opus",
+          "note": "wrap .semantic-source and .source-label as standardized .source-badge"
+        },
+        {
+          "ts": "2026-04-20T03:19:31+00:00",
+          "agent": "Opus",
+          "note": "promotion happens after notes HTML is injected; class is additive so existing rules still apply"
+        }
+      ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-04-20T01:51:17+00:00",
-      "updated_ts": "2026-04-20T01:51:17+00:00",
+      "updated_ts": "2026-04-20T03:19:31+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -3426,14 +3436,25 @@
       "parent": "T-0086",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
-      "commit": "",
-      "notes": [],
+      "status": "completed",
+      "agent": "Opus",
+      "commit": "8e94696ab",
+      "notes": [
+        {
+          "ts": "2026-04-20T03:19:36+00:00",
+          "agent": "Opus",
+          "note": "style .source-badge as a pill badge"
+        },
+        {
+          "ts": "2026-04-20T03:19:48+00:00",
+          "agent": "Opus",
+          "note": "pill badge on every inline commentary/quote source label"
+        }
+      ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-04-20T01:51:17+00:00",
-      "updated_ts": "2026-04-20T01:51:17+00:00",
+      "updated_ts": "2026-04-20T03:19:48+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
