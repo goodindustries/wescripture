@@ -1008,6 +1008,15 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     overflow-wrap: anywhere; word-break: break-word; min-width: 0;
 }
 .scrip-card--jump:hover { background: rgba(74,103,65,0.06); }
+.scrip-card--passage { border-left-color: rgba(156,122,77,0.45); }
+.scrip-card--passage:hover { background: rgba(156,122,77,0.07); }
+.scrip-card--passage .scrip-ref::after {
+    content: " \2197"; /* ↗ indicating opens a source document */
+    font-size: 10px;
+    color: var(--muted);
+    margin-left: 4px;
+    letter-spacing: 0;
+}
 .source-cites {
     margin: -4px 0 12px 0;
     padding: 0 28px 0 16px;
