@@ -1008,6 +1008,19 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     overflow-wrap: anywhere; word-break: break-word; min-width: 0;
 }
 .scrip-card--jump:hover { background: rgba(74,103,65,0.06); }
+.conn-reason-chip {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    margin: 0 0 6px 0;
+    border: 1px solid rgba(74,103,65,0.35);
+    border-radius: 10px;
+    color: var(--muted);
+    background: rgba(74,103,65,0.05);
+    vertical-align: middle;
+}
 .scrip-card--passage { border-left-color: rgba(156,122,77,0.45); }
 .scrip-card--passage:hover { background: rgba(156,122,77,0.07); }
 .scrip-card--passage .scrip-ref::after {
@@ -3980,7 +3993,8 @@ function finishVerseDiscoveryPanel(payload) {
             hasLink: !!(e.source_doc_id && e.source_para != null && sourceMeta[e.source_doc_id]),
             entryIdx: i,
             filterColl: fc,
-            filterYear: fy
+            filterYear: fy,
+            reason: e.reason || e.reason_label || ''
         });
     });
 
@@ -4013,6 +4027,7 @@ function finishVerseDiscoveryPanel(payload) {
             }
             html += '<div class="comm-card' + (c.hasLink ? ' has-link' : '') + '"' + vdAttrs + '>'
                 + (c.badge ? '<div class="hist-badge ' + escapeHtml(c.badgeClass || '') + '">' + escapeHtml(c.badge) + '</div>' : '')
+                + (c.reason ? '<span class="conn-reason-chip" title="Why this connection">' + escapeHtml(formatConnReason(c.reason)) + '</span>' : '')
                 + (c.author ? '<div class="comm-author">' + linkifyName(c.author) + '</div>' : '')
                 + (c.work ? '<div class="comm-work">' + escapeHtml(c.work) + '</div>' : '')
                 + '<div class="comm-text">' + escapeHtml(c.text || '') + '</div></div>';
@@ -4280,6 +4295,22 @@ function openSourceParaDiscovery(block, paraNode) {
             jumpTo(bookSlug + '_' + ch, v);
         });
     });
+}
+
+// Humanize the raw `reason` code emitted by pipeline.connect.
+// Codes: cosine | shared_entity | chapter_echo | same_figure | blended | ...
+// Unknown values are passed through unchanged so custom reasons also render.
+function formatConnReason(raw) {
+    var v = String(raw || '').trim().toLowerCase().replace(/[-\s]+/g, '_');
+    var map = {
+        cosine: 'semantic',
+        shared_entity: 'shared entity',
+        same_figure: 'same figure',
+        chapter_echo: 'chapter echo',
+        blended: 'blended',
+        cross_ref: 'cross-ref'
+    };
+    return map[v] || String(raw || '').replace(/_/g, ' ');
 }
 
 // Render an inline commentary / cross-ref quote as a channel card.
