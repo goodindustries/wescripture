@@ -7214,6 +7214,22 @@ document.addEventListener('keydown', function(e) {
         if (graphOpen)   { closeGraph();   return; }
         if (channelOpen) { closeChannel(); return; }
         if (searchOpen)  { closeSearch();  return; }
+        // Nothing to close — step back in visit history if we have one.
+        if (visitStack.length && !e.target.matches('input,textarea,[contenteditable=true]')) {
+            e.preventDefault();
+            restorePreviousVisit();
+        }
+    }
+    // Backspace as global back, but ONLY when the user isn't typing and
+    // isn't inside a form field. Guards against browser-native back actions
+    // on inputs and content-editable regions.
+    if (e.key === 'Backspace'
+            && !e.metaKey && !e.ctrlKey && !e.altKey
+            && !e.target.matches('input,textarea,select,button,[contenteditable=true]')) {
+        if (visitStack.length) {
+            e.preventDefault();
+            restorePreviousVisit();
+        }
     }
 });
 
