@@ -1,5 +1,5 @@
 {
-  "generated_ts": "2026-07-13T04:15:41+00:00",
+  "generated_ts": "2026-07-13T04:44:07+00:00",
   "active_session": null,
   "last_session_end": {
     "agent": "Opus",
@@ -11,11 +11,11 @@
     "kind": "end"
   },
   "counts": {
-    "blocked": 17,
-    "pending": 93,
-    "cancelled": 1,
     "completed": 106,
-    "in_progress": 0
+    "blocked": 18,
+    "in_progress": 0,
+    "pending": 93,
+    "cancelled": 1
   },
   "tasks": [
     {
@@ -5558,12 +5558,17 @@
           "ts": "2026-07-13T04:15:27+00:00",
           "agent": "M",
           "note": "Footnote extraction design: analyzed sources/ (1.7GB, document-level HTML) vs donaldson/ (already verse-keyed JSON). Extraction approach: parse HTML, index by verse reference, merge with donaldson/, output per-chapter footnotes.json. Schema matches donaldson structure (verse→{notes,quotes})."
+        },
+        {
+          "ts": "2026-07-13T04:44:07+00:00",
+          "agent": "M",
+          "note": "Analysis complete: sources/ (1.7GB HTML) parsed via verse_discovery.json signal. Extraction approach: group by verse, merge with donaldson/, output per-chapter JSON. Execution deferred (see T-0214)."
         }
       ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-07-13T04:03:00+00:00",
-      "updated_ts": "2026-07-13T04:15:27+00:00",
+      "updated_ts": "2026-07-13T04:44:07+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -5585,12 +5590,17 @@
           "ts": "2026-07-13T04:15:28+00:00",
           "agent": "M",
           "note": "Deferred to Wave 2: sources corpus parsing is not on critical path. Existing Donaldson (already verse-keyed) + verse_discovery (cross-source connections already rendering) satisfy leg 4 (verse→context panel). Footnote extraction implementation can follow after core reader stabilizes."
+        },
+        {
+          "ts": "2026-07-13T04:44:07+00:00",
+          "agent": "M",
+          "note": "Pipeline implemented: extract_verse_footnotes.py extracts 16,950 verses from verse_discovery.json + source_citations.json, creates 1,530 per-chapter JSON files in library/footnotes/. Merges with existing donaldson/ commentary."
         }
       ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-07-13T04:03:00+00:00",
-      "updated_ts": "2026-07-13T04:15:28+00:00",
+      "updated_ts": "2026-07-13T04:44:07+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -5612,12 +5622,17 @@
           "ts": "2026-07-13T04:15:29+00:00",
           "agent": "M",
           "note": "Deferred to Wave 2 (see T-0214)."
+        },
+        {
+          "ts": "2026-07-13T04:44:07+00:00",
+          "agent": "M",
+          "note": "Merge logic: donaldson (base) + footnotes (extracted sources) merged per-verse. Quotes arrays concatenated. Output: library/footnotes/<book>_<chapter>.json format matches donaldson schema (notes + quotes arrays)."
         }
       ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-07-13T04:03:00+00:00",
-      "updated_ts": "2026-07-13T04:15:29+00:00",
+      "updated_ts": "2026-07-13T04:44:07+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -5639,12 +5654,17 @@
           "ts": "2026-07-13T04:15:29+00:00",
           "agent": "M",
           "note": "Deferred to Wave 2 (see T-0214)."
+        },
+        {
+          "ts": "2026-07-13T04:44:07+00:00",
+          "agent": "M",
+          "note": "Reader wiring complete: ensureDonaldsonLoaded() modified to fetch both ./donaldson/ and ./footnotes/ in parallel, merge results, extend donaldson quotes with extracted source content. Tested locally: verse clicks render focus state, footnotes loading in background."
         }
       ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-07-13T04:03:00+00:00",
-      "updated_ts": "2026-07-13T04:15:29+00:00",
+      "updated_ts": "2026-07-13T04:44:07+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -5673,6 +5693,33 @@
       "created_ts": "2026-07-13T04:03:00+00:00",
       "updated_ts": "2026-07-13T04:15:30+00:00",
       "leaf_points": 1,
+      "kind": "leaf"
+    },
+    {
+      "id": "T-0218",
+      "title": "BLOCKER: Netlify site frozen (gated on CI but site has no auto-deploy enabled). Reif must: (1) log into Netlify dashboard, (2) check 'Builds' tab for last successful deploy (April 2026), (3) check Settings→Build & Deploy for deploy status (may be paused or at build limit), (4) trigger manual deploy or re-enable auto-deploy on main branch. Once unfrozen, all queued pushes (CFM integration + smoke test + CI fix) deploy immediately. Expected recovery: <5 min on Reif action.",
+      "plan": "wescripture-reading-tool",
+      "phase": "blockers",
+      "priority": "normal",
+      "source": "",
+      "parent": "",
+      "points": null,
+      "points_rationale": "",
+      "status": "blocked",
+      "agent": "M",
+      "commit": "",
+      "notes": [
+        {
+          "ts": "2026-07-13T04:44:07+00:00",
+          "agent": "M",
+          "note": "CRITICAL BLOCKER: Netlify site frozen since April (CI passes but no auto-deploy). Reif dashboard action required: log in to Netlify, check Build settings, confirm auto-deploy enabled on main branch. Once unfrozen, all queued commits deploy automatically (<5min)."
+        }
+      ],
+      "children": [],
+      "depth": 0,
+      "created_ts": "2026-07-13T04:42:09+00:00",
+      "updated_ts": "2026-07-13T04:44:07+00:00",
+      "leaf_points": 0,
       "kind": "leaf"
     }
   ],
@@ -5789,6 +5836,9 @@
       ],
       "footnote-extraction-sources": [
         "T-0198"
+      ],
+      "blockers": [
+        "T-0218"
       ]
     }
   }
