@@ -78,17 +78,32 @@ async function testLegs(page, viewport) {
   const verse = await page.$('#ch-genesis_1 .verse');
   assert(verse, 'No verse element found');
   await page.$eval('#ch-genesis_1 .verse', (el) => el.scrollIntoView({ block: 'center' }));
-  await page.click('#ch-genesis_1 .verse');
 
-  // Wait for verse to be focused
-  await page.waitForFunction(() =>
-    document.querySelector('#ch-genesis_1 .verse.verse-focus'),
-    { timeout: 10000 }
-  );
+  // Click verse number to trigger discovery panel
+  await page.click('#ch-genesis_1 .verse-num');
 
-  // Check for verse focus (verse was clicked and focused)
-  const verseIsFocused = await page.$('.verse.verse-focus');
-  assert(verseIsFocused, 'Verse did not gain focus after click');
+  // Wait for panel to open (channel becomes visible)
+  await page.waitForFunction(() => {
+    const channel = document.getElementById('channel');
+    return channel && channel.classList.contains('open');
+  }, { timeout: 10000 });
+
+  // Mobile: verify panel width ≥90% viewport (full-width bottom-sheet)
+  if (viewport.width <= 390) {
+    const panelInfo = await page.evaluate(() => {
+      const channel = document.getElementById('channel');
+      const rect = channel.getBoundingClientRect();
+      return {
+        width: Math.ceil(rect.width),
+        viewportWidth: window.innerWidth
+      };
+    });
+    const panelPercentWidth = (panelInfo.width / panelInfo.viewportWidth * 100).toFixed(1);
+    assert(
+      panelPercentWidth >= 90,
+      `Mobile panel width ${panelPercentWidth}% (need ≥90% for full-width bottom-sheet)`
+    );
+  }
   console.log('✓ Verse click opens context/panel state');
 
   console.log(`\n✅ All four journey legs verified at ${vp}`);
