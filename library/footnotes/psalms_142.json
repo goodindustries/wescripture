@@ -1,0 +1,61 @@
+{
+  "2": {
+    "quotes": [
+      {
+        "text": "After giving him to understand the nature of your orders, I made him tho following",
+        "speaker": "",
+        "source": "Millennial Star",
+        "date": "",
+        "ref": "",
+        "type": "cross_source",
+        "attr": "Millennial Star (millennial_star:millennial_star_1840_1859_1850_june_vol_18_no_20)"
+      },
+      {
+        "text": "After detaining me a few minutes, she went with me to her husband, and\nI told him that I wished to speak to him. He replied, that he was not\ngoing to stop his work, for he was just laying the last brick in his\nhearth.",
+        "speaker": "",
+        "source": "LDS Historical",
+        "date": "",
+        "ref": "",
+        "type": "cross_source",
+        "attr": "LDS Historical (gutenberg_lds:lucy_mack_smith)"
+      },
+      {
+        "text": "\"So I had to tell her, and was glad to find that she quite approved of\nmy action, saying that it would have been a great mistake if I had let\nhim go, and that it was only fair to punish him for his impertinence by\na little extra tantalization.",
+        "speaker": "",
+        "source": "HoC",
+        "date": "",
+        "ref": "",
+        "type": "cross_source",
+        "attr": "HoC (history_of_church:vol3)"
+      }
+    ]
+  },
+  "7": {
+    "notes": [
+      {
+        "p": 1,
+        "text": "This psalm was probably penned by David during the unnatural rebellion of his son Absalom, as Psalm 3, 42, 43."
+      }
+    ],
+    "quotes": [
+      {
+        "text": "But stay my spirit, though thou fain would'st soar\n    On high, 'mid scenes of glory, peace and joy;\n    From bondage free, and bid thy jail farewell.\n    Stop--wait awhile--let patience have her perfect work,\n    Return again to suffering scenes, through which\n    The way to glory lies, and speak o",
+        "speaker": "",
+        "source": "LDS Historical",
+        "date": "",
+        "ref": "",
+        "type": "cross_source",
+        "attr": "LDS Historical (gutenberg_lds:parley_pratt)"
+      },
+      {
+        "text": "And now behold I say unto you, that the thing which will be of the most worth unto you, will be to declare repentance unto this people, that you may bring souls unto me, that you may rest witn them in the kingdom of my Father. \u2014 A me cl",
+        "speaker": "",
+        "source": "Times & Seasons",
+        "date": "",
+        "ref": "",
+        "type": "cross_source",
+        "attr": "Times & Seasons (times_and_seasons:times_and_seasons_1839_1846_1839_july_vol_01_no_01)"
+      }
+    ]
+  }
+}

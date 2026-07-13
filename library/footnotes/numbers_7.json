@@ -1,0 +1,37 @@
+{
+  "7": {
+    "quotes": [
+      {
+        "text": "The little company of which he had charge consisted of his wife and children, his father, and a few other members of the family. They had three baggage wagons, one family carriage, six yoke of oxen, six cows, four calves, one yearling, and a pair of mules, making in all twenty-five head of animals. ",
+        "speaker": "",
+        "source": "Pioneer Journals",
+        "date": "",
+        "ref": "",
+        "type": "cross_source",
+        "attr": "Pioneer Journals (pioneer_journals:wilford_woodruff_journals)"
+      },
+      {
+        "text": "The oxen (ten yoke) and all the mules were gone, and the wagons rifled of much of their contents.",
+        "speaker": "",
+        "source": "Millennial Star",
+        "date": "",
+        "ref": "",
+        "type": "cross_source",
+        "attr": "Millennial Star (millennial_star:millennial_star_1840_1859_1850_august_vol_21_no_33)"
+      }
+    ]
+  },
+  "10": {
+    "quotes": [
+      {
+        "text": "The oxen (ten yoke) and all the mules were gone, and the wagons rifled of much of their contents.",
+        "speaker": "",
+        "source": "Millennial Star",
+        "date": "",
+        "ref": "",
+        "type": "cross_source",
+        "attr": "Millennial Star (millennial_star:millennial_star_1840_1859_1850_august_vol_21_no_33)"
+      }
+    ]
+  }
+}
