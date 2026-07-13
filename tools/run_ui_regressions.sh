@@ -36,18 +36,17 @@ if ! curl -sf -o /dev/null "$BASE/library/index.html"; then
 fi
 
 TESTS=(
+  test-smoke-four-legs.js
   test-verse-discovery-panel.js
   test-library-commentary-links.js
-  test-library-buttons.js
-  test-toc-volume-covers.js
   test-library-mobile-channel.js
   test-search-quality.js
-  test-title-inline-nav.js
   test-study-panel-heading.js
   test-nav-fixed.js
-  test-library-sources.js
-  test-home-iframe-inline-nav.js
   test-title-page-dashboard.js
+  test-scripture-traversal.js
+  test-corpus-book-covers.js
+  test-lex-studies-panel.js
 )
 
 for t in "${TESTS[@]}"; do
