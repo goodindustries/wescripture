@@ -52,6 +52,9 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 .bc-sep { font-size: 11px; color: var(--divider); flex-shrink: 0; user-select: none; }
 #location-label { display: none; }
 /* ── Search button ── */
+#today-btn { background: none; border: 1px solid rgba(156, 122, 77, 0.3); cursor: pointer; padding: 4px 10px; border-radius: 6px;
+    color: var(--accent); display: flex; align-items: center; flex-shrink: 0; }
+#today-btn:hover { background: rgba(156, 122, 77, 0.08); border-color: rgba(156, 122, 77, 0.5); }
 #search-btn { background: none; border: none; cursor: pointer; padding: 6px; border-radius: 6px;
     color: var(--muted); display: flex; align-items: center; }
 #search-btn:hover { background: rgba(0,0,0,0.06); color: var(--text); }
@@ -1448,6 +1451,9 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     </button>
     <div id="breadcrumbs"></div>
     <span id="location-label"></span>
+    <button id="today-btn" onclick="jumpToTodayReading()" title="Today's Come Follow Me reading">
+        <span style="font-size:12px;font-weight:600">Today</span>
+    </button>
     <button id="study-btn" onclick="openStudyPanel()" title="My study">
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 4h10v12H4z"/><path d="M6 8h6M6 11h4"/>
@@ -1644,6 +1650,53 @@ var SITE = {
 };
 // Phase B VPS sync; see docs/API_SCOPE.md — null keeps Netlify/static-only (no /api calls).
 window.WESCRIPTURE_API = null;
+
+// ── Come Follow Me integration ───────────────────────────────────────────
+var CFM_2026 = null;
+async function loadCfm2026() {
+    if (CFM_2026) return CFM_2026;
+    try {
+        var r = await fetch('./cfm_2026.json');
+        if (!r.ok) throw new Error('CFM fetch failed');
+        CFM_2026 = await r.json();
+        return CFM_2026;
+    } catch (e) {
+        console.warn('[cfm] Failed to load cfm_2026.json:', e);
+        return [];
+    }
+}
+
+function getTodayWeek() {
+    var today = new Date('2026-07-12'); // hardcoded for now; in prod use new Date()
+    if (!CFM_2026 || !Array.isArray(CFM_2026)) return null;
+    for (var i = 0; i < CFM_2026.length; i++) {
+        var week = CFM_2026[i];
+        var start = new Date(week.start_date);
+        var end = new Date(week.end_date);
+        if (today >= start && today <= end) {
+            return week;
+        }
+    }
+    return null;
+}
+
+function jumpToTodayReading() {
+    if (!CFM_2026) {
+        loadCfm2026().then(jumpToTodayReading);
+        return;
+    }
+    var week = getTodayWeek();
+    if (!week || !week.refs || week.refs.length === 0) {
+        console.warn('[cfm] No reading for today');
+        return;
+    }
+    var firstRef = week.refs[0];
+    if (!firstRef.book || !firstRef.chapter_start) return;
+    var bookRec = findBookRecord(firstRef.book);
+    if (!bookRec || !bookRec.firstChapter) return;
+    var prefix = bookRec.firstChapter.replace(/_1$/, '');
+    jumpTo(prefix + '_' + firstRef.chapter_start);
+}
 
 function safeGtag() {
     if (typeof window.gtag !== 'function') return;
@@ -2701,12 +2754,14 @@ Promise.all([
     fetch('./entities/things_index.json').then(function(r) { return r.ok ? r.json() : {}; }).catch(function() { return {}; }),
     fetch('./entities/things.json').then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; }),
     fetch('./entities/topics.json').then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; }),
-    fetch('./entities/books.json').then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; })
+    fetch('./entities/books.json').then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; }),
+    fetch('./cfm_2026.json').then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; })
 ]).then(function(results) {
         var data = results[0];
         var sourceData = results[1] || [];
         sourceLinks    = results[2] || {};
         verseDiscovery = results[3] || {};
+        CFM_2026       = results[12] || [];
         fetch('./source_citations.json').then(function(r) { return r.ok ? r.json() : {}; })
             .then(function(d) { sourceCitations = d || {}; }).catch(function() {});
         entityIndex    = results[4] || {};

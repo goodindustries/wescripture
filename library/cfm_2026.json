@@ -1,0 +1,654 @@
+[
+  {
+    "start_date": "2025-12-29",
+    "end_date": "2026-01-04",
+    "title": "Introduction to the Old Testament",
+    "refs": []
+  },
+  {
+    "start_date": "2026-01-05",
+    "end_date": "2026-01-11",
+    "title": "Moses 1; Abraham 3",
+    "refs": [
+      {
+        "book": "Moses",
+        "chapter_start": 1,
+        "chapter_end": 1
+      },
+      {
+        "book": "Abraham",
+        "chapter_start": 3,
+        "chapter_end": 3
+      }
+    ]
+  },
+  {
+    "start_date": "2026-01-12",
+    "end_date": "2026-01-18",
+    "title": "Genesis 1\u20132; Moses 2\u20133; Abraham 4\u20135",
+    "refs": [
+      {
+        "book": "Genesis",
+        "chapter_start": 1,
+        "chapter_end": 2
+      },
+      {
+        "book": "Moses",
+        "chapter_start": 2,
+        "chapter_end": 3
+      },
+      {
+        "book": "Abraham",
+        "chapter_start": 4,
+        "chapter_end": 5
+      }
+    ]
+  },
+  {
+    "start_date": "2026-01-19",
+    "end_date": "2026-01-25",
+    "title": "Genesis 3\u20134; Moses 4\u20135",
+    "refs": [
+      {
+        "book": "Genesis",
+        "chapter_start": 3,
+        "chapter_end": 4
+      },
+      {
+        "book": "Moses",
+        "chapter_start": 4,
+        "chapter_end": 5
+      }
+    ]
+  },
+  {
+    "start_date": "2026-01-26",
+    "end_date": "2026-02-01",
+    "title": "Genesis 5; Moses 6",
+    "refs": [
+      {
+        "book": "Genesis",
+        "chapter_start": 5,
+        "chapter_end": 5
+      },
+      {
+        "book": "Moses",
+        "chapter_start": 6,
+        "chapter_end": 6
+      }
+    ]
+  },
+  {
+    "start_date": "2026-02-02",
+    "end_date": "2026-02-08",
+    "title": "Moses 7",
+    "refs": [
+      {
+        "book": "Moses",
+        "chapter_start": 7,
+        "chapter_end": 7
+      }
+    ]
+  },
+  {
+    "start_date": "2026-02-09",
+    "end_date": "2026-02-15",
+    "title": "Genesis 6\u201311; Moses 8",
+    "refs": [
+      {
+        "book": "Genesis",
+        "chapter_start": 6,
+        "chapter_end": 11
+      },
+      {
+        "book": "Moses",
+        "chapter_start": 8,
+        "chapter_end": 8
+      }
+    ]
+  },
+  {
+    "start_date": "2026-02-16",
+    "end_date": "2026-02-22",
+    "title": "Genesis 12\u201317; Abraham 1\u20132",
+    "refs": [
+      {
+        "book": "Genesis",
+        "chapter_start": 12,
+        "chapter_end": 17
+      },
+      {
+        "book": "Abraham",
+        "chapter_start": 1,
+        "chapter_end": 2
+      }
+    ]
+  },
+  {
+    "start_date": "2026-02-23",
+    "end_date": "2026-03-01",
+    "title": "Genesis 18\u201323",
+    "refs": [
+      {
+        "book": "Genesis",
+        "chapter_start": 18,
+        "chapter_end": 23
+      }
+    ]
+  },
+  {
+    "start_date": "2026-03-02",
+    "end_date": "2026-03-08",
+    "title": "Genesis 24\u201333",
+    "refs": [
+      {
+        "book": "Genesis",
+        "chapter_start": 24,
+        "chapter_end": 33
+      }
+    ]
+  },
+  {
+    "start_date": "2026-03-09",
+    "end_date": "2026-03-15",
+    "title": "Genesis 37\u201341",
+    "refs": [
+      {
+        "book": "Genesis",
+        "chapter_start": 37,
+        "chapter_end": 41
+      }
+    ]
+  },
+  {
+    "start_date": "2026-03-16",
+    "end_date": "2026-03-22",
+    "title": "Genesis 42\u201350",
+    "refs": [
+      {
+        "book": "Genesis",
+        "chapter_start": 42,
+        "chapter_end": 50
+      }
+    ]
+  },
+  {
+    "start_date": "2026-03-23",
+    "end_date": "2026-03-29",
+    "title": "Exodus 1\u20136",
+    "refs": [
+      {
+        "book": "Exodus",
+        "chapter_start": 1,
+        "chapter_end": 6
+      }
+    ]
+  },
+  {
+    "start_date": "2026-03-30",
+    "end_date": "2026-04-05",
+    "title": "Easter",
+    "refs": []
+  },
+  {
+    "start_date": "2026-04-06",
+    "end_date": "2026-04-12",
+    "title": "Exodus 7\u201313",
+    "refs": [
+      {
+        "book": "Exodus",
+        "chapter_start": 7,
+        "chapter_end": 13
+      }
+    ]
+  },
+  {
+    "start_date": "2026-04-13",
+    "end_date": "2026-04-19",
+    "title": "Exodus 14\u201318",
+    "refs": [
+      {
+        "book": "Exodus",
+        "chapter_start": 14,
+        "chapter_end": 18
+      }
+    ]
+  },
+  {
+    "start_date": "2026-04-20",
+    "end_date": "2026-04-26",
+    "title": "Exodus 19\u201320; 24; 31\u201334",
+    "refs": [
+      {
+        "book": "Exodus",
+        "chapter_start": 19,
+        "chapter_end": 20
+      }
+    ]
+  },
+  {
+    "start_date": "2026-04-27",
+    "end_date": "2026-05-03",
+    "title": "Exodus 35\u201340; Leviticus 1; 4; 16; 19",
+    "refs": [
+      {
+        "book": "Exodus",
+        "chapter_start": 35,
+        "chapter_end": 40
+      },
+      {
+        "book": "Leviticus",
+        "chapter_start": 1,
+        "chapter_end": 1
+      }
+    ]
+  },
+  {
+    "start_date": "2026-05-04",
+    "end_date": "2026-05-10",
+    "title": "Numbers 11\u201314; 20\u201324; 27",
+    "refs": [
+      {
+        "book": "Numbers",
+        "chapter_start": 11,
+        "chapter_end": 14
+      }
+    ]
+  },
+  {
+    "start_date": "2026-05-11",
+    "end_date": "2026-05-17",
+    "title": "Deuteronomy 6\u20138; 15; 18; 29\u201330; 34",
+    "refs": [
+      {
+        "book": "Deuteronomy",
+        "chapter_start": 6,
+        "chapter_end": 8
+      }
+    ]
+  },
+  {
+    "start_date": "2026-05-18",
+    "end_date": "2026-05-24",
+    "title": "Joshua 1\u20138; 23\u201324",
+    "refs": [
+      {
+        "book": "Joshua",
+        "chapter_start": 1,
+        "chapter_end": 8
+      }
+    ]
+  },
+  {
+    "start_date": "2026-05-25",
+    "end_date": "2026-05-31",
+    "title": "Judges 2\u20134; 6\u20138; 13\u201316",
+    "refs": [
+      {
+        "book": "Judges",
+        "chapter_start": 2,
+        "chapter_end": 4
+      }
+    ]
+  },
+  {
+    "start_date": "2026-06-01",
+    "end_date": "2026-06-07",
+    "title": "Ruth; 1 Samuel 1\u20137",
+    "refs": [
+      {
+        "book": "1 Samuel",
+        "chapter_start": 1,
+        "chapter_end": 7
+      }
+    ]
+  },
+  {
+    "start_date": "2026-06-08",
+    "end_date": "2026-06-14",
+    "title": "1 Samuel 8\u201310; 13; 15\u201316",
+    "refs": [
+      {
+        "book": "1 Samuel",
+        "chapter_start": 8,
+        "chapter_end": 10
+      }
+    ]
+  },
+  {
+    "start_date": "2026-06-15",
+    "end_date": "2026-06-21",
+    "title": "1 Samuel 17\u201318; 24\u201326; 2 Samuel 5\u20137",
+    "refs": [
+      {
+        "book": "1 Samuel",
+        "chapter_start": 17,
+        "chapter_end": 18
+      },
+      {
+        "book": "2 Samuel",
+        "chapter_start": 5,
+        "chapter_end": 7
+      }
+    ]
+  },
+  {
+    "start_date": "2026-06-22",
+    "end_date": "2026-06-28",
+    "title": "2 Samuel 11\u201312; 1 Kings 3; 6\u20139; 11",
+    "refs": [
+      {
+        "book": "2 Samuel",
+        "chapter_start": 11,
+        "chapter_end": 12
+      },
+      {
+        "book": "1 Kings",
+        "chapter_start": 3,
+        "chapter_end": 3
+      }
+    ]
+  },
+  {
+    "start_date": "2026-06-29",
+    "end_date": "2026-07-05",
+    "title": "1 Kings 12\u201313; 17\u201322",
+    "refs": [
+      {
+        "book": "1 Kings",
+        "chapter_start": 12,
+        "chapter_end": 13
+      }
+    ]
+  },
+  {
+    "start_date": "2026-07-06",
+    "end_date": "2026-07-12",
+    "title": "2 Kings 2\u20137",
+    "refs": [
+      {
+        "book": "2 Kings",
+        "chapter_start": 2,
+        "chapter_end": 7
+      }
+    ]
+  },
+  {
+    "start_date": "2026-07-13",
+    "end_date": "2026-07-19",
+    "title": "2 Kings 16\u201325",
+    "refs": [
+      {
+        "book": "2 Kings",
+        "chapter_start": 16,
+        "chapter_end": 25
+      }
+    ]
+  },
+  {
+    "start_date": "2026-07-20",
+    "end_date": "2026-07-26",
+    "title": "2 Chronicles 14\u201320; 26; 30",
+    "refs": [
+      {
+        "book": "2 Chronicles",
+        "chapter_start": 14,
+        "chapter_end": 20
+      }
+    ]
+  },
+  {
+    "start_date": "2026-07-27",
+    "end_date": "2026-08-02",
+    "title": "Ezra 1; 3\u20137; Nehemiah 2; 4\u20136; 8",
+    "refs": [
+      {
+        "book": "Ezra",
+        "chapter_start": 1,
+        "chapter_end": 1
+      },
+      {
+        "book": "Nehemiah",
+        "chapter_start": 2,
+        "chapter_end": 2
+      }
+    ]
+  },
+  {
+    "start_date": "2026-08-03",
+    "end_date": "2026-08-09",
+    "title": "Esther",
+    "refs": []
+  },
+  {
+    "start_date": "2026-08-10",
+    "end_date": "2026-08-16",
+    "title": "Job 1\u20133; 12\u201314; 19; 21\u201324; 38\u201340; 42",
+    "refs": [
+      {
+        "book": "Job",
+        "chapter_start": 1,
+        "chapter_end": 3
+      }
+    ]
+  },
+  {
+    "start_date": "2026-08-17",
+    "end_date": "2026-08-23",
+    "title": "Psalms 1\u20132; 8; 19\u201333; 40; 46",
+    "refs": [
+      {
+        "book": "Psalms",
+        "chapter_start": 1,
+        "chapter_end": 2
+      }
+    ]
+  },
+  {
+    "start_date": "2026-08-24",
+    "end_date": "2026-08-30",
+    "title": "Psalms 49\u201351; 61\u201366; 69\u201372; 77\u201378; 85\u201386",
+    "refs": [
+      {
+        "book": "Psalms",
+        "chapter_start": 49,
+        "chapter_end": 51
+      }
+    ]
+  },
+  {
+    "start_date": "2026-08-31",
+    "end_date": "2026-09-06",
+    "title": "Psalms 102\u20133; 110; 116\u201319; 127\u201328; 135\u201339; 146\u201350",
+    "refs": [
+      {
+        "book": "Psalms",
+        "chapter_start": 102,
+        "chapter_end": 3
+      }
+    ]
+  },
+  {
+    "start_date": "2026-09-07",
+    "end_date": "2026-09-13",
+    "title": "Proverbs 1\u20134; 15\u201316; 22; 31; Ecclesiastes 1\u20133; 11\u201312",
+    "refs": [
+      {
+        "book": "Proverbs",
+        "chapter_start": 1,
+        "chapter_end": 4
+      },
+      {
+        "book": "Ecclesiastes",
+        "chapter_start": 1,
+        "chapter_end": 3
+      }
+    ]
+  },
+  {
+    "start_date": "2026-09-14",
+    "end_date": "2026-09-20",
+    "title": "Isaiah 1\u201312",
+    "refs": [
+      {
+        "book": "Isaiah",
+        "chapter_start": 1,
+        "chapter_end": 12
+      }
+    ]
+  },
+  {
+    "start_date": "2026-09-21",
+    "end_date": "2026-09-27",
+    "title": "Isaiah 13\u201314; 22; 24\u201330; 35",
+    "refs": [
+      {
+        "book": "Isaiah",
+        "chapter_start": 13,
+        "chapter_end": 14
+      }
+    ]
+  },
+  {
+    "start_date": "2026-09-28",
+    "end_date": "2026-10-04",
+    "title": "Isaiah 40\u201349",
+    "refs": [
+      {
+        "book": "Isaiah",
+        "chapter_start": 40,
+        "chapter_end": 49
+      }
+    ]
+  },
+  {
+    "start_date": "2026-10-05",
+    "end_date": "2026-10-11",
+    "title": "Isaiah 50\u201357",
+    "refs": [
+      {
+        "book": "Isaiah",
+        "chapter_start": 50,
+        "chapter_end": 57
+      }
+    ]
+  },
+  {
+    "start_date": "2026-10-12",
+    "end_date": "2026-10-18",
+    "title": "Isaiah 58\u201366",
+    "refs": [
+      {
+        "book": "Isaiah",
+        "chapter_start": 58,
+        "chapter_end": 66
+      }
+    ]
+  },
+  {
+    "start_date": "2026-10-19",
+    "end_date": "2026-10-25",
+    "title": "Jeremiah 1\u20133; 7; 16\u201318; 20",
+    "refs": [
+      {
+        "book": "Jeremiah",
+        "chapter_start": 1,
+        "chapter_end": 3
+      }
+    ]
+  },
+  {
+    "start_date": "2026-10-26",
+    "end_date": "2026-11-01",
+    "title": "Jeremiah 31\u201333; 36\u201338; Lamentations 1; 3",
+    "refs": [
+      {
+        "book": "Jeremiah",
+        "chapter_start": 31,
+        "chapter_end": 33
+      },
+      {
+        "book": "Lamentations",
+        "chapter_start": 1,
+        "chapter_end": 1
+      }
+    ]
+  },
+  {
+    "start_date": "2026-11-02",
+    "end_date": "2026-11-08",
+    "title": "Ezekiel 1\u20133; 33\u201334; 36\u201337; 47",
+    "refs": [
+      {
+        "book": "Ezekiel",
+        "chapter_start": 1,
+        "chapter_end": 3
+      }
+    ]
+  },
+  {
+    "start_date": "2026-11-09",
+    "end_date": "2026-11-15",
+    "title": "Daniel 1\u20137",
+    "refs": [
+      {
+        "book": "Daniel",
+        "chapter_start": 1,
+        "chapter_end": 7
+      }
+    ]
+  },
+  {
+    "start_date": "2026-11-16",
+    "end_date": "2026-11-22",
+    "title": "Hosea 1\u20136; 10\u201314; Joel",
+    "refs": [
+      {
+        "book": "Hosea",
+        "chapter_start": 1,
+        "chapter_end": 6
+      }
+    ]
+  },
+  {
+    "start_date": "2026-11-23",
+    "end_date": "2026-11-29",
+    "title": "Amos; Obadiah; Jonah",
+    "refs": []
+  },
+  {
+    "start_date": "2026-11-30",
+    "end_date": "2026-12-06",
+    "title": "Micah; Nahum; Habakkuk; Zephaniah",
+    "refs": []
+  },
+  {
+    "start_date": "2026-12-07",
+    "end_date": "2026-12-13",
+    "title": "Haggai 1\u20132; Zechariah 1\u20134; 7\u201314",
+    "refs": [
+      {
+        "book": "Haggai",
+        "chapter_start": 1,
+        "chapter_end": 2
+      },
+      {
+        "book": "Zechariah",
+        "chapter_start": 1,
+        "chapter_end": 4
+      }
+    ]
+  },
+  {
+    "start_date": "2026-12-14",
+    "end_date": "2026-12-20",
+    "title": "Malachi",
+    "refs": []
+  },
+  {
+    "start_date": "2026-12-21",
+    "end_date": "2026-12-27",
+    "title": "Christmas",
+    "refs": []
+  }
+]
