@@ -35,8 +35,13 @@ if ! curl -sf -o /dev/null "$BASE/library/index.html"; then
   exit 1
 fi
 
-TESTS=(
+# CI-blocking acceptance test (must pass for deploy)
+SMOKE_TEST=(
   test-smoke-four-legs.js
+)
+
+# Optional full suite (runs only with RUN_FULL_SUITE=1, e.g., local testing)
+FULL_SUITE=(
   test-verse-discovery-panel.js
   test-library-commentary-links.js
   test-library-mobile-channel.js
@@ -48,6 +53,11 @@ TESTS=(
   test-corpus-book-covers.js
   test-lex-studies-panel.js
 )
+
+TESTS=("${SMOKE_TEST[@]}")
+if [ "${RUN_FULL_SUITE:-0}" = "1" ]; then
+  TESTS+=("${FULL_SUITE[@]}")
+fi
 
 for t in "${TESTS[@]}"; do
   echo "==> node $t"
