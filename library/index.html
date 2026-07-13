@@ -2306,10 +2306,30 @@ function ensureDonaldsonLoaded(chapterId) {
     if (!chapterId || chapterId === 'title_page') return Promise.resolve();
     if (donaldsonNotes[chapterId]) return Promise.resolve();
     if (donaldsonLoads[chapterId]) return donaldsonLoads[chapterId];
-    donaldsonLoads[chapterId] = fetch('./donaldson/' + chapterId + '.json')
-        .then(function(r) { return r.ok ? r.json() : null; })
-        .then(function(data) { if (data) donaldsonNotes[chapterId] = data; })
-        .catch(function() {});
+    donaldsonLoads[chapterId] = Promise.all([
+        fetch('./donaldson/' + chapterId + '.json')
+            .then(function(r) { return r.ok ? r.json() : null; })
+            .catch(function() { return null; }),
+        fetch('./footnotes/' + chapterId + '.json')
+            .then(function(r) { return r.ok ? r.json() : null; })
+            .catch(function() { return null; })
+    ]).then(function(results) {
+        var donaldson = results[0] || {};
+        var footnotes = results[1] || {};
+        // Merge: footnotes (extracted sources) extend donaldson (base commentary)
+        Object.keys(footnotes).forEach(function(verseNum) {
+            if (!donaldson[verseNum]) {
+                donaldson[verseNum] = footnotes[verseNum];
+            } else {
+                // Merge quotes arrays
+                donaldson[verseNum].quotes = (donaldson[verseNum].quotes || [])
+                    .concat(footnotes[verseNum].quotes || []);
+            }
+        });
+        if (Object.keys(donaldson).length > 0) {
+            donaldsonNotes[chapterId] = donaldson;
+        }
+    });
     return donaldsonLoads[chapterId];
 }
 var chapterGraphCache = {}; // chapterId → parsed graph data
