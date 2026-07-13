@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "b",
 "model": "qwen3:1.7b",
-"updated": "2026-04-20T12:30:45+00:00"
+"updated": "2026-04-20T20:37:43+00:00"
 },
 "stems": {
 "behold": {
@@ -248,6 +248,98 @@
 "morph": "",
 "count": 329,
 "first_appearance_ref": "Genesis 1:24"
+}
+},
+"burnt": {
+"final_synthesis": "The word 'burnt' reveals the biblical theology of covenantal sacrifice, where Christ's atonement is symbolized by fire and wood, reflecting his role as the ultimate sacrifice for humanity's redemption. Its repeated use in scripture underscores the centrality of sacrifice in divine covenant, with Christ fulfilling this role through his death and resurrection, embodying both the literal and symbolic dimensions of the Old Testament covenant.",
+"root": "burnt",
+"messianic_fulfillment": "Jesus' role in redemption (e.g., 1 Corinthians 10:16: 'I do not drink of the cup of the Lord, and I do not eat of the bread of the Lord') and symbolic fire in his sacrifice",
+"first_appearance": "Genesis 8:20 (Genesis 8:20: 'And the Lord said unto Abram, Get thee unto the land, and I will be with thee')",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "Christ's mission as a sacrificial redeemer, his role in fulfilling the covenant through sacrifice, and the symbolic fire of his atonement",
+"major_scriptural_pattern": "repeated use in covenantal contexts (e.g., 1 Chronicles 16:40, Genesis 22:3, 22:7) as central elements of sacrificial offerings and divine commandments",
+"term": "burnt",
+"literal_sense": "to set on fire; to offer as a sacrifice",
+"symbolic_structure": "paired terms 'fire' and 'wood' (e.g., Genesis 22:3: 'the fire and the wood') and repeated phrases like 'burnt offerings' in covenantal rituals",
+"language": "English",
+"numerical_letter_observations": "317 verses across the canon (ot:310, nt:4, bofm:3) with consistent use of 'burnt' in ritual and covenantal contexts",
+"semantic_range": "sacrifice, offering, covenant, temple, redemption, fire, wood, covenantal duty",
+"_facts": {
+"stem": "burnt",
+"surface": "Burnt",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 317,
+"first_appearance_ref": "Genesis 8:20"
+}
+},
+"believe": {
+"final_synthesis": "The word 'believe' reveals Christ's mission as the embodiment of covenantal faith, where trust in God's promises is both a command and a revelation, reflecting the harmony between divine will and human response.",
+"root": "pisteuo",
+"messianic_fulfillment": "Jesus Christ as the ultimate believer (John 20:28), embodying faith in God's promises",
+"first_appearance": "Exodus 4:1 (dialogue with Moses about miracles)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference",
+"final_synthesis": "speculation"
+},
+"reveals_about_christ": "Christ's role as the mediator of faith, the fulfillment of covenantal trust, and the example of perfect belief",
+"major_scriptural_pattern": "covenantal promises and warnings, emphasizing trust in God's word",
+"term": "believe",
+"literal_sense": "to hold fast, to trust, to accept as true",
+"symbolic_structure": "paired terms (believe/not believe), repeated phrases (e.g., 'if they shall say... believe it not'), covenantal oppositions (faith vs. unbelief)",
+"language": "English",
+"numerical_letter_observations": "313 verses across canon, 119 in bofm, 110 in NT, 47 in other, 20 in PGp, 17 in OT",
+"semantic_range": "faith, belief, acceptance, covenantal trust, spiritual conviction",
+"_facts": {
+"stem": "believe",
+"surface": "Believe",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 313,
+"first_appearance_ref": "Exodus 4:1"
+}
+},
+"burn": {
+"final_synthesis": "The word 'burn' reveals Christ's mission as a covenantal mediator, embodying purification, atonement, and resurrection through sacrificial fire, reflecting the interplay of law, ritual, and redemption in biblical theology.",
+"root": "burn",
+"messianic_fulfillment": "linked to Christ's sacrificial death (e.g., 'burn' in 1 Corinthians 1:24-25, 2 Corinthians 5:14), though not explicitly named as 'burn' in the Gospels",
+"first_appearance": "Genesis 11:3 (Genesis 11:3: 'Hath not the same Hezekiah taken away his high places and his altars, and commanded Judah and Jerusalem, saying, Ye shall worship before one altar, and burn incense upon it?')",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"speculation": "speculation"
+},
+"reveals_about_christ": "exposes Christ's role as the ultimate sacrifice, embodying the covenantal act of 'burning' (purification, atonement, and resurrection), and his fulfillment of the Old Testament covenantal promises",
+"major_scriptural_pattern": "repeated use in covenantal rituals (e.g., temple offerings, kingship vows), symbolic oppositions (burn vs. life), and numerical patterns (292 verses, 228 OT, 27 NT)",
+"term": "burn",
+"literal_sense": "to cause to become fire or to consume, especially in ritual or sacrificial contexts",
+"symbolic_structure": "paired terms (e.g., 'burn incense' vs. 'burn offerings'), repeated phrases (e.g., 'burn before one altar'), and covenantal echoes (e.g., 'burn' in Exodus 31:2-3, Deuteronomy 11:2-3)",
+"language": "English",
+"numerical_letter_observations": "appears in 292 verses across the canon, with 228 in OT, 27 in NT, and 23 in BoM, reflecting its centrality in covenantal theology",
+"semantic_range": "actions of consuming, offering, and the act of burning; also metaphorically representing destruction, purification, or the covenantal act of worship",
+"_facts": {
+"stem": "burn",
+"surface": "Burn",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 292,
+"first_appearance_ref": "Genesis 11:3"
 }
 }
 }

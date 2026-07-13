@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "k",
 "model": "qwen3:1.7b",
-"updated": "2026-04-18T03:37:37+00:00"
+"updated": "2026-04-20T22:22:30+00:00"
 },
 "stems": {
 "king": {
@@ -65,6 +65,36 @@
 "morph": "",
 "count": 584,
 "first_appearance_ref": "Genesis 10:10"
+}
+},
+"knowledge": {
+"final_synthesis": "The word 'knowledge' embodies the covenantal tension between divine revelation and human understanding, reflecting Christ's dual role as both the source of spiritual insight (Genesis 2:9) and the mediator of divine wisdom (Exodus 35:31), embodying the biblical pattern of 'knowledge' as transformative revelation.",
+"root": "gnose",
+"messianic_fulfillment": "Jesus' teachings (e.g., John 1:18) emphasize 'knowledge of the Father' as divine insight, fulfilling the biblical pattern of 'knowledge' as covenantal revelation.",
+"first_appearance": "Genesis 2:9 (Genesis 2:9: 'And out of the ground made the Gods to grow every tree that is pleasant to the sight and good for food; the tree of life, also, in the midst of the garden, and the tree of knowledge of good and evil')",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The term 'knowledge' underscores Christ's role as the 'knowledge of God' (2 Corinthians 4:4), revealing His mission to impart divine wisdom and spiritual discernment to humanity.",
+"major_scriptural_pattern": "covenantal wisdom: knowledge as divine revelation (Genesis 2:9) and priestly understanding (Exodus 35:31) linked to the Tabernacle's sacred knowledge, with repeated motifs of 'knowledge of good and evil' (Moses 3:17)",
+"term": "knowledge",
+"literal_sense": "to know, understand, comprehend",
+"symbolic_structure": "paired terms (knowledge/understanding), repeated phrases ('knowledge of good and evil'), covenantal oppositions (knowledge vs. disobedience), and numerical patterns (7: week, day, 10: ten, 11: eleven)",
+"language": "English",
+"numerical_letter_observations": "The root 'gnose' (Hebrew: 'kadeth') contains 7 letters (kadeth), a number associated with the week and day in creation; the noun 'gnostike' (Greek) has 10 letters, linked to the Ten Commandments.",
+"semantic_range": "divine insight, wisdom, comprehension, revelation, spiritual discernment",
+"_facts": {
+"stem": "knowledge",
+"surface": "Knowledge",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 287,
+"first_appearance_ref": "Genesis 2:9"
 }
 }
 }

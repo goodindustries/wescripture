@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "h",
 "model": "qwen3:1.7b",
-"updated": "2026-04-18T05:15:56+00:00"
+"updated": "2026-04-20T18:19:09+00:00"
 },
 "stems": {
 "house": {
@@ -280,6 +280,37 @@
 "morph": "",
 "count": 529,
 "first_appearance_ref": "Genesis 2:10"
+}
+},
+"hold": {
+"final_synthesis": "The term 'hold' reflects Christ's dual role as both the covenantal binder and the redemptive liberator. Its symbolic structure aligns with covenantal motifs, and its messianic fulfillment emphasizes His role in upholding promises and releasing from bondage, revealing His mission through fidelity and liberation.",
+"root": "hegone",
+"messianic_fulfillment": "Jesus Christ is the 'holder of the promise' (Hebrews 1:2) and the 'One who releases from bondage' (John 8:36), fulfilling the symbolic role of 'hold' in covenantal and redemptive contexts.",
+"first_appearance": "Genesis 19:16 (Genesis 19:16: 'And it shall be answered, Because they forsook the Lord God of their fathers, which brought them forth out of the land of Egypt, and laid hold on other gods, and worshipped them, and served them:')",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference",
+"final_synthesis": "speculation"
+},
+"reveals_about_christ": "The term 'hold' reveals Christ's role as the mediator of covenant, the one who binds and releases, and the one who brings redemption through the resurrection. It underscores His mission to uphold promises and liberate through sacrifice.",
+"major_scriptural_pattern": "repeated use in covenantal contexts (e.g., Exodus, inheritance, judgment), paired with 'hold and release' (e.g., Alma 10:25), and symbolic oppositions (e.g., 'hold' vs. 'release')",
+"term": "hold",
+"literal_sense": "to grasp, seize, or command",
+"symbolic_structure": "repeated phrases like 'hold on,' covenantal binding, and paired terms 'hold' + 'release' (e.g., Alma 10:25), with numerical patterns (e.g., 19 in Genesis 19:16) and covenantal motifs (e.g., 'hold the promise')",
+"language": "English",
+"numerical_letter_observations": "The root 'hegone' (Hebrew: 'to grasp') contains 5 letters, and the English stem 'hold' has 4 letters, reflecting a numerical pattern (5-4). The number 19 appears in Genesis 19:16, symbolizing divine judgment and redemption.",
+"semantic_range": "to retain, keep, command, or bind; also implies authority, possession, and responsibility",
+"_facts": {
+"stem": "hold",
+"surface": "Hold",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 304,
+"first_appearance_ref": "Genesis 19:16"
 }
 }
 }

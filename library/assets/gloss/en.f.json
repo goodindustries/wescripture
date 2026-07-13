@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "f",
 "model": "qwen3:1.7b",
-"updated": "2026-04-19T20:36:10+00:00"
+"updated": "2026-04-21T00:26:04+00:00"
 },
 "stems": {
 "fath": {
@@ -249,6 +249,190 @@
 "morph": "",
 "count": 348,
 "first_appearance_ref": "Genesis 2:21"
+}
+},
+"full": {
+"final_synthesis": "The word 'full' underscores OT themes of completeness and provision, reflecting Christ's role as the ultimate fulfillment of covenantal promises, with a pattern of symbolic repetition and covenantal significance",
+"root": "full",
+"messianic_fulfillment": "linked to David (1 Chronicles 11:13), Solomon (1 Chronicles 29:28), and Melchizedek (Alma 13:17) as kings over sacred lands",
+"first_appearance": "Genesis 14:10 (full of barley)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"numerical_letter_observations": "speculation"
+},
+"reveals_about_christ": "emphasizes themes of completeness, provision, and fulfillment, reflecting Christ's role as the ultimate fulfillment of OT covenantal promises",
+"major_scriptural_pattern": "repeated use in contexts of provision, fulfillment, and completeness",
+"term": "Full",
+"literal_sense": "to be filled or completed",
+"symbolic_structure": "paired terms (full/empty), repeated phrases (full of, full of days), covenant patterns (kingdom, temple, sacrifice)",
+"language": "English",
+"numerical_letter_observations": "appears 318 times across canon, high frequency in OT (OT: 68, NT: 4, PG: 4)",
+"semantic_range": "completeness, fulfillment, abundance, emptiness, possession",
+"_facts": {
+"stem": "full",
+"surface": "Full",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 318,
+"first_appearance_ref": "Genesis 14:10"
+}
+},
+"five": {
+"final_synthesis": "The term 'Five' reveals the biblical emphasis on numerical order, covenantal fidelity, and divine completeness. Its repeated appearance in genealogies and covenants underscores Christ's role as the fulfillment of these patterns, reflecting His mission to restore divine order and redemptive purpose in humanity.",
+"root": "FIV",
+"messianic_fulfillment": "The number five is associated with the Messiah's role in the New Covenant, where it signifies a unique count (e.g., the Messiah's 5th generation in genealogies), reflecting His divine authority and redemptive mission.",
+"first_appearance": "Genesis 5:6 (Genesis 5:6: 'Seth lived one hundred and five years...')",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"speculation": "speculation"
+},
+"reveals_about_christ": "The use of numbers in the scriptures reveals Christ's role as a divine mediator, His fulfillment of covenantal promises, and the symbolic significance of numerical patterns in theological structure.",
+"major_scriptural_pattern": "Repetition of numerical counts in genealogies (e.g., 5, 15, 25) to emphasize divine instruction, longevity, and covenantal fidelity.",
+"term": "Five",
+"literal_sense": "The number five, representing quantity, count, or numerical value in biblical contexts.",
+"symbolic_structure": "Paired terms like 'five' and 'fifteen' in genealogies, numerical patterns (5, 15, 25), and symbolic oppositions (e.g., 'five' vs. 'ten' in covenantal contexts).",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The letter 'F' appears 299 times across canonical texts, with a recurring pattern of 5, 15, 25, and 35, symbolizing completeness, divine order, and the number of generations in covenantal lineages.",
+"semantic_range": "Numbers (5, 15, 25, 35), symbolic completeness, divine order, and theological significance in genealogies and covenantal structures.",
+"_facts": {
+"stem": "five",
+"surface": "Five",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 299,
+"first_appearance_ref": "Genesis 5:6"
+}
+},
+"fill": {
+"final_synthesis": "The word 'filled' is central to the concept of divine abundance and restoration, reflecting Christ's mission to bring life and fulfillment, with a focus on the interplay of creation, exodus, and redemption.",
+"root": "fill",
+"messianic_fulfillment": "The word is used in the context of the Messiah bringing abundance and restoration, aligning with the idea of the Messiah as a source of life and fulfillment",
+"first_appearance": "Genesis 1:22 ('Be fruitful, and multiply, and fill the waters in the sea')",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The word 'filled' suggests a role in bringing abundance and restoration, reflecting Christ's mission to bring life and fulfillment to humanity and the world",
+"major_scriptural_pattern": "recurring use in creation, exodus, and redemption contexts, with paired terms like 'filled' and 'empty' and repeated phrases such as 'fill the waters in the sea'",
+"term": "filled",
+"literal_sense": "to make something full, often in the context of being filled with something (e.g., water, people, or divine presence)",
+"symbolic_structure": "paired terms (e.g., 'filled' and 'empty'), repeated phrases (e.g., 'fill the waters in the sea'), and cyclical patterns reflecting divine abundance and restoration",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The word 'filled' has 6 letters (F-I-L-L-E-D). The letters F, I, L, L, E, D may reflect a pattern of repetition and completion, aligning with the theme of divine fulfillment.",
+"semantic_range": "abundance, overflow, completion, divine action, restoration, and the act of bringing fullness to a space or entity",
+"_facts": {
+"stem": "fill",
+"surface": "Filled",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 299,
+"first_appearance_ref": "Genesis 1:22"
+}
+},
+"feet": {
+"final_synthesis": "The word 'feet' reveals Jesus' character as a servant-king who embodies covenantal love, humility, and the transformative power of selfless service, reflecting divine wisdom and the fulfillment of prophetic promises through His ministry.",
+"root": "pous",
+"messianic_fulfillment": "Jesus washing feet in John 13:14 (literal fulfillment of OT covenantal practice)",
+"first_appearance": "Genesis 18:4 (Abraham's servant washes feet of visitors)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"speculation": "speculation"
+},
+"reveals_about_christ": "Jesus' mission reflects divine humility, covenantal love, and the transformative power of selfless service",
+"major_scriptural_pattern": "repeated use of 'wash your feet' as a covenantal gesture of hospitality and divine favor",
+"term": "feet",
+"literal_sense": "to wash feet, particularly in the context of hospitality or ritual purity",
+"symbolic_structure": "paired terms 'feet' and 'water' (literal/figurative), covenantal obligation, and ritual purification",
+"language": "English",
+"numerical_letter_observations": "293 verses across canon, 156 OT, 72 NT, 38 BoFM, 27 other, emphasizing widespread theological significance",
+"semantic_range": "service, purification, ritual, social obligation, symbolic act of humility and care",
+"_facts": {
+"stem": "feet",
+"surface": "Feet",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 293,
+"first_appearance_ref": "Genesis 18:4"
+}
+},
+"follow": {
+"final_synthesis": "The term 'follow' encapsulates the tension between divine will and human choice, reflecting Christ's mission as both a servant and a sovereign. Its repeated use in covenantal contexts underscores the theme of obedience as a divine gift, while its numerical prevalence highlights its centrality in theological discourse. The word's dual connotations (movement vs. compliance) mirror Christ's dual nature as both a traveler and a mediator, revealing his wisdom in balancing faith and duty, his character as a servant, and his mission as a revelation of God's will through human covenantal acts.",
+"root": "follow",
+"messianic_fulfillment": "The term's emphasis on obedience and covenantal fidelity aligns with Jesus' role as the 'Son of Man' (Daniel 7:13-14), where his mission involves fulfilling divine will through humility and sacrifice",
+"first_appearance": "Genesis 24:5 (Genesis 24:5-6, ESV): 'And the servant said unto him, Peradventure the woman will not be willing to follow me unto this land: must I needs bring thy son again unto the land from whence thou camest?'",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"numerical_letter_observations": "speculation"
+},
+"reveals_about_christ": "The word 'follow' reveals Christ's character as one who embodies faithful obedience, his mission as a mediator between God and humanity, and the pattern of divine revelation through human covenantal acts",
+"major_scriptural_pattern": "The word 'follow' is central to covenantal obligations, where obedience to divine will or human duty is required, often framed through the lens of divine promise and human responsibility",
+"term": "follow",
+"literal_sense": "to move in the direction of something, to obey, to comply, or to pursue a goal",
+"symbolic_structure": "Repeated phrases like 'follow me' (Genesis 24:5) and paired terms (e.g., 'follow' vs. 'flee') highlight the tension between divine will and human choice, while the term's dual connotations (movement vs. compliance) reflect the paradox of faith and duty",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The term appears 288 times across the canon, with a distribution of 118 in nt, 105 in ot, and 34 in bofm, suggesting its prevalence in theological discourse and covenantal contexts",
+"semantic_range": "includes obedience, compliance, pursuit, movement, and the act of adhering to a covenant or command",
+"_facts": {
+"stem": "follow",
+"surface": "Followed",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 288,
+"first_appearance_ref": "Genesis 24:5"
+}
+},
+"fell": {
+"final_synthesis": "The word 'fell' encapsulates the tension between divine judgment and redemption, reflecting Christ's dual roles as judge and healer. Its repeated use in scripture underscores the theme of transformation through suffering and grace, aligning with the Gospel's message of salvation through faith.",
+"root": "fell",
+"messianic_fulfillment": "The word 'fell' is used in Acts 13:11 to describe the blind man's fall, which is later fulfilled in Christ's healing of the blind (Acts 3:15), suggesting a redemptive pattern.",
+"first_appearance": "Genesis 4:5 (Cain's fall after sin), where it describes his emotional state and the divine response.",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The word 'fell' reveals Christ's role in redemption, as seen in the blind man's fall and healing, reflecting His power to restore sight and life.",
+"major_scriptural_pattern": "Repeated use in contexts of divine judgment (e.g., Cain's fall, the blind man's fall), paired with symbolic oppositions (e.g., light vs. darkness, sight vs. blindness).",
+"term": "fell",
+"literal_sense": "To fall, as in the act of falling down, losing sight, or being struck by something.",
+"symbolic_structure": "Embedded in phrases like 'the hand of the Lord fell upon him' (Acts 13:11) and 'the countenance fell' (Moses 5:21), reflecting themes of divine intervention and human consequence.",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The word appears 268 times, with the earliest instance in Genesis 4:5 (verse 5) and a recurring pattern in OT (Genesis 4:5, 1 Chronicles 10:1, Acts 13:11). The number 4 (Genesis 4:5) and 13 (Acts 13:11) align with symbolic significance in the text.",
+"semantic_range": "Connotations of loss, divine judgment, sin, and redemption; also includes physical or metaphorical falling (e.g., in battle, darkness, or spiritual decline).",
+"_facts": {
+"stem": "fell",
+"surface": "Fell",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 268,
+"first_appearance_ref": "Genesis 4:5"
 }
 }
 }

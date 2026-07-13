@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "i",
 "model": "qwen3:1.7b",
-"updated": "2026-04-18T07:32:35+00:00"
+"updated": "2026-04-20T20:55:46+00:00"
 },
 "stems": {
 "israel": {
@@ -65,6 +65,37 @@
 "morph": "",
 "count": 470,
 "first_appearance_ref": "Genesis 15:16"
+}
+},
+"inhabitant": {
+"final_synthesis": "The term 'inhabitants' reveals Christ's mission to gather people, redeem cities, and establish covenantal communities, reflecting his role as a shepherd and redeemer, grounded in scriptural patterns of covenant, exodus, and redemption.",
+"root": "inhab",
+"messianic_fulfillment": "fulfilled in passages like 1 Chronicles 11:5 and Doctrine & Covenants 45:64, where it symbolizes redemption and assembly",
+"first_appearance": "Genesis 19:25",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"final_synthesis": "speculation"
+},
+"reveals_about_christ": "reveals Christ's mission to gather people, redeem cities, and establish covenantal communities, reflecting his role as a shepherd and redeemer",
+"major_scriptural_pattern": "covenant and exodus contexts, with repeated use in passages involving city of David and eastern/western lands",
+"term": "inhabitants",
+"literal_sense": "dwelling, residence, people living in a place",
+"symbolic_structure": "paired terms (e.g., 'inhabitants' vs. 'dwelling') and repeated phrases in covenantal passages",
+"language": "English",
+"numerical_letter_observations": "appears 292 times across canon, with numerical patterns in verse counts (ot:203, other:43, etc.)",
+"semantic_range": "refers to residents, inhabitants, or people in a specific area, often tied to covenant, exodus, and redemption contexts",
+"_facts": {
+"stem": "inhabitant",
+"surface": "Inhabitants",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 292,
+"first_appearance_ref": "Genesis 19:25"
 }
 }
 }

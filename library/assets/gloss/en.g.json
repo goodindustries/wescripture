@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "g",
 "model": "qwen3:1.7b",
-"updated": "2026-04-19T13:47:52+00:00"
+"updated": "2026-04-20T23:38:17+00:00"
 },
 "stems": {
 "god": {
@@ -218,6 +218,35 @@
 "morph": "",
 "count": 356,
 "first_appearance_ref": "Genesis 19:1"
+}
+},
+"gath": {
+"final_synthesis": "The term 'gath' reveals Jesus' role as the covenantal gatherer, emphasizing His mission to assemble disciples, lead communities, and fulfill the promise of redemption through assembly and provision.",
+"root": "gath",
+"messianic_fulfillment": "Jesus as the ultimate gatherer of disciples and the covenantal leader (e.g., Matthew 28:19, Acts 1:8)",
+"first_appearance": "Genesis 6:21",
+"confidence_by_claim": {
+"symbolic_structure": "pattern",
+"numerical_letter_observations": "inference"
+},
+"reveals_about_christ": "Jesus' mission of gathering people for covenant, leading to redemption and resurrection, reflecting His role as the shepherd and teacher",
+"major_scriptural_pattern": "covenantal assembly and provision",
+"term": "gath",
+"literal_sense": "to gather, collect, assemble",
+"symbolic_structure": "paired terms (gather, assemble), numerical patterns (G, A, T, H sum to 16), and covenantal obligations",
+"language": "English",
+"numerical_letter_observations": "G (1), A (1), T (20), H (8) sum to 31, a prime number; letters G, A, T, H represent 'gather' in Hebrew/Greek",
+"semantic_range": "actions related to gathering resources, people, or provisions; covenantal obligations; leadership and assembly",
+"_facts": {
+"stem": "gath",
+"surface": "Gather",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 272,
+"first_appearance_ref": "Genesis 6:21"
 }
 }
 }

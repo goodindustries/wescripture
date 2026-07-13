@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "n",
 "model": "qwen3:1.7b",
-"updated": "2026-04-18T19:26:36+00:00"
+"updated": "2026-04-20T22:47:23+00:00"
 },
 "stems": {
 "name": {
@@ -155,6 +155,67 @@
 "morph": "",
 "count": 375,
 "first_appearance_ref": "1 Nephi 1:1"
+}
+},
+"nevertheless": {
+"final_synthesis": "The word 'nevertheless' reveals the biblical theology of divine sovereignty, covenantal faith, and the redemptive work of Christ. Its repeated use in contrast (e.g., divine promise vs. human failure) underscores the tension between God's sovereignty and human frailty, reflecting Christ's role as both prophet and redeemer, embodying the paradox of truth in falsehood and hope in despair.",
+"root": "nevertheless",
+"messianic_fulfillment": "Inferred through prophetic fulfillment (e.g., Isaiah's prophecies) and the role of Jesus as a prophet and redeemer, emphasizing His role in overcoming human failure",
+"first_appearance": "Exodus 32:34 (contrast between divine promise and human failure)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "Highlights Christ's role as a prophet who speaks truth despite human rebellion, embodying divine assurance and redemption through covenantal faith",
+"major_scriptural_pattern": "Repeated use of contrastive structures (e.g., 'nevertheless' in 2 Nephi 25:7, Deuteronomy 14:7, Numbers 31:23) to emphasize divine sovereignty and human frailty",
+"term": "nevertheless",
+"literal_sense": "In spite of, despite, although",
+"symbolic_structure": "Paired terms (e.g., 'nevertheless' vs. 'shall be fulfilled') and covenantal oppositions (e.g., divine promise vs. human rebellion)",
+"language": "English",
+"numerical_letter_observations": "Appears in 311 verses across canon, with distribution: bofm:151, ot:63, other:60, nt:33, pgp:4; letter patterns include repeated 's' and 'e' in root",
+"semantic_range": "Contrast, covenantal opposition, prophetic fulfillment, covenantal assurance, redemption, and exodus contexts",
+"_facts": {
+"stem": "nevertheless",
+"surface": "Nevertheless",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 311,
+"first_appearance_ref": "Exodus 32:34"
+}
+},
+"nephite": {
+"final_synthesis": "The term 'nephite' encapsulates the Restoration's covenantal theology, where the Nephites are both a chosen people and a prophetic lineage. Its repeated use in scriptural contexts (e.g., 2 Nephi 29:12-13) underscores its role in mediating divine revelation and covenantal fidelity, reflecting Jesus Christ's dual nature as both the descendant of the Nephites and the fulfillment of covenantal promises.",
+"root": "neph",
+"messianic_fulfillment": "Jesus Christ is explicitly identified as the descendant of the Nephites (2 Nephi 29:13), fulfilling the covenantal promise of a righteous lineage",
+"first_appearance": "2 Nephi 29:12 (earliest canonical appearance)",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_reading": "lexical",
+"numerical_letter_observations": "speculation"
+},
+"reveals_about_christ": "the term underscores Christ's divine origin and role as the mediator of covenantal grace, aligning with the Restoration's emphasis on the Nephite lineage as a prophetic fulfillment",
+"major_scriptural_pattern": "covenantal identity: the Nephites are described as a people chosen by God (4 Nephi 1:36) and entrusted with divine revelations (2 Nephi 29:12)",
+"term": "nephite",
+"literal_sense": "related to relatives or kinship (Hebrew: 'neph' = 'nephew' or 'relative')",
+"symbolic_structure": "paired terms 'Jews' and 'Nephites' highlight divine sovereignty over Israel, with the Nephites representing a chosen people in the Restoration context",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "the term appears 280 times across canon, with a distribution of 276 in bofm and 3 in other, reflecting its centrality in doctrinal discourse",
+"semantic_range": "refers to family, kinship, community, and covenantal relationships; may also denote a people or group within a larger context (e.g., the Nephites in 2 Nephi 29:12)",
+"_facts": {
+"stem": "nephite",
+"surface": "Nephites",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 280,
+"first_appearance_ref": "2 Nephi 29:12"
 }
 }
 }

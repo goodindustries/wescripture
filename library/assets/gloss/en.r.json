@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "r",
 "model": "qwen3:1.7b",
-"updated": "2026-04-20T12:56:23+00:00"
+"updated": "2026-04-20T21:18:28+00:00"
 },
 "stems": {
 "return": {
@@ -310,6 +310,36 @@
 "morph": "",
 "count": 327,
 "first_appearance_ref": "Genesis 7:1"
+}
+},
+"rememb": {
+"final_synthesis": "The word 'rememb' underscores the centrality of covenantal memory in biblical theology, reflecting Jesus' role as the mediator of divine promises, embodying both the Old Testament covenantal fidelity and the New Testament revelation of God's redemptive plan.",
+"root": "memphos",
+"messianic_fulfillment": "The Messiah is portrayed as the one who fulfills the covenantal memory of God, reflecting Jesus' role in recalling and redeeming divine promises",
+"first_appearance": "Genesis 9:15 (God promises to remember the covenant between Himself and all flesh)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The word 'rememb' reveals Christ's mission to mediate divine covenantal memory, fulfilling the Old Testament promises and embodying the New Testament revelation of God's love and faithfulness",
+"major_scriptural_pattern": "Repeated use of 'I will remember' and paired terms 'remember' and 'covenant' in divine promises",
+"term": "rememb",
+"literal_sense": "To remember (from Hebrew 'memphos' or Greek 'memphos')",
+"symbolic_structure": "Symbolic oppositions between memory and forgetting, and covenantal fidelity, with numerical patterns like the number 15 (Genesis 9:15)",
+"language": "English",
+"numerical_letter_observations": "The number 15 is significant in Genesis, marking the covenant's establishment, and the letter 'm' (memphos) appears in the root, symbolizing memory and covenant.",
+"semantic_range": "Covenant, divine memory, remembrance, and the act of recalling promises or laws",
+"_facts": {
+"stem": "rememb",
+"surface": "Remember",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 290,
+"first_appearance_ref": "Genesis 9:15"
 }
 }
 }

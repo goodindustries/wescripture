@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "m",
 "model": "qwen3:1.7b",
-"updated": "2026-04-20T09:02:43+00:00"
+"updated": "2026-04-21T00:35:22+00:00"
 },
 "stems": {
 "man": {
@@ -278,6 +278,36 @@
 "morph": "",
 "count": 333,
 "first_appearance_ref": "Genesis 7:20"
+}
+},
+"moth": {
+"final_synthesis": "The term 'moth' reflects a complex interplay of linguistic, symbolic, and theological elements, revealing Christ's mission as one of reconciliation, transformation, and eternal life. While its etymology remains speculative, its use in covenantal and maternal contexts underscores Christ's role as the divine mediator who unites humanity with divinity through love and sacrifice.",
+"root": "moth",
+"messianic_fulfillment": "While the term 'moth' does not directly reference Jesus Christ in the canonical texts provided, its symbolic role in covenantal and maternal contexts suggests a potential fulfillment of messianic themes through divine reconciliation and transformation.",
+"first_appearance": "Genesis 2:24 (Genesis 2:24, ESV): 'Therefore shall a man leave his father and his mother, and shall cleave unto his wife, and they shall be one flesh.'",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "speculation",
+"messianic_reading": "speculation"
+},
+"reveals_about_christ": "The term 'moth' reveals Christ's character as a healer of brokenness, a provider of life, and a redeemer who bridges human frailty with divine sovereignty. Its symbolic weight in covenantal passages underscores Christ's role as the embodiment of unity, sacrifice, and eternal life.",
+"major_scriptural_pattern": "The term 'moth' appears in passages emphasizing covenantal fidelity, maternal devotion, and the divine reconciliation of humanity (e.g., Abraham 5:18, Moses 4:26), reflecting themes of unity, sacrifice, and divine promise.",
+"term": "moth",
+"literal_sense": "a small insect with a thin, membranous wing, often associated with decay or death",
+"symbolic_structure": "Repeatedly paired with 'father' and 'mother' in covenantal contexts, the term 'moth' embodies the tension between human frailty and divine grace, with its association to death and rebirth echoing the crucifixion and resurrection of Jesus Christ.",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The term 'moth' contains three letters (M-O-T-H), a numerical pattern that mirrors the threefold nature of covenant (e.g., Trinity, tripartite structure), and its vowel count (O, A, E) aligns with the biblical emphasis on divine harmony.",
+"semantic_range": "symbolic representation of mortality, transformation, and divine intervention; also denotes a maternal figure in biblical texts",
+"_facts": {
+"stem": "moth",
+"surface": "Mother",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 267,
+"first_appearance_ref": "Genesis 2:24"
 }
 }
 }

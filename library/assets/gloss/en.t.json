@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "t",
 "model": "qwen3:1.7b",
-"updated": "2026-04-20T03:11:31+00:00"
+"updated": "2026-04-20T18:27:10+00:00"
 },
 "stems": {
 "took": {
@@ -186,6 +186,97 @@
 "morph": "",
 "count": 339,
 "first_appearance_ref": "Genesis 24:27"
+}
+},
+"tabernacle": {
+"final_synthesis": "The term 'tabernacle' encapsulates the biblical theme of divine dwelling and covenant, reflecting both earthly and heavenly realities. Its repeated use in scripture underscores its symbolic importance, with numerical patterns and paired terms highlighting its role in theological architecture. While the exact Messianic fulfillment remains speculative, the term's centrality in covenant and worship reveals Christ's dual nature as both the Creator and the Redeemer, embodying the divine plan of salvation.",
+"root": "tabernacle",
+"messianic_fulfillment": "The Tabernacle as a symbol of Christ's presence, though the exact fulfillment is speculative due to lack of direct biblical references to Christ's role in this context",
+"first_appearance": "Exodus 25:9 (Genesis 22:3 is the earliest canonical appearance, but the English stem is listed here)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "inference",
+"messianic_fulfillment": "speculation"
+},
+"reveals_about_christ": "The term reveals Christ's role as the 'tabernacle of God' (Hebrews 1:3), emphasizing His divine dwelling and redemptive sacrifice, aligning with the New Testament's emphasis on the Holy Spirit's indwelling",
+"major_scriptural_pattern": "covenant, priesthood, kingship, temple, sacrifice, creation, exodus, inheritance, judgment, exile, redemption, resurrection, and Zion",
+"term": "tabernacle",
+"literal_sense": "a portable dwelling or tent, often used as a place of worship or temporary shelter",
+"symbolic_structure": "repeated phrases like 'tabernacle of God' and paired terms 'tabernacle' with 'temple'; numerical patterns include 50 taches in Exodus 36:13 (symbolizing completeness)",
+"language": "English",
+"numerical_letter_observations": "The number 50 taches in Exodus 36:13 (50 golden taches) reflects a symbolic count of completeness, while the 317 verses across canon highlight its pervasive use",
+"semantic_range": "a symbolic structure representing divine dwelling, covenant, and sacred space; also refers to the earthly dwelling of God in the Old Testament",
+"_facts": {
+"stem": "tabernacle",
+"surface": "Tabernacle",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 317,
+"first_appearance_ref": "Exodus 25:9"
+}
+},
+"twenty": {
+"final_synthesis": "The word 'twenty' reflects the Bible's emphasis on numerical precision, covenantal timelines, and symbolic counting, revealing Jesus Christ's role as the divine architect of these patterns through meticulous scriptural design.",
+"root": "twent",
+"messianic_fulfillment": "the word 'twenty' is used in contexts that align with the Messiah's age (e.g., 'hundred and twenty years' in Exodus 20:12), though its exact role in messianic fulfillment remains speculative due to contextual ambiguity",
+"first_appearance": "Genesis 6:3 (Genesis 6:3, Hebrew: 'yamah'-but transliterated as 'twenty' in English context)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "speculation",
+"final_synthesis": "speculation"
+},
+"reveals_about_christ": "the word 'twenty' reveals the biblical emphasis on numerical precision, covenantal timelines, and symbolic counting, reflecting Jesus Christ's role as the fulfillment of divine promises through meticulous chronology and symbolic language",
+"major_scriptural_pattern": "repeated use of numerical values in biblical contexts (e.g., ages, durations, covenant timelines), often paired with symbolic oppositions (e.g., 'hundred' vs. 'twenty')",
+"term": "twenty",
+"literal_sense": "twenty (twenty)",
+"symbolic_structure": "repeated numerical patterns (e.g., 'twenty' in Moses 8:17, 2 Chronicles 25:1), paired with covenantal timelines (e.g., 'hundred and twenty years'), and embedded numerical letter patterns (e.g., 'twent' as a root)",
+"language": "English",
+"numerical_letter_observations": "the letter 't' appears in 'twent' (20), and the number 20 is encoded in the Hebrew root 'yamah' (but transliterated as 'twenty' in English), reflecting the numerical value's prominence in biblical chronology",
+"semantic_range": "numerical value (20), age, duration, symbolic count, and contextualized usage in biblical narratives",
+"_facts": {
+"stem": "twenty",
+"surface": "Twenty",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 309,
+"first_appearance_ref": "Genesis 6:3"
+}
+},
+"tribe": {
+"final_synthesis": "The term 'tribe' encapsulates the biblical narrative's emphasis on covenantal identity, division, and unity. Its etymology and symbolic use reflect the tension between the tribes' role in the Old Testament covenant and their fulfillment in Christ. The repeated appearances and numerical patterns highlight the divine order, while the messianic reading connects the tribe to the Messiah's sovereignty. This reveals Christ's mission as a reconciler of divisions, a shepherd of the tribes, and the fulfillment of the covenantal promises through the Church.",
+"root": "qopher (Hebrew) /  (Greek)",
+"messianic_fulfillment": "The term is fulfilled in the context of the Messiah being the head of the tribes, as seen in the book of Daniel, where the Messiah is described as the 'head of the tribes of Israel' (Daniel 10:12), linking the tribe to the messianic kingdom.",
+"first_appearance": "Genesis 49:16, where the term appears in the context of describing the tribes of Israel as the sons of Jacob, emphasizing their role in the covenantal structure of the nation.",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The term reveals Christ's role as the head of the tribes, His sovereignty over the nation of Israel, and His fulfillment of the covenantal promises through the establishment of the Church as the new tribe of Israel. It underscores the continuity between the Old and New Testaments and the divine purpose of the Messiah.",
+"major_scriptural_pattern": "The tribes are central to the covenantal framework of Israel, appearing repeatedly in the book of Genesis and the book of Chronicles, often paired with terms like 'children of Israel' and 'twelve tribes' to emphasize their significance in the divine plan.",
+"term": "tribe",
+"literal_sense": "a division of people, often referring to a group of people under a common covenant or leader, derived from the Hebrew root qopher (to divide) or Greek  (to divide).",
+"symbolic_structure": "The term is embedded in symbolic oppositions, such as the contrast between the tribes and the nation of Israel, and in numerical patterns like the twelve tribes, which symbolizes completeness and divine order. It also appears in paired terms like 'tribes of Israel' and 'twelve tribes' to reinforce collective identity.",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The number 12 is prominently used, reflecting the twelve tribes of Israel, and the term appears in contexts involving twelve, such as the twelve stones in 1 Kings 18:31, which symbolizes the fullness of the covenant. The letter 'd' (from 'divided') is a recurring element in the root, emphasizing the concept of division and unity.",
+"semantic_range": "a political unit in ancient Israel, a group of people under a common covenant, and a symbolic representation of community, lineage, and divine purpose. It also carries connotations of division, sovereignty, and the covenantal relationship.",
+"_facts": {
+"stem": "tribe",
+"surface": "Tribe",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 303,
+"first_appearance_ref": "Genesis 49:16"
 }
 }
 }

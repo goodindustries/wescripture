@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "l",
 "model": "qwen3:1.7b",
-"updated": "2026-04-19T18:23:19+00:00"
+"updated": "2026-04-20T22:42:02+00:00"
 },
 "stems": {
 "lord": {
@@ -309,6 +309,96 @@
 "morph": "",
 "count": 350,
 "first_appearance_ref": "Genesis 27:4"
+}
+},
+"lest": {
+"final_synthesis": "The word 'lest' embodies the tension between divine sovereignty and human responsibility, reflecting the covenantal nature of God's promises. Its repeated use in Scripture highlights the importance of obedience and the protective role of Christ, whose sacrifice fulfills the promise of salvation through the lens of covenantal fidelity and redemptive love.",
+"root": "laseb (Hebrew) /  (Greek)",
+"messianic_fulfillment": "The word 'lest' is fulfilled in Jesus' sacrifice, where he 'lest' the Jews should not die (John 10:17-18), illustrating his role as a covenantal protector and redeemer.",
+"first_appearance": "Genesis 3:3 (Genesis 3:3, 'Ye shall not eat of it, neither shall ye touch it, lest ye die').",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The word 'lest' reveals Christ's dual role as both a covenantal guardian (protecting the faithful) and a sacrificial redeemer (preventing eternal death for the lost). It underscores His mission to reconcile humanity to God through self-giving love.",
+"major_scriptural_pattern": "Covenantal warnings and protective measures, often paired with 'shall die' or 'shall not touch,' reflecting the tension between divine will and human consequence.",
+"term": "lest",
+"literal_sense": "To avoid, refrain from, or prevent harm; specifically, to refrain from eating or touching something forbidden by divine command.",
+"symbolic_structure": "Repeated in covenantal passages (e.g., Exodus 20:13, Deuteronomy 5:13) as a covenantal safeguard, with embedded structures like 'lest' and 'shall die' forming a pattern of divine accountability.",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The number 7 appears in the verse about vengeance (Moses 5:40), suggesting a symbolic pattern of sevenfold punishment or protection, a common motif in biblical theology.",
+"semantic_range": "Covenantal warnings, prohibitions, and protective measures; also conveys the idea of 'not to' or 'not to do' in theological contexts.",
+"_facts": {
+"stem": "lest",
+"surface": "Lest",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 319,
+"first_appearance_ref": "Genesis 3:3"
+}
+},
+"laid": {
+"final_synthesis": "The word 'laid' reveals the biblical emphasis on covenantal establishment, ritual placement, and Christ's self-giving, reflecting a theology of divine action and redemptive purpose.",
+"root": "lay",
+"messianic_fulfillment": "associated with Christ's role in establishing the kingdom (e.g., 'laid down his life' in John 10:11), but no explicit Messianic use in canonical texts",
+"first_appearance": "Genesis 9:23 (flood narrative, 'laid' as 'placed' the Ark in the Ark)",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_fulfillment": "inference"
+},
+"reveals_about_christ": "the word 'laid' underscores Christ's act of self-giving (e.g., laying down his life) and his role in establishing the new covenant",
+"major_scriptural_pattern": "repeated use in covenantal contexts (e.g., laying foundations, placing items, establishing covenants)",
+"term": "laid",
+"literal_sense": "to place, set down, or establish",
+"symbolic_structure": "paired terms (e.g., 'laid the foundation' vs. 'laid the curse'), repeated phrases (e.g., 'laid the law'), and numerical patterns (e.g., twelve pieces in Judges 19:29)",
+"language": "English",
+"numerical_letter_observations": "the number 12 appears in 12 pieces (Judges 19:29), and the verb 'lay' is repeated 319 times across canon (OT:82, NT:178)",
+"semantic_range": "actions involving positioning, establishing, or setting something in place, including covenantal, ritual, and symbolic contexts",
+"_facts": {
+"stem": "laid",
+"surface": "Laid",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 319,
+"first_appearance_ref": "Genesis 9:23"
+}
+},
+"liv": {
+"final_synthesis": "The word 'living' embodies the divine creation of life, its sustenance through sacrifice, and its ultimate fulfillment in the resurrection of Christ. Its repeated use in scripture underscores the centrality of life in both the natural and spiritual realms, reflecting the divine mission to bring life to all creation and to restore life to those who dwell in the temple of the Holy Spirit.",
+"root": "liv",
+"messianic_fulfillment": "the word 'living' is used to describe the resurrected Christ (1 Corinthians 15:44) and the Messiah (Psalm 103:12), reflecting the theme of life and resurrection",
+"first_appearance": "Genesis 1:21 (creation of living creatures)",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "the word 'living' reveals Christ's role as the source of life (John 1:4), the sustainer of the faithful (Hebrews 1:3), and the promise of eternal life (John 10:28)",
+"major_scriptural_pattern": "repeated use in creation narratives (Genesis 1:21, Exodus 2:2, Psalm 103:12), priesthood (Exodus 25:22), and sacrifice (Leviticus 16:21)",
+"term": "living",
+"literal_sense": "to live, as in 'to be alive' or 'to sustain life'",
+"symbolic_structure": "paired terms like 'living soul' (Exodus 25:22) and 'living creatures' (Genesis 1:21); repeated phrases such as 'the living' in Exodus 2:2 and Psalm 103:12; numerical patterns including the number 21 (Genesis 1:21) and 12 (Psalm 103:12)",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "the number 21 appears in Genesis 1:21, and the letter 'l' is repeated in 'living' (2 times), 'liv' (3 times), and 'l' in 'living' (2 times)",
+"semantic_range": "concepts of life, vitality, existence, and the sustenance of being; also denotes the state of being 'alive' in a spiritual or divine sense",
+"_facts": {
+"stem": "liv",
+"surface": "Living",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 282,
+"first_appearance_ref": "Genesis 1:21"
 }
 }
 }

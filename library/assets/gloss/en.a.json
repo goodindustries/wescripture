@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "a",
 "model": "qwen3:1.7b",
-"updated": "2026-04-20T12:49:18+00:00"
+"updated": "2026-04-20T23:08:04+00:00"
 },
 "stems": {
 "answer": {
@@ -186,6 +186,66 @@
 "morph": "",
 "count": 328,
 "first_appearance_ref": "Genesis 24:47"
+}
+},
+"ang": {
+"final_synthesis": "The word 'anger' reflects Jesus' role as the mediator between divine wrath and human sin, embodying the tension between covenantal law and moral redemption, while emphasizing the transformative power of humility and justice",
+"root": "ang",
+"messianic_fulfillment": "Jesus' teachings against anger (3 Nephi 11:30) reflect the biblical pattern of divine wrath turned toward moral restoration",
+"first_appearance": "Genesis 27:45 (father's anger toward Esau)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "inference",
+"messianic_reading": "speculation"
+},
+"reveals_about_christ": "The word 'anger' reveals Christ's mission to reconcile divine wrath with human moral growth, emphasizing humility and peace",
+"major_scriptural_pattern": "covenant contexts: exodus, judgment, redemption, and exilic lamentation",
+"term": "anger",
+"literal_sense": "feeling of displeasure or resentment",
+"symbolic_structure": "repeated phrases like 'provoke to anger' (2 Chronicles 28:25), paired terms 'anger' and 'fear', and numerical patterns (e.g., 3 in Genesis 27:45)",
+"language": "English",
+"numerical_letter_observations": "The root 'ang' (3 letters) aligns with the number 3 in Genesis 27:45, symbolizing divine sovereignty and covenantal law",
+"semantic_range": "emotions, divine actions, moral consequences, covenant violations, exodus, judgment, redemption",
+"_facts": {
+"stem": "ang",
+"surface": "Anger",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 283,
+"first_appearance_ref": "Genesis 27:45"
+}
+},
+"abraham": {
+"final_synthesis": "The name 'Abraham' reflects God's covenantal sovereignty, emphasizing lineage, divine election, and the fulfillment of promises through Christ. Its etymology and symbolic use in scripture reveal a theology of covenant, redemption, and the eternal nature of God's promises, aligning with Christ's role as the ultimate fulfillment of Abraham's legacy.",
+"root": "Abram",
+"messianic_fulfillment": "Jesus Christ is explicitly called 'the son of Abraham' (Galatians 3:8) and is referred to as 'the seed of Abraham' (Galatians 3:16), fulfilling the covenantal promise of a descendant of Abraham",
+"first_appearance": "Genesis 17:5 (chosen by God to be the father of a nation)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The name 'Abraham' underscores Christ's role as the fulfillment of God's covenantal promise, emphasizing his lineage, divine election, and the covenantal nature of his mission",
+"major_scriptural_pattern": "covenantal fulfillment of God's promise to Abraham, emphasizing lineage and divine election",
+"term": "abraham",
+"literal_sense": "father, ancestor, covenantal patriarch",
+"symbolic_structure": "paired terms (Abraham/Israel), numerical patterns (18 for Abraham's age), and covenantal motifs (chosen, blessed, sworn)",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The letters 'Abram' (A-B-R-A-M) contain the number 18 (A=1, B=2, R=18, A=1, M=13), symbolizing divine purpose and the number of letters in the name (18 letters in Hebrew, 17 in English)",
+"semantic_range": "father, ancestor, covenant, lineage, redemption, exodus, inheritance, resurrection, Zion",
+"_facts": {
+"stem": "abraham",
+"surface": "Abraham",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 274,
+"first_appearance_ref": "Genesis 17:5"
 }
 }
 }

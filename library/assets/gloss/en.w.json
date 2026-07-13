@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "w",
 "model": "qwen3:1.7b",
-"updated": "2026-04-20T13:23:22+00:00"
+"updated": "2026-04-21T01:07:24+00:00"
 },
 "stems": {
 "word": {
@@ -309,6 +309,96 @@
 "morph": "",
 "count": 324,
 "first_appearance_ref": "Exodus 28:3"
+}
+},
+"wise": {
+"final_synthesis": "The word 'wise' encapsulates the biblical theme of divine wisdom, its consequences, and the Messiah's role in imparting knowledge. It reflects the covenantal relationship between God and humanity, emphasizing moral insight and spiritual guidance.",
+"root": "wisdom",
+"messianic_fulfillment": "The Messiah is depicted as a teacher and guide, using wisdom to lead people to salvation, reflecting the divine wisdom in the covenant.",
+"first_appearance": "Genesis 3:6 (Eve's temptation)",
+"confidence_by_claim": {
+"symbolic_structure": "inference",
+"messianic_fulfillment": "speculation"
+},
+"reveals_about_christ": "The word 'wise' reveals Christ's role as a teacher and mediator, using divine wisdom to illuminate truth and lead humanity to salvation.",
+"major_scriptural_pattern": "temperance, temptation, and the consequence of divine wisdom",
+"term": "wise",
+"literal_sense": "knowledge, understanding, enlightenment",
+"symbolic_structure": "paired terms (wisdom vs. sin), covenantal wisdom, and the role of the Messiah as a teacher",
+"language": "English",
+"numerical_letter_observations": "The number 3 appears in Genesis 3:6, symbolizing the triune nature of God (Father, Son, Holy Spirit), and the threefold nature of temptation (sin, knowledge, and consequence).",
+"semantic_range": "knowledge, understanding, enlightenment; moral insight; divine wisdom",
+"_facts": {
+"stem": "wise",
+"surface": "Wise",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 319,
+"first_appearance_ref": "Genesis 3:6"
+}
+},
+"whole": {
+"final_synthesis": "The term 'whole' underscores biblical themes of creation's fullness and covenantal completeness, with Christ as the ultimate fulfillment of the 'whole' in redemptive history",
+"root": "whole",
+"messianic_fulfillment": "speculation: contextual use in New Testament (e.g., Christ as the 'whole' of God's plan) implies eschatological fulfillment",
+"first_appearance": "Genesis 2:6 (earth being formed as 'whole')",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "inference",
+"messianic_reading": "speculation"
+},
+"reveals_about_christ": "Christ's redemptive work brings spiritual completeness, his role in restoring the 'whole' creation, and his fulfillment of covenantal promises",
+"major_scriptural_pattern": "repeated use in creation accounts and covenantal terminology to emphasize completeness",
+"term": "whole",
+"literal_sense": "complete, entire, fully developed",
+"symbolic_structure": "paired with 'face' in Genesis 2:6, symbolizing the entire creation; linked to the Mosaic covenant's 'whole land' description",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "speculation: Hebrew root may have a specific letter count, but no explicit data provided",
+"semantic_range": "completeness, fullness, spiritual integrity, covenantal fulfillment, creation",
+"_facts": {
+"stem": "whole",
+"surface": "Whole",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 309,
+"first_appearance_ref": "Genesis 2:6"
+}
+},
+"wicked": {
+"final_synthesis": "The term 'wickedness' encapsulates the biblical narrative of moral decay and divine judgment, reflecting Christ's mission to reconcile humanity to God through redemption, while emphasizing the enduring struggle between sin and grace.",
+"root": "wicked",
+"messianic_fulfillment": "not directly tied to Christ's redemption, but its theological weight underscores the moral and spiritual consequences of sin, which are ultimately reconciled through Christ's sacrifice",
+"first_appearance": "Genesis 6:5 (Genesis 6:5, ESV: 'And God saw that the wickedness of men had become great in the earth')",
+"confidence_by_claim": {
+"etymology": "pattern",
+"symbolic_structure": "pattern",
+"messianic_reading": "speculation",
+"final_synthesis": "pattern"
+},
+"reveals_about_christ": "the term highlights the tension between human sin and divine grace, revealing Christ's role as both the Judge of sin and the Redeemer who transforms corrupted humanity",
+"major_scriptural_pattern": "the pervasive theme of divine judgment and the moral decay of humanity, as exemplified in the covenantal relationship between God and Israel",
+"term": "wickedness",
+"literal_sense": "the quality of being morally corrupt or evil",
+"symbolic_structure": "repeated use of 'wickedness' in passages describing God's wrath (e.g., Judges 19:23, Alma 4:3) and the consequences of sin, paired with terms like 'judgment' and 'redemption' to contrast moral corruption with divine grace",
+"language": "English",
+"numerical_letter_observations": "appears in 267 verses across the canon, with significant distribution in the Old Testament (ot:125) and New Testament (nt:9), reflecting its centrality in biblical theology",
+"semantic_range": "moral corruption, sin, divine judgment, human culpability, and its consequences in biblical contexts",
+"_facts": {
+"stem": "wicked",
+"surface": "Wickedness",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 267,
+"first_appearance_ref": "Genesis 6:5"
 }
 }
 }

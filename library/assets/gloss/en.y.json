@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "y",
 "model": "qwen3:1.7b",
-"updated": "2026-04-19T02:11:12+00:00"
+"updated": "2026-04-20T19:58:03+00:00"
 },
 "stems": {
 "year": {
@@ -66,6 +66,37 @@
 "morph": "",
 "count": 368,
 "first_appearance_ref": "Genesis 4:23"
+}
+},
+"yourselve": {
+"final_synthesis": "The term 'yourselves' underscores Christ's mission to reveal divine truth through self-giving, communal identification, and the transformative power of covenantal revelation, reflecting the wisdom of God in empowering humanity through humility and self-sacrifice.",
+"root": "yosem",
+"messianic_fulfillment": "symbolic fulfillment in the Kingdom of God, where self-identification mirrors Christ's role as mediator and revealer",
+"first_appearance": "Genesis 18:4 (divine interaction with Abraham)",
+"confidence_by_claim": {
+"etymology": "speculation",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference",
+"final_synthesis": "speculation"
+},
+"reveals_about_christ": "Christ's mission emphasizes self-giving, communal revelation, and the transformative power of divine identification",
+"major_scriptural_pattern": "self-identification and communal revelation in covenant contexts",
+"term": "yourselves",
+"literal_sense": "yourselves (your own, your own self)",
+"symbolic_structure": "paired terms (yourselves/themselves), numerical patterns (298 verses), and repeated phrases in covenantal discourse",
+"language": "English",
+"numerical_letter_observations": "298 verses across canon, 98 OT, 80 NT, 67 BoFM, 52 other, 1 PGPF",
+"semantic_range": "ownership, possession, self-reflection, divine identification, communal identity",
+"_facts": {
+"stem": "yourselve",
+"surface": "Yourselves",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 298,
+"first_appearance_ref": "Genesis 18:4"
 }
 }
 }

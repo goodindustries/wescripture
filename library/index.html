@@ -2298,7 +2298,8 @@ var chapterMeta = {};
 var sourceMeta = {};
 var sourceLinks    = {};   // doc_id → {para_idx → [{book,ch,v,score,ref}]}
 var sourceCitations = {};  // doc_id → { para_1based → [{ chapterId, v, ch, raw }] }
-var verseDiscovery = {};   // "Book Ch:V" → [{tradition_pair, source_label, source_text, ...}]
+var verseDiscovery = null;   // "Book Ch:V" → [{tradition_pair, source_label, source_text, ...}] (lazy-loaded)
+var verseDiscoveryLoading = false;
 var donaldsonNotes = {};   // chapterId → { "verseNum": [para, ...] }
 var donaldsonLoads = {};   // chapterId → in-flight Promise<void>
 
@@ -2332,6 +2333,34 @@ function ensureDonaldsonLoaded(chapterId) {
     });
     return donaldsonLoads[chapterId];
 }
+
+// Lazy-load verseDiscovery (13MB) on first interaction that needs it.
+function ensureVerseDiscoveryLoaded() {
+    if (verseDiscovery !== null) return Promise.resolve();
+    if (verseDiscoveryLoading) {
+        // Return a deferred promise that resolves when loading completes
+        return new Promise(function(resolve) {
+            var check = setInterval(function() {
+                if (verseDiscovery !== null) {
+                    clearInterval(check);
+                    resolve();
+                }
+            }, 50);
+        });
+    }
+    verseDiscoveryLoading = true;
+    return fetch('./verse_discovery.json')
+        .then(function(r) { return r.ok ? r.json() : {}; })
+        .then(function(data) {
+            verseDiscovery = data || {};
+            verseDiscoveryLoading = false;
+        })
+        .catch(function() {
+            verseDiscovery = {};
+            verseDiscoveryLoading = false;
+        });
+}
+
 var chapterGraphCache = {}; // chapterId → parsed graph data
 var entityIndex = {};      // lowercased name variant → person_id (longest-first sorted)
 var entityList  = [];      // full people.json array
@@ -2766,7 +2795,6 @@ Promise.all([
     fetch('./toc.json').then(function(r) { return r.json(); }),
     fetch('./source_toc.json').then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; }),
     fetch('./source_links.json').then(function(r) { return r.ok ? r.json() : {}; }).catch(function() { return {}; }),
-    fetch('./verse_discovery.json').then(function(r) { return r.ok ? r.json() : {}; }).catch(function() { return {}; }),
     fetch('./entities/people_index.json').then(function(r) { return r.ok ? r.json() : {}; }).catch(function() { return {}; }),
     fetch('./entities/people.json').then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; }),
     fetch('./entities/places_index.json').then(function(r) { return r.ok ? r.json() : {}; }).catch(function() { return {}; }),
@@ -2780,12 +2808,12 @@ Promise.all([
         var data = results[0];
         var sourceData = results[1] || [];
         sourceLinks    = results[2] || {};
-        verseDiscovery = results[3] || {};
-        CFM_2026       = results[12] || [];
+        // verseDiscovery deferred to lazy-load on first verse click
+        CFM_2026       = results[11] || [];
         fetch('./source_citations.json').then(function(r) { return r.ok ? r.json() : {}; })
             .then(function(d) { sourceCitations = d || {}; }).catch(function() {});
-        entityIndex    = results[4] || {};
-        entityList     = results[5] || [];
+        entityIndex    = results[3] || {};
+        entityList     = results[4] || [];
         entityList.forEach(function(p) { entityById[p.id] = p; });
         // Merge scripture figures into entity index so verse names are linkified
         fetch('./entities/scripture_people.json').then(function(r) { return r.ok ? r.json() : []; })
@@ -2798,12 +2826,12 @@ Promise.all([
                     });
                 });
             }).catch(function() {});
-        placeIndex = results[6] || {};
-        (results[7] || []).forEach(function(p) { placeById[p.id] = p; });
-        thingIndex = results[8] || {};
-        (results[9] || []).forEach(function(t) { thingById[t.id] = t; });
-        (results[10] || []).forEach(function(t) { topicById[t.id] = t; Object.keys(topicById); });
-        (results[11] || []).forEach(function(b) {
+        placeIndex = results[5] || {};
+        (results[6] || []).forEach(function(p) { placeById[p.id] = p; });
+        thingIndex = results[7] || {};
+        (results[8] || []).forEach(function(t) { thingById[t.id] = t; });
+        (results[9] || []).forEach(function(t) { topicById[t.id] = t; Object.keys(topicById); });
+        (results[10] || []).forEach(function(b) {
             bookById[b.id] = b;
             if (b.slug) bookBySlug[b.slug] = b;
         });
@@ -5135,9 +5163,10 @@ async function openVerseDiscovery(ref) {
     var vnum = ref.split(':')[1] || '';
     var chapterId = currentChapter || '';
 
-    // Guarantee Donaldson notes/quotes for this verse are rendered on first tap,
-    // even if the user clicked before the per-chapter JSON finished loading.
+    // Guarantee Donaldson notes/quotes and verseDiscovery for this verse are loaded
+    // on first tap, even if the user clicked before the JSON finished loading.
     await ensureDonaldsonLoaded(chapterId);
+    await ensureVerseDiscoveryLoaded();
 
     var rawEntries = verseDiscovery[ref] || [];
     var entries = semanticDedupeVerseDiscoveryEntries(dedupeVerseDiscoveryEntries(rawEntries.filter(function(e) {
@@ -5917,7 +5946,8 @@ function loadChapter(id, prepend) {
                 });
             });
             setNextToLoad(id);
-            markVerseDiscovery(block, id);
+            // Note: markVerseDiscovery deferred to lazy-load phase (doesn't block render)
+            // Marked verses are a nice-to-have indicator; they load on-demand when needed
             annotateChapterEntities(block);
             if (SUPA && SUPA.friends && SUPA.friends.length) scheduleRefreshVerseFriendIcons(id);
 

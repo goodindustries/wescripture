@@ -3,7 +3,7 @@
 "prompt_version": "gloss-define-v1",
 "shard": "s",
 "model": "qwen3:1.7b",
-"updated": "2026-04-20T13:13:29+00:00"
+"updated": "2026-04-20T20:14:02+00:00"
 },
 "stems": {
 "son": {
@@ -761,6 +761,66 @@
 "morph": "",
 "count": 324,
 "first_appearance_ref": "Genesis 36:37"
+}
+},
+"silv": {
+"final_synthesis": "The term 'silver' encapsulates the wisdom of God, the character of Christ as a covenantal provider, and the pattern of divine redemption through sacrifice and provision. It underscores Christ's role as the fulfillment of the Old Testament covenantal promises, reflecting both the material and spiritual wealth of the Kingdom of Heaven.",
+"root": "silv",
+"messianic_fulfillment": "The use of silver in the Temple (e.g., the Tabernacle) and in the context of redemption (e.g., the transaction with Ephron) points to the Messiah as a mediator of divine provision and covenantal blessings.",
+"first_appearance": "Genesis 13:2 (covenantal transaction with Ephron)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The word 'silver' reveals Christ's role as the ultimate mediator, the provider of divine wealth, and the fulfillment of covenantal promises through His sacrifice and resurrection.",
+"major_scriptural_pattern": "covenantal agreements, sacrificial offerings, and symbolic representation of divine provision",
+"term": "silver",
+"literal_sense": "the metal silver, or to speak, to be silent",
+"symbolic_structure": "paired terms (silver/gold), numerical patterns (400 shekels), and covenantal contrasts (wealth vs. poverty, purity vs. impurity)",
+"language": "English (Restoration volume / no original-language alignment)",
+"numerical_letter_observations": "The 400 shekels in Genesis 23:16 (a numerical pattern) and the 1100 shekels in Judges 17:2 (another numerical pattern) highlight the significance of specific quantities in covenantal transactions.",
+"semantic_range": "metallic value, symbolic representation of purity, wealth, and divine provision; also associated with speech, silence, and covenantal offerings",
+"_facts": {
+"stem": "silv",
+"surface": "Silver",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 308,
+"first_appearance_ref": "Genesis 13:2"
+}
+},
+"sacrifice": {
+"final_synthesis": "The term 'sacrifice' reveals Christ's mission as both a covenantal act of devotion and a redemptive offering, bridging humanity's need for atonement with divine grace through the New Covenant.",
+"root": "sakris",
+"messianic_fulfillment": "Jesus Christ's sacrifice is central to redemption (e.g., 1 Corinthians 10:28), where 'sacrifice' embodies atonement and spiritual renewal",
+"first_appearance": "Genesis 31:54 (covenantal context)",
+"confidence_by_claim": {
+"etymology": "lexical",
+"symbolic_structure": "pattern",
+"messianic_reading": "inference"
+},
+"reveals_about_christ": "The word 'sacrifice' underscores Christ's role as the ultimate offering for humanity's salvation, reflecting His divine nature and redemptive work through the New Covenant",
+"major_scriptural_pattern": "covenantal offering as a binding gesture, linked to divine commitment and ritual purity",
+"term": "sacrifice",
+"literal_sense": "to offer, present to a deity",
+"symbolic_structure": "paired terms (e.g., 'sacrifice' & 'offer'), numerical patterns (e.g., 3 for 'three days' in Exodus 3:18), and covenantal reciprocity (e.g., 'sacrifice' as a response to divine will)",
+"language": "English",
+"numerical_letter_observations": "The number 3 appears in Exodus 3:18 (three days' journey), and the letter 's' is repeated in 'sacrifice' (3 times), symbolizing completeness or tripartite unity",
+"semantic_range": "offerings to gods, animals, covenantal vows, atonement, redemption, and symbolic acts of devotion",
+"_facts": {
+"stem": "sacrifice",
+"surface": "Sacrifice",
+"lang": "eng",
+"lemma": "",
+"surface_gr": "",
+"surface_he": "",
+"morph": "",
+"count": 293,
+"first_appearance_ref": "Genesis 31:54"
 }
 }
 }
