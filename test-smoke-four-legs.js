@@ -55,8 +55,9 @@ async function run() {
   const chapterTitle = await page.$eval('h2.book-title, .chapter-heading, h1', (el) =>
     el ? el.textContent.trim() : ''
   );
-  assert(chapterTitle.includes('Genesis') || document.body.textContent.includes('Genesis'),
-    'Genesis chapter did not load');
+  const hasGenesisText = chapterTitle.includes('Genesis') ||
+    await page.evaluate(() => document.body.textContent.includes('Genesis'));
+  assert(hasGenesisText, 'Genesis chapter did not load');
   console.log('✓ Chapter loads and renders');
 
   // Leg 4: Click verse → context panel opens
@@ -72,14 +73,9 @@ async function run() {
     { timeout: 10000 }
   );
 
-  // Check for verse panel / context display (can be right-side panel or inline)
-  const hasPanel = await page.evaluate(() => {
-    // Look for right-side panel or context panel markers
-    const rightPanel = document.querySelector('[id^="panel"], .study-panel, [class*="panel"]');
-    const verseExpanded = document.querySelector('.verse.verse-focus');
-    return !!(rightPanel || verseExpanded);
-  });
-  assert(hasPanel, 'Context panel/focus state did not appear after verse click');
+  // Check for verse focus (verse was clicked and focused)
+  const verseIsFocused = await page.$('.verse.verse-focus');
+  assert(verseIsFocused, 'Verse did not gain focus after click');
   console.log('✓ Verse click opens context/panel state');
 
   console.log('\n✅ All four journey legs verified');
