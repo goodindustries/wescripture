@@ -1,0 +1,275 @@
+[
+  {
+    "ref": "Abraham 3:3",
+    "book": "abraham",
+    "chapter": "3",
+    "verse": "3",
+    "section": "DandC"
+  },
+  {
+    "ref": "Joshua 5:13",
+    "book": "joshua",
+    "chapter": "5",
+    "verse": "13",
+    "section": "OT"
+  },
+  {
+    "ref": "Enos 1:27",
+    "book": "enos",
+    "chapter": "1",
+    "verse": "27",
+    "section": "BoM"
+  },
+  {
+    "ref": "Genesis 38:17",
+    "book": "genesis",
+    "chapter": "38",
+    "verse": "17",
+    "section": "OT"
+  },
+  {
+    "ref": "Jonah 1:3",
+    "book": "jonah",
+    "chapter": "1",
+    "verse": "3",
+    "section": "OT"
+  },
+  {
+    "ref": "Deuteronomy 24:6",
+    "book": "deuteronomy",
+    "chapter": "24",
+    "verse": "6",
+    "section": "OT"
+  },
+  {
+    "ref": "Jeremiah 26:17",
+    "book": "jeremiah",
+    "chapter": "26",
+    "verse": "17",
+    "section": "OT"
+  },
+  {
+    "ref": "Jacob 3:2",
+    "book": "jacob",
+    "chapter": "3",
+    "verse": "2",
+    "section": "BoM"
+  },
+  {
+    "ref": "Mosiah 5:7",
+    "book": "mosiah",
+    "chapter": "5",
+    "verse": "7",
+    "section": "BoM"
+  },
+  {
+    "ref": "Abraham 2:24",
+    "book": "abraham",
+    "chapter": "2",
+    "verse": "24",
+    "section": "DandC"
+  },
+  {
+    "ref": "Titus 3:14",
+    "book": "titus",
+    "chapter": "3",
+    "verse": "14",
+    "section": "NT"
+  },
+  {
+    "ref": "Abraham 5:18",
+    "book": "abraham",
+    "chapter": "5",
+    "verse": "18",
+    "section": "DandC"
+  },
+  {
+    "ref": "Romans 5:3",
+    "book": "romans",
+    "chapter": "5",
+    "verse": "3",
+    "section": "NT"
+  },
+  {
+    "ref": "Moroni 3:1",
+    "book": "moroni",
+    "chapter": "3",
+    "verse": "1",
+    "section": "BoM"
+  },
+  {
+    "ref": "Joel 1:5",
+    "book": "joel",
+    "chapter": "1",
+    "verse": "5",
+    "section": "OT"
+  },
+  {
+    "ref": "Jacob 2:7",
+    "book": "jacob",
+    "chapter": "2",
+    "verse": "7",
+    "section": "BoM"
+  },
+  {
+    "ref": "Dandc 83:4",
+    "book": "dandc",
+    "chapter": "83",
+    "verse": "4",
+    "section": "DandC"
+  },
+  {
+    "ref": "Moses 7:68",
+    "book": "moses",
+    "chapter": "7",
+    "verse": "68",
+    "section": "DandC"
+  },
+  {
+    "ref": "Philippians 3:19",
+    "book": "philippians",
+    "chapter": "3",
+    "verse": "19",
+    "section": "NT"
+  },
+  {
+    "ref": "Jacob 3:9",
+    "book": "jacob",
+    "chapter": "3",
+    "verse": "9",
+    "section": "BoM"
+  },
+  {
+    "ref": "Jacob 2:1",
+    "book": "jacob",
+    "chapter": "2",
+    "verse": "1",
+    "section": "BoM"
+  },
+  {
+    "ref": "Jude 1:25",
+    "book": "jude",
+    "chapter": "1",
+    "verse": "25",
+    "section": "NT"
+  },
+  {
+    "ref": "Ezra 10:9",
+    "book": "ezra",
+    "chapter": "10",
+    "verse": "9",
+    "section": "OT"
+  },
+  {
+    "ref": "Mark 8:37",
+    "book": "mark",
+    "chapter": "8",
+    "verse": "37",
+    "section": "NT"
+  },
+  {
+    "ref": "Titus 3:13",
+    "book": "titus",
+    "chapter": "3",
+    "verse": "13",
+    "section": "NT"
+  },
+  {
+    "ref": "Dandc 82:19",
+    "book": "dandc",
+    "chapter": "82",
+    "verse": "19",
+    "section": "DandC"
+  },
+  {
+    "ref": "Jude 1:19",
+    "book": "jude",
+    "chapter": "1",
+    "verse": "19",
+    "section": "NT"
+  },
+  {
+    "ref": "Jarom 1:10",
+    "book": "jarom",
+    "chapter": "1",
+    "verse": "10",
+    "section": "BoM"
+  },
+  {
+    "ref": "Abraham 5:7",
+    "book": "abraham",
+    "chapter": "5",
+    "verse": "7",
+    "section": "DandC"
+  },
+  {
+    "ref": "Esther 9:11",
+    "book": "esther",
+    "chapter": "9",
+    "verse": "11",
+    "section": "OT"
+  },
+  {
+    "ref": "Job 26:11",
+    "book": "job",
+    "chapter": "26",
+    "verse": "11",
+    "section": "OT"
+  },
+  {
+    "ref": "Philemon 1:23",
+    "book": "philemon",
+    "chapter": "1",
+    "verse": "23",
+    "section": "NT"
+  },
+  {
+    "ref": "Luke 19:10",
+    "book": "luke",
+    "chapter": "19",
+    "verse": "10",
+    "section": "NT"
+  },
+  {
+    "ref": "Deuteronomy 1:7",
+    "book": "deuteronomy",
+    "chapter": "1",
+    "verse": "7",
+    "section": "OT"
+  },
+  {
+    "ref": "Romans 14:10",
+    "book": "romans",
+    "chapter": "14",
+    "verse": "10",
+    "section": "NT"
+  },
+  {
+    "ref": "Abraham 1:17",
+    "book": "abraham",
+    "chapter": "1",
+    "verse": "17",
+    "section": "DandC"
+  },
+  {
+    "ref": "Mosiah 10:20",
+    "book": "mosiah",
+    "chapter": "10",
+    "verse": "20",
+    "section": "BoM"
+  },
+  {
+    "ref": "Abraham 1:29",
+    "book": "abraham",
+    "chapter": "1",
+    "verse": "29",
+    "section": "DandC"
+  },
+  {
+    "ref": "Dandc 71:5",
+    "book": "dandc",
+    "chapter": "71",
+    "verse": "5",
+    "section": "DandC"
+  }
+]
