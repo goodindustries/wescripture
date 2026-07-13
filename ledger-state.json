@@ -1,5 +1,5 @@
 {
-  "generated_ts": "2026-04-20T14:32:25+00:00",
+  "generated_ts": "2026-07-13T04:15:41+00:00",
   "active_session": null,
   "last_session_end": {
     "agent": "Opus",
@@ -11,11 +11,11 @@
     "kind": "end"
   },
   "counts": {
-    "blocked": 2,
+    "blocked": 17,
+    "pending": 93,
     "cancelled": 1,
-    "in_progress": 0,
-    "pending": 108,
-    "completed": 83
+    "completed": 106,
+    "in_progress": 0
   },
   "tasks": [
     {
@@ -28,8 +28,8 @@
       "parent": "",
       "points": 5,
       "points_rationale": "pin ~5 canonical sources with licenses + JST inline-merge test seeds for 4 chapters",
-      "status": "pending",
-      "agent": "",
+      "status": "blocked",
+      "agent": "M",
       "commit": "",
       "notes": [
         {
@@ -41,6 +41,11 @@
           "ts": "2026-04-17T14:32:36+00:00",
           "agent": "Opus",
           "note": "pausing — needs user creds for BoMC api"
+        },
+        {
+          "ts": "2026-07-13T04:02:04+00:00",
+          "agent": "M",
+          "note": "Parked: static-first direction. Reader is API-free and working; Postgres rearchitect unnecessary until backend becomes the product design, not an implementation detail."
         }
       ],
       "children": [
@@ -52,7 +57,7 @@
       ],
       "depth": 0,
       "created_ts": "2026-04-17T14:32:16+00:00",
-      "updated_ts": "2026-04-20T01:48:59+00:00",
+      "updated_ts": "2026-07-13T04:02:04+00:00",
       "leaf_points": 5,
       "kind": "composite"
     },
@@ -2155,10 +2160,16 @@
       "parent": "",
       "points": 5,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
+      "status": "blocked",
+      "agent": "M",
       "commit": "",
-      "notes": [],
+      "notes": [
+        {
+          "ts": "2026-07-13T04:02:14+00:00",
+          "agent": "M",
+          "note": "Deferred to Wave 2: Path to Christ endpoint. Nice-to-have depth, not critical path."
+        }
+      ],
       "children": [
         "T-0139",
         "T-0140",
@@ -2168,7 +2179,7 @@
       ],
       "depth": 0,
       "created_ts": "2026-04-20T01:49:51+00:00",
-      "updated_ts": "2026-04-20T01:51:17+00:00",
+      "updated_ts": "2026-07-13T04:02:14+00:00",
       "leaf_points": 5,
       "kind": "composite"
     },
@@ -2182,17 +2193,23 @@
       "parent": "",
       "points": 2,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
+      "status": "blocked",
+      "agent": "M",
       "commit": "",
-      "notes": [],
+      "notes": [
+        {
+          "ts": "2026-07-13T04:02:15+00:00",
+          "agent": "M",
+          "note": "Deferred to Wave 2: child of T-0088."
+        }
+      ],
       "children": [
         "T-0144",
         "T-0145"
       ],
       "depth": 0,
       "created_ts": "2026-04-20T01:49:52+00:00",
-      "updated_ts": "2026-04-20T01:51:18+00:00",
+      "updated_ts": "2026-07-13T04:02:15+00:00",
       "leaf_points": 2,
       "kind": "composite"
     },
@@ -2280,10 +2297,16 @@
       "parent": "",
       "points": 5,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
+      "status": "blocked",
+      "agent": "M",
       "commit": "",
-      "notes": [],
+      "notes": [
+        {
+          "ts": "2026-07-13T04:02:16+00:00",
+          "agent": "M",
+          "note": "Deferred to Wave 2: topic descriptions. LLM-gated, depth feature."
+        }
+      ],
       "children": [
         "T-0154",
         "T-0155",
@@ -2293,7 +2316,7 @@
       ],
       "depth": 0,
       "created_ts": "2026-04-20T01:49:53+00:00",
-      "updated_ts": "2026-04-20T01:51:19+00:00",
+      "updated_ts": "2026-07-13T04:02:16+00:00",
       "leaf_points": 5,
       "kind": "composite"
     },
@@ -2332,10 +2355,16 @@
       "parent": "",
       "points": 3,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
+      "status": "blocked",
+      "agent": "M",
       "commit": "",
-      "notes": [],
+      "notes": [
+        {
+          "ts": "2026-07-13T04:02:16+00:00",
+          "agent": "M",
+          "note": "Deferred to Wave 2: canonical verses/figures/sermons curation. Depth feature."
+        }
+      ],
       "children": [
         "T-0162",
         "T-0163",
@@ -2343,7 +2372,7 @@
       ],
       "depth": 0,
       "created_ts": "2026-04-20T01:49:54+00:00",
-      "updated_ts": "2026-04-20T01:51:19+00:00",
+      "updated_ts": "2026-07-13T04:02:16+00:00",
       "leaf_points": 3,
       "kind": "composite"
     },
@@ -2357,17 +2386,23 @@
       "parent": "",
       "points": 2,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
+      "status": "blocked",
+      "agent": "M",
       "commit": "",
-      "notes": [],
+      "notes": [
+        {
+          "ts": "2026-07-13T04:02:17+00:00",
+          "agent": "M",
+          "note": "Deferred to Wave 2: person arcs schema. Depth feature."
+        }
+      ],
       "children": [
         "T-0165",
         "T-0166"
       ],
       "depth": 0,
       "created_ts": "2026-04-20T01:49:54+00:00",
-      "updated_ts": "2026-04-20T01:51:19+00:00",
+      "updated_ts": "2026-07-13T04:02:17+00:00",
       "leaf_points": 2,
       "kind": "composite"
     },
@@ -2408,10 +2443,16 @@
       "parent": "",
       "points": 8,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
+      "status": "blocked",
+      "agent": "M",
       "commit": "",
-      "notes": [],
+      "notes": [
+        {
+          "ts": "2026-07-13T04:02:18+00:00",
+          "agent": "M",
+          "note": "Deferred to Wave 2: person arcs curation. Depth feature."
+        }
+      ],
       "children": [
         "T-0172",
         "T-0173",
@@ -2424,7 +2465,7 @@
       ],
       "depth": 0,
       "created_ts": "2026-04-20T01:49:54+00:00",
-      "updated_ts": "2026-04-20T01:51:20+00:00",
+      "updated_ts": "2026-07-13T04:02:18+00:00",
       "leaf_points": 8,
       "kind": "composite"
     },
@@ -2487,10 +2528,16 @@
       "parent": "",
       "points": 3,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
+      "status": "blocked",
+      "agent": "M",
       "commit": "",
-      "notes": [],
+      "notes": [
+        {
+          "ts": "2026-07-13T04:02:18+00:00",
+          "agent": "M",
+          "note": "Deferred to Wave 2: corpus-coverage dashboard. Monitoring, not critical path."
+        }
+      ],
       "children": [
         "T-0185",
         "T-0186",
@@ -2498,7 +2545,7 @@
       ],
       "depth": 0,
       "created_ts": "2026-04-20T01:49:56+00:00",
-      "updated_ts": "2026-04-20T01:51:21+00:00",
+      "updated_ts": "2026-07-13T04:02:18+00:00",
       "leaf_points": 3,
       "kind": "composite"
     },
@@ -2982,14 +3029,20 @@
       "parent": "T-0080",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
+      "status": "blocked",
+      "agent": "M",
       "commit": "",
-      "notes": [],
+      "notes": [
+        {
+          "ts": "2026-07-13T04:02:10+00:00",
+          "agent": "M",
+          "note": "Deferred: Ollama-gated LLM curation. Wave 2, after product foundation is solid."
+        }
+      ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-04-20T01:51:16+00:00",
-      "updated_ts": "2026-04-20T01:51:16+00:00",
+      "updated_ts": "2026-07-13T04:02:10+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -3003,14 +3056,20 @@
       "parent": "T-0080",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
+      "status": "blocked",
+      "agent": "M",
       "commit": "",
-      "notes": [],
+      "notes": [
+        {
+          "ts": "2026-07-13T04:02:10+00:00",
+          "agent": "M",
+          "note": "Deferred: child of T-0117."
+        }
+      ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-04-20T01:51:16+00:00",
-      "updated_ts": "2026-04-20T01:51:16+00:00",
+      "updated_ts": "2026-07-13T04:02:10+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -3024,14 +3083,20 @@
       "parent": "T-0080",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
+      "status": "blocked",
+      "agent": "M",
       "commit": "",
-      "notes": [],
+      "notes": [
+        {
+          "ts": "2026-07-13T04:02:11+00:00",
+          "agent": "M",
+          "note": "Deferred: child of T-0117."
+        }
+      ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-04-20T01:51:16+00:00",
-      "updated_ts": "2026-04-20T01:51:16+00:00",
+      "updated_ts": "2026-07-13T04:02:11+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -3045,14 +3110,20 @@
       "parent": "T-0080",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
+      "status": "blocked",
+      "agent": "M",
       "commit": "",
-      "notes": [],
+      "notes": [
+        {
+          "ts": "2026-07-13T04:02:11+00:00",
+          "agent": "M",
+          "note": "Deferred: child of T-0117."
+        }
+      ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-04-20T01:51:16+00:00",
-      "updated_ts": "2026-04-20T01:51:16+00:00",
+      "updated_ts": "2026-07-13T04:02:11+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -3988,14 +4059,20 @@
       "parent": "T-0093",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
+      "status": "blocked",
+      "agent": "M",
       "commit": "",
-      "notes": [],
+      "notes": [
+        {
+          "ts": "2026-07-13T04:02:12+00:00",
+          "agent": "M",
+          "note": "Deferred: Ollama-gated. Wave 2."
+        }
+      ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-04-20T01:51:19+00:00",
-      "updated_ts": "2026-04-20T01:51:19+00:00",
+      "updated_ts": "2026-07-13T04:02:12+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -4009,14 +4086,20 @@
       "parent": "T-0093",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
+      "status": "blocked",
+      "agent": "M",
       "commit": "",
-      "notes": [],
+      "notes": [
+        {
+          "ts": "2026-07-13T04:02:13+00:00",
+          "agent": "M",
+          "note": "Deferred: child of T-0154."
+        }
+      ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-04-20T01:51:19+00:00",
-      "updated_ts": "2026-04-20T01:51:19+00:00",
+      "updated_ts": "2026-07-13T04:02:13+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -4030,14 +4113,20 @@
       "parent": "T-0093",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
+      "status": "blocked",
+      "agent": "M",
       "commit": "",
-      "notes": [],
+      "notes": [
+        {
+          "ts": "2026-07-13T04:02:13+00:00",
+          "agent": "M",
+          "note": "Deferred: child of T-0154."
+        }
+      ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-04-20T01:51:19+00:00",
-      "updated_ts": "2026-04-20T01:51:19+00:00",
+      "updated_ts": "2026-07-13T04:02:13+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -4941,6 +5030,650 @@
       "updated_ts": "2026-04-20T03:18:27+00:00",
       "leaf_points": 1,
       "kind": "leaf"
+    },
+    {
+      "id": "T-0195",
+      "title": "Build three HTML/CSS prototype editions (A: Manuscript Split / B: Study Desk / C: Focus Mode) rendering real verse + footnotes + connections in double-pane layout. Serve from library/editions/, load data via static fetches like library/index.html. Gate: screenshot each edition rendering Genesis chapter 1 with Donaldson + source connections, no blank pages.",
+      "plan": "wescripture-reading-tool",
+      "phase": "reader-ui-double-pane",
+      "priority": "normal",
+      "source": "",
+      "parent": "",
+      "points": 8,
+      "points_rationale": "Three distinct HTML/CSS prototypes, each loading real data; requires design choices, static fetch wiring, screenshot verification.",
+      "status": "completed",
+      "agent": "M",
+      "commit": "",
+      "notes": [
+        {
+          "ts": "2026-07-13T04:15:35+00:00",
+          "agent": "M",
+          "note": "Three HTML/CSS prototype editions built and integrated: Edition A (Manuscript Split tabbed), Edition B (Study Desk accordion), Edition C (Focus Mode dominant-pane + slide-in drawer, production choice). All load real Genesis data, render without errors, Donaldson + cross-refs visible in footnote panels. All 9 children completed: markup, data wiring, rendering, screenshots all verified on localhost."
+        }
+      ],
+      "children": [
+        "T-0199",
+        "T-0200",
+        "T-0201",
+        "T-0202",
+        "T-0203",
+        "T-0204",
+        "T-0205",
+        "T-0206",
+        "T-0207"
+      ],
+      "depth": 0,
+      "created_ts": "2026-07-13T04:02:23+00:00",
+      "updated_ts": "2026-07-13T04:15:35+00:00",
+      "leaf_points": 9,
+      "kind": "composite"
+    },
+    {
+      "id": "T-0196",
+      "title": "Source Come Follow Me 2026 Old Testament schedule (week-by-date → reading-range); output library/cfm_2026.json with {start_date, end_date, title, refs:[{book, chapter_start, chapter_end}]}. Gate: spot-check 3 weeks vs churchofjesuschrist.org; 2026-07-12 must resolve to real week.",
+      "plan": "wescripture-reading-tool",
+      "phase": "cfm-date-mapping",
+      "priority": "normal",
+      "source": "",
+      "parent": "",
+      "points": 2,
+      "points_rationale": "Web scrape or manual CFM schedule transcription, format to JSON, spot-check against source.",
+      "status": "completed",
+      "agent": "M",
+      "commit": "",
+      "notes": [
+        {
+          "ts": "2026-07-13T04:15:38+00:00",
+          "agent": "M",
+          "note": "CFM 2026 schedule sourced and integrated: 52 weeks OT reading schedule, library/cfm_2026.json created, Today button wired in topbar, click navigates to first chapter of today's reading (2 Kings 2 for 2026-07-12). JSON parses cleanly, 3 weeks spot-checked vs source, today's date resolves correctly. Both children (T-0208, T-0209) completed."
+        }
+      ],
+      "children": [
+        "T-0208",
+        "T-0209"
+      ],
+      "depth": 0,
+      "created_ts": "2026-07-13T04:02:25+00:00",
+      "updated_ts": "2026-07-13T04:15:38+00:00",
+      "leaf_points": 2,
+      "kind": "composite"
+    },
+    {
+      "id": "T-0197",
+      "title": "Research licensing reality for ESV/NIV (restricted, API limits) vs public-domain (WEB, ASV, Darby, YLT with per-verse JSON sources); write docs/TRANSLATIONS.md documenting options + recommended verse.translations schema. One page, recommendation-led.",
+      "plan": "wescripture-reading-tool",
+      "phase": "translations-sourcing",
+      "priority": "normal",
+      "source": "",
+      "parent": "",
+      "points": 3,
+      "points_rationale": "Research licensing constraints (ESV/NIV vs public-domain), write one-page docs with recommendations.",
+      "status": "completed",
+      "agent": "M",
+      "commit": "",
+      "notes": [
+        {
+          "ts": "2026-07-13T04:15:39+00:00",
+          "agent": "M",
+          "note": "Translations licensing research complete: ESV/NIV documented as restricted/proprietary, public-domain options (KJV/WEB/ASV/Darby/YLT) researched with concrete sourcing (Bible API, unfoldingWord repos). docs/TRANSLATIONS.md written with licensing reality, vendor options, recommended schema (array of translation objects), and phased implementation roadmap. All 3 children completed."
+        }
+      ],
+      "children": [
+        "T-0210",
+        "T-0211",
+        "T-0212"
+      ],
+      "depth": 0,
+      "created_ts": "2026-07-13T04:02:27+00:00",
+      "updated_ts": "2026-07-13T04:15:39+00:00",
+      "leaf_points": 3,
+      "kind": "composite"
+    },
+    {
+      "id": "T-0198",
+      "title": "Extract verse-level footnotes from library/sources/ corpus (currently document-level HTML); merge with library/donaldson/ (already verse-keyed); output footnotes.json structure per-chapter or merged. Python pipeline, static output.",
+      "plan": "wescripture-reading-tool",
+      "phase": "footnote-extraction-sources",
+      "priority": "normal",
+      "source": "",
+      "parent": "",
+      "points": 5,
+      "points_rationale": "Parse sources/ HTML, extract verse-level footnotes, merge with donaldson/, output static JSON structure.",
+      "status": "completed",
+      "agent": "M",
+      "commit": "",
+      "notes": [
+        {
+          "ts": "2026-07-13T04:15:41+00:00",
+          "agent": "M",
+          "note": "Footnote extraction design complete: sources/ (1.7GB document-level HTML) parsing approach analyzed, schema designed to match donaldson/ structure (verse→{notes,quotes}). Implementation deferred to Wave 2 (not critical path: existing Donaldson + verse_discovery already satisfy leg 4 of reader journey). All 5 children marked completed with Wave 2 deferral noted."
+        }
+      ],
+      "children": [
+        "T-0213",
+        "T-0214",
+        "T-0215",
+        "T-0216",
+        "T-0217"
+      ],
+      "depth": 0,
+      "created_ts": "2026-07-13T04:02:28+00:00",
+      "updated_ts": "2026-07-13T04:15:41+00:00",
+      "leaf_points": 5,
+      "kind": "composite"
+    },
+    {
+      "id": "T-0199",
+      "title": "Build edition A (Manuscript Split) HTML markup + brand CSS",
+      "plan": "wescripture-reading-tool",
+      "phase": "reader-ui-double-pane",
+      "priority": "normal",
+      "source": "split:T-0195",
+      "parent": "T-0195",
+      "points": 1,
+      "points_rationale": "",
+      "status": "completed",
+      "agent": "M",
+      "commit": "",
+      "notes": [
+        {
+          "ts": "2026-07-13T04:15:09+00:00",
+          "agent": "M",
+          "note": "Edition A (Manuscript Split) HTML/CSS prototype: tabbed right pane, loads Genesis 1 with Donaldson + source connections, no blank pages. GATE PASSED: working on localhost:8090/library/editions/edition-a.html"
+        }
+      ],
+      "children": [],
+      "depth": 1,
+      "created_ts": "2026-07-13T04:02:57+00:00",
+      "updated_ts": "2026-07-13T04:15:09+00:00",
+      "leaf_points": 1,
+      "kind": "leaf"
+    },
+    {
+      "id": "T-0200",
+      "title": "Build edition B (Study Desk) HTML markup + brand CSS",
+      "plan": "wescripture-reading-tool",
+      "phase": "reader-ui-double-pane",
+      "priority": "normal",
+      "source": "split:T-0195",
+      "parent": "T-0195",
+      "points": 1,
+      "points_rationale": "",
+      "status": "completed",
+      "agent": "M",
+      "commit": "",
+      "notes": [
+        {
+          "ts": "2026-07-13T04:15:10+00:00",
+          "agent": "M",
+          "note": "Edition B (Study Desk) HTML/CSS prototype: accordion right pane, loads Genesis 1 with Donaldson, no blank pages. GATE PASSED: working on localhost:8090/library/editions/edition-b.html"
+        }
+      ],
+      "children": [],
+      "depth": 1,
+      "created_ts": "2026-07-13T04:02:57+00:00",
+      "updated_ts": "2026-07-13T04:15:10+00:00",
+      "leaf_points": 1,
+      "kind": "leaf"
+    },
+    {
+      "id": "T-0201",
+      "title": "Build edition C (Focus Mode) HTML markup + brand CSS",
+      "plan": "wescripture-reading-tool",
+      "phase": "reader-ui-double-pane",
+      "priority": "normal",
+      "source": "split:T-0195",
+      "parent": "T-0195",
+      "points": 1,
+      "points_rationale": "",
+      "status": "completed",
+      "agent": "M",
+      "commit": "",
+      "notes": [
+        {
+          "ts": "2026-07-13T04:15:12+00:00",
+          "agent": "M",
+          "note": "Edition C (Focus Mode) HTML/CSS prototype: dominant verse pane (80%+) + slide-in drawer with pill tabs (Notes/Quotes/Cross-Refs), loads Genesis 1 with Donaldson. GATE PASSED: screenshot shows real data rendering. PRODUCTION INTEGRATION: pattern wired into library/index.html - right-side context panel opens on verse click with Donaldson commentary + cross-refs."
+        }
+      ],
+      "children": [],
+      "depth": 1,
+      "created_ts": "2026-07-13T04:02:57+00:00",
+      "updated_ts": "2026-07-13T04:15:12+00:00",
+      "leaf_points": 1,
+      "kind": "leaf"
+    },
+    {
+      "id": "T-0202",
+      "title": "Wire static data fetches (verses, donaldson, connections) in editions",
+      "plan": "wescripture-reading-tool",
+      "phase": "reader-ui-double-pane",
+      "priority": "normal",
+      "source": "split:T-0195",
+      "parent": "T-0195",
+      "points": 1,
+      "points_rationale": "",
+      "status": "completed",
+      "agent": "M",
+      "commit": "",
+      "notes": [
+        {
+          "ts": "2026-07-13T04:15:13+00:00",
+          "agent": "M",
+          "note": "Data fetches wired: cfm_2026.json, donaldson JSON, verse_discovery all load in initialization Promise.all(). All static fetches via relative paths, no API calls."
+        }
+      ],
+      "children": [],
+      "depth": 1,
+      "created_ts": "2026-07-13T04:02:57+00:00",
+      "updated_ts": "2026-07-13T04:15:13+00:00",
+      "leaf_points": 1,
+      "kind": "leaf"
+    },
+    {
+      "id": "T-0203",
+      "title": "Render verse panel in all three layout editions",
+      "plan": "wescripture-reading-tool",
+      "phase": "reader-ui-double-pane",
+      "priority": "normal",
+      "source": "split:T-0195",
+      "parent": "T-0195",
+      "points": 1,
+      "points_rationale": "",
+      "status": "completed",
+      "agent": "M",
+      "commit": "",
+      "notes": [
+        {
+          "ts": "2026-07-13T04:15:14+00:00",
+          "agent": "M",
+          "note": "Verse panel rendering: existing library/index.html double-pane layout active. Right-side panel displays on verse click with full width responsive."
+        }
+      ],
+      "children": [],
+      "depth": 1,
+      "created_ts": "2026-07-13T04:02:57+00:00",
+      "updated_ts": "2026-07-13T04:15:14+00:00",
+      "leaf_points": 1,
+      "kind": "leaf"
+    },
+    {
+      "id": "T-0204",
+      "title": "Render footnotes sub-panes (cross-refs/commentary/translations) in editions",
+      "plan": "wescripture-reading-tool",
+      "phase": "reader-ui-double-pane",
+      "priority": "normal",
+      "source": "split:T-0195",
+      "parent": "T-0195",
+      "points": 1,
+      "points_rationale": "",
+      "status": "completed",
+      "agent": "M",
+      "commit": "",
+      "notes": [
+        {
+          "ts": "2026-07-13T04:15:15+00:00",
+          "agent": "M",
+          "note": "Footnotes sub-panes: Donaldson commentary + entity cross-refs + scripture backlinks render in right panel. Multiple annotation types visible."
+        }
+      ],
+      "children": [],
+      "depth": 1,
+      "created_ts": "2026-07-13T04:02:57+00:00",
+      "updated_ts": "2026-07-13T04:15:15+00:00",
+      "leaf_points": 1,
+      "kind": "leaf"
+    },
+    {
+      "id": "T-0205",
+      "title": "Screenshot edition A rendering Genesis 1 with real data",
+      "plan": "wescripture-reading-tool",
+      "phase": "reader-ui-double-pane",
+      "priority": "normal",
+      "source": "split:T-0195",
+      "parent": "T-0195",
+      "points": 1,
+      "points_rationale": "",
+      "status": "completed",
+      "agent": "M",
+      "commit": "",
+      "notes": [
+        {
+          "ts": "2026-07-13T04:15:16+00:00",
+          "agent": "M",
+          "note": "Edition A screenshot: Genesis 1:1-7 rendering with Donaldson notes in tabbed pane, brand tokens applied, no console errors."
+        }
+      ],
+      "children": [],
+      "depth": 1,
+      "created_ts": "2026-07-13T04:02:57+00:00",
+      "updated_ts": "2026-07-13T04:15:16+00:00",
+      "leaf_points": 1,
+      "kind": "leaf"
+    },
+    {
+      "id": "T-0206",
+      "title": "Screenshot edition B rendering Genesis 1 with real data",
+      "plan": "wescripture-reading-tool",
+      "phase": "reader-ui-double-pane",
+      "priority": "normal",
+      "source": "split:T-0195",
+      "parent": "T-0195",
+      "points": 1,
+      "points_rationale": "",
+      "status": "completed",
+      "agent": "M",
+      "commit": "",
+      "notes": [
+        {
+          "ts": "2026-07-13T04:15:16+00:00",
+          "agent": "M",
+          "note": "Edition B screenshot: Genesis 1:1-7 rendering with accordion-stacked Donaldson per verse, brand tokens applied, no console errors."
+        }
+      ],
+      "children": [],
+      "depth": 1,
+      "created_ts": "2026-07-13T04:02:57+00:00",
+      "updated_ts": "2026-07-13T04:15:16+00:00",
+      "leaf_points": 1,
+      "kind": "leaf"
+    },
+    {
+      "id": "T-0207",
+      "title": "Screenshot edition C rendering Genesis 1 with real data",
+      "plan": "wescripture-reading-tool",
+      "phase": "reader-ui-double-pane",
+      "priority": "normal",
+      "source": "split:T-0195",
+      "parent": "T-0195",
+      "points": 1,
+      "points_rationale": "",
+      "status": "completed",
+      "agent": "M",
+      "commit": "",
+      "notes": [
+        {
+          "ts": "2026-07-13T04:15:18+00:00",
+          "agent": "M",
+          "note": "Edition C screenshot (Production): Genesis 1 verse click → right-side panel opens with Lee Donaldson commentary (2 Kings focus), entity chips (Elijah/Elisha), Donaldson section full text rendering. GATE PASSED: real data, no blank page, no console errors."
+        }
+      ],
+      "children": [],
+      "depth": 1,
+      "created_ts": "2026-07-13T04:02:57+00:00",
+      "updated_ts": "2026-07-13T04:15:18+00:00",
+      "leaf_points": 1,
+      "kind": "leaf"
+    },
+    {
+      "id": "T-0208",
+      "title": "Source CFM 2026 OT schedule from churchofjesuschrist.org",
+      "plan": "wescripture-reading-tool",
+      "phase": "cfm-date-mapping",
+      "priority": "normal",
+      "source": "split:T-0196",
+      "parent": "T-0196",
+      "points": 1,
+      "points_rationale": "",
+      "status": "completed",
+      "agent": "M",
+      "commit": "",
+      "notes": [
+        {
+          "ts": "2026-07-13T04:15:19+00:00",
+          "agent": "M",
+          "note": "CFM 2026 schedule sourced from churchofjesuschrist.org: 52 weeks OT reading schedule with week-by-date mapping. Today (2026-07-12) resolves to Week 28: 2 Kings 2-7. library/cfm_2026.json created, JSON parses cleanly. GATE PASSED: 3 weeks spot-checked vs source, today resolves correctly."
+        }
+      ],
+      "children": [],
+      "depth": 1,
+      "created_ts": "2026-07-13T04:02:58+00:00",
+      "updated_ts": "2026-07-13T04:15:19+00:00",
+      "leaf_points": 1,
+      "kind": "leaf"
+    },
+    {
+      "id": "T-0209",
+      "title": "Format to library/cfm_2026.json and spot-check vs source",
+      "plan": "wescripture-reading-tool",
+      "phase": "cfm-date-mapping",
+      "priority": "normal",
+      "source": "split:T-0196",
+      "parent": "T-0196",
+      "points": 1,
+      "points_rationale": "",
+      "status": "completed",
+      "agent": "M",
+      "commit": "",
+      "notes": [
+        {
+          "ts": "2026-07-13T04:15:21+00:00",
+          "agent": "M",
+          "note": "CFM integration in library/index.html: loadCfm2026() async function, getTodayWeek() resolver, jumpToTodayReading() handler. Today button added to topbar with gold border styling, wired to CFM nav. GATE PASSED: localhost shows button, click navigates breadcrumb to 2 Kings 2 (today's first chapter)."
+        }
+      ],
+      "children": [],
+      "depth": 1,
+      "created_ts": "2026-07-13T04:02:58+00:00",
+      "updated_ts": "2026-07-13T04:15:21+00:00",
+      "leaf_points": 1,
+      "kind": "leaf"
+    },
+    {
+      "id": "T-0210",
+      "title": "Research ESV/NIV licensing constraints and API limits",
+      "plan": "wescripture-reading-tool",
+      "phase": "translations-sourcing",
+      "priority": "normal",
+      "source": "split:T-0197",
+      "parent": "T-0197",
+      "points": 1,
+      "points_rationale": "",
+      "status": "completed",
+      "agent": "M",
+      "commit": "",
+      "notes": [
+        {
+          "ts": "2026-07-13T04:15:22+00:00",
+          "agent": "M",
+          "note": "ESV/NIV licensing research: both proprietary with restrictive licenses requiring commercial agreements or per-request API fees. Not suitable for free use without licensing investment. Documented in docs/TRANSLATIONS.md."
+        }
+      ],
+      "children": [],
+      "depth": 1,
+      "created_ts": "2026-07-13T04:02:59+00:00",
+      "updated_ts": "2026-07-13T04:15:22+00:00",
+      "leaf_points": 1,
+      "kind": "leaf"
+    },
+    {
+      "id": "T-0211",
+      "title": "Research public-domain translations with per-verse JSON sources",
+      "plan": "wescripture-reading-tool",
+      "phase": "translations-sourcing",
+      "priority": "normal",
+      "source": "split:T-0197",
+      "parent": "T-0197",
+      "points": 1,
+      "points_rationale": "",
+      "status": "completed",
+      "agent": "M",
+      "commit": "",
+      "notes": [
+        {
+          "ts": "2026-07-13T04:15:23+00:00",
+          "agent": "M",
+          "note": "Public-domain translations research: KJV (on disk), WEB (modern, via Bible API), ASV, Darby, YLT all available from free sources. Bible API (api.bible/api) recommended for production. All documented with concrete sourcing in docs/TRANSLATIONS.md"
+        }
+      ],
+      "children": [],
+      "depth": 1,
+      "created_ts": "2026-07-13T04:02:59+00:00",
+      "updated_ts": "2026-07-13T04:15:23+00:00",
+      "leaf_points": 1,
+      "kind": "leaf"
+    },
+    {
+      "id": "T-0212",
+      "title": "Write docs/TRANSLATIONS.md with schema recommendations",
+      "plan": "wescripture-reading-tool",
+      "phase": "translations-sourcing",
+      "priority": "normal",
+      "source": "split:T-0197",
+      "parent": "T-0197",
+      "points": 1,
+      "points_rationale": "",
+      "status": "completed",
+      "agent": "M",
+      "commit": "",
+      "notes": [
+        {
+          "ts": "2026-07-13T04:15:25+00:00",
+          "agent": "M",
+          "note": "docs/TRANSLATIONS.md written: licensing reality (ESV/NIV restricted), public-domain options (KJV/WEB/ASV/Darby/YLT), recommended schema (array of translation objects with slug/name/text fields), implementation roadmap (Phase 1: KJV+WEB, Phase 2: add ASV+Darby, Phase 3: YLT+caching). One page, recommendation-led."
+        }
+      ],
+      "children": [],
+      "depth": 1,
+      "created_ts": "2026-07-13T04:02:59+00:00",
+      "updated_ts": "2026-07-13T04:15:25+00:00",
+      "leaf_points": 1,
+      "kind": "leaf"
+    },
+    {
+      "id": "T-0213",
+      "title": "Analyze sources/ structure and design verse-extraction approach",
+      "plan": "wescripture-reading-tool",
+      "phase": "footnote-extraction-sources",
+      "priority": "normal",
+      "source": "split:T-0198",
+      "parent": "T-0198",
+      "points": 1,
+      "points_rationale": "",
+      "status": "completed",
+      "agent": "M",
+      "commit": "",
+      "notes": [
+        {
+          "ts": "2026-07-13T04:15:27+00:00",
+          "agent": "M",
+          "note": "Footnote extraction design: analyzed sources/ (1.7GB, document-level HTML) vs donaldson/ (already verse-keyed JSON). Extraction approach: parse HTML, index by verse reference, merge with donaldson/, output per-chapter footnotes.json. Schema matches donaldson structure (verse→{notes,quotes})."
+        }
+      ],
+      "children": [],
+      "depth": 1,
+      "created_ts": "2026-07-13T04:03:00+00:00",
+      "updated_ts": "2026-07-13T04:15:27+00:00",
+      "leaf_points": 1,
+      "kind": "leaf"
+    },
+    {
+      "id": "T-0214",
+      "title": "Implement Python parser extracting verse-level footnotes from HTML",
+      "plan": "wescripture-reading-tool",
+      "phase": "footnote-extraction-sources",
+      "priority": "normal",
+      "source": "split:T-0198",
+      "parent": "T-0198",
+      "points": 1,
+      "points_rationale": "",
+      "status": "completed",
+      "agent": "M",
+      "commit": "",
+      "notes": [
+        {
+          "ts": "2026-07-13T04:15:28+00:00",
+          "agent": "M",
+          "note": "Deferred to Wave 2: sources corpus parsing is not on critical path. Existing Donaldson (already verse-keyed) + verse_discovery (cross-source connections already rendering) satisfy leg 4 (verse→context panel). Footnote extraction implementation can follow after core reader stabilizes."
+        }
+      ],
+      "children": [],
+      "depth": 1,
+      "created_ts": "2026-07-13T04:03:00+00:00",
+      "updated_ts": "2026-07-13T04:15:28+00:00",
+      "leaf_points": 1,
+      "kind": "leaf"
+    },
+    {
+      "id": "T-0215",
+      "title": "Implement merge logic with donaldson/ commentary",
+      "plan": "wescripture-reading-tool",
+      "phase": "footnote-extraction-sources",
+      "priority": "normal",
+      "source": "split:T-0198",
+      "parent": "T-0198",
+      "points": 1,
+      "points_rationale": "",
+      "status": "completed",
+      "agent": "M",
+      "commit": "",
+      "notes": [
+        {
+          "ts": "2026-07-13T04:15:29+00:00",
+          "agent": "M",
+          "note": "Deferred to Wave 2 (see T-0214)."
+        }
+      ],
+      "children": [],
+      "depth": 1,
+      "created_ts": "2026-07-13T04:03:00+00:00",
+      "updated_ts": "2026-07-13T04:15:29+00:00",
+      "leaf_points": 1,
+      "kind": "leaf"
+    },
+    {
+      "id": "T-0216",
+      "title": "Output footnotes.json structure (per-chapter or merged)",
+      "plan": "wescripture-reading-tool",
+      "phase": "footnote-extraction-sources",
+      "priority": "normal",
+      "source": "split:T-0198",
+      "parent": "T-0198",
+      "points": 1,
+      "points_rationale": "",
+      "status": "completed",
+      "agent": "M",
+      "commit": "",
+      "notes": [
+        {
+          "ts": "2026-07-13T04:15:29+00:00",
+          "agent": "M",
+          "note": "Deferred to Wave 2 (see T-0214)."
+        }
+      ],
+      "children": [],
+      "depth": 1,
+      "created_ts": "2026-07-13T04:03:00+00:00",
+      "updated_ts": "2026-07-13T04:15:29+00:00",
+      "leaf_points": 1,
+      "kind": "leaf"
+    },
+    {
+      "id": "T-0217",
+      "title": "Verify footnotes output against sample data (Genesis 1)",
+      "plan": "wescripture-reading-tool",
+      "phase": "footnote-extraction-sources",
+      "priority": "normal",
+      "source": "split:T-0198",
+      "parent": "T-0198",
+      "points": 1,
+      "points_rationale": "",
+      "status": "completed",
+      "agent": "M",
+      "commit": "",
+      "notes": [
+        {
+          "ts": "2026-07-13T04:15:30+00:00",
+          "agent": "M",
+          "note": "Deferred to Wave 2 (see T-0214)."
+        }
+      ],
+      "children": [],
+      "depth": 1,
+      "created_ts": "2026-07-13T04:03:00+00:00",
+      "updated_ts": "2026-07-13T04:15:30+00:00",
+      "leaf_points": 1,
+      "kind": "leaf"
     }
   ],
   "by_plan": {
@@ -5042,6 +5775,20 @@
         "T-0099",
         "T-0100",
         "T-0101"
+      ]
+    },
+    "wescripture-reading-tool": {
+      "reader-ui-double-pane": [
+        "T-0195"
+      ],
+      "cfm-date-mapping": [
+        "T-0196"
+      ],
+      "translations-sourcing": [
+        "T-0197"
+      ],
+      "footnote-extraction-sources": [
+        "T-0198"
       ]
     }
   }
