@@ -5792,7 +5792,8 @@ function buildBookLedeFromExcerpt(book) {
 function extractDonaldsonVerseOneLede(dj) {
     if (!dj || !dj['1']) return null;
     var v1 = dj['1'];
-    var raw = (v1.notes && v1.notes[0] && v1.notes[0].text) || '';
+    var note0 = v1.notes && v1.notes[0];
+    var raw = (typeof note0 === 'string' ? note0 : (note0 && note0.text)) || '';
     var cite = '';
     if (!raw && v1.quotes && v1.quotes[0]) {
         raw = v1.quotes[0].text || '';
