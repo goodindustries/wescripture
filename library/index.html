@@ -1013,14 +1013,21 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 .comm-author .ent-link { color: var(--accent); cursor: pointer; text-decoration: none; }
 .comm-author .ent-link:hover { text-decoration: underline; }
 .comm-work   { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
-.comm-text   {
+.comm-text {
     font-family: 'EB Garamond', Georgia, serif;
     font-size: 16px; line-height: 1.8; color: var(--text); font-style: italic;
     padding-left: 16px; border-left: 2px solid rgba(156,122,77,0.3);
-    white-space: pre-wrap;
     overflow-wrap: anywhere;
     word-break: break-word;
     min-width: 0;
+}
+/* Paragraphs within commentary text: clear spacing for readability */
+.comm-text p {
+    margin: 0 0 12px 0;
+    line-height: 1.8;
+}
+.comm-text p:last-child {
+    margin-bottom: 0;
 }
 /* Christ connection section in entity profiles */
 .ep-christ { padding: 14px 16px 12px; border-top: 1px solid var(--divider); }
@@ -4935,7 +4942,7 @@ function finishVerseDiscoveryPanel(payload) {
             html += '<div class="comm-card">'
                 + (c.badge ? '<div class="hist-badge ' + escapeHtml(c.badgeClass || '') + '">' + escapeHtml(c.badge) + '</div>' : '')
                 + citationTrioHtml(c)
-                + '<div class="comm-text">' + escapeHtml(c.text || '') + '</div></div>';
+                + '<div class="comm-text">' + renderCommentaryParagraphs(c.text || '') + '</div></div>';
         });
         html += '</div>';
     }
@@ -4958,7 +4965,7 @@ function finishVerseDiscoveryPanel(payload) {
                 + (c.badge ? '<div class="hist-badge ' + escapeHtml(c.badgeClass || '') + '">' + escapeHtml(c.badge) + '</div>' : '')
                 + (c.reason ? '<span class="conn-reason-chip" title="Why this connection">' + escapeHtml(formatConnReason(c.reason)) + '</span>' : '')
                 + citationTrioHtml(c)
-                + '<div class="comm-text">' + escapeHtml(c.text || '') + '</div></div>';
+                + '<div class="comm-text">' + renderCommentaryParagraphs(c.text || '') + '</div></div>';
         });
         if (connList.length > connInitial) {
             var more = Math.min(5, connList.length - connInitial);
@@ -6746,6 +6753,30 @@ function highlightTerms(text, words) {
 
 function escapeHtml(str) {
     return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+/** Split commentary text into paragraphs and render as HTML <p> tags.
+ * Detects boundaries: double newlines, verse transitions, attribution tags.
+ * Each paragraph wrapped in <p>; plain text escaped. */
+function renderCommentaryParagraphs(text) {
+    if (!text) return '';
+
+    // Split by double newlines (strongest signal for paragraph breaks)
+    var parts = String(text).split(/\n\s*\n+/);
+
+    // If we only got one part or the split didn't work well, return as single <p>
+    if (parts.length <= 1) {
+        return '<p>' + escapeHtml(text) + '</p>';
+    }
+
+    // Multiple paragraphs: wrap each in <p> tags, escape content
+    return parts
+        .map(function(para) {
+            var trimmed = para.trim();
+            return trimmed ? '<p>' + escapeHtml(trimmed) + '</p>' : '';
+        })
+        .filter(Boolean)
+        .join('');
 }
 
 /** Strip interlinear [Greek: …] / [Hebrew: …] glosses from Donaldson plain text — reader wants English only. */

@@ -25,3 +25,4 @@ lds_pipeline/reports/corpus_resource_map.json
 diagnostics/*.out
 
 pipeline/build/
+.gstack/
