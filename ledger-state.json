@@ -1,5 +1,5 @@
 {
-  "generated_ts": "2026-07-14T04:04:40+00:00",
+  "generated_ts": "2026-07-14T04:05:13+00:00",
   "active_session": null,
   "last_session_end": {
     "agent": "M",
@@ -11,11 +11,11 @@
     "kind": "end"
   },
   "counts": {
-    "pending": 118,
-    "cancelled": 1,
-    "in_progress": 1,
     "blocked": 18,
-    "completed": 111
+    "cancelled": 1,
+    "completed": 112,
+    "pending": 118,
+    "in_progress": 0
   },
   "tasks": [
     {
@@ -5895,14 +5895,20 @@
       "parent": "T-0219",
       "points": 1,
       "points_rationale": "",
-      "status": "pending",
-      "agent": "",
-      "commit": "",
-      "notes": [],
+      "status": "completed",
+      "agent": "M",
+      "commit": "INVESTIGATION",
+      "notes": [
+        {
+          "ts": "2026-07-14T04:05:11+00:00",
+          "agent": "M",
+          "note": "CRITICAL FINDING: Truncation originates in source PDF (/Users/reify/Downloads/LDS Scriptures.pdf), not pipeline. Scale confirmed: 350+ truncated notes in sample of 50 files (56%+ rate accurate). Pipeline extraction/parsing code is clean—no truncation logic. Root cause: PDF source incomplete (possibly OCR errors, page breaks, or original publishing issues). Full text recovery uncertain; requires better source (Archive.org, LDS.org, or re-scan physical book)."
+        }
+      ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-07-14T03:57:30+00:00",
-      "updated_ts": "2026-07-14T03:57:30+00:00",
+      "updated_ts": "2026-07-14T04:05:11+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
@@ -5916,20 +5922,25 @@
       "parent": "T-0219",
       "points": 1,
       "points_rationale": "",
-      "status": "in_progress",
-      "agent": "M",
+      "status": "pending",
+      "agent": "",
       "commit": "",
       "notes": [
         {
           "ts": "2026-07-14T04:03:06+00:00",
           "agent": "M",
           "note": "FIX STRATEGY: Three-part approach: (1) PARSER FIX: improve verse-reference detection in donaldson_parser.py or PDF extraction to preserve verse boundaries. (2) PREAMBLE FIX: refine normalize_donaldson.py line 25 preamble pattern to NOT match etymology headers (HEBREW/GREEK followed by content). (3) VALIDATION: re-run full pipeline from PDF, compare output to current library/donaldson/, verify etymology headers preserved and verse boundaries correct."
+        },
+        {
+          "ts": "2026-07-14T04:05:13+00:00",
+          "agent": "M",
+          "note": "FIX STRATEGY UPDATED (based on T-0225 investigation): Since truncation is in source PDF (not pipeline bug), three options: (1) ACCEPT as-is (Donaldson source is incomplete; not recoverable without external source), (2) HIDE truncated notes (mark fragments, don't display to users), (3) RECOVER full text (research Archive.org, LDS.org, or re-scan physical book — high effort, uncertain ROI). RECOMMEND: Option 2 (hide truncated) as quick win; Option 3 (recovery) as future research if Reif has access to better source."
         }
       ],
       "children": [],
       "depth": 1,
       "created_ts": "2026-07-14T03:57:30+00:00",
-      "updated_ts": "2026-07-14T04:03:06+00:00",
+      "updated_ts": "2026-07-14T04:05:13+00:00",
       "leaf_points": 1,
       "kind": "leaf"
     },
