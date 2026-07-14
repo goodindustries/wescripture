@@ -4469,7 +4469,14 @@ function discParseCard(entry) {
         return { author: 'Augustine of Hippo', work: 'Anti-Pelagian Writings', badgeClass: '', badge: 'Church Fathers' };
     if ((entry.source_doc_id||'').indexOf('ante_nicene') !== -1 || lb.toLowerCase().indexOf('ante_nicene') !== -1 || lb.toLowerCase().indexOf('ante-nicene') !== -1)
         return { author: 'Ante-Nicene Fathers', work: '', badgeClass: '', badge: 'Church Fathers' };
-    if (src === 'times_and_seasons') return { author: 'Times and Seasons', work: lb.replace(/Times & Seasons:/,'').trim(), badgeClass: '', badge: 'LDS Historical' };
+    // Periodicals indexed in source_toc.json (Millennial Star, Times and
+    // Seasons, ...) already have a clean per-issue label + collection name
+    // in sourceMeta (e.g. "Millennial Star" / "April 1852") \u2014 resolveCitationTriplet
+    // overrides `work` from that below. Leaving author empty here avoids
+    // showing a second, uglier title-cased copy of the raw doc slug.
+    if (entry.source_doc_id && sourceMeta[entry.source_doc_id]) {
+        return { author: '', work: '', badgeClass: '', badge: verseDiscCollectionLabel(src) || 'LDS Historical' };
+    }
     var badge = (entry.tradition_pair || '').split('\u2192').pop().trim();
     var author = lb.replace(/^(LDS Historical|Church Fathers|Pioneer Journals):\s*/i,'')
                    .replace(/_/g,' ').replace(/\b\w/g, function(c){ return c.toUpperCase(); }).slice(0,60);
@@ -4886,6 +4893,11 @@ function finishVerseDiscoveryPanel(payload) {
         });
     });
     donaQuotes.forEach(function(q) {
+        // Cross-source quotes (extracted from the wider corpus, not Donaldson's
+        // own commentary) are already surfaced below in "Connections" with
+        // their real source name and a link back to the source. Showing them
+        // again here under a hardcoded "Donaldson" badge misattributed them.
+        if (q.type === 'cross_source') return;
         donaldsonCards.push({
             author: q.speaker || q.attr || '',
             work: [q.source, q.date, q.ref].filter(Boolean).join(' · '),

@@ -1,41 +1,27 @@
 {
   "1": {
-    "words": [
-      {
-        "word": "Was",
-        "greek": "en",
-        "meaning": "Three times in this sentence John uses this imperfect of eimi to be which conveys no idea of origin for God or for the Logos, simply continuous existence. Quite a different verb (ginomai, became) appears in verse #Joh 1:14 for the beginning of the Incarnation of the Logos. See the distinction sharply drawn in #Joh 8:58 \"before Abraham came (ginomai) I am\" (eimi, timeless existence). (Robertson's NT Word Pictures)",
-        "plain": "'Was' [Greek: en, from the verb eimi meaning 'to be'] appears three times in this opening sentence. This form of the verb conveys no idea of origin — simply continuous existence, with no beginning. A completely different verb [ginomai, meaning 'became' or 'came into being'] appears in verse 14 to mark the moment the Word entered the world as flesh. The contrast is sharpest in John 8:58: 'Before Abraham came into being [ginomai] — I am [eimi, timeless].'"
-      },
-      {
-        "word": "Word",
-        "greek": "logos",
-        "meaning": "Logos is from lego, old word in Homer to lay by, to collect, to put words side by side, to speak, to express an opinion. Logos is common for reason as well as speech. Heraclitus used it for the principle which controls the universe. The Stoics employed it for the soul of the world and Marcus Aurelius used logos for the generative principle in nature. The Hebrew memra was used in the Targums for the manifestation of God like the Angel of Jehovah and the Wisdom of God in #Pr 8:23. Dr. J. Rendel Harris thinks that there was a lost wisdom book that combined phrases in Proverbs and in the Wisdom of",
-        "plain": "The Word [Greek: logos, from the verb lego meaning 'to speak' or 'to put words together'] carried enormous weight in the ancient world. [For Greek philosophers] logos meant the rational principle behind the universe — Heraclitus used it for the force that controls everything, the Stoics for the soul of the world, Marcus Aurelius for the generative principle in nature. [For Jewish thinkers] the Hebrew memra described God's active presence and wisdom made visible — like the Angel of the Lord or the Wisdom of God in Proverbs 8:23. John takes both traditions and says: that force, that presence, that living reason — is a person."
-      }
-    ],
     "quotes": [
       {
-        "text": "In  the  opening  lines  of  the  Gospel  book  written  by  John \nthe  apostle,  we  read :  \"In  the  beginning  was  the  Word,  and \nthe  Word  was  with  God,  and  the  Word  was  God.  The  same \nwas  in  the  beginning  with  God.  All  things  were  made  by \nhim ;  and  without  him  was",
+        "text": "In  the  opening  lines  of  the  Gospel  book  written  by  John \nthe  apostle,  we  read :  \"In  the  beginning  was  the  Word,  and \nthe  Word  was  with  God,  and  the  Word  was  God.  The  same \nwas  in  the  beginning  with  God.  All  things  were  made  by \nhim ;  and  without  him  was  not  anything  made  that  was \nmade.  .  .  .  And  the  Word  was  made  flesh,  and  dwelt\u2026",
         "speaker": "",
         "source": "LDS Historical",
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "LDS Historical (gutenberg_lds:jesus_the_christ_a_study_of_the_messiah_and_his_mission_according_to_holy_scriptures_both_ancient_and_modern)"
+        "attr": "LDS Historical \u2014 Jesus The Christ A Study Of The Messiah And His Mission According To Holy Scriptures Both Ancient And Modern"
       }
     ]
   },
   "3": {
     "quotes": [
       {
-        "text": "In  the  opening  lines  of  the  Gospel  book  written  by  John \nthe  apostle,  we  read :  \"In  the  beginning  was  the  Word,  and \nthe  Word  was  with  God,  and  the  Word  was  God.  The  same \nwas  in  the  beginning  with  God.  All  things  were  made  by \nhim ;  and  without  him  was",
+        "text": "In  the  opening  lines  of  the  Gospel  book  written  by  John \nthe  apostle,  we  read :  \"In  the  beginning  was  the  Word,  and \nthe  Word  was  with  God,  and  the  Word  was  God.  The  same \nwas  in  the  beginning  with  God.  All  things  were  made  by \nhim ;  and  without  him  was  not  anything  made  that  was \nmade.  .  .  .  And  the  Word  was  made  flesh,  and  dwelt\u2026",
         "speaker": "",
         "source": "LDS Historical",
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "LDS Historical (gutenberg_lds:jesus_the_christ_a_study_of_the_messiah_and_his_mission_according_to_holy_scriptures_both_ancient_and_modern)"
+        "attr": "LDS Historical \u2014 Jesus The Christ A Study Of The Messiah And His Mission According To Holy Scriptures Both Ancient And Modern"
       },
       {
         "text": "Q. Was it by the Father and the Son that all things were created and made, that were created and made ?",
@@ -44,7 +30,7 @@
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "Millennial Star (millennial_star:millennial_star_1840_1859_1852_december_vol_14_no_44)"
+        "attr": "Millennial Star, December 1852 (Vol. 14, No. 44)"
       }
     ]
   },
@@ -57,7 +43,7 @@
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "Millennial Star (millennial_star:millennial_star_1840_1859_1852_december_vol_14_no_44)"
+        "attr": "Millennial Star, December 1852 (Vol. 14, No. 44)"
       }
     ]
   },
@@ -70,7 +56,7 @@
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "HoC (history_of_church:vol1)"
+        "attr": "HoC, Vol. 1"
       }
     ]
   },
@@ -83,7 +69,7 @@
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "Millennial Star (millennial_star:millennial_star_1840_1859_1852_december_vol_14_no_44)"
+        "attr": "Millennial Star, December 1852 (Vol. 14, No. 44)"
       }
     ]
   },
@@ -96,7 +82,7 @@
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "LDS Historical (gutenberg_lds:lucy_mack_smith)"
+        "attr": "LDS Historical \u2014 Lucy Mack Smith"
       },
       {
         "text": "The lights were immediately extinguished, yet he continued to harangue them boisterously, until he discovered that his audience bad left him. They seemed to believe what he said, and fled in every direction, leaving us again to ourselves.",
@@ -105,20 +91,20 @@
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "Pioneer Journals (pioneer_journals:lucy_mack_smith_history)"
+        "attr": "Pioneer Journals \u2014 Lucy Mack Smith History"
       }
     ]
   },
   "9": {
     "quotes": [
       {
-        "text": "be in the world, and the world knew him not: — he might c me to his own, and his own receive him not, hut nevertheless he was the true light that ’ightelh every man that cometh into the world, ; • i* is written by the prophet of the Lord, “the light of truth ; which truth shireth. This is the light",
+        "text": "be in the world, and the world knew him not: \u2014 he might c me to his own, and his own receive him not, hut nevertheless he was the true light that \u2019ightelh every man that cometh into the world, ; \u2022 i* is written by the prophet of the Lord, \u201cthe light of truth ; which truth shireth. This is the light of Christ. As also he is the sun. and the power thereof by which it was made. As also he is in the\u2026",
         "speaker": "",
         "source": "Times & Seasons",
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "Times & Seasons (times_and_seasons:times_and_seasons_1839_1846_1841_march_vol_02_no_09)"
+        "attr": "Times & Seasons, March 1841 (Vol. 2, No. 9)"
       },
       {
         "text": "2. The light and the life of the world; a light which shineth in\n    darkness and the darkness comprehendeth it not;",
@@ -127,7 +113,7 @@
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "HoC (history_of_church:vol1)"
+        "attr": "HoC, Vol. 1"
       }
     ]
   },
@@ -140,7 +126,7 @@
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "Millennial Star (millennial_star:millennial_star_1840_1859_1852_december_vol_14_no_44)"
+        "attr": "Millennial Star, December 1852 (Vol. 14, No. 44)"
       }
     ]
   },
@@ -153,7 +139,7 @@
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "Millennial Star (millennial_star:millennial_star_1840_1859_1852_december_vol_14_no_44)"
+        "attr": "Millennial Star, December 1852 (Vol. 14, No. 44)"
       }
     ]
   },
@@ -166,16 +152,16 @@
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "Millennial Star (millennial_star:millennial_star_1840_1859_1852_december_vol_14_no_44)"
+        "attr": "Millennial Star, December 1852 (Vol. 14, No. 44)"
       },
       {
-        "text": "that men are not born in the body of this death, that so they may be able \nto affirm that they have no need of God's grace through Jesus Christ in \norder to be delivered from the body of this death. Therefore he adds, a few \nverses afterwards: \"For what the law could not do, in that it was weak \nthr",
+        "text": "that men are not born in the body of this death, that so they may be able \nto affirm that they have no need of God's grace through Jesus Christ in \norder to be delivered from the body of this death. Therefore he adds, a few \nverses afterwards: \"For what the law could not do, in that it was weak \nthrough the flesh, God, sending His own Son in the likeness of sinful flesh, \nand for sin, condemned\u2026",
         "speaker": "",
         "source": "Church Fathers",
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "Church Fathers (church_fathers:the_anti_pelagian_writings_volume_6_first_series_of_the_nicene_and_post_nicene_fathers)"
+        "attr": "Church Fathers \u2014 The Anti Pelagian Writings Volume 6 First Series Of The Nicene And Post Nicene Fathers"
       }
     ]
   },
@@ -188,29 +174,29 @@
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "Millennial Star (millennial_star:millennial_star_1840_1859_1852_december_vol_14_no_44)"
+        "attr": "Millennial Star, December 1852 (Vol. 14, No. 44)"
       },
       {
-        "text": "In  the  opening  lines  of  the  Gospel  book  written  by  John \nthe  apostle,  we  read :  \"In  the  beginning  was  the  Word,  and \nthe  Word  was  with  God,  and  the  Word  was  God.  The  same \nwas  in  the  beginning  with  God.  All  things  were  made  by \nhim ;  and  without  him  was",
+        "text": "In  the  opening  lines  of  the  Gospel  book  written  by  John \nthe  apostle,  we  read :  \"In  the  beginning  was  the  Word,  and \nthe  Word  was  with  God,  and  the  Word  was  God.  The  same \nwas  in  the  beginning  with  God.  All  things  were  made  by \nhim ;  and  without  him  was  not  anything  made  that  was \nmade.  .  .  .  And  the  Word  was  made  flesh,  and  dwelt\u2026",
         "speaker": "",
         "source": "LDS Historical",
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "LDS Historical (gutenberg_lds:jesus_the_christ_a_study_of_the_messiah_and_his_mission_according_to_holy_scriptures_both_ancient_and_modern)"
+        "attr": "LDS Historical \u2014 Jesus The Christ A Study Of The Messiah And His Mission According To Holy Scriptures Both Ancient And Modern"
       }
     ]
   },
   "17": {
     "quotes": [
       {
-        "text": "The Gospel was among the children of men from the days of Adam until\nthe coming of the Messiah; this Gospel {160} of Christ is from\nthe beginning to the end. Then why was the law of Moses given? In\nconsequence of the disobedience of the Children of Israel, the elect\nof God; the very seed that he had",
+        "text": "The Gospel was among the children of men from the days of Adam until\nthe coming of the Messiah; this Gospel {160} of Christ is from\nthe beginning to the end. Then why was the law of Moses given? In\nconsequence of the disobedience of the Children of Israel, the elect\nof God; the very seed that he had selected to be his people, and upon\nwhom he said he would place his name. This seed of Abraham so\u2026",
         "speaker": "",
         "source": "LDS Historical",
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "LDS Historical (gutenberg_lds:brigham_young_discourses)"
+        "attr": "LDS Historical \u2014 Brigham Young Discourses"
       }
     ]
   },
@@ -223,20 +209,20 @@
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "Millennial Star (millennial_star:millennial_star_1840_1859_1852_december_vol_14_no_44)"
+        "attr": "Millennial Star, December 1852 (Vol. 14, No. 44)"
       }
     ]
   },
   "19": {
     "quotes": [
       {
-        "text": "His Final Hours By Elder Howard W. Hunter Of the Council of the Twelve A few years less than 2,000 years ago this very day, the initial events of the most important week in human history began to unfold outside of Jerusalem near the little village of Bethany. Jesus of Nazareth, with scarcely a three",
+        "text": "His Final Hours By Elder Howard W. Hunter Of the Council of the Twelve A few years less than 2,000 years ago this very day, the initial events of the most important week in human history began to unfold outside of Jerusalem near the little village of Bethany. Jesus of Nazareth, with scarcely a three-year ministry among his countrymen, left the home of his friends Mary, Martha, and Lazarus and\u2026",
         "speaker": "",
-        "source": "GC 1974/04 — Elder Howard W. Hunter",
+        "source": "GC 1974/04 \u2014 Elder Howard W. Hunter",
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "GC 1974/04 — Elder Howard W. Hunter (general_conference:general_conference_1974_04_his_final_hours)"
+        "attr": "GC 1974/04 \u2014 Elder Howard W. Hunter \u2014 1974 04 His Final Hours"
       },
       {
         "text": "Q. Was it by the Father and the Son that all things were created and made, that were created and made ?",
@@ -245,16 +231,16 @@
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "Millennial Star (millennial_star:millennial_star_1840_1859_1852_december_vol_14_no_44)"
+        "attr": "Millennial Star, December 1852 (Vol. 14, No. 44)"
       },
       {
-        "text": "In  the  opening  lines  of  the  Gospel  book  written  by  John \nthe  apostle,  we  read :  \"In  the  beginning  was  the  Word,  and \nthe  Word  was  with  God,  and  the  Word  was  God.  The  same \nwas  in  the  beginning  with  God.  All  things  were  made  by \nhim ;  and  without  him  was",
+        "text": "In  the  opening  lines  of  the  Gospel  book  written  by  John \nthe  apostle,  we  read :  \"In  the  beginning  was  the  Word,  and \nthe  Word  was  with  God,  and  the  Word  was  God.  The  same \nwas  in  the  beginning  with  God.  All  things  were  made  by \nhim ;  and  without  him  was  not  anything  made  that  was \nmade.  .  .  .  And  the  Word  was  made  flesh,  and  dwelt\u2026",
         "speaker": "",
         "source": "LDS Historical",
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "LDS Historical (gutenberg_lds:jesus_the_christ_a_study_of_the_messiah_and_his_mission_according_to_holy_scriptures_both_ancient_and_modern)"
+        "attr": "LDS Historical \u2014 Jesus The Christ A Study Of The Messiah And His Mission According To Holy Scriptures Both Ancient And Modern"
       }
     ]
   },
@@ -267,7 +253,7 @@
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "Millennial Star (millennial_star:millennial_star_1840_1859_1852_december_vol_14_no_44)"
+        "attr": "Millennial Star, December 1852 (Vol. 14, No. 44)"
       }
     ]
   },
@@ -280,7 +266,7 @@
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "Millennial Star (millennial_star:millennial_star_1840_1859_1852_december_vol_14_no_44)"
+        "attr": "Millennial Star, December 1852 (Vol. 14, No. 44)"
       }
     ]
   },
@@ -293,7 +279,7 @@
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "Millennial Star (millennial_star:millennial_star_1840_1859_1852_december_vol_14_no_44)"
+        "attr": "Millennial Star, December 1852 (Vol. 14, No. 44)"
       }
     ]
   },
@@ -306,38 +292,38 @@
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "Millennial Star (millennial_star:millennial_star_1840_1859_1852_december_vol_14_no_44)"
+        "attr": "Millennial Star, December 1852 (Vol. 14, No. 44)"
       },
       {
-        "text": "In  the  opening  lines  of  the  Gospel  book  written  by  John \nthe  apostle,  we  read :  \"In  the  beginning  was  the  Word,  and \nthe  Word  was  with  God,  and  the  Word  was  God.  The  same \nwas  in  the  beginning  with  God.  All  things  were  made  by \nhim ;  and  without  him  was",
+        "text": "In  the  opening  lines  of  the  Gospel  book  written  by  John \nthe  apostle,  we  read :  \"In  the  beginning  was  the  Word,  and \nthe  Word  was  with  God,  and  the  Word  was  God.  The  same \nwas  in  the  beginning  with  God.  All  things  were  made  by \nhim ;  and  without  him  was  not  anything  made  that  was \nmade.  .  .  .  And  the  Word  was  made  flesh,  and  dwelt\u2026",
         "speaker": "",
         "source": "LDS Historical",
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "LDS Historical (gutenberg_lds:jesus_the_christ_a_study_of_the_messiah_and_his_mission_according_to_holy_scriptures_both_ancient_and_modern)"
+        "attr": "LDS Historical \u2014 Jesus The Christ A Study Of The Messiah And His Mission According To Holy Scriptures Both Ancient And Modern"
       },
       {
-        "text": "be in the world, and the world knew him not: — he might c me to his own, and his own receive him not, hut nevertheless he was the true light that ’ightelh every man that cometh into the world, ; • i* is written by the prophet of the Lord, “the light of truth ; which truth shireth. This is the light",
+        "text": "be in the world, and the world knew him not: \u2014 he might c me to his own, and his own receive him not, hut nevertheless he was the true light that \u2019ightelh every man that cometh into the world, ; \u2022 i* is written by the prophet of the Lord, \u201cthe light of truth ; which truth shireth. This is the light of Christ. As also he is the sun. and the power thereof by which it was made. As also he is in the\u2026",
         "speaker": "",
         "source": "Times & Seasons",
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "Times & Seasons (times_and_seasons:times_and_seasons_1839_1846_1841_march_vol_02_no_09)"
+        "attr": "Times & Seasons, March 1841 (Vol. 2, No. 9)"
       }
     ]
   },
   "27": {
     "quotes": [
       {
-        "text": "In  the  opening  lines  of  the  Gospel  book  written  by  John \nthe  apostle,  we  read :  \"In  the  beginning  was  the  Word,  and \nthe  Word  was  with  God,  and  the  Word  was  God.  The  same \nwas  in  the  beginning  with  God.  All  things  were  made  by \nhim ;  and  without  him  was",
+        "text": "In  the  opening  lines  of  the  Gospel  book  written  by  John \nthe  apostle,  we  read :  \"In  the  beginning  was  the  Word,  and \nthe  Word  was  with  God,  and  the  Word  was  God.  The  same \nwas  in  the  beginning  with  God.  All  things  were  made  by \nhim ;  and  without  him  was  not  anything  made  that  was \nmade.  .  .  .  And  the  Word  was  made  flesh,  and  dwelt\u2026",
         "speaker": "",
         "source": "LDS Historical",
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "LDS Historical (gutenberg_lds:jesus_the_christ_a_study_of_the_messiah_and_his_mission_according_to_holy_scriptures_both_ancient_and_modern)"
+        "attr": "LDS Historical \u2014 Jesus The Christ A Study Of The Messiah And His Mission According To Holy Scriptures Both Ancient And Modern"
       }
     ]
   },
@@ -350,16 +336,16 @@
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "Millennial Star (millennial_star:millennial_star_1840_1859_1852_december_vol_14_no_44)"
+        "attr": "Millennial Star, December 1852 (Vol. 14, No. 44)"
       },
       {
-        "text": "In  the  opening  lines  of  the  Gospel  book  written  by  John \nthe  apostle,  we  read :  \"In  the  beginning  was  the  Word,  and \nthe  Word  was  with  God,  and  the  Word  was  God.  The  same \nwas  in  the  beginning  with  God.  All  things  were  made  by \nhim ;  and  without  him  was",
+        "text": "In  the  opening  lines  of  the  Gospel  book  written  by  John \nthe  apostle,  we  read :  \"In  the  beginning  was  the  Word,  and \nthe  Word  was  with  God,  and  the  Word  was  God.  The  same \nwas  in  the  beginning  with  God.  All  things  were  made  by \nhim ;  and  without  him  was  not  anything  made  that  was \nmade.  .  .  .  And  the  Word  was  made  flesh,  and  dwelt\u2026",
         "speaker": "",
         "source": "LDS Historical",
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "LDS Historical (gutenberg_lds:jesus_the_christ_a_study_of_the_messiah_and_his_mission_according_to_holy_scriptures_both_ancient_and_modern)"
+        "attr": "LDS Historical \u2014 Jesus The Christ A Study Of The Messiah And His Mission According To Holy Scriptures Both Ancient And Modern"
       }
     ]
   },
@@ -372,137 +358,137 @@
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "Millennial Star (millennial_star:millennial_star_1840_1859_1852_december_vol_14_no_44)"
+        "attr": "Millennial Star, December 1852 (Vol. 14, No. 44)"
       }
     ]
   },
   "35": {
     "quotes": [
       {
-        "text": "In  the  opening  lines  of  the  Gospel  book  written  by  John \nthe  apostle,  we  read :  \"In  the  beginning  was  the  Word,  and \nthe  Word  was  with  God,  and  the  Word  was  God.  The  same \nwas  in  the  beginning  with  God.  All  things  were  made  by \nhim ;  and  without  him  was",
+        "text": "In  the  opening  lines  of  the  Gospel  book  written  by  John \nthe  apostle,  we  read :  \"In  the  beginning  was  the  Word,  and \nthe  Word  was  with  God,  and  the  Word  was  God.  The  same \nwas  in  the  beginning  with  God.  All  things  were  made  by \nhim ;  and  without  him  was  not  anything  made  that  was \nmade.  .  .  .  And  the  Word  was  made  flesh,  and  dwelt\u2026",
         "speaker": "",
         "source": "LDS Historical",
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "LDS Historical (gutenberg_lds:jesus_the_christ_a_study_of_the_messiah_and_his_mission_according_to_holy_scriptures_both_ancient_and_modern)"
+        "attr": "LDS Historical \u2014 Jesus The Christ A Study Of The Messiah And His Mission According To Holy Scriptures Both Ancient And Modern"
       }
     ]
   },
   "40": {
     "quotes": [
       {
-        "text": "In  the  opening  lines  of  the  Gospel  book  written  by  John \nthe  apostle,  we  read :  \"In  the  beginning  was  the  Word,  and \nthe  Word  was  with  God,  and  the  Word  was  God.  The  same \nwas  in  the  beginning  with  God.  All  things  were  made  by \nhim ;  and  without  him  was",
+        "text": "In  the  opening  lines  of  the  Gospel  book  written  by  John \nthe  apostle,  we  read :  \"In  the  beginning  was  the  Word,  and \nthe  Word  was  with  God,  and  the  Word  was  God.  The  same \nwas  in  the  beginning  with  God.  All  things  were  made  by \nhim ;  and  without  him  was  not  anything  made  that  was \nmade.  .  .  .  And  the  Word  was  made  flesh,  and  dwelt\u2026",
         "speaker": "",
         "source": "LDS Historical",
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "LDS Historical (gutenberg_lds:jesus_the_christ_a_study_of_the_messiah_and_his_mission_according_to_holy_scriptures_both_ancient_and_modern)"
+        "attr": "LDS Historical \u2014 Jesus The Christ A Study Of The Messiah And His Mission According To Holy Scriptures Both Ancient And Modern"
       }
     ]
   },
   "41": {
     "quotes": [
       {
-        "text": "and his brother John, at the time he healed the lame man at the beautiful gate of the Temple, and told them concerning Jesus, whom they had crucified, and whom the Father had raised from the dead, of which they were his witnesses, told them that this same Jesus had been taken up into heaven, and wou",
+        "text": "and his brother John, at the time he healed the lame man at the beautiful gate of the Temple, and told them concerning Jesus, whom they had crucified, and whom the Father had raised from the dead, of which they were his witnesses, told them that this same Jesus had been taken up into heaven, and would remain at the right hand of God until the time of the restitution of all things spoken of by all\u2026",
         "speaker": "",
         "source": "JD Vol 16",
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "JD Vol 16 (journal_of_discourses:vol_16)"
+        "attr": "JD Vol 16, Vol. 16"
       }
     ]
   },
   "42": {
     "quotes": [
       {
-        "text": "5 [x Kings vi. 7; 1 Pet. ii. 4-8. The apostle interprets his own \nname, — shows Christ to be the Rock, himself a steve laid upon the \nfoundation, by which also all believers are made lively stones, like the \noriginal Cephas.] p",
+        "text": "5 [x Kings vi. 7; 1 Pet. ii. 4-8. The apostle interprets his own \nname, \u2014 shows Christ to be the Rock, himself a steve laid upon the \nfoundation, by which also all believers are made lively stones, like the \noriginal Cephas.] p",
         "speaker": "",
         "source": "Church Fathers",
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "Church Fathers (church_fathers:the_ante_nicene_fathers_translations_of_the_writings_of_the_fathers_down_to_a_d_325)"
+        "attr": "Church Fathers \u2014 The Ante Nicene Fathers Translations Of The Writings Of The Fathers Down To A D 325"
       }
     ]
   },
   "43": {
     "quotes": [
       {
-        "text": "In  the  opening  lines  of  the  Gospel  book  written  by  John \nthe  apostle,  we  read :  \"In  the  beginning  was  the  Word,  and \nthe  Word  was  with  God,  and  the  Word  was  God.  The  same \nwas  in  the  beginning  with  God.  All  things  were  made  by \nhim ;  and  without  him  was",
+        "text": "In  the  opening  lines  of  the  Gospel  book  written  by  John \nthe  apostle,  we  read :  \"In  the  beginning  was  the  Word,  and \nthe  Word  was  with  God,  and  the  Word  was  God.  The  same \nwas  in  the  beginning  with  God.  All  things  were  made  by \nhim ;  and  without  him  was  not  anything  made  that  was \nmade.  .  .  .  And  the  Word  was  made  flesh,  and  dwelt\u2026",
         "speaker": "",
         "source": "LDS Historical",
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "LDS Historical (gutenberg_lds:jesus_the_christ_a_study_of_the_messiah_and_his_mission_according_to_holy_scriptures_both_ancient_and_modern)"
+        "attr": "LDS Historical \u2014 Jesus The Christ A Study Of The Messiah And His Mission According To Holy Scriptures Both Ancient And Modern"
       }
     ]
   },
   "45": {
     "quotes": [
       {
-        "text": "In  the  opening  lines  of  the  Gospel  book  written  by  John \nthe  apostle,  we  read :  \"In  the  beginning  was  the  Word,  and \nthe  Word  was  with  God,  and  the  Word  was  God.  The  same \nwas  in  the  beginning  with  God.  All  things  were  made  by \nhim ;  and  without  him  was",
+        "text": "In  the  opening  lines  of  the  Gospel  book  written  by  John \nthe  apostle,  we  read :  \"In  the  beginning  was  the  Word,  and \nthe  Word  was  with  God,  and  the  Word  was  God.  The  same \nwas  in  the  beginning  with  God.  All  things  were  made  by \nhim ;  and  without  him  was  not  anything  made  that  was \nmade.  .  .  .  And  the  Word  was  made  flesh,  and  dwelt\u2026",
         "speaker": "",
         "source": "LDS Historical",
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "LDS Historical (gutenberg_lds:jesus_the_christ_a_study_of_the_messiah_and_his_mission_according_to_holy_scriptures_both_ancient_and_modern)"
+        "attr": "LDS Historical \u2014 Jesus The Christ A Study Of The Messiah And His Mission According To Holy Scriptures Both Ancient And Modern"
       }
     ]
   },
   "46": {
     "quotes": [
       {
-        "text": "In  the  opening  lines  of  the  Gospel  book  written  by  John \nthe  apostle,  we  read :  \"In  the  beginning  was  the  Word,  and \nthe  Word  was  with  God,  and  the  Word  was  God.  The  same \nwas  in  the  beginning  with  God.  All  things  were  made  by \nhim ;  and  without  him  was",
+        "text": "In  the  opening  lines  of  the  Gospel  book  written  by  John \nthe  apostle,  we  read :  \"In  the  beginning  was  the  Word,  and \nthe  Word  was  with  God,  and  the  Word  was  God.  The  same \nwas  in  the  beginning  with  God.  All  things  were  made  by \nhim ;  and  without  him  was  not  anything  made  that  was \nmade.  .  .  .  And  the  Word  was  made  flesh,  and  dwelt\u2026",
         "speaker": "",
         "source": "LDS Historical",
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "LDS Historical (gutenberg_lds:jesus_the_christ_a_study_of_the_messiah_and_his_mission_according_to_holy_scriptures_both_ancient_and_modern)"
+        "attr": "LDS Historical \u2014 Jesus The Christ A Study Of The Messiah And His Mission According To Holy Scriptures Both Ancient And Modern"
       }
     ]
   },
   "47": {
     "quotes": [
       {
-        "text": "In  the  opening  lines  of  the  Gospel  book  written  by  John \nthe  apostle,  we  read :  \"In  the  beginning  was  the  Word,  and \nthe  Word  was  with  God,  and  the  Word  was  God.  The  same \nwas  in  the  beginning  with  God.  All  things  were  made  by \nhim ;  and  without  him  was",
+        "text": "In  the  opening  lines  of  the  Gospel  book  written  by  John \nthe  apostle,  we  read :  \"In  the  beginning  was  the  Word,  and \nthe  Word  was  with  God,  and  the  Word  was  God.  The  same \nwas  in  the  beginning  with  God.  All  things  were  made  by \nhim ;  and  without  him  was  not  anything  made  that  was \nmade.  .  .  .  And  the  Word  was  made  flesh,  and  dwelt\u2026",
         "speaker": "",
         "source": "LDS Historical",
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "LDS Historical (gutenberg_lds:jesus_the_christ_a_study_of_the_messiah_and_his_mission_according_to_holy_scriptures_both_ancient_and_modern)"
+        "attr": "LDS Historical \u2014 Jesus The Christ A Study Of The Messiah And His Mission According To Holy Scriptures Both Ancient And Modern"
       }
     ]
   },
   "48": {
     "quotes": [
       {
-        "text": "In  the  opening  lines  of  the  Gospel  book  written  by  John \nthe  apostle,  we  read :  \"In  the  beginning  was  the  Word,  and \nthe  Word  was  with  God,  and  the  Word  was  God.  The  same \nwas  in  the  beginning  with  God.  All  things  were  made  by \nhim ;  and  without  him  was",
+        "text": "In  the  opening  lines  of  the  Gospel  book  written  by  John \nthe  apostle,  we  read :  \"In  the  beginning  was  the  Word,  and \nthe  Word  was  with  God,  and  the  Word  was  God.  The  same \nwas  in  the  beginning  with  God.  All  things  were  made  by \nhim ;  and  without  him  was  not  anything  made  that  was \nmade.  .  .  .  And  the  Word  was  made  flesh,  and  dwelt\u2026",
         "speaker": "",
         "source": "LDS Historical",
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "LDS Historical (gutenberg_lds:jesus_the_christ_a_study_of_the_messiah_and_his_mission_according_to_holy_scriptures_both_ancient_and_modern)"
+        "attr": "LDS Historical \u2014 Jesus The Christ A Study Of The Messiah And His Mission According To Holy Scriptures Both Ancient And Modern"
       }
     ]
   },
   "51": {
     "quotes": [
       {
-        "text": "In  the  opening  lines  of  the  Gospel  book  written  by  John \nthe  apostle,  we  read :  \"In  the  beginning  was  the  Word,  and \nthe  Word  was  with  God,  and  the  Word  was  God.  The  same \nwas  in  the  beginning  with  God.  All  things  were  made  by \nhim ;  and  without  him  was",
+        "text": "In  the  opening  lines  of  the  Gospel  book  written  by  John \nthe  apostle,  we  read :  \"In  the  beginning  was  the  Word,  and \nthe  Word  was  with  God,  and  the  Word  was  God.  The  same \nwas  in  the  beginning  with  God.  All  things  were  made  by \nhim ;  and  without  him  was  not  anything  made  that  was \nmade.  .  .  .  And  the  Word  was  made  flesh,  and  dwelt\u2026",
         "speaker": "",
         "source": "LDS Historical",
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "LDS Historical (gutenberg_lds:jesus_the_christ_a_study_of_the_messiah_and_his_mission_according_to_holy_scriptures_both_ancient_and_modern)"
+        "attr": "LDS Historical \u2014 Jesus The Christ A Study Of The Messiah And His Mission According To Holy Scriptures Both Ancient And Modern"
       }
     ]
   }

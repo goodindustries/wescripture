@@ -57,15 +57,6 @@ def load_verse_discovery():
     return grouped
 
 
-def load_donaldson(book, chapter):
-    """Load existing donaldson/<book>_<chapter>.json if it exists."""
-    fname = f"library/donaldson/{book}_{chapter}.json"
-    if os.path.exists(fname):
-        with open(fname) as f:
-            return json.load(f)
-    return {}
-
-
 def extract_source_label_parts(source_label):
     """Parse 'Millennial Star: millennial_star_1840_1859' → source_type='Millennial Star'."""
     if ":" in source_label:
@@ -73,18 +64,52 @@ def extract_source_label_parts(source_label):
     return source_label
 
 
-def is_citation_fragment(text):
-    """Check if text is a citation fragment (orphaned tail)."""
-    if not text:
-        return False
-    # Starts with lowercase OR citation pattern
-    if text[0].islower():
-        return True
-    if re.match(r"^(or |and |see |cf\. |Bednar|Ensign|Conference Report)", text):
-        return True
-    if re.match(r"^\([A-Z][a-z]+,", text):  # (Author, ...
-        return True
-    return False
+_MONTHS = {"january", "february", "march", "april", "may", "june", "july",
+           "august", "september", "october", "november", "december"}
+
+def normalize_source_citation(source_type, doc_id):
+    """Turn an internal doc_id like
+      'millennial_star:millennial_star_1840_1859_1852_april_vol_14_no_09'
+    into a human citation like 'Millennial Star, April 1852 (Vol. 14, No. 9)'
+    instead of exposing the raw slug to readers.
+    """
+    slug = doc_id.split(":", 1)[1] if ":" in doc_id else doc_id
+
+    # Periodical pattern: ..._<year>_<month>_vol_<N>_no_<NN>
+    m = re.search(r"(\d{4})_([a-z]+)_vol_0*(\d+)_no_0*(\d+)$", slug)
+    if m and m.group(2) in _MONTHS:
+        year, month, vol, no = m.groups()
+        return f"{source_type}, {month.capitalize()} {year} (Vol. {vol}, No. {no})"
+
+    # General Conference pattern: general_conference_<year>_<month#>_<title-slug>
+    m = re.search(r"(\d{4})_(\d{1,2})_(.+)$", slug)
+    if m and source_type == "General Conference":
+        year, month_num, title_slug = m.groups()
+        try:
+            month_name = ["January", "February", "March", "April", "May", "June",
+                          "July", "August", "September", "October", "November",
+                          "December"][int(month_num) - 1]
+        except (ValueError, IndexError):
+            month_name = month_num
+        title = title_slug.replace("_", " ").strip().title()
+        return f"{source_type}, {month_name} {year} — {title}"
+
+    # Volume-only pattern: vol_13 / vol1
+    m = re.match(r"vol_?0*(\d+)$", slug)
+    if m:
+        return f"{source_type}, Vol. {m.group(1)}"
+
+    # Generic fallback: humanize the slug, dropping a leading repeat of the
+    # source name itself (e.g. "millennial_star_1840_1859..." under source
+    # "millennial_star").
+    cleaned = slug
+    src_prefix = doc_id.split(":", 1)[0] if ":" in doc_id else ""
+    if src_prefix and cleaned.startswith(src_prefix + "_"):
+        cleaned = cleaned[len(src_prefix) + 1:]
+    cleaned = cleaned.replace("_", " ").strip()
+    if not cleaned:
+        return source_type
+    return f"{source_type} — {cleaned.title()}"
 
 
 def text_similarity(a, b):
@@ -124,62 +149,21 @@ def extract_inline_citation(text):
     return text, None
 
 
-def clean_and_merge_notes(notes_list, verse_text):
+def merge_verse_footnotes(verse_num, discovery_entries, verse_text=""):
+    """Build footnote structure from newly-discovered cross_source quotes only.
+
+    The reader loads library/donaldson/ and library/footnotes/ separately and
+    concatenates their `quotes` arrays at render time (ensureDonaldsonLoaded in
+    library/index.html). Seeding this output from donaldson_data's own
+    notes/quotes used to duplicate every Donaldson quote onto itself once
+    merged client-side (fixed in 94eae596a, then reintroduced by re-running
+    this script without this note — don't seed from donaldson_data again).
     """
-    Clean note list: merge fragments, drop truncations, remove verse leaks.
-    Returns cleaned list.
-    """
-    if not notes_list:
-        return []
-
-    cleaned = []
-    for note in notes_list:
-        if not note or not isinstance(note, str):
-            continue
-
-        note = note.strip()
-        if not note:
-            continue
-
-        # Drop verse-text leaks
-        if is_verse_text_leak(note, verse_text):
-            continue
-
-        # Drop fragments <40 chars after cleaning
-        if len(note) < 40:
-            continue
-
-        # Extract inline citation if present
-        note_text, citation_src = extract_inline_citation(note)
-
-        # Merge fragments into previous note if this one starts lowercase
-        if is_citation_fragment(note_text):
-            if cleaned:
-                # Merge into previous
-                cleaned[-1] = cleaned[-1] + " " + note_text
-            continue
-
-        cleaned.append(note_text)
-
-    return cleaned
-
-
-def merge_verse_footnotes(verse_num, discovery_entries, donaldson_data, verse_text=""):
-    """Merge verse_discovery entries + donaldson into footnote structure."""
-    # Start with existing donaldson
-    verse_key = str(verse_num)
-    footnote = dict(donaldson_data.get(verse_key, {}))
-
-    # Clean existing notes
-    if "notes" in footnote:
-        footnote["notes"] = clean_and_merge_notes(footnote["notes"], verse_text)
-        if not footnote["notes"]:
-            del footnote["notes"]
+    footnote = {}
 
     # Add discovered sources as quotes
     if discovery_entries:
-        if "quotes" not in footnote:
-            footnote["quotes"] = []
+        footnote["quotes"] = []
 
         for entry in discovery_entries:
             text = entry.get("text", "").strip()
@@ -197,6 +181,7 @@ def merge_verse_footnotes(verse_num, discovery_entries, donaldson_data, verse_te
             # Extract structured citation
             text, citation_src = extract_inline_citation(text)
 
+            doc_id = entry.get("source_doc_id", "unknown")
             quote_obj = {
                 "text": text,
                 "speaker": "",  # No speaker in verse_discovery
@@ -204,7 +189,7 @@ def merge_verse_footnotes(verse_num, discovery_entries, donaldson_data, verse_te
                 "date": "",
                 "ref": "",
                 "type": "cross_source",
-                "attr": f"{source_type} ({entry.get('source_doc_id', 'unknown')})",
+                "attr": normalize_source_citation(source_type, doc_id),
             }
 
             # Add structured citation if found
@@ -257,9 +242,6 @@ def main():
     defects_dropped = 0
 
     for (book, chapter), verses in sorted(discovery.items()):
-        # Load existing donaldson
-        donaldson = load_donaldson(book, chapter)
-
         # Load chapter text for verse-leak detection
         chapter_verses = load_chapter_verses(book, chapter)
 
@@ -267,7 +249,7 @@ def main():
         merged = {}
         for verse_num, entries in sorted(verses.items()):
             verse_text = chapter_verses.get(verse_num, "")
-            footnote = merge_verse_footnotes(verse_num, entries, donaldson, verse_text)
+            footnote = merge_verse_footnotes(verse_num, entries, verse_text)
             if footnote:
                 merged[str(verse_num)] = footnote
                 total_verses += 1

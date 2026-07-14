@@ -216,7 +216,7 @@ def main():
                 "score":          score,
                 "source":         src,
                 "source_label":   pnode.get("lb", ""),
-                "source_text":    pnode.get("x", "")[:300],
+                "source_text":    pnode.get("x", ""),
                 "source_doc_id":  pnode.get("d", ""),
                 "source_para":    pnode.get("p"),
                 "tradition_pair": pair_label,

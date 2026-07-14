@@ -8,7 +8,7 @@
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "LDS Historical (gutenberg_lds:brigham_young_discourses)"
+        "attr": "LDS Historical \u2014 Brigham Young Discourses"
       }
     ]
   },
@@ -21,7 +21,7 @@
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "Times & Seasons (times_and_seasons:times_and_seasons_1839_1846_1841_june_vol_02_no_15)"
+        "attr": "Times & Seasons, June 1841 (Vol. 2, No. 15)"
       },
       {
         "text": "Ever since I knew that my mother was a woman I loved the sex, and\ndelighted in their chastity. The man who abuses, or tries to bring\ndishonor upon the female sex is a fool, and does not know that his\nmother and his sisters were women. 12:194.",
@@ -30,7 +30,7 @@
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "LDS Historical (gutenberg_lds:brigham_young_discourses)"
+        "attr": "LDS Historical \u2014 Brigham Young Discourses"
       }
     ]
   },
@@ -43,46 +43,46 @@
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "LDS Historical (gutenberg_lds:brigham_young_discourses)"
+        "attr": "LDS Historical \u2014 Brigham Young Discourses"
       }
     ]
   },
   "5": {
     "quotes": [
       {
-        "text": "\"At length between them they managed to get the body on dry land, and at\nonce set to work, after the manner of the time with which they were so\nfamiliar, to break up the body; the girl blowing her horn, and the boy\npresenting her with the head and antlers. Nor did they forget to reward\nthe faithful",
+        "text": "\"At length between them they managed to get the body on dry land, and at\nonce set to work, after the manner of the time with which they were so\nfamiliar, to break up the body; the girl blowing her horn, and the boy\npresenting her with the head and antlers. Nor did they forget to reward\nthe faithful hounds.",
         "speaker": "",
         "source": "HoC",
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "HoC (history_of_church:vol3)"
+        "attr": "HoC, Vol. 3"
       }
     ]
   },
   "7": {
     "quotes": [
       {
-        "text": "A. \"And again, the Lord said unto the woman, I will greatly multiply your sorrow and your conception. In sorrow you shall bring forth children, nnd your desire shall he to your husband, and ho shall rule over you.”",
+        "text": "A. \"And again, the Lord said unto the woman, I will greatly multiply your sorrow and your conception. In sorrow you shall bring forth children, nnd your desire shall he to your husband, and ho shall rule over you.\u201d",
         "speaker": "",
         "source": "Millennial Star",
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "Millennial Star (millennial_star:millennial_star_1840_1859_1852_april_vol_14_no_09)"
+        "attr": "Millennial Star, April 1852 (Vol. 14, No. 9)"
       }
     ]
   },
   "8": {
     "quotes": [
       {
-        "text": "washed them, put them in pans, heated her oven in which she placed them, closed the door, exclaimed, “I have firm faith, that when these stones come out of the oven they will be good bread.” After patiently waiting the proper time, she opened the oven door and looked anxiously in; “There!” she decla",
+        "text": "washed them, put them in pans, heated her oven in which she placed them, closed the door, exclaimed, \u201cI have firm faith, that when these stones come out of the oven they will be good bread.\u201d After patiently waiting the proper time, she opened the oven door and looked anxiously in; \u201cThere!\u201d she declared, they are stones yet, and I knew they would be all the time.",
         "speaker": "",
         "source": "JD Vol 9",
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "JD Vol 9 (journal_of_discourses:vol_09)"
+        "attr": "JD Vol 9, Vol. 9"
       }
     ]
   },
@@ -95,7 +95,7 @@
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "LDS Historical (gutenberg_lds:parley_pratt)"
+        "attr": "LDS Historical \u2014 Parley Pratt"
       },
       {
         "text": "for thirst. I clothe the heavens with blackness, and make sackcloth their covering. And this shall ye have of my hand, ye shall lay down in sorrow.",
@@ -104,7 +104,7 @@
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "Times & Seasons (times_and_seasons:times_and_seasons_1839_1846_1841_june_vol_02_no_15)"
+        "attr": "Times & Seasons, June 1841 (Vol. 2, No. 15)"
       }
     ]
   },
@@ -117,7 +117,7 @@
         "date": "",
         "ref": "",
         "type": "cross_source",
-        "attr": "Times & Seasons (times_and_seasons:times_and_seasons_1839_1846_1841_june_vol_02_no_15)"
+        "attr": "Times & Seasons, June 1841 (Vol. 2, No. 15)"
       }
     ]
   }
