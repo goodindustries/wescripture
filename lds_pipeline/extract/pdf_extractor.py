@@ -34,22 +34,42 @@ def extract_words_with_boxes(pdf_path: str) -> list[dict]:
     Returns a flat list of word dicts:
       { page, block, line, word_num, text, x0, y0, x1, y1 }
     Filters out page boilerplate (headers/footers).
+
+    page.get_text("words") returns individual word tokens (e.g. "12/23/2010",
+    "©", "Intellectual"), never a full line, so the boilerplate regex — which
+    matches a whole "MM/DD/YYYY © ... Page NNNN" line — must be tested against
+    each (page, block, line) group joined back into a line, not word-by-word.
     """
     doc = fitz.open(pdf_path)
     all_words = []
     for page_num, page in enumerate(doc):
         words = page.get_text("words")  # (x0, y0, x1, y1, text, block, line, word)
+
+        by_line = {}
+        order = []
         for w in words:
-            text = w[4]
-            # Skip page boilerplate lines
-            if is_page_boilerplate(text):
+            key = (w[5], w[6])  # (block, line)
+            if key not in by_line:
+                by_line[key] = []
+                order.append(key)
+            by_line[key].append(w)
+
+        boilerplate_lines = set()
+        for key, line_words in by_line.items():
+            line_text = " ".join(lw[4] for lw in line_words)
+            if is_page_boilerplate(line_text):
+                boilerplate_lines.add(key)
+
+        for w in words:
+            key = (w[5], w[6])
+            if key in boilerplate_lines:
                 continue
             all_words.append({
                 "page":     page_num,
                 "block":    w[5],
                 "line":     w[6],
                 "word_num": w[7],
-                "text":     text,
+                "text":     w[4],
                 "x0": w[0], "y0": w[1],
                 "x1": w[2], "y1": w[3],
             })
