@@ -14,24 +14,42 @@ import fitz  # PyMuPDF
 from pathlib import Path
 
 
+# ── Boilerplate detection ─────────────────────────────────────────────────────
+# Repeating page header/footer: "MM/DD/YYYY © XXXX by Intellectual Reserve, Inc. All rights reserved. Page NNNN"
+
+_PAGE_BOILERPLATE_RE = re.compile(
+    r'^\d{1,2}/\d{1,2}/\d{4}\s*©.*?Intellectual\s+Reserve.*?Page\s+\d+\s*$',
+    re.IGNORECASE | re.DOTALL
+)
+
+def is_page_boilerplate(text: str) -> bool:
+    """Check if text is the recurring page header/footer."""
+    return bool(_PAGE_BOILERPLATE_RE.match(text.strip()))
+
+
 # ── Word-box extraction ───────────────────────────────────────────────────────
 
 def extract_words_with_boxes(pdf_path: str) -> list[dict]:
     """
     Returns a flat list of word dicts:
       { page, block, line, word_num, text, x0, y0, x1, y1 }
+    Filters out page boilerplate (headers/footers).
     """
     doc = fitz.open(pdf_path)
     all_words = []
     for page_num, page in enumerate(doc):
         words = page.get_text("words")  # (x0, y0, x1, y1, text, block, line, word)
         for w in words:
+            text = w[4]
+            # Skip page boilerplate lines
+            if is_page_boilerplate(text):
+                continue
             all_words.append({
                 "page":     page_num,
                 "block":    w[5],
                 "line":     w[6],
                 "word_num": w[7],
-                "text":     w[4],
+                "text":     text,
                 "x0": w[0], "y0": w[1],
                 "x1": w[2], "y1": w[3],
             })
@@ -43,8 +61,9 @@ def words_to_text(words: list[dict]) -> str:
     """
     Reassemble word list into clean text.
     - Same block + line → space between words
-    - Different line → space (handle hyphenation)
-    - Different block → newline
+    - Different line (same block) → space (handle hyphenation)
+    - Different block (same page) → newline (real paragraph break)
+    - Page break → space (content continues across pages)
     """
     if not words:
         return ""
@@ -56,18 +75,16 @@ def words_to_text(words: list[dict]) -> str:
         if prev is None:
             parts.append(text)
         else:
-            same_block = (w["page"] == prev["page"] and w["block"] == prev["block"])
+            same_page  = (w["page"] == prev["page"])
+            same_block = same_page and (w["block"] == prev["block"])
             same_line  = same_block and (w["line"] == prev["line"])
 
-            if not same_block:
-                # Block break → paragraph
-                parts.append("\n\n")
-                parts.append(text)
-            elif same_line:
+            if same_line:
+                # Same line → space between words
                 parts.append(" ")
                 parts.append(text)
-            else:
-                # Line break within same block
+            elif same_block:
+                # Line break within same block → space (handle hyphenation)
                 prev_text = prev["text"]
                 if prev_text.endswith("-"):
                     # Hyphenated word — join without hyphen
@@ -76,6 +93,15 @@ def words_to_text(words: list[dict]) -> str:
                 else:
                     parts.append(" ")
                     parts.append(text)
+            elif same_page:
+                # Block break within same page → paragraph break
+                parts.append("\n\n")
+                parts.append(text)
+            else:
+                # Page break → content continues, join with space
+                # (boilerplate has been filtered out)
+                parts.append(" ")
+                parts.append(text)
         prev = w
 
     return "".join(parts)
