@@ -22,7 +22,9 @@ DONA_DIR = os.path.join(os.path.dirname(__file__), '..', 'library', 'donaldson')
 PREAMBLE_PATTERNS = [
     re.compile(r'^\s*\d[\d:,\-]+\s*[-–.]\s+[A-Z]{3}'),           # "11:1-34. CENSURE..."
     re.compile(r'^\s*(NASB|KJV|NIV|RSV|ESV|ASV|NLT|NKJV|NAS)\s*:'),  # "NASB: What! ..."
-    re.compile(r'^\s*[A-Z]{4,}(?:\s+[A-Z]{2,})*\s*:?\s*$'),      # ALL CAPS HEADER only
+    # Multi-word all-caps headers only (e.g., "CHAPTER 1 SUMMARY", "BOOK INTRODUCTION")
+    # This avoids matching single-word etymology headers like "HEBREW:" or "GREEK:"
+    re.compile(r'^\s*[A-Z]{4,}(?:\s+[A-Z]{2,}){1,}\s*:?\s*$'),  # Requires at least 2 words
 ]
 
 
