@@ -83,11 +83,6 @@
         return p ? p.replace(/\/$/, '') + '/index.html' : './index.html';
     })();
 
-    function dataFilePath(rel) {
-        var p = document.documentElement.getAttribute('data-assets-prefix');
-        return (p ? p.replace(/\/$/, '') + '/' : './') + String(rel || '').replace(/^\.\//, '');
-    }
-
     function safeGtag() {
         if (typeof window.gtag !== 'function') return;
         try { window.gtag.apply(null, arguments); } catch (e) {}
@@ -222,38 +217,20 @@
         return booksLoadPromise;
     }
 
-    function strHash(s) {
-        var h = 0;
-        var str = String(s || '');
-        for (var i = 0; i < str.length; i++) {
-            h = Math.imul(31, h) + str.charCodeAt(i) | 0;
-        }
-        return Math.abs(h);
-    }
-
+    // Each testament gets one deliberate jewel tone rather than a reused
+    // generic cover photo hue-shifted per book (the old approach made all
+    // 66 tiles read as identical near-black blocks).
     function bookCoverBackground(slug, testament) {
-        var imgs = {
-            OT: 'assets/corpus/covers/church_ot.jpg',
-            NT: 'assets/corpus/covers/church_nt.jpg',
-            BOM: 'assets/corpus/covers/church_bom.jpg',
-            DC: 'assets/corpus/covers/church_dc.jpg',
-            PGP: 'assets/corpus/covers/church_pgp.jpg'
-        };
-        var img = imgs[testament] || imgs.OT;
         var vol = {
-            OT: { h: 28, span: 12 },
-            NT: { h: 238, span: 14 },
-            BOM: { h: 206, span: 18 },
-            DC: { h: 142, span: 14 },
-            PGP: { h: 38, span: 16 }
+            OT:  { h: 222, s: 42, l: 20 },
+            NT:  { h: 350, s: 46, l: 24 },
+            BOM: { h: 160, s: 38, l: 18 },
+            DC:  { h: 28,  s: 46, l: 24 },
+            PGP: { h: 274, s: 30, l: 24 }
         };
         var v = vol[testament] || vol.OT;
-        var n = strHash(slug) % (v.span + 1);
-        var h1 = (v.h + n) % 360;
-        var h2 = (v.h + 11 + (n % 9)) % 360;
-        var grad = 'linear-gradient(152deg,hsla(' + h1 + ',38%,12%,.78) 0%,hsla(' + h2 + ',36%,6%,.85) 100%)';
-        var u = dataFilePath(img).replace(/\\/g, '/');
-        return 'background-image:' + grad + ",url('" + u + "');background-size:cover,cover;background-position:center,center;";
+        var grad = 'linear-gradient(152deg,hsl(' + v.h + ',' + v.s + '%,' + (v.l + 4) + '%) 0%,hsl(' + v.h + ',' + v.s + '%,' + Math.max(v.l - 6, 8) + '%) 100%)';
+        return 'background-image:' + grad + ';';
     }
 
     function shortCoverLabel(b) {
