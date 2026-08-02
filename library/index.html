@@ -1674,17 +1674,39 @@ async function loadCfm2026() {
 }
 
 function getTodayWeek() {
-    var today = new Date('2026-07-12'); // hardcoded for now; in prod use new Date()
+    // ISO string compare avoids timezone drift from Date parsing.
+    var todayStr = new Date().toLocaleDateString('en-CA');
     if (!CFM_2026 || !Array.isArray(CFM_2026)) return null;
     for (var i = 0; i < CFM_2026.length; i++) {
         var week = CFM_2026[i];
-        var start = new Date(week.start_date);
-        var end = new Date(week.end_date);
-        if (today >= start && today <= end) {
+        if (week.start_date <= todayStr && todayStr <= week.end_date) {
             return week;
         }
     }
     return null;
+}
+
+function cfmRefToChapterId(ref) {
+    if (!ref || !ref.book || !ref.chapter_start) return null;
+    var bookRec = findBookRecord(ref.book);
+    if (!bookRec || !bookRec.firstChapter) return null;
+    return bookRec.firstChapter.replace(/_1$/, '') + '_' + ref.chapter_start;
+}
+
+function cfmTitleToChapterId(title) {
+    // Weeks like "Esther" or "Amos; Obadiah; Jonah" ship with empty refs;
+    // derive the first book (+ optional chapter) from the week title.
+    var m = String(title || '').match(/^([1-3]?\s?[A-Za-z][A-Za-z ]*?)(?:\s+(\d+))?(?:;|–|-|$)/);
+    if (!m) return null;
+    var bookRec = findBookRecord(m[1].trim());
+    if (!bookRec || !bookRec.firstChapter) return null;
+    return bookRec.firstChapter.replace(/_1$/, '') + '_' + (m[2] ? parseInt(m[2], 10) : 1);
+}
+
+function resolveCfmJumpTarget(week) {
+    if (!week) return null;
+    var id = (week.refs && week.refs.length) ? cfmRefToChapterId(week.refs[0]) : null;
+    return id || cfmTitleToChapterId(week.title);
 }
 
 function jumpToTodayReading() {
@@ -1693,16 +1715,20 @@ function jumpToTodayReading() {
         return;
     }
     var week = getTodayWeek();
-    if (!week || !week.refs || week.refs.length === 0) {
+    var idx = week ? CFM_2026.indexOf(week) : -1;
+    var target = resolveCfmJumpTarget(week);
+    // Non-reading weeks (Christmas, Easter, Introduction) fall through to the
+    // nearest week with a resolvable reading, preferring upcoming weeks.
+    if (!target && idx !== -1) {
+        for (var step = 1; !target && step < CFM_2026.length; step++) {
+            target = resolveCfmJumpTarget(CFM_2026[idx + step]) || resolveCfmJumpTarget(CFM_2026[idx - step]);
+        }
+    }
+    if (!target) {
         console.warn('[cfm] No reading for today');
         return;
     }
-    var firstRef = week.refs[0];
-    if (!firstRef.book || !firstRef.chapter_start) return;
-    var bookRec = findBookRecord(firstRef.book);
-    if (!bookRec || !bookRec.firstChapter) return;
-    var prefix = bookRec.firstChapter.replace(/_1$/, '');
-    jumpTo(prefix + '_' + firstRef.chapter_start);
+    jumpTo(target);
 }
 
 function safeGtag() {
