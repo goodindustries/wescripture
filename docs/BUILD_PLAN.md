@@ -38,9 +38,28 @@ Reading tool first. Verse on the left; meaning one tap away on the right — cro
 - **Link record:** `{ from: "ezra/1/3", to: "isaiah/44/28", type: "xref" | "commentary" | "talk" | "word", rank: 0–100, label, source }`. Pre-sorted by rank at build time; client filters by type into panel tabs.
 - **Cross-ref source:** OpenBible.info dataset (CC-BY, 340K refs, votes as rank). Filter `rank >= 10` for default view; "show all" reveals the rest.
 
+## Status (2026-08-02, end of session)
+
+| Phase | State |
+|---|---|
+| 1 — Verse panel Edition C | **Shipped** `eae80df`, polish `17ec7a1` `d13361e` |
+| 2 — Today keeps its thread | **Shipped** `ab0adbf` |
+| 3 — CFM data regeneration | **Shipped** `e04fea8` (137 → 447 chapters) |
+| 4 — Donaldson bleed | **Shipped** `86113e3` (1,132 bad notes removed) |
+| 5 — Translations tab | **Shipped** (WEB + ASV, 1,189 chapters) |
+| 6 — Conference talks per verse | Not started — the remaining differentiator |
+| 7 — Trust & polish | Netlify 404 + feed hang done; one-home decision open |
+
+Link-shard adoption (part of Phase 3) is still open: cross-references remain in
+their existing structure. The translations shards are the first data laid out
+in the per-chapter scheme described above, and they prove the pattern.
+
+Reader suite: `./tests/reader/run.sh` — six browser tests, each written red
+first against a real defect.
+
 ## Phases (each independently shippable; order = meaning-per-click, then data, then depth)
 
-### Phase 1 — Verse panel, Edition C (IN FLIGHT)
+### Phase 1 — Verse panel, Edition C (SHIPPED)
 Goal: one tap on a verse = fastest possible meaning.
 - Pill tabs: **Refs · Commentary · Words · Translations** (entity chips stay on top).
 - Cross-references first tab, first paint.
@@ -49,26 +68,26 @@ Goal: one tap on a verse = fastest possible meaning.
 - Code: `library/index.html` ~line 4950 (renderVersePanel* / panel-section blocks).
 - Done when: screenshot shows tabs in order; tap verse → Refs visible without scrolling; Donaldson ≤ 1 paragraph until expanded.
 
-### Phase 2 — Today keeps its thread (CFM context)
+### Phase 2 — Today keeps its thread (SHIPPED)
 Goal: flagship flow never drops the user.
 - In-chapter CFM strip when arrived via Today: week title + chapter chips + prev/next walking the week's reading list (Ezra 1 → 3 → 4), not book order.
 - Reader-home Today card: "This week — <title>" + chapter chips + Continue.
 - Done when: Today → Ezra 1 → next lands Ezra 3; strip shows full week.
 
-### Phase 3 — CFM + link data regeneration
+### Phase 3 — CFM + link data regeneration (CFM SHIPPED; link shards open)
 Goal: correct data under Phase 2's UI.
 - Regenerate `library/cfm_2026.json` with **full chapter ranges** (week 31 must contain Ezra 1, 3–7, Neh 2, 4–6, 8) and fill the 7 empty-refs weeks.
 - Graceful 2027 state (or 2027 schedule if published).
 - Adopt link schema above; migrate existing cross-refs into per-chapter shards; integrate OpenBible ranks.
 - Done when: script validates every week's refs against its title; spot-check 5 weeks; panel reads from shards.
 
-### Phase 4 — Donaldson re-extraction
+### Phase 4 — Donaldson re-extraction (BLEED SHIPPED)
 Goal: commentary that reads like paragraphs, not a wall.
 - Re-run extraction emitting real `\n\n` paragraph breaks (renderCommentaryParagraphs currently no-ops).
 - Filter bled adjacent-verse text (1_chronicles_15.json class).
 - Done when: random 10-file sample shows paragraphs + no verse-text-as-note.
 
-### Phase 5 — Translations tab (phase 1 of docs/TRANSLATIONS.md)
+### Phase 5 — Translations tab (SHIPPED)
 Goal: the missing fourth pane.
 - Public-domain WEB + ASV, side-by-side in the Translations tab (KJV inline stays canonical).
 - Per-chapter shards same as links.
@@ -81,7 +100,7 @@ Goal: "What have prophets said about this verse?" — one tap.
 - This is the feature no app combines with CFM; WeScripture's moat.
 - Done when: Isaiah 1:18 shows real talk citations with speakers + dates.
 
-### Phase 7 — Trust & polish
+### Phase 7 — Trust & polish (404 + feed SHIPPED)
 - Supabase feed: honest error/empty state (no eternal "Loading…").
 - Kill `.netlify/functions/config` 404 (static fallback or guarded fetch).
 - One-home decision: root page → thin landing or redirect (open question in FLOW_REARCHITECTURE.md).
