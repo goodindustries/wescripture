@@ -1,0 +1,453 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   Edition — WeScripture reader design
+   Implements "WeScripture Directions.dc.html", direction 1a.
+
+   The page itself is the spine: a printed edition set in one measure, with
+   everything else pushed to the margins where marginalia belongs.
+
+   Loaded after the base <style> block so it governs. Rules written against
+   div.verse in the old sheet stop applying on their own — a verse is a span
+   now — so this file mostly adds rather than fights.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+:root {
+    --paper: #F6F2E9;
+    --paper-raised: #FFFDF8;
+    --ink: #1A1815;
+    --ink-soft: #2A2620;
+    --ink-2: #57534A;
+    --ink-muted: #6E685C;
+    --ink-faint: #8A8375;
+    --ink-ghost: #A8A292;
+    --rubric: #9C3A2C;
+    --others: #4E6845;
+    --others-mark: #5C7A52;
+    --verse-active: rgba(156, 58, 44, .08);
+    --rule: rgba(26, 24, 21, .11);
+    --rule-strong: rgba(26, 24, 21, .24);
+    --hl-1: #F4E7B8; --hl-2: #DCE7CB; --hl-3: #D2E1EC; --hl-4: #ECD5DA; --hl-5: #E6DCC5;
+    --serif: "Source Serif 4", Georgia, serif;
+    --sans: "Archivo", system-ui, sans-serif;
+    --measure: 700px;
+    --depth-gutter: 34px;
+    --pane: 436px;
+    --s1: 4px; --s2: 8px; --s3: 12px; --s4: 20px; --s5: 34px; --s6: 56px; --s7: 72px;
+    --ease: cubic-bezier(.2, .7, .2, 1);
+    --topbar-h: 52px;
+
+    /* The gold did three unrelated jobs — brand, link, indicator — and cleared
+       4.5:1 at none of them. Rubric red is the indicator and nothing else;
+       the old variables are remapped so untouched components come along. */
+    --bg: var(--paper);
+    --text: var(--ink);
+    --muted: var(--ink-muted);
+    --accent: var(--rubric);
+    --divider: var(--rule);
+    --reader-max: var(--measure);
+}
+
+body { background: var(--paper); color: var(--ink); font-family: var(--sans); }
+
+/* ── header ───────────────────────────────────────────────────────────── */
+#topbar {
+    background: rgba(246, 242, 233, .93);
+    -webkit-backdrop-filter: saturate(180%) blur(8px);
+    backdrop-filter: saturate(180%) blur(8px);
+    border-bottom: 1px solid var(--rule);
+}
+#topbar .logo {
+    font-family: var(--serif); font-weight: 600; font-size: 17px;
+    letter-spacing: -.01em; color: var(--ink);
+}
+/* The wordmark's rubric point is the same colour that means "there is
+   something here" everywhere else, so the mark is a promise, not a flourish. */
+#topbar .logo::after {
+    content: "."; color: var(--rubric);
+}
+#breadcrumbs, #breadcrumbs .bc-crumb {
+    font-family: var(--sans); font-size: 12.5px; color: var(--ink-muted);
+}
+#breadcrumbs .bc-crumb:hover { color: var(--rubric); }
+#breadcrumbs .bc-last { color: var(--ink-2); }
+
+/* ── the scripture column ─────────────────────────────────────────────── */
+#reader { background: var(--paper); }
+#content {
+    max-width: calc(var(--measure) + var(--depth-gutter));
+    padding: var(--s6) 0 140px;
+    padding-left: var(--depth-gutter);
+}
+.scripture { font-family: var(--serif); }
+
+/* Continuous prose in one measure — the whole point of the direction. */
+.chapter-text {
+    font: 400 19.5px/1.74 var(--serif);
+    color: var(--ink);
+    text-wrap: pretty;
+    margin: 0 0 var(--s4);
+}
+.chapter-text + .chapter-text { text-indent: 1.5em; margin-top: 0; }
+
+.scripture .verse.v {
+    display: inline; padding: 2px 0; cursor: pointer; position: relative;
+    border: 0; margin: 0;
+    -webkit-box-decoration-break: clone; box-decoration-break: clone;
+    transition: background 140ms linear;
+}
+.scripture .verse.v:hover { background: rgba(26, 24, 21, .04); }
+.scripture .verse.v.focused,
+.scripture .verse.v[aria-current="true"] { background: var(--verse-active); }
+
+/* The old layout set each verse as a two-column grid with a right-aligned
+   numeral and a block verse-text. Both inner spans have to go back to inline
+   or the "continuous prose" of this direction is just the old table again. */
+.scripture .verse.v .verse-text {
+    display: inline; font-size: inherit; line-height: inherit;
+}
+.scripture .verse.v .verse-num {
+    display: inline; text-align: left; min-width: 0; opacity: 1;
+    font-family: var(--serif); font-size: 11.5px; line-height: 1;
+    vertical-align: super; letter-spacing: .02em; color: var(--ink-ghost);
+    margin-inline: 5px 4px; padding: 1px 4px; border-radius: 2px;
+    font-weight: 400;
+}
+/* The numeral was always going to be there, so it carries the depth signal
+   for free: rubric means this verse has study material, grey means it has
+   none. A chapter reads warm or plain at a glance instead of speckled. */
+.scripture .verse.v[data-depth]:not([data-depth="0"]) .verse-num { color: var(--rubric); }
+.scripture .verse.v.focused .verse-num,
+.scripture .verse.v[aria-current="true"] .verse-num {
+    color: var(--paper-raised); background: var(--rubric);
+}
+.scripture .verse.v .verse-num::after { content: none; }
+
+/* Chapter notes are lazily injected into each verse (JST, Donaldson, semantic
+   quotes, backlinks). They were only ever displayed via div.verse.expanded,
+   which nothing sets — so they have always been hidden, and the old rules
+   stopped matching when a verse became a span. All of this material lives in
+   the study pane now, so anything in a verse that is not the numeral or the
+   text stays out of the reading column. */
+.scripture .verse.v > *:not(.verse-num):not(.verse-text) { display: none; }
+.chapter-verse-extras { display: none; }
+
+/* The spec's second depth cue — a 2px band in the 34px margin beside each
+   verse — cannot be built as specified now that verses are inline. An
+   absolutely positioned pseudo-element on an inline box anchors to the start
+   of its first line fragment, so the band lands mid-paragraph wherever a verse
+   begins mid-line, not in the margin. Putting it in the margin needs either
+   per-verse block rows (which is the table layout this direction removes) or
+   JS text measurement (which the spec rules out). The numeral carries depth on
+   its own, which was cue 1 and the stronger of the two.
+   Kept as a no-op hook so a future line-position pass can turn it back on. */
+.scripture .verse.v::before { content: none; }
+
+/* Entity links read as annotation, not hyperlink: ink-coloured so they never
+   become a second colour in the sentence. */
+.scripture .verse-text span.w[data-entity],
+.scripture .verse-text span.w[data-place],
+.scripture .verse-text span.w[data-thing],
+.scripture .verse-text span.ent-link {
+    color: inherit; text-decoration: none;
+    border-bottom: 1px dotted rgba(26, 24, 21, .34);
+    cursor: pointer;
+}
+.scripture .verse-text span.w[data-entity]:hover,
+.scripture .verse-text span.w[data-place]:hover,
+.scripture .verse-text span.w[data-thing]:hover,
+.scripture .verse-text span.ent-link:hover {
+    border-bottom-style: solid; border-bottom-color: var(--rubric); color: var(--rubric);
+}
+[data-links="minimal"] .scripture .verse-text span.w[data-entity],
+[data-links="minimal"] .scripture .verse-text span.w[data-place],
+[data-links="minimal"] .scripture .verse-text span.w[data-thing] {
+    border-bottom: none; color: #7C5A38;
+}
+[data-links="off"] .scripture .verse-text span.w[data-entity],
+[data-links="off"] .scripture .verse-text span.w[data-place],
+[data-links="off"] .scripture .verse-text span.w[data-thing] {
+    border-bottom: none; color: inherit;
+}
+
+/* Chapter opening */
+.scripture h2.book-title {
+    font: 400 32px/1.2 var(--serif); letter-spacing: .012em;
+    color: var(--ink); text-align: left; margin: 0 0 var(--s2);
+}
+.scripture .chapter-num {
+    float: left; font: 400 108px/.76 var(--serif); color: var(--rubric);
+    margin: 8px 18px 0 0;
+}
+.scripture .chapter-block { margin-bottom: var(--s7); }
+
+/* ── study pane: overlays the margin, the text never reflows ───────────── */
+#channel {
+    /* Starts below the fixed topbar (52px, z-index 200) — at top:0 the pane's
+       own header and verse reference sit underneath it. */
+    position: fixed; right: 0; top: var(--topbar-h); bottom: 0;
+    width: var(--pane); max-width: 100%;
+    background: var(--paper-raised); border-left: 1px solid var(--rule);
+    display: flex; flex-direction: column;
+    transform: translateX(16px); opacity: 0; pointer-events: none;
+    transition: transform 180ms var(--ease), opacity 180ms linear;
+    z-index: 40;
+}
+#channel.open { transform: none; opacity: 1; pointer-events: auto; }
+#ch-header {
+    font-family: var(--sans); border-bottom: 1px solid var(--rule);
+    background: var(--paper-raised);
+}
+#ch-word { font-family: var(--sans); font-size: 12px; letter-spacing: .09em; text-transform: uppercase; color: var(--ink-2); }
+#panel-body { flex: 1; overflow: auto; overscroll-behavior: contain; background: var(--paper-raised); }
+
+.panel-verse-ref { font-family: var(--sans); color: var(--rubric); }
+.panel-section, .disc-section {
+    font-family: var(--sans); color: var(--ink-muted);
+    background: none; border-bottom: 1px solid var(--rule);
+}
+
+/* Tabs: a rubric underline, not a filled pill. */
+.vp-tabs { background: var(--paper-raised); border-bottom: 1px solid var(--rule); gap: 2px; padding: 12px 22px 0; }
+.vp-tab {
+    min-height: 44px; font: 400 12px/1 var(--sans); letter-spacing: .09em;
+    text-transform: uppercase; color: var(--ink-muted);
+    background: none; border: 0; border-radius: 0; cursor: pointer;
+    padding: 0 12px 12px;
+}
+.vp-tab:hover { color: var(--ink); }
+.vp-tab--active, .vp-tab--active:hover {
+    color: var(--ink); font-weight: 500; background: none;
+    box-shadow: inset 0 -2px 0 var(--rubric);
+}
+.vp-tab-count { color: var(--ink-faint); font-size: 10.5px; }
+
+/* Study body */
+.comm-text, .comm-text p { font: 400 17px/1.68 var(--serif); color: var(--ink-soft); }
+.comm-card, .scrip-card, .word-card { border-bottom: 1px solid var(--rule); }
+.scrip-ref { font-family: var(--sans); font-size: 12px; letter-spacing: .04em; color: var(--rubric); }
+.scrip-text { font: 400 16px/1.62 var(--serif); color: var(--ink-soft); }
+.word-english { font-family: var(--serif); color: var(--ink); }
+.word-original { font-family: var(--serif); color: var(--ink-2); }
+.tr-text { font: 400 17px/1.68 var(--serif); color: var(--ink-soft); }
+.tr-label { font-family: var(--sans); color: var(--ink-muted); }
+.tr-row--base { background: rgba(156, 58, 44, .045); }
+.tr-base-tag { color: var(--rubric); }
+
+/* Commentary length ladder — an essay is a document, not a "Read more". */
+.comm-text--clamp { -webkit-line-clamp: 12; }
+.dona-more-btn { font-family: var(--sans); font-size: 12px; color: var(--rubric); }
+
+/* ── Come Follow Me strip: a running head, not a toolbar ───────────────── */
+#cfm-strip {
+    background: rgba(246, 242, 233, .96);
+    border-bottom: 1px solid var(--rule);
+}
+.cfm-strip-inner {
+    max-width: calc(var(--measure) + var(--depth-gutter));
+    padding: var(--s3) 0 var(--s3) var(--depth-gutter);
+}
+.cfm-strip-kicker {
+    font-family: var(--sans); font-size: 11px; letter-spacing: .18em;
+    text-transform: uppercase; color: var(--ink-faint);
+}
+.cfm-strip-title { font: 400 15px/1.4 var(--serif); color: var(--ink-2); }
+.cfm-strip-progress { font-family: var(--sans); font-size: 11.5px; color: var(--ink-faint); }
+.cfm-chip {
+    font-family: var(--sans); font-size: 12px; color: var(--ink-muted);
+    border: 1px solid var(--rule); border-radius: 2px; background: none;
+}
+.cfm-chip:hover { border-color: var(--rubric); color: var(--rubric); }
+.cfm-chip--active, .cfm-chip--active:hover {
+    background: none; border-color: transparent; color: var(--ink);
+    box-shadow: inset 0 -2px 0 var(--rubric); font-weight: 500;
+}
+.cfm-step {
+    font-family: var(--sans); font-size: 12px; color: var(--ink-2);
+    border: 1px solid var(--rule); border-radius: 2px; background: none;
+}
+.cfm-step:hover:not(:disabled) { border-color: var(--rubric); color: var(--rubric); }
+
+/* ── chapter seam: a named rule, not a gap ────────────────────────────── */
+.chapter-seam {
+    display: flex; align-items: center; gap: var(--s4); margin: 42px 0 var(--s5);
+    font: 400 11px/1 var(--sans); letter-spacing: .18em;
+    text-transform: uppercase; color: var(--ink-faint);
+}
+.chapter-seam::before, .chapter-seam::after {
+    content: ""; flex: 1; height: 1px; background: var(--rule-strong);
+}
+.chapter-seam .seam-mark { color: var(--rubric); }
+
+/* ── highlights: yours paints the words, theirs sits in the margin ─────── */
+mark.hl, .hl-yellow { background: var(--hl-1); color: inherit; }
+.hl-green { background: var(--hl-2); } .hl-blue { background: var(--hl-3); }
+.hl-pink { background: var(--hl-4); } .hl-sand { background: var(--hl-5); }
+
+/* ── accessibility floor ──────────────────────────────────────────────── */
+:where(a, button, .verse.v, .vp-tab, .cfm-chip, .cfm-step, .ep-chip):focus-visible {
+    outline: 2px solid var(--rubric); outline-offset: 2px; border-radius: 2px;
+}
+
+/* ── breakpoints ──────────────────────────────────────────────────────── */
+/* The pane is a fixed overlay, so from 1024 up the reader permanently reserves
+   its width. The measure then sits left of centre and stays exactly where it
+   is whether the pane is open or shut — the text must never reflow underneath
+   the reader. Below 1024 the pane overlays the text and casts a shadow. */
+@media (min-width: 1024px) {
+    #reader { padding-right: var(--pane); }
+}
+@media (max-width: 1023px) {
+    #channel { width: 420px; box-shadow: -16px 0 36px -18px rgba(0, 0, 0, .24); }
+}
+@media (max-width: 767px) {
+    #content { padding-left: 22px; padding-right: 22px; max-width: 100%; }
+    .chapter-text { font-size: 18px; line-height: 1.76; }
+    .scripture .chapter-num { font-size: 68px; margin-right: 12px; }
+    /* No room for a margin band at this width; the numeral carries depth alone. */
+    .scripture .verse.v::before { display: none; }
+    .cfm-strip-inner { padding-left: 22px; padding-right: 22px; }
+    #channel {
+        inset: auto 0 0 0; top: auto; width: auto; height: 58vh; max-height: 80vh;
+        border-left: 0; border-top: 1px solid var(--rule);
+        border-radius: 16px 16px 0 0; transform: translateY(100%); opacity: 1;
+        transition: transform 240ms var(--ease);
+    }
+    #channel.open { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        transition-duration: 1ms !important; animation-duration: 1ms !important;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Home — the week is the hero; Browse moves behind one entry point.
+   Someone arriving either wants today's reading or a specific chapter, and
+   the second want is a search box, not a 39-item list.
+   ═══════════════════════════════════════════════════════════════════════ */
+#ch-title_page .title-shell { max-width: 1000px; padding: 0 var(--s5) var(--s7); }
+#ch-title_page .dashboard-title,
+#ch-title_page .title-kicker { display: none; }
+
+/* The hero: week title set as type, not as a card. */
+#ch-title_page #title-cfm {
+    background: none; border: 0; box-shadow: none; border-radius: 0;
+    padding: var(--s7) 0 var(--s6); margin: 0;
+    border-bottom: 1px solid var(--rule);
+}
+#ch-title_page #title-cfm .panel-kicker {
+    font: 400 11px/1 var(--sans); letter-spacing: .2em; text-transform: uppercase;
+    color: var(--ink-faint); margin-bottom: var(--s4);
+}
+#ch-title_page .cfm-card-head { display: block; }
+#ch-title_page .cfm-card-title {
+    font: 400 58px/65px var(--serif); letter-spacing: -.015em; color: var(--ink);
+    margin: 0 0 var(--s3); max-width: 15ch;
+}
+#ch-title_page .cfm-card-dates {
+    display: block; margin: 0 0 var(--s4); font: 400 13px/1.5 var(--sans);
+    color: var(--ink-muted);
+}
+#ch-title_page .cfm-card-chips { gap: var(--s2); margin-top: var(--s4); }
+#ch-title_page .cfm-card-chip {
+    border: 1px solid var(--rule); border-radius: 2px; background: none;
+    font: 400 13px/1 var(--sans); color: var(--ink-2); padding: 9px 13px;
+}
+#ch-title_page .cfm-card-chip:hover { border-color: var(--rubric); color: var(--rubric); }
+#ch-title_page .cfm-card-go {
+    margin-top: var(--s5); background: var(--ink); color: var(--paper);
+    border-radius: 2px; padding: 13px 24px;
+    font: 400 15px/1 var(--sans); letter-spacing: .01em;
+}
+#ch-title_page .cfm-card-go:hover { background: var(--rubric); }
+
+/* Everything else recedes: no cards, just labelled sections under rules. */
+#ch-title_page .title-dash {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--s7);
+    margin-top: var(--s6);
+}
+#ch-title_page .panel {
+    background: none; border: 0; border-radius: 0; box-shadow: none; padding: 0;
+}
+#ch-title_page .panel + .panel { margin-top: var(--s6); }
+#ch-title_page .panel-kicker {
+    font: 400 11px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase;
+    color: var(--ink-faint); margin-bottom: var(--s2);
+    padding-bottom: var(--s2); border-bottom: 1px solid var(--rule);
+}
+#ch-title_page .panel-title { font: 400 19px/1.3 var(--serif); color: var(--ink); }
+#ch-title_page .panel-subtitle { font: 400 13px/1.5 var(--sans); color: var(--ink-muted); }
+#ch-title_page .resume-btn {
+    background: none; border: 1px solid var(--rule); border-radius: 2px;
+    padding: var(--s3); text-align: left; width: 100%; cursor: pointer;
+}
+#ch-title_page .resume-btn:hover { border-color: var(--rubric); }
+#ch-title_page .resume-label { font: 400 15px/1.3 var(--serif); color: var(--ink); }
+#ch-title_page .resume-meta { font: 400 12px/1.4 var(--sans); color: var(--ink-muted); }
+#ch-title_page .feed-empty,
+#ch-title_page .feed-signin,
+#ch-title_page .history-empty {
+    font: 400 italic 14px/1.6 var(--serif); color: var(--ink-muted);
+}
+
+/* Browse: one line at the bottom, not a 39-item list competing with today. */
+#title-library-entry {
+    margin-top: var(--s7); padding-top: var(--s4);
+    border-top: 1px solid var(--rule-strong);
+    display: flex; align-items: baseline; gap: var(--s4); flex-wrap: wrap;
+}
+#title-library-entry .lib-open {
+    font: 400 19px/1.3 var(--serif); color: var(--ink);
+    background: none; border: 0; padding: 0; cursor: pointer; text-align: left;
+}
+#title-library-entry .lib-open:hover { color: var(--rubric); }
+#title-library-entry .lib-meta { font: 400 12.5px/1.5 var(--sans); color: var(--ink-muted); }
+#ch-title_page #title-menu[hidden] { display: none; }
+
+@media (max-width: 767px) {
+    #ch-title_page .title-shell { padding: 0 22px var(--s6); }
+    #ch-title_page .cfm-card-title { font-size: 33px; line-height: 37.6px; }
+    #ch-title_page #title-cfm { padding-top: var(--s5); }
+    #ch-title_page .title-dash { grid-template-columns: 1fr; gap: var(--s6); }
+}
+
+/* ── modals ───────────────────────────────────────────────────────────────
+   #hl-overlay toggles an .open class but was never given a default-hidden
+   rule (unlike .acct-overlay right beside it), so the highlight dialog has
+   been sitting in the top-left of every page. Pre-existing; visible here
+   because the Edition palette stopped camouflaging it. */
+#hl-overlay {
+    position: fixed; inset: 0; z-index: 300; display: none;
+    background: rgba(26, 24, 21, .38);
+    align-items: center; justify-content: center; padding: var(--s4);
+}
+#hl-overlay.open { display: flex; }
+#hl-overlay .hl-modal {
+    background: var(--paper-raised); border: 1px solid var(--rule);
+    border-radius: 4px; max-width: 460px; width: 100%;
+    box-shadow: 0 24px 60px -24px rgba(26, 24, 21, .45);
+}
+#hl-overlay .hl-modal-hdr {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: var(--s3) var(--s4); border-bottom: 1px solid var(--rule);
+    font-family: var(--sans);
+}
+#hl-overlay .hl-modal-body { padding: var(--s4); font-family: var(--sans); }
+
+/* An element carrying the hidden attribute must stay hidden even when a
+   component rule sets display — this bit us on the ops button before. */
+[hidden] { display: none !important; }
+
+/* With Browse collapsed the two-column dash leaves a dead column, so the
+   remaining sections share the width instead. */
+#ch-title_page .title-dash:has(> .panel[hidden]) { grid-template-columns: 1fr; }
+#ch-title_page .title-dash:has(> .panel[hidden]) .right-col {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s7);
+    align-items: start;
+}
+#ch-title_page .title-dash:has(> .panel[hidden]) .right-col .panel + .panel { margin-top: 0; }
+@media (max-width: 767px) {
+    #ch-title_page .title-dash:has(> .panel[hidden]) .right-col {
+        grid-template-columns: 1fr; gap: var(--s6);
+    }
+}

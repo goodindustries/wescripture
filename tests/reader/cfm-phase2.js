@@ -96,33 +96,57 @@ const OUT = (process.env.WS_SHOTS || require('os').tmpdir());
   if (!s3.nextDisabled) fail('next should be disabled on the last chapter of the week');
 
   // ---- 5. Unassigned chapter inside a week's book keeps the week on screen ----
-  // Ezra 2 is skipped by the week ("Ezra 1; 3-7"), but you reach it by reading on.
-  await page.evaluate(() => jumpTo('ezra_2'));
-  await new Promise(r => setTimeout(r, 1200));
-  const s5 = await page.evaluate(() => ({
-    chapter: currentChapter,
-    hidden: document.getElementById('cfm-strip').hidden,
-    progress: document.querySelector('.cfm-strip-progress')?.textContent,
-    steps: document.querySelectorAll('.cfm-step').length,
-    activeChip: document.querySelector('.cfm-chip--active')?.textContent || null,
-  }));
-  console.log('SKIPPED CHAPTER (ezra 2):', JSON.stringify(s5));
-  if (s5.hidden) fail('strip should stay while reading an unassigned chapter of a week book');
-  if (s5.activeChip) fail('no chip should be active on an unassigned chapter');
-  if (s5.steps !== 0) fail('step buttons should be absent with no position in the list');
+  // Some weeks skip chapters ("Ezra 1; 3-7" leaves out Ezra 2); you still reach
+  // the skipped one by reading on. Weeks that cover whole books have no such
+  // chapter, so this case is derived from the live week rather than assumed.
+  const skipped = await page.evaluate(() => {
+    const week = findCfmWeekForChapter(currentChapter);
+    const inWeek = new Set(expandCfmWeekChapters(week).map(c => c.id));
+    const books = new Set(expandCfmWeekChapters(week).map(c => c.book));
+    for (const id of Object.keys(chapterMeta)) {
+      if (!inWeek.has(id) && books.has(chapterMeta[id].book)) return id;
+    }
+    return null;
+  });
+  if (skipped) {
+    await page.evaluate(id => jumpTo(id), skipped);
+    await new Promise(r => setTimeout(r, 1200));
+    const s5 = await page.evaluate(() => ({
+      chapter: currentChapter,
+      hidden: document.getElementById('cfm-strip').hidden,
+      progress: document.querySelector('.cfm-strip-progress')?.textContent,
+      steps: document.querySelectorAll('.cfm-step').length,
+      activeChip: document.querySelector('.cfm-chip--active')?.textContent || null,
+    }));
+    console.log('SKIPPED CHAPTER (' + skipped + '):', JSON.stringify(s5));
+    if (s5.hidden) fail('strip should stay while reading an unassigned chapter of a week book');
+    if (s5.activeChip) fail('no chip should be active on an unassigned chapter');
+    if (s5.steps !== 0) fail('step buttons should be absent with no position in the list');
+  } else {
+    console.log('note: this week covers whole books, no skipped-chapter case to test');
+  }
 
   // ---- 6. Strip hides on a chapter no week assigns ----
-  // Genesis 35 sits between week 9 (Genesis 24-33) and week 10 (Genesis 37-41).
-  await page.evaluate(() => jumpTo('genesis_35'));
-  await new Promise(r => setTimeout(r, 1200));
+  const outside = await page.evaluate(() => {
+    for (const id of Object.keys(chapterMeta)) {
+      if (!findCfmWeekForChapter(id)) return id;
+    }
+    return null;
+  });
+  if (!outside) return fail('every chapter belongs to a week; cannot test the hidden case');
+  await page.evaluate(id => jumpTo(id), outside);
+  // Jumping prepends the chapter while earlier ones stay loaded, so the
+  // position observer can fire once more as the scroll settles. Wait for the
+  // settled state instead of guessing a delay.
+  await page.waitForFunction(id => window.currentChapter === id
+    && document.getElementById('cfm-strip').hidden, { timeout: 15000 }, outside)
+    .catch(() => {});
   const s4 = await page.evaluate(() => ({
     chapter: currentChapter,
-    inAnyWeek: !!findCfmWeekForChapter('genesis_35'),
     hidden: document.getElementById('cfm-strip').hidden,
     readerHasClass: document.getElementById('reader').classList.contains('has-cfm-strip'),
   }));
-  console.log('OUTSIDE WEEK:', JSON.stringify(s4));
-  if (s4.inAnyWeek) fail('test picked a chapter that IS assigned; pick another');
+  console.log('OUTSIDE WEEK (' + outside + '):', JSON.stringify(s4));
   if (!s4.hidden) fail('strip should hide on a chapter no week assigns');
   if (s4.readerHasClass) fail('has-cfm-strip should be removed when strip hides');
 

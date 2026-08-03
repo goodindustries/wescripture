@@ -117,7 +117,7 @@
   <section id="title-cfm" class="panel" aria-label="This week's Come Follow Me reading" hidden></section>
 
   <div class="title-dash">
-    <!-- LEFT: full menu, always visible -->
+    <!-- LEFT: the library, collapsed behind one entry point (see #title-library-entry) -->
     <section class="panel" aria-label="Browse the library">
       <div class="panel-kicker">Library</div>
       <h2 class="panel-title">Browse</h2>
@@ -161,6 +161,14 @@
         <div id="title-feed-list" class="feed-list"></div>
       </section>
     </aside>
+  </div>
+
+  <!-- Browse does not belong above the fold: someone arriving wants today's
+       reading or a specific chapter, and the second want is a search box, not
+       a 39-item list. One line opens the whole library. -->
+  <div id="title-library-entry">
+    <button type="button" class="lib-open" data-open-library="1">The whole library &rarr;</button>
+    <span class="lib-meta">5 volumes &middot; 87 books &middot; 1,582 chapters</span>
   </div>
 </div>
 </body>
