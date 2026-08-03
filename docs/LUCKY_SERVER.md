@@ -53,17 +53,29 @@ ssh -F ~/Classified/dinosaur/ssh/ubuntu-agent-config lucky-vm '
   authentication, then resets every session. Its own config warns about this —
   macOS sshd MaxStartups. It needs Remote Login toggled or a reboot.
 
-## What serving over a network exposed
+## What serving over a network exposed, and what it cost
 
-Localhost hid two things that a real connection makes obvious.
+Localhost hid a payload problem that a real connection made obvious, and fixing
+it is what the numbers below measure. Both columns were taken on this box, same
+methodology, by checking out each commit in turn.
 
-- Tapping a verse takes **~3.1s** to open the pane, because `openVerseDiscovery`
-  awaits `verse_discovery.json` — **14.5MB**.
-- A single page load pulls **~24MB** of JSON: `verse_discovery.json` 14.5MB,
-  `entities/people.json` 2.5MB, `entities/scripture_people.json` 2.0MB,
-  `source_toc.json` 1.5MB, `source_links.json` 1.4MB, `source_citations.json`
-  1.4MB, `entities/topics.json` 1.3MB.
+| | before | after |
+|---|---|---|
+| Time until scripture is on screen | 3,854 ms | **1,678 ms** |
+| Transferred to reach that point | 13.1 MB | **1.4 MB** |
+| Tap a verse, cold | 4,899 ms | **219 ms** |
+| Tap a verse, warm | 160 ms | 144 ms |
 
-The design brief asks for reading that "feels instant on a mid-range phone".
-Sharding `verse_discovery.json` per chapter — the layout `library/translations/`
-already uses — is the obvious fix and belongs in the next round.
+Three changes did it:
+
+1. `verse_discovery.json` (14.5MB) became `library/discovery/<chapter>.json`
+   shards, ~10kB each, so opening a verse no longer waits on the whole corpus.
+2. The sources corpus (4.3MB) and the full entity records (5.3MB) left the
+   blocking boot fetch. Only the small `*_index` name maps stay, which is all a
+   chapter needs to linkify.
+3. Both bundles warm 250ms after first paint, so the window where a fast tap
+   waits for them is small and shrinking it cost nothing.
+
+The remaining ~12MB still transfers, just behind the reading experience rather
+than in front of it. Trimming it further means shrinking the entity and source
+corpora themselves, which is a data question, not a loading one.
