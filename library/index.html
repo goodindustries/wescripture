@@ -3045,6 +3045,48 @@ function ensureSourcesLoaded() {
     return sourcesReady;
 }
 
+/* Full entity records — people, places, things, topics, books and the
+   scripture figures — total 5.3MB and are only read once something needs a
+   record rather than a name: a verse panel building its chips, or a profile
+   opening. Chapter linkification needs only the *_index files, which boot
+   still loads. Scripture figures also contribute name variants to
+   entityIndex, so a chapter linkifies a little more richly once this lands —
+   the same race the old code already had, since that fetch was never awaited. */
+var entitiesReady = null;
+
+function ensureEntitiesLoaded() {
+    if (entitiesReady) return entitiesReady;
+    var j = function(url, empty) {
+        return fetch(url).then(function(r) { return r.ok ? r.json() : empty; }).catch(function() { return empty; });
+    };
+    entitiesReady = Promise.all([
+        j('./entities/people.json', []),
+        j('./entities/places.json', []),
+        j('./entities/things.json', []),
+        j('./entities/topics.json', []),
+        j('./entities/books.json', []),
+        j('./entities/scripture_people.json', [])
+    ]).then(function(res) {
+        entityList = res[0] || [];
+        entityList.forEach(function(p) { entityById[p.id] = p; });
+        (res[1] || []).forEach(function(p) { placeById[p.id] = p; });
+        (res[2] || []).forEach(function(t) { thingById[t.id] = t; });
+        (res[3] || []).forEach(function(t) { topicById[t.id] = t; });
+        (res[4] || []).forEach(function(b) {
+            bookById[b.id] = b;
+            if (b.slug) bookBySlug[b.slug] = b;
+        });
+        (res[5] || []).forEach(function(fig) {
+            entityById[fig.id] = fig;
+            (fig.variants || [fig.name]).forEach(function(v) {
+                var vl = v.toLowerCase();
+                if (!entityIndex[vl]) entityIndex[vl] = fig.id;
+            });
+        });
+    });
+    return entitiesReady;
+}
+
 function buildSourceTree(items) {
     return (items || []).map(function(collection) {
         var rawItems = collection.items || [];
@@ -3113,43 +3155,21 @@ function buildSourceTree(items) {
 Promise.all([
     fetch('./toc.json').then(function(r) { return r.json(); }),
     fetch('./entities/people_index.json').then(function(r) { return r.ok ? r.json() : {}; }).catch(function() { return {}; }),
-    fetch('./entities/people.json').then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; }),
     fetch('./entities/places_index.json').then(function(r) { return r.ok ? r.json() : {}; }).catch(function() { return {}; }),
-    fetch('./entities/places.json').then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; }),
     fetch('./entities/things_index.json').then(function(r) { return r.ok ? r.json() : {}; }).catch(function() { return {}; }),
-    fetch('./entities/things.json').then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; }),
-    fetch('./entities/topics.json').then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; }),
-    fetch('./entities/books.json').then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; }),
     fetch('./cfm_2026.json').then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; })
 ]).then(function(results) {
         var data = results[0];
         // The three source_* files (4.3MB) no longer block first paint; see
         // ensureSourcesLoaded(). Everything that reads sourceMeta/sourceLinks/
         // sourceCitations awaits it first.
-        CFM_2026       = results[9] || [];
+        CFM_2026       = results[4] || [];
+        // Only the name indexes are needed to linkify a chapter (~0.2MB each).
+        // The full records — 5.3MB of people, places, things, topics and books —
+        // are read when a verse panel or a profile opens, so they load there.
         entityIndex    = results[1] || {};
-        entityList     = results[2] || [];
-        entityList.forEach(function(p) { entityById[p.id] = p; });
-        // Merge scripture figures into entity index so verse names are linkified
-        fetch('./entities/scripture_people.json').then(function(r) { return r.ok ? r.json() : []; })
-            .then(function(figures) {
-                figures.forEach(function(fig) {
-                    entityById[fig.id] = fig;
-                    (fig.variants || [fig.name]).forEach(function(v) {
-                        var vl = v.toLowerCase();
-                        if (!entityIndex[vl]) entityIndex[vl] = fig.id;
-                    });
-                });
-            }).catch(function() {});
-        placeIndex = results[3] || {};
-        (results[4] || []).forEach(function(p) { placeById[p.id] = p; });
-        thingIndex = results[5] || {};
-        (results[6] || []).forEach(function(t) { thingById[t.id] = t; });
-        (results[7] || []).forEach(function(t) { topicById[t.id] = t; Object.keys(topicById); });
-        (results[8] || []).forEach(function(b) {
-            bookById[b.id] = b;
-            if (b.slug) bookBySlug[b.slug] = b;
-        });
+        placeIndex     = results[2] || {};
+        thingIndex     = results[3] || {};
         tocData = data;
         tocTree = buildTocTree(data);
         chapterOrder = data.filter(t => t.type === 'chapter' || t.type === 'front').map(t => t.id);
@@ -3160,7 +3180,7 @@ Promise.all([
         loadChapter(startId, true).then(() => {
             document.getElementById('splash').classList.add('gone');
             // Warm the sources corpus behind the reader, off the critical path.
-            setTimeout(ensureSourcesLoaded, 1200);
+            setTimeout(function() { ensureSourcesLoaded(); ensureEntitiesLoaded(); }, 1200);
 
             // Handle URL routing params from home (and other deep links).
             (function handleUrlParams() {
@@ -4422,6 +4442,7 @@ function renderPersonLegacy(entity) {
 }
 
 function openEntityProfile(entityId) {
+    if (!entitiesReady) { ensureEntitiesLoaded().then(function() { openEntityProfile(entityId); }); return; }
     var entity = entityById[entityId];
     if (!entity) return;
 
@@ -4468,6 +4489,7 @@ function openEntityProfile(entityId) {
 }
 
 function openPlaceProfile(placeId) {
+    if (!entitiesReady) { ensureEntitiesLoaded().then(function() { openPlaceProfile(placeId); }); return; }
     var entity = placeById[placeId];
     if (!entity) return;
 
@@ -4487,6 +4509,7 @@ function openPlaceProfile(placeId) {
 }
 
 function openThingProfile(thingId) {
+    if (!entitiesReady) { ensureEntitiesLoaded().then(function() { openThingProfile(thingId); }); return; }
     var entity = thingById[thingId];
     if (!entity) return;
 
@@ -4636,6 +4659,7 @@ function renderTopicSermons(entity) {
 }
 
 function openTopicProfile(topicId) {
+    if (!entitiesReady) { ensureEntitiesLoaded().then(function() { openTopicProfile(topicId); }); return; }
     var entity = topicById[topicId];
     if (!entity) return;
 
@@ -5606,6 +5630,7 @@ async function openVerseDiscovery(ref) {
     await ensureDonaldsonLoaded(chapterId);
     await ensureVerseDiscoveryLoaded(chapterId);
     await ensureSourcesLoaded();
+    await ensureEntitiesLoaded();
 
     var rawEntries = verseDiscovery[ref] || [];
     var entries = semanticDedupeVerseDiscoveryEntries(dedupeVerseDiscoveryEntries(rawEntries.filter(function(e) {
