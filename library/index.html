@@ -1918,6 +1918,7 @@ function cfmShortDate(iso) {
 function setTitleLibraryOpen(open) {
     var root = document.getElementById('ch-title_page');
     if (!root) return;
+    if (open) ensureSourcesLoaded().then(function() { renderTitleMenu(); });
     var panel = root.querySelector('[aria-label="Browse the library"]');
     var entry = root.querySelector('#title-library-entry');
     if (panel) panel.hidden = !open;
@@ -3021,6 +3022,29 @@ function parseGcSpeaker(meta, id) {
     return '';
 }
 
+/* The sources corpus — source_toc, source_links and source_citations — is
+   4.3MB and none of it is needed to read a chapter. It used to block first
+   paint. It now loads once, on the first thing that actually reads it: opening
+   a verse panel (cross-references cite source documents), opening a source
+   document, or revealing the library. Boot prefetches it after the reader is
+   on screen, so by the time anyone asks it is usually already warm. */
+var sourcesReady = null;
+
+function ensureSourcesLoaded() {
+    if (sourcesReady) return sourcesReady;
+    sourcesReady = Promise.all([
+        fetch('./source_toc.json').then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; }),
+        fetch('./source_links.json').then(function(r) { return r.ok ? r.json() : {}; }).catch(function() { return {}; }),
+        fetch('./source_citations.json').then(function(r) { return r.ok ? r.json() : {}; }).catch(function() { return {}; })
+    ]).then(function(res) {
+        sourceTocData   = res[0] || [];
+        sourceLinks     = res[1] || {};
+        sourceCitations = res[2] || {};
+        tocTree.sources = buildSourceTree(sourceTocData);
+    });
+    return sourcesReady;
+}
+
 function buildSourceTree(items) {
     return (items || []).map(function(collection) {
         var rawItems = collection.items || [];
@@ -3088,8 +3112,6 @@ function buildSourceTree(items) {
 // ── Load TOC ─────────────────────────────────────────────────────────────
 Promise.all([
     fetch('./toc.json').then(function(r) { return r.json(); }),
-    fetch('./source_toc.json').then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; }),
-    fetch('./source_links.json').then(function(r) { return r.ok ? r.json() : {}; }).catch(function() { return {}; }),
     fetch('./entities/people_index.json').then(function(r) { return r.ok ? r.json() : {}; }).catch(function() { return {}; }),
     fetch('./entities/people.json').then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; }),
     fetch('./entities/places_index.json').then(function(r) { return r.ok ? r.json() : {}; }).catch(function() { return {}; }),
@@ -3101,14 +3123,12 @@ Promise.all([
     fetch('./cfm_2026.json').then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; })
 ]).then(function(results) {
         var data = results[0];
-        var sourceData = results[1] || [];
-        sourceLinks    = results[2] || {};
-        // verseDiscovery deferred to lazy-load on first verse click
-        CFM_2026       = results[11] || [];
-        fetch('./source_citations.json').then(function(r) { return r.ok ? r.json() : {}; })
-            .then(function(d) { sourceCitations = d || {}; }).catch(function() {});
-        entityIndex    = results[3] || {};
-        entityList     = results[4] || [];
+        // The three source_* files (4.3MB) no longer block first paint; see
+        // ensureSourcesLoaded(). Everything that reads sourceMeta/sourceLinks/
+        // sourceCitations awaits it first.
+        CFM_2026       = results[9] || [];
+        entityIndex    = results[1] || {};
+        entityList     = results[2] || [];
         entityList.forEach(function(p) { entityById[p.id] = p; });
         // Merge scripture figures into entity index so verse names are linkified
         fetch('./entities/scripture_people.json').then(function(r) { return r.ok ? r.json() : []; })
@@ -3121,19 +3141,17 @@ Promise.all([
                     });
                 });
             }).catch(function() {});
-        placeIndex = results[5] || {};
-        (results[6] || []).forEach(function(p) { placeById[p.id] = p; });
-        thingIndex = results[7] || {};
-        (results[8] || []).forEach(function(t) { thingById[t.id] = t; });
-        (results[9] || []).forEach(function(t) { topicById[t.id] = t; Object.keys(topicById); });
-        (results[10] || []).forEach(function(b) {
+        placeIndex = results[3] || {};
+        (results[4] || []).forEach(function(p) { placeById[p.id] = p; });
+        thingIndex = results[5] || {};
+        (results[6] || []).forEach(function(t) { thingById[t.id] = t; });
+        (results[7] || []).forEach(function(t) { topicById[t.id] = t; Object.keys(topicById); });
+        (results[8] || []).forEach(function(b) {
             bookById[b.id] = b;
             if (b.slug) bookBySlug[b.slug] = b;
         });
         tocData = data;
-        sourceTocData = sourceData;
         tocTree = buildTocTree(data);
-        tocTree.sources = buildSourceTree(sourceData);
         chapterOrder = data.filter(t => t.type === 'chapter' || t.type === 'front').map(t => t.id);
         var routeParams = new URLSearchParams(window.location.search);
         var openFromUrl = routeParams.get('open');
@@ -3141,6 +3159,8 @@ Promise.all([
         var startId = 'title_page';
         loadChapter(startId, true).then(() => {
             document.getElementById('splash').classList.add('gone');
+            // Warm the sources corpus behind the reader, off the critical path.
+            setTimeout(ensureSourcesLoaded, 1200);
 
             // Handle URL routing params from home (and other deep links).
             (function handleUrlParams() {
@@ -5585,6 +5605,7 @@ async function openVerseDiscovery(ref) {
     // on first tap, even if the user clicked before the JSON finished loading.
     await ensureDonaldsonLoaded(chapterId);
     await ensureVerseDiscoveryLoaded(chapterId);
+    await ensureSourcesLoaded();
 
     var rawEntries = verseDiscovery[ref] || [];
     var entries = semanticDedupeVerseDiscoveryEntries(dedupeVerseDiscoveryEntries(rawEntries.filter(function(e) {
@@ -5932,6 +5953,7 @@ function sanitizeEscapedConnectionMarkup(root) {
 }
 
 function loadSourceDocument(docId, href, opts) {
+    if (!sourcesReady) { return ensureSourcesLoaded().then(function() { return loadSourceDocument(docId, href, opts); }); }
     opts = opts || {};
     if (opts.pushHistory !== false) {
         pushVisit(activeReaderTarget(), { type: 'source', docId: docId });
