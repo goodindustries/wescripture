@@ -21,9 +21,13 @@ const puppeteer = require('puppeteer');
   console.log('FEED TEXT:', JSON.stringify(feed));
   if (feed && /Loading/i.test(feed)) fail('feed still says Loading after 11s');
 
+  // The Netlify function is the real config source in production and cannot
+  // exist on a static local server, so the expectation flips by environment.
+  const isLocal = /^https?:\/\/(localhost|127\.0\.0\.1)/.test(process.env.WS_BASE || 'http://localhost:8091');
   const netlifyCalls = requested.filter(u => u.includes('/.netlify/functions/config'));
-  console.log('NETLIFY CONFIG REQUESTS:', netlifyCalls.length);
-  if (netlifyCalls.length) fail('still requesting the Netlify function on localhost');
+  console.log('NETLIFY CONFIG REQUESTS:', netlifyCalls.length, isLocal ? '(local: expect 0)' : '(prod: expected)');
+  if (isLocal && netlifyCalls.length) fail('still requesting the Netlify function on localhost');
+  if (!isLocal && !netlifyCalls.length) fail('production should read config from the Netlify function');
 
   const own404 = failed404.filter(u => u.includes('localhost:8091'));
   console.log('LOCAL 404s:', JSON.stringify(own404.slice(0, 5)), 'total', own404.length);
