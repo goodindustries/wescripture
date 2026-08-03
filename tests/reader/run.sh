@@ -24,7 +24,7 @@ echo "screenshots: $WS_SHOTS"
 echo
 
 failed=0
-for test in vp-tabs cfm-phase2 cfm-mobile donaldson-bleed translations polish; do
+for test in verse-click vp-tabs cfm-phase2 cfm-mobile donaldson-bleed translations polish; do
   printf '%-20s ' "$test"
   if out=$(node "$HERE/$test.js" 2>&1); then
     echo "PASS"

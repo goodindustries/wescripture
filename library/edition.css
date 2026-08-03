@@ -451,3 +451,25 @@ mark.hl, .hl-yellow { background: var(--hl-1); color: inherit; }
         grid-template-columns: 1fr; gap: var(--s6);
     }
 }
+
+/* ── study pane: a visible way out ────────────────────────────────────────
+   index.html:733 hides #ch-header and #ch-close on every screen 601px and up,
+   so a mouse user had no way to dismiss the pane — Escape was the only exit,
+   which is not discoverable. The pane is a persistent overlay now, so it needs
+   a real control. The header is reduced to the close button alone; the verse
+   reference already appears inside the panel body, so #ch-word would duplicate it. */
+@media (min-width: 601px) {
+    #ch-header {
+        display: flex; position: absolute; top: 0; right: 0; z-index: 2;
+        padding: 10px 12px; border-bottom: 0; background: none; min-height: 0;
+    }
+    #ch-header #ch-word { display: none !important; }
+    #ch-close {
+        display: flex; align-items: center; justify-content: center;
+        width: 36px; height: 36px; border-radius: 2px; color: var(--ink-muted);
+    }
+    #ch-close:hover { background: rgba(26, 24, 21, .05); color: var(--rubric); }
+}
+@media (pointer: coarse) {
+    #ch-close { min-width: 44px; min-height: 44px; }
+}

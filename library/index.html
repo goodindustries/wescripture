@@ -8060,8 +8060,8 @@ document.getElementById('content').addEventListener('click', function(e) {
 
     // Verse number click opens verse panel (when dot exists, this is redundant; when not, it keeps study discoverable).
     var vnum = e.target.closest('.verse-num');
-    if (vnum && vnum.closest('div.verse')) {
-        var verseEl = vnum.closest('div.verse');
+    if (vnum && vnum.closest('.verse')) {
+        var verseEl = vnum.closest('.verse');
         var block = verseEl.closest('.chapter-block');
         var chapterId = block && block.dataset ? block.dataset.chapterId : (currentChapter || '');
         var verseId = verseEl.id || '';
@@ -8091,7 +8091,7 @@ document.getElementById('content').addEventListener('click', function(e) {
 
     // Source reader: clickable word → semantic channel (words JSON)
     var wSpanSrc = e.target.closest('span.w[data-st]');
-    if (wSpanSrc && !wSpanSrc.closest('div.verse')) {
+    if (wSpanSrc && !wSpanSrc.closest('.verse')) {
         var srcBlock = wSpanSrc.closest('.chapter-block[data-source-doc-id]');
         if (srcBlock) {
             closeTocPanel();
@@ -8129,7 +8129,7 @@ document.getElementById('content').addEventListener('click', function(e) {
     // the semantic channel. Clicks therefore fall through to the verse-level
     // handler below, which opens the verse panel.
     var wSpanVerse = e.target.closest('span.w[data-st]');
-    var verseForWord = wSpanVerse && wSpanVerse.closest('div.verse');
+    var verseForWord = wSpanVerse && wSpanVerse.closest('.verse');
     if (wSpanVerse && verseForWord && !sourceMode) {
         if (wSpanVerse.dataset.entity || wSpanVerse.dataset.place || wSpanVerse.dataset.thing) {
             e.preventDefault();
@@ -8142,7 +8142,7 @@ document.getElementById('content').addEventListener('click', function(e) {
         // Non-entity stem — fall through to the verse-level handler on purpose.
     }
 
-    var verse = e.target.closest('div.verse');
+    var verse = e.target.closest('.verse');
     if (!verse) return;
     closeTocPanel();
     focusVerse(verse, false);
@@ -8395,7 +8395,7 @@ function stepBreadthVerse(dir) {
     if (!verse) return;
     var block = verse.closest('.chapter-block');
     if (!block) return;
-    var verses = Array.from(block.querySelectorAll('div.verse'));
+    var verses = Array.from(block.querySelectorAll('.verse'));
     var i = verses.indexOf(verse);
     if (i < 0) return;
     var j = i + dir;
