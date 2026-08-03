@@ -127,6 +127,21 @@ body {
     background: rgba(0,0,0,0.04);
 }
 
+/* Matches the reader's gold Today button so the affordance reads as the
+   same feature on both pages. */
+.home-nav-today {
+    color: var(--ws-gold);
+    border: 1px solid var(--ws-gold);
+    border-radius: var(--ws-r-pill);
+    padding: 6px 14px;
+    font-weight: 600;
+}
+
+.home-nav-today:hover {
+    background: var(--ws-gold-soft);
+    color: var(--ws-gold);
+}
+
 .home-nav-pill {
     text-decoration: none;
     display: inline-flex;

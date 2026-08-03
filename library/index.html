@@ -2927,6 +2927,13 @@ Promise.all([
                     }
                 }
 
+                // 2.5) Today's Come Follow Me reading (?today=1 from home).
+                if (params.get('today')) {
+                    didConsume = true;
+                    safeGtag('event', 'reader_url_jump', { kind: 'today' });
+                    jumpToTodayReading();
+                }
+
                 // 3) Open search with prefilled query.
                 var qParam = params.get('q');
                 if (qParam) {
