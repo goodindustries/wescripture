@@ -143,6 +143,17 @@ body {
     color: var(--ws-gold);
 }
 
+.home-nav-today,
+.home-nav-pill {
+    white-space: nowrap;
+}
+
+/* Small screens: the hero CTA already opens the reader, so the redundant
+   "Reader" text link yields its space to Today + Sign in. */
+@media (max-width: 480px) {
+    .home-nav .home-nav-link:not(.home-nav-today) { display: none; }
+}
+
 .home-nav-pill {
     text-decoration: none;
     display: inline-flex;
