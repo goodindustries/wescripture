@@ -139,6 +139,50 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 /* ── Reader ── */
 #reader { flex: 1; min-width: 0; overflow-y: auto; overflow-x: hidden; background: var(--bg); }
 #content { max-width: var(--reader-max); margin: 0 auto; padding: 40px 32px 120px; }
+/* ── Come Follow Me week strip: keeps the week's thread while reading ── */
+#cfm-strip {
+    position: sticky; top: 0; z-index: 4;
+    background: rgba(254, 252, 248, 0.97);
+    -webkit-backdrop-filter: saturate(180%) blur(8px); backdrop-filter: saturate(180%) blur(8px);
+    border-bottom: 1px solid var(--divider);
+}
+#cfm-strip[hidden] { display: none; }
+/* Jump targets must clear the sticky strip, or the book title lands under it. */
+#reader.has-cfm-strip .chapter-block,
+#reader.has-cfm-strip .verse { scroll-margin-top: 96px; }
+.cfm-strip-inner { max-width: var(--reader-max); margin: 0 auto; padding: 10px 32px 11px; }
+.cfm-strip-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.cfm-strip-kicker {
+    font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent);
+}
+.cfm-strip-title {
+    font-family: 'EB Garamond', Georgia, serif; font-size: 15px; color: var(--text); min-width: 0;
+}
+.cfm-strip-progress { font-size: 11px; color: var(--muted); margin-left: auto; white-space: nowrap; }
+.cfm-strip-chips {
+    display: flex; gap: 6px; margin-top: 8px;
+    overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch;
+}
+.cfm-strip-chips::-webkit-scrollbar { display: none; }
+.cfm-chip {
+    flex: 0 0 auto; border: 1px solid var(--divider); border-radius: 999px;
+    padding: 4px 11px; background: none; cursor: pointer; font-family: inherit;
+    font-size: 12px; color: var(--muted); white-space: nowrap;
+}
+.cfm-chip:hover { border-color: var(--accent); color: var(--accent); }
+.cfm-chip--active, .cfm-chip--active:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+.cfm-strip-steps { display: flex; gap: 6px; margin-left: auto; flex: 0 0 auto; }
+.cfm-step {
+    border: 1px solid var(--divider); border-radius: 999px; background: none; cursor: pointer;
+    font-family: inherit; font-size: 12px; font-weight: 600; color: var(--text); padding: 4px 12px;
+}
+.cfm-step:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.cfm-step:disabled { opacity: .35; cursor: default; }
+@media (max-width: 768px) {
+    .cfm-strip-inner { padding: 9px 18px 10px; }
+    .cfm-strip-title { font-size: 14px; }
+    .cfm-chip, .cfm-step { padding: 10px 14px; min-height: 44px; display: inline-flex; align-items: center; }
+}
 .chapter-block { margin-bottom: 3em; }
 #sentinel { height: 60px; }
 
@@ -1631,6 +1675,7 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 
 <div id="shell">
     <div id="reader">
+        <div id="cfm-strip" hidden></div>
         <div id="content"></div>
         <div id="morsel-preview" hidden></div>
         <div id="sentinel"></div>
@@ -1739,6 +1784,162 @@ function resolveCfmJumpTarget(week) {
     if (!week) return null;
     var id = (week.refs && week.refs.length) ? cfmRefToChapterId(week.refs[0]) : null;
     return id || cfmTitleToChapterId(week.title);
+}
+
+/** Every chapter a week assigns, in reading order. Chapters missing from the
+ *  library are dropped so a chip can never point at a 404. */
+function expandCfmWeekChapters(week) {
+    if (!week || !week.refs) return [];
+    var out = [];
+    week.refs.forEach(function(ref) {
+        var bookRec = findBookRecord(ref.book);
+        if (!bookRec || !bookRec.firstChapter) return;
+        var prefix = bookRec.firstChapter.replace(/_1$/, '');
+        for (var c = ref.chapter_start; c <= ref.chapter_end; c++) {
+            var id = prefix + '_' + c;
+            if (!chapterMeta[id]) continue;
+            out.push({ id: id, book: ref.book, chapter: c });
+        }
+    });
+    return out;
+}
+
+function findCfmWeekForChapter(chapterId) {
+    if (!chapterId || !CFM_2026 || !Array.isArray(CFM_2026)) return null;
+    for (var i = 0; i < CFM_2026.length; i++) {
+        var chapters = expandCfmWeekChapters(CFM_2026[i]);
+        for (var j = 0; j < chapters.length; j++) {
+            if (chapters[j].id === chapterId) return CFM_2026[i];
+        }
+    }
+    return null;
+}
+
+/** Chapter chips read better as "Ezra 1 · 3 · 4" than as 12 repetitions of the
+ *  book name, so only the first chapter of each book run carries the label. */
+function cfmChipLabel(item, prev) {
+    return (prev && prev.book === item.book) ? String(item.chapter) : item.book + ' ' + item.chapter;
+}
+
+/** The week the strip is currently pinned to, so reading past an assigned
+ *  chapter (Ezra 1 → Ezra 2, which the week skips) doesn't drop the thread. */
+var cfmStripWeek = null;
+
+function renderCfmStrip(chapterId) {
+    var strip = document.getElementById('cfm-strip');
+    if (!strip) return;
+    var reader = document.getElementById('reader');
+    var week = findCfmWeekForChapter(chapterId);
+
+    // Scrolling into an unassigned chapter of a book the week covers keeps the
+    // week on screen; leaving those books entirely puts the strip away.
+    if (!week && cfmStripWeek && chapterMeta[chapterId]) {
+        var touches = expandCfmWeekChapters(cfmStripWeek).some(function(c) {
+            return c.book === chapterMeta[chapterId].book;
+        });
+        if (touches) week = cfmStripWeek;
+    }
+
+    if (!week) {
+        cfmStripWeek = null;
+        strip.hidden = true;
+        strip.innerHTML = '';
+        if (reader) reader.classList.remove('has-cfm-strip');
+        return;
+    }
+    cfmStripWeek = week;
+
+    var chapters = expandCfmWeekChapters(week);
+    var idx = chapters.findIndex(function(c) { return c.id === chapterId; });
+    var isThisWeek = week === getTodayWeek();
+
+    var html = '<div class="cfm-strip-inner">';
+    html += '<div class="cfm-strip-head">'
+        + '<span class="cfm-strip-kicker">' + (isThisWeek ? 'This week' : 'Come Follow Me') + '</span>'
+        + '<span class="cfm-strip-title">' + escapeHtml(week.title) + '</span>'
+        + '<span class="cfm-strip-progress">'
+        + (idx >= 0 ? (idx + 1) + ' of ' + chapters.length : 'Not in this week’s reading')
+        + '</span></div>';
+    html += '<div class="cfm-strip-chips">';
+    chapters.forEach(function(c, i) {
+        html += '<button type="button" class="cfm-chip' + (i === idx ? ' cfm-chip--active' : '') + '"'
+            + ' data-chapter-id="' + escapeAttr(c.id) + '"'
+            + (i === idx ? ' aria-current="true"' : '') + '>'
+            + escapeHtml(cfmChipLabel(c, chapters[i - 1])) + '</button>';
+    });
+    // Off-list chapters have no position to step from, so the chips are the
+    // only honest navigation there.
+    if (idx >= 0) {
+        html += '<span class="cfm-strip-steps">'
+            + '<button type="button" class="cfm-step" data-cfm-step="-1"' + (idx === 0 ? ' disabled' : '') + ' aria-label="Previous chapter in this week">←</button>'
+            + '<button type="button" class="cfm-step" data-cfm-step="1"' + (idx >= chapters.length - 1 ? ' disabled' : '') + ' aria-label="Next chapter in this week">Next →</button>'
+            + '</span>';
+    }
+    html += '</div></div>';
+
+    strip.innerHTML = html;
+    strip.hidden = false;
+    if (reader) reader.classList.add('has-cfm-strip');
+
+    strip.querySelectorAll('.cfm-chip').forEach(function(chip) {
+        chip.addEventListener('click', function() { jumpTo(chip.dataset.chapterId); });
+    });
+    strip.querySelectorAll('.cfm-step').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var next = chapters[idx + parseInt(btn.dataset.cfmStep, 10)];
+            if (next) jumpTo(next.id);
+        });
+    });
+    var active = strip.querySelector('.cfm-chip--active');
+    if (active) active.scrollIntoView({ block: 'nearest', inline: 'center' });
+}
+
+/** "Sun, Jul 27" — enough to place the week without a full date string. */
+function cfmShortDate(iso) {
+    var parts = String(iso || '').split('-');
+    if (parts.length !== 3) return '';
+    var d = new Date(+parts[0], +parts[1] - 1, +parts[2]);
+    return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+}
+
+function renderTitleCfmCard() {
+    var host = document.getElementById('title-cfm');
+    if (!host) return;
+    if (!CFM_2026) {
+        loadCfm2026().then(renderTitleCfmCard);
+        return;
+    }
+    var week = getTodayWeek();
+    var chapters = week ? expandCfmWeekChapters(week) : [];
+    // Topical weeks (Easter, Christmas) have no chapters; the card would be an
+    // empty promise, so it stays hidden and Browse leads instead.
+    if (!week || !chapters.length) {
+        host.hidden = true;
+        host.innerHTML = '';
+        return;
+    }
+
+    var html = '<div class="panel-kicker">This week &middot; Come Follow Me</div>';
+    html += '<div class="cfm-card-head">'
+        + '<h2 class="cfm-card-title">' + escapeHtml(week.title) + '</h2>'
+        + '<span class="cfm-card-dates">' + escapeHtml(cfmShortDate(week.start_date)) + ' – ' + escapeHtml(cfmShortDate(week.end_date)) + '</span>'
+        + '</div>';
+    html += '<div class="cfm-card-chips">';
+    chapters.forEach(function(c, i) {
+        html += '<button type="button" class="cfm-card-chip" data-chapter-id="' + escapeAttr(c.id) + '">'
+            + escapeHtml(cfmChipLabel(c, chapters[i - 1])) + '</button>';
+    });
+    html += '</div>';
+    html += '<button type="button" class="cfm-card-go" data-cfm-start="1">Start reading &rarr;</button>';
+
+    host.innerHTML = html;
+    host.hidden = false;
+
+    host.querySelectorAll('.cfm-card-chip').forEach(function(chip) {
+        chip.addEventListener('click', function() { jumpTo(chip.dataset.chapterId); });
+    });
+    var go = host.querySelector('[data-cfm-start]');
+    if (go) go.addEventListener('click', function() { jumpToTodayReading(); });
 }
 
 function jumpToTodayReading() {
@@ -3320,6 +3521,7 @@ function hydrateTitlePage() {
         renderTitleHistory();
         renderTitleMenu();
         renderTitleNav();
+        renderTitleCfmCard();
         renderTitleFeed();
         return;
     }
@@ -3447,6 +3649,7 @@ function hydrateTitlePage() {
     renderTitleHistory();
     renderTitleMenu();
     renderTitleNav();
+    renderTitleCfmCard();
     renderTitleFeed();
 }
 
@@ -6213,6 +6416,14 @@ function updateLocationLabel(id) {
     var crumbsEl = document.getElementById('breadcrumbs');
     var backBtn  = document.getElementById('back-btn');
     if (backBtn) backBtn.classList.toggle('show', visitStack.length > 0);
+
+    // Every location change routes through here — jump, scroll, and going home —
+    // so the Come Follow Me strip follows the reader without extra hooks.
+    if (CFM_2026) {
+        renderCfmStrip(id);
+    } else {
+        loadCfm2026().then(function() { renderCfmStrip(currentChapter); });
+    }
 
     if (id === 'title_page') {
         crumbsEl.innerHTML = '<span class="bc-crumb bc-last">' + escapeHtml('Home') + '</span>';
