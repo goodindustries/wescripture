@@ -3747,6 +3747,17 @@ function jumpTo(chapterId, verseNum, opts) {
         }
     }
     ensureScriptureReader().then(function() {
+        // Home is a destination, not part of the canon. Jumping prepends the
+        // chapter above whatever is loaded, so without this the reader scrolls
+        // out of Esther 1 straight into "Resume last session" and only then
+        // reaches Esther 2. Going home reloads the page via jumpTo('title_page').
+        if (chapterId !== 'title_page') {
+            var homeBlock = document.getElementById('ch-title_page');
+            if (homeBlock) {
+                homeBlock.remove();
+                loadedChapters.delete('title_page');
+            }
+        }
         return loadChapter(chapterId, true);
     }).then(() => {
         currentChapter = chapterId;
