@@ -66,6 +66,7 @@ body {
     backdrop-filter: blur(10px);
 }
 .monitor-fab:hover { background: var(--ws-gold-soft); }
+.monitor-fab[hidden] { display: none; }
 
 .home-header {
     position: sticky;

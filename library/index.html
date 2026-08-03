@@ -85,6 +85,7 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     backdrop-filter: blur(10px);
 }
 .monitor-fab:hover { background: rgba(156, 122, 77, 0.08); }
+.monitor-fab[hidden] { display: none; }
 .acct-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(0,0,0,0.18); margin-left: 6px; }
 .acct-dot.on { background: #2E8B57; }
 
@@ -8422,7 +8423,16 @@ if ('serviceWorker' in navigator) {
 })();
 </script>
 
-<a class="monitor-fab" href="/monitor.html" aria-label="Open Monitor">Monitor</a>
+<a class="monitor-fab" href="/monitor.html" aria-label="Open Monitor" hidden>Monitor</a>
+<script>
+// Internal ops dashboard — only surface for dev sessions (?dev=1 sticks).
+(function() {
+    try {
+        if (new URLSearchParams(location.search).get('dev')) localStorage.setItem('ws_dev', '1');
+        if (localStorage.getItem('ws_dev')) document.querySelector('.monitor-fab').hidden = false;
+    } catch (e) {}
+})();
+</script>
 
 </body>
 </html>
