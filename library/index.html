@@ -3180,7 +3180,10 @@ Promise.all([
         loadChapter(startId, true).then(() => {
             document.getElementById('splash').classList.add('gone');
             // Warm the sources corpus behind the reader, off the critical path.
-            setTimeout(function() { ensureSourcesLoaded(); ensureEntitiesLoaded(); }, 1200);
+            // Warm both bundles as soon as the reader is on screen. They are
+            // never awaited by first paint, and starting sooner shrinks the
+            // window where a fast tap has to wait for them.
+            setTimeout(function() { ensureSourcesLoaded(); ensureEntitiesLoaded(); }, 250);
 
             // Handle URL routing params from home (and other deep links).
             (function handleUrlParams() {
