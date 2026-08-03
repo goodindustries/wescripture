@@ -261,8 +261,32 @@
             var t = b.testament;
             if (by[t]) by[t].push(b);
         });
+        // Canonical (not alphabetical) order within each volume — readers
+        // navigate scripture by canon position, not by letter.
+        var canon = [
+            'Genesis','Exodus','Leviticus','Numbers','Deuteronomy','Joshua','Judges','Ruth',
+            '1 Samuel','2 Samuel','1 Kings','2 Kings','1 Chronicles','2 Chronicles','Ezra',
+            'Nehemiah','Esther','Job','Psalms','Proverbs','Ecclesiastes','Song of Solomon',
+            'Isaiah','Jeremiah','Lamentations','Ezekiel','Daniel','Hosea','Joel','Amos',
+            'Obadiah','Jonah','Micah','Nahum','Habakkuk','Zephaniah','Haggai','Zechariah','Malachi',
+            'Matthew','Mark','Luke','John','Acts','Romans','1 Corinthians','2 Corinthians',
+            'Galatians','Ephesians','Philippians','Colossians','1 Thessalonians','2 Thessalonians',
+            '1 Timothy','2 Timothy','Titus','Philemon','Hebrews','James','1 Peter','2 Peter',
+            '1 John','2 John','3 John','Jude','Revelation',
+            '1 Nephi','2 Nephi','Jacob','Enos','Jarom','Omni','Words of Mormon','Mosiah','Alma',
+            'Helaman','3 Nephi','4 Nephi','Mormon','Ether','Moroni',
+            'Doctrine and Covenants','Official Declarations',
+            'Moses','Abraham','Joseph Smith—Matthew','Joseph Smith—History','Articles of Faith'
+        ];
+        var canonIdx = {};
+        canon.forEach(function(n, i) { canonIdx[n] = i; });
         order.forEach(function(t) {
-            by[t].sort(function(a, b2) { return a.label.localeCompare(b2.label); });
+            by[t].sort(function(a, b2) {
+                var ai = canonIdx.hasOwnProperty(a.label) ? canonIdx[a.label] : 999;
+                var bi = canonIdx.hasOwnProperty(b2.label) ? canonIdx[b2.label] : 999;
+                if (ai !== bi) return ai - bi;
+                return a.label.localeCompare(b2.label);
+            });
         });
         var html = '';
         order.forEach(function(t) {
