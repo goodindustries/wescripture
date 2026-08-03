@@ -757,6 +757,34 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
     border-bottom: 1px solid var(--divider);
     background: rgba(0,0,0,0.018);
 }
+/* ── Verse panel pill tabs (Edition C): Refs · Commentary · Words · Translations ── */
+.vp-tabs {
+    display: flex; flex-wrap: wrap; gap: 7px;
+    padding: 12px 22px; border-bottom: 1px solid var(--divider);
+    position: sticky; top: 0; z-index: 3;
+    background: var(--panel, #fff);
+}
+.vp-tab {
+    display: inline-flex; align-items: center; gap: 6px;
+    border: 1px solid var(--divider); border-radius: 999px;
+    padding: 5px 12px; background: none; cursor: pointer; font-family: inherit;
+    font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+    color: var(--muted);
+}
+.vp-tab:hover { border-color: var(--accent); color: var(--accent); }
+.vp-tab--active, .vp-tab--active:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+.vp-tab-count { font-size: 10px; font-weight: 600; opacity: .75; }
+.vp-pane { display: none; }
+.vp-pane--active { display: block; }
+/* Donaldson collapsed to ~first paragraph until "Read more" */
+.comm-card .comm-text--clamp {
+    display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.dona-more-btn {
+    display: block; background: none; border: none; cursor: pointer; font-family: inherit;
+    padding: 8px 0 0; font-size: 12px; font-weight: 600; color: var(--accent);
+}
 .word-card { padding: 16px 28px; border-bottom: 1px solid var(--divider); }
 .word-english  { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
 .word-english.word-kw-in-verse {
@@ -4877,24 +4905,25 @@ function finishVerseDiscoveryPanel(payload) {
         collOpts = Object.keys(collSeen).sort();
         yearOpts = Object.keys(yrSeen).sort(function(a, b) { return parseInt(b, 10) - parseInt(a, 10); });
     }
+    var filtersHtml = '';
     if (collOpts.length > 1 || yearOpts.length) {
-        html += '<div class="verse-disc-filters" role="group" aria-label="Filter commentary">';
-        html += '<span class="vd-filter-label">Filter</span>';
-        html += '<select class="vd-filter-coll" aria-label="Collection">';
-        html += '<option value="__all__">All collections</option>';
+        filtersHtml += '<div class="verse-disc-filters" role="group" aria-label="Filter commentary">';
+        filtersHtml += '<span class="vd-filter-label">Filter</span>';
+        filtersHtml += '<select class="vd-filter-coll" aria-label="Collection">';
+        filtersHtml += '<option value="__all__">All collections</option>';
         collOpts.forEach(function(c) {
-            html += '<option value="' + escapeAttr(c) + '">' + escapeHtml(verseDiscCollectionLabel(c)) + '</option>';
+            filtersHtml += '<option value="' + escapeAttr(c) + '">' + escapeHtml(verseDiscCollectionLabel(c)) + '</option>';
         });
-        html += '</select>';
-        html += '<select class="vd-filter-year" aria-label="Year">';
-        html += '<option value="__all__">All years</option>';
+        filtersHtml += '</select>';
+        filtersHtml += '<select class="vd-filter-year" aria-label="Year">';
+        filtersHtml += '<option value="__all__">All years</option>';
         if (entries.some(function(e) { return e.year == null || e.year === ''; })) {
-            html += '<option value="__none">No year</option>';
+            filtersHtml += '<option value="__none">No year</option>';
         }
         yearOpts.forEach(function(y) {
-            html += '<option value="' + escapeAttr(y) + '">' + escapeHtml(y) + '</option>';
+            filtersHtml += '<option value="' + escapeAttr(y) + '">' + escapeHtml(y) + '</option>';
         });
-        html += '</select></div>';
+        filtersHtml += '</select></div>';
     }
 
     html += '<div class="verse-activity" style="padding:10px 22px 14px;border-bottom:1px solid var(--divider);">';
@@ -4981,16 +5010,22 @@ function finishVerseDiscoveryPanel(payload) {
         return (a.entryIdx || 0) - (b.entryIdx || 0);
     });
 
+    // Commentary pane: filters + Donaldson (collapsed to ~first paragraph) + Connections.
+    var commHtml = filtersHtml;
     if (donaldsonCards.length) {
-        html += '<div class="panel-section">Donaldson</div>';
-        html += '<div class="verse-panel-cards expanded">';
+        commHtml += '<div class="panel-section">Donaldson</div>';
+        commHtml += '<div class="verse-panel-cards expanded">';
         donaldsonCards.forEach(function(c) {
-            html += '<div class="comm-card">'
+            var txt = c.text || '';
+            var clamp = txt.length > 350;
+            commHtml += '<div class="comm-card">'
                 + (c.badge ? '<div class="hist-badge ' + escapeHtml(c.badgeClass || '') + '">' + escapeHtml(c.badge) + '</div>' : '')
                 + citationTrioHtml(c)
-                + '<div class="comm-text">' + renderCommentaryParagraphs(c.text || '') + '</div></div>';
+                + '<div class="comm-text' + (clamp ? ' comm-text--clamp' : '') + '">' + renderCommentaryParagraphs(txt) + '</div>'
+                + (clamp ? '<button type="button" class="dona-more-btn" onclick="toggleDonaClamp(this)">Read more →</button>' : '')
+                + '</div>';
         });
-        html += '</div>';
+        commHtml += '</div>';
     }
 
     // Show top 5, with optional +5 more (10 total) to preserve scanability.
@@ -4998,8 +5033,8 @@ function finishVerseDiscoveryPanel(payload) {
     var connInitial = 5;
     var connList = connections.slice(0, connShowMax);
     if (connList.length) {
-        html += '<div class="panel-section">Connections</div>';
-        html += '<div class="verse-panel-cards">';
+        commHtml += '<div class="panel-section">Connections</div>';
+        commHtml += '<div class="verse-panel-cards">';
         connList.forEach(function(c, idx) {
             var vdAttrs = '';
             if (c.entryIdx != null) {
@@ -5007,7 +5042,7 @@ function finishVerseDiscoveryPanel(payload) {
                     + (c.filterColl ? ' data-coll="' + escapeAttr(c.filterColl) + '"' : '')
                     + (c.filterYear != null ? ' data-yr="' + c.filterYear + '"' : '');
             }
-            html += '<div class="comm-card' + (c.hasLink ? ' has-link' : '') + '"' + vdAttrs + '>'
+            commHtml += '<div class="comm-card' + (c.hasLink ? ' has-link' : '') + '"' + vdAttrs + '>'
                 + (c.badge ? '<div class="hist-badge ' + escapeHtml(c.badgeClass || '') + '">' + escapeHtml(c.badge) + '</div>' : '')
                 + (c.reason ? '<span class="conn-reason-chip" title="Why this connection">' + escapeHtml(formatConnReason(c.reason)) + '</span>' : '')
                 + citationTrioHtml(c)
@@ -5015,9 +5050,9 @@ function finishVerseDiscoveryPanel(payload) {
         });
         if (connList.length > connInitial) {
             var more = Math.min(5, connList.length - connInitial);
-            html += '<button type="button" class="word-more-btn" onclick="expandVerseConnections(this)">Show ' + more + ' more \u2192</button>';
+            commHtml += '<button type="button" class="word-more-btn" onclick="expandVerseConnections(this)">Show ' + more + ' more \u2192</button>';
         }
-        html += '</div>';
+        commHtml += '</div>';
     }
 
     var keywordCards = [];
@@ -5032,16 +5067,16 @@ function finishVerseDiscoveryPanel(payload) {
         if (card) keywordCards.push(card);
     });
     var showedKeyWords = keywordCards.length > 0;
+    var wordsHtml = '';
     if (showedKeyWords) {
-        html += '<div class="panel-section">Key words</div>';
-        html += '<div class="word-cards-wrap expanded">';
-        html += keywordCards.join('');
-        html += '</div>';
+        wordsHtml += '<div class="word-cards-wrap expanded">';
+        wordsHtml += keywordCards.join('');
+        wordsHtml += '</div>';
     }
 
     var scriptureEdges = scriptureEdgesEarly;
+    var refsHtml = '';
     if (scriptureEdges.length) {
-        html += '<div class="panel-section">Cross References</div>';
         // Build filter chip row from distinct sources present in this set.
         var srcCounts = {};
         scriptureEdges.forEach(function(s) {
@@ -5051,22 +5086,22 @@ function finishVerseDiscoveryPanel(payload) {
         var srcKeys = Object.keys(srcCounts);
         if (srcKeys.length > 1) {
             var active = getXrefSourceFilter();
-            html += '<div class="xref-filter-row">';
-            html += '<button type="button" class="xref-filter-chip' + (!active ? ' xref-filter-chip--active' : '') + '" data-src="">All <span class="xref-filter-count">' + scriptureEdges.length + '</span></button>';
+            refsHtml += '<div class="xref-filter-row">';
+            refsHtml += '<button type="button" class="xref-filter-chip' + (!active ? ' xref-filter-chip--active' : '') + '" data-src="">All <span class="xref-filter-count">' + scriptureEdges.length + '</span></button>';
             srcKeys.sort().forEach(function(k) {
-                html += '<button type="button" class="xref-filter-chip' + (active === k ? ' xref-filter-chip--active' : '') + '" data-src="' + escapeAttr(k) + '">'
+                refsHtml += '<button type="button" class="xref-filter-chip' + (active === k ? ' xref-filter-chip--active' : '') + '" data-src="' + escapeAttr(k) + '">'
                     + escapeHtml(formatSourceChip(k)) + ' <span class="xref-filter-count">' + srcCounts[k] + '</span></button>';
             });
-            html += '</div>';
+            refsHtml += '</div>';
         }
-        html += '<div class="verse-panel-cards verse-panel-cards--scrip' + (scriptureEdges.length <= 4 ? ' expanded' : '') + '">';
+        refsHtml += '<div class="verse-panel-cards verse-panel-cards--scrip' + (scriptureEdges.length <= 4 ? ' expanded' : '') + '">';
         scriptureEdges.forEach(function(s) {
             var jr = parseVerseRefForStudy(s.ref);
             var srcId = s.source_id || '';
             var srcPara = s.para || '';
             var hasDocMeta = srcId && sourceMeta && sourceMeta[srcId];
             var jumpable = jr && chapterMeta[jr.chapterId];
-            html += '<div class="scrip-card'
+            refsHtml += '<div class="scrip-card'
                 + (jumpable ? ' scrip-card--jump' : '')
                 + (!jumpable && hasDocMeta ? ' scrip-card--passage' : '')
                 + '"'
@@ -5085,12 +5120,28 @@ function finishVerseDiscoveryPanel(payload) {
                 + '</div>';
         });
         if (scriptureEdges.length > 4) {
-            html += '<button type="button" class="word-more-btn" onclick="expandWordCards(this)">Show ' + (scriptureEdges.length - 4) + ' more \u2192</button>';
+            refsHtml += '<button type="button" class="word-more-btn" onclick="expandWordCards(this)">Show ' + (scriptureEdges.length - 4) + ' more \u2192</button>';
         }
-        html += '</div>';
+        refsHtml += '</div>';
     }
 
-    if (!donaldsonCards.length && !connList.length && !scriptureEdges.length && !showedKeyWords && !showedEntityChips) {
+    // Edition C pill tabs: Refs \u00b7 Commentary \u00b7 Words (\u00b7 Translations when data ships).
+    // Empty tabs disappear (Sefaria pattern); cross-references first \u2014 fastest meaning.
+    var vpTabs = [];
+    if (refsHtml) vpTabs.push({ id: 'refs', label: 'Refs', count: scriptureEdges.length, body: refsHtml });
+    if (donaldsonCards.length || connList.length) vpTabs.push({ id: 'commentary', label: 'Commentary', count: donaldsonCards.length + connList.length, body: commHtml });
+    if (wordsHtml) vpTabs.push({ id: 'words', label: 'Words', count: keywordCards.length, body: wordsHtml });
+    if (vpTabs.length) {
+        html += '<div class="vp-tabs" role="tablist" aria-label="Verse study">';
+        vpTabs.forEach(function(t, i) {
+            html += '<button type="button" class="vp-tab' + (i === 0 ? ' vp-tab--active' : '') + '" role="tab" aria-selected="' + (i === 0) + '" data-pane="' + t.id + '">'
+                + t.label + ' <span class="vp-tab-count">' + t.count + '</span></button>';
+        });
+        html += '</div>';
+        vpTabs.forEach(function(t, i) {
+            html += '<div class="vp-pane' + (i === 0 ? ' vp-pane--active' : '') + '" data-pane="' + t.id + '">' + t.body + '</div>';
+        });
+    } else if (!showedEntityChips) {
         html += '<div style="padding:28px;color:var(--muted);font-size:13px">No commentary found for this verse.</div>';
     }
 
@@ -5103,6 +5154,20 @@ function finishVerseDiscoveryPanel(payload) {
     channelOpen = true;
     wireVerseDiscoveryFilters(panelBody, entries);
     hydrateVerseSocial(ref);
+
+    panelBody.querySelectorAll('.vp-tab').forEach(function(tab) {
+        tab.addEventListener('click', function() {
+            var id = tab.dataset.pane;
+            panelBody.querySelectorAll('.vp-tab').forEach(function(t) {
+                var on = t === tab;
+                t.classList.toggle('vp-tab--active', on);
+                t.setAttribute('aria-selected', on ? 'true' : 'false');
+            });
+            panelBody.querySelectorAll('.vp-pane').forEach(function(p) {
+                p.classList.toggle('vp-pane--active', p.dataset.pane === id);
+            });
+        });
+    });
 
     panelBody.querySelectorAll('.comm-card.has-link').forEach(function(row) {
         row.addEventListener('click', function() {
@@ -5210,6 +5275,14 @@ function expandVerseConnections(btn) {
     if (!wrap) return;
     wrap.classList.add('expanded');
     btn.remove();
+}
+
+function toggleDonaClamp(btn) {
+    var card = btn && btn.closest && btn.closest('.comm-card');
+    var txt = card && card.querySelector('.comm-text');
+    if (!txt) return;
+    var nowClamped = txt.classList.toggle('comm-text--clamp');
+    btn.textContent = nowClamped ? 'Read more →' : 'Show less';
 }
 
 async function openVerseDiscovery(ref) {
