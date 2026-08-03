@@ -27,3 +27,4 @@ diagnostics/*.out
 pipeline/build/
 .gstack/
 library/donaldson.backup/
+.fenix/
