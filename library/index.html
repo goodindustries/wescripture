@@ -823,6 +823,16 @@ html, body { height: 100%; background: var(--bg); color: var(--text);
 }
 .vp-pane { display: none; }
 .vp-pane--active { display: block; }
+/* Translations pane: one verse, several renderings, stacked for reading */
+.tr-row { padding: 12px 22px; border-bottom: 1px solid var(--divider); }
+.tr-row--base { background: rgba(156, 122, 77, 0.05); }
+.tr-label {
+    font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 5px;
+}
+.tr-base-tag { font-weight: 600; letter-spacing: .04em; color: var(--accent); text-transform: none; }
+.tr-text { font-family: 'EB Garamond', Georgia, serif; font-size: 15px; line-height: 1.62; color: var(--text); }
+.tr-note { padding: 10px 22px 14px; margin: 0; font-size: 11px; line-height: 1.5; color: var(--muted); }
 /* Donaldson collapsed to ~first paragraph until "Read more" */
 .comm-card .comm-text--clamp {
     display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical;
@@ -5103,6 +5113,7 @@ function finishVerseDiscoveryPanel(payload) {
     var entsInline = payload.entsInline;
     var scriptureEdgesEarly = payload.scriptureEdgesEarly;
     var lexByStem = payload.lexByStem || {};
+    var translations = payload.translations || null;
 
     var showedEntityChips = !!(entsInline.persons.length || entsInline.places.length || entsInline.things.length);
 
@@ -5345,12 +5356,38 @@ function finishVerseDiscoveryPanel(payload) {
         refsHtml += '</div>';
     }
 
-    // Edition C pill tabs: Refs \u00b7 Commentary \u00b7 Words (\u00b7 Translations when data ships).
+    // Translations pane: KJV is the chapter's own text, so it anchors the
+    // comparison rather than being fetched again.
+    var translationsHtml = '';
+    var translationCount = 0;
+    if (translations) {
+        var rows = [];
+        if (verseText) rows.push({ label: 'King James Version', text: verseText, base: true });
+        TRANSLATION_ORDER.forEach(function(code) {
+            if (!translations[code]) return;
+            translationCount++;
+            rows.push({ label: TRANSLATION_LABELS[code] || code.toUpperCase(), text: translations[code] });
+        });
+        if (translationCount) {
+            translationsHtml += '<div class="tr-list">';
+            rows.forEach(function(row) {
+                translationsHtml += '<div class="tr-row' + (row.base ? ' tr-row--base' : '') + '">'
+                    + '<div class="tr-label">' + escapeHtml(row.label) + (row.base ? ' <span class="tr-base-tag">this edition</span>' : '') + '</div>'
+                    + '<div class="tr-text">' + escapeHtml(row.text) + '</div>'
+                    + '</div>';
+            });
+            translationsHtml += '</div>';
+            translationsHtml += '<p class="tr-note">Public-domain translations. Modern copyrighted editions require licensing \u2014 see docs/TRANSLATIONS.md.</p>';
+        }
+    }
+
+    // Edition C pill tabs: Refs \u00b7 Commentary \u00b7 Words \u00b7 Translations.
     // Empty tabs disappear (Sefaria pattern); cross-references first \u2014 fastest meaning.
     var vpTabs = [];
     if (refsHtml) vpTabs.push({ id: 'refs', label: 'Refs', count: scriptureEdges.length, body: refsHtml });
     if (donaldsonCards.length || connList.length) vpTabs.push({ id: 'commentary', label: 'Commentary', count: donaldsonCards.length + connList.length, body: commHtml });
     if (wordsHtml) vpTabs.push({ id: 'words', label: 'Words', count: keywordCards.length, body: wordsHtml });
+    if (translationCount) vpTabs.push({ id: 'translations', label: 'Translations', count: translationCount, body: translationsHtml });
     if (vpTabs.length) {
         html += '<div class="vp-tabs" role="tablist" aria-label="Verse study">';
         vpTabs.forEach(function(t, i) {
@@ -5545,10 +5582,13 @@ async function openVerseDiscovery(ref) {
     return Promise.all([
         loadChapterWordIndex(chapterId),
         loadChapterLexStudies(chapterId),
-        loadGlossIndex()
+        loadGlossIndex(),
+        loadChapterTranslations(chapterId)
     ]).then(function(results) {
         var wordIdx = results[0];
         var lexRoot = results[1] || {};
+        var translationsAll = results[3];
+        payloadBase.translations = (translationsAll && translationsAll[vnum]) || null;
         var verseData = wordIdx && wordIdx[vnum] ? wordIdx[vnum] : {};
         var lexByStem = lexRoot && lexRoot[vnum] ? lexRoot[vnum] : {};
         var mergedKw = mergeKeyWordsForVerse(donaWords, verseData, verseText, chapterId, verseEl);
@@ -7762,6 +7802,30 @@ function loadWordIndex(pathKey, href) {
 
 function loadChapterWordIndex(slug) {
     return loadWordIndex('chapter:' + slug, './chapters/' + slug + '_words.json');
+}
+
+// ── Public-domain translations (docs/TRANSLATIONS.md phase 1) ──────────────
+// One shard per chapter, so opening a verse costs a few KB rather than a
+// whole-Bible download. Non-Bible volumes have no shard; a 404 is expected
+// there and caches as "no translations" rather than retrying.
+var TRANSLATION_LABELS = { web: 'World English Bible', asv: 'American Standard Version' };
+var TRANSLATION_ORDER = ['web', 'asv'];
+var translationCache = {};
+var translationLoading = {};
+
+function loadChapterTranslations(slug) {
+    if (!slug) return Promise.resolve(null);
+    if (translationCache[slug] !== undefined) return Promise.resolve(translationCache[slug]);
+    if (translationLoading[slug]) return translationLoading[slug];
+    translationLoading[slug] = fetch('./translations/' + slug + '.json')
+        .then(function(r) { return r.ok ? r.json() : null; })
+        .catch(function() { return null; })
+        .then(function(data) {
+            translationCache[slug] = data;
+            delete translationLoading[slug];
+            return data;
+        });
+    return translationLoading[slug];
 }
 
 function loadChapterLexStudies(slug) {

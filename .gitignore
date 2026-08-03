@@ -28,3 +28,4 @@ pipeline/build/
 .gstack/
 library/donaldson.backup/
 .fenix/
+.translation-cache/
