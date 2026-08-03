@@ -2052,7 +2052,13 @@ function formatAgo(ts) {
 
 async function loadSupaConfig() {
     if (SUPA.cfg) return SUPA.cfg;
-    var urls = ['/.netlify/functions/config', './supabase-config.json'];
+    // The Netlify function carries config in production; it cannot exist on a
+    // local static server, where asking for it only 404s the console on every
+    // load. Local dev reads the (gitignored) config file directly.
+    var isLocal = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
+    var urls = isLocal
+        ? ['./supabase-config.json']
+        : ['/.netlify/functions/config', './supabase-config.json'];
     for (var ui = 0; ui < urls.length; ui++) {
         try {
             var r = await fetch(urls[ui], { cache: 'no-store' });
@@ -3435,10 +3441,18 @@ async function renderTitleFeed() {
     }
     box.innerHTML = '<p class="feed-empty">Loading…</p>';
     try {
-        var r = await SUPA.client.from('activity_feed')
+        // An unreachable Supabase leaves the query pending forever, which is how
+        // the card used to sit on "Loading…" for the rest of the session.
+        var query = SUPA.client.from('activity_feed')
             .select('id,created_at,type,verse_ref,handle,display_name,payload')
             .order('created_at', { ascending: false })
             .limit(15);
+        var r = await Promise.race([
+            query,
+            new Promise(function(_, reject) {
+                setTimeout(function() { reject(new Error('feed timeout')); }, 8000);
+            })
+        ]);
         if (r && r.error) {
             box.innerHTML = '<p class="feed-empty">Feed unavailable.</p>';
             return;
