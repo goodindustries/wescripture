@@ -473,3 +473,33 @@ mark.hl, .hl-yellow { background: var(--hl-1); color: inherit; }
 @media (pointer: coarse) {
     #ch-close { min-width: 44px; min-height: 44px; }
 }
+
+/* ── active verse ─────────────────────────────────────────────────────────
+   The class is .verse-focus (not .focused). The base rule paints it in the
+   retired gold with an inset 3px bar and an 8px radius — which, on an inline
+   verse with box-decoration-break:clone, repeats that bar and those corners on
+   every wrapped line. The wash alone is the spec: only the ground moves. */
+.scripture .verse.verse-focus {
+    background: var(--verse-active);
+    box-shadow: none;
+    border-radius: 0;
+}
+.scripture .verse.verse-focus:hover { background: var(--verse-active); }
+.scripture .verse.verse-focus .verse-num {
+    color: var(--paper-raised); background: var(--rubric);
+}
+
+/* ── phone sheet: one reference, not two ──────────────────────────────────
+   Below 601px the sheet header (#ch-word) shows the verse reference beside the
+   close control, and the panel body prints it again. Keep the header's copy —
+   it sits with the affordance that dismisses the sheet. */
+@media (max-width: 600px) {
+    #panel-body[data-panel-mode="verse"] .panel-header .panel-verse-ref { display: none; }
+    /* With the reference hidden, a verse carrying no entity chips leaves an
+       empty bordered strip under the sheet header. */
+    #panel-body[data-panel-mode="verse"] .panel-header:not(:has(.panel-verse-entities)) { display: none; }
+    /* Tabs scroll rather than stacking onto a second row. */
+    .vp-tabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+    .vp-tabs::-webkit-scrollbar { display: none; }
+    .vp-tab { flex: 0 0 auto; }
+}

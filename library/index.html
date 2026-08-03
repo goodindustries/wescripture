@@ -7864,9 +7864,18 @@ var TRANSLATION_ORDER = ['web', 'asv'];
 var translationCache = {};
 var translationLoading = {};
 
+var TRANSLATED_VOLUMES = { 'Old Testament': 1, 'New Testament': 1 };
+
 function loadChapterTranslations(slug) {
     if (!slug) return Promise.resolve(null);
     if (translationCache[slug] !== undefined) return Promise.resolve(translationCache[slug]);
+    // Only the Bible has WEB/ASV shards. Asking for the rest 404s the console
+    // on every Book of Mormon, D&C and Pearl of Great Price chapter.
+    var vol = chapterMeta[slug] && chapterMeta[slug].volume;
+    if (vol && !TRANSLATED_VOLUMES[vol]) {
+        translationCache[slug] = null;
+        return Promise.resolve(null);
+    }
     if (translationLoading[slug]) return translationLoading[slug];
     translationLoading[slug] = fetch('./translations/' + slug + '.json')
         .then(function(r) { return r.ok ? r.json() : null; })
@@ -8192,6 +8201,17 @@ document.getElementById('content').addEventListener('click', function(e) {
     }
 
     window.open(href, '_blank', 'noopener');
+});
+
+// Verses carry tabindex="0" and role="button", so a keyboard user can reach
+// one and hears it announced as a button. Enter and Space have to actually
+// open it, or the affordance is a lie.
+document.addEventListener('keydown', function(e) {
+    if (e.key !== 'Enter' && e.key !== ' ' && e.key !== 'Spacebar') return;
+    var verse = e.target.closest && e.target.closest('.verse.v');
+    if (!verse) return;
+    e.preventDefault();
+    verse.click();
 });
 
 // Called when user clicks a .w span
