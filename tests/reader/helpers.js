@@ -40,6 +40,21 @@ async function openVerse(page, ref) {
   await new Promise(r => setTimeout(r, 900));
 }
 
+/**
+ * Wait for the study pane to open rather than sleeping a fixed time.
+ * Opening a verse blocks on verse_discovery.json (14.5MB), which is instant
+ * from a local disk cache and about 3s over a real network — a fixed sleep
+ * passes on localhost and fails everywhere else.
+ */
+async function waitForPane(page, timeout = 20000) {
+  try {
+    await page.waitForFunction(
+      () => document.getElementById('channel').classList.contains('open'),
+      { timeout });
+    return true;
+  } catch { return false; }
+}
+
 /** The panel's tab order must always be a subsequence of the spec order. */
 const TAB_ORDER = ['refs', 'commentary', 'words', 'translations'];
 
@@ -53,4 +68,4 @@ function tabsInSpecOrder(panes) {
   });
 }
 
-module.exports = { BASE, openReader, richestVerseRef, openVerse, TAB_ORDER, tabsInSpecOrder };
+module.exports = { BASE, openReader, richestVerseRef, openVerse, waitForPane, TAB_ORDER, tabsInSpecOrder };

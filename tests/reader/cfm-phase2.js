@@ -62,9 +62,12 @@ const OUT = (process.env.WS_SHOTS || require('os').tmpdir());
   // Ezra 1 -> Ezra 3 (week skips Ezra 2); plain book order would give Ezra 2.
   const before = s1.chapter;
   await page.click('[data-cfm-step="1"]');
-  await page.waitForFunction(prev => window.currentChapter && window.currentChapter !== prev, { timeout: 15000 }, before)
+  await page.waitForFunction(prev => window.currentChapter && window.currentChapter !== prev, { timeout: 20000 }, before)
     .catch(() => fail('Next did not change chapter'));
-  await new Promise(r => setTimeout(r, 800));
+  // The strip re-renders after the chapter loads; wait for it to catch up.
+  await page.waitForFunction(() => /^\d+ of /.test(
+    document.querySelector('.cfm-strip-progress')?.textContent || ''), { timeout: 15000 }).catch(() => {});
+  await new Promise(r => setTimeout(r, 600));
 
   const s2 = await page.evaluate(() => ({
     chapter: currentChapter,
@@ -85,8 +88,13 @@ const OUT = (process.env.WS_SHOTS || require('os').tmpdir());
   // ---- 4. Chip jump ----
   const lastId = weekOrder[weekOrder.length - 1];
   await page.click(`.cfm-chip[data-chapter-id="${lastId}"]`);
-  await page.waitForFunction(id => window.currentChapter === id, { timeout: 15000 }, lastId)
+  await page.waitForFunction(id => window.currentChapter === id, { timeout: 20000 }, lastId)
     .catch(() => fail('chip jump failed'));
+  // Jumping prepends the chapter while earlier ones stay loaded, so the
+  // position observer can re-fire as the scroll settles and briefly re-render
+  // the strip at another index. Wait for the last position to stick.
+  await page.waitForFunction(n => (document.querySelector('.cfm-strip-progress')?.textContent || '')
+    .startsWith(n + ' of '), { timeout: 15000 }, weekOrder.length).catch(() => {});
   const s3 = await page.evaluate(() => ({
     chapter: currentChapter,
     progress: document.querySelector('.cfm-strip-progress')?.textContent,

@@ -9,7 +9,7 @@
  * Found by /qa on 2026-08-03.
  */
 const puppeteer = require('puppeteer');
-const { openReader } = require('./helpers');
+const { openReader, waitForPane } = require('./helpers');
 
 (async () => {
   const b = await puppeteer.launch({ headless: 'new' });
@@ -33,7 +33,7 @@ const { openReader } = require('./helpers');
 
   // 1. Clicking the verse text.
   await p.click(target + ' .verse-text');
-  await new Promise(r => setTimeout(r, 2000));
+  await waitForPane(p);
   const byText = await p.evaluate(() => ({
     open: document.getElementById('channel').classList.contains('open'),
     ref: document.querySelector('.panel-verse-ref')?.textContent,
@@ -46,7 +46,7 @@ const { openReader } = require('./helpers');
   await p.evaluate(() => closeChannel());
   await new Promise(r => setTimeout(r, 400));
   await p.click(target + ' .verse-num');
-  await new Promise(r => setTimeout(r, 2000));
+  await waitForPane(p);
   const byNum = await p.evaluate(() => ({
     open: document.getElementById('channel').classList.contains('open'),
     ref: document.querySelector('.panel-verse-ref')?.textContent,
