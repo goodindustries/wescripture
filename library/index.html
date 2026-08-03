@@ -3083,6 +3083,16 @@ function ensureEntitiesLoaded() {
                 if (!entityIndex[vl]) entityIndex[vl] = fig.id;
             });
         });
+        // Person annotation keys are filtered by entityById[id].group, so any
+        // chapter rendered before this point linkified places and things but no
+        // people. Rebuild the key lists and re-annotate what is already on
+        // screen; _annotateTextNodes skips text inside existing spans, so this
+        // adds the missing names without touching the ones already marked.
+        _aeBuilt = false;
+        _buildAnnotationKeys();
+        Array.from(document.querySelectorAll('#content .chapter-block')).forEach(function(block) {
+            try { annotateChapterEntities(block); } catch (e) {}
+        });
     });
     return entitiesReady;
 }
