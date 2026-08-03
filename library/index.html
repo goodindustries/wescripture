@@ -2629,31 +2629,31 @@ function ensureDonaldsonLoaded(chapterId) {
     return donaldsonLoads[chapterId];
 }
 
-// Lazy-load verseDiscovery (13MB) on first interaction that needs it.
-function ensureVerseDiscoveryLoaded() {
-    if (verseDiscovery !== null) return Promise.resolve();
-    if (verseDiscoveryLoading) {
-        // Return a deferred promise that resolves when loading completes
-        return new Promise(function(resolve) {
-            var check = setInterval(function() {
-                if (verseDiscovery !== null) {
-                    clearInterval(check);
-                    resolve();
-                }
-            }, 50);
-        });
-    }
-    verseDiscoveryLoading = true;
-    return fetch('./verse_discovery.json')
-        .then(function(r) { return r.ok ? r.json() : {}; })
+// Corpus connections, one shard per chapter (library/discovery/<id>.json,
+// ~10kB each). This used to be a single 14.5MB file fetched before the study
+// pane could open, so the first tap on a verse waited about 3.4s over a real
+// network — invisible from localhost, and against the one thing the product
+// promises. Entries are merged into verseDiscovery under the same
+// "Book Chapter:Verse" keys, so callers are unchanged.
+var discoveryChapterLoaded = {};
+
+function ensureVerseDiscoveryLoaded(chapterId) {
+    if (verseDiscovery === null) verseDiscovery = {};
+    var id = chapterId || currentChapter;
+    if (!id) return Promise.resolve();
+    if (discoveryChapterLoaded[id]) return discoveryChapterLoaded[id];
+
+    var meta = chapterMeta[id];
+    discoveryChapterLoaded[id] = fetch('./discovery/' + id + '.json')
+        .then(function(r) { return r.ok ? r.json() : null; })
         .then(function(data) {
-            verseDiscovery = data || {};
-            verseDiscoveryLoading = false;
+            if (!data || !meta) return;
+            // Shards are keyed by verse number; the reader looks up full refs.
+            var prefix = meta.book + ' ' + meta.label + ':';
+            Object.keys(data).forEach(function(v) { verseDiscovery[prefix + v] = data[v]; });
         })
-        .catch(function() {
-            verseDiscovery = {};
-            verseDiscoveryLoading = false;
-        });
+        .catch(function() {});
+    return discoveryChapterLoaded[id];
 }
 
 var chapterGraphCache = {}; // chapterId → parsed graph data
@@ -5584,7 +5584,7 @@ async function openVerseDiscovery(ref) {
     // Guarantee Donaldson notes/quotes and verseDiscovery for this verse are loaded
     // on first tap, even if the user clicked before the JSON finished loading.
     await ensureDonaldsonLoaded(chapterId);
-    await ensureVerseDiscoveryLoaded();
+    await ensureVerseDiscoveryLoaded(chapterId);
 
     var rawEntries = verseDiscovery[ref] || [];
     var entries = semanticDedupeVerseDiscoveryEntries(dedupeVerseDiscoveryEntries(rawEntries.filter(function(e) {
